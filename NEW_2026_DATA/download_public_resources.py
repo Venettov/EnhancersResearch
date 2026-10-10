@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Download selected public, processed enhancer resources into this folder.
 
-Raw sequencing reads are intentionally excluded. For oversized Zenodo records,
-the script downloads only named, useful analysis outputs and records the omitted
-files in the manifest. All source URLs and available checksums are recorded.
+Raw sequencing reads are not part of the default download. For oversized Zenodo
+records, the script downloads selected analysis outputs and records optional
+archives with their direct file URLs, sizes, and checksums in the manifest.
 """
 
 from __future__ import annotations
@@ -134,8 +134,10 @@ def download_zenodo_record(record_id: str, folder: str, source: str) -> None:
         return
     selected_names = ZENODO_SELECTED_FILES.get(record_id)
     if total > ZENODO_LIMIT and selected_names is None:
-        add_row(source, "(record files not downloaded)", total, "skipped_size_limit",
-                record.get("doi_url", api), note="Record exceeds the 2 GiB download limit.")
+        for item in files:
+            add_row(source, Path(item["key"]).name, item.get("size", 0), "available_optional",
+                    item.get("links", {}).get("self", ""), item.get("checksum", ""),
+                    "Optional large Zenodo archive; use download_project_resources.py --group optional.")
         print(f"Skipped Zenodo {record_id}: {total:,} bytes exceeds 2 GiB limit")
         return
     for item in files:
@@ -149,9 +151,9 @@ def download_zenodo_record(record_id: str, folder: str, source: str) -> None:
                 omission_note = "11.1 GB reference bundle omitted; retrieve only if the analysis requires it."
             else:
                 omission_note = "Omitted by the selective download plan."
-            add_row(source, name, item.get("size", 0), "skipped_selective_download",
+            add_row(source, name, item.get("size", 0), "available_optional",
                     item.get("links", {}).get("self", ""), item.get("checksum", ""),
-                    omission_note)
+                    f"{omission_note} Download on demand with download_project_resources.py --group optional.")
             continue
         dest = ROOT / folder / name
         if dest.exists():

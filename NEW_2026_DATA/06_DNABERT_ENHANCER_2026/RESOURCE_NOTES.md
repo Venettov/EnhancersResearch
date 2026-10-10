@@ -1,6 +1,6 @@
 # DNABERT-Enhancer (2026)
 
-The paper, supplement, and code snapshot are organized in `PAPERS/`, `SUPPLEMENTARY/`, and `CODE/`. The 10,682,051,673-byte (~10.7 GB) trained-model archive is not stored locally.
+The paper, supplement, and code snapshot are organized in `PAPERS/`, `SUPPLEMENTARY/`, and `CODE/`. The 10,682,051,673-byte (~10.7 GB) trained-model archive can be downloaded on demand using `python3 NEW_2026_DATA/download_project_resources.py --group optional`. Its direct Zenodo URL and MD5 checksum are in `NEW_2026_DATA/download_manifest.tsv`; the downloader attempts to resume interrupted transfers when supported by the source.
 
 - Published article: https://doi.org/10.1093/bioinformatics/btag456
 - Earlier preprint: https://doi.org/10.1101/2025.03.18.644040

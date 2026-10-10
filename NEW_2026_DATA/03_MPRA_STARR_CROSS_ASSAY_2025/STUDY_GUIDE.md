@@ -14,4 +14,4 @@ Zhang J et al. “Comprehensive evaluation of diverse massively parallel reporte
 
 Data: [Zenodo 16887276](https://doi.org/10.5281/zenodo.16887276). Code: [Zenodo 17254278](https://doi.org/10.5281/zenodo.17254278), source repository [on GitHub](https://github.com/haiyuan-yu-lab/Analysis_Code_Comprehensive_Evaluation_MPRA_and_STARR_seq).
 
-The larger `raw_data.tar.gz` (516 MB), `uniform_processed_data.tar.gz` (25.4 GB), and `reference.tar.gz` (11.1 GB) archives are catalogued but were not part of the prior selective download; see the parent `download_manifest.tsv`.
+The optional `raw_data.tar.gz` (516 MB), `uniform_processed_data.tar.gz` (25.4 GB), and `reference.tar.gz` (11.1 GB) archives have direct source URLs, sizes, and MD5 checksums in the parent `download_manifest.tsv`. Retrieve them with `python3 NEW_2026_DATA/download_project_resources.py --group optional`. The downloader attempts to resume interrupted transfers when supported by the source; the archives stay compressed.

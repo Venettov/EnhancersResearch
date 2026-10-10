@@ -63,17 +63,23 @@ python3 NEW_2026_DATA/download_project_resources.py --group papers
 
 Use `--group all` to fetch both groups. At the current manifest snapshot, the selected data total about 2.14 GB and the papers, supplements, and code total about 1.22 GB; sizes can change if sources are updated. The script streams each file, checks its recorded size and available checksum, and saves it into the study folder listed in the manifest. Python 3.9 or newer and its standard library are sufficient.
 
+To fetch **all downloadable resources, including the optional large archives**, run this from the repository root on a computer with ample free space:
+
+```bash
+python3 NEW_2026_DATA/download_project_resources.py --group all --include-optional
+```
+
+The optional group adds about **47.7 GB**, bringing the current downloadable collection to about **51.1 GB** before extracting archives. It includes the MPRA/STARR raw archive (516 MB), uniform-processed archive (25.4 GB), reference archive (11.1 GB), and DNABERT-Enhancer model archive (10.7 GB). The downloader attempts to resume interrupted transfers where the source supports HTTP range requests; if not, it safely restarts that file. These archives remain compressed. Keep additional free space if you plan to extract them.
+
 The existing benchmark text files and project documentation are tracked directly. The older papers already present in the original working folder are listed in `legacy_references.tsv`; use those DOI or publisher links to retrieve them. Full-text copies are not included in Git.
 
 ## Large or externally hosted resources
 
-Some source resources are deliberately link-only or omitted from the automatic download:
+The large MPRA/STARR and DNABERT archives have direct URLs, byte sizes, and checksums in `NEW_2026_DATA/download_manifest.tsv`; the optional download command above fetches them. They are excluded from the default download so a regular clone does not unexpectedly retrieve nearly 48 GB.
 
-- The MPRA/STARR-seq source record also contains `raw_data.tar.gz` (about 516 MB), `uniform_processed_data.tar.gz` (about 25.4 GB), and `reference.tar.gz` (about 11.1 GB). The selected output, author-reported, and QC files are listed in the manifest; the larger bundles are marked as skipped there.
-- The DNABERT-Enhancer model-weight archive is about 10.7 GB. Its Zenodo record and access notes are in the DNABERT study guide and resource notes.
-- The AlphaGenome Atlas is an extremely large resource and is accessed through its official service/API; the local collection includes the preprint and its companion materials, not a copy of the Atlas.
+- The AlphaGenome Atlas is approximately 1 petabyte and is not a single clone-time archive. Use the [official AlphaGenome downloads portal](https://alphagenome.google/downloads) or [API and Atlas documentation](https://github.com/google-deepmind/alphagenome) for the available access options and terms. The repository includes the Atlas preprint and supplements, not a copy of the full Atlas.
 
-The automatic downloader does not fetch these oversized resources. Their locations and omission status are recorded in the study guides and manifests.
+All source links, current file sizes, and available checksums are recorded in the manifests. Upstream file versions and download terms can change; cite the original data record and follow its terms when using the files.
 
 ## Notes for analysis
 

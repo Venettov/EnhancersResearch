@@ -8,7 +8,7 @@
 
 ## Recommended reading and limits
 
-Read the published article HTML and supplement for the current method and results. The preprint PDF is the earlier version and may differ. This is a sequence-based prediction resource; predictions are model outputs, not experimental validation. The local project does not include the trained model archive, which is about 10.7 GB.
+Read the published article HTML and supplement for the current method and results. The preprint PDF is the earlier version and may differ. This is a sequence-based prediction resource; predictions are model outputs, not experimental validation. The trained model archive is about 10.7 GB and is available as an optional download with `python3 NEW_2026_DATA/download_project_resources.py --group optional`.
 
 ## Citation and links
 

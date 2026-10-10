@@ -36,9 +36,9 @@ python3 NEW_2026_DATA/download_project_resources.py --group data
 python3 NEW_2026_DATA/download_project_resources.py --group papers
 ```
 
-Use `--group all` to fetch both sets. The script verifies recorded file sizes and checksums. Oversized bundles and DNABERT model weights remain source-linked and are skipped automatically.
+Use `--group all` to fetch both default sets. The optional large archives are about 47.7 GB extra; to fetch everything available through the project downloader, run `python3 NEW_2026_DATA/download_project_resources.py --group all --include-optional`. The downloader tries to resume interrupted transfers where the source supports it; otherwise, it safely restarts that file. Keep extra space available for extraction.
 
-Desde la carpeta raíz del proyecto, ejecuta los dos comandos anteriores. Usa `--group all` para descargar ambos grupos. El programa verifica tamaños y checksums; los paquetes demasiado grandes y los pesos de DNABERT quedan enlazados a su fuente y se omiten automáticamente.
+Usa `--group all` para descargar los dos grupos predeterminados. Los archivos grandes opcionales suman unos 47.7 GB; para descargar todo lo disponible mediante el programa del proyecto, ejecuta `python3 NEW_2026_DATA/download_project_resources.py --group all --include-optional`. El programa intenta reanudar las descargas interrumpidas cuando la fuente lo permite; si no, reinicia ese archivo de forma segura. Reserva espacio adicional para descomprimir los archivos.
 
 ## Reading order for a computational project / Orden de lectura sugerido
 
@@ -50,6 +50,6 @@ Desde la carpeta raíz del proyecto, ejecuta los dos comandos anteriores. Usa `-
 
 ## Large resources not copied / Recursos grandes que no se copiaron
 
-- The DNABERT-Enhancer trained-model archive is about 10.7 GB. Its Zenodo DOI is recorded in the study guide; the paper supplement and code snapshot are local.
-- The AlphaGenome Atlas is roughly one petabyte, so its preprint and three supplementary files are local, while the Atlas itself is accessed through its official service/API.
-- The earlier selective MPRA download still omits the 516 MB raw-data archive, the 25.4 GB uniform-processing archive, and the 11.1 GB reference archive. See `download_manifest.tsv` for their URLs and checksums.
+- The optional MPRA/STARR raw, uniformly processed, and reference archives plus DNABERT model weights have direct URLs, sizes, and checksums in `download_manifest.tsv`; download them with `--group optional` or `--group all --include-optional`.
+- The AlphaGenome Atlas is roughly one petabyte, so it is not a practical bulk download. See the [official downloads portal](https://alphagenome.google/downloads) and [API repository](https://github.com/google-deepmind/alphagenome) for access options and current terms.
+- The complete project-download command retrieves about 51.1 GB in compressed files at the current manifest snapshot, before extraction. Check available disk space first.

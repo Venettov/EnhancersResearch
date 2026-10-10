@@ -8,7 +8,7 @@
 
 ## Recommended reading and limits
 
-Read the Nature paper for how the model was trained and evaluated, then the Atlas preprint for the genome-wide variant lookup resource. The Atlas uses predictions for possible single-letter changes; these remain predictions. Its full data release is roughly one petabyte and is not stored locally. Use the official service/API for specific regions or variants.
+Read the Nature paper for how the model was trained and evaluated, then the Atlas preprint for the genome-wide variant lookup resource. The Atlas uses predictions for possible single-letter changes; these remain predictions. Its full data release is roughly one petabyte, so it is not a practical bulk download alongside this repository. Use the [official downloads portal](https://alphagenome.google/downloads) or [service/API](https://github.com/google-deepmind/alphagenome) to see current access options for the data you need.
 
 ## Citation and links
 

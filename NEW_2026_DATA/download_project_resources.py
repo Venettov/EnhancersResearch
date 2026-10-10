@@ -43,6 +43,8 @@ def data_path(row: dict[str, str]) -> str | None:
     name = row.get("filename", "")
     if source.startswith("SCREEN ENCODE4"):
         return f"01_ENCODE4_SCREEN/{name}"
+    if source.startswith("DNABERT-Enhancer models"):
+        return f"06_DNABERT_ENHANCER_2026/MODEL_WEIGHTS/{name}"
     if source.startswith("Genome Biology 2025 MPRA/STARR"):
         return f"03_MPRA_STARR_CROSS_ASSAY_2025/{name}"
     if source.startswith("VISTA Enhancer Browser"):
@@ -101,20 +103,52 @@ def fetch(url: str, destination: Path, size_text: str, checksum: str) -> None:
         raise ValueError(f"No downloadable HTTP source URL for {destination.name}")
     destination.parent.mkdir(parents=True, exist_ok=True)
     partial = destination.with_name(destination.name + ".part")
-    request = Request(url, headers={"User-Agent": USER_AGENT})
+    if partial.is_file():
+        complete, _ = verify(partial, size_text, checksum)
+        if complete:
+            partial.replace(destination)
+            return
+        if size_text:
+            try:
+                if partial.stat().st_size >= int(size_text):
+                    partial.unlink()
+            except ValueError:
+                pass
+    offset = partial.stat().st_size if partial.is_file() else 0
+    headers = {"User-Agent": USER_AGENT}
+    if offset:
+        headers["Range"] = f"bytes={offset}-"
+    request = Request(url, headers=headers)
     try:
-        with urlopen(request, timeout=120) as response, partial.open("wb") as output:
-            while True:
-                block = response.read(BLOCK_SIZE)
-                if not block:
-                    break
-                output.write(block)
+        with urlopen(request, timeout=120) as response:
+            status = response.getcode() or 200
+            if offset and status == 206:
+                content_range = response.headers.get("Content-Range", "")
+                match = re.match(r"bytes\s+(\d+)-", content_range)
+                if not match or int(match.group(1)) != offset:
+                    raise ValueError("Server returned an unexpected range for the partial download")
+                mode = "ab"
+            elif status == 200:
+                # The source ignored Range; restart safely instead of appending
+                # a second copy of the file to the partial download.
+                mode = "wb"
+            elif status == 206 and not offset:
+                raise ValueError("Server returned partial content without a resume request")
+            else:
+                raise ValueError(f"Unexpected HTTP status {status} while downloading")
+            with partial.open(mode) as output:
+                while True:
+                    block = response.read(BLOCK_SIZE)
+                    if not block:
+                        break
+                    output.write(block)
         ok, reason = verify(partial, size_text, checksum)
         if not ok:
+            partial.unlink(missing_ok=True)
             raise ValueError(f"Downloaded file failed verification ({reason})")
         partial.replace(destination)
     except Exception:
-        partial.unlink(missing_ok=True)
+        # Keep incomplete transfers so a rerun can resume them with HTTP Range.
         raise
 
 
@@ -182,10 +216,37 @@ def run_papers() -> tuple[int, int]:
     return downloaded, errors
 
 
+def run_optional() -> tuple[int, int]:
+    """Download the source-linked archives omitted from the default groups."""
+    downloaded = errors = 0
+    optional_statuses = {"available_optional", "skipped_selective_download",
+                         "skipped_size_limit"}
+    for row in rows_from(DATA_MANIFEST):
+        if row.get("status", "").strip() not in optional_statuses:
+            continue
+        filename = row.get("filename", "").strip()
+        relative = data_path(row)
+        if not relative or not row.get("url") or not filename:
+            print(f"Cannot map optional manifest entry to a file: {row}", file=sys.stderr)
+            errors += 1
+            continue
+        try:
+            downloaded += download_row(
+                safe_destination(relative), row["url"], row.get("size_bytes", ""),
+                row.get("checksum", ""), filename,
+            )
+        except Exception as exc:
+            errors += 1
+            print(f"ERROR: {filename}: {exc}", file=sys.stderr)
+    return downloaded, errors
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--group", choices=("data", "papers", "all"), required=True,
-                        help="download selected datasets, papers/supporting files, or both")
+    parser.add_argument("--group", choices=("data", "papers", "optional", "all"), required=True,
+                        help="download selected data, papers, optional large archives, or all")
+    parser.add_argument("--include-optional", action="store_true",
+                        help="also fetch optional archives when --group is data, papers, or all")
     args = parser.parse_args()
     totals = [0, 0]
     if args.group in {"data", "all"}:
@@ -196,8 +257,12 @@ def main() -> int:
         print("== Papers and companion materials ==")
         result = run_papers()
         totals = [totals[0] + result[0], totals[1] + result[1]]
+    if args.group == "optional" or args.include_optional:
+        print("== Optional large source archives (about 47.7 GB) ==")
+        result = run_optional()
+        totals = [totals[0] + result[0], totals[1] + result[1]]
     print(f"\nFinished: {totals[0]} file(s) downloaded; {totals[1]} error(s).")
-    print("Oversized archives and model weights remain source-linked in the manifests.")
+    print("AlphaGenome Atlas is accessed separately through its official portal/API; it is not a bulk archive.")
     return 1 if totals[1] else 0
 
 
