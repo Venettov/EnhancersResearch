@@ -1,0 +1,33 @@
+# Finder and interrupted downloads
+.DS_Store
+**/.DS_Store
+*.part
+
+# Article copies and archived supplements/code are retrieved from source links.
+*.pdf
+*.zip
+*.tar
+*.tar.gz
+*.rda
+*.RData
+
+# Preserve the study folder skeleton while leaving downloaded artifacts local.
+NEW_2026_DATA/01_ENCODE4_SCREEN/GRCh38-cCREs.ELS.bed
+NEW_2026_DATA/02_LENTIMPRA_ENCODE_2025/ENCSR*/*
+!NEW_2026_DATA/02_LENTIMPRA_ENCODE_2025/ENCSR*/.gitkeep
+NEW_2026_DATA/03_MPRA_STARR_CROSS_ASSAY_2025/*.tar.gz
+NEW_2026_DATA/04_VISTA/*.csv
+NEW_2026_DATA/04_VISTA/*.tsv
+NEW_2026_DATA/04_VISTA/*.tsv.gz
+NEW_2026_DATA/04_VISTA/*.bed
+NEW_2026_DATA/05_HEMATOPOIESIS_MPRA/data_updated2.rda
+
+# Companion papers, supplements, and code snapshots are downloaded from manifests.
+NEW_2026_DATA/**/PAPERS/*
+!NEW_2026_DATA/**/PAPERS/.gitkeep
+NEW_2026_DATA/**/SUPPLEMENTARY/*
+!NEW_2026_DATA/**/SUPPLEMENTARY/.gitkeep
+NEW_2026_DATA/**/CODE/*
+!NEW_2026_DATA/**/CODE/.gitkeep
+NEW_2026_DATA/**/MODEL_WEIGHTS/*
+!NEW_2026_DATA/**/MODEL_WEIGHTS/.gitkeep

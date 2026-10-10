@@ -1,0 +1,69 @@
+source	filename	size_bytes	status	url	checksum	note
+SCREEN ENCODE4	GRCh38-cCREs.ELS.bed	94356641	already_present	https://downloads.wenglab.org/Registry-V4/GRCh38-cCREs.ELS.bed		Human candidate enhancer-like cCREs (pELS and dELS), GRCh38.
+Genome Biology 2025 MPRA/STARR	raw_data.tar.gz	516470602	skipped_selective_download	https://zenodo.org/api/records/16887276/files/raw_data.tar.gz/content	md5:40a4bdaf81200548c23a4cde2baafd3d	Omitted from this curated download; inspect archive contents before deciding whether it is needed.
+Genome Biology 2025 MPRA/STARR	lab_reported_data.tar.gz	41240741	downloaded	https://zenodo.org/api/records/16887276/files/lab_reported_data.tar.gz/content	73db5c1d3b7dae76806aeb6507865d69	Zenodo record 16887276
+Genome Biology 2025 MPRA/STARR	uniform_processed_data.tar.gz	25391016769	skipped_selective_download	https://zenodo.org/api/records/16887276/files/uniform_processed_data.tar.gz/content	md5:a8cde22dff50e3e4598e13ba387ae6c2	25.4 GB uniformly reprocessed bundle omitted from this initial download.
+Genome Biology 2025 MPRA/STARR	reference.tar.gz	11113725079	skipped_selective_download	https://zenodo.org/api/records/16887276/files/reference.tar.gz/content	md5:74dda81093c073c79597579f5838d5f4	11.1 GB reference bundle omitted; retrieve only if the analysis requires it.
+Genome Biology 2025 MPRA/STARR	qc.tar.gz	15052	downloaded	https://zenodo.org/api/records/16887276/files/qc.tar.gz/content	7b14f70588c56e6de6351d918084d12c	Zenodo record 16887276
+Genome Biology 2025 MPRA/STARR	output.tar.gz	1288505439	downloaded	https://zenodo.org/api/records/16887276/files/output.tar.gz/content	eb1dc7ffa661e9c39aaacf226b6a54dc	Zenodo record 16887276
+DNABERT-Enhancer models	(record files not downloaded)	10682051673	skipped_size_limit	https://doi.org/10.5281/zenodo.19157566		Record exceeds the 2 GiB download limit.
+VISTA Enhancer Browser	allelic.dictionary.csv	149	downloaded	https://gitlab.com/egsb-mfgl/vista-data/-/raw/main/allelic.dictionary.csv	503a0cb545301c3833e93cb6a339c50e	Official VISTA database export; GitLab main branch.
+VISTA Enhancer Browser	allelic_curation.tsv.gz	33256	downloaded	https://gitlab.com/egsb-mfgl/vista-data/-/raw/main/allelic_curation.tsv.gz	d296fbc90050b697b8d709d1060490a9	Official VISTA database export; GitLab main branch.
+VISTA Enhancer Browser	allelic_curation_munged.tsv.gz	77882	downloaded	https://gitlab.com/egsb-mfgl/vista-data/-/raw/main/allelic_curation_munged.tsv.gz	66dbd5cad3abf4c8e231e215526d1cc5	Official VISTA database export; GitLab main branch.
+VISTA Enhancer Browser	backbone.dictionary.tsv	267	downloaded	https://gitlab.com/egsb-mfgl/vista-data/-/raw/main/backbone.dictionary.tsv	cdfb95116d0a54a538bf2e4312390bd0	Official VISTA database export; GitLab main branch.
+VISTA Enhancer Browser	experiments.tsv.gz	6530396	downloaded	https://gitlab.com/egsb-mfgl/vista-data/-/raw/main/experiments.tsv.gz	da0ca3c701e0d0bd55972532c1834ce0	Official VISTA database export; GitLab main branch.
+VISTA Enhancer Browser	field_descriptions.tsv	4202	downloaded	https://gitlab.com/egsb-mfgl/vista-data/-/raw/main/field_descriptions.tsv	684d4f136a629f6d36699d96da510f63	Official VISTA database export; GitLab main branch.
+VISTA Enhancer Browser	images.tsv.gz	200211	downloaded	https://gitlab.com/egsb-mfgl/vista-data/-/raw/main/images.tsv.gz	bd453e982c4b8ca9d0b563dc5050bc95	Official VISTA database export; GitLab main branch.
+VISTA Enhancer Browser	locus.tsv.gz	121847	downloaded	https://gitlab.com/egsb-mfgl/vista-data/-/raw/main/locus.tsv.gz	fbd1e6c0641044deeff61dc34c1c154d	Official VISTA database export; GitLab main branch.
+VISTA Enhancer Browser	locus_ucsc_hg38.bed	318393	downloaded	https://gitlab.com/egsb-mfgl/vista-data/-/raw/main/locus_ucsc_hg38.bed	152837fc791e42e749aa19255d53cb17	Official VISTA database export; GitLab main branch.
+VISTA Enhancer Browser	locus_ucsc_mm10.bed	322868	downloaded	https://gitlab.com/egsb-mfgl/vista-data/-/raw/main/locus_ucsc_mm10.bed	aad2343bb028c9eacf13e980034075e5	Official VISTA database export; GitLab main branch.
+VISTA Enhancer Browser	tissue.dictionary.csv	334	downloaded	https://gitlab.com/egsb-mfgl/vista-data/-/raw/main/tissue.dictionary.csv	9d5f533a1a03151b578534c48844cad5	Official VISTA database export; GitLab main branch.
+Figshare hematopoiesis MPRA	data_updated2.rda	281521598	downloaded	https://ndownloader.figshare.com/files/53009321	47f294bb0c0670778f9e3547d6633846	Quantitative MPRA data across seven mouse HSPC states and K562; synthetic and genomic libraries.
+ENCODE ENCSR463IRX	ENCFF285OWV.tsv	2603082	already_present	https://www.encodeproject.org/files/ENCFF285OWV/@@download/ENCFF285OWV.tsv		
+ENCODE ENCSR463IRX	ENCFF772KIV.tsv	867982	already_present	https://www.encodeproject.org/files/ENCFF772KIV/@@download/ENCFF772KIV.tsv		
+ENCODE ENCSR463IRX	ENCFF707LRZ.tsv	866778	already_present	https://www.encodeproject.org/files/ENCFF707LRZ/@@download/ENCFF707LRZ.tsv		
+ENCODE ENCSR463IRX	ENCFF107ZPL.tsv	868257	already_present	https://www.encodeproject.org/files/ENCFF107ZPL/@@download/ENCFF107ZPL.tsv		
+ENCODE ENCSR463IRX	ENCFF910EDE.bed	188976	already_present	https://www.encodeproject.org/files/ENCFF910EDE/@@download/ENCFF910EDE.bed.gz		
+ENCODE ENCSR463IRX	ENCFF660JTU.bigBed	334071	already_present	https://www.encodeproject.org/files/ENCFF660JTU/@@download/ENCFF660JTU.bigBed		
+ENCODE ENCSR460LZI	ENCFF198MIP.tsv	682730	already_present	https://www.encodeproject.org/files/ENCFF198MIP/@@download/ENCFF198MIP.tsv		
+ENCODE ENCSR460LZI	ENCFF310PEZ.tsv	687903	already_present	https://www.encodeproject.org/files/ENCFF310PEZ/@@download/ENCFF310PEZ.tsv		
+ENCODE ENCSR460LZI	ENCFF783NIM.bigBed	272733	already_present	https://www.encodeproject.org/files/ENCFF783NIM/@@download/ENCFF783NIM.bigBed		
+ENCODE ENCSR460LZI	ENCFF246IDU.tsv	678122	already_present	https://www.encodeproject.org/files/ENCFF246IDU/@@download/ENCFF246IDU.tsv		
+ENCODE ENCSR460LZI	ENCFF006GZL.bed	139309	already_present	https://www.encodeproject.org/files/ENCFF006GZL/@@download/ENCFF006GZL.bed.gz		
+ENCODE ENCSR460LZI	ENCFF788GLA.tsv	2048820	already_present	https://www.encodeproject.org/files/ENCFF788GLA/@@download/ENCFF788GLA.tsv		
+ENCODE ENCSR022GQD	ENCFF131CMC.tsv	17195060	already_present	https://www.encodeproject.org/files/ENCFF131CMC/@@download/ENCFF131CMC.tsv		
+ENCODE ENCSR022GQD	ENCFF755BGY.tsv	51603558	already_present	https://www.encodeproject.org/files/ENCFF755BGY/@@download/ENCFF755BGY.tsv		
+ENCODE ENCSR022GQD	ENCFF637MLM.bigBed	5329075	already_present	https://www.encodeproject.org/files/ENCFF637MLM/@@download/ENCFF637MLM.bigBed		
+ENCODE ENCSR022GQD	ENCFF855WHD.tsv	17204989	already_present	https://www.encodeproject.org/files/ENCFF855WHD/@@download/ENCFF855WHD.tsv		
+ENCODE ENCSR022GQD	ENCFF774DYO.bed	2545246	already_present	https://www.encodeproject.org/files/ENCFF774DYO/@@download/ENCFF774DYO.bed.gz		
+ENCODE ENCSR022GQD	ENCFF986REZ.tsv	17203444	already_present	https://www.encodeproject.org/files/ENCFF986REZ/@@download/ENCFF986REZ.tsv		
+ENCODE ENCSR382BVV	ENCFF252GNM.tsv	69038070	already_present	https://www.encodeproject.org/files/ENCFF252GNM/@@download/ENCFF252GNM.tsv		
+ENCODE ENCSR382BVV	ENCFF859ZRH.tsv	22986002	already_present	https://www.encodeproject.org/files/ENCFF859ZRH/@@download/ENCFF859ZRH.tsv		
+ENCODE ENCSR382BVV	ENCFF631LHA.bed	3459202	already_present	https://www.encodeproject.org/files/ENCFF631LHA/@@download/ENCFF631LHA.bed.gz		
+ENCODE ENCSR382BVV	ENCFF103QME.bigBed	5977069	already_present	https://www.encodeproject.org/files/ENCFF103QME/@@download/ENCFF103QME.bigBed		
+ENCODE ENCSR382BVV	ENCFF563OUP.tsv	23036958	already_present	https://www.encodeproject.org/files/ENCFF563OUP/@@download/ENCFF563OUP.tsv		
+ENCODE ENCSR382BVV	ENCFF857LYJ.tsv	23015045	already_present	https://www.encodeproject.org/files/ENCFF857LYJ/@@download/ENCFF857LYJ.tsv		
+ENCODE ENCSR244FWB	ENCFF355PAE.tsv	6571786	already_present	https://www.encodeproject.org/files/ENCFF355PAE/@@download/ENCFF355PAE.tsv		
+ENCODE ENCSR244FWB	ENCFF476DYQ.tsv	6548618	already_present	https://www.encodeproject.org/files/ENCFF476DYQ/@@download/ENCFF476DYQ.tsv		
+ENCODE ENCSR244FWB	ENCFF145LDY.tsv	6600896	already_present	https://www.encodeproject.org/files/ENCFF145LDY/@@download/ENCFF145LDY.tsv		
+ENCODE ENCSR244FWB	ENCFF949GFZ.tsv	19721365	already_present	https://www.encodeproject.org/files/ENCFF949GFZ/@@download/ENCFF949GFZ.tsv		
+ENCODE ENCSR244FWB	ENCFF971UBA.bed	1173464	already_present	https://www.encodeproject.org/files/ENCFF971UBA/@@download/ENCFF971UBA.bed.gz		
+ENCODE ENCSR244FWB	ENCFF106XAW.bigBed	2648121	already_present	https://www.encodeproject.org/files/ENCFF106XAW/@@download/ENCFF106XAW.bigBed		
+ENCODE ENCSR405QCT	ENCFF433ECV.tsv	5994806	already_present	https://www.encodeproject.org/files/ENCFF433ECV/@@download/ENCFF433ECV.tsv		
+ENCODE ENCSR405QCT	ENCFF571TCB.bigBed	1590106	already_present	https://www.encodeproject.org/files/ENCFF571TCB/@@download/ENCFF571TCB.bigBed		
+ENCODE ENCSR405QCT	ENCFF511XTZ.tsv	5995778	already_present	https://www.encodeproject.org/files/ENCFF511XTZ/@@download/ENCFF511XTZ.tsv		
+ENCODE ENCSR405QCT	ENCFF009HVM.tsv	17986692	already_present	https://www.encodeproject.org/files/ENCFF009HVM/@@download/ENCFF009HVM.tsv		
+ENCODE ENCSR405QCT	ENCFF475FKV.bed	1085644	already_present	https://www.encodeproject.org/files/ENCFF475FKV/@@download/ENCFF475FKV.bed.gz		
+ENCODE ENCSR405QCT	ENCFF840GBW.tsv	5996043	already_present	https://www.encodeproject.org/files/ENCFF840GBW/@@download/ENCFF840GBW.tsv		
+ENCODE ENCSR203UFY	ENCFF035UJP.bigBed	1589443	already_present	https://www.encodeproject.org/files/ENCFF035UJP/@@download/ENCFF035UJP.bigBed		
+ENCODE ENCSR203UFY	ENCFF107FYL.tsv	5940377	already_present	https://www.encodeproject.org/files/ENCFF107FYL/@@download/ENCFF107FYL.tsv		
+ENCODE ENCSR203UFY	ENCFF068BWG.tsv	17817010	already_present	https://www.encodeproject.org/files/ENCFF068BWG/@@download/ENCFF068BWG.tsv		
+ENCODE ENCSR203UFY	ENCFF802FUV.bed	1085246	already_present	https://www.encodeproject.org/files/ENCFF802FUV/@@download/ENCFF802FUV.bed.gz		
+ENCODE ENCSR203UFY	ENCFF660VLW.tsv	5939546	already_present	https://www.encodeproject.org/files/ENCFF660VLW/@@download/ENCFF660VLW.tsv		
+ENCODE ENCSR203UFY	ENCFF010FKF.tsv	5937022	already_present	https://www.encodeproject.org/files/ENCFF010FKF/@@download/ENCFF010FKF.tsv		
+ENCODE ENCSR336MKI	ENCFF886EUI.tsv	5995592	already_present	https://www.encodeproject.org/files/ENCFF886EUI/@@download/ENCFF886EUI.tsv		
+ENCODE ENCSR336MKI	ENCFF357GSY.tsv	17981173	already_present	https://www.encodeproject.org/files/ENCFF357GSY/@@download/ENCFF357GSY.tsv		
+ENCODE ENCSR336MKI	ENCFF698PXZ.bigBed	1591864	already_present	https://www.encodeproject.org/files/ENCFF698PXZ/@@download/ENCFF698PXZ.bigBed		
+ENCODE ENCSR336MKI	ENCFF820ZLB.tsv	5992323	already_present	https://www.encodeproject.org/files/ENCFF820ZLB/@@download/ENCFF820ZLB.tsv		
+ENCODE ENCSR336MKI	ENCFF769REH.bed	1088965	already_present	https://www.encodeproject.org/files/ENCFF769REH/@@download/ENCFF769REH.bed.gz		
+ENCODE ENCSR336MKI	ENCFF221BYM.tsv	5993193	already_present	https://www.encodeproject.org/files/ENCFF221BYM/@@download/ENCFF221BYM.tsv		

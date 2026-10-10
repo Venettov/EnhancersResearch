@@ -1,0 +1,6 @@
+local_filename	title	doi_or_source
+1-s2.0-S0022283623004254-main.pdf	Improving Enhancer Identification with a Multi-Classifier Stacked Ensemble Model	https://doi.org/10.1016/j.jmb.2023.168314
+bioinformatics_32_3_362.pdf	iEnhancer-2L: a two-layer predictor for identifying enhancers and their strength by pseudo k-tuple nucleotide composition	https://doi.org/10.1093/bioinformatics/btv604
+bioinformatics_32_3_362_s1.zip	Supplementary materials for iEnhancer-2L	https://academic.oup.com/bioinformatics/article/32/3/362/1744331
+bioinformatics_34_22_3835.pdf	iEnhancer-EL: identifying enhancers and their strength with ensemble learning approach	https://doi.org/10.1093/bioinformatics/bty458
+srep38741.pdf	EnhancerPred: a predictor for discovering enhancers based on the combination and selection of multiple features	https://doi.org/10.1038/srep38741
