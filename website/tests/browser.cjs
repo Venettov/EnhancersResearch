@@ -6,6 +6,8 @@ const path = require('node:path');
 const base = (process.env.SITE_URL || 'http://127.0.0.1:8766/').replace(/\/?$/, '/');
 const screenshotDir = process.env.SCREENSHOT_DIR;
 const pages = ['index', 'research', 'publications', 'resources', 'notes', 'strategy'];
+const language = base.endsWith('/es/') ? 'es' : 'en';
+const root = language === 'es' ? base.slice(0, -3) : base;
 
 (async () => {
   const browser = await chromium.launch({ headless: true, ...(process.env.CHROME_PATH ? { executablePath: process.env.CHROME_PATH } : {}) });
@@ -20,12 +22,14 @@ const pages = ['index', 'research', 'publications', 'resources', 'notes', 'strat
       await page.setViewportSize({ width, height: 1000 });
       for (const slug of pages) {
         await page.goto(`${base}${slug}.html`);
+        assert.equal(await page.locator('html').getAttribute('lang'), language);
+        assert.equal(await page.locator('.language-switch a[aria-current="true"]').getAttribute('data-language'), language);
         assert.equal(await page.locator('h1').count(), 1);
         assert(await page.locator('h1').isVisible());
         const dimensions = await page.evaluate(() => ({ scroll: document.documentElement.scrollWidth, client: document.documentElement.clientWidth }));
         assert(dimensions.scroll <= dimensions.client + 1, `${slug} overflows at ${width}px: ${JSON.stringify(dimensions)}`);
         if (screenshotDir && [1440, 390].includes(width)) {
-          await page.screenshot({ path: path.join(screenshotDir, `${slug}-${width}.png`), fullPage: slug !== 'strategy' });
+          await page.screenshot({ path: path.join(screenshotDir, `${language}-${slug}-${width}.png`), fullPage: slug !== 'strategy' });
         }
       }
     }
@@ -38,6 +42,7 @@ const pages = ['index', 'research', 'publications', 'resources', 'notes', 'strat
       await page.locator(`[data-filter="${type}"]`).click();
       assert.equal(await visibleCount(), count);
       assert.equal(await page.locator(`[data-filter="${type}"]`).getAttribute('aria-pressed'), 'true');
+      assert.equal(await page.locator('#publication-count').textContent(), language === 'es' ? `${count} de 8 trabajos recopilados` : `${count} of 8 collected works`);
     }
     await page.locator('[data-filter="all"]').click();
     await page.locator('#publication-search').fill('Fromel');
@@ -100,9 +105,24 @@ const pages = ['index', 'research', 'publications', 'resources', 'notes', 'strat
     assert.equal(await fallback.locator('[data-publication]:visible').count(), 8);
     assert(await fallback.locator('.primary-nav').isVisible());
     assert.equal(await fallback.locator('[data-publication-tools]').isVisible(), false);
+    await fallback.locator(`[data-language="${language === 'es' ? 'en' : 'es'}"]`).click();
+    assert.equal(await fallback.locator('html').getAttribute('lang'), language === 'es' ? 'en' : 'es', 'Language switching works without JavaScript');
+
+    // Language switching preserves both the document and the report section.
+    await page.goto(`${root}strategy.html#8-analysis-design`);
+    await page.locator('[data-language="es"]').click();
+    assert.equal(page.url(), `${root}es/strategy.html#8-analysis-design`);
+    assert.equal(await page.locator('html').getAttribute('lang'), 'es');
+    assert.equal(await page.locator('[id="8-analysis-design"]').textContent(), '8 Diseño del análisis');
+    await page.locator('[data-language="en"]').click();
+    assert.equal(page.url(), `${root}strategy.html#8-analysis-design`);
+    await page.goto(`${root}es/index.html`);
+    await page.locator('.menu-toggle').click();
+    await page.locator('.primary-nav a[href="research.html"]').click();
+    assert.equal(page.url(), `${root}es/research.html`, 'Navigation stays in the selected language');
     assert.deepEqual(errors, [], 'No page errors or local HTTP failures');
     await noJS.close();
-    console.log('PASS: six pages at four widths, publication search and filters, native disclosures, report anchors, mobile navigation, keyboard access, no-JavaScript reading, and no page errors');
+    console.log(`PASS (${language}): six pages at four widths, localized controls, search/filtering, language and anchor preservation, mobile/keyboard navigation, no-JavaScript switching, and no page errors`);
   } finally {
     await browser.close();
   }

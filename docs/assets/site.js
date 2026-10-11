@@ -1,4 +1,16 @@
 (() => {
+  // Real translated documents also work without JavaScript. Preserve a reader's
+  // current section when following the switch, including in a new browser tab.
+  const languageLinks = [...document.querySelectorAll('[data-language]')];
+  const syncLanguageAnchors = () => {
+    for (const link of languageLinks) {
+      const url = new URL(link.href);
+      url.hash = location.hash;
+      link.href = url.href;
+    }
+  };
+  syncLanguageAnchors();
+  window.addEventListener('hashchange', syncLanguageAnchors);
   const menu = document.querySelector('.menu-toggle');
   const nav = document.querySelector('.primary-nav');
   if (menu && nav) {
@@ -33,7 +45,9 @@
       if (visible) count++;
     }
     for (const filter of filters) filter.setAttribute('aria-pressed', String(filter.dataset.filter === selected));
-    document.getElementById('publication-count').textContent = `${count} of ${items.length} collected works`;
+    document.getElementById('publication-count').textContent = document.documentElement.lang === 'es'
+      ? `${count} de ${items.length} trabajos recopilados`
+      : `${count} of ${items.length} collected works`;
     document.getElementById('publication-empty').hidden = count !== 0;
   };
   controls.hidden = false;
