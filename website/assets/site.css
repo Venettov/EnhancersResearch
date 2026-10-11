@@ -16,6 +16,7 @@
 @media print{body{font-size:11pt;background:white;color:black}.utility-bar,.site-header,.site-footer,.hero-art,.project-sidebar,.report-toc,.publication-tools,.skip-link{display:none!important}.container{width:100%}.hero,.page-intro{background:white;color:black;border-bottom:1px solid #aaa}.hero-grid{display:block;min-height:0;padding:0}.hero p:not(.eyebrow),.hero .eyebrow{color:black}.hero h1,.page-intro h1{font-size:30pt}.main-content{padding-block:20px}.two-column,.report-layout{display:block}.hero-link{display:none!important}a{color:black}.table-scroll{overflow:visible}table{font-size:9pt}h2,h3{break-after:avoid}.publication,.paper-card,.sidebar-panel{break-inside:avoid}.publication{grid-template-columns:45px 1fr}.publication-note{grid-column:2}.resource summary{break-after:avoid}.resource-body{display:block!important}.resource-body>div{margin-bottom:12px}.report-notice{border:1px solid #aaa;background:white}.publication[hidden]{display:none!important}}
 
 /* Language links replace the original utility-bar tagline. */
+.screen-reader-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);clip-path:inset(50%);white-space:nowrap;border:0}
 .brand .brand-dna{width:44px;height:auto;flex-shrink:0;object-fit:contain}
 @media(max-width:760px){.brand .brand-dna{width:35px}}
 @media(max-width:430px){.brand .brand-dna{width:32px}}

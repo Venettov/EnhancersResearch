@@ -1,5 +1,6 @@
 {
   "skip": "Saltar al contenido",
+  "external_link_hint": "Se abre en una pestaña nueva.",
   "repository": "Explorar el repositorio",
   "home_label": "Inicio de EnhancersResearch",
   "tagline": "Secuencia. Contexto. Función.",

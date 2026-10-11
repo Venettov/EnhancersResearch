@@ -4,14 +4,47 @@ import json
 import re
 import shutil
 from html import escape, unescape
+from html.parser import HTMLParser
 from pathlib import Path
 from string import Template
+from urllib.parse import urlsplit
 from glossary import LABELS, annotate, dialog_html, entries, glossary_html, reader_help
 
 SOURCE = Path(__file__).resolve().parent
 OUTPUT = SOURCE.parent / "docs"
 def read_json(path):
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def external_links_in_new_tabs(html):
+    """Update external anchors without rewriting page text or embedded JSON."""
+    offsets, changes = [0], []
+    for line in html.splitlines(keepends=True):
+        offsets.append(offsets[-1] + len(line))
+
+    class Links(HTMLParser):
+        def handle_starttag(self, tag, attrs):
+            values = dict(attrs)
+            url = urlsplit(values.get("href") or "")
+            if tag != "a" or not url.netloc or url.netloc == "venettov.github.io":
+                return
+            if url.scheme not in ("", "http", "https"):
+                return
+            values["target"] = "_blank"
+            values["rel"] = " ".join(sorted(set((values.get("rel") or "").split()) | {"noopener", "noreferrer"}))
+            descriptions = (values.get("aria-describedby") or "").split()
+            if "external-link-note" not in descriptions:
+                descriptions.append("external-link-note")
+            values["aria-describedby"] = " ".join(descriptions)
+            updated = "<a" + "".join(f' {key}="{escape(value, quote=True)}"' if value is not None else f" {key}" for key, value in values.items()) + ">"
+            line, column = self.getpos()
+            start = offsets[line - 1] + column
+            changes.append((start, start + len(self.get_starttag_text()), updated))
+
+    Links().feed(html)
+    for start, end, updated in reversed(changes):
+        html = html[:start] + updated + html[end:]
+    return html
 
 
 def localized_data(language):
@@ -116,6 +149,7 @@ def build():
             rendered = template.substitute(**ui, language=language, asset_base=asset_base, english_url=english_url, spanish_url=spanish_url, language_switch=language_switch(language, english_url, spanish_url, ui), title=escape(title), description=escape(description, quote=True), body_class=f"page-{slug}", navigation=nav, intro=intro, content=content, glossary_title=glossary_ui["title"], glossary_dialog=dialog_html(language), glossary_payload=glossary_payload)
             if slug == "strategy":
                 rendered = rendered.replace('class="nav-report"', 'class="nav-report" aria-current="page"')
+            rendered = external_links_in_new_tabs(rendered)
             (destination / f"{slug}.html").write_text(rendered, encoding="utf-8")
     (OUTPUT / ".nojekyll").write_text("")
     print(f"Built 14 pages in {OUTPUT} (English and Spanish, including the glossary)")
