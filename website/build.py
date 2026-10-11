@@ -6,6 +6,7 @@ import shutil
 from html import escape, unescape
 from pathlib import Path
 from string import Template
+from glossary import LABELS, annotate, dialog_html, entries, glossary_html, reader_help
 
 SOURCE = Path(__file__).resolve().parent
 OUTPUT = SOURCE.parent / "docs"
@@ -79,17 +80,22 @@ def build():
     for directory in ("assets", "data"):
         shutil.copytree(SOURCE / directory, OUTPUT / directory, dirs_exist_ok=True)
     english_ui = read_json(SOURCE / "i18n/en.json")
+    glossary = read_json(SOURCE / "glossary.json")
     for language in ("en", "es"):
         ui = english_ui if language == "en" else read_json(SOURCE / f"i18n/{language}/ui.json")
         assert ui.keys() == english_ui.keys(), "Incomplete interface translation"
         assert ui["pages"].keys() == english_ui["pages"].keys(), "Incomplete page metadata translation"
         data = localized_data(language)
+        terms = entries(glossary, language, data["publications"])
+        glossary_ui = LABELS[language]
+        pages = {**ui["pages"], "glossary": [glossary_ui["title"], glossary_ui["description"]]}
+        glossary_payload = json.dumps({"terms": terms, "ui": glossary_ui}, ensure_ascii=False).replace("<", "\\u003c")
         asset_base = "" if language == "en" else "../"
         page_source = SOURCE / "pages" if language == "en" else SOURCE / f"i18n/{language}/pages"
         destination = OUTPUT if language == "en" else OUTPUT / language
         destination.mkdir(exist_ok=True)
-        for slug, (title, description) in ui["pages"].items():
-            content = (page_source / f"{slug}.html").read_text()
+        for slug, (title, description) in pages.items():
+            content = glossary_html(terms, language) if slug == "glossary" else (page_source / f"{slug}.html").read_text()
             if slug == "publications":
                 content = Template(content).substitute(publications=publications_html(data["publications"], ui))
             elif slug == "resources":
@@ -101,15 +107,18 @@ def build():
                 content = f'<div class="report-layout"><article class="report-body">{notice}{content}</article><aside class="report-toc" aria-label="{ui["report_contents"]}"><h2>{ui["in_report"]}</h2><ol>{toc}</ol><a class="text-link" href="#main">{ui["back_top"]} ↑</a></aside></div>'
             if language != "en":
                 content = content.replace('href="data/', 'href="../data/')
-            nav = ''.join(f'<a href="{name}.html"' + (' aria-current="page"' if name == slug else '') + f'>{escape(label)}</a>' for name, (label, _) in ui["pages"].items() if name != "strategy")
+            if slug != "glossary":
+                content = reader_help(language) + annotate(content, terms, language)
+            nav = ''.join(f'<a href="{name}.html"' + (' aria-current="page"' if name == slug else '') + f'>{escape(label)}</a>' for name, (label, _) in pages.items() if name != "strategy")
             english_url = f"{asset_base}{slug}.html"
             spanish_url = f"es/{slug}.html" if language == "en" else f"{slug}.html"
-            rendered = template.substitute(**ui, language=language, asset_base=asset_base, english_url=english_url, spanish_url=spanish_url, language_switch=language_switch(language, english_url, spanish_url, ui), title=escape(title), description=escape(description, quote=True), body_class=f"page-{slug}", navigation=nav, intro=intro_html(slug, title, description, ui, language, asset_base), content=content)
+            intro = annotate(intro_html(slug, title, description, ui, language, asset_base), terms, language)
+            rendered = template.substitute(**ui, language=language, asset_base=asset_base, english_url=english_url, spanish_url=spanish_url, language_switch=language_switch(language, english_url, spanish_url, ui), title=escape(title), description=escape(description, quote=True), body_class=f"page-{slug}", navigation=nav, intro=intro, content=content, glossary_title=glossary_ui["title"], glossary_dialog=dialog_html(language), glossary_payload=glossary_payload)
             if slug == "strategy":
                 rendered = rendered.replace('class="nav-report"', 'class="nav-report" aria-current="page"')
             (destination / f"{slug}.html").write_text(rendered, encoding="utf-8")
     (OUTPUT / ".nojekyll").write_text("")
-    print(f"Built 12 pages in {OUTPUT} (English and Spanish)")
+    print(f"Built 14 pages in {OUTPUT} (English and Spanish, including the glossary)")
 
 
 if __name__ == "__main__":
