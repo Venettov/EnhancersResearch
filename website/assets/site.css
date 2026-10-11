@@ -51,6 +51,6 @@ a.term-link:hover{background:#dceee8;color:#153c45!important;text-decoration-sty
 @keyframes research-float{0%,100%{transform:translateY(-3px)}50%{transform:translateY(3px)}}
 @keyframes research-breathe{0%,100%{transform:scale(1);opacity:.85}50%{transform:scale(1.045);opacity:1}}
 @media(max-width:760px){.hero-visual{max-width:520px;justify-self:center;margin-top:10px}.hero-visual figcaption{padding-inline:0}.hero-visual figcaption strong{font-size:17px}}
-@media(max-width:430px){.hero-visual figcaption{flex-wrap:wrap;gap:12px}.hero-visual figcaption strong{font-size:18px}.motion-toggle{font-size:11px}}
+@media(max-width:430px){.research-animation .visual-stage-labels{font-size:19px;letter-spacing:.5px}.research-animation .context-cells{font-size:18px}.research-animation>text{font-size:16px}.hero-visual figcaption{flex-wrap:wrap;gap:12px}.hero-visual figcaption strong{font-size:18px}.motion-toggle{font-size:11px}}
 @media(prefers-reduced-motion:reduce){.hero-visual *{animation:none!important}}
 @media print{.hero-visual{display:none!important}}
