@@ -82,6 +82,9 @@ for path, document in documents.items():
 
 for path in ROOT.rglob("*"):
     if path.is_file():
+        # Binary image assets do not contain website text or portable links.
+        if path.suffix.lower() == ".gif":
+            continue
         content = path.read_text()
         if re.search(r"file://|/Users/|/home/|localhost:|127\.0\.0\.1:", content):
             errors.append(f"{path.relative_to(ROOT)}: local-machine reference in website")
