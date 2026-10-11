@@ -33,6 +33,8 @@ The English/Spanish switch occupies the top-left utility bar and links to the sa
 
 Dotted-underlined terms throughout the original six pages open a native modal dialog with a definition, its relevance to the project, and supporting links. Escape, the close button, or the backdrop dismiss it; focus returns to the selected term without moving the reading position. The complete glossary is a seventh page in each language, with accent-insensitive search and topic filtering. Static term links reach the corresponding glossary entry when JavaScript or modal support is unavailable, and modified clicks retain normal link behavior. Definitions are bundled locally; no external lookup service is needed. External reference pages and papers retain their original language.
 
+External source links open in a new tab, including references generated inside glossary popups. Internal navigation, language changes, and links to collected-paper cards stay in the current tab. External links include `noopener noreferrer` and a localized screen-reader description of the new-tab behavior; static links also work without JavaScript.
+
 ## Checks
 
 `site-checks.yml` rebuilds and validates all fourteen pages, every local link/fragment, language-switch destinations, language metadata, portable asset paths, JSON, and inventory counts. It verifies that the report translation retains the original section anchors, citations, tables, paragraphs, and numerical facts. It also checks glossary translation completeness, reference IDs, term destinations, and safe annotation of prose, and verifies that committed generated pages match the source.

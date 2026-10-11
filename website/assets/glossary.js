@@ -20,6 +20,12 @@
         const a = document.createElement('a');
         a.href = item.url;
         a.textContent = item.label;
+        const destination = new URL(a.href);
+        if (['http:', 'https:'].includes(destination.protocol) && destination.origin !== location.origin) {
+          a.target = '_blank';
+          a.rel = 'noopener noreferrer';
+          a.setAttribute('aria-describedby', 'external-link-note');
+        }
         li.append(a);
         list.append(li);
       }
