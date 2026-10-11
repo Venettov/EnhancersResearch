@@ -29,6 +29,32 @@
     window.matchMedia('(min-width: 761px)').addEventListener('change', close);
   }
 
+  const visual = document.querySelector('[data-research-visual]');
+  if (visual) {
+    const toggle = visual.querySelector('[data-motion-toggle]');
+    const label = toggle.querySelector('[data-motion-label]');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let userPaused = false;
+    let inView = true;
+    const syncMotion = () => {
+      const paused = userPaused || reducedMotion.matches || document.hidden || !inView;
+      visual.dataset.motion = paused ? 'paused' : 'running';
+      toggle.hidden = reducedMotion.matches;
+      toggle.dataset.action = userPaused ? 'play' : 'pause';
+      label.textContent = userPaused ? toggle.dataset.play : toggle.dataset.pause;
+    };
+    toggle.addEventListener('click', () => { userPaused = !userPaused; syncMotion(); });
+    reducedMotion.addEventListener('change', syncMotion);
+    document.addEventListener('visibilitychange', syncMotion);
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(([entry]) => {
+        inView = entry.isIntersecting;
+        syncMotion();
+      }).observe(visual);
+    }
+    syncMotion();
+  }
+
   const controls = document.querySelector('[data-publication-tools]');
   if (!controls) return;
   const search = document.getElementById('publication-search');

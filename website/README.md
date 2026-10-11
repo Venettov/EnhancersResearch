@@ -24,6 +24,7 @@ Open `http://127.0.0.1:8766`. Stop the server with Ctrl-C. All page and asset li
 - `assets/`: styles, progressive-enhancement JavaScript, and original SVG illustrations.
 - `glossary.json`: 57 English/Spanish explanations, matching phrases, topic groups, and references. Each entry has a plain-language definition and project-specific context; collected-paper IDs resolve to the existing publication cards in the selected language.
 - `glossary.py`: localized glossary interface, static glossary pages, popup shell, and build-time term annotation. Annotation preserves prose and avoids existing links, headings, code, and controls. Edit the source glossary, then rebuild; do not hand-edit generated term links.
+- `hero.svg`: inline home-page illustration, with labels supplied by the English/Spanish interface files. CSS provides looping motion; the site script adds pause/play and stops motion outside the viewport or while the tab is hidden. Reduced-motion and no-JavaScript visitors receive a static diagram. The visual represents the proposed analysis, not experimental results.
 - `data/`: small provenance snapshots from the research workspace. Absolute local-machine paths have been removed. These are dated snapshots, not a live audit.
 - `../docs/`: generated, deployable output. Rebuild and commit it alongside source changes. Do not edit generated pages directly.
 
@@ -42,6 +43,8 @@ External source links open in a new tab, including references generated inside g
 For browser smoke tests, install Playwright in a development environment, start the preview server, and run `node website/tests/browser.cjs`. Repeat with `SITE_URL=http://127.0.0.1:8766/es/` for Spanish. The test accepts `SITE_URL` (default `http://127.0.0.1:8766/`), `CHROME_PATH` (optional installed Chromium executable), and `SCREENSHOT_DIR` (optional screenshot directory). Browser tests cover desktop/mobile overflow, scripts, navigation, localized search/filtering, resource disclosures, report anchors, keyboard behavior, and switching languages with and without JavaScript.
 
 Run `node website/tests/glossary.cjs` for each language with the same environment options. It checks cell-name explanations at four viewport widths, modal focus containment and restoration, Escape/close/backdrop/touch interactions, publication links, glossary search/topics/deep links, language changes, and the no-JavaScript reading fallback. Reference URLs were checked against the primary educational, cell-repository, and software-documentation sources on 11 October 2026; collected-study links reuse the existing publication records.
+
+Run `node website/tests/hero.cjs` with the same environment options and the English root `SITE_URL`; it covers both languages. It verifies visible animation, keyboard pause/play, reduced-motion preferences, offscreen pausing, responsive layout, and the static no-JavaScript fallback.
 
 ## Publication
 
