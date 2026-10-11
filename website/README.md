@@ -22,6 +22,8 @@ Open `http://127.0.0.1:8766`. Stop the server with Ctrl-C. All page and asset li
 - `i18n/en.json`: shared English interface text and page metadata.
 - `i18n/es/`: complete Spanish page copy, including the full report, interface strings, and publication/resource translations. Identifiers, file names, numerical values, and source links retain their original meaning. External publications and machine-readable audit files remain original research sources.
 - `assets/`: styles, progressive-enhancement JavaScript, and original SVG illustrations.
+- `glossary.json`: 57 English/Spanish explanations, matching phrases, topic groups, and references. Each entry has a plain-language definition and project-specific context; collected-paper IDs resolve to the existing publication cards in the selected language.
+- `glossary.py`: localized glossary interface, static glossary pages, popup shell, and build-time term annotation. Annotation preserves prose and avoids existing links, headings, code, and controls. Edit the source glossary, then rebuild; do not hand-edit generated term links.
 - `data/`: small provenance snapshots from the research workspace. Absolute local-machine paths have been removed. These are dated snapshots, not a live audit.
 - `../docs/`: generated, deployable output. Rebuild and commit it alongside source changes. Do not edit generated pages directly.
 
@@ -29,11 +31,15 @@ The foundational report retains its original date and scope. Later QC observatio
 
 The English/Spanish switch occupies the top-left utility bar and links to the same page in the other language. Spanish pages live under `docs/es/`; navigation stays in the chosen language. JavaScript preserves section anchors when switching, without redirecting shared URLs or requiring cookies. Both languages remain fully readable and switchable without JavaScript; JavaScript also adds the compact mobile menu and localized publication search/filtering. Resource sections use native HTML disclosure controls. The layout includes keyboard focus styles, a skip link, reduced-motion support, and print styles.
 
+Dotted-underlined terms throughout the original six pages open a native modal dialog with a definition, its relevance to the project, and supporting links. Escape, the close button, or the backdrop dismiss it; focus returns to the selected term without moving the reading position. The complete glossary is a seventh page in each language, with accent-insensitive search and topic filtering. Static term links reach the corresponding glossary entry when JavaScript or modal support is unavailable, and modified clicks retain normal link behavior. Definitions are bundled locally; no external lookup service is needed. External reference pages and papers retain their original language.
+
 ## Checks
 
-`site-checks.yml` rebuilds and validates all twelve pages, every local link/fragment, language-switch destinations, language metadata, portable asset paths, JSON, and inventory counts. It verifies that the report translation retains the original section anchors, citations, tables, paragraphs, and numerical facts, and checks that committed generated pages match the source.
+`site-checks.yml` rebuilds and validates all fourteen pages, every local link/fragment, language-switch destinations, language metadata, portable asset paths, JSON, and inventory counts. It verifies that the report translation retains the original section anchors, citations, tables, paragraphs, and numerical facts. It also checks glossary translation completeness, reference IDs, term destinations, and safe annotation of prose, and verifies that committed generated pages match the source.
 
 For browser smoke tests, install Playwright in a development environment, start the preview server, and run `node website/tests/browser.cjs`. Repeat with `SITE_URL=http://127.0.0.1:8766/es/` for Spanish. The test accepts `SITE_URL` (default `http://127.0.0.1:8766/`), `CHROME_PATH` (optional installed Chromium executable), and `SCREENSHOT_DIR` (optional screenshot directory). Browser tests cover desktop/mobile overflow, scripts, navigation, localized search/filtering, resource disclosures, report anchors, keyboard behavior, and switching languages with and without JavaScript.
+
+Run `node website/tests/glossary.cjs` for each language with the same environment options. It checks cell-name explanations at four viewport widths, modal focus containment and restoration, Escape/close/backdrop/touch interactions, publication links, glossary search/topics/deep links, language changes, and the no-JavaScript reading fallback. Reference URLs were checked against the primary educational, cell-repository, and software-documentation sources on 11 October 2026; collected-study links reuse the existing publication records.
 
 ## Publication
 

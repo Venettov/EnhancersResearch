@@ -2,12 +2,15 @@
 """Validate the deployable site, including project-subpath links and report anchors."""
 import json
 import re
+import sys
 from collections import Counter
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[2] / "docs"
+sys.path.insert(0, str(ROOT.parent / "website"))
+from glossary import LABELS, annotate, entries
 errors = []
 
 
@@ -18,10 +21,13 @@ class Document(HTMLParser):
         self.current, self.main = 0, 0
         self.language, self.language_links = None, {}
         self.tags, self.text = Counter(), []
+        self.term_links = []
         self.feed(path.read_text())
 
     def handle_starttag(self, tag, attrs):
         a = dict(attrs)
+        if "data-term" in a:
+            self.term_links.append(a)
         self.tags[tag] += 1
         if tag == "html":
             self.language = a.get("lang")
@@ -47,7 +53,7 @@ class Document(HTMLParser):
 
 
 documents = {path.resolve(): Document(path) for path in ROOT.rglob("*.html")}
-assert len(documents) == 12, "Expected six pages in both languages"
+assert len(documents) == 14, "Expected seven pages in both languages"
 for path, document in documents.items():
     if len(document.headings) != 1 or document.main != 1 or document.current != 1:
         errors.append(f"{path.name}: expected one h1, main, and current navigation item")
@@ -86,6 +92,41 @@ source = json.loads((ROOT.parent / "website/content.json").read_text())
 assert len(source["publications"]) == 8
 assert len(source["resources"]) == 7
 assert sum(record["count"] for record in source["resources"]) == 109
+glossary = json.loads((ROOT.parent / "website/glossary.json").read_text())
+term_ids = {term["id"] for term in glossary["terms"]}
+assert len(term_ids) == len(glossary["terms"]) == 57
+for term in glossary["terms"]:
+    assert re.fullmatch(r"[a-z0-9-]+", term["id"])
+    assert term["sources"] or term["papers"], f"No sources for {term['id']}"
+    assert all(key in glossary["sources"] for key in term["sources"])
+    assert all(p in {item["id"] for item in source["publications"]} for p in term["papers"])
+    for language in ("en", "es"):
+        assert term["category"] in LABELS[language]["categories"]
+        assert all(term[language].get(key) for key in ("name", "definition", "context", "aliases"))
+for language in ("en", "es"):
+    aliases = {}
+    for term in glossary["terms"]:
+        for alias in term[language]["aliases"]:
+            previous = aliases.setdefault(alias.casefold(), term["id"])
+            assert previous == term["id"], f"Ambiguous alias: {alias}"
+    localized = entries(glossary, language, source["publications"])
+    # Annotation must preserve wording, entities, controls, links and code.
+    untouched = '<a href="https://example.com/HepG2">HepG2 DNA</a><code>MPRA</code><button>K562</button><summary>WTC11</summary><h2>HepG2</h2>'
+    assert annotate(untouched, localized, language) == untouched
+    sample = '<p title="HepG2">HepG2 &amp; K562, WTC11. lentiMPRA; MPRA; notMPRA; DNABERT-Enhancer.</p>'
+    annotated = annotate(sample, localized, language)
+    assert annotated.count('data-term=') == 6
+    assert 'data-term="lentimpra"' in annotated and 'data-term="dnabert"' in annotated
+    assert re.sub(r'<a class="term-link"[^>]+>(.*?)</a>', r'\1', annotated) == sample
+for document in documents.values():
+    for link in document.term_links:
+        assert link["data-term"] in term_ids
+        assert link["href"] == f'glossary.html#term-{link["data-term"]}'
+        assert link.get("aria-label")
+    if document.path.stem != "glossary":
+        assert document.term_links, f"No explanations in {document.path}"
+    else:
+        assert {f"term-{term}" for term in term_ids} <= set(document.ids)
 for path in ROOT.glob("*.html"):
     english = documents[path.resolve()]
     spanish = documents[(ROOT / "es" / path.name).resolve()]
@@ -106,4 +147,4 @@ numbers = lambda doc: Counter(re.findall(r"\d+(?:[.,]\d+)*", " ".join(doc.text))
 assert numbers(english_report) == numbers(spanish_report), "Report numerical facts differ between languages"
 if errors:
     raise SystemExit("\n".join(errors))
-print("PASS: 12 localized pages; links, fragments, language switches, metadata, collections, and report structure/numerical parity")
+print("PASS: 14 localized pages; 57 sourced bilingual explanations; safe annotation; links, fragments, language switches, collections, and report structure/numerical parity")

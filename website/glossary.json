@@ -1,0 +1,1858 @@
+{
+  "sources": {
+    "hepg2": {
+      "url": "https://www.atcc.org/products/hb-8065",
+      "en": "ATCC · HepG2 cell-line record",
+      "es": "ATCC · ficha de la línea HepG2"
+    },
+    "k562": {
+      "url": "https://www.atcc.org/products/ccl-243",
+      "en": "ATCC · K-562 cell-line record",
+      "es": "ATCC · ficha de la línea K-562"
+    },
+    "wtc11": {
+      "url": "https://catalog.coriell.org/0/Sections/Search/Sample_Detail.aspx?Product=CC&Ref=GM25256",
+      "en": "Coriell · WTC-11 / GM25256",
+      "es": "Coriell · WTC-11 / GM25256"
+    },
+    "nhgri": {
+      "url": "https://www.genome.gov/genetics-glossary",
+      "en": "NHGRI · genetics glossary",
+      "es": "NHGRI · glosario de genética (en inglés)"
+    },
+    "dna": {
+      "url": "https://www.genome.gov/genetics-glossary/Deoxyribonucleic-Acid",
+      "en": "NHGRI · DNA",
+      "es": "NHGRI · ADN (en inglés)"
+    },
+    "rna": {
+      "url": "https://www.genome.gov/genetics-glossary/Ribonucleic-Acid-RNA",
+      "en": "NHGRI · RNA",
+      "es": "NHGRI · ARN (en inglés)"
+    },
+    "gene": {
+      "url": "https://www.genome.gov/genetics-glossary/Gene",
+      "en": "NHGRI · gene",
+      "es": "NHGRI · gen (en inglés)"
+    },
+    "genome": {
+      "url": "https://www.genome.gov/genetics-glossary/Genome",
+      "en": "NHGRI · genome",
+      "es": "NHGRI · genoma (en inglés)"
+    },
+    "promoter": {
+      "url": "https://www.genome.gov/genetics-glossary/Promoter",
+      "en": "NHGRI · promoter",
+      "es": "NHGRI · promotor (en inglés)"
+    },
+    "expression": {
+      "url": "https://www.genome.gov/genetics-glossary/Gene-Expression",
+      "en": "NHGRI · gene expression",
+      "es": "NHGRI · expresión génica (en inglés)"
+    },
+    "chromatin": {
+      "url": "https://www.genome.gov/genetics-glossary/Chromatin",
+      "en": "NHGRI · chromatin",
+      "es": "NHGRI · cromatina (en inglés)"
+    },
+    "allele": {
+      "url": "https://www.genome.gov/genetics-glossary/Allele",
+      "en": "NHGRI · allele",
+      "es": "NHGRI · alelo (en inglés)"
+    },
+    "locus": {
+      "url": "https://www.genome.gov/genetics-glossary/Locus",
+      "en": "NHGRI · locus",
+      "es": "NHGRI · locus (en inglés)"
+    },
+    "transcription": {
+      "url": "https://www.genome.gov/genetics-glossary/Transcription",
+      "en": "NHGRI · transcription",
+      "es": "NHGRI · transcripción (en inglés)"
+    },
+    "encode": {
+      "url": "https://www.encodeproject.org/help/data-organization/",
+      "en": "ENCODE · experiments and replicates",
+      "es": "ENCODE · experimentos y réplicas (en inglés)"
+    },
+    "screen": {
+      "url": "https://screen.encodeproject.org/",
+      "en": "SCREEN · regulatory-element browser",
+      "es": "SCREEN · explorador de elementos reguladores"
+    },
+    "vista": {
+      "url": "https://enhancer.lbl.gov/",
+      "en": "VISTA · enhancer browser",
+      "es": "VISTA · explorador de potenciadores"
+    },
+    "assembly": {
+      "url": "https://www.ncbi.nlm.nih.gov/grc/help/definitions/",
+      "en": "Genome Reference Consortium · assembly terms",
+      "es": "Genome Reference Consortium · términos de ensamblaje (en inglés)"
+    },
+    "metrics": {
+      "url": "https://scikit-learn.org/stable/modules/model_evaluation.html",
+      "en": "scikit-learn · prediction metrics",
+      "es": "scikit-learn · métricas de predicción (en inglés)"
+    },
+    "leakage": {
+      "url": "https://scikit-learn.org/stable/common_pitfalls.html#data-leakage",
+      "en": "scikit-learn · data leakage",
+      "es": "scikit-learn · fuga de información (en inglés)"
+    },
+    "correlation": {
+      "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.spearmanr.html",
+      "en": "SciPy · rank correlation",
+      "es": "SciPy · correlación de rangos (en inglés)"
+    },
+    "alphagenome": {
+      "url": "https://deepmind.google/science/alphagenome/",
+      "en": "Google DeepMind · AlphaGenome",
+      "es": "Google DeepMind · AlphaGenome"
+    },
+    "preprint": {
+      "url": "https://www.biorxiv.org/about-biorxiv",
+      "en": "bioRxiv · about preprints",
+      "es": "bioRxiv · sobre los preprints (en inglés)"
+    }
+  },
+  "terms": [
+    {
+      "id": "hepg2",
+      "category": "cells",
+      "en": {
+        "name": "HepG2",
+        "aliases": [
+          "HepG2",
+          "Hep G2"
+        ],
+        "definition": "A human cell line grown in the laboratory that originally came from a liver tumor. It retains some liver-related features, but it is not a normal liver or a whole organ.",
+        "context": "The same DNA pieces are tested in HepG2 and two other cell lines to see how their measured activity changes with the cellular setting."
+      },
+      "es": {
+        "name": "HepG2",
+        "aliases": [
+          "HepG2",
+          "Hep G2"
+        ],
+        "definition": "Una línea de células humanas cultivadas en el laboratorio que procede de un tumor de hígado. Conserva algunas características del hígado, pero no equivale a un hígado normal ni a un órgano completo.",
+        "context": "Se prueban los mismos fragmentos de ADN en HepG2 y otras dos líneas para observar cómo cambia su actividad según el entorno celular."
+      },
+      "sources": [
+        "hepg2"
+      ],
+      "papers": [
+        "P02"
+      ]
+    },
+    {
+      "id": "k562",
+      "category": "cells",
+      "en": {
+        "name": "K562",
+        "aliases": [
+          "K562",
+          "K-562"
+        ],
+        "definition": "A human cell line originally obtained from a person with chronic myeloid leukemia, a cancer affecting blood-forming cells. Researchers grow it in the laboratory to study blood-related biology.",
+        "context": "It is one of the three settings in our first comparison and the shared cell line in several assay-comparison datasets. It does not represent every kind of blood cell."
+      },
+      "es": {
+        "name": "K562",
+        "aliases": [
+          "K562",
+          "K-562"
+        ],
+        "definition": "Una línea de células humanas obtenida originalmente de una persona con leucemia mieloide crónica, un cáncer que afecta a las células que forman la sangre. Se cultiva en el laboratorio para estudiar procesos relacionados con la sangre.",
+        "context": "Es uno de los tres entornos de nuestra primera comparación y aparece en varios conjuntos de datos. No representa todos los tipos de células sanguíneas."
+      },
+      "sources": [
+        "k562"
+      ],
+      "papers": [
+        "P02",
+        "P03"
+      ]
+    },
+    {
+      "id": "wtc11",
+      "category": "cells",
+      "en": {
+        "name": "WTC11",
+        "aliases": [
+          "WTC11",
+          "WTC-11"
+        ],
+        "definition": "A human induced pluripotent stem-cell line. Adult skin cells were reprogrammed into a state from which they can develop into many cell types under suitable conditions. These are not embryonic stem cells.",
+        "context": "The study tests DNA in WTC11 cells in their stem-cell state, providing a different setting from the two tumor-derived lines."
+      },
+      "es": {
+        "name": "WTC11",
+        "aliases": [
+          "WTC11",
+          "WTC-11"
+        ],
+        "definition": "Una línea humana de células madre pluripotentes inducidas. Se reprogramaron células adultas de la piel para que pudieran convertirse en muchos tipos celulares bajo condiciones adecuadas. No son células madre embrionarias.",
+        "context": "El estudio prueba ADN en WTC11 en su estado de célula madre, un entorno diferente al de las dos líneas procedentes de tumores."
+      },
+      "sources": [
+        "wtc11"
+      ],
+      "papers": [
+        "P02"
+      ]
+    },
+    {
+      "id": "cell-line",
+      "category": "cells",
+      "en": {
+        "name": "Cell line",
+        "aliases": [
+          "cell line",
+          "cell lines"
+        ],
+        "definition": "A population of cells maintained and grown in a laboratory. A named line gives researchers a repeatable experimental system, although its properties can change during culture.",
+        "context": "HepG2, K562, and WTC11 are named cell lines. Results in them need further evidence before being generalized to people or whole tissues."
+      },
+      "es": {
+        "name": "Línea celular",
+        "aliases": [
+          "línea celular",
+          "líneas celulares"
+        ],
+        "definition": "Una población de células que se mantiene y cultiva en el laboratorio. Una línea con nombre permite repetir experimentos, aunque sus características pueden cambiar durante el cultivo.",
+        "context": "HepG2, K562 y WTC11 son líneas celulares. Sus resultados requieren más evidencia antes de generalizarse a personas o tejidos completos."
+      },
+      "sources": [
+        "hepg2",
+        "k562",
+        "wtc11"
+      ],
+      "papers": [
+        "P02"
+      ]
+    },
+    {
+      "id": "cell-state",
+      "category": "cells",
+      "en": {
+        "name": "Cellular context / cell state",
+        "aliases": [
+          "cellular contexts",
+          "cellular context",
+          "cell context",
+          "cell states",
+          "cell state"
+        ],
+        "definition": "The biological setting in which DNA is read: the kind of cell, its stage of development, and which control molecules are available. Cells with similar DNA can use different parts of it.",
+        "context": "Our central question is whether a tested DNA fragment produces similar or different activity in different cellular settings."
+      },
+      "es": {
+        "name": "Contexto / estado celular",
+        "aliases": [
+          "contextos celulares",
+          "contexto celular",
+          "estados celulares",
+          "estado celular"
+        ],
+        "definition": "El entorno biológico en el que se lee el ADN: el tipo de célula, su etapa de desarrollo y las moléculas reguladoras disponibles. Células con ADN parecido pueden utilizar partes distintas.",
+        "context": "Nuestra pregunta central es si un fragmento de ADN probado produce una actividad similar o diferente según el entorno celular."
+      },
+      "sources": [
+        "expression"
+      ],
+      "papers": [
+        "P02",
+        "P05"
+      ]
+    },
+    {
+      "id": "ipsc",
+      "category": "cells",
+      "en": {
+        "name": "Induced pluripotent stem cell (iPSC)",
+        "aliases": [
+          "iPSC",
+          "iPSCs",
+          "pluripotent stem cells",
+          "induced pluripotent stem cells"
+        ],
+        "definition": "An adult cell reprogrammed to a flexible state from which many body-cell types can develop. “Induced” means that researchers created that state; “pluripotent” refers to its developmental possibilities.",
+        "context": "WTC11 is this kind of laboratory cell line. Its regulatory activity is measured in a particular state, not in every cell type it could become."
+      },
+      "es": {
+        "name": "Célula madre pluripotente inducida (iPSC)",
+        "aliases": [
+          "iPSC",
+          "iPSCs",
+          "células madre pluripotentes",
+          "células madre pluripotentes inducidas"
+        ],
+        "definition": "Una célula adulta reprogramada a un estado flexible del que pueden surgir muchos tipos de células del cuerpo. «Inducida» indica que ese estado se generó en el laboratorio; «pluripotente» describe sus posibilidades de desarrollo.",
+        "context": "WTC11 es una línea de este tipo. Se mide su actividad en un estado concreto, no en todos los tipos celulares en los que podría convertirse."
+      },
+      "sources": [
+        "wtc11"
+      ],
+      "papers": [
+        "P02"
+      ]
+    },
+    {
+      "id": "dna",
+      "category": "basics",
+      "en": {
+        "name": "DNA",
+        "aliases": [
+          "DNA"
+        ],
+        "definition": "The molecule that stores much of a cell’s inherited information. Its sequence is written with four letters, A, C, G, and T. Some stretches encode products; others help control when that information is used.",
+        "context": "We study short DNA sequences that may help regulate genes, rather than changes to the proteins themselves."
+      },
+      "es": {
+        "name": "ADN",
+        "aliases": [
+          "ADN",
+          "DNA"
+        ],
+        "definition": "La molécula que almacena gran parte de la información hereditaria de una célula. Su secuencia se escribe con cuatro letras: A, C, G y T. Algunas regiones codifican productos; otras ayudan a controlar cuándo se utiliza esa información.",
+        "context": "Estudiamos secuencias cortas de ADN que podrían regular genes, en vez de cambios en las proteínas mismas."
+      },
+      "sources": [
+        "dna"
+      ],
+      "papers": []
+    },
+    {
+      "id": "rna",
+      "category": "basics",
+      "en": {
+        "name": "RNA",
+        "aliases": [
+          "RNA",
+          "mRNA"
+        ],
+        "definition": "A molecule made by copying information from DNA. Some RNA molecules carry instructions for making proteins; others perform different jobs. mRNA is the messenger type.",
+        "context": "Reporter experiments count RNA made from a test system as one way to measure the activity of a DNA fragment."
+      },
+      "es": {
+        "name": "ARN",
+        "aliases": [
+          "ARN",
+          "RNA",
+          "ARNm",
+          "mRNA"
+        ],
+        "definition": "Una molécula que se produce al copiar información del ADN. Algunas moléculas de ARN llevan instrucciones para fabricar proteínas; otras cumplen funciones distintas. El ARNm es el tipo mensajero.",
+        "context": "Los experimentos con reporteros cuentan el ARN producido en un sistema de prueba para medir la actividad de un fragmento de ADN."
+      },
+      "sources": [
+        "rna"
+      ],
+      "papers": [
+        "P02"
+      ]
+    },
+    {
+      "id": "gene",
+      "category": "basics",
+      "en": {
+        "name": "Gene",
+        "aliases": [
+          "genes",
+          "gene"
+        ],
+        "definition": "A stretch of DNA containing instructions for a functional product, such as an RNA or a protein. Different cells can use the same gene at different levels.",
+        "context": "Enhancers can affect when, where, and how strongly genes are used. A reporter test alone does not identify which natural gene an enhancer controls."
+      },
+      "es": {
+        "name": "Gen",
+        "aliases": [
+          "genes",
+          "gen"
+        ],
+        "definition": "Un tramo de ADN con instrucciones para producir un producto funcional, como un ARN o una proteína. Distintas células pueden utilizar un mismo gen en diferentes cantidades.",
+        "context": "Los potenciadores pueden influir en cuándo, dónde y cuánto se utiliza un gen. Un ensayo reportero por sí solo no identifica el gen natural que controla un potenciador."
+      },
+      "sources": [
+        "gene"
+      ],
+      "papers": [
+        "P02"
+      ]
+    },
+    {
+      "id": "genome",
+      "category": "basics",
+      "en": {
+        "name": "Genome",
+        "aliases": [
+          "genomes",
+          "genome",
+          "genomic"
+        ],
+        "definition": "The complete set of genetic material of an organism. It includes genes and the DNA between them, much of which does not encode proteins.",
+        "context": "A genome-wide study examines regions across the genome; it does not automatically test every region in every cell or condition."
+      },
+      "es": {
+        "name": "Genoma",
+        "aliases": [
+          "genomas",
+          "genoma",
+          "genómico",
+          "genómica",
+          "genómicos",
+          "genómicas"
+        ],
+        "definition": "El conjunto completo del material genético de un organismo. Incluye los genes y el ADN que hay entre ellos, gran parte del cual no codifica proteínas.",
+        "context": "Un estudio a escala del genoma examina regiones distribuidas por él; no implica probar cada región en todas las células o condiciones."
+      },
+      "sources": [
+        "genome"
+      ],
+      "papers": []
+    },
+    {
+      "id": "enhancer",
+      "category": "basics",
+      "en": {
+        "name": "Enhancer",
+        "aliases": [
+          "enhancers",
+          "enhancer"
+        ],
+        "definition": "A DNA region that can increase the use of a gene in an appropriate cellular setting. Think of a context-dependent volume control: it helps determine how much a gene is used, sometimes from far away along the DNA.",
+        "context": "We compare evidence for enhancer activity while keeping the cell type and experimental method clear. Activity in one test is not proof of activity everywhere."
+      },
+      "es": {
+        "name": "Potenciador (enhancer)",
+        "aliases": [
+          "potenciadores",
+          "potenciador",
+          "enhancers",
+          "enhancer"
+        ],
+        "definition": "Una región de ADN que puede aumentar el uso de un gen en un entorno celular adecuado. Se parece a un control de volumen que depende del contexto y puede actuar desde lejos en la secuencia de ADN.",
+        "context": "Comparamos evidencia de actividad manteniendo claros el tipo de célula y el método experimental. La actividad en una prueba no demuestra actividad en todas las situaciones."
+      },
+      "sources": [
+        "promoter"
+      ],
+      "papers": [
+        "P01",
+        "P02"
+      ]
+    },
+    {
+      "id": "promoter",
+      "category": "basics",
+      "en": {
+        "name": "Promoter",
+        "aliases": [
+          "promoters",
+          "promoter"
+        ],
+        "definition": "A DNA region where the machinery that copies DNA into RNA assembles to begin transcription. It is like a starting point for reading a gene.",
+        "context": "Reporter systems pair tested DNA with a promoter. The choice of promoter can influence the activity measured."
+      },
+      "es": {
+        "name": "Promotor",
+        "aliases": [
+          "promotores",
+          "promotor"
+        ],
+        "definition": "Una región de ADN donde se reúne la maquinaria que empieza a copiar ADN en ARN. Es como el punto de partida para leer un gen.",
+        "context": "Los sistemas reporteros combinan el ADN probado con un promotor. La elección de ese promotor puede influir en la actividad medida."
+      },
+      "sources": [
+        "promoter"
+      ],
+      "papers": [
+        "P03"
+      ]
+    },
+    {
+      "id": "gene-expression",
+      "category": "basics",
+      "en": {
+        "name": "Gene expression",
+        "aliases": [
+          "gene expression",
+          "genes are expressed"
+        ],
+        "definition": "The process of using a gene’s information to produce RNA and, for many genes, protein. Higher expression generally means more of the measured product in the stated setting.",
+        "context": "This project studies DNA that helps control expression. Reporter expression is a test-system readout, not automatically the expression of a natural target gene."
+      },
+      "es": {
+        "name": "Expresión génica",
+        "aliases": [
+          "expresión génica",
+          "expresión de genes",
+          "expresión de los genes",
+          "se expresan los genes"
+        ],
+        "definition": "El proceso de utilizar la información de un gen para producir ARN y, en muchos casos, proteína. Una expresión mayor suele indicar más cantidad del producto medido en ese entorno.",
+        "context": "Estudiamos ADN que ayuda a controlar la expresión. La expresión del reportero es una medida del sistema de prueba, no necesariamente la de un gen natural."
+      },
+      "sources": [
+        "expression"
+      ],
+      "papers": [
+        "P02"
+      ]
+    },
+    {
+      "id": "transcription",
+      "category": "basics",
+      "en": {
+        "name": "Transcription",
+        "aliases": [
+          "transcription",
+          "transcriptional"
+        ],
+        "definition": "The copying of a DNA sequence into RNA. It is an early step in using genetic information, and its rate is controlled by many molecules.",
+        "context": "Enhancers and promoters influence this process. Reporter RNA counts give us an experimental window into it."
+      },
+      "es": {
+        "name": "Transcripción",
+        "aliases": [
+          "transcripción",
+          "transcripcional",
+          "transcripcionales"
+        ],
+        "definition": "La copia de una secuencia de ADN en ARN. Es un paso inicial para utilizar la información genética y su velocidad depende de muchas moléculas reguladoras.",
+        "context": "Los potenciadores y promotores influyen en este proceso. Los recuentos de ARN del reportero permiten estudiarlo experimentalmente."
+      },
+      "sources": [
+        "transcription"
+      ],
+      "papers": [
+        "P02"
+      ]
+    },
+    {
+      "id": "transcription-factor",
+      "category": "basics",
+      "en": {
+        "name": "Transcription factor",
+        "aliases": [
+          "transcription factors",
+          "transcription factor",
+          "transcription-factor",
+          "TFs",
+          "TF"
+        ],
+        "definition": "A protein that helps control whether and how strongly DNA is copied into RNA. Many recognize particular DNA patterns, but their effects also depend on other molecules around them.",
+        "context": "Differences in these proteins help explain why a DNA fragment can behave differently in different cells."
+      },
+      "es": {
+        "name": "Factor de transcripción",
+        "aliases": [
+          "factores de transcripción",
+          "factor de transcripción",
+          "TFs",
+          "TF"
+        ],
+        "definition": "Una proteína que ayuda a controlar si el ADN se copia en ARN y con qué intensidad. Muchas reconocen patrones concretos del ADN, pero su efecto también depende de otras moléculas presentes.",
+        "context": "Las diferencias en estas proteínas ayudan a explicar por qué un fragmento de ADN puede comportarse de manera distinta según la célula."
+      },
+      "sources": [
+        "transcription"
+      ],
+      "papers": [
+        "P05"
+      ]
+    },
+    {
+      "id": "motif",
+      "category": "basics",
+      "en": {
+        "name": "Motif / regulatory grammar",
+        "aliases": [
+          "motifs",
+          "motif",
+          "regulatory grammar",
+          "binding sites",
+          "binding site"
+        ],
+        "definition": "A motif is a short recurring DNA pattern that may be recognized by a regulatory protein. “Regulatory grammar” asks how such patterns work together: their order, spacing, and combinations.",
+        "context": "A pattern match suggests a possible interaction; it does not prove that a protein binds there or that the sequence is active."
+      },
+      "es": {
+        "name": "Motivo / gramática reguladora",
+        "aliases": [
+          "motivos",
+          "motivo",
+          "gramática reguladora",
+          "sitios de unión",
+          "sitio de unión"
+        ],
+        "definition": "Un motivo es un patrón corto de ADN que puede reconocer una proteína reguladora. La «gramática reguladora» estudia cómo actúan juntos esos patrones: su orden, separación y combinación.",
+        "context": "Encontrar un patrón sugiere una posible interacción; no demuestra que una proteína se una allí ni que la secuencia esté activa."
+      },
+      "sources": [],
+      "papers": [
+        "P05"
+      ]
+    },
+    {
+      "id": "chromatin",
+      "category": "basics",
+      "en": {
+        "name": "Chromatin",
+        "aliases": [
+          "chromatin"
+        ],
+        "definition": "DNA together with the proteins that package and organize it inside the cell. This packaging affects how easily the DNA can be reached by other molecules.",
+        "context": "A DNA sequence tested in a reporter may have a different surrounding package from the same sequence at its natural location."
+      },
+      "es": {
+        "name": "Cromatina",
+        "aliases": [
+          "cromatina"
+        ],
+        "definition": "El ADN junto con las proteínas que lo empaquetan y organizan dentro de la célula. Ese empaquetamiento influye en la facilidad con la que otras moléculas pueden acceder al ADN.",
+        "context": "Una secuencia probada en un reportero puede tener un entorno diferente al de esa misma secuencia en su posición natural."
+      },
+      "sources": [
+        "chromatin"
+      ],
+      "papers": [
+        "P01",
+        "P03"
+      ]
+    },
+    {
+      "id": "accessibility",
+      "category": "basics",
+      "en": {
+        "name": "Chromatin accessibility",
+        "aliases": [
+          "chromatin accessibility",
+          "accessibility",
+          "accessible chromatin",
+          "open chromatin",
+          "ATAC-seq",
+          "DNase-seq"
+        ],
+        "definition": "How readily experimental probes can reach DNA within its packaging. ATAC-seq and DNase-seq are methods used to locate relatively accessible regions.",
+        "context": "Accessibility is a useful clue to possible regulation, but an accessible region is not automatically a confirmed enhancer."
+      },
+      "es": {
+        "name": "Accesibilidad de la cromatina",
+        "aliases": [
+          "accesibilidad de la cromatina",
+          "accesibilidad",
+          "cromatina abierta",
+          "cromatina accesible",
+          "ATAC-seq",
+          "DNase-seq"
+        ],
+        "definition": "La facilidad con la que sondas experimentales pueden alcanzar el ADN dentro de su empaquetamiento. ATAC-seq y DNase-seq son métodos para localizar regiones relativamente accesibles.",
+        "context": "La accesibilidad es una pista útil de posible regulación, pero una región accesible no es automáticamente un potenciador confirmado."
+      },
+      "sources": [],
+      "papers": [
+        "P01"
+      ]
+    },
+    {
+      "id": "histone-marks",
+      "category": "basics",
+      "en": {
+        "name": "Histone marks",
+        "aliases": [
+          "histone marks",
+          "histone modifications",
+          "H3K27ac",
+          "H3K4me3",
+          "H3K4me1"
+        ],
+        "definition": "Chemical modifications on the proteins around which DNA is packaged. Names such as H3K27ac identify a particular protein position and modification. Patterns of these marks can accompany different regulatory states.",
+        "context": "These are clues used to annotate DNA. A mark alone does not establish that a region functions as an enhancer in a particular experiment."
+      },
+      "es": {
+        "name": "Marcas de histonas",
+        "aliases": [
+          "marcas de histonas",
+          "modificaciones de histonas",
+          "H3K27ac",
+          "H3K4me3",
+          "H3K4me1"
+        ],
+        "definition": "Modificaciones químicas de las proteínas alrededor de las que se empaqueta el ADN. Nombres como H3K27ac indican una posición y una modificación concretas. Sus patrones pueden acompañar distintos estados reguladores.",
+        "context": "Son pistas para anotar el ADN. Una marca por sí sola no demuestra que una región funcione como potenciador en un experimento concreto."
+      },
+      "sources": [
+        "chromatin"
+      ],
+      "papers": [
+        "P01"
+      ]
+    },
+    {
+      "id": "variant",
+      "category": "basics",
+      "en": {
+        "name": "Genetic variant",
+        "aliases": [
+          "variants",
+          "variant",
+          "mutations",
+          "mutation",
+          "indels",
+          "single-nucleotide"
+        ],
+        "definition": "A difference in DNA sequence compared with another sequence. A difference can affect one letter or involve inserted or deleted letters. Many variants have little or no effect in a given setting.",
+        "context": "We may later examine whether a sequence change alters regulatory activity. A predicted effect does not establish a health consequence."
+      },
+      "es": {
+        "name": "Variante genética",
+        "aliases": [
+          "variantes",
+          "variante",
+          "mutaciones",
+          "mutación",
+          "indels"
+        ],
+        "definition": "Una diferencia en la secuencia de ADN respecto a otra secuencia. Puede afectar a una letra o incluir inserciones o eliminaciones de letras. Muchas variantes tienen poco o ningún efecto en un entorno dado.",
+        "context": "Más adelante podríamos estudiar si un cambio altera la actividad reguladora. Un efecto predicho no demuestra una consecuencia para la salud."
+      },
+      "sources": [
+        "nhgri"
+      ],
+      "papers": [
+        "P09"
+      ]
+    },
+    {
+      "id": "allele",
+      "category": "basics",
+      "en": {
+        "name": "Allele",
+        "aliases": [
+          "alleles",
+          "allele",
+          "allelic",
+          "allele-specific"
+        ],
+        "definition": "One version of a DNA sequence at a particular genomic location. Different versions may differ by one or more DNA letters.",
+        "context": "Comparing alleles asks whether changing the sequence changes a measurement while keeping the experimental setting comparable."
+      },
+      "es": {
+        "name": "Alelo",
+        "aliases": [
+          "alelos",
+          "alelo",
+          "alélica",
+          "alélico",
+          "alélicas",
+          "alélicos"
+        ],
+        "definition": "Una versión de una secuencia de ADN en una posición concreta del genoma. Las versiones pueden diferir en una o varias letras.",
+        "context": "Comparar alelos permite preguntar si un cambio de secuencia modifica una medida, manteniendo comparable el entorno experimental."
+      },
+      "sources": [
+        "allele"
+      ],
+      "papers": [
+        "P08"
+      ]
+    },
+    {
+      "id": "locus",
+      "category": "basics",
+      "en": {
+        "name": "Locus / genomic interval",
+        "aliases": [
+          "loci",
+          "locus",
+          "genomic intervals",
+          "genomic interval"
+        ],
+        "definition": "A locus is a location in the genome; loci is the plural. An interval is a stretch described by a chromosome and start/end coordinates, like an address range on a map.",
+        "context": "Two datasets may cover overlapping locations without testing exactly the same DNA fragment."
+      },
+      "es": {
+        "name": "Locus / intervalo genómico",
+        "aliases": [
+          "loci",
+          "locus",
+          "intervalos genómicos",
+          "intervalo genómico"
+        ],
+        "definition": "Un locus es una ubicación en el genoma; loci es el plural. Un intervalo es un tramo descrito por el cromosoma y las coordenadas de inicio y fin, como un rango de direcciones en un mapa.",
+        "context": "Dos conjuntos de datos pueden cubrir posiciones superpuestas sin probar exactamente el mismo fragmento de ADN."
+      },
+      "sources": [
+        "locus"
+      ],
+      "papers": [
+        "P03"
+      ]
+    },
+    {
+      "id": "genome-assembly",
+      "category": "basics",
+      "en": {
+        "name": "Genome assembly",
+        "aliases": [
+          "genome assembly",
+          "genome assemblies",
+          "GRCh38",
+          "hg38",
+          "hg19",
+          "liftover",
+          "liftOver",
+          "genomic coordinates"
+        ],
+        "definition": "A particular version of the reference DNA map used to assign positions to sequences. Coordinates from different versions are not directly interchangeable. LiftOver tools attempt to map positions between versions.",
+        "context": "Before comparing datasets, we must check that their genomic addresses refer to compatible reference maps."
+      },
+      "es": {
+        "name": "Ensamblaje del genoma",
+        "aliases": [
+          "ensamblaje del genoma",
+          "ensamblaje genómico",
+          "ensamblajes genómicos",
+          "GRCh38",
+          "hg38",
+          "hg19",
+          "liftover",
+          "liftOver",
+          "coordenadas genómicas"
+        ],
+        "definition": "Una versión concreta del mapa de referencia del ADN que se usa para asignar posiciones. Las coordenadas de versiones distintas no son directamente intercambiables. Herramientas como LiftOver intentan convertirlas entre versiones.",
+        "context": "Antes de comparar datos debemos comprobar que sus direcciones genómicas correspondan a mapas de referencia compatibles."
+      },
+      "sources": [
+        "assembly"
+      ],
+      "papers": []
+    },
+    {
+      "id": "assay",
+      "category": "experiments",
+      "en": {
+        "name": "Assay",
+        "aliases": [
+          "assays",
+          "assay"
+        ],
+        "definition": "An experimental test designed to measure something specific. Different tests can examine different aspects of the same biological process.",
+        "context": "A DNA fragment can receive different results when the test design, cell line, or measurement changes. We keep those differences visible."
+      },
+      "es": {
+        "name": "Ensayo",
+        "aliases": [
+          "ensayos",
+          "ensayo"
+        ],
+        "definition": "Una prueba experimental diseñada para medir algo concreto. Distintas pruebas pueden examinar aspectos diferentes de un mismo proceso biológico.",
+        "context": "Un fragmento de ADN puede dar resultados diferentes si cambian el diseño de la prueba, la línea celular o la medida. Conservamos esas diferencias al comparar."
+      },
+      "sources": [],
+      "papers": [
+        "P03"
+      ]
+    },
+    {
+      "id": "reporter",
+      "category": "experiments",
+      "en": {
+        "name": "Reporter activity",
+        "aliases": [
+          "reporter activity",
+          "reporter assays",
+          "reporter assay",
+          "reporters",
+          "reporter"
+        ],
+        "definition": "A reporter is a measurable output built into an experimental system, such as RNA or a visible signal. Its activity helps researchers detect how a tested DNA sequence affects that system.",
+        "context": "It measures behavior in the test. It does not by itself prove that the sequence controls a particular gene at its natural location."
+      },
+      "es": {
+        "name": "Actividad reportera",
+        "aliases": [
+          "actividad reportera",
+          "actividad del reportero",
+          "ensayos reporteros",
+          "ensayo reportero",
+          "reporteros",
+          "reportero"
+        ],
+        "definition": "Un reportero es una señal medible incorporada a un sistema experimental, como ARN o una señal visible. Su actividad permite detectar cómo afecta una secuencia de ADN al sistema de prueba.",
+        "context": "Mide el comportamiento en esa prueba. Por sí sola no demuestra que la secuencia controle un gen concreto en su posición natural."
+      },
+      "sources": [],
+      "papers": [
+        "P02",
+        "P03"
+      ]
+    },
+    {
+      "id": "mpra",
+      "category": "experiments",
+      "en": {
+        "name": "MPRA",
+        "aliases": [
+          "MPRA",
+          "MPRAs",
+          "massively parallel reporter assays",
+          "massively parallel reporter assay"
+        ],
+        "definition": "Short for massively parallel reporter assay: an experiment that tests many DNA sequences together using a measurable reporter. It is like evaluating many candidate control switches in one organized batch.",
+        "context": "These measurements provide experimental evidence about the tested sequences, under the assay’s particular conditions."
+      },
+      "es": {
+        "name": "MPRA",
+        "aliases": [
+          "MPRA",
+          "MPRAs",
+          "ensayos reporteros masivamente paralelos",
+          "ensayo reportero masivamente paralelo"
+        ],
+        "definition": "Siglas de un ensayo reportero masivamente paralelo: prueba muchas secuencias de ADN a la vez mediante una señal medible. Es como evaluar numerosos posibles interruptores reguladores en un lote organizado.",
+        "context": "Estas medidas aportan evidencia experimental sobre las secuencias probadas, bajo las condiciones concretas del ensayo."
+      },
+      "sources": [],
+      "papers": [
+        "P02",
+        "P03"
+      ]
+    },
+    {
+      "id": "lentimpra",
+      "category": "experiments",
+      "en": {
+        "name": "lentiMPRA",
+        "aliases": [
+          "lentiMPRA",
+          "lentiMPRAs",
+          "lentiviral MPRA"
+        ],
+        "definition": "A version of MPRA that uses a lentiviral delivery system to place reporter constructs into cells’ DNA. Many candidate sequences can then be tested together.",
+        "context": "Our starting study uses it to compare matched DNA fragments across HepG2, K562, and WTC11. Integration still does not recreate each fragment’s original genomic location."
+      },
+      "es": {
+        "name": "lentiMPRA",
+        "aliases": [
+          "lentiMPRA",
+          "lentiMPRAs"
+        ],
+        "definition": "Una versión de MPRA que usa un sistema de entrega lentiviral para integrar construcciones reporteras en el ADN de las células. Así se pueden probar muchas secuencias candidatas juntas.",
+        "context": "El estudio inicial compara fragmentos equivalentes en HepG2, K562 y WTC11. La integración no reproduce la posición genómica original de cada fragmento."
+      },
+      "sources": [],
+      "papers": [
+        "P02"
+      ]
+    },
+    {
+      "id": "starr-seq",
+      "category": "experiments",
+      "en": {
+        "name": "STARR-seq",
+        "aliases": [
+          "STARR-seq",
+          "STARR"
+        ],
+        "definition": "A reporter method in which the tested DNA fragment is also copied into the reporter’s RNA. Counting that RNA helps estimate the fragment’s regulatory activity.",
+        "context": "Its design differs from other MPRAs. Effects on the resulting RNA can influence the signal, so agreement between methods needs careful interpretation."
+      },
+      "es": {
+        "name": "STARR-seq",
+        "aliases": [
+          "STARR-seq",
+          "STARR"
+        ],
+        "definition": "Un método reportero en el que el fragmento de ADN probado también se copia en el ARN del reportero. Contar ese ARN ayuda a estimar su actividad reguladora.",
+        "context": "Su diseño difiere del de otros MPRA. Los efectos sobre el ARN producido pueden influir en la señal, por lo que comparar métodos requiere cuidado."
+      },
+      "sources": [],
+      "papers": [
+        "P03"
+      ]
+    },
+    {
+      "id": "construct",
+      "category": "experiments",
+      "en": {
+        "name": "Construct",
+        "aliases": [
+          "constructs",
+          "construct",
+          "backbone",
+          "backbones"
+        ],
+        "definition": "A deliberately assembled piece of DNA used in an experiment. It can contain the sequence being tested, a promoter, a reporter, and an identifying barcode. The surrounding support DNA is often called the backbone.",
+        "context": "The same genomic region can appear in different constructs. We must match the actual test pieces, not just similar names or locations."
+      },
+      "es": {
+        "name": "Construcción de ADN",
+        "aliases": [
+          "construcciones",
+          "construcción",
+          "constructos",
+          "constructo",
+          "backbone"
+        ],
+        "definition": "Una pieza de ADN ensamblada para un experimento. Puede incluir la secuencia probada, un promotor, un reportero y un código identificador. Al ADN de soporte se le suele llamar backbone.",
+        "context": "Una misma región genómica puede aparecer en construcciones distintas. Debemos emparejar las piezas realmente probadas, no solo nombres o posiciones parecidos."
+      },
+      "sources": [],
+      "papers": [
+        "P02",
+        "P03"
+      ]
+    },
+    {
+      "id": "library",
+      "category": "experiments",
+      "en": {
+        "name": "Experimental library",
+        "aliases": [
+          "matched library",
+          "joint library",
+          "libraries",
+          "library"
+        ],
+        "definition": "A collection of DNA constructs prepared to be tested together. A matched or joint library uses the same designed collection across experimental settings.",
+        "context": "Our main comparison begins with a selected library shared across three cell lines. Its composition does not represent all DNA in the genome."
+      },
+      "es": {
+        "name": "Biblioteca experimental",
+        "aliases": [
+          "biblioteca conjunta",
+          "biblioteca emparejada",
+          "bibliotecas",
+          "biblioteca"
+        ],
+        "definition": "Una colección de construcciones de ADN preparada para probarse en conjunto. Una biblioteca conjunta utiliza la misma colección diseñada en distintos entornos experimentales.",
+        "context": "La comparación principal comienza con una biblioteca seleccionada que comparten tres líneas celulares. Su composición no representa todo el ADN del genoma."
+      },
+      "sources": [],
+      "papers": [
+        "P02"
+      ]
+    },
+    {
+      "id": "barcode",
+      "category": "experiments",
+      "en": {
+        "name": "DNA barcode",
+        "aliases": [
+          "barcodes",
+          "barcode"
+        ],
+        "definition": "A short DNA tag used as an identifier, like a tracking label. Researchers count tags to connect a measurement to the construct that produced it.",
+        "context": "Enough usable barcodes are needed for a reliable estimate. Several tags from one construct are not automatically independent biological experiments."
+      },
+      "es": {
+        "name": "Código de barras de ADN",
+        "aliases": [
+          "códigos de barras",
+          "código de barras",
+          "barcodes",
+          "barcode"
+        ],
+        "definition": "Una etiqueta corta de ADN usada como identificador, parecida a un código de seguimiento. Contar esas etiquetas permite relacionar una medida con la construcción que la produjo.",
+        "context": "Se necesitan suficientes etiquetas útiles para obtener una estimación fiable. Varias etiquetas de una construcción no equivalen automáticamente a experimentos biológicos independientes."
+      },
+      "sources": [],
+      "papers": [
+        "P02"
+      ]
+    },
+    {
+      "id": "replicate",
+      "category": "experiments",
+      "en": {
+        "name": "Replicate",
+        "aliases": [
+          "biological replicates",
+          "biological replicate",
+          "technical replicates",
+          "technical replicate",
+          "replicates",
+          "replicate"
+        ],
+        "definition": "A repeated measurement used to assess consistency. Biological replicates repeat the biological experiment; technical replicates repeat measurement or processing of the same biological material.",
+        "context": "Counting the same measurements again in a combined file does not create new independent evidence."
+      },
+      "es": {
+        "name": "Réplica",
+        "aliases": [
+          "réplicas biológicas",
+          "réplica biológica",
+          "réplicas técnicas",
+          "réplica técnica",
+          "réplicas",
+          "réplica"
+        ],
+        "definition": "Una repetición que permite evaluar la consistencia. Las réplicas biológicas repiten el experimento biológico; las técnicas repiten la medición o el procesamiento del mismo material.",
+        "context": "Volver a contar las mismas medidas en un archivo combinado no genera evidencia independiente nueva."
+      },
+      "sources": [
+        "encode"
+      ],
+      "papers": [
+        "P02"
+      ]
+    },
+    {
+      "id": "coverage",
+      "category": "analysis",
+      "en": {
+        "name": "Coverage",
+        "aliases": [
+          "barcode coverage",
+          "coverage"
+        ],
+        "definition": "How much usable evidence supports a measurement, such as the number of observed DNA tags or sequencing reads. In some comparisons it also describes which regions an assay actually tested.",
+        "context": "Low coverage can make a result uncertain. Missing evidence is not the same thing as measured inactivity."
+      },
+      "es": {
+        "name": "Cobertura",
+        "aliases": [
+          "cobertura de códigos de barras",
+          "cobertura"
+        ],
+        "definition": "Cuánta evidencia útil respalda una medida, como el número de etiquetas de ADN o lecturas de secuenciación observadas. También puede describir qué regiones se probaron realmente.",
+        "context": "Una cobertura baja puede hacer incierto un resultado. La falta de evidencia no equivale a inactividad medida."
+      },
+      "sources": [],
+      "papers": [
+        "P02",
+        "P03"
+      ]
+    },
+    {
+      "id": "normalization",
+      "category": "analysis",
+      "en": {
+        "name": "Normalization",
+        "aliases": [
+          "normalization",
+          "normalized",
+          "RNA/DNA"
+        ],
+        "definition": "Adjusting measurements to make a specified comparison fairer, for example accounting for different amounts of input DNA or total sequencing reads. An RNA/DNA ratio relates reporter output to DNA representation.",
+        "context": "Different processing choices can change reported activity. We must reproduce the study’s actual calculation before comparing values."
+      },
+      "es": {
+        "name": "Normalización",
+        "aliases": [
+          "normalización",
+          "normalizados",
+          "normalizadas",
+          "ARN/ADN",
+          "RNA/DNA"
+        ],
+        "definition": "Ajustar medidas para hacer más justa una comparación concreta, por ejemplo considerando la cantidad inicial de ADN o el total de lecturas. Una razón ARN/ADN relaciona la señal del reportero con la representación del ADN.",
+        "context": "El procesamiento puede cambiar la actividad informada. Debemos reproducir el cálculo del estudio antes de comparar valores."
+      },
+      "sources": [],
+      "papers": [
+        "P02",
+        "P03"
+      ]
+    },
+    {
+      "id": "control",
+      "category": "experiments",
+      "en": {
+        "name": "Experimental control",
+        "aliases": [
+          "positive controls",
+          "negative controls",
+          "matched controls",
+          "controls",
+          "control sequences"
+        ],
+        "definition": "A reference included to help interpret an experiment. A positive control should produce a signal; a negative control helps establish the background. A matched control isolates a particular comparison.",
+        "context": "Controls help separate real regulatory effects from noise or properties of the test system."
+      },
+      "es": {
+        "name": "Control experimental",
+        "aliases": [
+          "controles positivos",
+          "controles negativos",
+          "controles emparejados",
+          "controles",
+          "secuencias de control"
+        ],
+        "definition": "Una referencia incluida para interpretar un experimento. Un control positivo debe producir señal; uno negativo ayuda a estimar el fondo. Un control emparejado permite aislar una comparación concreta.",
+        "context": "Los controles ayudan a separar efectos reguladores reales del ruido o de las características del sistema de prueba."
+      },
+      "sources": [],
+      "papers": [
+        "P02",
+        "P05"
+      ]
+    },
+    {
+      "id": "ccre",
+      "category": "experiments",
+      "en": {
+        "name": "Candidate cis-regulatory element (cCRE)",
+        "aliases": [
+          "cCREs",
+          "cCRE",
+          "candidate cis-regulatory elements",
+          "candidate cis-regulatory element",
+          "cis-regulatory"
+        ],
+        "definition": "A DNA region with biochemical evidence suggesting a possible role in controlling genes on the same DNA molecule. “Candidate” means it is a proposed regulatory element, not a confirmed function in every cell.",
+        "context": "We use these annotations as context for measured sequences, not as substitutes for experimental activity measurements."
+      },
+      "es": {
+        "name": "Elemento cis-regulador candidato (cCRE)",
+        "aliases": [
+          "cCREs",
+          "cCRE",
+          "elementos cis-reguladores candidatos",
+          "elemento cis-regulador candidato",
+          "cis-reguladores",
+          "cis-regulador"
+        ],
+        "definition": "Una región de ADN con señales bioquímicas que sugieren una posible función de control de genes en la misma molécula de ADN. «Candidato» indica una función propuesta, no confirmada en todas las células.",
+        "context": "Usamos estas anotaciones como contexto de las secuencias medidas, no para sustituir las medidas experimentales de actividad."
+      },
+      "sources": [
+        "screen"
+      ],
+      "papers": [
+        "P01"
+      ]
+    },
+    {
+      "id": "els",
+      "category": "experiments",
+      "en": {
+        "name": "Enhancer-like signature (ELS)",
+        "aliases": [
+          "enhancer-like signatures",
+          "enhancer-like signature",
+          "enhancer-like",
+          "ELS",
+          "pELS",
+          "dELS"
+        ],
+        "definition": "A pattern of biochemical signals used to classify a candidate DNA region as enhancer-like. pELS and dELS distinguish categories near to or farther from annotated transcription start sites.",
+        "context": "This is a registry label. Being outside the selected ELS set does not prove a sequence is inactive."
+      },
+      "es": {
+        "name": "Firma similar a un potenciador (ELS)",
+        "aliases": [
+          "firmas similares a potenciadores",
+          "firma similar a un potenciador",
+          "ELS",
+          "pELS",
+          "dELS"
+        ],
+        "definition": "Un patrón de señales bioquímicas usado para clasificar una región candidata como similar a un potenciador. pELS y dELS distinguen categorías cercanas o más lejanas a inicios de transcripción anotados.",
+        "context": "Es una etiqueta del registro. Estar fuera del conjunto ELS seleccionado no demuestra que una secuencia sea inactiva."
+      },
+      "sources": [
+        "screen"
+      ],
+      "papers": [
+        "P01"
+      ]
+    },
+    {
+      "id": "encode",
+      "category": "experiments",
+      "en": {
+        "name": "ENCODE",
+        "aliases": [
+          "ENCODE4",
+          "ENCODE"
+        ],
+        "definition": "A research collaboration that maps functional features of the human and other genomes. Its portal connects experiments, samples, files, and analysis information.",
+        "context": "Several of our collections come from ENCODE, but their annotations and experimental measurements answer different questions."
+      },
+      "es": {
+        "name": "ENCODE",
+        "aliases": [
+          "ENCODE4",
+          "ENCODE"
+        ],
+        "definition": "Una colaboración científica que elabora mapas de características funcionales del genoma humano y de otros organismos. Su portal conecta experimentos, muestras, archivos e información del análisis.",
+        "context": "Varias colecciones proceden de ENCODE, pero sus anotaciones y medidas experimentales responden a preguntas diferentes."
+      },
+      "sources": [
+        "encode"
+      ],
+      "papers": [
+        "P01",
+        "P02"
+      ]
+    },
+    {
+      "id": "screen",
+      "category": "experiments",
+      "en": {
+        "name": "SCREEN",
+        "aliases": [
+          "SCREEN"
+        ],
+        "definition": "An online browser for ENCODE’s candidate regulatory elements. It lets readers look up regions and the biochemical evidence behind their annotations.",
+        "context": "We use it as a reference map alongside experiments, rather than as a universal list of active enhancers."
+      },
+      "es": {
+        "name": "SCREEN",
+        "aliases": [
+          "SCREEN"
+        ],
+        "definition": "Un explorador en línea de los elementos reguladores candidatos de ENCODE. Permite consultar regiones y la evidencia bioquímica que respalda sus anotaciones.",
+        "context": "Lo usamos como mapa de referencia junto a los experimentos, no como una lista universal de potenciadores activos."
+      },
+      "sources": [
+        "screen"
+      ],
+      "papers": [
+        "P01"
+      ]
+    },
+    {
+      "id": "vista",
+      "category": "experiments",
+      "en": {
+        "name": "VISTA",
+        "aliases": [
+          "VISTA"
+        ],
+        "definition": "A database of experiments testing whether DNA fragments can drive reporter activity in particular tissues during development. Records include the sequence and experimental setting.",
+        "context": "The species a DNA sequence comes from and the animal used to test it can differ. Tissue, developmental stage, and construct design all matter."
+      },
+      "es": {
+        "name": "VISTA",
+        "aliases": [
+          "VISTA"
+        ],
+        "definition": "Una base de datos de experimentos que prueban si fragmentos de ADN pueden generar actividad reportera en determinados tejidos durante el desarrollo. Incluye la secuencia y el entorno experimental.",
+        "context": "La especie de origen del ADN y el animal utilizado para probarlo pueden ser distintos. Importan el tejido, la etapa de desarrollo y el diseño de la construcción."
+      },
+      "sources": [
+        "vista"
+      ],
+      "papers": [
+        "P04"
+      ]
+    },
+    {
+      "id": "hematopoiesis",
+      "category": "cells",
+      "en": {
+        "name": "Hematopoiesis",
+        "aliases": [
+          "hematopoiesis",
+          "hematopoietic",
+          "differentiation",
+          "progenitor"
+        ],
+        "definition": "The formation of blood cells from less specialized cells. Differentiation is the process of becoming more specialized; a progenitor is a precursor with more limited developmental choices than a stem cell.",
+        "context": "One collected study tests how designed regulatory DNA behaves across stages of blood-cell development."
+      },
+      "es": {
+        "name": "Hematopoyesis",
+        "aliases": [
+          "hematopoyesis",
+          "hematopoyéticas",
+          "hematopoyético",
+          "hematopoyéticos",
+          "hematopoyética",
+          "diferenciación",
+          "progenitores",
+          "progenitoras"
+        ],
+        "definition": "La formación de células sanguíneas a partir de células menos especializadas. La diferenciación es el proceso de especializarse; una célula progenitora tiene opciones de desarrollo más limitadas que una célula madre.",
+        "context": "Un estudio de la colección prueba cómo se comporta ADN regulador diseñado en distintas etapas del desarrollo de células sanguíneas."
+      },
+      "sources": [],
+      "papers": [
+        "P05"
+      ]
+    },
+    {
+      "id": "annotation",
+      "category": "analysis",
+      "en": {
+        "name": "Annotation",
+        "aliases": [
+          "annotations",
+          "annotation"
+        ],
+        "definition": "A label or description attached to a DNA region using a particular source of evidence. It may describe a possible function, location, or biochemical signature.",
+        "context": "An annotation is not the same as directly measuring that region’s activity in the cell and experiment we are studying."
+      },
+      "es": {
+        "name": "Anotación",
+        "aliases": [
+          "anotaciones",
+          "anotación"
+        ],
+        "definition": "Una etiqueta o descripción asignada a una región de ADN a partir de una fuente de evidencia. Puede describir una posible función, posición o señal bioquímica.",
+        "context": "Una anotación no equivale a medir directamente la actividad de esa región en la célula y el experimento que estudiamos."
+      },
+      "sources": [],
+      "papers": [
+        "P01"
+      ]
+    },
+    {
+      "id": "specificity",
+      "category": "analysis",
+      "en": {
+        "name": "Cell specificity",
+        "aliases": [
+          "cell specificity",
+          "cell-specific",
+          "cell-type-specific",
+          "cell-state-specific",
+          "specificity score",
+          "specificity scores",
+          "cell selectivity"
+        ],
+        "definition": "How strongly activity favors one cellular setting over the others being compared. “Specific” is relative to the cells, measurement, and decision rule included in the study.",
+        "context": "A fragment that appears selective among our three cell lines may also be active in other, untested cells."
+      },
+      "es": {
+        "name": "Especificidad celular",
+        "aliases": [
+          "especificidad celular",
+          "selectividad celular",
+          "puntuaciones de especificidad",
+          "puntuación de especificidad",
+          "específico del tipo celular",
+          "específicos del tipo celular"
+        ],
+        "definition": "Cuánto favorece la actividad a un entorno celular frente a los otros comparados. «Específico» depende de las células, la medida y la regla de decisión incluidas en el estudio.",
+        "context": "Un fragmento que parece selectivo entre nuestras tres líneas puede también estar activo en otras células que no se probaron."
+      },
+      "sources": [],
+      "papers": [
+        "P02"
+      ]
+    },
+    {
+      "id": "tau",
+      "category": "analysis",
+      "en": {
+        "name": "Tau (τ)",
+        "aliases": [
+          "tau",
+          "τ"
+        ],
+        "definition": "A score sometimes used to summarize how concentrated activity is across contexts. Its meaning depends on the exact formula and on how the input measurements were transformed.",
+        "context": "The report discusses a possible specificity measure. Reproducing the source study’s numerical scores remains unresolved; a familiar formula is not enough to assume equivalence."
+      },
+      "es": {
+        "name": "Tau (τ)",
+        "aliases": [
+          "tau",
+          "τ"
+        ],
+        "definition": "Una puntuación que a veces resume cuánto se concentra la actividad entre contextos. Su significado depende de la fórmula exacta y de cómo se transformaron las medidas de entrada.",
+        "context": "El informe trata una posible medida de especificidad. Aún no se han reproducido las puntuaciones numéricas del estudio; conocer una fórmula no basta para asumir que son equivalentes."
+      },
+      "sources": [],
+      "papers": [
+        "P02"
+      ]
+    },
+    {
+      "id": "correlation",
+      "category": "analysis",
+      "en": {
+        "name": "Correlation",
+        "aliases": [
+          "correlations",
+          "correlation",
+          "Spearman",
+          "Pearson"
+        ],
+        "definition": "A measure of how two sets of values vary together. Pearson describes a linear relationship; Spearman compares their ordering. Neither alone shows that one causes the other.",
+        "context": "Agreement can be influenced by shared data, noisy measurements, or the regions selected for comparison."
+      },
+      "es": {
+        "name": "Correlación",
+        "aliases": [
+          "correlaciones",
+          "correlación",
+          "Spearman",
+          "Pearson"
+        ],
+        "definition": "Una medida de cómo varían juntos dos conjuntos de valores. Pearson describe una relación lineal; Spearman compara su orden. Ninguna demuestra por sí sola que uno cause al otro.",
+        "context": "La concordancia puede verse influida por datos compartidos, medidas ruidosas o las regiones elegidas para comparar."
+      },
+      "sources": [
+        "correlation"
+      ],
+      "papers": [
+        "P03"
+      ]
+    },
+    {
+      "id": "confounding",
+      "category": "analysis",
+      "en": {
+        "name": "Confounding / selection bias",
+        "aliases": [
+          "confounders",
+          "confounding",
+          "selection bias",
+          "selection-biased",
+          "ascertainment"
+        ],
+        "definition": "A comparison can be misleading if another difference influences the result, or if the chosen samples do not represent the population we want to discuss.",
+        "context": "The matched library was partly selected using earlier measurements. Its activity proportions should not be generalized to all genomic DNA."
+      },
+      "es": {
+        "name": "Confusión / sesgo de selección",
+        "aliases": [
+          "confusores",
+          "confusión",
+          "sesgo de selección",
+          "sesgos de selección"
+        ],
+        "definition": "Una comparación puede resultar engañosa si otra diferencia influye en el resultado, o si las muestras elegidas no representan la población de la que queremos hablar.",
+        "context": "La biblioteca conjunta se seleccionó en parte usando medidas anteriores. Sus proporciones de actividad no deben generalizarse a todo el ADN del genoma."
+      },
+      "sources": [],
+      "papers": [
+        "P02"
+      ]
+    },
+    {
+      "id": "qc",
+      "category": "analysis",
+      "en": {
+        "name": "Quality control (QC)",
+        "aliases": [
+          "QC",
+          "quality control"
+        ],
+        "definition": "Checks that ask whether data and measurements are fit for the intended analysis. Examples include checking file integrity, missing values, sample labels, and repeated records.",
+        "context": "Our current work includes reconciling constructs and repeated measurements before drawing biological conclusions."
+      },
+      "es": {
+        "name": "Control de calidad (QC)",
+        "aliases": [
+          "QC",
+          "control de calidad"
+        ],
+        "definition": "Comprobaciones para saber si los datos y las medidas sirven para el análisis previsto. Incluyen revisar la integridad de archivos, valores ausentes, etiquetas y registros repetidos.",
+        "context": "El trabajo actual incluye conciliar construcciones y medidas repetidas antes de extraer conclusiones biológicas."
+      },
+      "sources": [
+        "encode"
+      ],
+      "papers": [
+        "P03"
+      ]
+    },
+    {
+      "id": "data-leakage",
+      "category": "analysis",
+      "en": {
+        "name": "Data leakage",
+        "aliases": [
+          "data leakage",
+          "leakage",
+          "training/test",
+          "train/test"
+        ],
+        "definition": "When information from data meant to test a model influences its training or selection. The model can then appear more accurate than it would be on genuinely new examples.",
+        "context": "Repeated or closely related DNA sequences can cross dataset boundaries. We need to check independence before claiming a successful prediction."
+      },
+      "es": {
+        "name": "Fuga de información",
+        "aliases": [
+          "fuga de información",
+          "fugas de información",
+          "fuga de datos",
+          "leakage",
+          "entrenamiento/prueba"
+        ],
+        "definition": "Ocurre cuando información de los datos reservados para evaluar un modelo influye en su entrenamiento o selección. El modelo puede parecer más preciso de lo que sería ante ejemplos nuevos.",
+        "context": "Secuencias repetidas o muy relacionadas pueden aparecer a ambos lados de una división. Hay que comprobar la independencia antes de afirmar que una predicción funciona."
+      },
+      "sources": [
+        "leakage"
+      ],
+      "papers": [
+        "P08"
+      ]
+    },
+    {
+      "id": "reproduction",
+      "category": "analysis",
+      "en": {
+        "name": "Reproduction",
+        "aliases": [
+          "reproduction",
+          "reproduce",
+          "reproducible",
+          "reproducibility"
+        ],
+        "definition": "Here, repeating a published analysis with the specified data and methods to see whether its results can be recovered. This is different from making a new biological discovery.",
+        "context": "Our first goal is a trustworthy reconstruction of a selected published comparison, with unresolved differences documented."
+      },
+      "es": {
+        "name": "Reproducción de un análisis",
+        "aliases": [
+          "reproducción",
+          "reproducir",
+          "reproducible",
+          "reproducibles",
+          "reproducibilidad"
+        ],
+        "definition": "Aquí significa repetir un análisis publicado con los datos y métodos indicados para comprobar si se recuperan sus resultados. No equivale a hacer un descubrimiento biológico nuevo.",
+        "context": "El primer objetivo es reconstruir de forma fiable una comparación publicada y documentar las diferencias aún no resueltas."
+      },
+      "sources": [],
+      "papers": [
+        "P02"
+      ]
+    },
+    {
+      "id": "sequence-model",
+      "category": "models",
+      "en": {
+        "name": "Sequence model",
+        "aliases": [
+          "sequence models",
+          "sequence model",
+          "language model",
+          "language models",
+          "machine learning",
+          "checkpoints",
+          "checkpoint",
+          "model weights"
+        ],
+        "definition": "A computer model that learns patterns from sequences to make predictions. A DNA language model learns from DNA letters; its saved learned settings are called weights or a checkpoint.",
+        "context": "A prediction is a hypothesis informed by training data. Its score is not automatically a direct measurement of enhancer activity."
+      },
+      "es": {
+        "name": "Modelo de secuencia",
+        "aliases": [
+          "modelos de secuencia",
+          "modelo de secuencia",
+          "modelo de lenguaje",
+          "modelos de lenguaje",
+          "aprendizaje automático",
+          "checkpoint",
+          "checkpoints",
+          "pesos del modelo"
+        ],
+        "definition": "Un modelo informático que aprende patrones de secuencias para hacer predicciones. Un modelo de lenguaje de ADN aprende de sus letras; sus parámetros aprendidos se guardan como pesos o checkpoint.",
+        "context": "Una predicción es una hipótesis basada en datos de entrenamiento. Su puntuación no es automáticamente una medida directa de actividad de un potenciador."
+      },
+      "sources": [],
+      "papers": [
+        "P08",
+        "P09"
+      ]
+    },
+    {
+      "id": "dnabert",
+      "category": "models",
+      "en": {
+        "name": "DNABERT-Enhancer",
+        "aliases": [
+          "DNABERT-Enhancer",
+          "DNABERT–Enhancer",
+          "DNABERT"
+        ],
+        "definition": "A DNA-sequence prediction model in the collected literature. It learns representations of DNA and is trained to distinguish sequences using enhancer annotations.",
+        "context": "Its predicted label or probability answers a different question from the amount of RNA produced in a reporter experiment."
+      },
+      "es": {
+        "name": "DNABERT-Enhancer",
+        "aliases": [
+          "DNABERT-Enhancer",
+          "DNABERT–Enhancer",
+          "DNABERT"
+        ],
+        "definition": "Un modelo de predicción a partir de secuencias de ADN incluido en la bibliografía. Aprende representaciones del ADN y se entrena para distinguir secuencias mediante anotaciones de potenciadores.",
+        "context": "Su etiqueta o probabilidad predicha responde a una pregunta distinta de la cantidad de ARN producida en un experimento reportero."
+      },
+      "sources": [],
+      "papers": [
+        "P08"
+      ]
+    },
+    {
+      "id": "alphagenome",
+      "category": "models",
+      "en": {
+        "name": "AlphaGenome",
+        "aliases": [
+          "AlphaGenome"
+        ],
+        "definition": "A computer model that predicts several aspects of gene regulation from DNA sequence. It can compare alternative sequences to suggest possible molecular effects of a change.",
+        "context": "It may help interpret selected regions later. Its predictions require experimental follow-up and are not clinical conclusions."
+      },
+      "es": {
+        "name": "AlphaGenome",
+        "aliases": [
+          "AlphaGenome"
+        ],
+        "definition": "Un modelo informático que predice distintos aspectos de la regulación génica a partir de la secuencia de ADN. Puede comparar secuencias alternativas para sugerir posibles efectos moleculares de un cambio.",
+        "context": "Podría ayudar a interpretar regiones seleccionadas más adelante. Sus predicciones requieren comprobación experimental y no son conclusiones clínicas."
+      },
+      "sources": [
+        "alphagenome"
+      ],
+      "papers": [
+        "P09"
+      ]
+    },
+    {
+      "id": "ism",
+      "category": "models",
+      "en": {
+        "name": "In silico mutagenesis",
+        "aliases": [
+          "in silico mutagenesis",
+          "in-silico mutagenesis",
+          "ISM"
+        ],
+        "definition": "Changing DNA letters inside a computer and asking a model how its prediction changes. “In silico” means computational, not an experiment in living cells.",
+        "context": "The AlphaGenome Atlas uses computational changes to help prioritize variants for further study."
+      },
+      "es": {
+        "name": "Mutagénesis in silico",
+        "aliases": [
+          "mutagénesis in silico",
+          "ISM"
+        ],
+        "definition": "Cambiar letras de ADN en un ordenador y preguntar al modelo cómo cambia su predicción. «In silico» significa computacional, no un experimento en células vivas.",
+        "context": "AlphaGenome Atlas utiliza cambios computacionales para ayudar a priorizar variantes que podrían estudiarse después."
+      },
+      "sources": [],
+      "papers": [
+        "P10"
+      ]
+    },
+    {
+      "id": "auroc",
+      "category": "analysis",
+      "en": {
+        "name": "AUROC",
+        "aliases": [
+          "AUROC",
+          "ROC-AUC",
+          "AUC-ROC"
+        ],
+        "definition": "A summary of how well a score ranks positive examples above negative ones over different thresholds. It is not the percentage of examples classified correctly.",
+        "context": "It helps evaluate predictions, but performance still depends on what counts as positive or negative and how the test set was chosen."
+      },
+      "es": {
+        "name": "AUROC",
+        "aliases": [
+          "AUROC",
+          "ROC-AUC",
+          "AUC-ROC"
+        ],
+        "definition": "Un resumen de cuánto consigue una puntuación situar los ejemplos positivos por encima de los negativos al variar el umbral. No es el porcentaje de ejemplos clasificados correctamente.",
+        "context": "Ayuda a evaluar predicciones, pero el resultado depende de cómo se definan los positivos y negativos y de cómo se elija la prueba."
+      },
+      "sources": [
+        "metrics"
+      ],
+      "papers": []
+    },
+    {
+      "id": "auprc",
+      "category": "analysis",
+      "en": {
+        "name": "AUPRC",
+        "aliases": [
+          "AUPRC",
+          "PR-AUC",
+          "AUC-PR",
+          "precision–recall",
+          "precision-recall"
+        ],
+        "definition": "A summary of the trade-off between finding positives and avoiding false positive calls. It is especially useful when positives are uncommon, and its baseline depends on their frequency.",
+        "context": "Scores from test sets with different class balances may not be directly comparable."
+      },
+      "es": {
+        "name": "AUPRC",
+        "aliases": [
+          "AUPRC",
+          "PR-AUC",
+          "AUC-PR",
+          "precisión–recuperación",
+          "precisión-recall"
+        ],
+        "definition": "Un resumen del equilibrio entre encontrar positivos y evitar falsos positivos. Es útil cuando los positivos son poco frecuentes; su referencia depende de esa frecuencia.",
+        "context": "Las puntuaciones obtenidas con distintas proporciones de positivos y negativos pueden no ser directamente comparables."
+      },
+      "sources": [
+        "metrics"
+      ],
+      "papers": []
+    },
+    {
+      "id": "mcc",
+      "category": "analysis",
+      "en": {
+        "name": "Matthews correlation coefficient (MCC)",
+        "aliases": [
+          "MCC",
+          "Matthews correlation coefficient"
+        ],
+        "definition": "A classification score that uses all four outcomes: correct positives, correct negatives, false positives, and missed positives. Its usual range is −1 to 1; 1 means perfect agreement.",
+        "context": "It summarizes a particular prediction task. It is not a measure of how strongly an enhancer is active."
+      },
+      "es": {
+        "name": "Coeficiente de correlación de Matthews (MCC)",
+        "aliases": [
+          "MCC",
+          "coeficiente de correlación de Matthews"
+        ],
+        "definition": "Una puntuación de clasificación que utiliza aciertos y errores tanto positivos como negativos. Su rango habitual va de −1 a 1; 1 indica concordancia perfecta.",
+        "context": "Resume una tarea concreta de predicción. No mide la intensidad de actividad de un potenciador."
+      },
+      "sources": [
+        "metrics"
+      ],
+      "papers": []
+    },
+    {
+      "id": "preprint",
+      "category": "analysis",
+      "en": {
+        "name": "Preprint",
+        "aliases": [
+          "preprints",
+          "preprint"
+        ],
+        "definition": "A research manuscript shared publicly before formal journal peer review. Its findings and methods may change in a later published version.",
+        "context": "We group earlier and published versions of the same work together so they are not mistaken for independent supporting studies."
+      },
+      "es": {
+        "name": "Preprint",
+        "aliases": [
+          "preprints",
+          "preprint",
+          "prepublicación"
+        ],
+        "definition": "Un manuscrito científico compartido públicamente antes de la revisión formal por pares de una revista. Sus resultados y métodos pueden cambiar en una versión publicada posterior.",
+        "context": "Agrupamos las versiones anteriores y publicadas de un mismo trabajo para no confundirlas con estudios independientes que se respaldan entre sí."
+      },
+      "sources": [
+        "preprint"
+      ],
+      "papers": [
+        "P05",
+        "P08"
+      ]
+    }
+  ]
+}
