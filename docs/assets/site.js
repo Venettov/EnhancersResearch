@@ -31,43 +31,39 @@
 
   const visual = document.querySelector('[data-research-visual]');
   if (visual) {
-    const video = visual.querySelector('video');
+    const animation = visual.querySelector('[data-animation-src]');
     const toggle = visual.querySelector('[data-motion-toggle]');
     const label = toggle.querySelector('[data-motion-label]');
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-    // Native controls remain available without JavaScript. Only start playback
-    // after checking motion preferences and whether the video is visible.
-    video.controls = false;
-    video.muted = true;
+    const poster = animation.getAttribute('src');
+    const animated = animation.dataset.animationSrc;
     let userPaused = false;
     let inView = !('IntersectionObserver' in window);
-    let request = 0;
-    const shouldPause = () => userPaused || reducedMotion.matches || document.hidden || !inView;
-    const updateControl = () => {
-      const paused = video.paused;
-      visual.dataset.motion = paused ? 'paused' : 'running';
-      toggle.hidden = reducedMotion.matches || Boolean(video.error);
-      toggle.dataset.action = paused ? 'play' : 'pause';
-      label.textContent = paused ? toggle.dataset.play : toggle.dataset.pause;
-    };
+    let ready = false;
+    let loading = false;
+    // Start from a still image: no GIF download without JavaScript, with
+    // reduced motion, or before the visual enters the viewport.
     const syncMotion = () => {
-      const currentRequest = ++request;
-      if (shouldPause()) {
-        video.pause();
-      } else if (video.paused) {
-        video.play().catch(() => {
-          // A browser may block autoplay. Keep the poster and offer manual play;
-          // ignore an old play request interrupted by a later pause.
-          if (currentRequest !== request) return;
-          userPaused = true;
-          video.pause();
-          updateControl();
+      const wantsMotion = !userPaused && !reducedMotion.matches && !document.hidden && inView;
+      if (wantsMotion && !ready && !loading) {
+        loading = true;
+        const preload = new Image();
+        preload.src = animated;
+        preload.decode().then(() => { ready = true; syncMotion(); }).catch(() => {
+          // Leave the still image intact if the GIF cannot be loaded.
+          ready = false;
+          syncMotion();
         });
       }
-      updateControl();
+      const playing = wantsMotion && ready;
+      const source = playing ? animated : poster;
+      if (animation.getAttribute('src') !== source) animation.src = source;
+      visual.dataset.motion = playing ? 'running' : 'paused';
+      toggle.hidden = reducedMotion.matches || !ready;
+      toggle.dataset.action = playing ? 'pause' : 'play';
+      label.textContent = playing ? toggle.dataset.pause : toggle.dataset.play;
     };
-    toggle.addEventListener('click', () => { userPaused = !video.paused; syncMotion(); });
-    for (const event of ['play', 'pause', 'error']) video.addEventListener(event, updateControl);
+    toggle.addEventListener('click', () => { userPaused = !userPaused; syncMotion(); });
     reducedMotion.addEventListener('change', syncMotion);
     document.addEventListener('visibilitychange', syncMotion);
     if ('IntersectionObserver' in window) {

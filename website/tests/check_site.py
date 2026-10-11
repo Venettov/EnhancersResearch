@@ -41,6 +41,8 @@ class Document(HTMLParser):
             self.links.append(a["src"])
         if tag == "video" and "poster" in a:
             self.links.append(a["poster"])
+        if "data-animation-src" in a:
+            self.links.append(a["data-animation-src"])
         if tag == "img" and "alt" not in a:
             errors.append(f"{self.path.name}: image without alt text")
         if tag == "h1":
