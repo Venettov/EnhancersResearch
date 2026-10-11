@@ -1,0 +1,21 @@
+name: Website checks
+on:
+  pull_request:
+    paths: ['website/**', 'docs/**', '.github/workflows/site-checks.yml', '.github/workflows/pages.yml']
+  push:
+    branches: [main]
+    paths: ['website/**', 'docs/**', '.github/workflows/site-checks.yml', '.github/workflows/pages.yml']
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python website/build.py
+      - run: python website/tests/check_site.py
+      - name: Check generated site is current
+        run: git diff --exit-code -- docs

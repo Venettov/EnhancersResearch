@@ -1,0 +1,758 @@
+<p><strong>EnhancersResearch · Research report 01 · 10 October 2026</strong><br><strong>Status:</strong> literature synthesis and proposed analysis strategy. Biological results below are attributed to their source papers; our own work so far is a download audit and limited inspection of file contents. No new model has been trained and no biological hypothesis has yet been tested.</p>
+<h2 id="1-our-starting-point">1 Our starting point</h2>
+<p><strong>The best first outcome is an understandable, reproducible analysis of when enhancer activity changes across cellular contexts—and how reliably different assays support that activity.</strong> We do not need to build another enhancer prediction model to do useful work with this collection.</p>
+<p>We now have 109 manifest-listed resources, approximately 51.1 GB, organized into seven study folders. They include experimental measurements, genomic annotations, developmental reporter results, synthetic enhancer experiments, papers, supplements, code snapshots, and model checkpoints. They are different kinds of evidence, not 109 interchangeable datasets.</p>
+<p>The recommended first project asks:</p>
+<blockquote>
+<p>Among the same DNA sequences tested in HepG2, K562, and WTC11 cells, which show broadly shared reporter activity and which show selective activity? For the subset also adequately tested by other K562 assays, how stable is the evidence for activity?</p>
+</blockquote>
+<p>The concrete outcome would be a documented activity table, a small set of clear figures, and an evidence table for individual regions. Every conclusion would identify its cell context, assay, measurement quality, and limitations. We would first reproduce selected published observations, then decide whether a focused extension is justified.</p>
+<p><strong>This is not yet a claim of novelty.</strong> Agarwal and colleagues already analyzed cell specificity; Zhang and colleagues already analyzed assay disagreement. A useful extension would need to go beyond those analyses—for example, testing whether apparent cell selectivity is associated with stable versus fragile K562 activity calls after accounting for coverage and promoter proximity. The overlap and metadata needed for that extension have not yet been established.</p>
+<h3 id="read-this-report-in-three-passes">Read this report in three passes</h3>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable comparison table"><table>
+<thead>
+<tr>
+<th>Your purpose</th>
+<th>Start here</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Understand the biology</td>
+<td>Sections 2–3</td>
+</tr>
+<tr>
+<td>Understand the collection and the papers</td>
+<td>Sections 4–6</td>
+</tr>
+<tr>
+<td>Decide what we should do next</td>
+<td>Sections 7–10</td>
+</tr>
+<tr>
+<td>Look up terminology or sources</td>
+<td>Sections 11–12</td>
+</tr>
+</tbody></table></div>
+<h2 id="2-what-enhancers-are">2 What enhancers are</h2>
+<h3 id="from-dna-to-regulated-gene-expression">From DNA to regulated gene expression</h3>
+<p>Cells use DNA as a template to produce RNA through transcription. For protein-coding genes, that RNA can subsequently be translated into protein. Different cell types can carry essentially the same genome yet express different sets and amounts of genes.</p>
+<p>An <strong>enhancer</strong> is a DNA regulatory element that can increase transcription from a compatible promoter in a particular biological context. A <strong>promoter</strong> is the region associated with transcription initiation. Enhancers help determine where, when, and how strongly genes are expressed. The label describes a regulatory function, not a universal sequence pattern present in every enhancer. The ENCODE, lentiMPRA, and hematopoiesis studies illustrate this context dependence. <a href="https://doi.org/10.1038/s41586-025-09909-9">P01</a>, <a href="https://doi.org/10.1038/s41586-024-08430-9">P02</a>, <a href="https://doi.org/10.1016/j.cell.2025.04.017">P05</a></p>
+<p>Three ingredients are especially useful for understanding enhancer behavior:</p>
+<ol>
+<li><strong>Sequence:</strong> short DNA patterns can recruit transcription factors. Their arrangement and combinations can affect regulatory activity.</li>
+<li><strong>Cell state:</strong> a sequence encounters different transcription factors and cofactors in different cells. Having a binding motif does not ensure the corresponding protein is present or bound.</li>
+<li><strong>Genomic context:</strong> chromatin accessibility, neighboring regulatory elements, promoter compatibility, and three-dimensional contacts can influence the outcome.</li>
+</ol>
+<p>An enhancer is therefore more like a context-dependent control element than a permanent on/off switch. A sequence active in a blood-derived cell line may behave differently in a liver-derived line or a developing embryo.</p>
+<h3 id="a-conceptual-path-from-sequence-to-activity">A conceptual path from sequence to activity</h3>
+<p><strong>DNA motifs → transcription-factor binding and interactions → regulatory activity in a cell context → effects on transcription.</strong></p>
+<p>Chromatin and promoter context influence this entire path. An experimental assay observes only part of it. A reporter experiment tests the candidate with an engineered reporter; an endogenous perturbation changes the original genomic region and measures consequences there.</p>
+<p>The distinction matters for target genes. Showing that a sequence activates a reporter does not identify the gene it regulates in its original chromosome. Enhancer–gene assignment is a separate problem requiring additional evidence. For example, the activity-by-contact study combined endogenous CRISPR perturbations with regulatory activity and chromatin-contact information to investigate enhancer–promoter connections. We should treat the nearest gene as an annotation, not an established target. <a href="https://doi.org/10.1038/s41588-019-0538-0">Fulco et al., 2019</a></p>
+<h3 id="the-signals-used-to-find-candidate-enhancers">The signals used to find candidate enhancers</h3>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable comparison table"><table>
+<thead>
+<tr>
+<th>Signal or term</th>
+<th>What it tells us</th>
+<th>What it does not establish alone</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ATAC-seq or DNase-seq</td>
+<td>A region is accessible to the assay in the measured biosample</td>
+<td>That it enhances a particular gene</td>
+</tr>
+<tr>
+<td>H3K27ac and other histone marks</td>
+<td>A biochemical pattern associated with regulatory chromatin</td>
+<td>A universal positive/negative enhancer label</td>
+</tr>
+<tr>
+<td>Transcription-factor binding</td>
+<td>A protein-associated genomic region in a specific experiment</td>
+<td>That its binding causes increased transcription</td>
+</tr>
+<tr>
+<td>A sequence motif</td>
+<td>A DNA pattern compatible with a binding preference</td>
+<td>Which factor is actually bound or whether the region is active</td>
+</tr>
+<tr>
+<td>cCRE</td>
+<td>A candidate cis-regulatory element annotated from evidence</td>
+<td>That every candidate is an experimentally confirmed enhancer</td>
+</tr>
+<tr>
+<td>pELS / dELS</td>
+<td>Proximal / distal enhancer-like signatures in the ENCODE classification</td>
+<td>Reporter activity in every cell type</td>
+</tr>
+</tbody></table></div>
+<p>The expanded ENCODE registry includes additional classes and functional behaviors beyond enhancers. Our local <code>GRCh38-cCREs.ELS.bed</code> contains only the pELS/dELS subset. Regions outside that file cannot automatically be labeled non-enhancers. <a href="https://doi.org/10.1038/s41586-025-09909-9">P01</a></p>
+<h3 id="why-sequence-alone-does-not-settle-the-question">Why sequence alone does not settle the question</h3>
+<p>Sequence can be informative, but enhancer function is conditional. In the hematopoiesis paper, the same binding sites can participate in activating or repressive behavior depending on cell state and site combinations. Two individually activating sites do not necessarily produce stronger activation together. <a href="https://doi.org/10.1016/j.cell.2025.04.017">P05</a></p>
+<p>Likewise, orientation independence is a useful experimental property, not an absolute law that every measured sequence must satisfy. Reporter design and sensitivity influence what is observed. Zhang and colleagues explicitly discuss the tradeoff between requiring activity in both orientations and retaining candidates supported in only one. <a href="https://doi.org/10.1186/s13059-025-03828-8">P03</a></p>
+<h2 id="3-what-each-type-of-experiment-actually-measures">3 What each type of experiment actually measures</h2>
+<p>These evidence types complement one another. They do not form a single ranking in which one assay answers every question better than the others.</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable comparison table"><table>
+<thead>
+<tr>
+<th>Evidence</th>
+<th>Basic design</th>
+<th>Strongest use here</th>
+<th>Main interpretation limit</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ENCODE/SCREEN annotation</td>
+<td>Integrates biochemical evidence into genomic candidate regions</td>
+<td>Locate and annotate candidate regulatory elements</td>
+<td>Candidate status is not a cell-specific functional assay</td>
+</tr>
+<tr>
+<td>MPRA</td>
+<td>Tests many sequences with reporters, often linked to identifying barcodes</td>
+<td>Quantify regulatory potential across many constructs</td>
+<td>Insert length, promoter, construct, and cell affect the readout</td>
+</tr>
+<tr>
+<td>lentiMPRA</td>
+<td>Uses lentiviral integration of reporter constructs</td>
+<td>Compare activity and cell specificity in an integrated reporter setting</td>
+<td>Integration is not at each sequence&#39;s native locus</td>
+</tr>
+<tr>
+<td>STARR-seq</td>
+<td>Candidate sequence participates in the reporter transcript; output is related to input abundance</td>
+<td>Broad screens of sequence-dependent reporter activity</td>
+<td>Coverage, orientation, transcript effects, and processing matter</td>
+</tr>
+<tr>
+<td>VISTA developmental assay</td>
+<td>Tests regulatory sequences with reporters in mouse embryos</td>
+<td>Tissue patterns and developmental activity</td>
+<td>Sequence origin, embryo stage, and reporter backbone must be retained</td>
+</tr>
+<tr>
+<td>Synthetic MPRA</td>
+<td>Designs motif combinations and measures their activity</td>
+<td>Examine regulatory interactions with controlled sequence changes</td>
+<td>Synthetic grammar may not transfer directly to native enhancers</td>
+</tr>
+<tr>
+<td>Endogenous CRISPR perturbation</td>
+<td>Alters or represses a region at its genomic location</td>
+<td>Investigate effects on native gene expression</td>
+<td>Requires appropriate perturbation and gene-expression measurements; a dedicated dataset is not our starting point</td>
+</tr>
+<tr>
+<td>Model prediction</td>
+<td>Computes a score or predicted assay signal from sequence</td>
+<td>Generate hypotheses or compare existing tools</td>
+<td>Predictions are not independent experimental confirmation</td>
+</tr>
+</tbody></table></div>
+<p>Sources: <a href="https://doi.org/10.1038/s41586-025-09909-9">P01</a>, <a href="https://doi.org/10.1038/s41586-024-08430-9">P02</a>, <a href="https://doi.org/10.1186/s13059-025-03828-8">P03</a>, <a href="https://doi.org/10.1093/nar/gkae940">P04</a>, <a href="https://doi.org/10.1016/j.cell.2025.04.017">P05</a>, <a href="https://doi.org/10.1038/s41588-019-0538-0">Fulco et al.</a></p>
+<p><strong>Four states must stay separate:</strong> active under the stated criterion; adequately measured without detected activity; measured too poorly to decide; not tested. A fifth state—repressive activity—requires its own evidence relative to an appropriate baseline. “Not detected,” “not tested,” and “silencer” are not synonyms.</p>
+<h2 id="4-what-is-actually-in-our-repository">4 What is actually in our repository</h2>
+<h3 id="audited-resource-inventory">Audited resource inventory</h3>
+<p>Counts below come from the completed download audit, not from folder size estimates. A resource can be a table, article, ZIP, or large archive. Sizes are decimal GB of downloaded files, including compressed archives; extraction would use additional space.</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable comparison table"><table>
+<thead>
+<tr>
+<th>Study folder</th>
+<th align="right">Resources</th>
+<th align="right">Size</th>
+<th>Main material</th>
+<th>Role in our project</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>01_ENCODE4_SCREEN</code></td>
+<td align="right">7</td>
+<td align="right">0.729 GB</td>
+<td>Human ELS BED; article and supplements</td>
+<td>Common genomic annotation</td>
+</tr>
+<tr>
+<td><code>02_LENTIMPRA_ENCODE_2025</code></td>
+<td align="right">54</td>
+<td align="right">0.804 GB</td>
+<td>48 ENCODE files from eight experiments; article and supplements</td>
+<td>First activity and cell-context analysis</td>
+</tr>
+<tr>
+<td><code>03_MPRA_STARR_CROSS_ASSAY_2025</code></td>
+<td align="right">11</td>
+<td align="right">38.358 GB</td>
+<td>Reported calls, uniformly processed results, references, QC, raw-data bundle, code and article</td>
+<td>K562 assay comparison and sensitivity analysis</td>
+</tr>
+<tr>
+<td><code>04_VISTA</code></td>
+<td align="right">12</td>
+<td align="right">0.008 GB</td>
+<td>Eleven data/dictionary tables and database article</td>
+<td>Later developmental evidence case studies</td>
+</tr>
+<tr>
+<td><code>05_HEMATOPOIESIS_MPRA</code></td>
+<td align="right">10</td>
+<td align="right">0.354 GB</td>
+<td>R data object, two article versions, supplements and code</td>
+<td>Alternative mechanistic project on motif interactions</td>
+</tr>
+<tr>
+<td><code>06_DNABERT_ENHANCER_2026</code></td>
+<td align="right">5</td>
+<td align="right">10.703 GB</td>
+<td>Two article versions, supplement, code and model archive</td>
+<td>Optional existing-model comparison</td>
+</tr>
+<tr>
+<td><code>07_ALPHAGENOME_2026</code></td>
+<td align="right">10</td>
+<td align="right">0.114 GB</td>
+<td>Two distinct papers, supplements and research code</td>
+<td>Later focused interpretation of selected variants</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td align="right"><strong>109</strong></td>
+<td align="right"><strong>51.069 GB</strong></td>
+<td><strong>10 publication files; 99 other resources</strong></td>
+<td>A collection to curate before combining</td>
+</tr>
+</tbody></table></div>
+<p>The 10 publication files represent <strong>eight distinct works</strong>: two pairs are preprint/published versions of the same study. AlphaGenome and AlphaGenome Atlas are separate works. The repository also references four older prediction papers; those references are discussed in Section 6, but their full PDFs are not part of the local collection inspected here.</p>
+<h3 id="concrete-observations-from-our-initial-inspection">Concrete observations from our initial inspection</h3>
+<p>These are observations of the downloaded files, not new biological findings.</p>
+<ul>
+<li><strong>SCREEN:</strong> the ELS BED has 1,718,669 rows: 1,469,205 dELS and 249,464 pELS. This is a subset of the expanded registry, not its entire approximately 2.37 million human cCREs.</li>
+<li><strong>lentiMPRA:</strong> the 32 TSVs include eight with headers and 24 without headers. They contain fields corresponding to condition, replicate, sequence name, DNA/RNA quantities, ratio, log2 activity, and barcode count. A parser that assumes every file has a header will lose records in the headerless files.</li>
+<li><strong>lentiMPRA design:</strong> the supplementary ZIP contains Table S10, the joint-library design, and Table S11, its measurements. These are promising entry points for matching exact constructs across the three cells. Their presence has been verified; the complete join and quality filtering remain to be done.</li>
+<li><strong>VISTA:</strong> <code>experiments.tsv.gz</code> has 5,090 rows: 2,400 labeled positive, 2,075 negative, and 615 allelic. The file includes 4,163 distinct <code>vista_id</code> values. <code>locus.tsv.gz</code> has 4,142 rows; the differing universes must be reconciled rather than silently forced into a one-to-one join. The <code>allelic</code> category is not a negative label.</li>
+<li><strong>VISTA context:</strong> the experiment table spans multiple embryo stages and reporter backbones. Its <code>organism</code> field identifies the source sequence; it does not convert the mouse reporter experiment into a human in-vivo experiment.</li>
+<li><strong>Cross-assay archives:</strong> a small internal data dictionary describes genomic intervals, activity calls, GRO-cap signals, cCRE overlaps, and promoter proximity. One archive also contains a lentiMPRA source table from the study used in folder 02. Those two copies cannot count as independent confirmation.</li>
+<li><strong>Hematopoiesis:</strong> the core resource is <code>data_updated2.rda</code>, with author code and supplements. Its internal R objects have not yet been inspected, so the exact analysis-ready tables and joins remain an ingestion task.</li>
+<li><strong>Legacy sequence files:</strong> the four original enhancer/non-enhancer files contain 1,484 + 1,484 development sequences and 200 + 200 independent-test sequences, each 200 nt in the inspection. Unigram versions are alternate representations, not additional biological observations. Some coordinate headers explicitly refer to hg19; assembly must be checked before combining them with GRCh38 data.</li>
+</ul>
+<p>The eight compressed ENCODE BED files correctly retain <code>.bed.gz</code> extensions. Archives remain compressed. A bundle named <code>raw_data.tar.gz</code> has been downloaded, but its name alone does not establish that every original sequencing read is locally available. Likewise, the full AlphaGenome Atlas and a turnkey local AlphaGenome model installation are not included merely because we have the papers and code snapshot.</p>
+<h3 id="provenance-and-download-integrity">Provenance and download integrity</h3>
+<p>The audit records 55 resources verified against supplied checksums, 49 verified by size where a reference checksum was absent, and five reviewed current publication copies. No downloads are missing or partial, and all downloaded assets are ignored by Git.</p>
+<p>The five publication copies differ from historical manifest bytes: VISTA HTML, hematopoiesis Cell HTML, its bioRxiv preprint, the DNABERT bioRxiv preprint, and the AlphaGenome Atlas preprint. Their identities/readability and actual SHA256 values are documented. This establishes the reviewed copies we possess, not byte-for-byte equivalence with the historical copies. Original source hashes were preserved.</p>
+<p>See <a href="data/download_audit.json">download audit</a>, <a href="data/publication_receipts.json">publication receipts</a>, and <a href="data/inspection_inventory.json">inspection inventory</a>. The latter records limited file-level checks; it is not a full quality-control analysis of every dataset.</p>
+<h2 id="5-summaries-of-the-collected-papers">5 Summaries of the collected papers</h2>
+<article class="paper-card"><h3 id="p01-the-expanded-encode-registry">P01 The expanded ENCODE registry</h3>
+<p><strong>Moore, Pratt, Fan et al. · Nature, 2026</strong><br><em>An expanded registry of candidate cis-regulatory elements.</em> <a href="https://doi.org/10.1038/s41586-025-09909-9">Article / DOI</a></p>
+<p><strong>Question.</strong> How can biochemical and functional evidence be combined into a broader reference map of regulatory DNA?</p>
+<p><strong>Approach and findings.</strong> The authors expand the human registry to approximately 2.37 million candidate regulatory elements, incorporate additional categories, and integrate large-scale functional evidence. They show that some elements can have enhancer or silencer roles in different contexts. The paper also illustrates how regulatory annotations can support investigation of trait-associated loci.</p>
+<p><strong>Why it matters to us.</strong> SCREEN provides a coordinate-based framework for annotating our experimental regions. It helps ask whether a reporter-active region has an enhancer-like signature, lies near a promoter, or belongs to another regulatory class.</p>
+<p><strong>Limits and use.</strong> Candidate status and functional profiling are not equivalent to a positive enhancer result in every cell. Our downloaded ELS subset does not contain every registry class. Start with it for pELS/dELS annotation; obtain or identify the appropriate additional annotation only if a later question requires it. Do not use “absent from ELS” as a negative class.</p>
+</article><article class="paper-card"><h3 id="p02-lentimpra-across-three-cell-types">P02 lentiMPRA across three cell types</h3>
+<p><strong>Agarwal, Inoue et al. · Nature, 2025</strong><br><em>Massively parallel characterization of transcriptional regulatory elements.</em> <a href="https://doi.org/10.1038/s41586-024-08430-9">Article / DOI</a></p>
+<p><strong>Question.</strong> Which candidate sequences drive reporter transcription, and what determines activity and cell specificity?</p>
+<p><strong>Approach and findings.</strong> The study assays more than 680,000 sequences across HepG2, K562, and WTC11 cells, and reports 41.7% as active under its experimental criteria. A joint library of approximately 60,000 elements is tested across all three contexts. The authors find stronger cell specificity among potential enhancers than promoters and relate specificity to transcription-factor motifs. They also train quantitative sequence models.</p>
+<p><strong>Why it matters to us.</strong> This is the clearest starting dataset because the joint library allows comparison of the same constructs with the same broad assay design across cells. The paper&#39;s Figure 5 and Tables S10–S11 directly inform the first analysis.</p>
+<p><strong>Limits and use.</strong> These are reporter measurements averaged over integration contexts, not native-locus gene effects. The joint library was selected partly using earlier activity measurements, so its distribution is not representative of all genomic DNA. Preserve controls, promoter/enhancer categories, construct identities, and biological replicates. Reproduce a cross-cell comparison before adding a new analysis. The article&#39;s first authors are Agarwal and Inoue; the earlier local guide citation to Klein was incorrect.</p>
+</article><article class="paper-card"><h3 id="p03-why-reporter-assays-disagree">P03 Why reporter assays disagree</h3>
+<p><strong>Zhang et al. · Genome Biology, 2025</strong><br><em>Comprehensive evaluation of diverse massively parallel reporter assays to functionally characterize human enhancers genome-wide.</em> <a href="https://doi.org/10.1186/s13059-025-03828-8">Article / DOI</a></p>
+<p><strong>Question.</strong> Do different high-throughput reporter assays identify the same active regulatory regions?</p>
+<p><strong>Approach and findings.</strong> The authors compare six K562 datasets spanning tiling MPRA, lentiMPRA, ATAC-STARR-seq, and whole-genome STARR-seq. They investigate library coverage, reproducibility, processing, orientation, and overlap definitions. Uniform processing improves agreement, but differences remain. Transcriptional signals provide information alongside chromatin features.</p>
+<p><strong>Why it matters to us.</strong> This study supplies both reusable processed material and a warning against simplistic data merging. A sequence missing from an active-call list may never have been adequately measured. The denominator should be the jointly tested set, not the entire genome or the union of positive calls.</p>
+<p><strong>Limits and use.</strong> Requiring activity in both orientations increases stringency but can exclude genuine candidates with insufficient or asymmetric evidence. LentiMPRA and STARR-seq have different assay properties. Reproduce one comparison using the authors&#39; definitions before testing alternatives. Comparisons to reused lentiMPRA data are provenance checks, not independent validation. A generic “assays disagree” project would largely repeat this paper.</p>
+</article><article class="paper-card"><h3 id="p04-vista-developmental-enhancer-evidence">P04 VISTA developmental enhancer evidence</h3>
+<p><strong>Kosicki et al. · Nucleic Acids Research, 2025 issue; online 2024</strong><br><em>VISTA Enhancer browser: an updated database of tissue-specific developmental enhancers.</em> <a href="https://doi.org/10.1093/nar/gkae940">Article / DOI</a></p>
+<p><strong>Question.</strong> How can in-vivo developmental reporter results, images, and allelic comparisons be organized for reuse?</p>
+<p><strong>Approach and findings.</strong> The updated resource organizes loci, sequence alleles, experiments, and individual embryos. It includes tissue annotations, reporter backbones, developmental stages, and images. The paper reports more than 4,500 experiments at publication; our downloaded snapshot contains a different, later number of experiment records.</p>
+<p><strong>Why it matters to us.</strong> VISTA can support focused examples showing how a sequence&#39;s developmental tissue activity differs from its activity in cultured cells. It also offers a distinct future project on developmental specificity or allele-associated changes.</p>
+<p><strong>Limits and use.</strong> Candidates were selected for testing, not sampled uniformly from the genome. A negative result is conditional on the assay and tested stage. Related alleles and repeated experiments must be grouped by locus when evaluating a model or uncertainty. Human source DNA tested in mouse embryos remains evidence from a mouse reporter context. An image table is metadata, not proof that the image files themselves are downloaded.</p>
+</article><article class="paper-card"><h3 id="p05-synthetic-enhancer-grammar-in-hematopoiesis">P05 Synthetic enhancer grammar in hematopoiesis</h3>
+<p><strong>Frömel et al. · Cell, 2025</strong><br><em>Design principles of cell-state-specific enhancers in hematopoiesis.</em> <a href="https://doi.org/10.1016/j.cell.2025.04.017">Article / DOI</a></p>
+<p><strong>Question.</strong> How can combinations of transcription-factor binding sites generate selective activity during blood-cell differentiation?</p>
+<p><strong>Approach and findings.</strong> The published paper describes 64,400 fully synthetic sequences designed around binding sites for 38 transcription factors and their interactions. It assays multiple hematopoietic progenitor states and also uses K562 experiments. Identical sites can activate or repress depending on context. Combinations of activating sites can neutralize one another or become repressive, helping create cell-state-specific patterns.</p>
+<p><strong>Why it matters to us.</strong> This is our strongest alternative to a prediction-centered project: analyze controlled sequence designs to understand interactions, rather than merely assign binary labels. Author figure code and the R dataset may make a focused reproduction feasible.</p>
+<p><strong>Limits and use.</strong> Designed sequences, experimental backgrounds, and mouse progenitor contexts should remain separate from human genomic enhancer annotations. Pairwise interactions require a defined response scale and matched controls. Reproducing negative synergy would reproduce an existing finding; a new contribution would need a narrower, demonstrably unaddressed question.</p>
+</article><article class="paper-card"><h3 id="p06-earlier-version-of-the-hematopoiesis-study">P06 Earlier version of the hematopoiesis study</h3>
+<p><strong>Frömel et al. · bioRxiv, 2024; preprint</strong><br><em>Synthetic enhancers reveal design principles of cell state specific regulatory elements in hematopoiesis.</em> <a href="https://doi.org/10.1101/2024.08.26.609645">Preprint / DOI</a></p>
+<p>The preprint presents the same central motif-combination and cell-state logic, but its abstract describes 62,126 synthetic sequences, compared with 64,400 in the published article. Treat it as the earlier version of P05, not an independent replication or an extra dataset to concatenate. Use the published paper for the principal summary and retain the preprint for version-specific methods or historical comparisons. A complete reconciliation of their supplementary datasets has not been performed.</p>
+</article><article class="paper-card"><h3 id="p07-earlier-dnabertenhancer-study">P07 Earlier DNABERT-Enhancer study</h3>
+<p><strong>Sathian, Dutta, Ay and Davuluri · bioRxiv, 2025; preprint</strong><br><em>Genomic language model for predicting enhancers and their allele-specific activity in the human genome.</em> <a href="https://doi.org/10.1101/2025.03.18.644040">Preprint / DOI</a></p>
+<p>The authors fine-tune a pretrained DNA language model using enhancer annotations and apply it to genomic sequences and candidate variants. The preprint reports 88.05% accuracy on held-out data. It is the earlier version of P08, not a separate experimental confirmation. Retain it to understand the project&#39;s evolution, but use the journal article and the exact checkpoint provenance when interpreting current results.</p>
+</article><article class="paper-card"><h3 id="p08-published-dnabertenhancer">P08 Published DNABERT-Enhancer</h3>
+<p><strong>Sathian, Dutta, Ay and Davuluri · Bioinformatics, 2026</strong><br><em>Genomic language model for predicting enhancers and their allele-specific activity in the human genome.</em> <a href="https://doi.org/10.1093/bioinformatics/btag456">Article / DOI</a></p>
+<p><strong>Question.</strong> Can sequence representations learned by a genomic language model discriminate annotated enhancers and help prioritize variant effects?</p>
+<p><strong>Approach and findings.</strong> The models use 201-bp or 350-bp sequences, with ENCODE-derived positives and sampled genomic negatives. The main benchmark balances the two classes and holds out 20% of sequences. The paper reports 82.04% accuracy for the 201-bp model and 88.05% for the 350-bp model; the latter has MCC 0.7622. It also reports cell-specific models, genome-wide predicted regions, and candidate allele effects.</p>
+<p><strong>Why it matters to us.</strong> We already have the model archive and code, so an existing predictor can be investigated later without inventing a replacement. A useful question is whether its score tracks our experimental measurements or only the kind of annotation used to train it.</p>
+<p><strong>Limits and use.</strong> Negative-set design, sequence length, and training/test relatedness influence the task. A sequence&#39;s predicted enhancer probability is not its expected reporter activity. Predicted variant effects are hypotheses. Before using a checkpoint, identify its training data and evaluate overlap with our proposed test regions. Do not crop a 200-nt reporter insert to fit a different input length and assume the biological construct is unchanged.</p>
+</article><article class="paper-card"><h3 id="p09-alphagenome">P09 AlphaGenome</h3>
+<p><strong>Avsec et al. · Nature, 2026</strong><br><em>Advancing regulatory variant effect prediction with AlphaGenome.</em> <a href="https://doi.org/10.1038/s41586-025-10014-0">Article / DOI</a></p>
+<p><strong>Question.</strong> Can one sequence model combine long genomic context with detailed predictions across many regulatory measurements?</p>
+<p><strong>Approach and findings.</strong> AlphaGenome takes approximately 1 Mb of DNA and predicts thousands of tracks across modalities including expression, accessibility, binding, histone marks, contacts, and splicing. The authors report matching or exceeding the strongest compared models in 25 of 26 variant-effect evaluations. Reference and alternative sequences can be compared to predict molecular consequences.</p>
+<p><strong>Why it matters to us.</strong> It broadens the project beyond a single enhancer/non-enhancer score. Later, a small set of well-supported regions or variants could be examined for predicted changes in relevant molecular readouts.</p>
+<p><strong>Limits and use.</strong> “25 of 26 evaluations” is a count of benchmark comparisons, not 96% enhancer accuracy. Predictions remain modality- and context-dependent. Our code snapshot does not establish that all model weights, runtime requirements, or external access are ready. We should not make running or retraining this model a prerequisite for our initial data analysis.</p>
+</article><article class="paper-card"><h3 id="p10-alphagenome-atlas">P10 AlphaGenome Atlas</h3>
+<p><strong>AlphaGenome Atlas team, led by Cheng, Taylor and colleagues · medRxiv, 2026; preprint</strong><br><em>AlphaGenome Atlas: in silico mutagenesis of the entire human genome improves prioritization and interpretation of non-coding variants.</em> <a href="https://doi.org/10.64898/2026.09.16.26363192">Preprint / DOI</a></p>
+<p><strong>Question.</strong> Can precomputed sequence perturbations make genome-wide variant prioritization and mechanistic interpretation easier?</p>
+<p><strong>Approach and findings.</strong> The authors apply AlphaGenome to possible single-nucleotide changes and many observed indels. They derive an AlphaGenome Variant Impact (AVI) score that integrates predicted effects with additional information, and produce motif maps and feature attributions. Their analyses illustrate applications to genetic interpretation.</p>
+<p><strong>Why it matters to us.</strong> Selected precomputed annotations could eventually help interpret a small candidate set, avoiding a requirement to generate predictions genome-wide ourselves.</p>
+<p><strong>Limits and use.</strong> This is a preprint, not an independent experimental atlas of enhancer activity. AVI is not simply an enhancer score and is trained using variant-frequency-based proxy labels. We have the paper and companion materials, not the full Atlas. Any future use must identify the exact data version, tissue/readout, and score meaning. Our project can use it for research hypotheses; it would not establish clinical consequences.</p>
+</article><h2 id="6-the-older-prediction-literature-and-reported-accuracy">6 The older prediction literature and reported accuracy</h2>
+<p>The four studies below are named in <code>legacy_references.tsv</code>. This is a brief orientation based on publisher/PubMed material; it is not a claim that their absent local PDFs or all supplements were comprehensively reviewed.</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable comparison table"><table>
+<thead>
+<tr>
+<th>Older work</th>
+<th>Main idea</th>
+<th>Why retain it</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>iEnhancer-2L</strong>, Liu et al., 2016</td>
+<td>Two-stage prediction: enhancer identification, then strength classification, using pseudo k-tuple nucleotide composition</td>
+<td>Explains the older sequence-feature benchmark tradition. <a href="https://pubmed.ncbi.nlm.nih.gov/26476782/">Primary abstract</a></td>
+</tr>
+<tr>
+<td><strong>EnhancerPred</strong>, Jia and He, 2016</td>
+<td>Combines selected sequence features to classify enhancers and their strength; the abstract reports 77.39% identification accuracy</td>
+<td>Shows how feature selection and label definitions shaped early benchmarks. <a href="https://pubmed.ncbi.nlm.nih.gov/27941893/">Primary abstract</a></td>
+</tr>
+<tr>
+<td><strong>iEnhancer-EL</strong>, Liu et al., 2018</td>
+<td>Uses ensembles of sequence-feature classifiers for identification and strength</td>
+<td>Useful historical comparator, with evaluation tied to its benchmark. <a href="https://doi.org/10.1093/bioinformatics/bty458">Article</a></td>
+</tr>
+<tr>
+<td><strong>MCSE-Enhancer</strong>, Mir et al., 2023</td>
+<td>Stacks multiple classifiers built from sequence-derived features; the abstract reports 81.5% independent-set accuracy</td>
+<td>Illustrates incremental benchmark improvement without changing the biological question. <a href="https://www.sciencedirect.com/science/article/abs/pii/S0022283623004254">Publisher abstract</a></td>
+</tr>
+</tbody></table></div>
+<h3 id="why-the-scores-are-not-a-league-table">Why the scores are not a league table</h3>
+<p>Your impression that many enhancer models report figures around 70–80% fits parts of this older literature. But these numbers are not a general ceiling on our understanding of enhancers, and the collected work does not all measure the same prediction task.</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable comparison table"><table>
+<thead>
+<tr>
+<th>Reported result</th>
+<th>What it means</th>
+<th>What it does not mean</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>EnhancerPred: 77.39% accuracy</td>
+<td>Fraction of correct classifications in the reported benchmark setting</td>
+<td>77.39% reliable enhancer function across arbitrary tissues</td>
+</tr>
+<tr>
+<td>DNABERT-Enhancer-350: 88.05% accuracy</td>
+<td>Classification on its held-out, balanced annotation-derived dataset</td>
+<td>88.05% accuracy for reporter activity or variant effects</td>
+</tr>
+<tr>
+<td>lentiMPRA cell-specific modeling: Pearson correlation around 0.81 for EnformerMPRA</td>
+<td>Agreement between predicted and measured quantitative specificity in the paper&#39;s evaluation</td>
+<td>81% classification accuracy</td>
+</tr>
+<tr>
+<td>AlphaGenome: strongest-comparator performance in 25 of 26 variant-effect evaluations</td>
+<td>A result across a suite of tasks and metrics</td>
+<td>A single percent accuracy for enhancer identification</td>
+</tr>
+</tbody></table></div>
+<p>Sources: <a href="https://pubmed.ncbi.nlm.nih.gov/27941893/">EnhancerPred</a>, <a href="https://doi.org/10.1093/bioinformatics/btag456">P08, §3.2</a>, <a href="https://doi.org/10.1038/s41586-024-08430-9">P02, Fig. 5</a>, <a href="https://doi.org/10.1038/s41586-025-10014-0">P09</a>.</p>
+<p>Accuracy depends on labels and class balance. As an illustrative calculation—not a result from our data—if only 10 of 100 sequences are positive, predicting every sequence as negative achieves 90% accuracy while finding none of the positives. Likewise, easy background negatives may produce a different score from carefully matched, experimentally inactive candidates.</p>
+<p>Before comparing models, specify <strong>the biological target, source of labels, cell context, negative class, evaluation split, and metric</strong>. For our first project, measured activity, reproducibility, and uncertainty are more useful primary outcomes than beating a published accuracy number.</p>
+<h2 id="7-research-directions-available-to-us">7 Research directions available to us</h2>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable comparison table"><table>
+<thead>
+<tr>
+<th>Direction</th>
+<th>A concrete question</th>
+<th>Potential deliverable</th>
+<th>Main constraint</th>
+<th>Recommendation</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Cell-context activity</strong></td>
+<td>Which jointly tested constructs are broadly active or selective across three cells?</td>
+<td>Activity matrix, specificity figures, annotated examples</td>
+<td>Paper already examines specificity; exact joins and normalization must be reproduced</td>
+<td><strong>Start here</strong></td>
+</tr>
+<tr>
+<td><strong>Reliability across assays</strong></td>
+<td>Which K562 conclusions survive coverage, orientation, and processing choices?</td>
+<td>Agreement/discordance table with sensitivity plots</td>
+<td>Shared tested regions and non-independent source data</td>
+<td>Extend the first project if overlap supports it</td>
+</tr>
+<tr>
+<td><strong>Synthetic regulatory interactions</strong></td>
+<td>Under which matched designs do motif combinations show non-additive effects?</td>
+<td>Motif-pair interaction analysis with uncertainty</td>
+<td>R-object inspection and careful control/scale definitions</td>
+<td>Strong alternative if mechanism becomes the priority</td>
+</tr>
+<tr>
+<td><strong>Developmental case studies</strong></td>
+<td>How do selected sequences behave across VISTA tissues and stages?</td>
+<td>Locus-level evidence dossiers</td>
+<td>Different biological contexts and selection bias</td>
+<td>Later, focused examples</td>
+</tr>
+<tr>
+<td><strong>Existing-model evaluation</strong></td>
+<td>Does an available model score agree with independent experimental activity?</td>
+<td>Transparent evaluation and failure analysis</td>
+<td>Training overlap, construct length, domain mismatch</td>
+<td>Optional tool, not the project&#39;s purpose</td>
+</tr>
+<tr>
+<td><strong>New prediction architecture</strong></td>
+<td>Does a new model address an identified failure on an appropriate held-out task?</td>
+<td>Model and reproducible benchmark</td>
+<td>Requires a clear unmet need and credible baselines</td>
+<td>Defer until evidence supports it</td>
+</tr>
+</tbody></table></div>
+<h3 id="our-recommended-outcome">Our recommended outcome</h3>
+<p>Working project title: <strong>“Context and confidence in enhancer activity.”</strong></p>
+<p>The final research package should contain:</p>
+<ol>
+<li>A reproducible, documented table connecting constructs, cells, replicates, activity, quality, and genomic annotations.</li>
+<li>A clear description of broadly active, selective, weakly supported, and unresolved observations, restricted to the tested contexts.</li>
+<li>A K562 comparison across assays where comparable tested regions exist, with explicit uncertainty and provenance.</li>
+<li>A small set of well-explained examples showing why annotation, reporter measurements, and model predictions can differ.</li>
+<li>An honest conclusion about which patterns are reproduced, which are robust to analysis choices, and which require further data.</li>
+</ol>
+<p>This could support a substantial learning project, an internal research report, or eventually a manuscript if a specific new result emerges. Publication readiness cannot be inferred from the amount of downloaded data.</p>
+<h2 id="8-analysis-design">8 Analysis design</h2>
+<h3 id="begin-with-a-matched-comparison">Begin with a matched comparison</h3>
+<p>Use the lentiMPRA joint library, not the union of all eight experiments, as the initial unit of comparison. Proposed entry points are Supplementary Tables S10–S11 and these ENCODE experiment folders:</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable comparison table"><table>
+<thead>
+<tr>
+<th>Cell</th>
+<th>Biological context</th>
+<th>Joint-library accession to reconcile with the paper</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>HepG2</td>
+<td>Liver-derived cell line</td>
+<td><code>ENCSR405QCT</code></td>
+</tr>
+<tr>
+<td>K562</td>
+<td>Blood-derived leukemia cell line</td>
+<td><code>ENCSR203UFY</code></td>
+</tr>
+<tr>
+<td>WTC11</td>
+<td>Induced pluripotent stem-cell line</td>
+<td><code>ENCSR336MKI</code></td>
+</tr>
+</tbody></table></div>
+<p>Do not interpret these as comprehensive representations of liver, blood, or stem-cell biology. Their value is a controlled comparison among the measured cellular systems. Confirm construct matching against the design table before calculating cross-cell differences.</p>
+<h3 id="build-two-linked-tables">Build two linked tables</h3>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable comparison table"><table>
+<thead>
+<tr>
+<th>Table</th>
+<th>One row represents</th>
+<th>Essential information</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Construct/region table</strong></td>
+<td>One exact assayed DNA construct or explicitly defined genomic region</td>
+<td>Stable ID, source study/library, sequence if available, sequence hash, orientation, genomic coordinates and assembly, native/synthetic/control category, relationships to overlapping constructs</td>
+</tr>
+<tr>
+<td><strong>Measurement table</strong></td>
+<td>One construct in one cell, assay, and replicate</td>
+<td>Accession, processing version, activity scale, DNA/RNA quantities, barcode count, QC status, tested status, activity call and criterion</td>
+</tr>
+</tbody></table></div>
+<p>Keep normalized quantities separate from raw counts. The inspected lentiMPRA TSVs contain fractional DNA/RNA values, and the paper defines normalized RNA/DNA activity; do not silently treat these as integer sequencing counts. Do not append a combined-replicate file to its own component replicate files as if they were independent experiments.</p>
+<p>Every derived table should record its source paths/checksums, import script version, filtering decisions, and date. Keep imported values intact and add analysis columns rather than rewriting the sources.</p>
+<h3 id="check-measurement-quality-before-asking-biology">Check measurement quality before asking biology</h3>
+<p>The first figures should show replicate agreement, activity distributions, control behavior, barcode support, missingness, and retained construct counts. Reproduce the paper&#39;s filtering and normalization where possible, and document any departure.</p>
+<p>For cross-cell comparisons, check control baselines and library differences. A higher numerical score in one cell need not represent a proportionally stronger biological enhancer unless the measurement scales are comparable. Start with the published specificity definition; analyze alternative centering or rank-based summaries only as clearly labeled sensitivity checks.</p>
+<p>Do not promote a large difference driven by a poorly measured cell into “cell specificity.” Include support requirements in every classification and preserve an unresolved category. An inactive-call threshold is operational, not a permanent property of a DNA sequence.</p>
+<h3 id="describe-patterns-before-fitting-a-predictor">Describe patterns before fitting a predictor</h3>
+<p>Build a construct-by-cell activity matrix for the reliably matched set. Examine pairwise activity comparisons and a heatmap. Summarize distributions separately for potential enhancers, promoters, and controls; the candidate-selection scheme makes these categories essential.</p>
+<p>Potential follow-up annotations include GC content, exact insert length, cCRE class, promoter proximity, and published motif annotations. Motif enrichment requires a justified background matched for relevant biases, such as GC and library selection. A motif match is not proof of the responsible factor, especially when several factors share a binding preference.</p>
+<p>Use effect sizes and uncertainty, not only significance tests. Estimate uncertainty from the actual replicate structure; constructs, barcodes, genomic loci, and biological replicates are different sampling units. For related constructs or overlapping regions, cluster resampling at the appropriate shared unit. Correct multiple testing when many regions or motifs are assessed.</p>
+<h3 id="add-a-k562-assay-comparison-only-when-the-denominator-is-valid">Add a K562 assay comparison only when the denominator is valid</h3>
+<p>Construct a coverage-aware overlap table between the selected K562 regions and another assay. Preserve four states: active, measured without detected activity, insufficient evidence, and untested. Different fragment boundaries require explicit overlap rules; partial genomic overlap does not establish identical assayed DNA.</p>
+<p>Compare continuous scores when their meanings support it, and compare thresholded calls separately. Repeat comparisons across justified overlap and orientation definitions, using the paper&#39;s original criterion as the first reproduction. Stratify by coverage, region length, cCRE class, and promoter proximity where supported by available metadata.</p>
+<p>The possible extension is to ask whether cross-cell-selective and broadly active constructs have different stability of K562 activity evidence after accounting for these factors. This is an <strong>association question</strong>: cell context and assay design are not randomized against every other source of variation. We cannot attribute every discrepancy to a biological mechanism.</p>
+<p>The lentiMPRA data reused in the cross-assay archive must be linked to the original source. Only additional assay measurements can contribute distinct experimental evidence. Even those may share candidate selection or genomic annotations.</p>
+<h3 id="define-success-without-chasing-a-score">Define success without chasing a score</h3>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable comparison table"><table>
+<thead>
+<tr>
+<th>Milestone</th>
+<th>Evidence that it is complete</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Reliable import</td>
+<td>All source rows accounted for; header handling and data types verified; exclusions explained</td>
+</tr>
+<tr>
+<td>Valid joint library</td>
+<td>Join cardinalities and duplicate relationships documented; failed/unmatched joins retained in a diagnostic table</td>
+</tr>
+<tr>
+<td>Reproduction</td>
+<td>Selected published summaries reconstructed with stated tolerance, or differences traced to versions/filters</td>
+</tr>
+<tr>
+<td>Descriptive result</td>
+<td>Activity and specificity patterns include controls, sample counts, uncertainty, and tested-context limits</td>
+</tr>
+<tr>
+<td>Cross-assay extension</td>
+<td>Adequate jointly tested sample identified; estimates remain interpretable under sensitivity analyses</td>
+</tr>
+<tr>
+<td>Scientific conclusion</td>
+<td>Claims distinguish observed patterns, reproduced findings, proposed mechanisms, and unresolved questions</td>
+</tr>
+</tbody></table></div>
+<p>Before testing an extension, estimate how many independent loci remain and whether uncertainty is small enough to answer it. No specific overlap count or detectable effect is promised yet. A well-documented inability to make a fair comparison is a useful result and a reason to narrow the project.</p>
+<h3 id="if-models-become-useful-later">If models become useful later</h3>
+<p>Begin with simple descriptive or statistical baselines. If prediction is justified, compare an appropriate baseline with an existing model before training a new architecture. Group duplicates, overlapping loci, reverse complements, replicates, and related alleles so closely related observations do not leak between evaluation partitions. Document what the pretrained model has already seen; a new split cannot erase pretraining exposure.</p>
+<p>For continuous activity, consider rank correlation and an error metric on a defined scale. For classification, report precision–recall behavior, prevalence, MCC or balanced accuracy, and threshold choice alongside any accuracy/AUROC result. Tune thresholds and preprocessing using training/validation data, never the final held-out evaluation. Predicting an ENCODE label and predicting an experimentally measured RNA/DNA response should remain distinct tasks.</p>
+<h2 id="9-a-practical-path-forward">9 A practical path forward</h2>
+<p>This is an ordered plan, not a promise that every later phase is necessary. VS Code is a suitable editor and notebook interface; the scientific work comes from the import scripts, provenance, and analysis decisions.</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable comparison table"><table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Work</th>
+<th>Deliverable</th>
+<th>Decision gate</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>0 · Strategy</strong></td>
+<td>Read the papers, map evidence, define possible questions</td>
+<td>This report and a decision log</td>
+<td>Completed as a proposed direction; refine after seeing the data</td>
+</tr>
+<tr>
+<td><strong>1 · Data orientation</strong></td>
+<td>Import joint-library design and measurements; check header conventions, controls, duplicates, and scales</td>
+<td><code>02_data_dictionary_and_qc.md</code>, source ledger, QC figures</td>
+<td>Do construct identities and replicate structure reconcile?</td>
+</tr>
+<tr>
+<td><strong>2 · Reproduce one result</strong></td>
+<td>Recreate a selected cross-cell activity/specificity summary from P02</td>
+<td>A reproducible notebook/script and reproduction report</td>
+<td>Can we explain differences from the publication?</td>
+</tr>
+<tr>
+<td><strong>3 · Describe context dependence</strong></td>
+<td>Summarize reliably measured broad/selective activity; inspect annotated examples</td>
+<td>Activity matrix, uncertainty summaries, biological interpretation</td>
+<td>Which focused question remains after known findings are reproduced?</td>
+</tr>
+<tr>
+<td><strong>4 · Test a bounded extension</strong></td>
+<td>Join suitable K562 measurements to other assays; analyze call stability</td>
+<td>Evidence table and sensitivity figures</td>
+<td>Is overlap sufficient, and does this go beyond P02/P03?</td>
+</tr>
+<tr>
+<td><strong>5 · Choose the next branch</strong></td>
+<td>Deepen a robust result, switch to synthetic grammar, or evaluate an existing model</td>
+<td>Updated strategy and explicit scope decision</td>
+<td>Does the next action answer a biological or measurement question?</td>
+</tr>
+</tbody></table></div>
+<h3 id="the-first-analysis-session">The first analysis session</h3>
+<ol>
+<li>Open the repository in VS Code and create a project-specific Python environment; record dependency versions. This report does not install or assume a working analysis environment.</li>
+<li>Read only the joint-library design and result tables, plus the corresponding metadata and controls. Extract these selected archive members into a clearly named derived-data location while preserving the downloaded ZIP.</li>
+<li>Write a small import script that produces a source ledger, join diagnostics, and a tidy measurement table. Use notebooks for explanation and plots, keeping reusable parsing code in scripts.</li>
+<li>Produce four initial outputs: row/construct counts, a missingness table, replicate comparisons, and control/activity distributions.</li>
+<li>Write down what those checks permit us to compare. Only then calculate cross-cell selectivity.</li>
+</ol>
+<p>Tabular exploration is a reasonable first local task, with chunked or selected reads if needed. Hardware feasibility for large archives and model inference has not been assessed. We can avoid expanding tens of gigabytes merely to begin. R or an appropriate reader may be needed for the hematopoiesis <code>.rda</code> branch; its setup can wait until that branch is chosen.</p>
+<h3 id="proposed-future-analysis-layout">Proposed future analysis layout</h3>
+<p>The <code>reports/</code> folder is being established now. The other analysis directories below are a proposed convention for subsequent work, not evidence that their pipelines already exist.</p>
+<pre><code class="language-text">EnhancersResearch/
+  NEW_2026_DATA/                 downloaded sources; preserve originals
+  reports/
+    README.md                   reading index and reporting conventions
+    01_enhancers_evidence_and_strategy.md
+    01_enhancers_evidence_and_strategy.html
+    decisions.md                dated decisions and unresolved choices
+    assets/                     small report-specific evidence files
+  scripts/                      reusable import and analysis code [future]
+  notebooks/                    explanatory analyses [future]
+  data/derived/                 rebuildable analysis tables [future]
+  results/                      figures and computed outputs [future]
+</code></pre>
+<p>Version small reports, scripts, metadata, and environment specifications. Keep large downloads and derived tables out of ordinary Git history; set ignore rules before generating them. A report&#39;s methods should make its results reproducible without copying the large inputs into Git.</p>
+<h2 id="10-decisions-to-carry-into-the-next-session">10 Decisions to carry into the next session</h2>
+<p><strong>Proposed working direction:</strong> understand measured enhancer activity and its reliability across contexts. A new prediction model is optional and currently deferred.</p>
+<p><strong>First unit of analysis:</strong> an exact jointly assayed lentiMPRA construct, linked to separate cell/replicate measurements. Genomic intervals become the join unit for a later cross-assay comparison, with explicit boundary caveats.</p>
+<p><strong>First biological distinction:</strong> broadly active versus selective reporter behavior among the three tested cell contexts. Do not generalize “broad” to all tissues or call a weakly measured construct inactive.</p>
+<p><strong>First result to reproduce:</strong> a joint-library cross-cell activity or specificity summary from P02. Choose the exact panel and numerical tolerance after inspecting the relevant supplementary table structure.</p>
+<p><strong>Possible extension:</strong> association between cell selectivity and stability of K562 activity evidence across assays and analysis choices. Its feasibility and novelty remain open.</p>
+<p><strong>Unresolved before that extension:</strong> exact construct joins; authors&#39; QC and normalization; overlap with independently measured K562 regions; sufficient locus counts; suitable promoter/cCRE annotations; and the availability of required sequence information.</p>
+<p><strong>Alternative if the extension is uninformative:</strong> use P05&#39;s designed motif combinations for a focused mechanistic reanalysis. This choice should follow evidence and interest, not the size of an archive.</p>
+<h2 id="11-short-glossary">11 Short glossary</h2>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable comparison table"><table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Meaning in this project</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Allele / variant</td>
+<td>An alternative DNA sequence / a difference from a reference sequence</td>
+</tr>
+<tr>
+<td>Barcode</td>
+<td>A short identifying sequence used to associate reporter measurements with a construct</td>
+</tr>
+<tr>
+<td>BED</td>
+<td>A genomic interval format; standard BED coordinates are zero-based with an exclusive end, as also specified in the inspected cross-assay dictionary</td>
+</tr>
+<tr>
+<td>Biological replicate</td>
+<td>An independently repeated biological experiment; multiple barcodes are not automatically biological replicates</td>
+</tr>
+<tr>
+<td>cCRE</td>
+<td>Candidate cis-regulatory element</td>
+</tr>
+<tr>
+<td>Chromatin</td>
+<td>DNA with associated proteins; its state influences regulatory access and interactions</td>
+</tr>
+<tr>
+<td>cis-regulatory</td>
+<td>Acting through a DNA regulatory element on the same DNA molecule as its target</td>
+</tr>
+<tr>
+<td>Construct</td>
+<td>The particular DNA insert and reporter design tested experimentally</td>
+</tr>
+<tr>
+<td>FDR</td>
+<td>False discovery rate: an error criterion for a collection of statistical calls</td>
+</tr>
+<tr>
+<td>GRCh38 / hg38; hg19</td>
+<td>Genome assembly labels; coordinates from different assemblies cannot be mixed directly</td>
+</tr>
+<tr>
+<td>GRO-cap</td>
+<td>An assay used to detect capped nascent transcription initiation; related annotations appear in the cross-assay archive</td>
+</tr>
+<tr>
+<td>k-mer</td>
+<td>A sequence substring of length k, used in some sequence representations</td>
+</tr>
+<tr>
+<td>Motif</td>
+<td>A recurring sequence pattern, often associated with a protein-binding preference</td>
+</tr>
+<tr>
+<td>MPRA</td>
+<td>Massively parallel reporter assay</td>
+</tr>
+<tr>
+<td>Promoter / TSS</td>
+<td>Transcription initiation region / transcription start site</td>
+</tr>
+<tr>
+<td>Regulatory grammar</td>
+<td>The contribution of motif identity, arrangement, and combinations to regulatory behavior</td>
+</tr>
+<tr>
+<td>Reporter</td>
+<td>An engineered readout used to measure activity of a tested sequence</td>
+</tr>
+<tr>
+<td>Sequence-to-function model</td>
+<td>A model predicting molecular measurements or functional labels from DNA</td>
+</tr>
+<tr>
+<td>Specificity</td>
+<td>Relative preference for activity in particular measured cell or tissue contexts</td>
+</tr>
+<tr>
+<td>STARR-seq</td>
+<td>Self-transcribing active regulatory region sequencing</td>
+</tr>
+<tr>
+<td>Transcription factor</td>
+<td>A protein that participates in regulation of transcription, often through sequence-dependent DNA binding</td>
+</tr>
+</tbody></table></div>
+<h2 id="12-sources-and-scope">12 Sources and scope</h2>
+<p>The ten collected publication files are individually summarized in Section 5. For the two preprint/journal pairs, the journal article is the principal source. The four legacy references in Section 6 are orientation summaries based on accessible primary abstracts or publisher text. The Fulco activity-by-contact paper is an additional background reference, not one of the 109 downloaded resources.</p>
+<p>The inventory combines the final download audit with direct inspection of selected tables, archive member lists, data dictionaries, code READMEs, and publication text. It does not assert that every supplementary object has been analyzed, every archive fully extracted, or every result reproduced. Figures, numbers, or conclusions generated in future sessions should be recorded in separate dated reports rather than retroactively presented as findings of this strategy document.</p>
+<h3 id="local-publication-index">Publication source index</h3>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable comparison table"><table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Source publication</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>P01</td>
+<td><a href="https://doi.org/10.1038/s41586-025-09909-9">An_expanded_registry_of_candidate_cis-regulatory_elements_Nature_2026.pdf</a></td>
+</tr>
+<tr>
+<td>P02</td>
+<td><a href="https://doi.org/10.1038/s41586-024-08430-9">Massively_parallel_characterization_of_transcriptional_regulatory_elements_Nature_2025.pdf</a></td>
+</tr>
+<tr>
+<td>P03</td>
+<td><a href="https://doi.org/10.1186/s13059-025-03828-8">Comprehensive_evaluation_of_MPRA_and_STARR-seq_Genome_Biology_2025.pdf</a></td>
+</tr>
+<tr>
+<td>P04</td>
+<td><a href="https://doi.org/10.1093/nar/gkae940">VISTA_Enhancer_Browser_updated_database_NAR_2024.html</a></td>
+</tr>
+<tr>
+<td>P05</td>
+<td><a href="https://doi.org/10.1016/j.cell.2025.04.017">Design_principles_cell-state-specific_enhancers_in_hematopoiesis_Cell_2025.html</a></td>
+</tr>
+<tr>
+<td>P06</td>
+<td><a href="https://doi.org/10.1101/2024.08.26.609645">Synthetic_enhancers_in_hematopoiesis_bioRxiv_2024_preprint.pdf</a></td>
+</tr>
+<tr>
+<td>P07</td>
+<td><a href="https://doi.org/10.1101/2025.03.18.644040">DNABERT_Enhancer_bioRxiv_2025_preprint.pdf</a></td>
+</tr>
+<tr>
+<td>P08</td>
+<td><a href="https://doi.org/10.1093/bioinformatics/btag456">DNABERT_Enhancer_Bioinformatics_2026_full_text.html</a></td>
+</tr>
+<tr>
+<td>P09</td>
+<td><a href="https://doi.org/10.1038/s41586-025-10014-0">AlphaGenome_variant_effect_prediction_Nature_2026.pdf</a></td>
+</tr>
+<tr>
+<td>P10</td>
+<td><a href="https://doi.org/10.64898/2026.09.16.26363192">AlphaGenome_Atlas_medRxiv_2026_preprint.pdf</a></td>
+</tr>
+</tbody></table></div>
+<h3 id="reading-order-for-our-first-project">Reading order for our first project</h3>
+<p>Start with <strong>P02</strong> for matched functional measurements and its Figure 5; then <strong>P03</strong> for assay comparability; then <strong>P01</strong> for annotation and regulatory context. Read <strong>P05</strong> to explore the mechanistic alternative. Use <strong>P04</strong> for developmental questions and <strong>P08–P10</strong> if model-based interpretation becomes useful. Read the earlier preprints alongside their journal versions only when version differences matter.</p>
+<p class="small-note">EnhancersResearch · Report 01 · Web reading edition. Source links point to the original publications; local audit records are included as dated snapshots.</p>

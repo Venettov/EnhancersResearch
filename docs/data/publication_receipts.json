@@ -1,0 +1,78 @@
+{
+  "files": [
+    {
+      "relative_path": "04_VISTA/PAPERS/VISTA_Enhancer_Browser_updated_database_NAR_2024.html",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11701537/",
+      "doi": "10.1093/nar/gkae940",
+      "retrieved_utc": "2026-10-10T14:50:00.023388+00:00",
+      "expected_bytes": 152841,
+      "expected_sha256": "a43f4b35058036f7b5ae94a6e1f14762f2822f58737585004a5d8161685ebf7b",
+      "actual_bytes": 152841,
+      "actual_sha256": "68856d104d81ca66f5fb07eaed8db456acc2316d19ecc4d633b0bdc53120164b",
+      "status": "reviewed_current_publication",
+      "caveat": "This current source copy does not match the historical manifest checksum. Its identity and readability were checked; exact equivalence to the historical bytes has not been established.",
+      "identity_check": "Expected DOI and article title present in HTML"
+    },
+    {
+      "relative_path": "05_HEMATOPOIESIS_MPRA/PAPERS/Design_principles_cell-state-specific_enhancers_in_hematopoiesis_Cell_2025.html",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12173716/",
+      "doi": "10.1016/j.cell.2025.04.017",
+      "retrieved_utc": "2026-10-10T14:50:00.149088+00:00",
+      "expected_bytes": 384542,
+      "expected_sha256": "1063f7d21c289244cbc1796bc2ae68a2607d6f6200d4a7e855cd8a8a15ce95e3",
+      "actual_bytes": 384542,
+      "actual_sha256": "85e6d8de588bcdbbe58467ae71c597fca14afc93e7f12a24370037cf8b3b291c",
+      "status": "reviewed_current_publication",
+      "caveat": "This current source copy does not match the historical manifest checksum. Its identity and readability were checked; exact equivalence to the historical bytes has not been established.",
+      "identity_check": "Expected DOI and article title present in HTML"
+    },
+    {
+      "relative_path": "05_HEMATOPOIESIS_MPRA/PAPERS/Synthetic_enhancers_in_hematopoiesis_bioRxiv_2024_preprint.pdf",
+      "source_url": "https://www.biorxiv.org/content/10.1101/2024.08.26.609645v1.full.pdf",
+      "doi": "10.1101/2024.08.26.609645",
+      "retrieved_utc": "2026-10-10T14:50:02.982022+00:00",
+      "expected_bytes": 5680581,
+      "expected_sha256": "b8093cfd30a056df3da1e2d896c63f2396b609c68687279c71b5ccca11c82121",
+      "actual_bytes": 5680575,
+      "actual_sha256": "5037c1800b0a67942640b221d498cec90a8f508a21cbc932a6c77cc84f4df4f2",
+      "status": "reviewed_current_publication",
+      "caveat": "This current source copy does not match the historical manifest checksum. Its identity and readability were checked; exact equivalence to the historical bytes has not been established.",
+      "pages": 43,
+      "pdf_title": "Synthetic enhancers reveal design principles of cell state specific regulatory elements in hematopoiesis",
+      "pdf_modification_date": "D:20261010075000-07'00'",
+      "identity_check": "Expected DOI and title present; all PDF pages parsed"
+    },
+    {
+      "relative_path": "06_DNABERT_ENHANCER_2026/PAPERS/DNABERT_Enhancer_bioRxiv_2025_preprint.pdf",
+      "source_url": "https://www.biorxiv.org/content/10.1101/2025.03.18.644040v1.full.pdf",
+      "doi": "10.1101/2025.03.18.644040",
+      "retrieved_utc": "2026-10-10T14:50:03.058883+00:00",
+      "expected_bytes": 1658702,
+      "expected_sha256": "e5949da79dfc500c3baf32486384df66f574d69f31f3fdf3164c25a0186a5c87",
+      "actual_bytes": 1658702,
+      "actual_sha256": "221d4b1e0b4baf269e4237b1f6905baf882eea468691424969faca49830d649f",
+      "status": "reviewed_current_publication",
+      "caveat": "This current source copy does not match the historical manifest checksum. Its identity and readability were checked; exact equivalence to the historical bytes has not been established.",
+      "pages": 24,
+      "pdf_title": "Genomic Language Model for Predicting Enhancers and Their Allele-Specific Activity in the Human Genome",
+      "pdf_modification_date": "D:20261010075001-07'00'",
+      "identity_check": "Expected DOI and title present; all PDF pages parsed"
+    },
+    {
+      "relative_path": "07_ALPHAGENOME_2026/PAPERS/AlphaGenome_Atlas_medRxiv_2026_preprint.pdf",
+      "source_url": "https://www.medrxiv.org/content/10.64898/2026.09.16.26363192v1.full.pdf",
+      "doi": "10.64898/2026.09.16.26363192",
+      "retrieved_utc": "2026-10-10T14:50:03.756962+00:00",
+      "expected_bytes": 15415633,
+      "expected_sha256": "59122412701ae8383854dbb6abb4e7fa6f9727c4b400547f3f259e4d3bfb838e",
+      "actual_bytes": 15415633,
+      "actual_sha256": "4943d420dd0f090c2216830d8cb5c82b5b799771e31401069dce9ba28a55fb02",
+      "status": "reviewed_current_publication",
+      "caveat": "This current source copy does not match the historical manifest checksum. Its identity and readability were checked; exact equivalence to the historical bytes has not been established.",
+      "pages": 83,
+      "pdf_title": "AlphaGenome Atlas: in silico mutagenesis of the entire human genome improves prioritization and interpretation of non-coding variants",
+      "pdf_modification_date": "D:20261010045401-07'00'",
+      "identity_check": "Expected DOI and title present; all PDF pages parsed"
+    }
+  ]
+}
