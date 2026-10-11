@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Observations, decisions, and open questions as the enhancer research project develops.">
+  <meta name="theme-color" content="#153c45">
+  <title>Research Notes | EnhancersResearch</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/site.css">
+  <script src="assets/site.js" defer></script>
+</head>
+<body class="page-notes">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="utility-bar"><div class="container utility-inner"><span>A research project in regulatory genomics</span><a href="https://github.com/Venettov/EnhancersResearch">Explore the repository <span aria-hidden="true">↗</span></a></div></div>
+  <header class="site-header">
+    <div class="container identity-row">
+      <a class="brand" href="index.html" aria-label="EnhancersResearch home"><img src="assets/favicon.svg" alt="" width="44" height="44"><span><strong>Enhancers<span>Research</span></strong><small>Sequence. Context. Function.</small></span></a>
+      <span class="identity-note">Computational biology<br><strong>Evidence-led exploration</strong></span>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" hidden>Menu <span aria-hidden="true">☰</span></button>
+    </div>
+    <div class="navigation-wrap"><nav id="primary-navigation" class="container primary-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="research.html">Research</a><a href="publications.html">Publications</a><a href="resources.html">Resources</a><a href="notes.html" aria-current="page">Research Notes</a><a class="nav-report" href="strategy.html">Read the research report <span aria-hidden="true">↗</span></a></nav></div>
+  </header>
+  <section class="page-intro" aria-labelledby="page-title"><div class="container"><p class="eyebrow">EnhancersResearch / Research Notes</p><h1 id="page-title">Research Notes</h1><p>Observations, decisions, and open questions as the enhancer research project develops.</p></div></section>
+  <main id="main" class="container main-content" tabindex="-1"><div class="two-column"><div class="notes-list">
+<article id="qc" class="research-note"><div class="note-meta"><time datetime="2026-10-11">11 October 2026</time><span>Local observations</span></div><h2>From collected files to trustworthy comparisons</h2><p class="lead">The collection is present. The next task is to make sure that rows, constructs, and independent measurements mean what we think they mean.</p><p>The folder audit identified repeated measurements across the replicate and combined ENCODE TSVs, two control-name differences in the lentiMPRA design/results join, and exact overlap between the local legacy development and independent-test enhancer files.</p><div class="note-callout"><strong>What this changes</strong><p>The legacy files need an independence audit before model evaluation. The lentiMPRA pipeline needs explicit source selection and construct mapping before activity comparisons.</p></div><p>The 55,977 construct names in the supplied specificity table can be recovered with a barcode-coverage rule. Reconstructing the numerical specificity scores remains unresolved. This is progress on data quality and reproduction, not a new biological discovery.</p><a class="text-link" href="research.html#roadmap">Where this fits in the roadmap →</a></article>
+<article id="strategy" class="research-note"><div class="note-meta"><time datetime="2026-10-10">10 October 2026</time><span>Research direction</span></div><h2>Begin with enhancer activity and its context</h2><p>The initial strategy brings together the biology, the collected publications, and a proposed comparison of matched sequences across three cellular contexts.</p><p>The first aim is an understandable, reproducible analysis. A later K562 cross-assay comparison is conditional on suitable independent measurements and enough overlapping tested loci. Synthetic motif interactions remain a mechanistic alternative.</p><a class="button button-dark" href="strategy.html">Read report 01 <span aria-hidden="true">→</span></a></article>
+</div><aside class="project-sidebar"><section class="sidebar-panel"><p class="eyebrow">How to read these notes</p><h2>Keep the evidence clear.</h2><p><strong>Published findings</strong> belong to the cited studies.</p><p><strong>Local observations</strong> describe the files and calculations in this workspace.</p><p><strong>Proposed analyses</strong> describe questions that still need to be tested.</p></section><section class="sidebar-section"><h2>Research records</h2><ul class="related-links"><li><a href="strategy.html">Foundational report</a></li><li><a href="resources.html#provenance">Source manifests & audit</a></li><li><a href="research.html#roadmap">Current roadmap</a></li></ul></section></aside></div>
+</main>
+  <footer class="site-footer"><div class="container footer-grid"><div><a class="footer-brand" href="index.html">EnhancersResearch</a><p>Understanding regulatory DNA through<br>experimental evidence and reproducible analysis.</p></div><div><h2>Explore</h2><a href="research.html">Research questions</a><a href="publications.html">Collected literature</a><a href="resources.html">Data & resources</a></div><div><h2>Follow the work</h2><a href="notes.html">Research notes</a><a href="strategy.html">Evidence & strategy report</a><a href="https://github.com/Venettov/EnhancersResearch">GitHub repository ↗</a></div></div><div class="container footer-bottom"><span>Project snapshot · October 2026</span><span>Published findings, local observations, and proposed analyses are identified separately.</span></div></footer>
+</body>
+</html>
