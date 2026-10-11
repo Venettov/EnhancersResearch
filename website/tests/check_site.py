@@ -37,8 +37,10 @@ class Document(HTMLParser):
             self.ids.append(a["id"])
         if tag in ("a", "link") and "href" in a:
             self.links.append(a["href"])
-        if tag in ("script", "img") and "src" in a:
+        if tag in ("script", "img", "video", "source") and "src" in a:
             self.links.append(a["src"])
+        if tag == "video" and "poster" in a:
+            self.links.append(a["poster"])
         if tag == "img" and "alt" not in a:
             errors.append(f"{self.path.name}: image without alt text")
         if tag == "h1":
@@ -82,8 +84,8 @@ for path, document in documents.items():
 
 for path in ROOT.rglob("*"):
     if path.is_file():
-        # Binary image assets do not contain website text or portable links.
-        if path.suffix.lower() == ".gif":
+        # Media assets do not contain website text or portable links.
+        if path.suffix.lower() in {".gif", ".jpg", ".mp4"}:
             continue
         content = path.read_text()
         if re.search(r"file://|/Users/|/home/|localhost:|127\.0\.0\.1:", content):

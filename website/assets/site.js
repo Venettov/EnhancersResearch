@@ -31,19 +31,43 @@
 
   const visual = document.querySelector('[data-research-visual]');
   if (visual) {
+    const video = visual.querySelector('video');
     const toggle = visual.querySelector('[data-motion-toggle]');
     const label = toggle.querySelector('[data-motion-label]');
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    // Native controls remain available without JavaScript. Only start playback
+    // after checking motion preferences and whether the video is visible.
+    video.controls = false;
+    video.muted = true;
     let userPaused = false;
-    let inView = true;
-    const syncMotion = () => {
-      const paused = userPaused || reducedMotion.matches || document.hidden || !inView;
+    let inView = !('IntersectionObserver' in window);
+    let request = 0;
+    const shouldPause = () => userPaused || reducedMotion.matches || document.hidden || !inView;
+    const updateControl = () => {
+      const paused = video.paused;
       visual.dataset.motion = paused ? 'paused' : 'running';
-      toggle.hidden = reducedMotion.matches;
-      toggle.dataset.action = userPaused ? 'play' : 'pause';
-      label.textContent = userPaused ? toggle.dataset.play : toggle.dataset.pause;
+      toggle.hidden = reducedMotion.matches || Boolean(video.error);
+      toggle.dataset.action = paused ? 'play' : 'pause';
+      label.textContent = paused ? toggle.dataset.play : toggle.dataset.pause;
     };
-    toggle.addEventListener('click', () => { userPaused = !userPaused; syncMotion(); });
+    const syncMotion = () => {
+      const currentRequest = ++request;
+      if (shouldPause()) {
+        video.pause();
+      } else if (video.paused) {
+        video.play().catch(() => {
+          // A browser may block autoplay. Keep the poster and offer manual play;
+          // ignore an old play request interrupted by a later pause.
+          if (currentRequest !== request) return;
+          userPaused = true;
+          video.pause();
+          updateControl();
+        });
+      }
+      updateControl();
+    };
+    toggle.addEventListener('click', () => { userPaused = !video.paused; syncMotion(); });
+    for (const event of ['play', 'pause', 'error']) video.addEventListener(event, updateControl);
     reducedMotion.addEventListener('change', syncMotion);
     document.addEventListener('visibilitychange', syncMotion);
     if ('IntersectionObserver' in window) {
