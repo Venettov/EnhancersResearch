@@ -1,6 +1,9 @@
 name: Publish research website
-# Explicit manual deployment. No automatic publication on push or merge.
+# Publish approved website updates merged into main; manual runs remain available.
 on:
+  push:
+    branches: [main]
+    paths: ['website/**', 'docs/**', '.github/workflows/pages.yml']
   workflow_dispatch:
 permissions:
   contents: read
