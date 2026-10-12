@@ -1,0 +1,243 @@
+{
+  "manifest_groups": {
+    "01_ENCODE4_SCREEN": {
+      "resources": 7,
+      "bytes": 728666693,
+      "papers": 1
+    },
+    "03_MPRA_STARR_CROSS_ASSAY_2025": {
+      "resources": 11,
+      "bytes": 38357592503,
+      "papers": 1
+    },
+    "06_DNABERT_ENHANCER_2026": {
+      "resources": 5,
+      "bytes": 10703288693,
+      "papers": 2
+    },
+    "04_VISTA": {
+      "resources": 12,
+      "bytes": 7762646,
+      "papers": 1
+    },
+    "05_HEMATOPOIESIS_MPRA": {
+      "resources": 10,
+      "bytes": 353739937,
+      "papers": 2
+    },
+    "02_LENTIMPRA_ENCODE_2025": {
+      "resources": 54,
+      "bytes": 803729787,
+      "papers": 1
+    },
+    "07_ALPHAGENOME_2026": {
+      "resources": 10,
+      "bytes": 114268799,
+      "papers": 2
+    }
+  },
+  "allelic_curation.tsv.gz": {
+    "rows": 3252,
+    "columns": [
+      "refExp",
+      "altExp",
+      "id",
+      "organism",
+      "description",
+      "backbone",
+      "stage",
+      "rel_comparison",
+      "rel_tissue",
+      "rel_tissue_value",
+      "ext_allelic_note",
+      "allelic_basis",
+      "ref_denom",
+      "alt_denom",
+      "explicit",
+      "revcomp"
+    ]
+  },
+  "allelic_curation_munged.tsv.gz": {
+    "rows": 617,
+    "columns": [
+      "vista_id_ref",
+      "allele_id_ref",
+      "description_ref",
+      "backbone_ref",
+      "stage_ref",
+      "vista_id_alt",
+      "allele_id_alt",
+      "description_alt",
+      "backbone_alt",
+      "stage_alt",
+      "rel_comparison",
+      "rel_tissue",
+      "rel_tissue_value",
+      "allelic_basis",
+      "ext_allelic_note",
+      "assembly_ref",
+      "coord_ref",
+      "seq_ref",
+      "assembly_alt",
+      "coord_alt",
+      "seq_alt"
+    ]
+  },
+  "experiments.tsv.gz": {
+    "rows": 5090,
+    "columns": [
+      "exp_hier",
+      "vista_id",
+      "allele_id",
+      "backbone",
+      "stage",
+      "curation_status",
+      "description",
+      "denominator",
+      "tissue",
+      "tissue_positive",
+      "organism",
+      "assembly",
+      "coord",
+      "strand",
+      "coordinate_hg38",
+      "coordinate_mm10",
+      "bracket_hg38",
+      "bracket_mm10",
+      "seq_hg38",
+      "seq_mm10",
+      "seq",
+      "external_note"
+    ],
+    "curation_status": {
+      "positive": 2400,
+      "negative": 2075,
+      "allelic": 615
+    },
+    "stage": {
+      "e11.5": 4363,
+      "e12.5": 446,
+      "e13.5": 66,
+      "e14.5": 131,
+      "e9.5": 37,
+      "e15.5": 14,
+      "e16.5": 4,
+      "e10.5": 22,
+      "e17.5": 3,
+      "e8.5": 4
+    },
+    "organism": {
+      "Human": 3298,
+      "Mouse": 1752,
+      "X. tropicalis": 1,
+      "Lancelet": 1,
+      "Fugu": 1,
+      "Coelacanth": 1,
+      "Elephant shark": 1,
+      "Burmese python": 3,
+      "Speckled rattlesnake": 1,
+      "Horse": 1,
+      "Cow": 2,
+      "Chicken": 3,
+      "Platypus": 1,
+      "Megabat": 1,
+      "Bottlenose Dolphin": 1,
+      "Sloth": 1,
+      "Lizard": 2,
+      "King cobra": 2,
+      "Boa constrictor": 1,
+      "Cat": 4,
+      "Iberian mole": 5,
+      "Chimp": 4,
+      "D. melanogaster": 1,
+      "Rhesus": 2
+    },
+    "backbone": {
+      "hZR": 3404,
+      "sZH": 1642,
+      "gZH2": 14,
+      "nZH": 14,
+      "hZTR": 15,
+      "gZR": 1
+    },
+    "unique_vista_ids": 4163
+  },
+  "images.tsv.gz": {
+    "rows": 27809,
+    "columns": [
+      "exp_hier",
+      "genotype",
+      "is_blue",
+      "exp_embryo",
+      "img_hier",
+      "image",
+      "sections_link"
+    ]
+  },
+  "locus.tsv.gz": {
+    "rows": 4142,
+    "columns": [
+      "vista_id",
+      "curation_status",
+      "tissue",
+      "experiments",
+      "backbone",
+      "stage",
+      "assembly",
+      "coord",
+      "coordinate_hg38",
+      "coordinate_mm10"
+    ],
+    "curation_status": {
+      "positive": 2184,
+      "negative": 1958
+    },
+    "stage": {
+      "e11.5": 3522,
+      "e12.5": 368,
+      "e11.5;e12.5": 12,
+      "e11.5;e12.5;e13.5": 2,
+      "e11.5;e14.5": 44,
+      "e11.5;e12.5;e14.5": 2,
+      "e11.5;e13.5": 15,
+      "e14.5": 60,
+      "e9.5;e11.5": 17,
+      "e11.5;e13.5;e15.5": 10,
+      "e11.5;e16.5": 2,
+      "e10.5;e11.5": 10,
+      "e13.5": 27,
+      "e11.5;e12.5;e13.5;e14.5": 1,
+      "e10.5;e12.5": 2,
+      "e10.5;e12.5;e14.5": 1,
+      "e13.5;e15.5": 1,
+      "e9.5": 16,
+      "e12.5;e13.5": 8,
+      "e12.5;e15.5": 1,
+      "e12.5;e14.5": 1,
+      "e10.5;e11.5;e12.5": 3,
+      "e9.5;e11.5;e14.5": 1,
+      "e11.5;e14.5;e17.5": 1,
+      "e11.5;e14.5;e16.5": 2,
+      "e14.5;e17.5": 2,
+      "e10.5": 6,
+      "e8.5;e12.5": 4,
+      "e9.5;e12.5": 1
+    },
+    "backbone": {
+      "hZR": 3172,
+      "hZR;sZH": 90,
+      "sZH": 844,
+      "gZH2": 13,
+      "nZH": 7,
+      "nZH;sZH": 7,
+      "hZTR": 7,
+      "gZH2;hZR": 1,
+      "gZR": 1
+    },
+    "unique_vista_ids": 4142
+  },
+  "lenti_tsv_headers": {
+    "headerless": 24,
+    "headered": 8
+  }
+}
