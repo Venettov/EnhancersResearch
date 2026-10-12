@@ -101,7 +101,7 @@ assert len(source["resources"]) == 7
 assert sum(record["count"] for record in source["resources"]) == 109
 glossary = json.loads((ROOT.parent / "website/glossary.json").read_text())
 term_ids = {term["id"] for term in glossary["terms"]}
-assert len(term_ids) == len(glossary["terms"]) == 57
+assert len(term_ids) == len(glossary["terms"]) == 59
 for term in glossary["terms"]:
     assert re.fullmatch(r"[a-z0-9-]+", term["id"])
     assert term["sources"] or term["papers"], f"No sources for {term['id']}"
@@ -154,4 +154,4 @@ numbers = lambda doc: Counter(re.findall(r"\d+(?:[.,]\d+)*", " ".join(doc.text))
 assert numbers(english_report) == numbers(spanish_report), "Report numerical facts differ between languages"
 if errors:
     raise SystemExit("\n".join(errors))
-print("PASS: 14 localized pages; 57 sourced bilingual explanations; safe annotation; links, fragments, language switches, collections, and report structure/numerical parity")
+print("PASS: 14 localized pages; 59 sourced bilingual explanations; safe annotation; links, fragments, language switches, collections, and report structure/numerical parity")
