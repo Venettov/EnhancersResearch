@@ -114,6 +114,21 @@
       "url": "https://www.biorxiv.org/about-biorxiv",
       "en": "bioRxiv · about preprints",
       "es": "bioRxiv · sobre los preprints (en inglés)"
+    },
+    "mediator-study": {
+      "url": "https://www.nature.com/articles/s41594-023-01027-2",
+      "en": "Ramasamy et al. · Mediator and enhancer–promoter interactions (2023)",
+      "es": "Ramasamy y colaboradores · Mediador y comunicación entre potenciadores y promotores (2023, en inglés)"
+    },
+    "enhancer-overview": {
+      "url": "https://en.wikipedia.org/wiki/Enhancer_(genetics)",
+      "en": "Wikipedia · enhancer overview (further reading)",
+      "es": "Wikipedia · introducción a los potenciadores (lectura adicional en inglés)"
+    },
+    "enhancer-position": {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/6409418/",
+      "en": "Banerji et al. · enhancer position, orientation, and cell specificity (1983)",
+      "es": "Banerji y colaboradores · posición, orientación y especificidad celular (1983, en inglés)"
     }
   },
   "terms": [
@@ -436,7 +451,9 @@
         "context": "Comparamos evidencia de actividad manteniendo claros el tipo de célula y el método experimental. La actividad en una prueba no demuestra actividad en todas las situaciones."
       },
       "sources": [
-        "promoter"
+        "promoter",
+        "enhancer-position",
+        "enhancer-overview"
       ],
       "papers": [
         "P01",
@@ -1852,6 +1869,62 @@
       "papers": [
         "P05",
         "P08"
+      ]
+    },
+    {
+      "id": "mediator",
+      "category": "basics",
+      "en": {
+        "name": "Mediator complex",
+        "aliases": [
+          "Mediator complex",
+          "Mediator"
+        ],
+        "definition": "A group of proteins that helps DNA-bound activators communicate with the machinery that starts copying a gene into RNA. It is one of several participants in enhancer–promoter communication.",
+        "context": "The home-page diagram shows Mediator as a helper between the enhancer and promoter. This is a simplified model, not a molecular interaction measured by our reporter assays."
+      },
+      "es": {
+        "name": "Complejo Mediador",
+        "aliases": [
+          "complejo Mediador",
+          "Mediador"
+        ],
+        "definition": "Un grupo de proteínas que ayuda a los activadores unidos al ADN a comunicarse con la maquinaria que inicia la copia de un gen en ARN. Es uno de varios participantes en la comunicación entre potenciadores y promotores.",
+        "context": "El diagrama de inicio muestra al Mediador como un ayudante entre el potenciador y el promotor. Es un modelo simplificado, no una interacción molecular medida por nuestros ensayos de reportero."
+      },
+      "sources": [
+        "mediator-study"
+      ],
+      "papers": []
+    },
+    {
+      "id": "rna-polymerase-ii",
+      "category": "basics",
+      "en": {
+        "name": "RNA polymerase II",
+        "aliases": [
+          "RNA polymerase II",
+          "Pol II"
+        ],
+        "definition": "An enzyme, made of several protein parts, that copies DNA into RNA. It produces the initial RNA copies of protein-coding genes and many noncoding RNA genes.",
+        "context": "RNA output helps us measure reporter activity. More reporter RNA does not by itself identify a natural target gene or demonstrate a particular enhancer–promoter contact."
+      },
+      "es": {
+        "name": "ARN polimerasa II",
+        "aliases": [
+          "ARN polimerasa II",
+          "RNA polymerase II",
+          "Pol II"
+        ],
+        "definition": "Una enzima formada por varias partes proteicas que copia ADN en ARN. Produce las copias iniciales de los genes que codifican proteínas y de muchos genes de ARN no codificante.",
+        "context": "La producción de ARN ayuda a medir la actividad del reportero. Más ARN del reportero no identifica por sí solo un gen regulado natural ni demuestra un contacto concreto entre potenciador y promotor."
+      },
+      "sources": [
+        "transcription",
+        "mediator-study"
+      ],
+      "papers": [
+        "P02"
       ]
     }
   ]
