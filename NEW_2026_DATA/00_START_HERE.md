@@ -4,6 +4,16 @@ This blue-coded folder organizes the new data sources with the papers, supplemen
 
 Esta carpeta azul organiza las nuevas fuentes de datos junto con los artículos, suplementos y código que las describen o respaldan. Al clonar el repositorio de GitHub, estarán disponibles las guías, los manifiestos y la estructura de carpetas; los datos y archivos de publicación se descargan con `download_project_resources.py`.
 
+## Current local status / Estado local actual · 12 October 2026
+
+The full recheck confirms all **109 resources, 51.07 GB**, are present locally, including the optional compressed cross-assay archives and DNABERT weights. There are 55 reference-checksum matches, 5 accepted-publication receipt matches, and 49 recorded-size matches with new local hashes. Downloaded files remain excluded from Git. The matched lentiMPRA specificity population is recovered, but the numerical scores are not. The local legacy test set has 100 enhancer sequences already in development data (50% of test positives; 25% of all test records).
+
+La comprobación completa confirma los **109 recursos y 51.07 GB** locales, incluidos los archivos opcionales comprimidos y los pesos de DNABERT. Hay 55 coincidencias con checksums de referencia, 5 con constancias aceptadas y 49 con tamaños registrados y hashes locales nuevos. Los archivos descargados siguen excluidos de Git. Recuperamos la población de especificidad de lentiMPRA, pero no sus puntuaciones numéricas. La prueba histórica local incluye 100 secuencias de potenciadores ya presentes en desarrollo (50% de los positivos; 25% de toda la prueba).
+
+**Known code blockers / Problemas de código conocidos:** the downloader still rejects five accepted publication copies because it does not consult their receipts; the archived DNABERT prediction launcher calls a missing Python file. El descargador aún rechaza cinco copias aceptadas porque no consulta sus constancias; el lanzador archivado de DNABERT llama a un archivo Python ausente. These workflows are not repaired by this documentation update. Esta actualización documental no repara esos procesos.
+
+[Detailed audit / Auditoría detallada](../reports/02_workspace_audit_and_qc.md) · [Evidence / Evidencia](../reports/assets/2026-10-12_workspace_recheck.json) · [Notas en español](https://venettov.github.io/EnhancersResearch/es/notes.html#qc)
+
 ## Folder map / Mapa de carpetas
 
 | Folder | Topic | Start with |
@@ -48,8 +58,8 @@ Usa `--group all` para descargar los dos grupos predeterminados. Los archivos gr
 4. Treat ENCODE cCREs as candidate annotations and compare them with functional assay labels; they are not interchangeable labels.
 5. Read the hematopoiesis, DNABERT-Enhancer, and AlphaGenome guides for cell-state-specific design and computational predictions.
 
-## Large resources not copied / Recursos grandes que no se copiaron
+## Large resources: local holdings and clone defaults / Recursos grandes: archivos locales y clonación
 
-- The optional MPRA/STARR raw, uniformly processed, and reference archives plus DNABERT model weights have direct URLs, sizes, and checksums in `download_manifest.tsv`; download them with `--group optional` or `--group all --include-optional`.
+- The optional MPRA/STARR raw, uniformly processed, and reference archives plus DNABERT model weights are already present in the audited workspace. Their direct URLs, sizes and checksums are in `download_manifest.tsv`; after a fresh clone, download them with `--group optional` or `--group all --include-optional`. Ya están presentes localmente; el grupo opcional se refiere a una clonación nueva.
 - The AlphaGenome Atlas is roughly one petabyte, so it is not a practical bulk download. See the [official downloads portal](https://alphagenome.google/downloads) and [API repository](https://github.com/google-deepmind/alphagenome) for access options and current terms.
 - The complete project-download command retrieves about 51.1 GB in compressed files at the current manifest snapshot, before extraction. Check available disk space first.

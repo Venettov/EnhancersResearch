@@ -1,0 +1,4355 @@
+{
+  "metadata": {
+    "review_date": "2026-10-11",
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "openpyxl": "3.1.5",
+    "scope": "Read-only file integrity and structural QC; code/archive inspection; no model execution or biological hypothesis test.",
+    "execution": "Section functions executed separately during audit; combined after all sections completed.",
+    "script_sha256": "18aaffa62d87e66eeb19deeb37b9ee7ab9ae1109cc22788b4753a8d7deea9a45"
+  },
+  "integrity": {
+    "files": [
+      {
+        "path": "NEW_2026_DATA/01_ENCODE4_SCREEN/GRCh38-cCREs.ELS.bed",
+        "bytes": 94356641,
+        "algorithm": "sha256",
+        "digest": "e09eb2709fd686f349f76c5923c27dba72c7f68f4672040788edfb79bed72836",
+        "status": "size_match_new_local_hash",
+        "historical_manifest_match": false
+      },
+      {
+        "path": "NEW_2026_DATA/03_MPRA_STARR_CROSS_ASSAY_2025/raw_data.tar.gz",
+        "bytes": 516470602,
+        "algorithm": "md5",
+        "digest": "40a4bdaf81200548c23a4cde2baafd3d",
+        "status": "reference_checksum_match",
+        "historical_manifest_match": true
+      },
+      {
+        "path": "NEW_2026_DATA/03_MPRA_STARR_CROSS_ASSAY_2025/lab_reported_data.tar.gz",
+        "bytes": 41240741,
+        "algorithm": "md5",
+        "digest": "73db5c1d3b7dae76806aeb6507865d69",
+        "status": "reference_checksum_match",
+        "historical_manifest_match": true
+      },
+      {
+        "path": "NEW_2026_DATA/03_MPRA_STARR_CROSS_ASSAY_2025/uniform_processed_data.tar.gz",
+        "bytes": 25391016769,
+        "algorithm": "md5",
+        "digest": "a8cde22dff50e3e4598e13ba387ae6c2",
+        "status": "reference_checksum_match",
+        "historical_manifest_match": true
+      },
+      {
+        "path": "NEW_2026_DATA/03_MPRA_STARR_CROSS_ASSAY_2025/reference.tar.gz",
+        "bytes": 11113725079,
+        "algorithm": "md5",
+        "digest": "74dda81093c073c79597579f5838d5f4",
+        "status": "reference_checksum_match",
+        "historical_manifest_match": true
+      },
+      {
+        "path": "NEW_2026_DATA/03_MPRA_STARR_CROSS_ASSAY_2025/qc.tar.gz",
+        "bytes": 15052,
+        "algorithm": "md5",
+        "digest": "7b14f70588c56e6de6351d918084d12c",
+        "status": "reference_checksum_match",
+        "historical_manifest_match": true
+      },
+      {
+        "path": "NEW_2026_DATA/03_MPRA_STARR_CROSS_ASSAY_2025/output.tar.gz",
+        "bytes": 1288505439,
+        "algorithm": "md5",
+        "digest": "eb1dc7ffa661e9c39aaacf226b6a54dc",
+        "status": "reference_checksum_match",
+        "historical_manifest_match": true
+      },
+      {
+        "path": "NEW_2026_DATA/06_DNABERT_ENHANCER_2026/MODEL_WEIGHTS/DNABERT-Enhancer-models.tar.gz",
+        "bytes": 10682051673,
+        "algorithm": "md5",
+        "digest": "e2b9046965588d4f2e2fb956f1b36091",
+        "status": "reference_checksum_match",
+        "historical_manifest_match": true
+      },
+      {
+        "path": "NEW_2026_DATA/04_VISTA/allelic.dictionary.csv",
+        "bytes": 149,
+        "algorithm": "md5",
+        "digest": "503a0cb545301c3833e93cb6a339c50e",
+        "status": "reference_checksum_match",
+        "historical_manifest_match": true
+      },
+      {
+        "path": "NEW_2026_DATA/04_VISTA/allelic_curation.tsv.gz",
+        "bytes": 33256,
+        "algorithm": "md5",
+        "digest": "d296fbc90050b697b8d709d1060490a9",
+        "status": "reference_checksum_match",
+        "historical_manifest_match": true
+      },
+      {
+        "path": "NEW_2026_DATA/04_VISTA/allelic_curation_munged.tsv.gz",
+        "bytes": 77882,
+        "algorithm": "md5",
+        "digest": "66dbd5cad3abf4c8e231e215526d1cc5",
+        "status": "reference_checksum_match",
+        "historical_manifest_match": true
+      },
+      {
+        "path": "NEW_2026_DATA/04_VISTA/backbone.dictionary.tsv",
+        "bytes": 267,
+        "algorithm": "md5",
+        "digest": "cdfb95116d0a54a538bf2e4312390bd0",
+        "status": "reference_checksum_match",
+        "historical_manifest_match": true
+      },
+      {
+        "path": "NEW_2026_DATA/04_VISTA/experiments.tsv.gz",
+        "bytes": 6530396,
+        "algorithm": "md5",
+        "digest": "da0ca3c701e0d0bd55972532c1834ce0",
+        "status": "reference_checksum_match",
+        "historical_manifest_match": true
+      },
+      {
+        "path": "NEW_2026_DATA/04_VISTA/field_descriptions.tsv",
+        "bytes": 4202,
+        "algorithm": "md5",
+        "digest": "684d4f136a629f6d36699d96da510f63",
+        "status": "reference_checksum_match",
+        "historical_manifest_match": true
+      },
+      {
+        "path": "NEW_2026_DATA/04_VISTA/images.tsv.gz",
+        "bytes": 200211,
+        "algorithm": "md5",
+        "digest": "bd453e982c4b8ca9d0b563dc5050bc95",
+        "status": "reference_checksum_match",
+        "historical_manifest_match": true
+      },
+      {
+        "path": "NEW_2026_DATA/04_VISTA/locus.tsv.gz",
+        "bytes": 121847,
+        "algorithm": "md5",
+        "digest": "fbd1e6c0641044deeff61dc34c1c154d",
+        "status": "reference_checksum_match",
+        "historical_manifest_match": true
+      },
+      {
+        "path": "NEW_2026_DATA/04_VISTA/locus_ucsc_hg38.bed",
+        "bytes": 318393,
+        "algorithm": "md5",
+        "digest": "152837fc791e42e749aa19255d53cb17",
+        "status": "reference_checksum_match",
+        "historical_manifest_match": true
+      },
+      {
+        "path": "NEW_2026_DATA/04_VISTA/locus_ucsc_mm10.bed",
+        "bytes": 322868,
+        "algorithm": "md5",
+        "digest": "aad2343bb028c9eacf13e980034075e5",
+        "status": "reference_checksum_match",
+        "historical_manifest_match": true
+      },
+      {
+        "path": "NEW_2026_DATA/04_VISTA/tissue.dictionary.csv",
+        "bytes": 334,
+        "algorithm": "md5",
+        "digest": "9d5f533a1a03151b578534c48844cad5",
+        "status": "reference_checksum_match",
+        "historical_manifest_match": true
+      },
+      {
+        "path": "NEW_2026_DATA/05_HEMATOPOIESIS_MPRA/data_updated2.rda",
+        "bytes": 281521598,
+        "algorithm": "md5",
+        "digest": "47f294bb0c0670778f9e3547d6633846",
+        "status": "reference_checksum_match",
+        "historical_manifest_match": true
+      },
+      {
+        "path": "NEW_2026_DATA/02_LENTIMPRA_ENCODE_2025/ENCSR463IRX/ENCFF285OWV.tsv",
+        "bytes": 2603082,
+        "algorithm": "sha256",
+        "digest": "f6c4fb12ac3ed8c2bce8e4aa9e2b2d0c0a6c72fd118474d48de7c72b26864cf9",
+        "status": "size_match_new_local_hash",
+        "historical_manifest_match": false
+      },
+      {
+        "path": "NEW_2026_DATA/02_LENTIMPRA_ENCODE_2025/ENCSR463IRX/ENCFF772KIV.tsv",
+        "bytes": 867982,
+        "algorithm": "sha256",
+        "digest": "5bbd0645e99404273c620c6964f3523c29edda040037261b040b9cb54e8ed40a",
+        "status": "size_match_new_local_hash",
+        "historical_manifest_match": false
+      },
+      {
+        "path": "NEW_2026_DATA/02_LENTIMPRA_ENCODE_2025/ENCSR463IRX/ENCFF707LRZ.tsv",
+        "bytes": 866778,
+        "algorithm": "sha256",
+        "digest": "3433d61a4a7a4dc0008901ae60fcb37de1e3ce93a8b26841d4f5464d0c71d4b4",
+        "status": "size_match_new_local_hash",
+        "historical_manifest_match": false
+      },
+      {
+        "path": "NEW_2026_DATA/02_LENTIMPRA_ENCODE_2025/ENCSR463IRX/ENCFF107ZPL.tsv",
+        "bytes": 868257,
+        "algorithm": "sha256",
+        "digest": "27597fda3380ba608cf4282f154cf45670cea7613e93b9a09df3f1805e83a364",
+        "status": "size_match_new_local_hash",
+        "historical_manifest_match": false
+      },
+      {
+        "path": "NEW_2026_DATA/02_LENTIMPRA_ENCODE_2025/ENCSR463IRX/ENCFF910EDE.bed.gz",
+        "bytes": 188976,
+        "algorithm": "sha256",
+        "digest": "1d4fa2cc2a0386c2de0b084b870be841460175dab7a1a0d09e38ed941cd0f2aa",
+        "status": "size_match_new_local_hash",
+        "historical_manifest_match": false
+      },
+      {
+        "path": "NEW_2026_DATA/02_LENTIMPRA_ENCODE_2025/ENCSR463IRX/ENCFF660JTU.bigBed",
+        "bytes": 334071,
+        "algorithm": "sha256",
+        "digest": "f77eaefb4dbd02e39af055d9687af75e2810a172774acefa56ad3aa53eeb6f48",
+        "status": "size_match_new_local_hash",
+        "historical_manifest_match": false
+      },
+      {
+        "path": "NEW_2026_DATA/02_LENTIMPRA_ENCODE_2025/ENCSR460LZI/ENCFF198MIP.tsv",
+        "bytes": 682730,
+        "algorithm": "sha256",
+        "digest": "bf54ad859451c6fdc560ffeea1ae4fbff9a673c534dabf13ee4091dbc9d13e11",
+        "status": "size_match_new_local_hash",
+        "historical_manifest_match": false
+      },
+      {
+        "path": "NEW_2026_DATA/02_LENTIMPRA_ENCODE_2025/ENCSR460LZI/ENCFF310PEZ.tsv",
+        "bytes": 687903,
+        "algorithm": "sha256",
+        "digest": "333c38a7bda3b2b756201ec281857228bb729502d8509ae6d63760465cfa64f2",
+        "status": "size_match_new_local_hash",
+        "historical_manifest_match": false
+      },
+      {
+        "path": "NEW_2026_DATA/02_LENTIMPRA_ENCODE_2025/ENCSR460LZI/ENCFF783NIM.bigBed",
+        "bytes": 272733,
+        "algorithm": "sha256",
+        "digest": "5c11cdc858e16cf8a6dec3cb8c682cb3b232049096a3cd55d68657d5e07fc10e",
+        "status": "size_match_new_local_hash",
+        "historical_manifest_match": false
+      },
+      {
+        "path": "NEW_2026_DATA/02_LENTIMPRA_ENCODE_2025/ENCSR460LZI/ENCFF246IDU.tsv",
+        "bytes": 678122,
+        "algorithm": "sha256",
+        "digest": "bf51cb2838343c977fc45ed9cf212f585c57a84ee32b616015576d3fa59f244a",
+        "status": "size_match_new_local_hash",
+        "historical_manifest_match": false
+      },
+      {
+        "path": "NEW_2026_DATA/02_LENTIMPRA_ENCODE_2025/ENCSR460LZI/ENCFF006GZL.bed.gz",
+        "bytes": 139309,
+        "algorithm": "sha256",
+        "digest": "ec2120d9cece47ec8c63ed9601c203baed815a2733c585034cbe9dce89084415",
+        "status": "size_match_new_local_hash",
+        "historical_manifest_match": false
+      },
+      {
+        "path": "NEW_2026_DATA/02_LENTIMPRA_ENCODE_2025/ENCSR460LZI/ENCFF788GLA.tsv",
+        "bytes": 2048820,
+        "algorithm": "sha256",
+        "digest": "31910f6cb59d0bac405fd8a675e54c345c57380f7c9fc614330acaa06fcfbe3e",
+        "status": "size_match_new_local_hash",
+        "historical_manifest_match": false
+      },
+      {
+        "path": "NEW_2026_DATA/02_LENTIMPRA_ENCODE_2025/ENCSR022GQD/ENCFF131CMC.tsv",
+        "bytes": 17195060,
+        "algorithm": "sha256",
+        "digest": "1f6f9e9220d641e73e8115d872392d708ba2cf497fcf3b254a7d986b498c4fca",
+        "status": "size_match_new_local_hash",
+        "historical_manifest_match": false
+      },
+      {
+        "path": "NEW_2026_DATA/02_LENTIMPRA_ENCODE_2025/ENCSR022GQD/ENCFF755BGY.tsv",
+        "bytes": 51603558,
+        "algorithm": "sha256",
+        "digest": "5c612264356a32506015c85da2906b68ab0c04554c84413756330d257ec8db05",
+        "status": "size_match_new_local_hash",
+        "historical_manifest_match": false
+      },
+      {
+        "path": "NEW_2026_DATA/02_LENTIMPRA_ENCODE_2025/ENCSR022GQD/ENCFF637MLM.bigBed",
+        "bytes": 5329075,
+        "algorithm": "sha256",
+        "digest": "f86bef406f203dcda9d87a5b633666c0be1635d0b583260680b7c35c16ca6b15",
+        "status": "size_match_new_local_hash",
+        "historical_manifest_match": false
+      },
+      {
+        "path": "NEW_2026_DATA/02_LENTIMPRA_ENCODE_2025/ENCSR022GQD/ENCFF855WHD.tsv",
+        "bytes": 17204989,
+        "algorithm": "sha256",
+        "digest": "978cc2da5baa8d6fe207ac5f833136868dd8f0fef340d50778a0380782abc318",
+        "status": "size_match_new_local_hash",
+        "historical_manifest_match": false
+      },
+      {
+        "path": "NEW_2026_DATA/02_LENTIMPRA_ENCODE_2025/ENCSR022GQD/ENCFF774DYO.bed.gz",
+        "bytes": 2545246,
+        "algorithm": "sha256",
+        "digest": "a95ecedfab3b3074075f51efeca583d5ba138ce3288a2eba3e265b627eb4427f",
+        "status": "size_match_new_local_hash",
+        "historical_manifest_match": false
+      },
+      {
+        "path": "NEW_2026_DATA/02_LENTIMPRA_ENCODE_2025/ENCSR022GQD/ENCFF986REZ.tsv",
+        "bytes": 17203444,
+        "algorithm": "sha256",
+        "digest": "1a00c34a14ae6d34b939d1b0e2b1a8693f599a8e5e1223f3d048ec52de355c52",
+        "status": "size_match_new_local_hash",
+        "historical_manifest_match": false
+      },
+      {
+        "path": "NEW_2026_DATA/02_LENTIMPRA_ENCODE_2025/ENCSR382BVV/ENCFF252GNM.tsv",
+        "bytes": 69038070,
+        "algorithm": "sha256",
+        "digest": "40d431b02d647311afe06ad72804da7fefa52be800d0ee9978f8847539e702e4",
+        "status": "size_match_new_local_hash",
+        "historical_manifest_match": false
+      },
+      {
+        "path": "NEW_2026_DATA/02_LENTIMPRA_ENCODE_2025/ENCSR382BVV/ENCFF859ZRH.tsv",
+        "bytes": 22986002,
+        "algorithm": "sha256",
+        "digest": "5c09d044bae899836e213ef2fc0244f00a24e9adb69696597562d83942e1d895",
+        "status": "size_match_new_local_hash",
+        "historical_manifest_match": false
+      },
+      {
+        "path": "NEW_2026_DATA/02_LENTIMPRA_ENCODE_2025/ENCSR382BVV/ENCFF631LHA.bed.gz",
+        "bytes": 3459202,
+        "algorithm": "sha256",
+        "digest": "c2e2a6014375197c7aac96eb68b9dc4a917d671ba415ca8b38edb287b7695d4b",
+        "status": "size_match_new_local_hash",
+        "historical_manifest_match": false
+      },
+      {
+        "path": "NEW_2026_DATA/02_LENTIMPRA_ENCODE_2025/ENCSR382BVV/ENCFF103QME.bigBed",
+        "bytes": 5977069,
+        "algorithm": "sha256",
+        "digest": "8d2fd949647bf655e496fe8a13102e822aaabd465c475d2eb6730f0cd962377e",
+        "status": "size_match_new_local_hash",
+        "historical_manifest_match": false
+      },
+      {
+        "path": "NEW_2026_DATA/02_LENTIMPRA_ENCODE_2025/ENCSR382BVV/ENCFF563OUP.tsv",
+        "bytes": 23036958,
+        "algorithm": "sha256",
+        "digest": "b9b545015b56c4776581cfdc94219d4c21a29ef270e55c6e1a4710255001ccea",
+        "status": "size_match_new_local_hash",
+        "historical_manifest_match": false
+      },
+      {
+        "path": "NEW_2026_DATA/02_LENTIMPRA_ENCODE_2025/ENCSR382BVV/ENCFF857LYJ.tsv",
+        "bytes": 23015045,
+        "algorithm": "sha256",
+        "digest": "55fec49ce5f8abd1c020e5dedb6eb5411791a7d94f036d5999cca65f113deb25",
+        "status": "size_match_new_local_hash",
+        "historical_manifest_match": false
+      },
+      {
+        "path": "NEW_2026_DATA/02_LENTIMPRA_ENCODE_2025/ENCSR244FWB/ENCFF355PAE.tsv",
+        "bytes": 6571786,
+        "algorithm": "sha256",
+        "digest": "8c54413f47fe460af8992caf520760f1d6eac85f455bfd530e5084ea021d5c78",
+        "status": "size_match_new_local_hash",
+        "historical_manifest_match": false
+      },
+      {
+        "path": "NEW_2026_DATA/02_LENTIMPRA_ENCODE_2025/ENCSR244FWB/ENCFF476DYQ.tsv",
+        "bytes": 6548618,
+        "algorithm": "sha256",
+        "digest": "d9485a09d985c9c491c8f907455fab8f9c16cc70dc9f6b116288712da17dcb85",
+        "status": "size_match_new_local_hash",
+        "historical_manifest_match": false
+      },
+      {
+        "path": "NEW_2026_DATA/02_LENTIMPRA_ENCODE_2025/ENCSR244FWB/ENCFF145LDY.tsv",
+        "bytes": 6600896,
+        "algorithm": "sha256",
+        "digest": "19cb5e14fe9b305b0946fa51331e88c21bdb3d13af05d1bddc7c5af2d0eab842",
+        "status": "size_match_new_local_hash",
+        "historical_manifest_match": false
+      },
+      {
+        "path": "NEW_2026_DATA/02_LENTIMPRA_ENCODE_2025/ENCSR244FWB/ENCFF949GFZ.tsv",
+        "bytes": 19721365,
+        "algorithm": "sha256",
+        "digest": "6207ae3158b64e21d8addc83c9000c9fd30d9c7fc50e3335154feed6063996c6",
+        "status": "size_match_new_local_hash",
+        "historical_manifest_match": false
+      },
+      {
+        "path": "NEW_2026_DATA/02_LENTIMPRA_ENCODE_2025/ENCSR244FWB/ENCFF971UBA.bed.gz",
+        "bytes": 1173464,
+        "algorithm": "sha256",
+        "digest": "1c275b0b5bdd9e028ae46d8000b3843be7fb6278c0625da3111d9655f999aa67",
+        "status": "size_match_new_local_hash",
+        "historical_manifest_match": false
+      },
+      {
+        "path": "NEW_2026_DATA/02_LENTIMPRA_ENCODE_2025/ENCSR244FWB/ENCFF106XAW.bigBed",
+        "bytes": 2648121,
+        "algorithm": "sha256",
+        "digest": "08033e609c616753b0aeaf90dc278999550d016a6de2f4a2efcc01d43917c003",
+        "status": "size_match_new_local_hash",
+        "historical_manifest_match": false
+      },
+      {
+        "path": "NEW_2026_DATA/02_LENTIMPRA_ENCODE_2025/ENCSR405QCT/ENCFF433ECV.tsv",
+        "bytes": 5994806,
+        "algorithm": "sha256",
+        "digest": "e9856b47acff432e7bd1e28c691853e4deeaf3426a6b3208eb19f6c59bf4fbcc",
+        "status": "size_match_new_local_hash",
+        "historical_manifest_match": false
+      },
+      {
+        "path": "NEW_2026_DATA/02_LENTIMPRA_ENCODE_2025/ENCSR405QCT/ENCFF571TCB.bigBed",
+        "bytes": 1590106,
+        "algorithm": "sha256",
+        "digest": "08161e96d44b61addceedcc4758969c73f02f8bf5b21f124ef40dd46a19782b8",
+        "status": "size_match_new_local_hash",
+        "historical_manifest_match": false
+      },
+      {
+        "path": "NEW_2026_DATA/02_LENTIMPRA_ENCODE_2025/ENCSR405QCT/ENCFF511XTZ.tsv",
+        "bytes": 5995778,
+        "algorithm": "sha256",
+        "digest": "47eeebca1dce45b5cd8aa44a84f77374dd04842d42901d8ab68abd15d5085c99",
+        "status": "size_match_new_local_hash",
+        "historical_manifest_match": false
+      },
+      {
+        "path": "NEW_2026_DATA/02_LENTIMPRA_ENCODE_2025/ENCSR405QCT/ENCFF009HVM.tsv",
+        "bytes": 17986692,
+        "algorithm": "sha256",
+        "digest": "f1ceeebdc1730b8b980df6bb8449c1641c488ebc8b219b338641a3eee973b7aa",
+        "status": "size_match_new_local_hash",
+        "historical_manifest_match": false
+      },
+      {
+        "path": "NEW_2026_DATA/02_LENTIMPRA_ENCODE_2025/ENCSR405QCT/ENCFF475FKV.bed.gz",
+        "bytes": 1085644,
+        "algorithm": "sha256",
+        "digest": "e54435ba9f049298f69050223f6b4ff2f54a12c822ec315b879915e46b9c834e",
+        "status": "size_match_new_local_hash",
+        "historical_manifest_match": false
+      },
+      {
+        "path": "NEW_2026_DATA/02_LENTIMPRA_ENCODE_2025/ENCSR405QCT/ENCFF840GBW.tsv",
+        "bytes": 5996043,
+        "algorithm": "sha256",
+        "digest": "bce6e306d19a0402a370c675fc7dc2215e46ec7c1eb816bbdaf8e47962372b18",
+        "status": "size_match_new_local_hash",
+        "historical_manifest_match": false
+      },
+      {
+        "path": "NEW_2026_DATA/02_LENTIMPRA_ENCODE_2025/ENCSR203UFY/ENCFF035UJP.bigBed",
+        "bytes": 1589443,
+        "algorithm": "sha256",
+        "digest": "c68df9137d02da838feee34f14c181d6d152cfe10e0bf273ab47303118656f9f",
+        "status": "size_match_new_local_hash",
+        "historical_manifest_match": false
+      },
+      {
+        "path": "NEW_2026_DATA/02_LENTIMPRA_ENCODE_2025/ENCSR203UFY/ENCFF107FYL.tsv",
+        "bytes": 5940377,
+        "algorithm": "sha256",
+        "digest": "fadc30349675479e10af0cea8016180ae1fa6722e2c18d86c4a7917e04e8d17e",
+        "status": "size_match_new_local_hash",
+        "historical_manifest_match": false
+      },
+      {
+        "path": "NEW_2026_DATA/02_LENTIMPRA_ENCODE_2025/ENCSR203UFY/ENCFF068BWG.tsv",
+        "bytes": 17817010,
+        "algorithm": "sha256",
+        "digest": "1a1c36966f5b118ed658abfdb7e20f2629c134079745b0f6d20f562df3e17e71",
+        "status": "size_match_new_local_hash",
+        "historical_manifest_match": false
+      },
+      {
+        "path": "NEW_2026_DATA/02_LENTIMPRA_ENCODE_2025/ENCSR203UFY/ENCFF802FUV.bed.gz",
+        "bytes": 1085246,
+        "algorithm": "sha256",
+        "digest": "b78bd67afb91309282d4d707ae25e7110a799cbafab562e15aeaef1c3334ded0",
+        "status": "size_match_new_local_hash",
+        "historical_manifest_match": false
+      },
+      {
+        "path": "NEW_2026_DATA/02_LENTIMPRA_ENCODE_2025/ENCSR203UFY/ENCFF660VLW.tsv",
+        "bytes": 5939546,
+        "algorithm": "sha256",
+        "digest": "bf27169e81e70c32811f1ca86f4233b5c83716d14aaa1620f67d24ae8f6da9c5",
+        "status": "size_match_new_local_hash",
+        "historical_manifest_match": false
+      },
+      {
+        "path": "NEW_2026_DATA/02_LENTIMPRA_ENCODE_2025/ENCSR203UFY/ENCFF010FKF.tsv",
+        "bytes": 5937022,
+        "algorithm": "sha256",
+        "digest": "ed59a15e3e527a6fbeae6273535f1354468447a8faeefe064545b235fa58e475",
+        "status": "size_match_new_local_hash",
+        "historical_manifest_match": false
+      },
+      {
+        "path": "NEW_2026_DATA/02_LENTIMPRA_ENCODE_2025/ENCSR336MKI/ENCFF886EUI.tsv",
+        "bytes": 5995592,
+        "algorithm": "sha256",
+        "digest": "32bc33c82b1bdc045352ea168da23c3ac05189fc4bf4a83655da916af932f671",
+        "status": "size_match_new_local_hash",
+        "historical_manifest_match": false
+      },
+      {
+        "path": "NEW_2026_DATA/02_LENTIMPRA_ENCODE_2025/ENCSR336MKI/ENCFF357GSY.tsv",
+        "bytes": 17981173,
+        "algorithm": "sha256",
+        "digest": "6253757e6acbb23fa299d2fcc32cb41e0d21a2d8513b39e7f630c915ffb2ba79",
+        "status": "size_match_new_local_hash",
+        "historical_manifest_match": false
+      },
+      {
+        "path": "NEW_2026_DATA/02_LENTIMPRA_ENCODE_2025/ENCSR336MKI/ENCFF698PXZ.bigBed",
+        "bytes": 1591864,
+        "algorithm": "sha256",
+        "digest": "e30ceb356ed6f4eccbcd2c293e5d43cb485155a0e23333f6c32fb5e7b8248be5",
+        "status": "size_match_new_local_hash",
+        "historical_manifest_match": false
+      },
+      {
+        "path": "NEW_2026_DATA/02_LENTIMPRA_ENCODE_2025/ENCSR336MKI/ENCFF820ZLB.tsv",
+        "bytes": 5992323,
+        "algorithm": "sha256",
+        "digest": "15daeda0b95b07c0582f48b862c5db862cae38d9c55106b607a8a2f11ddcc8b3",
+        "status": "size_match_new_local_hash",
+        "historical_manifest_match": false
+      },
+      {
+        "path": "NEW_2026_DATA/02_LENTIMPRA_ENCODE_2025/ENCSR336MKI/ENCFF769REH.bed.gz",
+        "bytes": 1088965,
+        "algorithm": "sha256",
+        "digest": "e90cbdd855790e9648444745bfa8b1ab749feea980b44a24cb99ba3fb60421ba",
+        "status": "size_match_new_local_hash",
+        "historical_manifest_match": false
+      },
+      {
+        "path": "NEW_2026_DATA/02_LENTIMPRA_ENCODE_2025/ENCSR336MKI/ENCFF221BYM.tsv",
+        "bytes": 5993193,
+        "algorithm": "sha256",
+        "digest": "36262df6e25f25dd1f1d3feb92609adf05b0ffa493994949fa5e79cd63ff5ddc",
+        "status": "size_match_new_local_hash",
+        "historical_manifest_match": false
+      },
+      {
+        "path": "NEW_2026_DATA/01_ENCODE4_SCREEN/PAPERS/An_expanded_registry_of_candidate_cis-regulatory_elements_Nature_2026.pdf",
+        "bytes": 13203233,
+        "algorithm": "sha256",
+        "digest": "9a9ff0191de979f5e7fa9f63864ee1e4be16086297e46f4cb10e860ad75d2802",
+        "status": "reference_checksum_match",
+        "historical_manifest_match": true
+      },
+      {
+        "path": "NEW_2026_DATA/01_ENCODE4_SCREEN/SUPPLEMENTARY/ENCODE4_supplementary_information.pdf",
+        "bytes": 26510736,
+        "algorithm": "sha256",
+        "digest": "286118e34b9271a4d78aed5d9851846b5219f0f092cd90dab52d6da606a1c84d",
+        "status": "reference_checksum_match",
+        "historical_manifest_match": true
+      },
+      {
+        "path": "NEW_2026_DATA/01_ENCODE4_SCREEN/SUPPLEMENTARY/ENCODE4_reporting_summary.pdf",
+        "bytes": 3687457,
+        "algorithm": "sha256",
+        "digest": "a495ef5e7b21c4aca1f441f947e0a2942a4dd40db9f8be4452ec760f81317445",
+        "status": "reference_checksum_match",
+        "historical_manifest_match": true
+      },
+      {
+        "path": "NEW_2026_DATA/01_ENCODE4_SCREEN/SUPPLEMENTARY/ENCODE4_supplementary_tables_1-17.zip",
+        "bytes": 3771852,
+        "algorithm": "sha256",
+        "digest": "c76c566f41b272a49c568f060032c13172b80dbf946d6e7f19d1324fc1be77f2",
+        "status": "reference_checksum_match",
+        "historical_manifest_match": true
+      },
+      {
+        "path": "NEW_2026_DATA/01_ENCODE4_SCREEN/SUPPLEMENTARY/ENCODE4_supplementary_data_1-6.zip",
+        "bytes": 583484220,
+        "algorithm": "sha256",
+        "digest": "1789eb46e4702c4aa538f8f08ad8f266b685cf85521400ca9f2a51274637c946",
+        "status": "reference_checksum_match",
+        "historical_manifest_match": true
+      },
+      {
+        "path": "NEW_2026_DATA/01_ENCODE4_SCREEN/SUPPLEMENTARY/ENCODE4_peer_review_file.pdf",
+        "bytes": 3652554,
+        "algorithm": "sha256",
+        "digest": "40d6e617b0c59df5958ee5a5445e92a9c6887229e41ac3304ffa2bca1017b398",
+        "status": "reference_checksum_match",
+        "historical_manifest_match": true
+      },
+      {
+        "path": "NEW_2026_DATA/02_LENTIMPRA_ENCODE_2025/PAPERS/Massively_parallel_characterization_of_transcriptional_regulatory_elements_Nature_2025.pdf",
+        "bytes": 7497803,
+        "algorithm": "sha256",
+        "digest": "c2bc149dec61fedcd86201e0506b319a52f11cfedeec11691906622555495e7d",
+        "status": "reference_checksum_match",
+        "historical_manifest_match": true
+      },
+      {
+        "path": "NEW_2026_DATA/02_LENTIMPRA_ENCODE_2025/SUPPLEMENTARY/lentiMPRA_supplementary_methods_and_results.docx",
+        "bytes": 90485,
+        "algorithm": "sha256",
+        "digest": "8e10eca7441f73325c789be678a3f276e8f7a421aaedda5f28c948d5510a55ba",
+        "status": "reference_checksum_match",
+        "historical_manifest_match": true
+      },
+      {
+        "path": "NEW_2026_DATA/02_LENTIMPRA_ENCODE_2025/SUPPLEMENTARY/lentiMPRA_reporting_summary.pdf",
+        "bytes": 93571,
+        "algorithm": "sha256",
+        "digest": "098ec6c15e4965f695b3658fce953a83264a687c549881411b8d6630630a8072",
+        "status": "reference_checksum_match",
+        "historical_manifest_match": true
+      },
+      {
+        "path": "NEW_2026_DATA/02_LENTIMPRA_ENCODE_2025/SUPPLEMENTARY/lentiMPRA_supplementary_figures.pdf",
+        "bytes": 21564554,
+        "algorithm": "sha256",
+        "digest": "4291607e23e0d7acdf26511d12bf74596d2274f3eb8f5b8597f6537a5f54153e",
+        "status": "reference_checksum_match",
+        "historical_manifest_match": true
+      },
+      {
+        "path": "NEW_2026_DATA/02_LENTIMPRA_ENCODE_2025/SUPPLEMENTARY/lentiMPRA_peer_review_file.pdf",
+        "bytes": 4551731,
+        "algorithm": "sha256",
+        "digest": "debb54d57017152711e74268a631e10d65c9acaa237fb216b4eb1eec5d3592c2",
+        "status": "reference_checksum_match",
+        "historical_manifest_match": true
+      },
+      {
+        "path": "NEW_2026_DATA/02_LENTIMPRA_ENCODE_2025/SUPPLEMENTARY/lentiMPRA_supplementary_tables_1-13.zip",
+        "bytes": 342234089,
+        "algorithm": "sha256",
+        "digest": "aefb1974e9ebe5c196a89a00f4e868c0abaf69e3d3952e79c74bfb42f217f6a4",
+        "status": "reference_checksum_match",
+        "historical_manifest_match": true
+      },
+      {
+        "path": "NEW_2026_DATA/03_MPRA_STARR_CROSS_ASSAY_2025/PAPERS/Comprehensive_evaluation_of_MPRA_and_STARR-seq_Genome_Biology_2025.pdf",
+        "bytes": 2257882,
+        "algorithm": "sha256",
+        "digest": "1c9bd055a57423275146555e2ce671c8e88269872320b98594f0b97a67a509bc",
+        "status": "reference_checksum_match",
+        "historical_manifest_match": true
+      },
+      {
+        "path": "NEW_2026_DATA/03_MPRA_STARR_CROSS_ASSAY_2025/SUPPLEMENTARY/cross_assay_supplementary_information.docx",
+        "bytes": 79402,
+        "algorithm": "sha256",
+        "digest": "866ff6cfe9d9e0510525ba9ad5f2954e4d8debe91cfd7e5125bf6c97be5034a0",
+        "status": "reference_checksum_match",
+        "historical_manifest_match": true
+      },
+      {
+        "path": "NEW_2026_DATA/03_MPRA_STARR_CROSS_ASSAY_2025/SUPPLEMENTARY/cross_assay_supplementary_figures.docx",
+        "bytes": 1542656,
+        "algorithm": "sha256",
+        "digest": "ee211d8baf8bf2715e77f0eb7143a07e9022f1712328b382bf63f2d6822439e4",
+        "status": "reference_checksum_match",
+        "historical_manifest_match": true
+      },
+      {
+        "path": "NEW_2026_DATA/03_MPRA_STARR_CROSS_ASSAY_2025/SUPPLEMENTARY/cross_assay_supplementary_tables_S1-S5.xlsx",
+        "bytes": 31908,
+        "algorithm": "sha256",
+        "digest": "c5ee3ccb0fd76f646230dcf1eadb00cf1ad9df4c88f852cf25f983bc663730ed",
+        "status": "reference_checksum_match",
+        "historical_manifest_match": true
+      },
+      {
+        "path": "NEW_2026_DATA/03_MPRA_STARR_CROSS_ASSAY_2025/CODE/cross_assay_code_release_v1.0.zip",
+        "bytes": 2706973,
+        "algorithm": "sha256",
+        "digest": "dbdb078fd8999f2ac1922b9ea0810e2b8e548a65ad88541587e4b100df100d4e",
+        "status": "reference_checksum_match",
+        "historical_manifest_match": true
+      },
+      {
+        "path": "NEW_2026_DATA/04_VISTA/PAPERS/VISTA_Enhancer_Browser_updated_database_NAR_2024.html",
+        "bytes": 152841,
+        "algorithm": "sha256",
+        "digest": "68856d104d81ca66f5fb07eaed8db456acc2316d19ecc4d633b0bdc53120164b",
+        "status": "receipt_match",
+        "historical_manifest_match": false
+      },
+      {
+        "path": "NEW_2026_DATA/05_HEMATOPOIESIS_MPRA/PAPERS/Design_principles_cell-state-specific_enhancers_in_hematopoiesis_Cell_2025.html",
+        "bytes": 384542,
+        "algorithm": "sha256",
+        "digest": "85e6d8de588bcdbbe58467ae71c597fca14afc93e7f12a24370037cf8b3b291c",
+        "status": "receipt_match",
+        "historical_manifest_match": false
+      },
+      {
+        "path": "NEW_2026_DATA/05_HEMATOPOIESIS_MPRA/PAPERS/Synthetic_enhancers_in_hematopoiesis_bioRxiv_2024_preprint.pdf",
+        "bytes": 5680575,
+        "algorithm": "sha256",
+        "digest": "5037c1800b0a67942640b221d498cec90a8f508a21cbc932a6c77cc84f4df4f2",
+        "status": "receipt_match",
+        "historical_manifest_match": false
+      },
+      {
+        "path": "NEW_2026_DATA/05_HEMATOPOIESIS_MPRA/SUPPLEMENTARY/hematopoiesis_Cell_Table_S1_library_design.xlsx",
+        "bytes": 11444,
+        "algorithm": "sha256",
+        "digest": "f1d2cef45432afe36bc83ffcc6c92f540eef4f598e83ca6dd827b0b1313a601c",
+        "status": "reference_checksum_match",
+        "historical_manifest_match": true
+      },
+      {
+        "path": "NEW_2026_DATA/05_HEMATOPOIESIS_MPRA/SUPPLEMENTARY/hematopoiesis_Cell_Table_S2_antibodies.xlsx",
+        "bytes": 14165,
+        "algorithm": "sha256",
+        "digest": "babc443fce2563ca2e17573279a1c9a51021775fa1d55b75ecc317eb09134f74",
+        "status": "reference_checksum_match",
+        "historical_manifest_match": true
+      },
+      {
+        "path": "NEW_2026_DATA/05_HEMATOPOIESIS_MPRA/SUPPLEMENTARY/hematopoiesis_Cell_Table_S3_oligo_sequences.xlsx",
+        "bytes": 17728,
+        "algorithm": "sha256",
+        "digest": "9400fb5754a714a66562519a7aa6fac9d2cebc90f0609c47ff9482f2da14473f",
+        "status": "reference_checksum_match",
+        "historical_manifest_match": true
+      },
+      {
+        "path": "NEW_2026_DATA/05_HEMATOPOIESIS_MPRA/SUPPLEMENTARY/hematopoiesis_Cell_Table_S4_processing_parameters.xlsx",
+        "bytes": 9163,
+        "algorithm": "sha256",
+        "digest": "22c6889c0bf2b587574e27319ce2d53e95f48150bd68d31201b3954692ffe1fc",
+        "status": "reference_checksum_match",
+        "historical_manifest_match": true
+      },
+      {
+        "path": "NEW_2026_DATA/05_HEMATOPOIESIS_MPRA/CODE/MPRA_figures_source_snapshot.zip",
+        "bytes": 18387602,
+        "algorithm": "sha256",
+        "digest": "e0514b63c55ae3ef520d0755f8d52fb54ef999dadb2474db1e10826d1a6ff132",
+        "status": "reference_checksum_match",
+        "historical_manifest_match": true
+      },
+      {
+        "path": "NEW_2026_DATA/05_HEMATOPOIESIS_MPRA/CODE/MPRAscripts_source_snapshot.zip",
+        "bytes": 16636799,
+        "algorithm": "sha256",
+        "digest": "2196085332398b950d7f9d7bc3eb14bbe147cfcd441e2a969388a0f3d9b7e00f",
+        "status": "reference_checksum_match",
+        "historical_manifest_match": true
+      },
+      {
+        "path": "NEW_2026_DATA/05_HEMATOPOIESIS_MPRA/CODE/MPRA_prediction_source_snapshot.zip",
+        "bytes": 31076321,
+        "algorithm": "sha256",
+        "digest": "dc6de7960e55f0e84f0f97910c5a41ebd2d29676e194e5f269ffb7fcc5ec1193",
+        "status": "reference_checksum_match",
+        "historical_manifest_match": true
+      },
+      {
+        "path": "NEW_2026_DATA/06_DNABERT_ENHANCER_2026/PAPERS/DNABERT_Enhancer_bioRxiv_2025_preprint.pdf",
+        "bytes": 1658702,
+        "algorithm": "sha256",
+        "digest": "221d4b1e0b4baf269e4237b1f6905baf882eea468691424969faca49830d649f",
+        "status": "receipt_match",
+        "historical_manifest_match": false
+      },
+      {
+        "path": "NEW_2026_DATA/06_DNABERT_ENHANCER_2026/PAPERS/DNABERT_Enhancer_Bioinformatics_2026_full_text.html",
+        "bytes": 313872,
+        "algorithm": "sha256",
+        "digest": "a4ed8c55174f227c701b3810067e0d378f9a6471adada388eef250825caa66ec",
+        "status": "reference_checksum_match",
+        "historical_manifest_match": true
+      },
+      {
+        "path": "NEW_2026_DATA/06_DNABERT_ENHANCER_2026/SUPPLEMENTARY/DNABERT_Enhancer_2026_supplementary_data.zip",
+        "bytes": 18057069,
+        "algorithm": "sha256",
+        "digest": "f54415adaf7856c0e5ecd1bc00a8c87760b9e7f36864b33e45692db5adf57eac",
+        "status": "reference_checksum_match",
+        "historical_manifest_match": true
+      },
+      {
+        "path": "NEW_2026_DATA/06_DNABERT_ENHANCER_2026/CODE/DNABERT_Enhancer_GitHub_source.zip",
+        "bytes": 1207377,
+        "algorithm": "sha256",
+        "digest": "07b5273b3166af5ea8ddd8f42f323046a95690a403d5bcc97e73bb1c42969dbd",
+        "status": "reference_checksum_match",
+        "historical_manifest_match": true
+      },
+      {
+        "path": "NEW_2026_DATA/07_ALPHAGENOME_2026/PAPERS/AlphaGenome_variant_effect_prediction_Nature_2026.pdf",
+        "bytes": 70393616,
+        "algorithm": "sha256",
+        "digest": "8e95b08f7e9d44082f8886a51580fc7eb9c91c8dfcc74552e9c6b4dd0174555c",
+        "status": "reference_checksum_match",
+        "historical_manifest_match": true
+      },
+      {
+        "path": "NEW_2026_DATA/07_ALPHAGENOME_2026/SUPPLEMENTARY/AlphaGenome_supplementary_information.pdf",
+        "bytes": 11222678,
+        "algorithm": "sha256",
+        "digest": "86b2e6a07543e3c201e2e157a3e9c6eb5235ff13eb8a5224f6fcb6fe1808d4c0",
+        "status": "reference_checksum_match",
+        "historical_manifest_match": true
+      },
+      {
+        "path": "NEW_2026_DATA/07_ALPHAGENOME_2026/SUPPLEMENTARY/AlphaGenome_reporting_summary.pdf",
+        "bytes": 1712400,
+        "algorithm": "sha256",
+        "digest": "02d80c781af2b9c16ff6abcd9ad660aa967113302d91b3c7a731f74a829e6b5c",
+        "status": "reference_checksum_match",
+        "historical_manifest_match": true
+      },
+      {
+        "path": "NEW_2026_DATA/07_ALPHAGENOME_2026/SUPPLEMENTARY/AlphaGenome_supplementary_tables_1-11.xlsx",
+        "bytes": 1475352,
+        "algorithm": "sha256",
+        "digest": "833cb78b6ae6fe39415cfff296ac00c48d800326139f13eb307531a1cc133154",
+        "status": "reference_checksum_match",
+        "historical_manifest_match": true
+      },
+      {
+        "path": "NEW_2026_DATA/07_ALPHAGENOME_2026/SUPPLEMENTARY/AlphaGenome_peer_review_file.pdf",
+        "bytes": 7654237,
+        "algorithm": "sha256",
+        "digest": "7f5522f6a9d2b973f9c202c95fbfc96f4396b4d12895906da618f7c8a2c7a894",
+        "status": "reference_checksum_match",
+        "historical_manifest_match": true
+      },
+      {
+        "path": "NEW_2026_DATA/07_ALPHAGENOME_2026/PAPERS/AlphaGenome_Atlas_medRxiv_2026_preprint.pdf",
+        "bytes": 15415633,
+        "algorithm": "sha256",
+        "digest": "4943d420dd0f090c2216830d8cb5c82b5b799771e31401069dce9ba28a55fb02",
+        "status": "receipt_match",
+        "historical_manifest_match": false
+      },
+      {
+        "path": "NEW_2026_DATA/07_ALPHAGENOME_2026/SUPPLEMENTARY/AlphaGenome_Atlas_supplement_1.csv",
+        "bytes": 60239,
+        "algorithm": "sha256",
+        "digest": "44d05e140de9546fd7ac4c24622baca4dc3b7ab3547a6e2e4b05399fac2fa2c4",
+        "status": "reference_checksum_match",
+        "historical_manifest_match": true
+      },
+      {
+        "path": "NEW_2026_DATA/07_ALPHAGENOME_2026/SUPPLEMENTARY/AlphaGenome_Atlas_supplement_2.xlsx",
+        "bytes": 135163,
+        "algorithm": "sha256",
+        "digest": "c880cba38a76e91a92adc3b22f1955e3641cc387efdd91f06262b3f8ec1ccacb",
+        "status": "reference_checksum_match",
+        "historical_manifest_match": true
+      },
+      {
+        "path": "NEW_2026_DATA/07_ALPHAGENOME_2026/SUPPLEMENTARY/AlphaGenome_Atlas_supplement_3.zip",
+        "bytes": 4318129,
+        "algorithm": "sha256",
+        "digest": "275339e38b79743a6b33940459271d9c7abcc71688a29312a7c89888c1e05a0f",
+        "status": "reference_checksum_match",
+        "historical_manifest_match": true
+      },
+      {
+        "path": "NEW_2026_DATA/07_ALPHAGENOME_2026/CODE/AlphaGenome_research_GitHub_source.zip",
+        "bytes": 1881352,
+        "algorithm": "sha256",
+        "digest": "8cf77b56e17529f6604ba1966cb3421c80074cf1c7b4669c21134e63732a6395",
+        "status": "reference_checksum_match",
+        "historical_manifest_match": true
+      }
+    ],
+    "summary": {
+      "resources": 109,
+      "bytes": 51069049058,
+      "counts": {
+        "size_match_new_local_hash": 49,
+        "reference_checksum_match": 55,
+        "receipt_match": 5
+      }
+    },
+    "partial_files": []
+  },
+  "legacy": {
+    "enhancer.cv.txt": {
+      "rows": 1484,
+      "lengths": {
+        "200": 1484
+      },
+      "unique_sequences": 1484,
+      "unique_headers": 1484,
+      "non_acgt": 0,
+      "unigram_rows": 1484,
+      "unigram_exact_order_match": true,
+      "gc_mean": 0.49068059299191374
+    },
+    "non.cv.txt": {
+      "rows": 1484,
+      "lengths": {
+        "200": 1484
+      },
+      "unique_sequences": 1484,
+      "unique_headers": 1484,
+      "non_acgt": 0,
+      "unigram_rows": 1484,
+      "unigram_exact_order_match": true,
+      "gc_mean": 0.374572102425876
+    },
+    "enhancer.ind.txt": {
+      "rows": 200,
+      "lengths": {
+        "200": 200
+      },
+      "unique_sequences": 200,
+      "unique_headers": 200,
+      "non_acgt": 0,
+      "unigram_rows": 200,
+      "unigram_exact_order_match": true,
+      "gc_mean": 0.48512500000000003
+    },
+    "non.ind.txt": {
+      "rows": 200,
+      "lengths": {
+        "200": 200
+      },
+      "unique_sequences": 200,
+      "unique_headers": 198,
+      "non_acgt": 0,
+      "unigram_rows": 200,
+      "unigram_exact_order_match": true,
+      "gc_mean": 0.37215000000000004
+    },
+    "pairwise": [
+      {
+        "a": "enhancer.cv.txt",
+        "b": "non.cv.txt",
+        "exact_overlap": 0,
+        "reverse_complement_canonical_overlap": 0
+      },
+      {
+        "a": "enhancer.cv.txt",
+        "b": "enhancer.ind.txt",
+        "exact_overlap": 100,
+        "reverse_complement_canonical_overlap": 100
+      },
+      {
+        "a": "enhancer.cv.txt",
+        "b": "non.ind.txt",
+        "exact_overlap": 0,
+        "reverse_complement_canonical_overlap": 0
+      },
+      {
+        "a": "non.cv.txt",
+        "b": "enhancer.ind.txt",
+        "exact_overlap": 0,
+        "reverse_complement_canonical_overlap": 0
+      },
+      {
+        "a": "non.cv.txt",
+        "b": "non.ind.txt",
+        "exact_overlap": 0,
+        "reverse_complement_canonical_overlap": 0
+      },
+      {
+        "a": "enhancer.ind.txt",
+        "b": "non.ind.txt",
+        "exact_overlap": 0,
+        "reverse_complement_canonical_overlap": 0
+      }
+    ]
+  },
+  "structural": {
+    "screen": {
+      "rows": 1718669,
+      "classes": {
+        "dELS": 1469205,
+        "pELS": 249464
+      },
+      "invalid_intervals": 0,
+      "duplicate_intervals": 0,
+      "width_quantiles": {
+        "min": 150.0,
+        "p25": 204.0,
+        "median": 272.0,
+        "p75": 335.0,
+        "max": 350.0
+      }
+    },
+    "vista": {
+      "experiment_rows": 5090,
+      "locus_rows": 4142,
+      "experiment_ids": 4163,
+      "duplicate_exp_hier": 0,
+      "duplicate_locus_ids": 0,
+      "experiment_status": {
+        "positive": 2400,
+        "negative": 2075,
+        "allelic": 615
+      },
+      "missing_locus_ids": [
+        "hs2720",
+        "hs3045",
+        "hs3059",
+        "hs3061",
+        "hs3080",
+        "mm2319",
+        "x20",
+        "x21",
+        "x22",
+        "x232",
+        "x24",
+        "x25",
+        "x26",
+        "x27",
+        "x28",
+        "x29",
+        "x30",
+        "x31",
+        "x32",
+        "x35",
+        "x36"
+      ],
+      "missing_locus_rows": 23,
+      "missing_locus_status": {
+        "allelic": 18,
+        "negative": 5
+      },
+      "loci_without_experiment": [],
+      "organisms": {
+        "Human": 3298,
+        "Mouse": 1752,
+        "Iberian mole": 5,
+        "Chimp": 4,
+        "Cat": 4,
+        "Burmese python": 3,
+        "Chicken": 3,
+        "Cow": 2,
+        "King cobra": 2,
+        "Lizard": 2,
+        "Rhesus": 2,
+        "Horse": 1,
+        "Speckled rattlesnake": 1,
+        "Megabat": 1,
+        "Bottlenose Dolphin": 1,
+        "Sloth": 1,
+        "Elephant shark": 1,
+        "Coelacanth": 1,
+        "Boa constrictor": 1,
+        "Fugu": 1,
+        "Lancelet": 1,
+        "X. tropicalis": 1,
+        "D. melanogaster": 1,
+        "Platypus": 1
+      },
+      "assemblies": {
+        "hg38": 3298,
+        "mm10": 1752,
+        "MPIMG_talOcc4v2.1": 5,
+        "panTro6": 4,
+        "felCat9": 4,
+        "Python_molurus_bivittatus-5.0.2": 3,
+        "galGal6": 3,
+        "bosTau9": 2,
+        "OphHan1.0": 2,
+        "anoCar2": 2,
+        "rheMac10": 2,
+        "equCab2": 1,
+        "CrotMitch1.0": 1,
+        "pteVam1": 1,
+        "NIST Tur_tru v1": 1,
+        "choHof1": 1,
+        "calMil1": 1,
+        "latCha1": 1,
+        "boa": 1,
+        "fr3": 1,
+        "braFlo2": 1,
+        "xenTro9": 1,
+        "dm6": 1,
+        "mOrnAna1.pri.v4": 1
+      }
+    }
+  },
+  "lenti": {
+    "files": [
+      {
+        "path": "02_LENTIMPRA_ENCODE_2025/ENCSR022GQD/ENCFF131CMC.tsv",
+        "header": false,
+        "rows": 153841,
+        "conditions": {
+          "HepG2": 153841
+        },
+        "replicates": {
+          "1": 153841
+        },
+        "unique_names": 153841,
+        "duplicate_keys": 0,
+        "missing_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "nonfinite_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "barcode_quantiles": {
+          "min": 2.0,
+          "median": 28.0,
+          "max": 4508513.0
+        }
+      },
+      {
+        "path": "02_LENTIMPRA_ENCODE_2025/ENCSR022GQD/ENCFF755BGY.tsv",
+        "header": true,
+        "rows": 461590,
+        "conditions": {
+          "HepG2": 461590
+        },
+        "replicates": {
+          "3": 153875,
+          "2": 153874,
+          "1": 153841
+        },
+        "unique_names": 153904,
+        "duplicate_keys": 0,
+        "missing_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "nonfinite_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "barcode_quantiles": {
+          "min": 2.0,
+          "median": 28.0,
+          "max": 6627200.0
+        }
+      },
+      {
+        "path": "02_LENTIMPRA_ENCODE_2025/ENCSR022GQD/ENCFF855WHD.tsv",
+        "header": false,
+        "rows": 153874,
+        "conditions": {
+          "HepG2": 153874
+        },
+        "replicates": {
+          "2": 153874
+        },
+        "unique_names": 153874,
+        "duplicate_keys": 0,
+        "missing_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "nonfinite_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "barcode_quantiles": {
+          "min": 2.0,
+          "median": 28.0,
+          "max": 6627200.0
+        }
+      },
+      {
+        "path": "02_LENTIMPRA_ENCODE_2025/ENCSR022GQD/ENCFF986REZ.tsv",
+        "header": false,
+        "rows": 153875,
+        "conditions": {
+          "HepG2": 153875
+        },
+        "replicates": {
+          "3": 153875
+        },
+        "unique_names": 153875,
+        "duplicate_keys": 0,
+        "missing_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "nonfinite_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "barcode_quantiles": {
+          "min": 2.0,
+          "median": 28.0,
+          "max": 5332695.0
+        }
+      },
+      {
+        "path": "02_LENTIMPRA_ENCODE_2025/ENCSR203UFY/ENCFF010FKF.tsv",
+        "header": false,
+        "rows": 56974,
+        "conditions": {
+          "K562": 56974
+        },
+        "replicates": {
+          "1": 56974
+        },
+        "unique_names": 56974,
+        "duplicate_keys": 0,
+        "missing_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "nonfinite_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "barcode_quantiles": {
+          "min": 2.0,
+          "median": 67.0,
+          "max": 6482589.0
+        }
+      },
+      {
+        "path": "02_LENTIMPRA_ENCODE_2025/ENCSR203UFY/ENCFF068BWG.tsv",
+        "header": true,
+        "rows": 170927,
+        "conditions": {
+          "K562": 170927
+        },
+        "replicates": {
+          "3": 56977,
+          "2": 56976,
+          "1": 56974
+        },
+        "unique_names": 56979,
+        "duplicate_keys": 0,
+        "missing_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "nonfinite_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "barcode_quantiles": {
+          "min": 2.0,
+          "median": 68.0,
+          "max": 8509927.0
+        }
+      },
+      {
+        "path": "02_LENTIMPRA_ENCODE_2025/ENCSR203UFY/ENCFF107FYL.tsv",
+        "header": false,
+        "rows": 56976,
+        "conditions": {
+          "K562": 56976
+        },
+        "replicates": {
+          "2": 56976
+        },
+        "unique_names": 56976,
+        "duplicate_keys": 0,
+        "missing_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "nonfinite_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "barcode_quantiles": {
+          "min": 2.0,
+          "median": 68.0,
+          "max": 8509927.0
+        }
+      },
+      {
+        "path": "02_LENTIMPRA_ENCODE_2025/ENCSR203UFY/ENCFF660VLW.tsv",
+        "header": false,
+        "rows": 56977,
+        "conditions": {
+          "K562": 56977
+        },
+        "replicates": {
+          "3": 56977
+        },
+        "unique_names": 56977,
+        "duplicate_keys": 0,
+        "missing_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "nonfinite_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "barcode_quantiles": {
+          "min": 2.0,
+          "median": 68.0,
+          "max": 8302679.0
+        }
+      },
+      {
+        "path": "02_LENTIMPRA_ENCODE_2025/ENCSR244FWB/ENCFF145LDY.tsv",
+        "header": false,
+        "rows": 69719,
+        "conditions": {
+          "WTC11": 69719
+        },
+        "replicates": {
+          "1": 69719
+        },
+        "unique_names": 69719,
+        "duplicate_keys": 0,
+        "missing_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "nonfinite_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "barcode_quantiles": {
+          "min": 2.0,
+          "median": 18.0,
+          "max": 6788557.0
+        }
+      },
+      {
+        "path": "02_LENTIMPRA_ENCODE_2025/ENCSR244FWB/ENCFF355PAE.tsv",
+        "header": false,
+        "rows": 69467,
+        "conditions": {
+          "WTC11": 69467
+        },
+        "replicates": {
+          "3": 69467
+        },
+        "unique_names": 69467,
+        "duplicate_keys": 0,
+        "missing_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "nonfinite_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "barcode_quantiles": {
+          "min": 2.0,
+          "median": 16.0,
+          "max": 5070131.0
+        }
+      },
+      {
+        "path": "02_LENTIMPRA_ENCODE_2025/ENCSR244FWB/ENCFF476DYQ.tsv",
+        "header": false,
+        "rows": 69240,
+        "conditions": {
+          "WTC11": 69240
+        },
+        "replicates": {
+          "2": 69240
+        },
+        "unique_names": 69240,
+        "duplicate_keys": 0,
+        "missing_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "nonfinite_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "barcode_quantiles": {
+          "min": 2.0,
+          "median": 15.0,
+          "max": 3617220.0
+        }
+      },
+      {
+        "path": "02_LENTIMPRA_ENCODE_2025/ENCSR244FWB/ENCFF949GFZ.tsv",
+        "header": true,
+        "rows": 208426,
+        "conditions": {
+          "WTC11": 208426
+        },
+        "replicates": {
+          "1": 69719,
+          "3": 69467,
+          "2": 69240
+        },
+        "unique_names": 70233,
+        "duplicate_keys": 0,
+        "missing_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "nonfinite_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "barcode_quantiles": {
+          "min": 2.0,
+          "median": 17.0,
+          "max": 6788557.0
+        }
+      },
+      {
+        "path": "02_LENTIMPRA_ENCODE_2025/ENCSR336MKI/ENCFF221BYM.tsv",
+        "header": false,
+        "rows": 56964,
+        "conditions": {
+          "WTC11": 56964
+        },
+        "replicates": {
+          "2": 56964
+        },
+        "unique_names": 56964,
+        "duplicate_keys": 0,
+        "missing_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "nonfinite_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "barcode_quantiles": {
+          "min": 2.0,
+          "median": 64.0,
+          "max": 6981345.0
+        }
+      },
+      {
+        "path": "02_LENTIMPRA_ENCODE_2025/ENCSR336MKI/ENCFF357GSY.tsv",
+        "header": true,
+        "rows": 170897,
+        "conditions": {
+          "WTC11": 170897
+        },
+        "replicates": {
+          "1": 56969,
+          "2": 56964,
+          "3": 56964
+        },
+        "unique_names": 56979,
+        "duplicate_keys": 0,
+        "missing_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "nonfinite_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "barcode_quantiles": {
+          "min": 2.0,
+          "median": 64.0,
+          "max": 7971505.0
+        }
+      },
+      {
+        "path": "02_LENTIMPRA_ENCODE_2025/ENCSR336MKI/ENCFF820ZLB.tsv",
+        "header": false,
+        "rows": 56964,
+        "conditions": {
+          "WTC11": 56964
+        },
+        "replicates": {
+          "3": 56964
+        },
+        "unique_names": 56964,
+        "duplicate_keys": 0,
+        "missing_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "nonfinite_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "barcode_quantiles": {
+          "min": 2.0,
+          "median": 64.0,
+          "max": 6938286.0
+        }
+      },
+      {
+        "path": "02_LENTIMPRA_ENCODE_2025/ENCSR336MKI/ENCFF886EUI.tsv",
+        "header": false,
+        "rows": 56969,
+        "conditions": {
+          "WTC11": 56969
+        },
+        "replicates": {
+          "1": 56969
+        },
+        "unique_names": 56969,
+        "duplicate_keys": 0,
+        "missing_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "nonfinite_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "barcode_quantiles": {
+          "min": 2.0,
+          "median": 65.0,
+          "max": 7971505.0
+        }
+      },
+      {
+        "path": "02_LENTIMPRA_ENCODE_2025/ENCSR382BVV/ENCFF252GNM.tsv",
+        "header": true,
+        "rows": 692315,
+        "conditions": {
+          "K562": 692315
+        },
+        "replicates": {
+          "1": 230861,
+          "3": 230770,
+          "2": 230684
+        },
+        "unique_names": 230933,
+        "duplicate_keys": 0,
+        "missing_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "nonfinite_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "barcode_quantiles": {
+          "min": 2.0,
+          "median": 48.0,
+          "max": 20081923.0
+        }
+      },
+      {
+        "path": "02_LENTIMPRA_ENCODE_2025/ENCSR382BVV/ENCFF563OUP.tsv",
+        "header": false,
+        "rows": 230861,
+        "conditions": {
+          "K562": 230861
+        },
+        "replicates": {
+          "1": 230861
+        },
+        "unique_names": 230861,
+        "duplicate_keys": 0,
+        "missing_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "nonfinite_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "barcode_quantiles": {
+          "min": 2.0,
+          "median": 51.0,
+          "max": 20081923.0
+        }
+      },
+      {
+        "path": "02_LENTIMPRA_ENCODE_2025/ENCSR382BVV/ENCFF857LYJ.tsv",
+        "header": false,
+        "rows": 230770,
+        "conditions": {
+          "K562": 230770
+        },
+        "replicates": {
+          "3": 230770
+        },
+        "unique_names": 230770,
+        "duplicate_keys": 0,
+        "missing_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "nonfinite_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "barcode_quantiles": {
+          "min": 2.0,
+          "median": 48.0,
+          "max": 16860137.0
+        }
+      },
+      {
+        "path": "02_LENTIMPRA_ENCODE_2025/ENCSR382BVV/ENCFF859ZRH.tsv",
+        "header": false,
+        "rows": 230684,
+        "conditions": {
+          "K562": 230684
+        },
+        "replicates": {
+          "2": 230684
+        },
+        "unique_names": 230684,
+        "duplicate_keys": 0,
+        "missing_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "nonfinite_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "barcode_quantiles": {
+          "min": 2.0,
+          "median": 45.0,
+          "max": 11923030.0
+        }
+      },
+      {
+        "path": "02_LENTIMPRA_ENCODE_2025/ENCSR405QCT/ENCFF009HVM.tsv",
+        "header": true,
+        "rows": 170932,
+        "conditions": {
+          "HepG2": 170932
+        },
+        "replicates": {
+          "2": 56980,
+          "1": 56977,
+          "3": 56975
+        },
+        "unique_names": 56982,
+        "duplicate_keys": 0,
+        "missing_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "nonfinite_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "barcode_quantiles": {
+          "min": 2.0,
+          "median": 69.0,
+          "max": 11210808.0
+        }
+      },
+      {
+        "path": "02_LENTIMPRA_ENCODE_2025/ENCSR405QCT/ENCFF433ECV.tsv",
+        "header": false,
+        "rows": 56975,
+        "conditions": {
+          "HepG2": 56975
+        },
+        "replicates": {
+          "3": 56975
+        },
+        "unique_names": 56975,
+        "duplicate_keys": 0,
+        "missing_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "nonfinite_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "barcode_quantiles": {
+          "min": 2.0,
+          "median": 69.0,
+          "max": 10345053.0
+        }
+      },
+      {
+        "path": "02_LENTIMPRA_ENCODE_2025/ENCSR405QCT/ENCFF511XTZ.tsv",
+        "header": false,
+        "rows": 56977,
+        "conditions": {
+          "HepG2": 56977
+        },
+        "replicates": {
+          "1": 56977
+        },
+        "unique_names": 56977,
+        "duplicate_keys": 0,
+        "missing_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "nonfinite_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "barcode_quantiles": {
+          "min": 2.0,
+          "median": 69.0,
+          "max": 10100874.0
+        }
+      },
+      {
+        "path": "02_LENTIMPRA_ENCODE_2025/ENCSR405QCT/ENCFF840GBW.tsv",
+        "header": false,
+        "rows": 56980,
+        "conditions": {
+          "HepG2": 56980
+        },
+        "replicates": {
+          "2": 56980
+        },
+        "unique_names": 56980,
+        "duplicate_keys": 0,
+        "missing_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "nonfinite_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "barcode_quantiles": {
+          "min": 2.0,
+          "median": 69.0,
+          "max": 11210808.0
+        }
+      },
+      {
+        "path": "02_LENTIMPRA_ENCODE_2025/ENCSR460LZI/ENCFF198MIP.tsv",
+        "header": false,
+        "rows": 7360,
+        "conditions": {
+          "K562": 7360
+        },
+        "replicates": {
+          "1": 7360
+        },
+        "unique_names": 7360,
+        "duplicate_keys": 0,
+        "missing_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "nonfinite_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "barcode_quantiles": {
+          "min": 2.0,
+          "median": 207.0,
+          "max": 5586837.0
+        }
+      },
+      {
+        "path": "02_LENTIMPRA_ENCODE_2025/ENCSR460LZI/ENCFF246IDU.tsv",
+        "header": false,
+        "rows": 7345,
+        "conditions": {
+          "K562": 7345
+        },
+        "replicates": {
+          "3": 7345
+        },
+        "unique_names": 7345,
+        "duplicate_keys": 0,
+        "missing_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "nonfinite_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "barcode_quantiles": {
+          "min": 2.0,
+          "median": 145.0,
+          "max": 4016141.0
+        }
+      },
+      {
+        "path": "02_LENTIMPRA_ENCODE_2025/ENCSR460LZI/ENCFF310PEZ.tsv",
+        "header": false,
+        "rows": 7361,
+        "conditions": {
+          "K562": 7361
+        },
+        "replicates": {
+          "2": 7361
+        },
+        "unique_names": 7361,
+        "duplicate_keys": 0,
+        "missing_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "nonfinite_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "barcode_quantiles": {
+          "min": 2.0,
+          "median": 285.0,
+          "max": 8068766.0
+        }
+      },
+      {
+        "path": "02_LENTIMPRA_ENCODE_2025/ENCSR460LZI/ENCFF788GLA.tsv",
+        "header": true,
+        "rows": 22066,
+        "conditions": {
+          "K562": 22066
+        },
+        "replicates": {
+          "2": 7361,
+          "1": 7360,
+          "3": 7345
+        },
+        "unique_names": 7368,
+        "duplicate_keys": 0,
+        "missing_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "nonfinite_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "barcode_quantiles": {
+          "min": 2.0,
+          "median": 208.0,
+          "max": 8068766.0
+        }
+      },
+      {
+        "path": "02_LENTIMPRA_ENCODE_2025/ENCSR463IRX/ENCFF107ZPL.tsv",
+        "header": false,
+        "rows": 9318,
+        "conditions": {
+          "HepG2": 9318
+        },
+        "replicates": {
+          "3": 9318
+        },
+        "unique_names": 9318,
+        "duplicate_keys": 0,
+        "missing_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "nonfinite_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "barcode_quantiles": {
+          "min": 2.0,
+          "median": 56.0,
+          "max": 5056965.0
+        }
+      },
+      {
+        "path": "02_LENTIMPRA_ENCODE_2025/ENCSR463IRX/ENCFF285OWV.tsv",
+        "header": true,
+        "rows": 27953,
+        "conditions": {
+          "HepG2": 27953
+        },
+        "replicates": {
+          "1": 9318,
+          "3": 9318,
+          "2": 9317
+        },
+        "unique_names": 9318,
+        "duplicate_keys": 0,
+        "missing_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "nonfinite_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "barcode_quantiles": {
+          "min": 2.0,
+          "median": 56.0,
+          "max": 5056965.0
+        }
+      },
+      {
+        "path": "02_LENTIMPRA_ENCODE_2025/ENCSR463IRX/ENCFF707LRZ.tsv",
+        "header": false,
+        "rows": 9317,
+        "conditions": {
+          "HepG2": 9317
+        },
+        "replicates": {
+          "2": 9317
+        },
+        "unique_names": 9317,
+        "duplicate_keys": 0,
+        "missing_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "nonfinite_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "barcode_quantiles": {
+          "min": 2.0,
+          "median": 55.0,
+          "max": 2477426.0
+        }
+      },
+      {
+        "path": "02_LENTIMPRA_ENCODE_2025/ENCSR463IRX/ENCFF772KIV.tsv",
+        "header": false,
+        "rows": 9318,
+        "conditions": {
+          "HepG2": 9318
+        },
+        "replicates": {
+          "1": 9318
+        },
+        "unique_names": 9318,
+        "duplicate_keys": 0,
+        "missing_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "nonfinite_numeric": {
+          "dna_count": 0,
+          "rna_count": 0,
+          "ratio": 0,
+          "log2": 0,
+          "n_obs_bc": 0
+        },
+        "barcode_quantiles": {
+          "min": 2.0,
+          "median": 56.0,
+          "max": 4510302.0
+        }
+      }
+    ],
+    "experiments": [
+      {
+        "accession": "ENCSR022GQD",
+        "cells": [
+          "HepG2"
+        ],
+        "total_rows": 923180,
+        "unique_full_rows": 461590,
+        "duplicated_full_rows": 461590,
+        "unique_names": 153904,
+        "replicate_rows": {
+          "3": 153875,
+          "2": 153874,
+          "1": 153841
+        },
+        "all_replicates_names": 153796
+      },
+      {
+        "accession": "ENCSR203UFY",
+        "cells": [
+          "K562"
+        ],
+        "total_rows": 341854,
+        "unique_full_rows": 170927,
+        "duplicated_full_rows": 170927,
+        "unique_names": 56979,
+        "replicate_rows": {
+          "3": 56977,
+          "2": 56976,
+          "1": 56974
+        },
+        "all_replicates_names": 56969
+      },
+      {
+        "accession": "ENCSR244FWB",
+        "cells": [
+          "WTC11"
+        ],
+        "total_rows": 416852,
+        "unique_full_rows": 208426,
+        "duplicated_full_rows": 208426,
+        "unique_names": 70233,
+        "replicate_rows": {
+          "1": 69719,
+          "3": 69467,
+          "2": 69240
+        },
+        "all_replicates_names": 68509
+      },
+      {
+        "accession": "ENCSR336MKI",
+        "cells": [
+          "WTC11"
+        ],
+        "total_rows": 341794,
+        "unique_full_rows": 170897,
+        "duplicated_full_rows": 170897,
+        "unique_names": 56979,
+        "replicate_rows": {
+          "1": 56969,
+          "2": 56964,
+          "3": 56964
+        },
+        "all_replicates_names": 56947
+      },
+      {
+        "accession": "ENCSR382BVV",
+        "cells": [
+          "K562"
+        ],
+        "total_rows": 1384630,
+        "unique_full_rows": 692315,
+        "duplicated_full_rows": 692315,
+        "unique_names": 230933,
+        "replicate_rows": {
+          "1": 230861,
+          "3": 230770,
+          "2": 230684
+        },
+        "all_replicates_names": 230564
+      },
+      {
+        "accession": "ENCSR405QCT",
+        "cells": [
+          "HepG2"
+        ],
+        "total_rows": 341864,
+        "unique_full_rows": 170932,
+        "duplicated_full_rows": 170932,
+        "unique_names": 56982,
+        "replicate_rows": {
+          "2": 56980,
+          "1": 56977,
+          "3": 56975
+        },
+        "all_replicates_names": 56972
+      },
+      {
+        "accession": "ENCSR460LZI",
+        "cells": [
+          "K562"
+        ],
+        "total_rows": 44132,
+        "unique_full_rows": 22066,
+        "duplicated_full_rows": 22066,
+        "unique_names": 7368,
+        "replicate_rows": {
+          "2": 7361,
+          "1": 7360,
+          "3": 7345
+        },
+        "all_replicates_names": 7341
+      },
+      {
+        "accession": "ENCSR463IRX",
+        "cells": [
+          "HepG2"
+        ],
+        "total_rows": 55906,
+        "unique_full_rows": 27953,
+        "duplicated_full_rows": 27953,
+        "unique_names": 9318,
+        "replicate_rows": {
+          "3": 9318,
+          "1": 9318,
+          "2": 9317
+        },
+        "all_replicates_names": 9317
+      }
+    ]
+  },
+  "joint": {
+    "design": {
+      "rows": 60000,
+      "duplicate_names": 0,
+      "categories": {
+        "potential enhancer, HepG2": 19000,
+        "potential enhancer, K562": 18958,
+        "potential enhancer, WTC11": 18946,
+        "promoter": 2396,
+        "negative control, shuffled": 300,
+        "positive, synthetic control, HepG2 (Smith et al 2013)": 181,
+        "negative, synthetic control, HepG2 (Smith et al 2013)": 169,
+        "positive control, K562 (Ernst et al 2016)": 50
+      },
+      "sequence_lengths": {
+        "230": 60000
+      },
+      "insert_lengths": {
+        "200": 60000
+      },
+      "duplicate_insert_excess": 0,
+      "duplicate_canonical_insert_excess": 149,
+      "non_acgt": 0,
+      "prefixes": {
+        "AGGACCGGATCAACT": 60000
+      },
+      "suffixes": {
+        "CATTGCGTGAACCGA": 60000
+      }
+    },
+    "sheets": {
+      "all_cell_types_summary": {
+        "rows": 56981,
+        "columns": [
+          "name",
+          "HepG2 [log2(rna/dna)]",
+          "K562 [log2(rna/dna)]",
+          "WTC11 [log2(rna/dna)]"
+        ],
+        "unique_names": 56981,
+        "duplicate_names": 0,
+        "unmatched_design_names": [
+          "R:FOXA1_FOXA2-ChMod_chr1:38000211-38000353__chr1:38000196-38000367_:099",
+          "R:FOXA2-ChMod_chr6:53480537-53480650__chr6:53480508-53480679_:033"
+        ],
+        "missing_by_column": {
+          "name": 0,
+          "HepG2 [log2(rna/dna)]": 0,
+          "K562 [log2(rna/dna)]": 3,
+          "WTC11 [log2(rna/dna)]": 3
+        }
+      },
+      "all_cell_types_ESS": {
+        "rows": 55977,
+        "columns": [
+          "name",
+          "type",
+          "ElementSpecificityScore_HepG2",
+          "ElementSpecificityScore_K562",
+          "ElementSpecificityScore_WTC11"
+        ],
+        "unique_names": 55977,
+        "duplicate_names": 0,
+        "unmatched_design_names": [
+          "R:FOXA1_FOXA2-ChMod_chr1:38000211-38000353__chr1:38000196-38000367_:099",
+          "R:FOXA2-ChMod_chr6:53480537-53480650__chr6:53480508-53480679_:033"
+        ],
+        "missing_by_column": {
+          "name": 0,
+          "type": 0,
+          "ElementSpecificityScore_HepG2": 0,
+          "ElementSpecificityScore_K562": 0,
+          "ElementSpecificityScore_WTC11": 0
+        }
+      },
+      "HepG2_replicate_level": {
+        "rows": 170929,
+        "columns": [
+          "replicate",
+          "name",
+          "normalized_dna_count",
+          "normalized_rna_count",
+          "rna/dna ratio",
+          "log2(rna/dna)",
+          "num_observed_barcodes"
+        ],
+        "unique_names": 56981,
+        "duplicate_names": 113948,
+        "unmatched_design_names": [
+          "R:FOXA1_FOXA2-ChMod_chr1:38000211-38000353__chr1:38000196-38000367_:099",
+          "R:FOXA2-ChMod_chr6:53480537-53480650__chr6:53480508-53480679_:033"
+        ],
+        "missing_by_column": {
+          "replicate": 0,
+          "name": 0,
+          "normalized_dna_count": 0,
+          "normalized_rna_count": 0,
+          "rna/dna ratio": 0,
+          "log2(rna/dna)": 0,
+          "num_observed_barcodes": 0
+        }
+      },
+      "HepG2_summary_data": {
+        "rows": 56982,
+        "columns": [
+          "name",
+          "replicate 1 [log2(rna/dna)]",
+          "replicate 2 [log2(rna/dna)]",
+          "replicate 3 [log2(rna/dna)]",
+          "mean"
+        ],
+        "unique_names": 56982,
+        "duplicate_names": 0,
+        "unmatched_design_names": [
+          "R:FOXA1_FOXA2-ChMod_chr1:38000211-38000353__chr1:38000196-38000367_:099",
+          "R:FOXA2-ChMod_chr6:53480537-53480650__chr6:53480508-53480679_:033",
+          "no_BC"
+        ],
+        "missing_by_column": {
+          "name": 0,
+          "replicate 1 [log2(rna/dna)]": 5,
+          "replicate 2 [log2(rna/dna)]": 2,
+          "replicate 3 [log2(rna/dna)]": 7,
+          "mean": 0
+        }
+      },
+      "K562_replicate_level": {
+        "rows": 170924,
+        "columns": [
+          "replicate",
+          "name",
+          "normalized_dna_count",
+          "normalized_rna_count",
+          "rna/dna ratio",
+          "log2(rna/dna)",
+          "num_observed_barcodes"
+        ],
+        "unique_names": 56978,
+        "duplicate_names": 113946,
+        "unmatched_design_names": [
+          "R:FOXA1_FOXA2-ChMod_chr1:38000211-38000353__chr1:38000196-38000367_:099",
+          "R:FOXA2-ChMod_chr6:53480537-53480650__chr6:53480508-53480679_:033"
+        ],
+        "missing_by_column": {
+          "replicate": 0,
+          "name": 0,
+          "normalized_dna_count": 0,
+          "normalized_rna_count": 0,
+          "rna/dna ratio": 0,
+          "log2(rna/dna)": 0,
+          "num_observed_barcodes": 0
+        }
+      },
+      "K562_summary_data": {
+        "rows": 56979,
+        "columns": [
+          "name",
+          "replicate 1 [log2(rna/dna)]",
+          "replicate 2 [log2(rna/dna)]",
+          "replicate 3 [log2(rna/dna)]",
+          "mean"
+        ],
+        "unique_names": 56979,
+        "duplicate_names": 0,
+        "unmatched_design_names": [
+          "R:FOXA1_FOXA2-ChMod_chr1:38000211-38000353__chr1:38000196-38000367_:099",
+          "R:FOXA2-ChMod_chr6:53480537-53480650__chr6:53480508-53480679_:033",
+          "no_BC"
+        ],
+        "missing_by_column": {
+          "name": 0,
+          "replicate 1 [log2(rna/dna)]": 5,
+          "replicate 2 [log2(rna/dna)]": 3,
+          "replicate 3 [log2(rna/dna)]": 2,
+          "mean": 0
+        }
+      },
+      "WTC11_replicate_level": {
+        "rows": 170894,
+        "columns": [
+          "replicate",
+          "name",
+          "normalized_dna_count",
+          "normalized_rna_count",
+          "rna/dna ratio",
+          "log2(rna/dna)",
+          "num_observed_barcodes"
+        ],
+        "unique_names": 56978,
+        "duplicate_names": 113916,
+        "unmatched_design_names": [
+          "R:FOXA1_FOXA2-ChMod_chr1:38000211-38000353__chr1:38000196-38000367_:099",
+          "R:FOXA2-ChMod_chr6:53480537-53480650__chr6:53480508-53480679_:033"
+        ],
+        "missing_by_column": {
+          "replicate": 0,
+          "name": 0,
+          "normalized_dna_count": 0,
+          "normalized_rna_count": 0,
+          "rna/dna ratio": 0,
+          "log2(rna/dna)": 0,
+          "num_observed_barcodes": 0
+        }
+      },
+      "WTC11_summary_data": {
+        "rows": 56979,
+        "columns": [
+          "name",
+          "replicate 1 [log2(rna/dna)]",
+          "replicate 2 [log2(rna/dna)]",
+          "replicate 3 [log2(rna/dna)]",
+          "mean"
+        ],
+        "unique_names": 56979,
+        "duplicate_names": 0,
+        "unmatched_design_names": [
+          "R:FOXA1_FOXA2-ChMod_chr1:38000211-38000353__chr1:38000196-38000367_:099",
+          "R:FOXA2-ChMod_chr6:53480537-53480650__chr6:53480508-53480679_:033",
+          "no_BC"
+        ],
+        "missing_by_column": {
+          "name": 0,
+          "replicate 1 [log2(rna/dna)]": 10,
+          "replicate 2 [log2(rna/dna)]": 15,
+          "replicate 3 [log2(rna/dna)]": 15,
+          "mean": 0
+        }
+      }
+    },
+    "joint_summary": {
+      "missing_values": {
+        "name": 0,
+        "HepG2 [log2(rna/dna)]": 0,
+        "K562 [log2(rna/dna)]": 3,
+        "WTC11 [log2(rna/dna)]": 3
+      },
+      "complete_three_cells": 56977,
+      "missing_design_count": 3021,
+      "missing_categories": {
+        "potential enhancer, K562": 1080,
+        "potential enhancer, WTC11": 916,
+        "potential enhancer, HepG2": 906,
+        "promoter": 83,
+        "positive, synthetic control, HepG2 (Smith et al 2013)": 15,
+        "negative, synthetic control, HepG2 (Smith et al 2013)": 12,
+        "negative control, shuffled": 8,
+        "positive control, K562 (Ernst et al 2016)": 1
+      },
+      "included_categories": {
+        "potential enhancer, HepG2": 18094,
+        "potential enhancer, WTC11": 18030,
+        "potential enhancer, K562": 17878,
+        "promoter": 2313,
+        "negative control, shuffled": 292,
+        "positive, synthetic control, HepG2 (Smith et al 2013)": 166,
+        "negative, synthetic control, HepG2 (Smith et al 2013)": 157,
+        "positive control, K562 (Ernst et al 2016)": 49
+      },
+      "pearson": {
+        "HepG2 [log2(rna/dna)]": {
+          "HepG2 [log2(rna/dna)]": 1.0,
+          "K562 [log2(rna/dna)]": 0.6140419789635744,
+          "WTC11 [log2(rna/dna)]": 0.4933869757562243
+        },
+        "K562 [log2(rna/dna)]": {
+          "HepG2 [log2(rna/dna)]": 0.6140419789635744,
+          "K562 [log2(rna/dna)]": 1.0,
+          "WTC11 [log2(rna/dna)]": 0.6009260309796998
+        },
+        "WTC11 [log2(rna/dna)]": {
+          "HepG2 [log2(rna/dna)]": 0.4933869757562243,
+          "K562 [log2(rna/dna)]": 0.6009260309796998,
+          "WTC11 [log2(rna/dna)]": 1.0
+        }
+      },
+      "ess_not_summary": 0,
+      "summary_not_ess": 1004,
+      "summary_not_ess_categories": {
+        "potential enhancer, K562": 324,
+        "potential enhancer, WTC11": 322,
+        "potential enhancer, HepG2": 194,
+        "promoter": 120,
+        "positive, synthetic control, HepG2 (Smith et al 2013)": 33,
+        "negative control, shuffled": 6,
+        "negative, synthetic control, HepG2 (Smith et al 2013)": 4,
+        "positive control, K562 (Ernst et al 2016)": 1
+      },
+      "ess_types": {
+        "putative enhancer, HepG2": 17900,
+        "putative enhancer, WTC11": 17708,
+        "putative enhancer, K562": 17554,
+        "promoter": 2193,
+        "negative, shuffled": 286,
+        "negative HepG2, Smith": 153,
+        "positive HepG2, Smith": 135,
+        "positive K562, Kellis": 48
+      }
+    },
+    "cell_qc": {
+      "HepG2": {
+        "rows": 170929,
+        "duplicate_keys": 0,
+        "per_replicate": {
+          "2": 56979,
+          "1": 56976,
+          "3": 56974
+        },
+        "names_in_all_three": 56971,
+        "names_one_or_two": 10,
+        "replicate_correlations": {
+          "1": {
+            "1": 1.0,
+            "2": 0.9743109611809372,
+            "3": 0.9737865660985413
+          },
+          "2": {
+            "1": 0.9743109611809372,
+            "2": 1.0,
+            "3": 0.976134895763625
+          },
+          "3": {
+            "1": 0.9737865660985413,
+            "2": 0.976134895763625,
+            "3": 1.0
+          }
+        },
+        "barcodes_quantiles": {
+          "min": 2.0,
+          "p05": 20.0,
+          "median": 69.0,
+          "max": 477.0
+        },
+        "missing_numeric": {
+          "dna": 0,
+          "rna": 0,
+          "ratio": 0,
+          "log2": 0,
+          "barcodes": 0
+        },
+        "mean_max_absolute_difference": 0.0004999919285213483,
+        "joint_vs_cell_max_absolute_difference": 0.0,
+        "joint_vs_cell_common_rows": 56981
+      },
+      "K562": {
+        "rows": 170924,
+        "duplicate_keys": 0,
+        "per_replicate": {
+          "3": 56976,
+          "2": 56975,
+          "1": 56973
+        },
+        "names_in_all_three": 56968,
+        "names_one_or_two": 10,
+        "replicate_correlations": {
+          "1": {
+            "1": 1.0,
+            "2": 0.9690721002282653,
+            "3": 0.9691508473948989
+          },
+          "2": {
+            "1": 0.9690721002282653,
+            "2": 1.0,
+            "3": 0.9788871763938496
+          },
+          "3": {
+            "1": 0.9691508473948989,
+            "2": 0.9788871763938496,
+            "3": 1.0
+          }
+        },
+        "barcodes_quantiles": {
+          "min": 2.0,
+          "p05": 20.0,
+          "median": 68.0,
+          "max": 475.0
+        },
+        "missing_numeric": {
+          "dna": 0,
+          "rna": 0,
+          "ratio": 0,
+          "log2": 0,
+          "barcodes": 0
+        },
+        "mean_max_absolute_difference": 0.0004999977481365825,
+        "joint_vs_cell_max_absolute_difference": 0.0,
+        "joint_vs_cell_common_rows": 56978
+      },
+      "WTC11": {
+        "rows": 170894,
+        "duplicate_keys": 0,
+        "per_replicate": {
+          "1": 56968,
+          "2": 56963,
+          "3": 56963
+        },
+        "names_in_all_three": 56946,
+        "names_one_or_two": 32,
+        "replicate_correlations": {
+          "1": {
+            "1": 1.0,
+            "2": 0.9555292394657128,
+            "3": 0.956988771934761
+          },
+          "2": {
+            "1": 0.9555292394657128,
+            "2": 1.0,
+            "3": 0.9542619184013278
+          },
+          "3": {
+            "1": 0.956988771934761,
+            "2": 0.9542619184013278,
+            "3": 1.0
+          }
+        },
+        "barcodes_quantiles": {
+          "min": 2.0,
+          "p05": 19.0,
+          "median": 64.0,
+          "max": 467.0
+        },
+        "missing_numeric": {
+          "dna": 0,
+          "rna": 0,
+          "ratio": 0,
+          "log2": 0,
+          "barcodes": 0
+        },
+        "mean_max_absolute_difference": 0.0004999872146267403,
+        "joint_vs_cell_max_absolute_difference": 0.0,
+        "joint_vs_cell_common_rows": 56978
+      }
+    }
+  },
+  "refined": {
+    "aliases": {
+      "R:FOXA1_FOXA2-ChMod_chr1:38000211-38000353__chr1:38000196-38000367_:099": "R:FOXA1_FOXA2-ChMod_chr1:38000211-38000353_[chr1:38000196-38000367]:099",
+      "R:FOXA2-ChMod_chr6:53480537-53480650__chr6:53480508-53480679_:033": "R:FOXA2-ChMod_chr6:53480537-53480650_[chr6:53480508-53480679]:033"
+    },
+    "alias_note": "Proposed explicit crosswalk based on otherwise identical coordinate-bearing names; confirm original design FASTA before sequence-dependent analysis.",
+    "joint_after_aliases": {
+      "matched": 56981,
+      "unmatched": [],
+      "absent_design_count": 3019
+    },
+    "encode_vs_supplement": {
+      "HepG2": {
+        "accession": "ENCSR405QCT",
+        "join_counts": {
+          "both": 170929,
+          "left_only": 3,
+          "right_only": 0
+        },
+        "encode_only": [
+          {
+            "replicate": 1,
+            "name": "no_BC"
+          },
+          {
+            "replicate": 2,
+            "name": "no_BC"
+          },
+          {
+            "replicate": 3,
+            "name": "no_BC"
+          }
+        ],
+        "max_absolute_numeric_differences": {
+          "dna_count": 5.551115123125783e-17,
+          "rna_count": 1.1102230246251565e-16,
+          "ratio": 4.440892098500626e-16,
+          "log2": 2.220446049250313e-16,
+          "n_obs_bc": 0.0
+        }
+      },
+      "K562": {
+        "accession": "ENCSR203UFY",
+        "join_counts": {
+          "both": 170924,
+          "left_only": 3,
+          "right_only": 0
+        },
+        "encode_only": [
+          {
+            "replicate": 1,
+            "name": "no_BC"
+          },
+          {
+            "replicate": 2,
+            "name": "no_BC"
+          },
+          {
+            "replicate": 3,
+            "name": "no_BC"
+          }
+        ],
+        "max_absolute_numeric_differences": {
+          "dna_count": 7.979727989493313e-17,
+          "rna_count": 1.1102230246251565e-16,
+          "ratio": 8.881784197001252e-16,
+          "log2": 4.440892098500626e-16,
+          "n_obs_bc": 0.0
+        }
+      },
+      "WTC11": {
+        "accession": "ENCSR336MKI",
+        "join_counts": {
+          "both": 170894,
+          "left_only": 3,
+          "right_only": 0
+        },
+        "encode_only": [
+          {
+            "replicate": 1,
+            "name": "no_BC"
+          },
+          {
+            "replicate": 2,
+            "name": "no_BC"
+          },
+          {
+            "replicate": 3,
+            "name": "no_BC"
+          }
+        ],
+        "max_absolute_numeric_differences": {
+          "dna_count": 7.979727989493313e-17,
+          "rna_count": 2.220446049250313e-16,
+          "ratio": 4.440892098500626e-16,
+          "log2": 4.440892098500626e-16,
+          "n_obs_bc": 0.0
+        }
+      }
+    },
+    "barcode_rules": {
+      "HepG2": {
+        "any_replicate_ge10": 56017,
+        "all_three_replicates_ge10": 55973
+      },
+      "K562": {
+        "any_replicate_ge10": 56007,
+        "all_three_replicates_ge10": 55954
+      },
+      "WTC11": {
+        "any_replicate_ge10": 55982,
+        "all_three_replicates_ge10": 55870
+      }
+    },
+    "barcode_intersections": {
+      "any_replicate_ge10": {
+        "rows": 55977,
+        "not_in_ess": 0,
+        "ess_not_in_rule": 0
+      },
+      "all_three_replicates_ge10": {
+        "rows": 55863,
+        "not_in_ess": 0,
+        "ess_not_in_rule": 114
+      }
+    },
+    "ess_simple_reconstruction": {
+      "method": "Restrict rounded S11 per-cell means to ESS IDs, column z-score with sample SD, then subtract each row mean.",
+      "rmse": 0.10667192099124581,
+      "max_absolute_difference": 1.576380567515212,
+      "note": "Diagnostic only; numerical specificity-score reproduction remains unresolved."
+    },
+    "canonical_sequence_groups": {
+      "1": 59702,
+      "2": 149
+    },
+    "legacy_exact_matches": [
+      {
+        "ind_record": 1,
+        "ind_header": "Chr11_6627824_6628024",
+        "cv_record": 1202,
+        "cv_header": "CHR11_6627824_6628024",
+        "sequence_sha256": "7be042a99bfcbc87968b19f1fd75efbabbdfe4b28c063b3abe8a903b7bf43423"
+      },
+      {
+        "ind_record": 2,
+        "ind_header": "Chr11_9587224_9587424",
+        "cv_record": 1203,
+        "cv_header": "CHR11_9587224_9587424",
+        "sequence_sha256": "41b754395acab6a2e1ff68964f40a7b5adb4745abe070fed8b908439b69c834f"
+      },
+      {
+        "ind_record": 3,
+        "ind_header": "Chr11_65187024_65187224",
+        "cv_record": 1210,
+        "cv_header": "CHR11_65187024_65187224",
+        "sequence_sha256": "ae128ad221de97459d95679a2c2a3d11ae78172717709741e00f97f9774d92a2"
+      },
+      {
+        "ind_record": 4,
+        "ind_header": "Chr10_74014594_74014794",
+        "cv_record": 1213,
+        "cv_header": "CHR10_74014594_74014794",
+        "sequence_sha256": "8e735543c2dc3989164b60d955ff7859e65db778fd5cfae5bd3ad859a7edd5bb"
+      },
+      {
+        "ind_record": 5,
+        "ind_header": "Chr10_105667810_105668010",
+        "cv_record": 1216,
+        "cv_header": "CHR10_105667810_105668010",
+        "sequence_sha256": "f8890c44727fba16812f2610157c6233dcd94447513a15f212070e45f164dd16"
+      },
+      {
+        "ind_record": 6,
+        "ind_header": "Chr16_87812299_87812499",
+        "cv_record": 1230,
+        "cv_header": "CHR16_87812299_87812499",
+        "sequence_sha256": "981946a3b0916ec2c1c828278cae4993750bb4f4150718ac0ee641fbe1b9ff88"
+      },
+      {
+        "ind_record": 7,
+        "ind_header": "Chr14_61570047_61570247",
+        "cv_record": 1236,
+        "cv_header": "CHR14_61570047_61570247",
+        "sequence_sha256": "439f517775e70b939cac77f739884f9d2caf9a17e0fca4b651530af5d2d5348f"
+      },
+      {
+        "ind_record": 8,
+        "ind_header": "Chr19_39177160_39177360",
+        "cv_record": 1252,
+        "cv_header": "CHR19_39177160_39177360",
+        "sequence_sha256": "d93c3a42da4b1a1c97049a3c0c298f7cfadb67090125b258934c3c9e03aa664a"
+      },
+      {
+        "ind_record": 9,
+        "ind_header": "Chr22_36726454_36726654",
+        "cv_record": 1264,
+        "cv_header": "CHR22_36726454_36726654",
+        "sequence_sha256": "0828b310d65d44b57e4f6c7875056eff6b00f6304c9c7df99b501fefbdbd353a"
+      },
+      {
+        "ind_record": 10,
+        "ind_header": "Chr20_30160339_30160539",
+        "cv_record": 1269,
+        "cv_header": "CHR20_30160339_30160539",
+        "sequence_sha256": "d9e9c76cd9e9bab3750588399bc563e383d5875d94966acdc2eead7bbf851b3c"
+      },
+      {
+        "ind_record": 11,
+        "ind_header": "Chr20_30160539_30160739",
+        "cv_record": 1270,
+        "cv_header": "CHR20_30160539_30160739",
+        "sequence_sha256": "4b2709812e1a24dbebb26f3bed4bc27456755b49788a471f0f0d89f6252ebe49"
+      },
+      {
+        "ind_record": 12,
+        "ind_header": "Chr20_45977793_45977993",
+        "cv_record": 1273,
+        "cv_header": "CHR20_45977793_45977993",
+        "sequence_sha256": "6f231a4dc9b6a9462d093e55f0e45ecafef37aa45a533900980294b89d104f0e"
+      },
+      {
+        "ind_record": 13,
+        "ind_header": "Chr7_104585764_104585964",
+        "cv_record": 1280,
+        "cv_header": "CHR7_104585764_104585964",
+        "sequence_sha256": "5fd7f38e50e41d92ef3fac26c9e746f0c1db12b97013bcbf534b9f337af5d52e"
+      },
+      {
+        "ind_record": 14,
+        "ind_header": "Chr6_26122621_26122821",
+        "cv_record": 1284,
+        "cv_header": "CHR6_26122621_26122821",
+        "sequence_sha256": "c8a59c67e25c3bbd0a2a11bf75b0e7c1b489e58b601b5a6e59901b46b59ef44f"
+      },
+      {
+        "ind_record": 15,
+        "ind_header": "Chr3_177077306_177077506",
+        "cv_record": 1302,
+        "cv_header": "CHR3_177077306_177077506",
+        "sequence_sha256": "c6618d7c83e5ba735d5b4b179baf9238554fd915a47350130c903ad71779fd5a"
+      },
+      {
+        "ind_record": 16,
+        "ind_header": "Chr1_150540176_150540376",
+        "cv_record": 1325,
+        "cv_header": "CHR1_150540176_150540376",
+        "sequence_sha256": "3e958d4d1152d8457a2b3adbc44358cccbd8b107d3839c598a2df39f33c50c39"
+      },
+      {
+        "ind_record": 17,
+        "ind_header": "Chr1_150540576_150540776",
+        "cv_record": 1327,
+        "cv_header": "CHR1_150540576_150540776",
+        "sequence_sha256": "00bd6432df190c17a1e68012eaec98dc00f0e17ffa83a3296187d5fd7b7c26ae"
+      },
+      {
+        "ind_record": 18,
+        "ind_header": "Chr1_156717976_156718176",
+        "cv_record": 1331,
+        "cv_header": "CHR1_156717976_156718176",
+        "sequence_sha256": "7b92e524a80e74e0aa823601dce979cbb2ef24e86a3580e66ae1949c1b72fa61"
+      },
+      {
+        "ind_record": 19,
+        "ind_header": "Chr9_131903379_131903579",
+        "cv_record": 1334,
+        "cv_header": "CHR9_131903379_131903579",
+        "sequence_sha256": "194c0dc0f0da2406957f93d9d6c97b3c4f7ac26fbf7f61704aa89abec11bb0e4"
+      },
+      {
+        "ind_record": 20,
+        "ind_header": "Chr12_6999739_6999939",
+        "cv_record": 1338,
+        "cv_header": "CHR12_6999739_6999939",
+        "sequence_sha256": "7bd8fce1e88b5e46659dd76e6210fe7ac936d80ed89c7e2801b708595e6eefba"
+      },
+      {
+        "ind_record": 21,
+        "ind_header": "Chr12_45628333_45628533",
+        "cv_record": 1341,
+        "cv_header": "CHR12_45628333_45628533",
+        "sequence_sha256": "16a1e30a4e47f29c4ed20f1f17b7f46ce19d08500b41b77ef6b0b3c6152626d6"
+      },
+      {
+        "ind_record": 22,
+        "ind_header": "Chr11_9587824_9588024",
+        "cv_record": 1355,
+        "cv_header": "CHR11_9587824_9588024",
+        "sequence_sha256": "049cf86a38a9ac3f2e6abbdc00f4a2db0945f8ebd86edc1a2b45572528ff7272"
+      },
+      {
+        "ind_record": 23,
+        "ind_header": "Chr11_61582224_61582424",
+        "cv_record": 1359,
+        "cv_header": "CHR11_61582224_61582424",
+        "sequence_sha256": "fac4db1bd7c6724c693664e599e219eb5c59d9f842a49247425554ac2c58e8b8"
+      },
+      {
+        "ind_record": 24,
+        "ind_header": "Chr11_65187224_65187424",
+        "cv_record": 1364,
+        "cv_header": "CHR11_65187224_65187424",
+        "sequence_sha256": "aec52d2f9f3a0e78b3f025e3c00a2fa3c626a2c1d63ea70359b7c0a3c06a27e5"
+      },
+      {
+        "ind_record": 25,
+        "ind_header": "Chr11_65187624_65187824",
+        "cv_record": 1365,
+        "cv_header": "CHR11_65187624_65187824",
+        "sequence_sha256": "68ad55b8fbe78ba06946d430cf799055f9304edf45fad4be29d34dbe7a6ba806"
+      },
+      {
+        "ind_record": 26,
+        "ind_header": "Chr10_105668010_105668210",
+        "cv_record": 1372,
+        "cv_header": "CHR10_105668010_105668210",
+        "sequence_sha256": "0d765dd0eaf4c8ed708f183369680e8c8ded5d22d387559801254b90e21bbbfa"
+      },
+      {
+        "ind_record": 27,
+        "ind_header": "Chr17_38268274_38268474",
+        "cv_record": 1376,
+        "cv_header": "CHR17_38268274_38268474",
+        "sequence_sha256": "21e018672d876b6b389e9b0c24858f87340d388a6d40a2c90231f23ecde97598"
+      },
+      {
+        "ind_record": 28,
+        "ind_header": "Chr19_18475800_18476000",
+        "cv_record": 1397,
+        "cv_header": "CHR19_18475800_18476000",
+        "sequence_sha256": "fd77c25e9ebcb9eac564bf476b6bd537d71f572ea99776823055a18087bca596"
+      },
+      {
+        "ind_record": 29,
+        "ind_header": "Chr19_18476000_18476200",
+        "cv_record": 1398,
+        "cv_header": "CHR19_18476000_18476200",
+        "sequence_sha256": "8e5e7d74942dd3e207f17e2b650fef7759d8146b0a624e9e92c72d78ca29d721"
+      },
+      {
+        "ind_record": 30,
+        "ind_header": "Chr19_39175560_39175760",
+        "cv_record": 1400,
+        "cv_header": "CHR19_39175560_39175760",
+        "sequence_sha256": "f6ea52430f8e2a839bb3823330fd91fa0d136c2d5e6d4f975b5eff870ccc1d99"
+      },
+      {
+        "ind_record": 31,
+        "ind_header": "Chr19_39176960_39177160",
+        "cv_record": 1403,
+        "cv_header": "CHR19_39176960_39177160",
+        "sequence_sha256": "f9d09edc54c29926db7d76afec1b4b380b86630c6921ce07d6ec2ae6863c0b41"
+      },
+      {
+        "ind_record": 32,
+        "ind_header": "Chr19_47612360_47612560",
+        "cv_record": 1407,
+        "cv_header": "CHR19_47612360_47612560",
+        "sequence_sha256": "e1dfd6873a8ee9c1ec92a36de79e05310098e6b76f1072c7423be08c23ccbbf5"
+      },
+      {
+        "ind_record": 33,
+        "ind_header": "Chr6_43141422_43141622",
+        "cv_record": 1434,
+        "cv_header": "CHR6_43141422_43141622",
+        "sequence_sha256": "05c96f6a88eefffdead7d560f4d0a13a7249357c65d711740a43173812aa306c"
+      },
+      {
+        "ind_record": 34,
+        "ind_header": "Chr2_87785085_87785285",
+        "cv_record": 1445,
+        "cv_header": "CHR2_87785085_87785285",
+        "sequence_sha256": "fde6ec0418fcff0d760c2c654574d631e1bb9da3cf9e1afc02c35df167471b0e"
+      },
+      {
+        "ind_record": 35,
+        "ind_header": "Chr1_161089176_161089376",
+        "cv_record": 1471,
+        "cv_header": "CHR1_161089176_161089376",
+        "sequence_sha256": "d5bb9b280d611045819f0f5749283d08b3128f8d44c137aeb9b7bada913ae5fc"
+      },
+      {
+        "ind_record": 36,
+        "ind_header": "Chr9_131903179_131903379",
+        "cv_record": 1476,
+        "cv_header": "CHR9_131903179_131903379",
+        "sequence_sha256": "dec1f94728c994c27fe0fce82354b1371b0d3b9051ae14e874caa6284ac45f16"
+      },
+      {
+        "ind_record": 37,
+        "ind_header": "Chr13_99136999_99137199",
+        "cv_record": 1484,
+        "cv_header": "CHR13_99136999_99137199",
+        "sequence_sha256": "3f7cf37e3e16cfcefc83e7e0571d2d43553684d4f858ab574a230ff28b7a542d"
+      },
+      {
+        "ind_record": 38,
+        "ind_header": "Chr12_31901933_31902133",
+        "cv_record": 3,
+        "cv_header": "CHR12_31901933_31902133",
+        "sequence_sha256": "7ccdb78b8824fd20c933407ebef7a98ed55763171711e2dc48ba5319c54fa40a"
+      },
+      {
+        "ind_record": 39,
+        "ind_header": "Chr12_109085671_109085871",
+        "cv_record": 7,
+        "cv_header": "CHR12_109085671_109085871",
+        "sequence_sha256": "162d00949077fa28eecd46839d1e4d60c17729bafa0abdacbf7aa2504b818bf3"
+      },
+      {
+        "ind_record": 40,
+        "ind_header": "Chr12_125402847_125403047",
+        "cv_record": 13,
+        "cv_header": "CHR12_125402847_125403047",
+        "sequence_sha256": "c7b8e4d8320ce7e0850b1b938281062bf78b291e5482a231fdc56d4d41ad6510"
+      },
+      {
+        "ind_record": 41,
+        "ind_header": "Chr11_46576224_46576424",
+        "cv_record": 16,
+        "cv_header": "CHR11_46576224_46576424",
+        "sequence_sha256": "85a311f0a09eb91b73dd9f06ed220bfddc264944956b5f47789d0fa182a014c9"
+      },
+      {
+        "ind_record": 42,
+        "ind_header": "Chr11_47290424_47290624",
+        "cv_record": 17,
+        "cv_header": "CHR11_47290424_47290624",
+        "sequence_sha256": "0f129ed2646b7b3a85ffdcfc6ca06e0982e10a8625ea2642b6603e6e1e179c83"
+      },
+      {
+        "ind_record": 43,
+        "ind_header": "Chr11_62320424_62320624",
+        "cv_record": 20,
+        "cv_header": "CHR11_62320424_62320624",
+        "sequence_sha256": "eb19fe8bf8fd1d37a362211216489cfedfb44aab7d8fec7bf8e08be7a1f01bdc"
+      },
+      {
+        "ind_record": 44,
+        "ind_header": "Chr11_62323824_62324024",
+        "cv_record": 22,
+        "cv_header": "CHR11_62323824_62324024",
+        "sequence_sha256": "a7013b46b6ad7664e5b8009a588ced92ae37af657786ddf42a61c7700ebaa5c1"
+      },
+      {
+        "ind_record": 45,
+        "ind_header": "Chr10_103911610_103911810",
+        "cv_record": 28,
+        "cv_header": "CHR10_103911610_103911810",
+        "sequence_sha256": "ff60ca45c4255a46a64741778156f6d7f538ee750d7286ec2bccaaece9e49e18"
+      },
+      {
+        "ind_record": 46,
+        "ind_header": "Chr17_7486676_7486876",
+        "cv_record": 30,
+        "cv_header": "CHR17_7486676_7486876",
+        "sequence_sha256": "b3371b8e105367753c732ff19eb24726cbaff8e5b61ec55a458c5cb6ecf9f23b"
+      },
+      {
+        "ind_record": 47,
+        "ind_header": "Chr17_33390687_33390887",
+        "cv_record": 35,
+        "cv_header": "CHR17_33390687_33390887",
+        "sequence_sha256": "af805ee8434f78535e8b3f2a927edf8c3f3eedb596beefe36c55f8b6febb430b"
+      },
+      {
+        "ind_record": 48,
+        "ind_header": "Chr17_38270274_38270474",
+        "cv_record": 38,
+        "cv_header": "CHR17_38270274_38270474",
+        "sequence_sha256": "7a35829697b35063cef1c207def8f7b0a344dd27ad2d4c3db5c150b79db2487a"
+      },
+      {
+        "ind_record": 49,
+        "ind_header": "Chr17_42172674_42172874",
+        "cv_record": 39,
+        "cv_header": "CHR17_42172674_42172874",
+        "sequence_sha256": "0f7c10e8c39b699fb683fdbbe004297db11234b31246ed8c9074b9f24defc450"
+      },
+      {
+        "ind_record": 50,
+        "ind_header": "Chr17_57923218_57923418",
+        "cv_record": 42,
+        "cv_header": "CHR17_57923218_57923418",
+        "sequence_sha256": "cf47266ff9c6e55d53ecc38cce62f1aa5a881243c1a75281a01246968e58b565"
+      },
+      {
+        "ind_record": 51,
+        "ind_header": "Chr17_57924018_57924218",
+        "cv_record": 43,
+        "cv_header": "CHR17_57924018_57924218",
+        "sequence_sha256": "3e3de5abb4e7618227d43796a8c8187a6dfe4b3631fb9a8b8579241a5a94cc8a"
+      },
+      {
+        "ind_record": 52,
+        "ind_header": "Chr14_23476760_23476960",
+        "cv_record": 55,
+        "cv_header": "CHR14_23476760_23476960",
+        "sequence_sha256": "224aacb6e455721dcc936d646d88b7d0d3d49d3e9bc00d9c1bed0930dcc1ae5e"
+      },
+      {
+        "ind_record": 53,
+        "ind_header": "Chr19_18476200_18476400",
+        "cv_record": 66,
+        "cv_header": "CHR19_18476200_18476400",
+        "sequence_sha256": "21624fba12bdfeb2c4f0d935834e10e4a31d69faddf38399ac69c45b700a18df"
+      },
+      {
+        "ind_record": 54,
+        "ind_header": "Chr18_3603200_3603400",
+        "cv_record": 82,
+        "cv_header": "CHR18_3603200_3603400",
+        "sequence_sha256": "bb39672f357ac3bd95eaa00a632c85439dfc46296b96eea50a0455c48c28d367"
+      },
+      {
+        "ind_record": 55,
+        "ind_header": "Chr22_30592000_30592200",
+        "cv_record": 84,
+        "cv_header": "CHR22_30592000_30592200",
+        "sequence_sha256": "b9b4d6601972b8dfd2f0663c681f42fbeb6ee24c0422ac8108c3efefcca6fdaf"
+      },
+      {
+        "ind_record": 56,
+        "ind_header": "Chr6_7147201_7147401",
+        "cv_record": 97,
+        "cv_header": "CHR6_7147201_7147401",
+        "sequence_sha256": "72920998aa478e9e43da07ec2e6212c070a51865ad83f459a8613e2221ab4891"
+      },
+      {
+        "ind_record": 57,
+        "ind_header": "Chr3_39192196_39192396",
+        "cv_record": 107,
+        "cv_header": "CHR3_39192196_39192396",
+        "sequence_sha256": "c52a03932f663ccd5961753791336b3b1e3dd923a07409f7d2531b62d2ff24a0"
+      },
+      {
+        "ind_record": 58,
+        "ind_header": "Chr3_133291510_133291710",
+        "cv_record": 110,
+        "cv_header": "CHR3_133291510_133291710",
+        "sequence_sha256": "2f9b2c1243bcfa1825cf2eb14dc5bdde504fda5ccc02f5aeb7d9415feab1ea5a"
+      },
+      {
+        "ind_record": 59,
+        "ind_header": "Chr2_70313096_70313296",
+        "cv_record": 112,
+        "cv_header": "CHR2_70313096_70313296",
+        "sequence_sha256": "d1e32eaab678643ee467f0e5d748b1c4d02af1e31fa3ee35aaf814a0d3af04b9"
+      },
+      {
+        "ind_record": 60,
+        "ind_header": "Chr2_216980155_216980355",
+        "cv_record": 116,
+        "cv_header": "CHR2_216980155_216980355",
+        "sequence_sha256": "66e58d889c687d24af5a9e8c1e1750cf0a94117ae94b8bbfdd1b15a71c729bdd"
+      },
+      {
+        "ind_record": 61,
+        "ind_header": "Chr1_23881813_23882013",
+        "cv_record": 120,
+        "cv_header": "CHR1_23881813_23882013",
+        "sequence_sha256": "bab850c242d9f717c2e205d7d3bd8c2c09c36778a7345c8aee550289fad6ab29"
+      },
+      {
+        "ind_record": 62,
+        "ind_header": "Chr1_36852813_36853013",
+        "cv_record": 124,
+        "cv_header": "CHR1_36852813_36853013",
+        "sequence_sha256": "94ca7a9a36bd0609bb8cc7f09a213c3100888c250d39f956d297f73a492f3847"
+      },
+      {
+        "ind_record": 63,
+        "ind_header": "Chr1_156075576_156075776",
+        "cv_record": 131,
+        "cv_header": "CHR1_156075576_156075776",
+        "sequence_sha256": "e933564c8b39af963c5695ae22e552c87fa20abc58fde31f78f7b4fba8893f21"
+      },
+      {
+        "ind_record": 64,
+        "ind_header": "Chr1_156093176_156093376",
+        "cv_record": 132,
+        "cv_header": "CHR1_156093176_156093376",
+        "sequence_sha256": "afb559a7113cba9b46330d9036c1d34b79bd80b81a637733cf4e3ffcb0f44645"
+      },
+      {
+        "ind_record": 65,
+        "ind_header": "Chr9_99182979_99183179",
+        "cv_record": 142,
+        "cv_header": "CHR9_99182979_99183179",
+        "sequence_sha256": "78a65f343c50d0bc0cf8d1c99f46bf3ea988fe21b4766cdff60b51dd07779ce2"
+      },
+      {
+        "ind_record": 66,
+        "ind_header": "Chr9_136008779_136008979",
+        "cv_record": 145,
+        "cv_header": "CHR9_136008779_136008979",
+        "sequence_sha256": "32b72ca3be618d6fee448cb36ce422c831ec4c5619945558a86a71825763a8f0"
+      },
+      {
+        "ind_record": 67,
+        "ind_header": "Chr12_56520333_56520533",
+        "cv_record": 152,
+        "cv_header": "CHR12_56520333_56520533",
+        "sequence_sha256": "ffdef2f4d1538dff89f9ec308b69b881e39058f79aa53130b49f6219dc1f72e8"
+      },
+      {
+        "ind_record": 68,
+        "ind_header": "Chr11_47429024_47429224",
+        "cv_record": 166,
+        "cv_header": "CHR11_47429024_47429224",
+        "sequence_sha256": "d9662ed6b71a3837cfd626778bdd47b2f816128e01d9a78ca077f31434824190"
+      },
+      {
+        "ind_record": 69,
+        "ind_header": "Chr11_62324024_62324224",
+        "cv_record": 168,
+        "cv_header": "CHR11_62324024_62324224",
+        "sequence_sha256": "c575db0b54ace20b5b4fd456a854265bb2e5253d6316d3280ca3ab4dbbccb011"
+      },
+      {
+        "ind_record": 70,
+        "ind_header": "Chr16_21513899_21514099",
+        "cv_record": 186,
+        "cv_header": "CHR16_21513899_21514099",
+        "sequence_sha256": "58d77f57464dc05a5f8ffd7a06da907833c6faa8a5fb00d92d23b660fd330fab"
+      },
+      {
+        "ind_record": 71,
+        "ind_header": "Chr15_89181396_89181596",
+        "cv_record": 189,
+        "cv_header": "CHR15_89181396_89181596",
+        "sequence_sha256": "9233099dadb7751490d4bc8e716818c69729c2c279f59b40caee2a913441f99b"
+      },
+      {
+        "ind_record": 72,
+        "ind_header": "Chr15_93460796_93460996",
+        "cv_record": 190,
+        "cv_header": "CHR15_93460796_93460996",
+        "sequence_sha256": "b0dc3271bc6cbffcddf82b7723ec48781761ef2ff22dd7e9be21d163d07bd7c2"
+      },
+      {
+        "ind_record": 73,
+        "ind_header": "Chr19_11253600_11253800",
+        "cv_record": 206,
+        "cv_header": "CHR19_11253600_11253800",
+        "sequence_sha256": "98c84a8a8bbee6f118dbbbf183b63347ea7d6f0c9fb48d93c6e448f99ee3d236"
+      },
+      {
+        "ind_record": 74,
+        "ind_header": "Chr19_11254000_11254200",
+        "cv_record": 208,
+        "cv_header": "CHR19_11254000_11254200",
+        "sequence_sha256": "72784682829d76dd7a9ea6339cafc730c64fc2b1fd14115bab5852b3c5b5f121"
+      },
+      {
+        "ind_record": 75,
+        "ind_header": "Chr19_39173560_39173760",
+        "cv_record": 218,
+        "cv_header": "CHR19_39173560_39173760",
+        "sequence_sha256": "bf0214bc74e56b484c3c994854107e980a8709681d1d6b435f6f00a79bd9e298"
+      },
+      {
+        "ind_record": 76,
+        "ind_header": "Chr19_47611560_47611760",
+        "cv_record": 225,
+        "cv_header": "CHR19_47611560_47611760",
+        "sequence_sha256": "251eef2765934a685387f3401a04a47d8baa681c8503e96ce44a15cdd4ee9875"
+      },
+      {
+        "ind_record": 77,
+        "ind_header": "Chr21_45148172_45148372",
+        "cv_record": 246,
+        "cv_header": "CHR21_45148172_45148372",
+        "sequence_sha256": "c4d913a6a01944903d7240c08f65915800175ee40065f92af705f9913f79eea8"
+      },
+      {
+        "ind_record": 78,
+        "ind_header": "Chr3_141086910_141087110",
+        "cv_record": 254,
+        "cv_header": "CHR3_141086910_141087110",
+        "sequence_sha256": "e32f37ab900b76d0da679c7e08aade7f1fa455c09ae84fcd392d65fa801e2e34"
+      },
+      {
+        "ind_record": 79,
+        "ind_header": "Chr2_43448296_43448496",
+        "cv_record": 259,
+        "cv_header": "CHR2_43448296_43448496",
+        "sequence_sha256": "c0a7065959f6b62fbb11a65e705824dfdb9e263872cfedcc41173d610fa1e3e9"
+      },
+      {
+        "ind_record": 80,
+        "ind_header": "Chr1_28835213_28835413",
+        "cv_record": 269,
+        "cv_header": "CHR1_28835213_28835413",
+        "sequence_sha256": "6c6b8bc7a62838cae16ac0479cc102813c53a952812db877d6dd3fef19a58f65"
+      },
+      {
+        "ind_record": 81,
+        "ind_header": "Chr1_38465813_38466013",
+        "cv_record": 274,
+        "cv_header": "CHR1_38465813_38466013",
+        "sequence_sha256": "670b857cbcb9b257b39979618030ea3388d37be555954f3b3fe4a407c6d627c9"
+      },
+      {
+        "ind_record": 82,
+        "ind_header": "Chr1_110546677_110546877",
+        "cv_record": 279,
+        "cv_header": "CHR1_110546677_110546877",
+        "sequence_sha256": "78bf031f55b3c292efff5af64beaf4893d90407a8868fe15dd7bebbe143a4ac1"
+      },
+      {
+        "ind_record": 83,
+        "ind_header": "Chr12_76338533_76338733",
+        "cv_record": 305,
+        "cv_header": "CHR12_76338533_76338733",
+        "sequence_sha256": "d139d6a8aa7ed96e99180ad7cca2c19a6ad867f85dfdb811c1118b656c6c11ad"
+      },
+      {
+        "ind_record": 84,
+        "ind_header": "Chr11_62389824_62390024",
+        "cv_record": 315,
+        "cv_header": "CHR11_62389824_62390024",
+        "sequence_sha256": "ec15d541375e7191f4b9e7d5be59314d68cd45e89a9a013bcb3f4aa0fd91ecbb"
+      },
+      {
+        "ind_record": 85,
+        "ind_header": "Chr11_65255824_65256024",
+        "cv_record": 320,
+        "cv_header": "CHR11_65255824_65256024",
+        "sequence_sha256": "95b5165fb74da2e1bd99dc0d68dec96cfb600466c527daf272e14cfa4eeb69e0"
+      },
+      {
+        "ind_record": 86,
+        "ind_header": "Chr17_38267674_38267874",
+        "cv_record": 335,
+        "cv_header": "CHR17_38267674_38267874",
+        "sequence_sha256": "38b4e43c40f20b3941efa5ad131cb0fab5a00c0a6eb57d5f7c484532d0e1f6a2"
+      },
+      {
+        "ind_record": 87,
+        "ind_header": "Chr16_87812699_87812899",
+        "cv_record": 345,
+        "cv_header": "CHR16_87812699_87812899",
+        "sequence_sha256": "20c55fdc5c69a1e56df521e0629f5cb9e267b04991f15319df604aaca1181c65"
+      },
+      {
+        "ind_record": 88,
+        "ind_header": "Chr19_3983800_3984000",
+        "cv_record": 359,
+        "cv_header": "CHR19_3983800_3984000",
+        "sequence_sha256": "81714b1d73f5dd306da8c2645371c1b5374eeee35cb6ae2f6edda263a0b5f6aa"
+      },
+      {
+        "ind_record": 89,
+        "ind_header": "Chr19_18485400_18485600",
+        "cv_record": 365,
+        "cv_header": "CHR19_18485400_18485600",
+        "sequence_sha256": "6a0c28337cec495a4d3d278bad0ad0ecb3d180eaf819d42c4dde1bf8eec87110"
+      },
+      {
+        "ind_record": 90,
+        "ind_header": "Chr19_39177360_39177560",
+        "cv_record": 367,
+        "cv_header": "CHR19_39177360_39177560",
+        "sequence_sha256": "fbfd3e3e9a9702e687c5423cbf0798dc4b057bb9b300895e223c6b4c06c4a691"
+      },
+      {
+        "ind_record": 91,
+        "ind_header": "Chr22_36767054_36767254",
+        "cv_record": 371,
+        "cv_header": "CHR22_36767054_36767254",
+        "sequence_sha256": "cbf32c384a3e2bc27e9d67460960d63775c00e3f09cdd2452bd3484c0208fe6b"
+      },
+      {
+        "ind_record": 92,
+        "ind_header": "Chr20_30307539_30307739",
+        "cv_record": 374,
+        "cv_header": "CHR20_30307539_30307739",
+        "sequence_sha256": "588d549088c3a90f1043885e0bd0b8756f4c8add0c0bb647f892cd39dec6dd89"
+      },
+      {
+        "ind_record": 93,
+        "ind_header": "Chr20_45988393_45988593",
+        "cv_record": 375,
+        "cv_header": "CHR20_45988393_45988593",
+        "sequence_sha256": "d7449c68de34d13a0911184567211b88251469aa5be8bf8ea109a15ddf21e286"
+      },
+      {
+        "ind_record": 94,
+        "ind_header": "Chr3_133291710_133291910",
+        "cv_record": 393,
+        "cv_header": "CHR3_133291710_133291910",
+        "sequence_sha256": "d148ce19450e6021a1e029228732f80efe5ae3c744ccd75ca9cbacbe85128c47"
+      },
+      {
+        "ind_record": 95,
+        "ind_header": "Chr2_43448096_43448296",
+        "cv_record": 399,
+        "cv_header": "CHR2_43448096_43448296",
+        "sequence_sha256": "4d35b6e4325d525d651987d6ab278c38cdb58c30186b6fca2b782f05bed9bfce"
+      },
+      {
+        "ind_record": 96,
+        "ind_header": "Chr1_38465613_38465813",
+        "cv_record": 415,
+        "cv_header": "CHR1_38465613_38465813",
+        "sequence_sha256": "ee5575ae6319d2d660cb2c00c648b1800fcc4bd07b61d80761a747b302b96cbf"
+      },
+      {
+        "ind_record": 97,
+        "ind_header": "Chr1_38466813_38467013",
+        "cv_record": 416,
+        "cv_header": "CHR1_38466813_38467013",
+        "sequence_sha256": "f441801af4926cd1c364742d1fc9abbc60410ce200f104ebbbf567b69a8c5759"
+      },
+      {
+        "ind_record": 98,
+        "ind_header": "Chr1_90372212_90372412",
+        "cv_record": 420,
+        "cv_header": "CHR1_90372212_90372412",
+        "sequence_sha256": "199644dc9278086b0d304ea35d8518927e4a05839df0df07be9fbfd8931dd1ba"
+      },
+      {
+        "ind_record": 99,
+        "ind_header": "Chr1_145455643_145455843",
+        "cv_record": 423,
+        "cv_header": "CHR1_145455643_145455843",
+        "sequence_sha256": "e8dffe86b3c267bd47cc03ff2113d2972c7fd6ca614d10b2238de542761a60d2"
+      },
+      {
+        "ind_record": 100,
+        "ind_header": "Chr1_156093576_156093776",
+        "cv_record": 434,
+        "cv_header": "CHR1_156093576_156093776",
+        "sequence_sha256": "9cc11004a6a75fea54c23b6db994d207141e80b5cfd1eeccad13b0ec09076392"
+      }
+    ],
+    "duplicate_non_ind_headers": [
+      "hg19_ct_UserTrack_3545_22rangechr1368878800-693675995pad0",
+      "hg19_ct_UserTrack_3545_23rangechr277310893-781820925pad0"
+    ]
+  },
+  "archives": {
+    "complete_tar_listings": {
+      "lab_reported_data.tar.gz": {
+        "files": 23,
+        "expanded_bytes": 101850047,
+        "members": [
+          {
+            "name": "./lab_reported_data/original_files/LentiMPRA/K562_data_Vikram_2024_0521.txt",
+            "bytes": 9712974
+          },
+          {
+            "name": "./lab_reported_data/original_files/LentiMPRA/lentiMPRA_vikarm_2024_0521.txt",
+            "bytes": 14683667
+          },
+          {
+            "name": "./lab_reported_data/original_files/TilingMPRA/OL45_ENCFF558RYR.bed.gz",
+            "bytes": 5190141
+          },
+          {
+            "name": "./lab_reported_data/original_files/TilingMPRA/OL43_ENCFF879JQC.bed.gz",
+            "bytes": 5449731
+          },
+          {
+            "name": "./lab_reported_data/original_files/TilingMPRA/OL13_ENCFF436CRS.bed.gz",
+            "bytes": 1841100
+          },
+          {
+            "name": "./lab_reported_data/original_files/TilingMPRA/OL13_hg38.bed",
+            "bytes": 2737285
+          },
+          {
+            "name": "./lab_reported_data/original_files/ATAC_STARR_seq/ENCFF090VZN.bed.gz",
+            "bytes": 4696871
+          },
+          {
+            "name": "./lab_reported_data/original_files/ATAC_STARR_seq/atacSTARR.ultra_deep.corrected.csaw.hg38.v10.common_file_formatted.txt.gz",
+            "bytes": 8801054
+          },
+          {
+            "name": "./lab_reported_data/original_files/WHG_STARR_seq/ENCFF908UFR.bed.gz",
+            "bytes": 842680
+          },
+          {
+            "name": "./lab_reported_data/processed_files/LentiMPRA/inactive_merged_all.bed",
+            "bytes": 3948525
+          },
+          {
+            "name": "./lab_reported_data/processed_files/LentiMPRA/active_merged_all.bed",
+            "bytes": 2587985
+          },
+          {
+            "name": "./lab_reported_data/processed_files/LentiMPRA/active_merged_all_unique_either_orientation.bed",
+            "bytes": 1697289
+          },
+          {
+            "name": "./lab_reported_data/processed_files/TilingMPRA/OL13_merged_inactive_either_orientation.bed",
+            "bytes": 4598
+          },
+          {
+            "name": "./lab_reported_data/processed_files/TilingMPRA/OL13_merged_enhancer_peaks_in_either_orientation.bed",
+            "bytes": 3653
+          },
+          {
+            "name": "./lab_reported_data/processed_files/TilingMPRA/OL45_merged_inactive_either_orientation.bed",
+            "bytes": 101233
+          },
+          {
+            "name": "./lab_reported_data/processed_files/TilingMPRA/OL45_merged_enhancer_peaks_in_either_orientation.bed",
+            "bytes": 241512
+          },
+          {
+            "name": "./lab_reported_data/processed_files/TilingMPRA/OL43_merged_inactive_either_orientation.bed",
+            "bytes": 24390
+          },
+          {
+            "name": "./lab_reported_data/processed_files/TilingMPRA/OL43_merged_enhancer_peaks_in_either_orientation.bed",
+            "bytes": 132726
+          },
+          {
+            "name": "./lab_reported_data/processed_files/TilingMPRA/all_TilingMPRA_results_from_lab_reported_data.bed",
+            "bytes": 947043
+          },
+          {
+            "name": "./lab_reported_data/processed_files/TilingMPRA/all_TilingMPRA_active_from_lab_reported_data.bed.gz",
+            "bytes": 79890
+          },
+          {
+            "name": "./lab_reported_data/processed_files/ATAC_STARR_seq/ATAC_STARR_merged_inactive_either_orientation.bed",
+            "bytes": 7908929
+          },
+          {
+            "name": "./lab_reported_data/processed_files/ATAC_STARR_seq/ATAC_STARR_merged_enhancer_peaks_in_either_orientation.bed",
+            "bytes": 1312622
+          },
+          {
+            "name": "./lab_reported_data/processed_files/all_merged_results_from_lab_reported_data.bed",
+            "bytes": 28904149
+          }
+        ]
+      },
+      "raw_data.tar.gz": {
+        "files": 11,
+        "expanded_bytes": 1521287145,
+        "members": [
+          {
+            "name": "./raw_data/TilingMPRA/OL13_ENCSR394HXI/OL13_ENCSR394HXI.attributes",
+            "bytes": 4177131
+          },
+          {
+            "name": "./raw_data/TilingMPRA/OL13_ENCSR394HXI/ENCFF048CMC.tsv",
+            "bytes": 415008736
+          },
+          {
+            "name": "./raw_data/TilingMPRA/OL13_ENCSR394HXI/OL13_hg38.bed",
+            "bytes": 2737285
+          },
+          {
+            "name": "./raw_data/TilingMPRA/OL43_ENCSR917SFD/OL43_ENCSR917SFD.attributes",
+            "bytes": 7829065
+          },
+          {
+            "name": "./raw_data/TilingMPRA/OL43_ENCSR917SFD/ENCFF267VJA.tsv",
+            "bytes": 651623512
+          },
+          {
+            "name": "./raw_data/TilingMPRA/OL45_ENCSR363XER/ENCFF130WRM.tsv",
+            "bytes": 399683078
+          },
+          {
+            "name": "./raw_data/TilingMPRA/OL45_ENCSR363XER/ENCFF179FXK.tsv",
+            "bytes": 20543893
+          },
+          {
+            "name": "./raw_data/TilingMPRA/TilingMPRA.csv",
+            "bytes": 663
+          },
+          {
+            "name": "./raw_data/LentiMPRA/UMI_count_with_all_annotation.txt",
+            "bytes": 19682438
+          },
+          {
+            "name": "./raw_data/ATAC_STARR_seq/ATAC_STARR_seq.csv",
+            "bytes": 951
+          },
+          {
+            "name": "./raw_data/WHG_STARR_seq/WHG_STARR_seq.csv",
+            "bytes": 393
+          }
+        ]
+      },
+      "qc.tar.gz": {
+        "files": 67,
+        "expanded_bytes": 60838,
+        "members": [
+          {
+            "name": "./qc/assay_coverage/WHG_STARR_seq/genome_wide_coverage_df.txt",
+            "bytes": 2369
+          },
+          {
+            "name": "./qc/assay_coverage/ATAC_STARR_seq/region_coverage_df.txt",
+            "bytes": 1928
+          },
+          {
+            "name": "./qc/assay_coverage/ATAC_STARR_seq/genome_wide_coverage_df.txt",
+            "bytes": 2030
+          },
+          {
+            "name": "./qc/assay_coverage/ATAC_STARR_seq/.ipynb_checkpoints/genome_wide_coverage_df-checkpoint.txt",
+            "bytes": 2030
+          },
+          {
+            "name": "./qc/assay_coverage/ATAC_STARR_seq/.ipynb_checkpoints/region_coverage_df-checkpoint.txt",
+            "bytes": 1928
+          },
+          {
+            "name": "./qc/assay_coverage/LentiMPRA/.ipynb_checkpoints/region_coverage_df-checkpoint.txt",
+            "bytes": 1827
+          },
+          {
+            "name": "./qc/assay_coverage/LentiMPRA/.ipynb_checkpoints/genome_wide_coverage_df-checkpoint.txt",
+            "bytes": 502
+          },
+          {
+            "name": "./qc/assay_coverage/LentiMPRA/region_coverage_df.txt",
+            "bytes": 1827
+          },
+          {
+            "name": "./qc/assay_coverage/LentiMPRA/genome_wide_coverage_df.txt",
+            "bytes": 502
+          },
+          {
+            "name": "./qc/replicate_corr/ATAC_STARR_seq/original_frag/all/cpm_count_corr.txt",
+            "bytes": 1916
+          },
+          {
+            "name": "./qc/replicate_corr/ATAC_STARR_seq/original_frag/all/log_cpm_count_corr.txt",
+            "bytes": 2017
+          },
+          {
+            "name": "./qc/replicate_corr/ATAC_STARR_seq/original_frag/all/log2ratio_corr.txt",
+            "bytes": 334
+          },
+          {
+            "name": "./qc/replicate_corr/ATAC_STARR_seq/original_frag/ATAC_seq_peak/cpm_count_corr.txt",
+            "bytes": 2120
+          },
+          {
+            "name": "./qc/replicate_corr/ATAC_STARR_seq/original_frag/ATAC_seq_peak/log_cpm_count_corr.txt",
+            "bytes": 2205
+          },
+          {
+            "name": "./qc/replicate_corr/ATAC_STARR_seq/original_frag/ATAC_seq_peak/log2ratio_corr.txt",
+            "bytes": 334
+          },
+          {
+            "name": "./qc/replicate_corr/ATAC_STARR_seq/genomic_bin/all/cpm_count_corr.txt",
+            "bytes": 1688
+          },
+          {
+            "name": "./qc/replicate_corr/ATAC_STARR_seq/genomic_bin/all/log_cpm_count_corr.txt",
+            "bytes": 1774
+          },
+          {
+            "name": "./qc/replicate_corr/ATAC_STARR_seq/genomic_bin/all/log2ratio_corr.txt",
+            "bytes": 335
+          },
+          {
+            "name": "./qc/replicate_corr/ATAC_STARR_seq/genomic_bin/ATAC_seq_peak/filtered/cpm_count_corr.txt",
+            "bytes": 1459
+          },
+          {
+            "name": "./qc/replicate_corr/ATAC_STARR_seq/genomic_bin/ATAC_seq_peak/filtered/log_cpm_count_corr.txt",
+            "bytes": 1538
+          },
+          {
+            "name": "./qc/replicate_corr/ATAC_STARR_seq/genomic_bin/ATAC_seq_peak/filtered/log2ratio_corr.txt",
+            "bytes": 333
+          },
+          {
+            "name": "./qc/replicate_corr/ATAC_STARR_seq/genomic_bin/ATAC_seq_peak/cpm_count_corr.txt",
+            "bytes": 1905
+          },
+          {
+            "name": "./qc/replicate_corr/ATAC_STARR_seq/genomic_bin/ATAC_seq_peak/log_cpm_count_corr.txt",
+            "bytes": 1986
+          },
+          {
+            "name": "./qc/replicate_corr/ATAC_STARR_seq/genomic_bin/ATAC_seq_peak/log2ratio_corr.txt",
+            "bytes": 331
+          },
+          {
+            "name": "./qc/replicate_corr/WHG_STARR_seq/original_frag/cpm_count_corr.txt",
+            "bytes": 266
+          },
+          {
+            "name": "./qc/replicate_corr/WHG_STARR_seq/original_frag/log_cpm_count_corr.txt",
+            "bytes": 276
+          },
+          {
+            "name": "./qc/replicate_corr/WHG_STARR_seq/original_frag/log2ratio_corr.txt",
+            "bytes": 184
+          },
+          {
+            "name": "./qc/replicate_corr/WHG_STARR_seq/genomic_bin/filtered/replicate_corr.out",
+            "bytes": 147
+          },
+          {
+            "name": "./qc/replicate_corr/WHG_STARR_seq/genomic_bin/filtered/cpm_count_corr.txt",
+            "bytes": 256
+          },
+          {
+            "name": "./qc/replicate_corr/WHG_STARR_seq/genomic_bin/filtered/log_cpm_count_corr.txt",
+            "bytes": 268
+          },
+          {
+            "name": "./qc/replicate_corr/WHG_STARR_seq/genomic_bin/filtered/log2ratio_corr.txt",
+            "bytes": 183
+          },
+          {
+            "name": "./qc/replicate_corr/WHG_STARR_seq/genomic_bin/cpm_count_corr.txt",
+            "bytes": 255
+          },
+          {
+            "name": "./qc/replicate_corr/WHG_STARR_seq/genomic_bin/log_cpm_count_corr.txt",
+            "bytes": 266
+          },
+          {
+            "name": "./qc/replicate_corr/WHG_STARR_seq/genomic_bin/log2ratio_corr.txt",
+            "bytes": 186
+          },
+          {
+            "name": "./qc/replicate_corr/LentiMPRA/.ipynb_checkpoints/cpm_count_corr-checkpoint.txt",
+            "bytes": 393
+          },
+          {
+            "name": "./qc/replicate_corr/LentiMPRA/.ipynb_checkpoints/log2ratio_corr-checkpoint.txt",
+            "bytes": 181
+          },
+          {
+            "name": "./qc/replicate_corr/LentiMPRA/cpm_count_corr.txt",
+            "bytes": 428
+          },
+          {
+            "name": "./qc/replicate_corr/LentiMPRA/log2ratio_corr.txt",
+            "bytes": 181
+          },
+          {
+            "name": "./qc/replicate_corr/LentiMPRA/log_cpm_count_corr.txt",
+            "bytes": 454
+          },
+          {
+            "name": "./qc/replicate_corr/LentiMPRA/filtered/cpm_count_corr.txt",
+            "bytes": 430
+          },
+          {
+            "name": "./qc/replicate_corr/LentiMPRA/filtered/log_cpm_count_corr.txt",
+            "bytes": 453
+          },
+          {
+            "name": "./qc/replicate_corr/LentiMPRA/filtered/log2ratio_corr.txt",
+            "bytes": 183
+          },
+          {
+            "name": "./qc/replicate_corr/TilingMPRA/OL45_ENCSR363XER/.ipynb_checkpoints/log2ratio_corr-checkpoint.txt",
+            "bytes": 327
+          },
+          {
+            "name": "./qc/replicate_corr/TilingMPRA/OL45_ENCSR363XER/.ipynb_checkpoints/cpm_count_corr-checkpoint.txt",
+            "bytes": 1004
+          },
+          {
+            "name": "./qc/replicate_corr/TilingMPRA/OL45_ENCSR363XER/log_cpm_count_corr.txt",
+            "bytes": 1143
+          },
+          {
+            "name": "./qc/replicate_corr/TilingMPRA/OL45_ENCSR363XER/OL45.out",
+            "bytes": 129
+          },
+          {
+            "name": "./qc/replicate_corr/TilingMPRA/OL45_ENCSR363XER/cpm_count_corr.txt",
+            "bytes": 1079
+          },
+          {
+            "name": "./qc/replicate_corr/TilingMPRA/OL45_ENCSR363XER/log2ratio_corr.txt",
+            "bytes": 327
+          },
+          {
+            "name": "./qc/replicate_corr/TilingMPRA/OL45_ENCSR363XER/filtered/cpm_count_corr.txt",
+            "bytes": 1283
+          },
+          {
+            "name": "./qc/replicate_corr/TilingMPRA/OL45_ENCSR363XER/filtered/log_cpm_count_corr.txt",
+            "bytes": 1346
+          },
+          {
+            "name": "./qc/replicate_corr/TilingMPRA/OL45_ENCSR363XER/filtered/log2ratio_corr.txt",
+            "bytes": 324
+          },
+          {
+            "name": "./qc/replicate_corr/TilingMPRA/OL13_ENCSR394HXI/.ipynb_checkpoints/cpm_count_corr-checkpoint.txt",
+            "bytes": 765
+          },
+          {
+            "name": "./qc/replicate_corr/TilingMPRA/OL13_ENCSR394HXI/OL13.out",
+            "bytes": 129
+          },
+          {
+            "name": "./qc/replicate_corr/TilingMPRA/OL13_ENCSR394HXI/cpm_count_corr.txt",
+            "bytes": 824
+          },
+          {
+            "name": "./qc/replicate_corr/TilingMPRA/OL13_ENCSR394HXI/log2ratio_corr.txt",
+            "bytes": 326
+          },
+          {
+            "name": "./qc/replicate_corr/TilingMPRA/OL13_ENCSR394HXI/log_cpm_count_corr.txt",
+            "bytes": 871
+          },
+          {
+            "name": "./qc/replicate_corr/TilingMPRA/OL13_ENCSR394HXI/filtered/cpm_count_corr.txt",
+            "bytes": 978
+          },
+          {
+            "name": "./qc/replicate_corr/TilingMPRA/OL13_ENCSR394HXI/filtered/log_cpm_count_corr.txt",
+            "bytes": 1027
+          },
+          {
+            "name": "./qc/replicate_corr/TilingMPRA/OL13_ENCSR394HXI/filtered/log2ratio_corr.txt",
+            "bytes": 327
+          },
+          {
+            "name": "./qc/replicate_corr/TilingMPRA/OL43_ENCSR917SFD/.ipynb_checkpoints/cpm_count_corr-checkpoint.txt",
+            "bytes": 1245
+          },
+          {
+            "name": "./qc/replicate_corr/TilingMPRA/OL43_ENCSR917SFD/log_cpm_count_corr.txt",
+            "bytes": 1412
+          },
+          {
+            "name": "./qc/replicate_corr/TilingMPRA/OL43_ENCSR917SFD/myc_gata1.out",
+            "bytes": 129
+          },
+          {
+            "name": "./qc/replicate_corr/TilingMPRA/OL43_ENCSR917SFD/cpm_count_corr.txt",
+            "bytes": 1336
+          },
+          {
+            "name": "./qc/replicate_corr/TilingMPRA/OL43_ENCSR917SFD/log2ratio_corr.txt",
+            "bytes": 516
+          },
+          {
+            "name": "./qc/replicate_corr/TilingMPRA/OL43_ENCSR917SFD/filtered/cpm_count_corr.txt",
+            "bytes": 1592
+          },
+          {
+            "name": "./qc/replicate_corr/TilingMPRA/OL43_ENCSR917SFD/filtered/log_cpm_count_corr.txt",
+            "bytes": 1674
+          },
+          {
+            "name": "./qc/replicate_corr/TilingMPRA/OL43_ENCSR917SFD/filtered/log2ratio_corr.txt",
+            "bytes": 517
+          }
+        ]
+      },
+      "output.tar.gz": {
+        "files": 44,
+        "expanded_bytes": 2843287483,
+        "members": [
+          {
+            "name": "./output/combined_lib_recovery_metrics.txt",
+            "bytes": 5726
+          },
+          {
+            "name": "./output/computeMatrix/orientation_comparison/matrix_DNase_ATAC/whg_starr.bed",
+            "bytes": 9971678
+          },
+          {
+            "name": "./output/computeMatrix/orientation_comparison/matrix_DNase_ATAC/atac_starr.bed",
+            "bytes": 3809742
+          },
+          {
+            "name": "./output/computeMatrix/orientation_comparison/matrix_DNase_ATAC/lentimpra.bed",
+            "bytes": 4589530
+          },
+          {
+            "name": "./output/computeMatrix/orientation_comparison/matrix_DNase_ATAC/atac_starr.gz",
+            "bytes": 31882332
+          },
+          {
+            "name": "./output/computeMatrix/orientation_comparison/matrix_DNase_ATAC/atac_starr.tab",
+            "bytes": 73325171
+          },
+          {
+            "name": "./output/computeMatrix/orientation_comparison/matrix_DNase_ATAC/lentimpra.gz",
+            "bytes": 41473897
+          },
+          {
+            "name": "./output/computeMatrix/orientation_comparison/matrix_DNase_ATAC/lentimpra.tab",
+            "bytes": 90129747
+          },
+          {
+            "name": "./output/computeMatrix/orientation_comparison/matrix_DNase_ATAC/whg_starr.gz",
+            "bytes": 70449049
+          },
+          {
+            "name": "./output/computeMatrix/orientation_comparison/matrix_DNase_ATAC/whg_starr.tab",
+            "bytes": 196917678
+          },
+          {
+            "name": "./output/computeMatrix/orientation_comparison/matrix_Histone/whg_starr.bed",
+            "bytes": 9972135
+          },
+          {
+            "name": "./output/computeMatrix/orientation_comparison/matrix_Histone/lentimpra.bed",
+            "bytes": 4589530
+          },
+          {
+            "name": "./output/computeMatrix/orientation_comparison/matrix_Histone/atac_starr.bed",
+            "bytes": 3809742
+          },
+          {
+            "name": "./output/computeMatrix/orientation_comparison/matrix_Histone/atac_starr.gz",
+            "bytes": 33616405
+          },
+          {
+            "name": "./output/computeMatrix/orientation_comparison/matrix_Histone/atac_starr.tab",
+            "bytes": 62726279
+          },
+          {
+            "name": "./output/computeMatrix/orientation_comparison/matrix_Histone/lentimpra.gz",
+            "bytes": 37552992
+          },
+          {
+            "name": "./output/computeMatrix/orientation_comparison/matrix_Histone/lentimpra.tab",
+            "bytes": 76123303
+          },
+          {
+            "name": "./output/computeMatrix/orientation_comparison/matrix_Histone/whg_starr.gz",
+            "bytes": 68024343
+          },
+          {
+            "name": "./output/computeMatrix/orientation_comparison/matrix_Histone/whg_starr.tab",
+            "bytes": 159285335
+          },
+          {
+            "name": "./output/computeMatrix/original_vs_processed/matrix_DNase_ATAC/lentimpra.bed",
+            "bytes": 13227139
+          },
+          {
+            "name": "./output/computeMatrix/original_vs_processed/matrix_DNase_ATAC/whg_starr.bed",
+            "bytes": 7692504
+          },
+          {
+            "name": "./output/computeMatrix/original_vs_processed/matrix_DNase_ATAC/atac_starr.bed",
+            "bytes": 8443884
+          },
+          {
+            "name": "./output/computeMatrix/original_vs_processed/matrix_DNase_ATAC/tilingmpra.bed",
+            "bytes": 2628241
+          },
+          {
+            "name": "./output/computeMatrix/original_vs_processed/matrix_DNase_ATAC/.ipynb_checkpoints/tilingmpra-checkpoint.tab",
+            "bytes": 52561757
+          },
+          {
+            "name": "./output/computeMatrix/original_vs_processed/matrix_DNase_ATAC/tilingmpra.gz",
+            "bytes": 14845275
+          },
+          {
+            "name": "./output/computeMatrix/original_vs_processed/matrix_DNase_ATAC/tilingmpra.tab",
+            "bytes": 52542627
+          },
+          {
+            "name": "./output/computeMatrix/original_vs_processed/matrix_DNase_ATAC/atac_starr.gz",
+            "bytes": 69638439
+          },
+          {
+            "name": "./output/computeMatrix/original_vs_processed/matrix_DNase_ATAC/atac_starr.tab",
+            "bytes": 156678853
+          },
+          {
+            "name": "./output/computeMatrix/original_vs_processed/matrix_DNase_ATAC/whg_starr.gz",
+            "bytes": 66302065
+          },
+          {
+            "name": "./output/computeMatrix/original_vs_processed/matrix_DNase_ATAC/whg_starr.tab",
+            "bytes": 174598485
+          },
+          {
+            "name": "./output/computeMatrix/original_vs_processed/matrix_DNase_ATAC/lentimpra.gz",
+            "bytes": 105302652
+          },
+          {
+            "name": "./output/computeMatrix/original_vs_processed/matrix_DNase_ATAC/lentimpra.tab",
+            "bytes": 306189443
+          },
+          {
+            "name": "./output/computeMatrix/original_vs_processed/matrix_Histone/lentimpra.bed",
+            "bytes": 13227139
+          },
+          {
+            "name": "./output/computeMatrix/original_vs_processed/matrix_Histone/whg_starr.bed",
+            "bytes": 7692504
+          },
+          {
+            "name": "./output/computeMatrix/original_vs_processed/matrix_Histone/atac_starr.bed",
+            "bytes": 8443884
+          },
+          {
+            "name": "./output/computeMatrix/original_vs_processed/matrix_Histone/tilingmpra.bed",
+            "bytes": 2628241
+          },
+          {
+            "name": "./output/computeMatrix/original_vs_processed/matrix_Histone/tilingmpra.gz",
+            "bytes": 13830380
+          },
+          {
+            "name": "./output/computeMatrix/original_vs_processed/matrix_Histone/tilingmpra.tab",
+            "bytes": 40264560
+          },
+          {
+            "name": "./output/computeMatrix/original_vs_processed/matrix_Histone/whg_starr.gz",
+            "bytes": 57837311
+          },
+          {
+            "name": "./output/computeMatrix/original_vs_processed/matrix_Histone/whg_starr.tab",
+            "bytes": 140511713
+          },
+          {
+            "name": "./output/computeMatrix/original_vs_processed/matrix_Histone/atac_starr.gz",
+            "bytes": 67157836
+          },
+          {
+            "name": "./output/computeMatrix/original_vs_processed/matrix_Histone/atac_starr.tab",
+            "bytes": 132281540
+          },
+          {
+            "name": "./output/computeMatrix/original_vs_processed/matrix_Histone/lentimpra.gz",
+            "bytes": 93341840
+          },
+          {
+            "name": "./output/computeMatrix/original_vs_processed/matrix_Histone/lentimpra.tab",
+            "bytes": 257164557
+          }
+        ]
+      }
+    },
+    "partial_tar_listings": {
+      "uniform_processed_data.tar.gz": {
+        "scope": "First 20 entries or until first member larger than 500 MB; no full archive enumeration.",
+        "members": [
+          {
+            "name": "./uniform_processed_data",
+            "bytes": 0
+          },
+          {
+            "name": "./uniform_processed_data/.ipynb_checkpoints",
+            "bytes": 0
+          },
+          {
+            "name": "./uniform_processed_data/.ipynb_checkpoints/annotated_results_file_format-checkpoint.md",
+            "bytes": 4504
+          },
+          {
+            "name": "./uniform_processed_data/annotated_results_file_format.md",
+            "bytes": 4504
+          },
+          {
+            "name": "./uniform_processed_data/ATAC_STARR_seq",
+            "bytes": 0
+          },
+          {
+            "name": "./uniform_processed_data/ATAC_STARR_seq/bin_level",
+            "bytes": 0
+          },
+          {
+            "name": "./uniform_processed_data/ATAC_STARR_seq/bin_level/all_results_tested_in_either_orientation.bed.gz",
+            "bytes": 1269633455
+          }
+        ]
+      },
+      "reference.tar.gz": {
+        "scope": "First 20 entries or until first member larger than 500 MB; no full archive enumeration.",
+        "members": [
+          {
+            "name": "./reference",
+            "bytes": 0
+          },
+          {
+            "name": "./reference/.ipynb_checkpoints",
+            "bytes": 0
+          },
+          {
+            "name": "./reference/K562_GRO_cap",
+            "bytes": 0
+          },
+          {
+            "name": "./reference/K562_GRO_cap/GRO_cap_element",
+            "bytes": 0
+          },
+          {
+            "name": "./reference/K562_GRO_cap/GRO_cap_element/original_files",
+            "bytes": 0
+          },
+          {
+            "name": "./reference/K562_GRO_cap/GRO_cap_element/original_files/GROcap-K562-02-Calls_1_bidirectional_peaks_element_60bp.bed",
+            "bytes": 4120269
+          },
+          {
+            "name": "./reference/K562_GRO_cap/GRO_cap_element/original_files/GROcap-K562-02-Calls_1_divergent_peaks_element_60bp.bed",
+            "bytes": 3664742
+          },
+          {
+            "name": "./reference/K562_GRO_cap/GRO_cap_element/original_files/GROcap-K562-02-Calls_1_unidirectional_peaks_element_60bp.bed",
+            "bytes": 591660
+          },
+          {
+            "name": "./reference/K562_GRO_cap/GRO_cap_element/.ipynb_checkpoints",
+            "bytes": 0
+          },
+          {
+            "name": "./reference/K562_GRO_cap/GRO_cap_element/processed_files",
+            "bytes": 0
+          },
+          {
+            "name": "./reference/K562_GRO_cap/GRO_cap_element/processed_files/GROcap_elements_all.bed",
+            "bytes": 2408676
+          },
+          {
+            "name": "./reference/K562_GRO_cap/GRO_cap_element/processed_files/GROcap_elements_all.bed.gz",
+            "bytes": 651017
+          },
+          {
+            "name": "./reference/K562_GRO_cap/.ipynb_checkpoints",
+            "bytes": 0
+          },
+          {
+            "name": "./reference/K562_GRO_cap/K562_GROcap_hg38_aligned_pl.bw",
+            "bytes": 45143285
+          },
+          {
+            "name": "./reference/K562_GRO_cap/K562_GROcap_hg38_aligned_mn.bw",
+            "bytes": 44989544
+          },
+          {
+            "name": "./reference/hg38",
+            "bytes": 0
+          },
+          {
+            "name": "./reference/hg38/GENCODE_v45",
+            "bytes": 0
+          },
+          {
+            "name": "./reference/hg38/GENCODE_v45/original_files",
+            "bytes": 0
+          },
+          {
+            "name": "./reference/hg38/GENCODE_v45/original_files/gencode.v45.annotation.gtf.gz",
+            "bytes": 49770653
+          },
+          {
+            "name": "./reference/hg38/GENCODE_v45/.ipynb_checkpoints",
+            "bytes": 0
+          }
+        ]
+      },
+      "DNABERT-Enhancer-models.tar.gz": {
+        "scope": "First 20 entries or until first member larger than 500 MB; no full archive enumeration.",
+        "members": [
+          {
+            "name": "DNABERT-Enhancer-models",
+            "bytes": 0
+          },
+          {
+            "name": "DNABERT-Enhancer-models/DNABERT-Enhancer-201",
+            "bytes": 0
+          },
+          {
+            "name": "DNABERT-Enhancer-models/DNABERT-Enhancer-201/checkpoint-108",
+            "bytes": 0
+          },
+          {
+            "name": "DNABERT-Enhancer-models/DNABERT-Enhancer-201/checkpoint-108/config.json",
+            "bytes": 1128
+          },
+          {
+            "name": "DNABERT-Enhancer-models/DNABERT-Enhancer-201/checkpoint-108/optimizer.pt",
+            "bytes": 713657285
+          }
+        ]
+      }
+    },
+    "code": {
+      "06_DNABERT_ENHANCER_2026/CODE/DNABERT_Enhancer_GitHub_source.zip": {
+        "members": 29,
+        "expanded_bytes": 2717945,
+        "prediction_launcher_calls_missing_file": true,
+        "available_training_entrypoint": true
+      },
+      "05_HEMATOPOIESIS_MPRA/CODE/MPRA_figures_source_snapshot.zip": {
+        "members": 33,
+        "expanded_bytes": 57382268
+      },
+      "05_HEMATOPOIESIS_MPRA/CODE/MPRAscripts_source_snapshot.zip": {
+        "members": 60,
+        "expanded_bytes": 90298698
+      },
+      "05_HEMATOPOIESIS_MPRA/CODE/MPRA_prediction_source_snapshot.zip": {
+        "members": 59,
+        "expanded_bytes": 36773564
+      },
+      "07_ALPHAGENOME_2026/CODE/AlphaGenome_research_GitHub_source.zip": {
+        "members": 106,
+        "expanded_bytes": 5939550
+      },
+      "03_MPRA_STARR_CROSS_ASSAY_2025/CODE/cross_assay_code_release_v1.0.zip": {
+        "members": 50,
+        "expanded_bytes": 4319483
+      }
+    }
+  },
+  "provenance": {
+    "downloader_read_only_verification_failures": [
+      {
+        "path": "NEW_2026_DATA/04_VISTA/PAPERS/VISTA_Enhancer_Browser_updated_database_NAR_2024.html",
+        "reason": "SHA256 mismatch"
+      },
+      {
+        "path": "NEW_2026_DATA/05_HEMATOPOIESIS_MPRA/PAPERS/Design_principles_cell-state-specific_enhancers_in_hematopoiesis_Cell_2025.html",
+        "reason": "SHA256 mismatch"
+      },
+      {
+        "path": "NEW_2026_DATA/05_HEMATOPOIESIS_MPRA/PAPERS/Synthetic_enhancers_in_hematopoiesis_bioRxiv_2024_preprint.pdf",
+        "reason": "size is 5,680,575; expected 5,680,581 bytes"
+      },
+      {
+        "path": "NEW_2026_DATA/06_DNABERT_ENHANCER_2026/PAPERS/DNABERT_Enhancer_bioRxiv_2025_preprint.pdf",
+        "reason": "SHA256 mismatch"
+      },
+      {
+        "path": "NEW_2026_DATA/07_ALPHAGENOME_2026/PAPERS/AlphaGenome_Atlas_medRxiv_2026_preprint.pdf",
+        "reason": "SHA256 mismatch"
+      }
+    ],
+    "manifest_mapped_resources": 109,
+    "current_manifest_not_in_previous_audit": [],
+    "previous_audit_not_in_current_manifest": []
+  }
+}
