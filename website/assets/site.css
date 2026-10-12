@@ -48,3 +48,36 @@ a.term-link:hover{background:#dceee8;color:#153c45!important;text-decoration-sty
 @media(max-width:760px){.hero-visual{max-width:520px;justify-self:center;margin-top:10px}.hero-visual figcaption{padding-inline:0}.hero-visual figcaption strong{font-size:17px}}
 @media(max-width:430px){.hero-visual figcaption{flex-wrap:wrap;gap:12px}.hero-visual figcaption strong{font-size:18px}.motion-toggle{font-size:11px}}
 @media print{.hero-visual{display:none!important}}
+
+/* A responsive, locally drawn introduction to enhancer biology. */
+.enhancer-basics{margin-bottom:58px;padding-bottom:44px;border-bottom:1px solid var(--line)}
+.enhancer-basics>h2{font-size:38px;margin-bottom:18px}
+.enhancer-definition{max-width:860px;margin-bottom:28px}
+.enhancer-explainer{margin:0 0 24px;padding:26px 28px 20px;background:var(--canvas);border:1px solid var(--line);border-radius:12px}
+.enhancer-explainer>h3{font-family:var(--serif);font-size:25px;margin-bottom:24px}
+.enhancer-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;padding:0;margin:0;list-style:none}
+.enhancer-steps>li{position:relative;min-width:0}
+.enhancer-steps>li+li{border-left:1px solid var(--line);padding-left:28px}
+.explainer-step-number{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:var(--navy);color:white;font-size:11px;font-weight:650;letter-spacing:.5px}
+.enhancer-steps svg{display:block;width:100%;height:184px;margin:12px 0 16px;overflow:visible}
+.enhancer-steps svg text{font:16px var(--sans);fill:var(--ink)}
+.enhancer-steps svg .explainer-label-strong{font-weight:650}
+.explainer-dna{fill:none;stroke:#9bbdb6;stroke-width:7;stroke-linecap:round}
+.explainer-enhancer{fill:var(--teal)}
+.explainer-promoter{fill:#e7c894;stroke:#96703c;stroke-width:1.5}
+.explainer-gene{fill:var(--navy)}
+.explainer-protein{fill:#d8a16b;stroke:#96633d;stroke-width:1.5}
+.explainer-binding{stroke:#96633d;stroke-width:3}
+.explainer-label-line{stroke:#96633d;stroke-width:1.5}
+.explainer-contact{fill:none;stroke:#96633d;stroke-width:3;stroke-dasharray:4 5;stroke-linecap:round}
+.explainer-reading{fill:none;stroke:var(--ink);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.explainer-rna{fill:none;stroke:var(--teal);stroke-width:3;stroke-linecap:round}
+.enhancer-steps h4{font-size:18px;font-weight:600;letter-spacing:-.2px;margin-bottom:10px}
+.enhancer-steps p{font-size:14px;line-height:1.7;margin:0}
+.enhancer-explainer figcaption{margin-top:24px;padding-top:16px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);line-height:1.7}
+.enhancer-connection{max-width:900px;font-size:15px}
+.enhancer-sources{display:flex;flex-wrap:wrap;column-gap:20px;row-gap:4px;font-size:12px;line-height:1.8;margin-bottom:16px}
+.enhancer-sources>span{color:var(--muted)}
+@media(max-width:960px){.enhancer-steps{gap:20px}.enhancer-steps>li+li{padding-left:20px}.enhancer-explainer{padding:24px 20px}.enhancer-steps svg text{font-size:17px}}
+@media(max-width:760px){.enhancer-basics{margin-bottom:38px;padding-bottom:32px}.enhancer-basics>h2{font-size:30px}.enhancer-steps{grid-template-columns:1fr;gap:24px}.enhancer-steps>li+li{padding:24px 0 0;border-left:0;border-top:1px solid var(--line)}.enhancer-steps svg{max-width:340px;height:auto;margin:4px auto 16px}.enhancer-explainer>h3{font-size:24px;margin-bottom:20px}.enhancer-steps h4{font-size:19px}.enhancer-sources{display:block}.enhancer-sources>a{display:block;padding-block:4px}}
+@media print{.enhancer-basics{margin-bottom:24px;padding-bottom:20px}.enhancer-explainer{background:white;break-inside:avoid}.enhancer-steps{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.enhancer-steps>li+li{border-top:0;border-left:1px solid var(--line);padding:0 0 0 16px}}
