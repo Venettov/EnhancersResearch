@@ -4,6 +4,8 @@ This folder holds readable summaries, research strategies, analysis results, and
 
 ## Start here
 
+- [Original enhancer publications and replication plan](03_original_publications_replication_plan.md) — 12 October 2026: feasibility for all four original methods, recovered strong/weak labels, publisher and public-code test overlap, and connections to all seven new resource groups. [HTML reading copy](03_original_publications_replication_plan.html) · [Computed evidence](assets/2026-10-12_original_publications_review.json) · [Sequence-label crosswalk](assets/2026-10-12_original_publications_review_sequence_labels.tsv).
+
 - [Workspace audit and data quality](02_workspace_audit_and_qc.md) — completed 11 October 2026: legacy test-set overlap, duplicated ENCODE measurements, joint-library membership, unresolved specificity scores, and file/code readiness. [HTML reading copy](02_workspace_audit_and_qc.html) · [Computed evidence](assets/2026-10-11_workspace_audit.json) · [Audit script](assets/audit_workspace.py).
 
 - [Enhancer biology and research strategy](01_enhancers_evidence_and_strategy.md) — foundational biology, summaries of all ten collected publication files, the resource inventory, and a proposed analysis-first research direction. [HTML reading copy](01_enhancers_evidence_and_strategy.html).
@@ -26,7 +28,7 @@ A fresh full execution reproduced every non-metadata section of the 11 October a
 
 ## Current stage and next deliverable
 
-Report 02 is complete; numerical specificity-score reproduction and an end-to-end research pipeline are not. The next deliverable is a documented lentiMPRA import, reviewed control-name mapping, and reproduction of the authors’ normalization/aggregation with a stated tolerance. The contaminated legacy benchmark cannot currently support independent model evaluation. See the [decision log](decisions.md) and [live research notes](https://venettov.github.io/EnhancersResearch/notes.html#qc).
+Reports 02 and 03 are complete; model training, numerical specificity-score reproduction, and an end-to-end research pipeline are not. The current goal is to reconstruct iEnhancer-2L first and then link its predictions to new lentiMPRA measurements. A documented import, reviewed control-name mapping, and reproduced normalization/aggregation are prerequisites for that experimental comparison and can proceed alongside reconstruction. The contaminated legacy test cannot certify independent performance. See the [decision log](decisions.md) and [live review](https://venettov.github.io/EnhancersResearch/notes.html#replication-review).
 
 The reports preserve the status at their stated dates. Original paper links replace machine-specific download paths in report 01; the bilingual [website reading edition](https://venettov.github.io/EnhancersResearch/strategy.html) is also available.
 

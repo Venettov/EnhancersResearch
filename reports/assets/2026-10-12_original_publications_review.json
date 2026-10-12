@@ -1,0 +1,280 @@
+{
+  "review_date": "2026-10-12",
+  "scope": "Original-paper data reconstruction, published S4 comparison, exact lentiMPRA insert overlap, static MCSE code review. No model fitting.",
+  "inputs": {
+    "enhancer.cv.txt": {
+      "bytes": 338182,
+      "sha256": "0709765619d348ee6a7c5459058df1abe01591ef360b2123092336159b2d7918"
+    },
+    "non.cv.txt": {
+      "bytes": 338234,
+      "sha256": "1fa9a8f720a6be5d9562db8083e856a3e49b45fb433bf876a2211f7efa4ddd55"
+    },
+    "enhancer.ind.txt": {
+      "bytes": 48687,
+      "sha256": "f4763d5b3b9f2306e0ce295f074376adfb1980bd818c255ac781aaa533a8de37"
+    },
+    "non.ind.txt": {
+      "bytes": 52140,
+      "sha256": "105381e8906c977d41b39df2dfecc4bdb7e0683fd81b5c51aaf397968ff719d1"
+    },
+    "1-s2.0-S0022283623004254-main.pdf": {
+      "bytes": 1377316,
+      "sha256": "14ea5e6e460cdaf293df1b8b8dd541b86503ddf2a15caf56e5d0cf4168e58dff"
+    },
+    "bioinformatics_32_3_362.pdf": {
+      "bytes": 499594,
+      "sha256": "f3dbd8de78fba62a68c2557f7c7cf39018b46374e1de0d63deeda9e7238ce4e5"
+    },
+    "bioinformatics_34_22_3835.pdf": {
+      "bytes": 476337,
+      "sha256": "6bbef7876f560d0bd04f519e0bc5d5f9c77fa2928196ea6a12d34e0b6aad759d"
+    },
+    "srep38741.pdf": {
+      "bytes": 1035323,
+      "sha256": "59dcf6ac631efb201db481ed49b5644c4f43eb70827857a1fa2b24765290f304"
+    },
+    "bioinformatics_32_3_362_s1/Supp-S1.pdf": {
+      "bytes": 912261,
+      "sha256": "3d08c8f3c13228bb29b21d56e2801181e4d144564ab34c62af55cbb7a6c89684"
+    },
+    "bioinformatics_32_3_362_s1/Supp-S2.pdf": {
+      "bytes": 238637,
+      "sha256": "db35bbfba8a3d0a376a2b86cd2c13babfe6bf042ef0776726e11705dd112131f"
+    }
+  },
+  "supplement_S1": {
+    "labels": {
+      "strong": 742,
+      "weak": 742,
+      "non_enhancer": 1484
+    },
+    "unique_sequences": 2968,
+    "length": 200
+  },
+  "local_sequence_comparisons": {
+    "enhancer.cv.txt": {
+      "records": 1484,
+      "matches": {
+        "strong": 742,
+        "weak": 742
+      }
+    },
+    "non.cv.txt": {
+      "records": 1484,
+      "matches": {
+        "non_enhancer": 1484
+      }
+    },
+    "enhancer.ind.txt": {
+      "records": 200,
+      "matches": {
+        "strong": 100,
+        "not_in_S1": 100
+      }
+    },
+    "non.ind.txt": {
+      "records": 200,
+      "matches": {
+        "not_in_S1": 200
+      }
+    }
+  },
+  "publisher_EL_S4": {
+    "bytes": 679070,
+    "sha256": "d802977a50fadf71be82b955ced1decfbcd907dcd0f8fcbd446ab2c6e374101e",
+    "doi": "https://doi.org/10.1093/bioinformatics/bty458",
+    "publisher_asset": "bioinformatics_34_22_3835_s7.pdf",
+    "records": 400,
+    "labels": {
+      "strong": 100,
+      "weak": 100,
+      "non_enhancer": 200
+    },
+    "sequence_order_identical_to_local": true,
+    "overlap_with_S1": {
+      "strong": 100
+    }
+  },
+  "legacy_lentiMPRA_overlap": {
+    "input": "NEW_2026_DATA/02_LENTIMPRA_ENCODE_2025/SUPPLEMENTARY/lentiMPRA_supplementary_tables_1-13.zip",
+    "bytes": 342234089,
+    "sha256": "aefb1974e9ebe5c196a89a00f4e868c0abaf69e3d3952e79c74bfb42f217f6a4",
+    "member": "2023-03-03628-s5/2023-03-03628C-Table S10 - joint lib design.xlsx",
+    "design_records": 60000,
+    "insert_length": 200,
+    "comparisons": {
+      "enhancer.cv.txt": {
+        "records": 1484,
+        "exact_matches": 2,
+        "exact_or_reverse_complement_matches": 2,
+        "matches": [
+          {
+            "row_1_based": 385,
+            "header": "CHR5_133839101_133839301",
+            "exact": true,
+            "S1_label": "strong",
+            "constructs": [
+              {
+                "name": "K562_peak65192",
+                "category": "potential enhancer, K562"
+              }
+            ]
+          },
+          {
+            "row_1_based": 1263,
+            "header": "CHR22_35773000_35773200",
+            "exact": true,
+            "S1_label": "strong",
+            "constructs": [
+              {
+                "name": "HepG2_DNasePeakNoPromoter39999",
+                "category": "potential enhancer, HepG2"
+              }
+            ]
+          }
+        ]
+      },
+      "non.cv.txt": {
+        "records": 1484,
+        "exact_matches": 0,
+        "exact_or_reverse_complement_matches": 0,
+        "matches": []
+      },
+      "enhancer.ind.txt": {
+        "records": 200,
+        "exact_matches": 0,
+        "exact_or_reverse_complement_matches": 0,
+        "matches": []
+      },
+      "non.ind.txt": {
+        "records": 200,
+        "exact_matches": 0,
+        "exact_or_reverse_complement_matches": 0,
+        "matches": []
+      }
+    }
+  },
+  "overlap_limit": "Exact 200-nt sequences and reverse complements only; no near-identity or overlapping-locus analysis. S10 design overlap does not establish measurement coverage.",
+  "MCSE_public_snapshot": {
+    "commit": "d76c48946de9c46e0845df12c119a27b7e455444",
+    "repository": "https://github.com/MirBilalAhmad/DNA-Enhancers",
+    "snapshot_note": "Provided snapshot; file hashes identify inspected bytes. Not executed.",
+    "train_records": 2968,
+    "test_records": 400,
+    "train_sequence_order_identical_to_local": true,
+    "test_sequence_order_identical_to_local": true,
+    "exact_test_train_overlaps": 100,
+    "files": {
+      ".gitignore": {
+        "bytes": 3078,
+        "sha256": "5e2c671ddc9e301dafc241ad1a7c07aa85a91fef560a17721b41977b9eddba17"
+      },
+      "README.md": {
+        "bytes": 1889,
+        "sha256": "05e83a7961b6e165966e1a14f863ca1126655fd6ca8d438961d1ce450a9ae9e6"
+      },
+      "Dataset/train.txt": {
+        "bytes": 632183,
+        "sha256": "3e5f8edc98d9f8fcdf698e57fe75038d9eaf78c87c0ba4d9ec02f5d67634652a"
+      },
+      "Dataset/ind.txt": {
+        "bytes": 85199,
+        "sha256": "0d177b62ddea3db364501592d6030ff7b79d55685da0877de7816445a7147a0d"
+      },
+      "Dataset/train_label.txt": {
+        "bytes": 5936,
+        "sha256": "f04b9e7bf197bb4debc5161e67a92a767131595c5327be2c5ae974898567468f"
+      },
+      "Dataset/ind_label.txt": {
+        "bytes": 800,
+        "sha256": "d80cdb6574ed4efbb00a124fc054c96d4b5e1ce55210b92fa0419350b7a92b3c"
+      },
+      "Create_Feature_Descriptors.ipynb": {
+        "bytes": 17446,
+        "sha256": "df26e183de73d7655dea1d36bd3aeeae73d3c6e6be9c81bb8c7cc85f00f2479c"
+      },
+      "Models_Training.ipynb": {
+        "bytes": 34412,
+        "sha256": "cbf7590afafb45705e1564295f257ed3db8901dbbab4785f99462be1d16b8080"
+      },
+      "Models _Testing.ipynb": {
+        "bytes": 41235,
+        "sha256": "526285fac8d487c2856f52610d13dc71209d0bcfe940f3cff7995aaed9bd78a8"
+      }
+    },
+    "notebook_syntax": {
+      "Create_Feature_Descriptors.ipynb": {
+        "checked_code_cells": 26,
+        "skipped_magic_or_shell_cells": [],
+        "errors": []
+      },
+      "Models_Training.ipynb": {
+        "checked_code_cells": 46,
+        "skipped_magic_or_shell_cells": [],
+        "errors": [
+          {
+            "cell_index_zero_based": 4,
+            "line": 4,
+            "message": "invalid syntax"
+          },
+          {
+            "cell_index_zero_based": 5,
+            "line": 1,
+            "message": "invalid syntax"
+          },
+          {
+            "cell_index_zero_based": 9,
+            "line": 4,
+            "message": "invalid syntax"
+          },
+          {
+            "cell_index_zero_based": 10,
+            "line": 2,
+            "message": "invalid syntax"
+          }
+        ]
+      },
+      "Models _Testing.ipynb": {
+        "checked_code_cells": 75,
+        "skipped_magic_or_shell_cells": [
+          72
+        ],
+        "errors": [
+          {
+            "cell_index_zero_based": 3,
+            "line": 4,
+            "message": "invalid syntax"
+          },
+          {
+            "cell_index_zero_based": 4,
+            "line": 1,
+            "message": "invalid syntax"
+          },
+          {
+            "cell_index_zero_based": 6,
+            "line": 4,
+            "message": "invalid syntax"
+          },
+          {
+            "cell_index_zero_based": 7,
+            "line": 2,
+            "message": "invalid syntax"
+          }
+        ]
+      }
+    },
+    "manual_code_observations": [
+      {
+        "file": "Models _Testing.ipynb",
+        "cell_index_zero_based": 77,
+        "finding": "Optuna objective returns accuracy on y_test_ind; ensemble search uses independent-test labels."
+      },
+      {
+        "file": "Models_Training.ipynb",
+        "cell_index_zero_based": 14,
+        "finding": "RF objective creates splits in a loop but fits/scores after the loop, using its final split."
+      }
+    ]
+  }
+}

@@ -37,12 +37,12 @@ const root = language === 'es' ? base.slice(0, -3) : base;
     await page.setViewportSize({ width: 1440, height: 1000 });
     await page.goto(`${base}publications.html`);
     const visibleCount = () => page.locator('[data-publication]:visible').count();
-    assert.equal(await visibleCount(), 8);
-    for (const [type, count] of [['experimental', 3], ['annotation', 2], ['model', 3]]) {
+    assert.equal(await visibleCount(), 12);
+    for (const [type, count] of [['experimental', 3], ['annotation', 2], ['model', 7]]) {
       await page.locator(`[data-filter="${type}"]`).click();
       assert.equal(await visibleCount(), count);
       assert.equal(await page.locator(`[data-filter="${type}"]`).getAttribute('aria-pressed'), 'true');
-      assert.equal(await page.locator('#publication-count').textContent(), language === 'es' ? `${count} de 8 trabajos recopilados` : `${count} of 8 collected works`);
+      assert.equal(await page.locator('#publication-count').textContent(), language === 'es' ? `${count} de 12 trabajos recopilados` : `${count} of 12 collected works`);
     }
     await page.locator('[data-filter="all"]').click();
     await page.locator('#publication-search').fill('Fromel');
@@ -51,7 +51,7 @@ const root = language === 'es' ? base.slice(0, -3) : base;
     assert.equal(await visibleCount(), 0);
     assert(await page.locator('#publication-empty').isVisible());
     await page.locator('[data-clear-search]').click();
-    assert.equal(await visibleCount(), 8);
+    assert.equal(await visibleCount(), 12);
     assert(await page.locator('#publication-search').evaluate(element => element === document.activeElement));
     await page.locator('[data-filter="model"]').click();
     await page.locator('.reading-note a[href="#P02"]').click();
@@ -102,7 +102,7 @@ const root = language === 'es' ? base.slice(0, -3) : base;
     const noJS = await browser.newContext({ javaScriptEnabled: false, viewport: { width: 390, height: 844 } });
     const fallback = await noJS.newPage();
     await fallback.goto(`${base}publications.html`);
-    assert.equal(await fallback.locator('[data-publication]:visible').count(), 8);
+    assert.equal(await fallback.locator('[data-publication]:visible').count(), 12);
     assert(await fallback.locator('.primary-nav').isVisible());
     assert.equal(await fallback.locator('[data-publication-tools]').isVisible(), false);
     await fallback.locator(`[data-language="${language === 'es' ? 'en' : 'es'}"]`).click();

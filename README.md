@@ -1,10 +1,23 @@
 # EnhancersResearch — Exploring the signals that control genes
 
-Our goal is to understand how enhancer activity changes across cellular contexts and how reliably experiments support those patterns. The starting analysis uses the matched lentiMPRA library measured in HepG2, K562, and WTC11. Its shared design and traceable measurements make it useful for this question; file size alone does not determine priority.
+Our goal is to **reproduce published enhancer prediction methods, starting with iEnhancer-2L, then connect their predictions to measured activity in HepG2, K562, and WTC11**. We begin with the four original papers and sequence files supplied by Prof. Dehzangi. The matched lentiMPRA study provides the main experimental comparison after reconstruction and data preparation; its shared design and traceable measurements make it useful, not file size alone.
 
 [Website in English](https://venettov.github.io/EnhancersResearch/) · [Sitio en español](https://venettov.github.io/EnhancersResearch/es/) · [Current research notes](https://venettov.github.io/EnhancersResearch/notes.html#qc)
 
 This is a curated research workspace with completed local file/QC audits and an initial reconciliation of the published data. **Numerical specificity-score reproduction remains unresolved.** There is no executed end-to-end research pipeline, new biological discovery, or validated new predictor. The datasets have not been combined into one training set.
+
+## Original papers and the current replication plan
+
+| Original paper | Corresponding data and role |
+|---|---|
+| [iEnhancer-2L](bioinformatics_32_3_362.pdf) | First reconstruction target. The shared 2,968 training fragments and labels are in [Supplement S1](bioinformatics_32_3_362_s1/Supp-S1.pdf); [S2](bioinformatics_32_3_362_s1/Supp-S2.pdf) provides structural-property tables. |
+| [EnhancerPred](srep38741.pdf) | Second baseline using the same benchmark; label-dependent features and selection must remain inside training folds. |
+| [iEnhancer-EL](bioinformatics_34_22_3835.pdf) | Later ensemble reconstruction. Its current publisher S4 matches the 400 local test sequences, including 100 strong sequences already in training. |
+| [MCSE-Enhancer](1-s2.0-S0022283623004254-main.pdf) | Public code offers a starting point, but the inspected snapshot contains incomplete cells, test-label optimization, and the same training/test overlap. |
+
+The [12 October original-publication review](reports/03_original_publications_replication_plan.md) recovered **742 strong, 742 weak, and 1,484 non-enhancer training labels**. Removing the 100 overlapping strong test examples leaves no strong class for strength evaluation. Two legacy training sequences also match inserts in the new lentiMPRA design. The [evidence](reports/assets/2026-10-12_original_publications_review.json) and [sequence-label crosswalk](reports/assets/2026-10-12_original_publications_review_sequence_labels.tsv) record these findings and their source hashes.
+
+Reconstructing a method, matching its published accuracy, and evaluating it on new experimental measurements are separate milestones. The old strong/weak annotations are not high/low lentiMPRA activity labels. First reconstruct iEnhancer-2L with simple baselines and a documented evaluation; prepare and reproduce lentiMPRA processing alongside that work; then freeze the original model and test transfer on sequences independent of its training. Retraining on experimental activity is a separate analysis. No model training or accuracy reproduction has been completed.
 
 ## Current findings and analysis limits
 
@@ -17,11 +30,11 @@ These are findings about the local files audited on **11 October 2026**, not a c
 5. **All 109 manifest-listed resources are present locally: 51.07 GB.** The audited files total **51,069,049,058 bytes** (decimal GB; approximately **47.56 GiB**), including the optional compressed archives. Verification is not uniform: **55** match reference checksums, **5** match previously reviewed publication receipts, and **49** match recorded sizes without an upstream checksum; new local hashes identify those 49 copies. Local hashes alone do not establish upstream identity. Large downloaded resources remain excluded from Git.
 6. **Two code paths need repair before use.** The project downloader does not consult accepted publication receipts and rejects five previously accepted copies against historical manifest expectations (four checksum mismatches and one six-byte size difference). The archived DNABERT prediction launcher calls missing `run_finetune_WANDB_rekha.py`; the presence of another training script is not a verified replacement. No model inference run has been validated.
 
-The next milestone is a provenance-preserving lentiMPRA import and a numerically reproduced published comparison. Trace specificity processing first; evaluate a bounded cross-assay extension only after checking shared tested loci and independent measurements. Model evaluation additionally requires an uncontaminated test design and a working, verified launcher.
+The current reproduction-first goal adds the original method reconstruction to these data-preparation requirements. Trace lentiMPRA specificity processing before experimental transfer; consider a cross-assay extension only after checking shared tested loci and independent measurements. Model evaluation requires a suitable test design and verified code.
 
 ## Research reports
 
-The [reports folder](reports/README.md) holds study summaries, strategies, and analysis decisions. Start with [Enhancer biology and research strategy](reports/01_enhancers_evidence_and_strategy.md), also available as an [HTML reading copy](reports/01_enhancers_evidence_and_strategy.html).
+The [reports folder](reports/README.md) holds study summaries, strategies, and analysis decisions. Start with [Original enhancer publications and replication plan](reports/03_original_publications_replication_plan.md), also available as an [HTML reading copy](reports/03_original_publications_replication_plan.html). [Enhancer biology and research strategy](reports/01_enhancers_evidence_and_strategy.md) preserves the foundational 10 October analysis.
 
 The [completed workspace audit and QC report](reports/02_workspace_audit_and_qc.md) records the findings above and their limits. The initial strategy explores measured enhancer activity across cellular contexts and the reliability of evidence across assays. It does not assume that the next objective is to develop another prediction model. The report distinguishes published findings, local file inspection, and proposed analyses.
 

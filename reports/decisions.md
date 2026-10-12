@@ -26,6 +26,16 @@
 
 **Still deferred:** a new model, validated biological conclusions, and a cross-assay extension without demonstrated independent overlapping measurements. Updating documentation does not resolve the code or normalization blockers.
 
+## 2026-10-12 · Reproduce the original methods and connect to new measurements
+
+**User direction:** make reproduction followed by connection to the newer study the explicit website goal, and include the original papers and their corresponding data.
+
+**Current plan:** reconstruct iEnhancer-2L first; use EnhancerPred as a second baseline and defer the ensembles until their additional work is justified. Prepare and reproduce the lentiMPRA processing alongside reconstruction, then freeze the historical model for transfer evaluation in HepG2, K562, and WTC11. Any retraining on experimental activity is a separate analysis.
+
+**Evidence:** [report 03](03_original_publications_replication_plan.md) recovered all training labels, traced the 100 strong test overlaps to the publisher's current S4 and inspected MCSE snapshot, identified two exact legacy-training matches in the new design, and documented code limitations. The review and labels are complete; model fitting and reproduction of published accuracy are not.
+
+**Evaluation boundary:** do not certify performance with the contaminated test or equate historical strong/weak annotations with reporter activity. Define independent sequence/locus groups and keep tuning separate from final testing. No new model architecture or biological discovery is assumed.
+
 ## Template for the next entry
 
 - Date and question:

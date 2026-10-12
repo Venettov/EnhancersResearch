@@ -1583,7 +1583,7 @@
           "train/test"
         ],
         "definition": "When information from data meant to test a model influences its training or selection. The model can then appear more accurate than it would be on genuinely new examples.",
-        "context": "Repeated or closely related DNA sequences can cross dataset boundaries. We need to check independence before claiming a successful prediction."
+        "context": "All 100 strong examples in the inspected historical test set also occur in training. Separate related sequences and keep test labels out of model selection."
       },
       "es": {
         "name": "Fuga de información",
@@ -1595,13 +1595,14 @@
           "entrenamiento/prueba"
         ],
         "definition": "Ocurre cuando información de los datos reservados para evaluar un modelo influye en su entrenamiento o selección. El modelo puede parecer más preciso de lo que sería ante ejemplos nuevos.",
-        "context": "Secuencias repetidas o muy relacionadas pueden aparecer a ambos lados de una división. Hay que comprobar la independencia antes de afirmar que una predicción funciona."
+        "context": "Los 100 ejemplos fuertes de la prueba histórica inspeccionada también aparecen en entrenamiento. Separar secuencias relacionadas y excluir las etiquetas de prueba de la selección del modelo."
       },
       "sources": [
         "leakage"
       ],
       "papers": [
-        "P08"
+        "L03",
+        "L04"
       ]
     },
     {
@@ -1616,7 +1617,7 @@
           "reproducibility"
         ],
         "definition": "Here, repeating a published analysis with the specified data and methods to see whether its results can be recovered. This is different from making a new biological discovery.",
-        "context": "Our first goal is a trustworthy reconstruction of a selected published comparison, with unresolved differences documented."
+        "context": "First reconstruct iEnhancer-2L and document whether its published results can be recovered. Testing it on new lentiMPRA data is a separate transfer evaluation."
       },
       "es": {
         "name": "Reproducción de un análisis",
@@ -1628,10 +1629,11 @@
           "reproducibilidad"
         ],
         "definition": "Aquí significa repetir un análisis publicado con los datos y métodos indicados para comprobar si se recuperan sus resultados. No equivale a hacer un descubrimiento biológico nuevo.",
-        "context": "El primer objetivo es reconstruir de forma fiable una comparación publicada y documentar las diferencias aún no resueltas."
+        "context": "Primero reconstruir iEnhancer-2L y documentar si se recuperan sus resultados publicados. Probarlo con nuevos datos de lentiMPRA es una evaluación de transferencia distinta."
       },
       "sources": [],
       "papers": [
+        "L01",
         "P02"
       ]
     },
@@ -1926,6 +1928,143 @@
       "papers": [
         "P02"
       ]
+    },
+    {
+      "id": "benchmark",
+      "category": "analysis",
+      "papers": [
+        "L01",
+        "L03"
+      ],
+      "sources": [],
+      "en": {
+        "name": "Benchmark",
+        "aliases": [
+          "benchmark",
+          "benchmarks"
+        ],
+        "definition": "A specified dataset and evaluation procedure used to compare methods. Its labels describe a particular task, not every possible biological function.",
+        "context": "Our historical benchmark has 2,968 training sequences. Its 400-record test set overlaps training and cannot certify sequence-independent performance."
+      },
+      "es": {
+        "name": "Conjunto de referencia",
+        "aliases": [
+          "conjunto de referencia",
+          "conjuntos de referencia",
+          "benchmark"
+        ],
+        "definition": "Un conjunto de datos y un procedimiento de evaluación definidos para comparar métodos. Sus etiquetas describen una tarea concreta, no todas las funciones biológicas.",
+        "context": "El conjunto histórico tiene 2,968 secuencias de entrenamiento. Su prueba de 400 registros se solapa con entrenamiento y no certifica rendimiento independiente por secuencia."
+      }
+    },
+    {
+      "id": "sequence-features",
+      "category": "models",
+      "papers": [
+        "L01",
+        "L02"
+      ],
+      "sources": [],
+      "en": {
+        "name": "Sequence features",
+        "aliases": [
+          "sequence features",
+          "PseKNC"
+        ],
+        "definition": "Numbers calculated from DNA, such as how often short letter patterns occur or descriptors of local DNA structure. A model uses these numbers as inputs.",
+        "context": "We will test whether these features predict measured activity beyond simple GC composition. PseKNC structural descriptors are not measured chromatin or DNA loops."
+      },
+      "es": {
+        "name": "Características de secuencia",
+        "aliases": [
+          "características de secuencia",
+          "PseKNC"
+        ],
+        "definition": "Números calculados a partir del ADN, como la frecuencia de patrones cortos de letras o descriptores de su estructura local. Un modelo utiliza esos números como entradas.",
+        "context": "Evaluaremos si predicen actividad medida más allá de la composición GC. Los descriptores estructurales de PseKNC no son medidas de cromatina ni de bucles de ADN."
+      }
+    },
+    {
+      "id": "svm",
+      "category": "models",
+      "papers": [
+        "L01",
+        "L02",
+        "L03"
+      ],
+      "sources": [],
+      "en": {
+        "name": "Support vector machine",
+        "aliases": [
+          "SVM",
+          "SVMs",
+          "support vector machine"
+        ],
+        "definition": "A statistical model that learns a boundary between labeled examples using numerical features. Different settings change the shape of that boundary.",
+        "context": "iEnhancer-2L uses one SVM for enhancer identification and another for the historical strong/weak labels."
+      },
+      "es": {
+        "name": "Máquina de vectores de soporte",
+        "aliases": [
+          "SVM",
+          "SVMs",
+          "máquina de vectores de soporte"
+        ],
+        "definition": "Un modelo estadístico que aprende una frontera entre ejemplos etiquetados mediante características numéricas. Sus parámetros cambian la forma de esa frontera.",
+        "context": "iEnhancer-2L utiliza un SVM para identificar potenciadores y otro para las etiquetas históricas de fuerte o débil."
+      }
+    },
+    {
+      "id": "transfer-evaluation",
+      "category": "analysis",
+      "papers": [
+        "L01",
+        "P02"
+      ],
+      "sources": [],
+      "en": {
+        "name": "Transfer evaluation",
+        "aliases": [
+          "transfer evaluation"
+        ],
+        "definition": "Testing a model trained on one dataset against a different dataset or measurement. It asks whether the learned patterns remain useful in the new setting.",
+        "context": "We will freeze a model trained on historical annotations before comparing its scores with cell-specific lentiMPRA activity. Retraining on lentiMPRA is a separate experiment."
+      },
+      "es": {
+        "name": "Evaluación de transferencia",
+        "aliases": [
+          "evaluación de transferencia"
+        ],
+        "definition": "Evaluar un modelo entrenado con un conjunto de datos frente a otro conjunto o medida. Pregunta si los patrones aprendidos siguen siendo útiles en el nuevo contexto.",
+        "context": "Fijaremos un modelo entrenado con anotaciones históricas antes de comparar sus puntuaciones con la actividad de lentiMPRA por tipo celular. Reentrenarlo con lentiMPRA es otro experimento."
+      }
+    },
+    {
+      "id": "legacy-strength",
+      "category": "analysis",
+      "papers": [
+        "L01",
+        "P02"
+      ],
+      "sources": [],
+      "en": {
+        "name": "Historical strong and weak labels",
+        "aliases": [
+          "strong/weak labels",
+          "strong/weak annotations"
+        ],
+        "definition": "Categories assigned to the original benchmark using chromatin-state annotations. They are not numerical reporter-activity measurements.",
+        "context": "Do not automatically convert a historical strong label into high lentiMPRA activity, or a weak label into inactivity."
+      },
+      "es": {
+        "name": "Etiquetas históricas fuertes y débiles",
+        "aliases": [
+          "etiquetas fuertes o débiles",
+          "anotaciones fuertes o débiles"
+        ],
+        "definition": "Categorías asignadas al conjunto original mediante anotaciones del estado de la cromatina. No son medidas numéricas de actividad de reportero.",
+        "context": "Una etiqueta histórica fuerte no equivale automáticamente a actividad alta en lentiMPRA, ni una débil a inactividad."
+      }
     }
   ]
 }

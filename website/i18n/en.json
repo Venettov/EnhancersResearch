@@ -9,7 +9,7 @@
   "menu": "Menu",
   "navigation_label": "Main navigation",
   "language_label": "Language",
-  "read_report": "Read the research report",
+  "read_report": "Foundational report",
   "footer_description": "Understanding regulatory DNA through<br>experimental evidence and reproducible analysis.",
   "explore": "Explore",
   "questions": "Research questions",
@@ -27,26 +27,44 @@
   "interpretation": "Interpretation",
   "original_source": "Original source",
   "study_guide": "Study guide on GitHub",
-  "hero_eyebrow": "Our proposed research goal",
+  "hero_eyebrow": "Our research goal",
   "hero_title": "Enhancers: Exploring the signals that control genes",
-  "hero_description": "Understand how enhancer activity changes between cells, and how reliably experiments support those patterns.",
-  "hero_link": "Explore the goal and the evidence",
+  "hero_description": "Reproduce published enhancer prediction methods, starting with iEnhancer-2L, then connect their predictions to activity measured in three cell types.",
+  "hero_link": "Explore the replication plan",
   "hero_alt": "A glowing vertical DNA double helix made of binary digits rotates against a dark background. A continuously looping conceptual animation.",
   "visual_caption": "Follow the sequence. Evaluate the evidence.",
   "visual_note": "Conceptual illustration · not measured data",
   "visual_pause": "Pause animation",
   "visual_play": "Play animation",
   "report_kicker": "Research report 01 · 10 October 2026",
-  "report_notice": "<strong>Foundational report · 10 October 2026.</strong> This reading edition preserves the original research strategy. The completed audit, confirmed legacy test-set overlap, and unresolved numerical reproduction are documented in the <a href=\"notes.html#qc\">research notes, rechecked on 12 October 2026</a>. See the <a href=\"research.html#project-goal\">current goal and proposed uses of the studies</a> for the updated project framing.",
+  "report_notice": "<strong>Historical report · 10 October 2026.</strong> We preserve the initial strategy as a dated record. The current goal is to reproduce iEnhancer-2L and then link its predictions to lentiMPRA measurements. See the <a href=\"research.html#project-goal\">updated plan</a>, the <a href=\"publications.html#L01\">four original papers</a>, and the <a href=\"notes.html#replication-review\">12 October review</a>. This report’s priorities and counts describe its date, not the current project state.",
   "report_contents": "Report contents",
   "in_report": "In this report",
   "back_top": "Back to the beginning",
   "pages": {
-    "index": ["Home", "Our proposed goal, why we recommend a matched cross-cell analysis, and how the other enhancer studies could contribute."],
-    "research": ["Research", "Questions about enhancer activity, cellular context, assay reliability, and regulatory grammar."],
-    "publications": ["Publications", "A curated reading collection of experimental studies, regulatory annotations, and sequence models."],
-    "resources": ["Resources", "Seven complementary collections of experimental measurements, annotations, and prediction resources."],
-    "notes": ["Research Notes", "Observations, decisions, and open questions as the enhancer research project develops."],
-    "strategy": ["Evidence & Strategy", "Research report 01: enhancer biology, the collected literature, and an analysis-first research strategy."]
+    "index": [
+      "Home",
+      "Reproducing original enhancer prediction methods and linking their predictions to new experimental activity data."
+    ],
+    "research": [
+      "Research",
+      "The replication roadmap, original methods, benchmark limitations, and the bridge to three-cell lentiMPRA."
+    ],
+    "publications": [
+      "Publications",
+      "Twelve works: four original papers supplied by Prof. Dehzangi and eight newer works, with data links and research roles."
+    ],
+    "resources": [
+      "Resources",
+      "The original benchmark and supplements, plus seven new resource collections; their availability and analysis limits."
+    ],
+    "notes": [
+      "Research Notes",
+      "Observations, decisions, and open questions as the enhancer research project develops."
+    ],
+    "strategy": [
+      "Evidence & Strategy",
+      "Research report 01: enhancer biology, the collected literature, and an analysis-first research strategy."
+    ]
   }
 }

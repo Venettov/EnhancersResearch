@@ -85,7 +85,7 @@ for path, document in documents.items():
             errors.append(f"{path.name}: missing anchor {href}")
 
 for path in ROOT.rglob("*"):
-    if path.is_file():
+    if path.is_file() and path.name != ".DS_Store":
         # Media assets do not contain website text or portable links.
         if path.suffix.lower() in {".gif", ".jpg", ".mp4"}:
             continue
@@ -96,12 +96,13 @@ for path in ROOT.rglob("*"):
             json.loads(content)
 
 source = json.loads((ROOT.parent / "website/content.json").read_text())
-assert len(source["publications"]) == 8
+assert len(source["publications"]) == 12
+assert {item["id"] for item in source["publications"] if item["id"].startswith("L")} == {"L01", "L02", "L03", "L04"}
 assert len(source["resources"]) == 7
 assert sum(record["count"] for record in source["resources"]) == 109
 glossary = json.loads((ROOT.parent / "website/glossary.json").read_text())
 term_ids = {term["id"] for term in glossary["terms"]}
-assert len(term_ids) == len(glossary["terms"]) == 59
+assert len(term_ids) == len(glossary["terms"]) == 64
 for term in glossary["terms"]:
     assert re.fullmatch(r"[a-z0-9-]+", term["id"])
     assert term["sources"] or term["papers"], f"No sources for {term['id']}"
@@ -154,4 +155,4 @@ numbers = lambda doc: Counter(re.findall(r"\d+(?:[.,]\d+)*", " ".join(doc.text))
 assert numbers(english_report) == numbers(spanish_report), "Report numerical facts differ between languages"
 if errors:
     raise SystemExit("\n".join(errors))
-print("PASS: 14 localized pages; 59 sourced bilingual explanations; safe annotation; links, fragments, language switches, collections, and report structure/numerical parity")
+print("PASS: 14 localized pages; 12 publications; 64 sourced bilingual explanations; safe annotation; links, fragments, language switches, collections, and report structure/numerical parity")

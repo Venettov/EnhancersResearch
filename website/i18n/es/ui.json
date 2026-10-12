@@ -9,7 +9,7 @@
   "menu": "Menú",
   "navigation_label": "Navegación principal",
   "language_label": "Idioma",
-  "read_report": "Leer el informe de investigación",
+  "read_report": "Informe fundacional",
   "footer_description": "Comprender el ADN regulador mediante<br>evidencia experimental y análisis reproducibles.",
   "explore": "Explorar",
   "questions": "Preguntas de investigación",
@@ -27,26 +27,44 @@
   "interpretation": "Interpretación",
   "original_source": "Fuente original",
   "study_guide": "Guía del estudio en GitHub",
-  "hero_eyebrow": "Nuestro objetivo de investigación propuesto",
+  "hero_eyebrow": "Nuestro objetivo de investigación",
   "hero_title": "Potenciadores: Explorando las señales que regulan los genes",
-  "hero_description": "Comprender cómo cambia la actividad de los potenciadores entre células y con qué fiabilidad los experimentos respaldan esos patrones.",
-  "hero_link": "Explorar el objetivo y la evidencia",
+  "hero_description": "Reproducir métodos publicados de predicción de potenciadores, comenzando con iEnhancer-2L, y relacionar después sus predicciones con la actividad medida en tres tipos celulares.",
+  "hero_link": "Ver el plan de reproducción",
   "hero_alt": "Una doble hélice vertical de ADN, formada por dígitos binarios luminosos, gira sobre un fondo oscuro. Una animación conceptual que se repite de forma continua.",
   "visual_caption": "Seguir la secuencia. Evaluar la evidencia.",
   "visual_note": "Ilustración conceptual · no son datos medidos",
   "visual_pause": "Pausar animación",
   "visual_play": "Reproducir animación",
   "report_kicker": "Informe de investigación 01 · 10 de octubre de 2026",
-  "report_notice": "<strong>Informe fundacional · 10 de octubre de 2026.</strong> Esta edición de lectura conserva la estrategia de investigación original. La auditoría completada, el solapamiento confirmado de la prueba histórica y la reproducción numérica pendiente se documentan en las <a href=\"notes.html#qc\">notas de investigación, comprobadas el 12 de octubre de 2026</a>. Consulta el <a href=\"research.html#project-goal\">objetivo actual y los usos propuestos de los estudios</a> para conocer el enfoque actualizado del proyecto.",
+  "report_notice": "<strong>Informe histórico · 10 de octubre de 2026.</strong> Conservamos la estrategia inicial como registro fechado. El objetivo actual es reproducir iEnhancer-2L y después relacionar sus predicciones con las mediciones de lentiMPRA. Consulta el <a href=\"research.html#project-goal\">plan actualizado</a>, los <a href=\"publications.html#L01\">cuatro artículos originales</a> y la <a href=\"notes.html#replication-review\">revisión del 12 de octubre</a>. Las prioridades y los recuentos de este informe corresponden a su fecha, no al estado actual.",
   "report_contents": "Contenido del informe",
   "in_report": "En este informe",
   "back_top": "Volver al inicio",
   "pages": {
-    "index": ["Inicio", "Nuestro objetivo propuesto, por qué recomendamos un análisis comparativo entre células y cómo podrían contribuir los otros estudios."],
-    "research": ["Investigación", "Preguntas sobre la actividad de los potenciadores, el contexto celular, la fiabilidad de los ensayos y la gramática reguladora."],
-    "publications": ["Publicaciones", "Una selección de lecturas sobre estudios experimentales, anotaciones reguladoras y modelos de secuencia."],
-    "resources": ["Recursos", "Siete colecciones complementarias de mediciones experimentales, anotaciones y recursos de predicción."],
-    "notes": ["Notas de investigación", "Observaciones, decisiones y preguntas abiertas durante el desarrollo del proyecto sobre potenciadores."],
-    "strategy": ["Evidencia y estrategia", "Informe de investigación 01: biología de los potenciadores, bibliografía recopilada y una estrategia que comienza por el análisis."]
+    "index": [
+      "Inicio",
+      "Reproducir métodos originales de predicción de potenciadores y relacionarlos con nuevos datos de actividad experimental."
+    ],
+    "research": [
+      "Investigación",
+      "Plan de reproducción, métodos originales, límites del conjunto de referencia y conexión con lentiMPRA en tres tipos celulares."
+    ],
+    "publications": [
+      "Publicaciones",
+      "Doce trabajos: cuatro artículos originales recibidos del Prof. Dehzangi y ocho trabajos nuevos, con enlaces a datos y funciones en la investigación."
+    ],
+    "resources": [
+      "Recursos",
+      "El conjunto de referencia y suplementos originales, más siete colecciones nuevas; disponibilidad y límites de análisis."
+    ],
+    "notes": [
+      "Notas de investigación",
+      "Observaciones, decisiones y preguntas abiertas durante el desarrollo del proyecto sobre potenciadores."
+    ],
+    "strategy": [
+      "Evidencia y estrategia",
+      "Informe de investigación 01: biología de los potenciadores, bibliografía recopilada y una estrategia que comienza por el análisis."
+    ]
   }
 }

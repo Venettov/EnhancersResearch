@@ -72,11 +72,16 @@ def publications_html(records, ui):
     for record in records:
         p = {key: escape(str(value), quote=True) for key, value in record.items() if key != "earlier"}
         earlier = record.get("earlier")
+        materials = record.get("materials", [])
+        material_links = '<ul class="publication-materials">' + ''.join(
+            f'<li><a href="{escape(item["url"], quote=True)}">{escape(item["label"])}</a></li>'
+            for item in materials
+        ) + '</ul>' if materials else ''
         version = (f'<a class="publication-earlier" href="{escape(earlier["url"], quote=True)}">'
                    f'{escape(earlier["label"])} ↗</a>') if earlier else ""
         result.append(f'''<article class="publication" id="{p['id']}" data-publication data-type="{p['type']}">
 <div class="publication-year">{p['year']}<span class="publication-id">{p['id']}</span></div>
-<div><p class="publication-authors">{p['authors']}</p><h2><a href="{p['url']}">{p['title']}</a></h2><p class="publication-journal">{p['journal']}</p><p class="publication-summary">{p['summary']}</p>{version}</div>
+<div><p class="publication-authors">{p['authors']}</p><h2><a href="{p['url']}">{p['title']}</a></h2><p class="publication-journal">{p['journal']}</p><p class="publication-summary">{p['summary']}</p>{version}{material_links}</div>
 <div class="publication-note"><span class="tag">{p['label']}</span><p>{p['note']}</p><a href="{p['url']}">{ui["read_source"]} ↗</a></div></article>''')
     return "\n".join(result)
 

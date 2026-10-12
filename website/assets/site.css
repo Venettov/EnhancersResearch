@@ -107,3 +107,6 @@ a.term-link:hover{background:#dceee8;color:#153c45!important;text-decoration-sty
 .enhancer-references li{margin-block:8px}
 @media(max-width:760px){.enhancer-locations{padding:22px 20px}.enhancer-locations>h3{font-size:24px}.enhancer-location-list{grid-template-columns:1fr;gap:22px}.enhancer-location-list>li+li{border-top:1px solid var(--line);padding-top:22px}.enhancer-location-list svg{max-width:340px;height:auto;margin-inline:auto}}
 @media print{.enhancer-locations{break-inside:avoid}.enhancer-location-list{grid-template-columns:repeat(3,minmax(0,1fr))}.enhancer-location-list>li+li{padding:0;border:0}.enhancer-references>div{display:block!important}}
+
+/* Original publication files and their shared benchmark. */
+.publication-materials{display:flex;flex-wrap:wrap;gap:8px 20px;list-style:none;padding:0;margin:18px 0 0;font-size:12px}.publication-materials li{margin:0}.publication-materials a{display:inline-block;min-height:30px}.legacy-data{margin-bottom:48px}.legacy-files{width:100%;table-layout:fixed}.legacy-files td{vertical-align:top}.legacy-files td strong{display:block;margin-bottom:10px}.legacy-files code{white-space:normal;overflow-wrap:anywhere}.legacy-files td:first-child{width:49%}.legacy-files a{font-size:12px;line-height:1.8}

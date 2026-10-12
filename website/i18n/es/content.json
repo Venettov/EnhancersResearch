@@ -1,21 +1,204 @@
 {
   "publications": [
-    {"id":"P01","label":"Atlas de referencia","title":"Un registro ampliado de elementos cis-reguladores candidatos","summary":"Un mapa de referencia de ADN regulador candidato. Nuestra colección utiliza su subconjunto humano con características de potenciadores para anotar regiones experimentales.","note":"Las anotaciones de candidatos no son mediciones funcionales específicas de cada tipo celular."},
-    {"id":"P02","label":"Punto de partida propuesto","title":"Caracterización masivamente paralela de elementos reguladores de la transcripción","summary":"Mediciones de lentiMPRA a gran escala en HepG2, K562 y WTC11, incluida una biblioteca compartida diseñada con 60,000 constructos.","note":"Recomendado para comparaciones experimentales compartidas y reproducción; la cantidad de datos por sí sola no determina la elección."},
-    {"id":"P03","label":"Comparación de ensayos","title":"Evaluación integral de diversos ensayos de reportero masivamente paralelos para caracterizar funcionalmente los potenciadores humanos en todo el genoma","summary":"Una comparación de seis conjuntos de datos de K562 que examina la cobertura, el procesamiento, la orientación y la concordancia entre ensayos de reportero.","note":"Las mediciones de origen reutilizadas no deben contarse como validación independiente."},
-    {"id":"P04","label":"Evidencia del desarrollo","title":"VISTA Enhancer Browser: una base de datos actualizada de potenciadores del desarrollo específicos de tejido","journal":"Nucleic Acids Research · en línea en 2024","summary":"Una base de datos de experimentos de reportero del desarrollo con información sobre tejidos, etapas embrionarias, secuencias y alelos.","note":"La especie de origen de una secuencia y el contexto experimental del reportero son distintos."},
-    {"id":"P05","label":"Gramática reguladora","title":"Principios de diseño de potenciadores específicos del estado celular en la hematopoyesis","summary":"Las mediciones de potenciadores sintéticos y genómicos permiten estudiar de forma controlada las combinaciones de motivos en distintos estados de las células sanguíneas.","note":"Un punto de partida alternativo si las interacciones entre sitios de unión al ADN pasan a ser la pregunta principal.","earlier_label":"Versión anterior en bioRxiv · P06"},
-    {"id":"P08","label":"Modelo de secuencia","authors":"Sathian, Dutta, Ay y Davuluri","title":"Modelo de lenguaje genómico para predecir potenciadores y su actividad específica de alelo en el genoma humano","summary":"DNABERT-Enhancer utiliza representaciones de secuencias de ADN para predecir anotaciones de potenciadores e investigar posibles efectos de variantes.","note":"Las probabilidades predichas y la actividad medida mediante reporteros responden a preguntas distintas.","earlier_label":"Versión anterior en bioRxiv · P07"},
-    {"id":"P09","label":"Predicción reguladora","title":"Avances en la predicción de efectos de variantes reguladoras con AlphaGenome","summary":"Un modelo de secuencia que conecta un contexto genómico extenso con predicciones de regulación génica, cromatina, expresión y empalme del ARN.","note":"Una herramienta opcional para interpretaciones específicas después del análisis experimental."},
-    {"id":"P10","label":"Prepublicación","authors":"Equipo de AlphaGenome Atlas","title":"AlphaGenome Atlas: la mutagénesis in silico de todo el genoma humano mejora la priorización e interpretación de variantes no codificantes","journal":"medRxiv · prepublicación","summary":"Un recurso de alcance genómico con efectos predichos de variantes y anotaciones derivadas para su priorización e interpretación.","note":"El proyecto incluye el artículo y sus suplementos, no una copia del Atlas completo."}
+    {
+      "id": "L01",
+      "label": "Materiales originales · Prof. Dehzangi",
+      "title": "iEnhancer-2L: predictor en dos etapas de potenciadores y su fuerza mediante composición pseudo k-tuple de nucleótidos",
+      "summary": "Dos clasificadores SVM utilizan conteos de secuencia y descriptores estructurales del ADN para identificar potenciadores y clasificar anotaciones fuertes o débiles. Su conjunto de referencia de 2,968 secuencias es la base reutilizada por los otros métodos originales.",
+      "note": "Primer objetivo de reproducción. Disponemos de las etiquetas de entrenamiento y tablas de propiedades; aún no reproducimos la exactitud publicada.",
+      "materials": [
+        {
+          "label": "PDF del artículo recibido ↗",
+          "url": "https://github.com/Venettov/EnhancersResearch/blob/main/bioinformatics_32_3_362.pdf"
+        },
+        {
+          "label": "Datos de referencia y suplementos correspondientes →",
+          "url": "resources.html#legacy-data"
+        },
+        {
+          "label": "Suplemento S1 · secuencias etiquetadas ↗",
+          "url": "https://github.com/Venettov/EnhancersResearch/blob/main/bioinformatics_32_3_362_s1/Supp-S1.pdf"
+        },
+        {
+          "label": "Suplemento S2 · tablas de propiedades ↗",
+          "url": "https://github.com/Venettov/EnhancersResearch/blob/main/bioinformatics_32_3_362_s1/Supp-S2.pdf"
+        }
+      ]
+    },
+    {
+      "id": "L02",
+      "label": "Materiales originales · Prof. Dehzangi",
+      "title": "EnhancerPred: predictor de potenciadores basado en la combinación y selección de múltiples características",
+      "summary": "Combina perfiles de posición por clase, composición de nucleótidos y conteos de secuencias de tres bases sobre el mismo conjunto histórico. Predice la identidad de potenciadores y etiquetas fuertes o débiles.",
+      "note": "Segundo modelo de referencia. Ajustar perfiles dependientes de etiquetas y seleccionar características solo con los datos de entrenamiento; sus suplementos de selección son distintos de los suplementos de iEnhancer-2L recibidos.",
+      "materials": [
+        {
+          "label": "PDF del artículo recibido ↗",
+          "url": "https://github.com/Venettov/EnhancersResearch/blob/main/srep38741.pdf"
+        },
+        {
+          "label": "Datos de referencia y suplementos correspondientes →",
+          "url": "resources.html#legacy-data"
+        }
+      ]
+    },
+    {
+      "id": "L03",
+      "label": "Materiales originales · Prof. Dehzangi",
+      "title": "iEnhancer-EL: identificación de potenciadores y su fuerza mediante aprendizaje en conjunto",
+      "summary": "Combina predictores SVM seleccionados de 171 candidatos. Utiliza el conjunto compartido de 2,968 secuencias y un suplemento de prueba independiente de 400 secuencias.",
+      "note": "Reconstrucción posterior. Las 100 secuencias fuertes de prueba del S4 actual de la editorial coinciden con entrenamiento; al quitarlas no queda una clase fuerte de prueba.",
+      "materials": [
+        {
+          "label": "PDF del artículo recibido ↗",
+          "url": "https://github.com/Venettov/EnhancersResearch/blob/main/bioinformatics_34_22_3835.pdf"
+        },
+        {
+          "label": "Datos de referencia y suplementos correspondientes →",
+          "url": "resources.html#legacy-data"
+        }
+      ]
+    },
+    {
+      "id": "L04",
+      "label": "Materiales originales · Prof. Dehzangi",
+      "title": "Mejora de la identificación de potenciadores con un conjunto apilado de múltiples clasificadores",
+      "summary": "MCSE-Enhancer combina seis familias de descriptores de secuencia y varios clasificadores para identificar potenciadores. El código público inspeccionado utiliza las mismas 2,968 secuencias de entrenamiento y 400 de prueba que nuestros archivos.",
+      "note": "Reparar antes de usar. Los cuadernos actuales contienen celdas incompletas, optimización con etiquetas de prueba y los mismos 100 solapamientos. Esto no establece el código exacto utilizado en los resultados de 2023.",
+      "materials": [
+        {
+          "label": "PDF del artículo recibido ↗",
+          "url": "https://github.com/Venettov/EnhancersResearch/blob/main/1-s2.0-S0022283623004254-main.pdf"
+        },
+        {
+          "label": "Datos de referencia y suplementos correspondientes →",
+          "url": "resources.html#legacy-data"
+        },
+        {
+          "label": "Código y datos de los autores inspeccionados ↗",
+          "url": "https://github.com/MirBilalAhmad/DNA-Enhancers/tree/d76c48946de9c46e0845df12c119a27b7e455444"
+        }
+      ]
+    },
+    {
+      "id": "P01",
+      "label": "Atlas de referencia",
+      "title": "Un registro ampliado de elementos cis-reguladores candidatos",
+      "summary": "Un mapa de referencia de ADN regulador candidato. Nuestra colección utiliza su subconjunto humano con características de potenciadores para anotar regiones experimentales.",
+      "note": "Las anotaciones de candidatos no son mediciones funcionales específicas de cada tipo celular."
+    },
+    {
+      "id": "P02",
+      "label": "Conexión experimental",
+      "title": "Caracterización masivamente paralela de elementos reguladores de la transcripción",
+      "summary": "Mediciones de lentiMPRA a gran escala en HepG2, K562 y WTC11, incluida una biblioteca compartida diseñada con 60,000 constructos.",
+      "note": "Tras reproducir el método original, comparar sus predicciones con la actividad medida. Primero reproducir la normalización; las anotaciones fuertes o débiles antiguas no son etiquetas de actividad."
+    },
+    {
+      "id": "P03",
+      "label": "Comparación de ensayos",
+      "title": "Evaluación integral de diversos ensayos de reportero masivamente paralelos para caracterizar funcionalmente los potenciadores humanos en todo el genoma",
+      "summary": "Una comparación de seis conjuntos de datos de K562 que examina la cobertura, el procesamiento, la orientación y la concordancia entre ensayos de reportero.",
+      "note": "Las mediciones de origen reutilizadas no deben contarse como validación independiente."
+    },
+    {
+      "id": "P04",
+      "label": "Evidencia del desarrollo",
+      "title": "VISTA Enhancer Browser: una base de datos actualizada de potenciadores del desarrollo específicos de tejido",
+      "journal": "Nucleic Acids Research · en línea en 2024",
+      "summary": "Una base de datos de experimentos de reportero del desarrollo con información sobre tejidos, etapas embrionarias, secuencias y alelos.",
+      "note": "La especie de origen de una secuencia y el contexto experimental del reportero son distintos."
+    },
+    {
+      "id": "P05",
+      "label": "Gramática reguladora",
+      "title": "Principios de diseño de potenciadores específicos del estado celular en la hematopoyesis",
+      "summary": "Las mediciones de potenciadores sintéticos y genómicos permiten estudiar de forma controlada las combinaciones de motivos en distintos estados de las células sanguíneas.",
+      "note": "Una ampliación posterior sobre combinaciones de motivos diseñadas, con importación y evaluación agrupada propias.",
+      "earlier_label": "Versión anterior en bioRxiv · P06"
+    },
+    {
+      "id": "P08",
+      "label": "Modelo de secuencia",
+      "authors": "Sathian, Dutta, Ay y Davuluri",
+      "title": "Modelo de lenguaje genómico para predecir potenciadores y su actividad específica de alelo en el genoma humano",
+      "summary": "DNABERT-Enhancer utiliza representaciones de secuencias de ADN para predecir anotaciones de potenciadores e investigar posibles efectos de variantes.",
+      "note": "Las probabilidades predichas y la actividad medida mediante reporteros responden a preguntas distintas.",
+      "earlier_label": "Versión anterior en bioRxiv · P07"
+    },
+    {
+      "id": "P09",
+      "label": "Predicción reguladora",
+      "title": "Avances en la predicción de efectos de variantes reguladoras con AlphaGenome",
+      "summary": "Un modelo de secuencia que conecta un contexto genómico extenso con predicciones de regulación génica, cromatina, expresión y empalme del ARN.",
+      "note": "Una herramienta opcional para interpretaciones específicas después del análisis experimental."
+    },
+    {
+      "id": "P10",
+      "label": "Prepublicación",
+      "authors": "Equipo de AlphaGenome Atlas",
+      "title": "AlphaGenome Atlas: la mutagénesis in silico de todo el genoma humano mejora la priorización e interpretación de variantes no codificantes",
+      "journal": "medRxiv · prepublicación",
+      "summary": "Un recurso de alcance genómico con efectos predichos de variantes y anotaciones derivadas para su priorización e interpretación.",
+      "note": "El proyecto incluye el artículo y sus suplementos, no una copia del Atlas completo."
+    }
   ],
   "resources": [
-    {"number":"01","title":"ENCODE4 / SCREEN","kind":"Anotaciones de candidatos","description":"Intervalos humanos de cCRE con características de potenciadores, el artículo del registro y materiales suplementarios.","use":"Anotar las regiones medidas con firmas proximales o distales similares a las de los potenciadores.","limit":"Estar fuera del subconjunto ELS no significa ser experimentalmente inactivo."},
-    {"number":"02","title":"lentiMPRA de ENCODE","kind":"Mediciones funcionales","description":"Archivos procesados de ocho experimentos, más tablas de diseño y actividad del estudio de tres tipos celulares.","use":"Comparar los mismos constructos en HepG2, K562 y WTC11.","limit":"Usar el TSV combinado o los tres TSV de réplicas por experimento, no ambos. La cobertura recupera 55,977 nombres de la tabla de especificidad; las puntuaciones siguen sin reproducirse y dos alias de controles requieren confirmación con el FASTA original."},
-    {"number":"03","title":"Comparación MPRA / STARR-seq","kind":"Fiabilidad de los ensayos","description":"Clasificaciones de actividad de los autores, procesamiento uniforme, control de calidad, recursos de referencia, artículo y código de análisis.","use":"Investigar la estabilidad de la evidencia de actividad entre ensayos de K562.","limit":"Los seis archivos comprimidos están disponibles localmente, incluidos los opcionales grandes. Determinar las regiones evaluadas conjuntamente y las mediciones reutilizadas antes de estimar concordancia; el archivo raw contiene conteos y metadatos, no FASTQ."},
-    {"number":"04","title":"VISTA Enhancer Browser","kind":"Reporteros del desarrollo","description":"Once archivos oficiales de datos y diccionarios, junto con la publicación de la base de datos.","use":"Estudiar patrones tisulares y actividad del desarrollo en experimentos definidos.","limit":"Conservar el organismo de origen, el ensamblaje genómico, la etapa, el vector y las relaciones entre alelos."},
-    {"number":"05","title":"MPRA de hematopoyesis","kind":"Gramática reguladora sintética","description":"Datos procesados en R, versiones publicada y preliminar del artículo, tablas suplementarias y código de los autores.","use":"Investigar combinaciones de motivos y actividad específica del estado celular.","limit":"Los diseños sintéticos y las escalas de procesamiento requieren una importación y un análisis de controles específicos."},
-    {"number":"06","title":"DNABERT-Enhancer","kind":"Predicción por secuencia","description":"Versiones de la publicación, material suplementario, una copia del código fuente y un archivo de modelos entrenados.","use":"Evaluar un predictor existente si la pregunta experimental lo requiere.","limit":"El archivo de modelos está disponible localmente, pero el lanzador archivado llama a un Python ausente. Reparar y validar el entorno y el modelo guardado, y definir una prueba independiente; los positivos históricos locales de prueba se solapan con desarrollo."},
-    {"number":"07","title":"AlphaGenome y Atlas","kind":"Interpretación de variantes","description":"Dos trabajos distintos, archivos suplementarios y una copia del código de investigación de AlphaGenome.","use":"Interpretar regiones o variantes seleccionadas mediante predicciones de mediciones moleculares definidas.","limit":"Las predicciones no son confirmación experimental. El Atlas completo no está almacenado en este proyecto."}
+    {
+      "number": "01",
+      "title": "ENCODE4 / SCREEN",
+      "kind": "Anotaciones de candidatos",
+      "description": "Intervalos humanos de cCRE con características de potenciadores, el artículo del registro y materiales suplementarios.",
+      "use": "Comparar regiones históricas e insertos experimentales con anotaciones candidatas modernas tras verificar el ensamblaje genómico.",
+      "limit": "Estar fuera del subconjunto ELS no significa ser experimentalmente inactivo."
+    },
+    {
+      "number": "02",
+      "title": "lentiMPRA de ENCODE",
+      "kind": "Mediciones funcionales",
+      "description": "Archivos procesados de ocho experimentos, más tablas de diseño y actividad del estudio de tres tipos celulares.",
+      "use": "Relacionar predicciones históricas reproducidas con actividad medida de insertos de 200 bases en HepG2, K562 y WTC11.",
+      "limit": "Usar el TSV combinado o los tres TSV de réplicas por experimento, no ambos. La cobertura recupera 55,977 nombres de la tabla de especificidad; las puntuaciones siguen sin reproducirse y dos alias de controles requieren confirmación con el FASTA original."
+    },
+    {
+      "number": "03",
+      "title": "Comparación MPRA / STARR-seq",
+      "kind": "Fiabilidad de los ensayos",
+      "description": "Clasificaciones de actividad de los autores, procesamiento uniforme, control de calidad, recursos de referencia, artículo y código de análisis.",
+      "use": "Evaluar si las relaciones entre predicciones históricas y actividad persisten entre ensayos de K562 medidos de forma independiente.",
+      "limit": "Los seis archivos comprimidos están disponibles localmente, incluidos los opcionales grandes. Determinar las regiones evaluadas conjuntamente y las mediciones reutilizadas antes de estimar concordancia; el archivo raw contiene conteos y metadatos, no FASTQ."
+    },
+    {
+      "number": "04",
+      "title": "VISTA Enhancer Browser",
+      "kind": "Reporteros del desarrollo",
+      "description": "Once archivos oficiales de datos y diccionarios, junto con la publicación de la base de datos.",
+      "use": "Evaluar después la transferencia del conjunto histórico a experimentos de reportero del desarrollo.",
+      "limit": "Conservar el organismo de origen, el ensamblaje genómico, la etapa, el vector y las relaciones entre alelos."
+    },
+    {
+      "number": "05",
+      "title": "MPRA de hematopoyesis",
+      "kind": "Gramática reguladora sintética",
+      "description": "Datos procesados en R, versiones publicada y preliminar del artículo, tablas suplementarias y código de los autores.",
+      "use": "Explorar si las características de secuencia capturan combinaciones de motivos diseñadas y diferencias entre estados celulares.",
+      "limit": "Los diseños sintéticos y las escalas de procesamiento requieren una importación y un análisis de controles específicos."
+    },
+    {
+      "number": "06",
+      "title": "DNABERT-Enhancer",
+      "kind": "Predicción por secuencia",
+      "description": "Versiones de la publicación, material suplementario, una copia del código fuente y un archivo de modelos entrenados.",
+      "use": "Comparar un predictor moderno con características clásicas reproducidas tras validar la inferencia y la independencia de los datos de entrenamiento.",
+      "limit": "El archivo de modelos está disponible localmente, pero el lanzador archivado llama a un Python ausente. Reparar y validar el entorno y el modelo guardado, y definir una prueba independiente; los positivos históricos locales de prueba se solapan con desarrollo."
+    },
+    {
+      "number": "07",
+      "title": "AlphaGenome y Atlas",
+      "kind": "Interpretación de variantes",
+      "description": "Dos trabajos distintos, archivos suplementarios y una copia del código de investigación de AlphaGenome.",
+      "use": "Examinar después un contexto genómico más amplio para regiones o variantes correctamente mapeadas.",
+      "limit": "Las predicciones no son confirmación experimental. El Atlas completo no está almacenado en este proyecto."
+    }
   ]
 }
