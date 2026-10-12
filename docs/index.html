@@ -25,7 +25,69 @@
     <div class="navigation-wrap"><nav id="primary-navigation" class="container primary-nav" aria-label="Main navigation"><a href="index.html" aria-current="page">Home</a><a href="research.html">Research</a><a href="publications.html">Publications</a><a href="resources.html">Resources</a><a href="notes.html">Research Notes</a><a href="glossary.html">Glossary</a><a class="nav-report" href="strategy.html">Read the research report <span aria-hidden="true">↗</span></a></nav></div>
   </header>
   <section class="hero" aria-labelledby="page-title"><div class="container hero-grid"><div class="hero-copy"><p class="eyebrow">Our proposed research goal</p><h1 id="page-title">Enhancers: Exploring the signals that control genes</h1><p>Understand how <a class="term-link" href="glossary.html#term-enhancer" data-term="enhancer" aria-label="Explain: enhancer">enhancer</a> activity changes between cells, and how reliably experiments support those patterns.</p><a class="hero-link" href="research.html">Explore the goal and the evidence <span aria-hidden="true">→</span></a></div><figure class="hero-visual" data-research-visual data-motion="paused"><img id="research-animation" class="hero-animation" width="640" height="360" src="assets/dna-helix-loop-poster.jpg" data-animation-src="assets/dna-helix-loop.gif" alt="A glowing vertical DNA double helix made of binary digits rotates against a dark background. A continuously looping conceptual animation."><figcaption><div><strong>Follow the sequence. Evaluate the evidence.</strong><span>Conceptual illustration · not measured data</span></div><button type="button" class="motion-toggle" data-motion-toggle data-play="Play animation" data-pause="Pause animation" aria-controls="research-animation" hidden><span class="motion-icon" aria-hidden="true"></span><span data-motion-label>Play animation</span></button></figcaption></figure></div></section>
-  <main id="main" class="container main-content" tabindex="-1"><div class="reader-help"><div><strong>New to the biology?</strong><span>Select a dotted-underlined term for a plain-language explanation and sources.</span></div><a href="glossary.html">Browse the glossary <span aria-hidden="true">→</span></a></div><div class="two-column home-columns">
+  <main id="main" class="container main-content" tabindex="-1"><div class="reader-help"><div><strong>New to the biology?</strong><span>Select a dotted-underlined term for a plain-language explanation and sources.</span></div><a href="glossary.html">Browse the glossary <span aria-hidden="true">→</span></a></div><section class="enhancer-basics" id="what-is-an-enhancer" aria-labelledby="enhancer-basics-title">
+  <p class="eyebrow">Start with the basics</p>
+  <h2 id="enhancer-basics-title">What is an enhancer?</h2>
+  <p class="lead enhancer-definition"><strong>An <a class="term-link" href="glossary.html#term-enhancer" data-term="enhancer" aria-label="Explain: enhancer">enhancer</a> is a stretch of <a class="term-link" href="glossary.html#term-dna" data-term="dna" aria-label="Explain: DNA">DNA</a> that can increase the activity of a <a class="term-link" href="glossary.html#term-gene" data-term="gene" aria-label="Explain: gene">gene</a>.</strong> It helps a cell control when, where, and how much that <a class="term-link" href="glossary.html#term-gene" data-term="gene" aria-label="Explain: gene">gene</a> is used—rather like a volume control.</p>
+  <figure class="enhancer-explainer" aria-labelledby="enhancer-diagram-title" aria-describedby="enhancer-diagram-caption">
+    <h3 id="enhancer-diagram-title">From a DNA signal to gene activity</h3>
+    <ol class="enhancer-steps">
+      <li>
+        <span class="explainer-step-number" aria-hidden="true">01</span>
+        <svg viewBox="0 0 320 184" role="img" aria-labelledby="enhancer-step-1-title" focusable="false">
+          <title id="enhancer-step-1-title">Proteins attached to an enhancer on DNA</title>
+          <path class="explainer-dna" d="M22 116 H298"/>
+          <rect class="explainer-enhancer" x="108" y="104" width="104" height="24" rx="6"/>
+          <path class="explainer-binding" d="M140 93 V104 M179 93 V104"/>
+          <circle class="explainer-protein" cx="140" cy="80" r="17"/>
+          <circle class="explainer-protein" cx="179" cy="80" r="17"/>
+          <text x="160" y="40" text-anchor="middle">Proteins</text>
+          <path class="explainer-label-line" d="M160 47 V59"/>
+          <text x="23" y="98">DNA</text>
+          <text x="160" y="160" text-anchor="middle" class="explainer-label-strong">Enhancer</text>
+        </svg>
+        <h4>Proteins bind to DNA</h4><p>Proteins in the cell recognize and attach to an <a class="term-link" href="glossary.html#term-enhancer" data-term="enhancer" aria-label="Explain: enhancer">enhancer</a>. These proteins help regulate <a class="term-link" href="glossary.html#term-gene" data-term="gene" aria-label="Explain: gene">gene</a> activity.</p>
+      </li>
+      <li>
+        <span class="explainer-step-number" aria-hidden="true">02</span>
+        <svg viewBox="0 0 320 184" role="img" aria-labelledby="enhancer-step-2-title" focusable="false">
+          <title id="enhancer-step-2-title">Folded DNA brings an enhancer near a promoter</title>
+          <path class="explainer-dna" d="M18 130 H104 C152 130 62 22 157 22 C252 22 168 130 216 130 H302"/>
+          <rect class="explainer-enhancer" x="70" y="119" width="61" height="22" rx="5"/>
+          <rect class="explainer-promoter" x="201" y="119" width="53" height="22" rx="5"/>
+          <circle class="explainer-protein" cx="102" cy="109" r="13"/>
+          <circle class="explainer-protein" cx="123" cy="104" r="12"/>
+          <path class="explainer-contact" d="M139 104 Q171 80 209 106"/>
+          <text x="157" y="61" text-anchor="middle">DNA</text>
+          <text x="99" y="170" text-anchor="middle" class="explainer-label-strong">Enhancer</text>
+          <text x="232" y="170" text-anchor="middle">Promoter</text>
+        </svg>
+        <h4>Distant regions can meet</h4><p><a class="term-link" href="glossary.html#term-dna" data-term="dna" aria-label="Explain: DNA">DNA</a> can fold so these proteins work with a <a class="term-link" href="glossary.html#term-promoter" data-term="promoter" aria-label="Explain: promoter">promoter</a>: the region where copying a <a class="term-link" href="glossary.html#term-gene" data-term="gene" aria-label="Explain: gene">gene</a> begins.</p>
+      </li>
+      <li>
+        <span class="explainer-step-number" aria-hidden="true">03</span>
+        <svg viewBox="0 0 320 184" role="img" aria-labelledby="enhancer-step-3-title" focusable="false">
+          <title id="enhancer-step-3-title">A promoter beside a gene, with RNA copies above it</title>
+          <path class="explainer-dna" d="M18 127 H302"/>
+          <rect class="explainer-promoter" x="56" y="115" width="54" height="24" rx="5"/>
+          <path class="explainer-gene" d="M130 114 H282 L296 127 L282 140 H130 Z"/>
+          <path class="explainer-reading" d="M84 102 V79 H127 M119 72 L128 79 L119 86"/>
+          <g class="explainer-rna"><path d="M163 55 q10 -12 20 0 t20 0 t20 0 t20 0"/><path d="M163 76 q10 -12 20 0 t20 0 t20 0 t20 0"/><path d="M163 97 q10 -12 20 0 t20 0 t20 0 t20 0"/></g>
+          <text x="207" y="27" text-anchor="middle">RNA copies</text>
+          <text x="83" y="170" text-anchor="middle">Promoter</text>
+          <text x="214" y="170" text-anchor="middle" class="explainer-label-strong">Gene</text>
+        </svg>
+        <h4>More RNA can be made</h4><p>This can help the cell make more <a class="term-link" href="glossary.html#term-rna" data-term="rna" aria-label="Explain: RNA">RNA</a> copies of the <a class="term-link" href="glossary.html#term-gene" data-term="gene" aria-label="Explain: gene">gene</a>’s information. Making <a class="term-link" href="glossary.html#term-rna" data-term="rna" aria-label="Explain: RNA">RNA</a> is part of <a class="term-link" href="glossary.html#term-gene-expression" data-term="gene-expression" aria-label="Explain: gene expression">gene expression</a>.</p>
+      </li>
+    </ol>
+    <figcaption id="enhancer-diagram-caption">A simplified example, not measured data. <a class="term-link" href="glossary.html#term-enhancer" data-term="enhancer" aria-label="Explain: Enhancers">Enhancers</a> can act from far away along the <a class="term-link" href="glossary.html#term-dna" data-term="dna" aria-label="Explain: DNA">DNA</a>; this diagram does not show actual distances or every protein involved.</figcaption>
+  </figure>
+  <p class="enhancer-connection"><strong>Why compare cells?</strong> Different cells have different combinations of regulatory proteins and different access to their <a class="term-link" href="glossary.html#term-dna" data-term="dna" aria-label="Explain: DNA">DNA</a>. The same <a class="term-link" href="glossary.html#term-enhancer" data-term="enhancer" aria-label="Explain: enhancer">enhancer</a> can therefore have different effects. We study that question using measured activity in three cell types.</p>
+  <p class="enhancer-sources"><span>Learn more:</span> <a href="https://www.ncbi.nlm.nih.gov/mesh/68004742" target="_blank" rel="noopener noreferrer" aria-describedby="external-link-note">NLM · enhancers ↗</a> <a href="https://www.genome.gov/genetics-glossary/Promoter" target="_blank" rel="noopener noreferrer" aria-describedby="external-link-note">NHGRI · promoters &amp; DNA folding ↗</a> <a href="https://www.genome.gov/genetics-glossary/Gene-Expression" target="_blank" rel="noopener noreferrer" aria-describedby="external-link-note">NHGRI · gene expression ↗</a></p>
+  <a class="text-link" href="#our-goal">See what we want to learn →</a>
+</section>
+
+<div class="two-column home-columns">
   <div>
     <section class="welcome" id="our-goal" aria-labelledby="welcome-title"><p class="eyebrow">From a goal to a testable question</p><h2 id="welcome-title">What we want to learn</h2><p class="lead">Our proposed goal is to understand how <a class="term-link" href="glossary.html#term-enhancer" data-term="enhancer" aria-label="Explain: enhancer">enhancer</a> activity depends on the cell, and how confidently we can trust the supporting measurements.</p><p><a class="term-link" href="glossary.html#term-enhancer" data-term="enhancer" aria-label="Explain: Enhancers">Enhancers</a> help control when and where <a class="term-link" href="glossary.html#term-gene-expression" data-term="gene-expression" aria-label="Explain: genes are expressed">genes are expressed</a>. We want to distinguish <a class="term-link" href="glossary.html#term-dna" data-term="dna" aria-label="Explain: DNA">DNA</a> fragments with activity shared across cellular settings from those that favor one setting, and investigate how reliable those patterns are. Our recommended first comparison uses published measurements in <a class="term-link" href="glossary.html#term-hepg2" data-term="hepg2" aria-label="Explain: HepG2">HepG2</a>, <a class="term-link" href="glossary.html#term-k562" data-term="k562" aria-label="Explain: K562">K562</a>, and <a class="term-link" href="glossary.html#term-wtc11" data-term="wtc11" aria-label="Explain: WTC11">WTC11</a> cells.</p>
       <ol class="goal-steps"><li><strong>Establish a trustworthy baseline.</strong> Check the data and <a class="term-link" href="glossary.html#term-reproduction" data-term="reproduction" aria-label="Explain: reproduce">reproduce</a> a published comparison.</li><li><strong>Investigate a focused question.</strong> Assess a possible connection between <a class="term-link" href="glossary.html#term-specificity" data-term="specificity" aria-label="Explain: cell selectivity">cell selectivity</a> and reliable activity evidence.</li><li><strong>Evaluate an original contribution.</strong> Establish what the existing papers have not answered, using prediction models if they help.</li></ol>
