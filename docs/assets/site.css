@@ -59,7 +59,7 @@ a.term-link:hover{background:#dceee8;color:#153c45!important;text-decoration-sty
 .enhancer-steps>li{position:relative;min-width:0}
 .enhancer-steps>li+li{border-left:1px solid var(--line);padding-left:28px}
 .explainer-step-number{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:var(--navy);color:white;font-size:11px;font-weight:650;letter-spacing:.5px}
-.enhancer-steps svg{display:block;width:100%;height:184px;margin:12px 0 16px;overflow:visible}
+.enhancer-steps svg{display:block;width:100%;height:244px;margin:12px 0 16px;overflow:visible}
 .enhancer-steps svg text{font:16px var(--sans);fill:var(--ink)}
 .enhancer-steps svg .explainer-label-strong{font-weight:650}
 .explainer-dna{fill:none;stroke:#9bbdb6;stroke-width:7;stroke-linecap:round}
@@ -69,6 +69,7 @@ a.term-link:hover{background:#dceee8;color:#153c45!important;text-decoration-sty
 .explainer-protein{fill:#d8a16b;stroke:#96633d;stroke-width:1.5}
 .explainer-mediator{fill:#b6afd2;stroke:#665680;stroke-width:1.5}
 .explainer-polymerase{fill:#9fc4d7;stroke:#426c82;stroke-width:2}
+.explainer-helper{fill:#d4e4ec;stroke:#426c82;stroke-width:1.5}
 .enhancer-steps svg .explainer-enzyme-label{font-size:14px}
 .explainer-binding{stroke:#96633d;stroke-width:3}
 .explainer-label-line{stroke:#96633d;stroke-width:1.5}

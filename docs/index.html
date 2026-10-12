@@ -30,63 +30,78 @@
   <h2 id="enhancer-basics-title">What is an enhancer?</h2>
   <p class="lead enhancer-definition"><strong>An <a class="term-link" href="glossary.html#term-enhancer" data-term="enhancer" aria-label="Explain: enhancer">enhancer</a> is a stretch of <a class="term-link" href="glossary.html#term-dna" data-term="dna" aria-label="Explain: DNA">DNA</a> that can increase the activity of a <a class="term-link" href="glossary.html#term-gene" data-term="gene" aria-label="Explain: gene">gene</a>.</strong> It helps a cell control when, where, and how much that <a class="term-link" href="glossary.html#term-gene" data-term="gene" aria-label="Explain: gene">gene</a> is used—rather like a volume control.</p>
   <figure class="enhancer-explainer" aria-labelledby="enhancer-diagram-title" aria-describedby="enhancer-diagram-caption">
-    <h3 id="enhancer-diagram-title">From a DNA signal to gene activity</h3>
+    <h3 id="enhancer-diagram-title">How an enhancer can increase gene activity</h3>
     <ol class="enhancer-steps">
       <li>
         <span class="explainer-step-number" aria-hidden="true">01</span>
-        <svg viewBox="0 0 320 184" role="img" aria-labelledby="enhancer-step-1-title" focusable="false">
+        <svg viewBox="0 0 320 244" role="img" aria-labelledby="enhancer-step-1-title" focusable="false">
           <title id="enhancer-step-1-title">Activator proteins bound to an enhancer on DNA</title>
-          <path class="explainer-dna" d="M22 116 H298"/>
-          <rect class="explainer-enhancer" x="108" y="104" width="104" height="24" rx="6"/>
-          <path class="explainer-binding" d="M140 93 V104 M179 93 V104"/>
-          <circle class="explainer-protein" cx="140" cy="80" r="17"/>
-          <circle class="explainer-protein" cx="179" cy="80" r="17"/>
-          <text x="160" y="40" text-anchor="middle">Activator proteins</text>
-          <path class="explainer-label-line" d="M160 47 V59"/>
-          <text x="23" y="98">DNA</text>
-          <text x="160" y="160" text-anchor="middle" class="explainer-label-strong">Enhancer</text>
+          <path class="explainer-dna" d="M22 160 H298"/>
+          <rect class="explainer-enhancer" x="108" y="148" width="104" height="24" rx="6"/>
+          <path class="explainer-binding" d="M140 137 V148 M179 137 V148"/>
+          <circle class="explainer-protein" cx="140" cy="120" r="17"/>
+          <circle class="explainer-protein" cx="179" cy="120" r="17"/>
+          <text x="160" y="71" text-anchor="middle">Activator proteins</text>
+          <path class="explainer-label-line" d="M160 78 V95"/>
+          <text x="23" y="142">DNA</text>
+          <text x="160" y="211" text-anchor="middle" class="explainer-label-strong">Enhancer</text>
         </svg>
         <h4>Activators recognize the enhancer</h4><p>Activators are <a class="term-link" href="glossary.html#term-transcription-factor" data-term="transcription-factor" aria-label="Explain: transcription factors">transcription factors</a>: proteins that recognize specific <a class="term-link" href="glossary.html#term-dna" data-term="dna" aria-label="Explain: DNA">DNA</a> sequences and help increase <a class="term-link" href="glossary.html#term-gene" data-term="gene" aria-label="Explain: gene">gene</a> activity. They bind to sites within the <a class="term-link" href="glossary.html#term-enhancer" data-term="enhancer" aria-label="Explain: enhancer">enhancer</a>.</p>
       </li>
       <li>
         <span class="explainer-step-number" aria-hidden="true">02</span>
-        <svg viewBox="0 0 320 184" role="img" aria-labelledby="enhancer-step-2-title" focusable="false">
-          <title id="enhancer-step-2-title">Folded DNA with activators, Mediator, and a promoter</title>
-          <path class="explainer-dna" d="M18 130 H104 C152 130 62 22 157 22 C252 22 168 130 216 130 H302"/>
-          <rect class="explainer-enhancer" x="70" y="119" width="61" height="22" rx="5"/>
-          <rect class="explainer-promoter" x="201" y="119" width="53" height="22" rx="5"/>
-          <circle class="explainer-protein" cx="102" cy="109" r="13"/>
-          <circle class="explainer-protein" cx="123" cy="104" r="12"/>
-          <path class="explainer-contact" d="M135 104 H150 M198 104 L213 119"/>
-          <path class="explainer-mediator" d="M152 91 Q163 81 174 89 Q191 80 200 95 Q207 109 194 116 Q178 123 165 116 Q149 119 147 106 Q143 97 152 91 Z"/>
-          <text x="250" y="77" text-anchor="middle">Mediator</text>
-          <path class="explainer-label-line" d="M227 83 L197 92"/>
-          <text x="157" y="61" text-anchor="middle">DNA</text>
-          <text x="99" y="170" text-anchor="middle" class="explainer-label-strong">Enhancer</text>
-          <text x="232" y="170" text-anchor="middle">Promoter</text>
+        <svg viewBox="0 0 320 244" role="img" aria-labelledby="enhancer-step-2-title" aria-describedby="enhancer-step-2-description" focusable="false">
+          <title id="enhancer-step-2-title">Mediator links activators to copying machinery at a promoter beside a gene</title><desc id="enhancer-step-2-description">The blue enzyme and smaller helper proteins form the copying machinery at the promoter. Mediator contacts these proteins, and the gene remains visible to their right.</desc>
+          <path class="explainer-dna" d="M18 160 H80 C120 160 80 28 140 28 C222 28 171 160 205 160 H303"/>
+          <rect class="explainer-enhancer" x="50" y="148" width="70" height="24" rx="6"/>
+          <rect class="explainer-promoter" x="198" y="148" width="37" height="24" rx="5"/>
+          <path class="explainer-gene" d="M243 147 H288 L302 160 L288 173 H243 Z"/>
+          <circle class="explainer-protein" cx="78" cy="133" r="13"/>
+          <circle class="explainer-protein" cx="101" cy="129" r="12"/>
+          <path class="explainer-contact" d="M113 133 H128 M174 130 L190 125"/>
+          <path class="explainer-mediator" d="M130 117 Q140 108 150 117 Q166 109 174 122 Q181 135 169 142 Q155 150 143 142 Q128 145 126 132 Q122 124 130 117 Z"/>
+          <g class="explainer-copying-machinery">
+            <ellipse class="explainer-polymerase" cx="221" cy="132" rx="22" ry="19"/>
+            <circle class="explainer-helper" cx="197" cy="121" r="10"/>
+            <circle class="explainer-helper" cx="208" cy="108" r="9"/>
+          </g>
+          <text x="140" y="64" text-anchor="middle">DNA</text>
+          <text x="47" y="92" text-anchor="middle">Mediator</text>
+          <path class="explainer-label-line" d="M69 99 L131 117"/>
+          <text x="244" y="76" text-anchor="middle" class="explainer-enzyme-label">Copying</text>
+          <text x="244" y="94" text-anchor="middle" class="explainer-enzyme-label">machinery</text>
+          <path class="explainer-label-line" d="M244 101 L230 115"/>
+          <text x="84" y="211" text-anchor="middle" class="explainer-label-strong">Enhancer</text>
+          <text x="204" y="211" text-anchor="middle">Promoter</text>
+          <text x="275" y="211" text-anchor="middle" class="explainer-label-strong">Gene</text>
         </svg>
-        <h4>Helper proteins connect the parts</h4><p><a class="term-link" href="glossary.html#term-dna" data-term="dna" aria-label="Explain: DNA">DNA</a> folding can bring the <a class="term-link" href="glossary.html#term-enhancer" data-term="enhancer" aria-label="Explain: enhancer">enhancer</a> near a <a class="term-link" href="glossary.html#term-promoter" data-term="promoter" aria-label="Explain: promoter">promoter</a>, where <a class="term-link" href="glossary.html#term-gene" data-term="gene" aria-label="Explain: gene">gene</a> copying begins. <a class="term-link" href="glossary.html#term-mediator" data-term="mediator" aria-label="Explain: Mediator">Mediator</a> is a group of proteins that helps these parts communicate.</p>
+        <h4>Helper proteins connect the parts</h4><p><a class="term-link" href="glossary.html#term-dna" data-term="dna" aria-label="Explain: DNA">DNA</a> folding can bring an <a class="term-link" href="glossary.html#term-enhancer" data-term="enhancer" aria-label="Explain: enhancer">enhancer</a> near a <a class="term-link" href="glossary.html#term-promoter" data-term="promoter" aria-label="Explain: promoter">promoter</a>, where copying begins. <a class="term-link" href="glossary.html#term-mediator" data-term="mediator" aria-label="Explain: Mediator">Mediator</a> helps activators communicate with <a class="term-link" href="glossary.html#term-rna-polymerase-ii" data-term="rna-polymerase-ii" aria-label="Explain: RNA polymerase II">RNA polymerase II</a> and other proteins assembled there. The <a class="term-link" href="glossary.html#term-gene" data-term="gene" aria-label="Explain: gene">gene</a> is shown to the right.</p>
       </li>
       <li>
         <span class="explainer-step-number" aria-hidden="true">03</span>
-        <svg viewBox="0 0 320 184" role="img" aria-labelledby="enhancer-step-3-title" focusable="false">
-          <title id="enhancer-step-3-title">RNA polymerase II copying a gene into RNA</title>
-          <path class="explainer-dna" d="M18 127 H302"/>
-          <rect class="explainer-promoter" x="56" y="115" width="54" height="24" rx="5"/>
-          <path class="explainer-gene" d="M130 114 H282 L296 127 L282 140 H130 Z"/>
-          <ellipse class="explainer-polymerase" cx="142" cy="114" rx="24" ry="20"/>
-          <path class="explainer-rna" d="M157 100 Q176 90 166 76"/>
-          <text x="87" y="34" text-anchor="middle" class="explainer-enzyme-label">RNA polymerase II</text>
-          <path class="explainer-label-line" d="M88 43 L129 93"/>
-          <g class="explainer-rna"><path d="M163 55 q10 -12 20 0 t20 0 t20 0 t20 0"/><path d="M163 76 q10 -12 20 0 t20 0 t20 0 t20 0"/><path d="M163 97 q10 -12 20 0 t20 0 t20 0 t20 0"/></g>
-          <text x="228" y="27" text-anchor="middle">RNA copies</text>
-          <text x="83" y="170" text-anchor="middle">Promoter</text>
-          <text x="214" y="170" text-anchor="middle" class="explainer-label-strong">Gene</text>
+        <svg viewBox="0 0 320 244" role="img" aria-labelledby="enhancer-step-3-title" aria-describedby="enhancer-step-3-description" focusable="false">
+          <title id="enhancer-step-3-title">Close-up of the same promoter and gene, with one growing RNA strand and separate completed copies</title><desc id="enhancer-step-3-description">One continuous RNA strand emerges from RNA polymerase II. Two completed RNA copies above it are separate from the growing strand and from each other.</desc>
+          <path class="explainer-dna" d="M18 160 H302"/>
+          <rect class="explainer-promoter" x="56" y="148" width="54" height="24" rx="5"/>
+          <path class="explainer-gene" d="M130 147 H282 L296 160 L282 173 H130 Z"/>
+          <ellipse class="explainer-polymerase" cx="153" cy="155" rx="24" ry="21"/>
+          <path class="explainer-rna explainer-rna-growing" d="M172 142 C183 139 174 131 184 131 Q194 119 204 131 T224 131 T244 131 T264 131"/>
+          <g class="explainer-rna explainer-rna-completed">
+            <path d="M184 61 Q194 49 204 61 T224 61 T244 61 T264 61"/>
+            <path d="M184 85 Q194 73 204 85 T224 85 T244 85 T264 85"/>
+          </g>
+          <text x="79" y="40" text-anchor="middle" class="explainer-enzyme-label">RNA polymerase II</text>
+          <path class="explainer-label-line" d="M80 48 L140 134"/>
+          <text x="224" y="23" text-anchor="middle" class="explainer-enzyme-label">Completed RNA</text>
+          <text x="224" y="40" text-anchor="middle" class="explainer-enzyme-label">copies</text>
+          <text x="228" y="113" text-anchor="middle" class="explainer-enzyme-label">Growing RNA</text>
+          <text x="83" y="211" text-anchor="middle">Promoter</text>
+          <text x="214" y="211" text-anchor="middle" class="explainer-label-strong">Gene</text>
         </svg>
-        <h4>The gene is copied into RNA</h4><p><a class="term-link" href="glossary.html#term-rna-polymerase-ii" data-term="rna-polymerase-ii" aria-label="Explain: RNA polymerase II">RNA polymerase II</a> is the enzyme that copies a <a class="term-link" href="glossary.html#term-gene" data-term="gene" aria-label="Explain: gene">gene</a> into <a class="term-link" href="glossary.html#term-rna" data-term="rna" aria-label="Explain: RNA">RNA</a>. Activators and helper proteins can increase this copying, called <a class="term-link" href="glossary.html#term-transcription" data-term="transcription" aria-label="Explain: transcription">transcription</a>.</p>
+        <h4>Closer view: copying the gene</h4><p>Here we zoom in on the <a class="term-link" href="glossary.html#term-promoter" data-term="promoter" aria-label="Explain: promoter">promoter</a> and <a class="term-link" href="glossary.html#term-gene" data-term="gene" aria-label="Explain: gene">gene</a> from panel 02. Each <a class="term-link" href="glossary.html#term-rna-polymerase-ii" data-term="rna-polymerase-ii" aria-label="Explain: RNA polymerase II">RNA polymerase II</a> builds one <a class="term-link" href="glossary.html#term-rna" data-term="rna" aria-label="Explain: RNA">RNA</a> strand; the separate strands show earlier completed copies. <a class="term-link" href="glossary.html#term-enhancer" data-term="enhancer" aria-label="Explain: Enhancer">Enhancer</a> activity can increase <a class="term-link" href="glossary.html#term-transcription" data-term="transcription" aria-label="Explain: transcription">transcription</a>—the copying of <a class="term-link" href="glossary.html#term-dna" data-term="dna" aria-label="Explain: DNA">DNA</a> into <a class="term-link" href="glossary.html#term-rna" data-term="rna" aria-label="Explain: RNA">RNA</a>.</p>
       </li>
     </ol>
-    <figcaption id="enhancer-diagram-caption">One simplified model, not measured data. The shapes represent <a class="term-link" href="glossary.html#term-dna" data-term="dna" aria-label="Explain: DNA">DNA</a> regions and protein groups, not their real sizes. <a class="term-link" href="glossary.html#term-enhancer" data-term="enhancer" aria-label="Explain: Enhancer">Enhancer</a>–<a class="term-link" href="glossary.html#term-promoter" data-term="promoter" aria-label="Explain: promoter">promoter</a> communication involves additional proteins and can differ between <a class="term-link" href="glossary.html#term-gene" data-term="gene" aria-label="Explain: genes">genes</a> and cells.</figcaption>
+    <figcaption id="enhancer-diagram-caption">Conceptual illustration, not measured data. The numbered panels explain the parts, not a fixed order that every <a class="term-link" href="glossary.html#term-gene" data-term="gene" aria-label="Explain: gene">gene</a> follows. Shapes and distances are schematic. Panel 03 enlarges the <a class="term-link" href="glossary.html#term-promoter" data-term="promoter" aria-label="Explain: promoter">promoter</a> and <a class="term-link" href="glossary.html#term-gene" data-term="gene" aria-label="Explain: gene">gene</a> region; the <a class="term-link" href="glossary.html#term-enhancer" data-term="enhancer" aria-label="Explain: enhancer">enhancer</a> is outside that close-up.</figcaption>
   </figure>
   <figure class="enhancer-locations" id="enhancer-locations" aria-labelledby="enhancer-locations-title" aria-describedby="enhancer-locations-caption">
     <h3 id="enhancer-locations-title">An enhancer does not have to sit next to its gene</h3>
