@@ -11,6 +11,15 @@
 *.rda
 *.RData
 
+# Original research materials supplied with the project and tracked explicitly.
+!/1-s2.0-S0022283623004254-main.pdf
+!/bioinformatics_32_3_362.pdf
+!/bioinformatics_32_3_362_s1.zip
+!/bioinformatics_34_22_3835.pdf
+!/srep38741.pdf
+!/bioinformatics_32_3_362_s1/Supp-S1.pdf
+!/bioinformatics_32_3_362_s1/Supp-S2.pdf
+
 # Preserve the study folder skeleton while leaving downloaded artifacts local.
 NEW_2026_DATA/01_ENCODE4_SCREEN/GRCh38-cCREs.ELS.bed
 NEW_2026_DATA/02_LENTIMPRA_ENCODE_2025/ENCSR*/*

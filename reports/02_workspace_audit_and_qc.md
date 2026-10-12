@@ -186,7 +186,9 @@ At the start of this audit, the root README, lentiMPRA guide, and data manifest 
 
 `Links.docx` contains a BERT-enhancer repository link and an Oxford link ending in `bbad360`. The latter identifies GLMSite, a study of nucleic-acid-binding sites on proteins, rather than an enhancer-prediction paper. Retain it as background only if that was intended; it should not be used as a citation for the linked BERT enhancer method. [Primary bibliographic record](https://pubmed.ncbi.nlm.nih.gov/37824738/)
 
-The older papers are represented by `legacy_references.tsv`; their listed PDFs are absent from this checkout. The `bioinformatics_32_3_362_s1` directory contains only a placeholder. It should not be interpreted as a populated supplement archive.
+At the time of this audit, the older papers were represented by `legacy_references.tsv`, but their listed PDFs were absent from this checkout. The `bioinformatics_32_3_362_s1` directory contained only a placeholder.
+
+**Follow-up, 12 October 2026:** the four original article PDFs, the iEnhancer-2L supplement ZIP, and both extracted supplement PDFs have now been added to the repository. All seven files match the supplied originals by SHA-256; the ZIP passes its integrity check, and both extracted PDFs match the corresponding archive members. This resolves the original-file gap and does not change the dated audit results or the separate 109-resource manifest inventory.
 
 ## Recommended next work
 

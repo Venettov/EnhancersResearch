@@ -51,6 +51,7 @@ Treat each source as a distinct experiment. An ENCODE candidate regulatory eleme
 | `NEW_2026_DATA/07_ALPHAGENOME_2026/` | AlphaGenome paper and supplements, plus the AlphaGenome Atlas preprint and related materials. |
 | `Links.docx` | Links retained from the original project folder. |
 | `legacy_references.tsv` | Citation and source links for the original papers in this folder. |
+| Original article PDFs, `bioinformatics_32_3_362_s1.zip`, and `bioinformatics_32_3_362_s1/` | Four original papers, the iEnhancer-2L supplement archive, and its two extracted PDFs, tracked directly in Git. |
 | `reports/` | Dated strategy, completed QC audit, evidence JSON, audit script, and decision log. |
 | `website/` and `docs/` | Bilingual website source and generated GitHub Pages output. See [website instructions](website/README.md). |
 
@@ -77,7 +78,7 @@ The source collection includes ENCODE4 SCREEN, eight ENCODE lentiMPRA experiment
 
 ## Get the downloadable resources after cloning
 
-The large data files, article PDFs, supplementary files, and code archives are intentionally excluded from Git. Their folders and source manifests remain in the repository. From the repository root, run:
+The large data files, article PDFs, supplementary files, and code archives under `NEW_2026_DATA/` are intentionally excluded from Git. Their folders and source manifests remain in the repository. From the repository root, run:
 
 ```bash
 python3 NEW_2026_DATA/download_project_resources.py --group data
@@ -94,7 +95,7 @@ python3 NEW_2026_DATA/download_project_resources.py --group all --include-option
 
 Those four optional archives are already present in the audited local workspace, but remain opt-in after a fresh clone. The optional group adds about **47.7 GB**, bringing the current downloadable collection to about **51.1 GB** before extracting archives. It includes the MPRA/STARR raw archive (516 MB), uniform-processed archive (25.4 GB), reference archive (11.1 GB), and DNABERT-Enhancer model archive (10.7 GB). The downloader attempts to resume interrupted transfers where the source supports HTTP range requests; if not, it safely restarts that file. These archives remain compressed. Keep additional free space if you plan to extract them.
 
-The existing benchmark text files and project documentation are tracked directly. The legacy test-set overlap warning above applies to these tracked sequence files. The older papers already present in the original working folder are listed in `legacy_references.tsv`; use those DOI or publisher links to retrieve them. Full-text copies are not included in Git.
+The existing benchmark text files and project documentation are tracked directly. The legacy test-set overlap warning above applies to these tracked sequence files. The four original article PDFs listed in `legacy_references.tsv`, the iEnhancer-2L supplement ZIP, and its extracted `Supp-S1.pdf` and `Supp-S2.pdf` are also tracked directly. On 12 October 2026, all seven files (5,690,584 bytes) were verified by SHA-256 against the supplied originals; the ZIP passed its integrity check, and both extracted PDFs matched its contents. These original materials are separate from the 109 manifest-listed downloadable resources. DOI and publisher links remain in `legacy_references.tsv` for provenance.
 
 ## Large or externally hosted resources
 
