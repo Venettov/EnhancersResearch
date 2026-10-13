@@ -1,5 +1,7 @@
 # EnhancersResearch — Exploring the signals that control genes
 
+Student research at the [Center for Computational and Integrative Biology (CCIB)](https://ccib.camden.rutgers.edu/), Rutgers University–Camden.
+
 Our goal is to **reproduce published enhancer prediction methods, starting with iEnhancer-2L, then connect their predictions to measured activity in HepG2, K562, and WTC11**. We begin with the four original papers and sequence files supplied by Prof. Dehzangi. The matched lentiMPRA study provides the main experimental comparison after reconstruction and data preparation; its shared design and traceable measurements make it useful, not file size alone.
 
 [Website in English](https://venettov.github.io/EnhancersResearch/) · [Sitio en español](https://venettov.github.io/EnhancersResearch/es/) · [Current research notes](https://venettov.github.io/EnhancersResearch/notes.html#qc)

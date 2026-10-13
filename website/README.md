@@ -1,6 +1,6 @@
 # EnhancersResearch website
 
-A static research website inspired by the academic navigation and main-column/sidebar structure of the [MLBC Lab website](https://mlbclab.camden.rutgers.edu/), with the project's own typography, colors, illustration, and research content. It does not imply Rutgers affiliation.
+A static research website inspired by the academic navigation and main-column/sidebar structure of the [MLBC Lab website](https://mlbclab.camden.rutgers.edu/), with the project's own typography, colors, illustration, and research content. The site identifies this as student research at the [Center for Computational and Integrative Biology (CCIB)](https://ccib.camden.rutgers.edu/), Rutgers University–Camden. The official center name is retained in both languages, with responsive header and footer affiliation links.
 
 ## Build and preview
 

@@ -4,8 +4,6 @@
   "repository": "Explore the repository",
   "home_label": "EnhancersResearch home",
   "tagline": "Sequence. Context. Function.",
-  "discipline": "Computational biology",
-  "approach": "Evidence-led exploration",
   "menu": "Menu",
   "navigation_label": "Main navigation",
   "language_label": "Language",
@@ -66,5 +64,8 @@
       "Evidence & Strategy",
       "Research report 01: enhancer biology, the collected literature, and an analysis-first research strategy."
     ]
-  }
+  },
+  "affiliation_name": "Center for Computational and Integrative Biology (CCIB)",
+  "affiliation_campus": "Rutgers University–Camden",
+  "student_research": "Student research at"
 }

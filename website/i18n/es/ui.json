@@ -4,8 +4,6 @@
   "repository": "Explorar el repositorio",
   "home_label": "Inicio de EnhancersResearch",
   "tagline": "Secuencia. Contexto. Función.",
-  "discipline": "Biología computacional",
-  "approach": "Exploración basada en evidencia",
   "menu": "Menú",
   "navigation_label": "Navegación principal",
   "language_label": "Idioma",
@@ -66,5 +64,8 @@
       "Evidencia y estrategia",
       "Informe de investigación 01: biología de los potenciadores, bibliografía recopilada y una estrategia que comienza por el análisis."
     ]
-  }
+  },
+  "affiliation_name": "Center for Computational and Integrative Biology (CCIB)",
+  "affiliation_campus": "Rutgers University–Camden",
+  "student_research": "Investigación estudiantil en"
 }
