@@ -158,7 +158,7 @@ def build():
             rendered = external_links_in_new_tabs(rendered)
             (destination / f"{slug}.html").write_text(rendered, encoding="utf-8")
     (OUTPUT / ".nojekyll").write_text("")
-    print(f"Built 14 pages in {OUTPUT} (English and Spanish, including the glossary)")
+    print(f"Built {len(pages) * 2} pages in {OUTPUT} (English and Spanish, including the glossary)")
 
 
 if __name__ == "__main__":

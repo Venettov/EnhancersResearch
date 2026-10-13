@@ -113,3 +113,26 @@ a.term-link:hover{background:#dceee8;color:#153c45!important;text-decoration-sty
 
 /* Student affiliation uses the official center name in both languages. */
 .footer-grid .footer-affiliation{max-width:360px;margin-top:18px;color:#c5d9d5}.footer-affiliation a{color:#e5f4ee;text-decoration:underline}.footer-affiliation>span{display:block;margin-top:4px}
+
+/* A reading guide with an anchored checklist and copyable terminal commands. */
+.primary-nav{flex-wrap:wrap}
+.guide-layout{display:grid;grid-template-columns:minmax(0,1fr) 220px;gap:64px;align-items:start}
+.replication-guide,.guide-sidebar{min-width:0}.replication-guide a{overflow-wrap:anywhere}
+.guide-start h2{font-size:36px}.guide-start .lead{font-size:18px}
+.guide-status{padding:22px 24px;border-left:3px solid var(--teal);background:var(--mint);font-size:14px;line-height:1.9}
+.guide-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;padding:0;margin:28px 0;list-style:none;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden;counter-reset:guide-stage}
+.guide-flow li{padding:16px 12px;background:var(--canvas);font-size:12px;font-weight:600;line-height:1.5;counter-increment:guide-stage}
+.guide-flow li::before{content:'0' counter(guide-stage);display:block;color:var(--teal);font-size:11px;margin-bottom:8px}
+.guide-step{margin-top:44px;padding-top:30px;border-top:1px solid var(--line);scroll-margin-top:24px}
+.guide-step h2{font-size:30px}.guide-step h3{font-size:20px}.guide-step li{margin-block:12px}.guide-step code{font-size:.86em;overflow-wrap:anywhere}
+.guide-tools{margin:24px 0}.guide-tools>div{padding:16px 0;border-bottom:1px solid var(--line)}.guide-tools dt{font-weight:600;font-size:14px}.guide-tools dd{margin:7px 0 0;font-size:14px}
+.guide-command{max-width:100%;overflow-x:auto;white-space:pre;padding:20px;background:#173b44;color:#eaf5f1;border:1px solid #31535a;border-radius:6px;font-size:12px;line-height:1.9;tab-size:2}
+.guide-command code{font:inherit;color:inherit;background:none;overflow-wrap:normal}
+.guide-details{margin:20px 0;padding:0 18px;border:1px solid var(--line);border-radius:6px}.guide-details summary{padding:14px 0;font-size:14px;font-weight:600;color:var(--teal);cursor:pointer}.guide-details p{font-size:13px}
+.guide-check{border-left:3px solid #b98142;background:#f8f4ec;padding:18px 20px;font-size:14px}
+.guide-toc{position:sticky;top:24px;padding:20px 0 20px 22px;border-left:1px solid var(--line)}.guide-sidebar{align-self:stretch}.guide-toc>a{display:block;padding:7px 0;font-size:12px;text-decoration:none;line-height:1.6}.guide-toc>a:hover{text-decoration:underline}
+.guide-sources{font-size:12px;padding-top:20px}.guide-deliverables{padding-left:20px}.replication-guide table{font-size:12px}.replication-guide th,.replication-guide td{padding:12px}.replication-guide td a{overflow-wrap:anywhere}
+@media(min-width:761px) and (max-width:960px){.primary-nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:16px}.primary-nav .nav-report{margin-left:0}.primary-nav a{padding-block:12px}}
+@media(max-width:1000px){.guide-layout{grid-template-columns:minmax(0,1fr) 180px;gap:30px}}
+@media(max-width:760px){.guide-layout{display:flex;flex-direction:column;gap:26px}.guide-sidebar{order:-1}.guide-toc{position:static;padding:16px;border:1px solid var(--line);border-radius:6px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 12px}.guide-toc .eyebrow{grid-column:1/-1}.guide-toc>a{font-size:11px;padding:7px 0}.guide-start h2{font-size:29px}.guide-step h2{font-size:27px}.guide-status{padding:18px}.guide-flow{grid-template-columns:repeat(2,minmax(0,1fr))}.guide-step{margin-top:32px;padding-top:24px}.guide-command{padding:14px;font-size:11px}.guide-details{padding:0 12px}.guide-check{padding:16px}.replication-guide{width:100%}}
+@media print{.guide-sidebar{display:none}.guide-layout{display:block}.guide-command{white-space:pre-wrap;overflow-wrap:anywhere;background:#fff;color:#000}.guide-details:not([open])>*{display:block}.guide-flow{break-inside:avoid}}

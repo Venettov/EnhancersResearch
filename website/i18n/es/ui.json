@@ -48,6 +48,10 @@
       "Investigación",
       "Plan de reproducción, métodos originales, límites del conjunto de referencia y conexión con lentiMPRA en tres tipos celulares."
     ],
+    "reproduce": [
+      "Reproducir",
+      "Guía paso a paso para reconstruir iEnhancer-2L: software, datos originales, comprobaciones, implementación y transferencia experimental."
+    ],
     "publications": [
       "Publicaciones",
       "Doce trabajos: cuatro artículos originales recibidos del Prof. Dehzangi y ocho trabajos nuevos, con enlaces a datos y funciones en la investigación."
@@ -67,5 +71,6 @@
   },
   "affiliation_name": "Center for Computational and Integrative Biology (CCIB)",
   "affiliation_campus": "Rutgers University–Camden",
-  "student_research": "Investigación estudiantil en"
+  "student_research": "Investigación estudiantil en",
+  "reproduction_guide": "Guía de reproducción"
 }

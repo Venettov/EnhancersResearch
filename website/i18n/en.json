@@ -48,6 +48,10 @@
       "Research",
       "The replication roadmap, original methods, benchmark limitations, and the bridge to three-cell lentiMPRA."
     ],
+    "reproduce": [
+      "Reproduce",
+      "A step-by-step guide to reconstructing iEnhancer-2L: software, original data, checks, model implementation, and experimental transfer."
+    ],
     "publications": [
       "Publications",
       "Twelve works: four original papers supplied by Prof. Dehzangi and eight newer works, with data links and research roles."
@@ -67,5 +71,6 @@
   },
   "affiliation_name": "Center for Computational and Integrative Biology (CCIB)",
   "affiliation_campus": "Rutgers University–Camden",
-  "student_research": "Student research at"
+  "student_research": "Student research at",
+  "reproduction_guide": "Reproduction guide"
 }

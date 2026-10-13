@@ -40,3 +40,8 @@ NEW_2026_DATA/**/CODE/*
 !NEW_2026_DATA/**/CODE/.gitkeep
 NEW_2026_DATA/**/MODEL_WEIGHTS/*
 !NEW_2026_DATA/**/MODEL_WEIGHTS/.gitkeep
+
+# Local replication environment and generated run outputs.
+.venv/
+__pycache__/
+replication/ienhancer_2l/output/

@@ -5,7 +5,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const base = (process.env.SITE_URL || 'http://127.0.0.1:8766/').replace(/\/?$/, '/');
 const screenshotDir = process.env.SCREENSHOT_DIR;
-const pages = ['index', 'research', 'publications', 'resources', 'notes', 'strategy', 'glossary'];
+const pages = ['index', 'research', 'reproduce', 'publications', 'resources', 'notes', 'strategy', 'glossary'];
 const language = base.endsWith('/es/') ? 'es' : 'en';
 const root = language === 'es' ? base.slice(0, -3) : base;
 
@@ -122,7 +122,7 @@ const root = language === 'es' ? base.slice(0, -3) : base;
     assert.equal(page.url(), `${root}es/research.html`, 'Navigation stays in the selected language');
     assert.deepEqual(errors, [], 'No page errors or local HTTP failures');
     await noJS.close();
-    console.log(`PASS (${language}): seven pages at four widths, localized controls, search/filtering, language and anchor preservation, mobile/keyboard navigation, no-JavaScript switching, and no page errors`);
+    console.log(`PASS (${language}): eight pages at four widths, localized controls, search/filtering, language and anchor preservation, mobile/keyboard navigation, no-JavaScript switching, and no page errors`);
   } finally {
     await browser.close();
   }

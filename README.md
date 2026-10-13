@@ -8,6 +8,8 @@ Our goal is to **reproduce published enhancer prediction methods, starting with 
 
 This is a curated research workspace with completed local file/QC audits and an initial reconciliation of the published data. **Numerical specificity-score reproduction remains unresolved.** There is no executed end-to-end research pipeline, new biological discovery, or validated new predictor. The datasets have not been combined into one training set.
 
+Start with the **[step-by-step reproduction guide](https://venettov.github.io/EnhancersResearch/reproduce.html)** ([español](https://venettov.github.io/EnhancersResearch/es/reproduce.html)): VS Code/Python setup, original files, a runnable data-preparation check, the method specification, and evaluation milestones. Model training remains planned.
+
 ## Original papers and the current replication plan
 
 | Original paper | Corresponding data and role |
