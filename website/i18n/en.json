@@ -35,7 +35,7 @@
   "visual_pause": "Pause animation",
   "visual_play": "Play animation",
   "report_kicker": "Research report 01 · 10 October 2026",
-  "report_notice": "<strong>Historical report · 10 October 2026.</strong> We preserve the initial strategy as a dated record. The current goal is to reproduce iEnhancer-2L and then link its predictions to lentiMPRA measurements. See the <a href=\"research.html#project-goal\">updated plan</a>, the <a href=\"publications.html#L01\">four original papers</a>, and the <a href=\"notes.html#replication-review\">12 October review</a>. This report’s priorities and counts describe its date, not the current project state.",
+  "report_notice": "<strong>Historical report · 10 October 2026.</strong> We preserve the initial strategy as a dated record. The current goal is to reproduce iEnhancer-2L and then link its predictions to lentiMPRA measurements. Current references: the <a href=\"research.html#project-goal\">updated plan</a>, the <a href=\"publications.html#L01\">four original papers</a>, and the <a href=\"notes.html#replication-review\">12 October review</a>. This report’s priorities and counts describe its date, not the current project state.",
   "report_contents": "Report contents",
   "in_report": "In this report",
   "back_top": "Back to the beginning",

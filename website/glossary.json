@@ -436,7 +436,7 @@
           "enhancers",
           "enhancer"
         ],
-        "definition": "A DNA region that can increase the use of a gene in an appropriate cellular setting. Think of a context-dependent volume control: it helps determine how much a gene is used, sometimes from far away along the DNA.",
+        "definition": "A DNA region that can increase the use of a gene in an appropriate cellular setting. It acts like a context-dependent volume control: it helps determine how much a gene is used, sometimes from far away along the DNA.",
         "context": "We compare evidence for enhancer activity while keeping the cell type and experimental method clear. Activity in one test is not proof of activity everywhere."
       },
       "es": {
@@ -1583,7 +1583,7 @@
           "train/test"
         ],
         "definition": "When information from data meant to test a model influences its training or selection. The model can then appear more accurate than it would be on genuinely new examples.",
-        "context": "All 100 strong examples in the inspected historical test set also occur in training. Separate related sequences and keep test labels out of model selection."
+        "context": "All 100 strong examples in the inspected historical test set also occur in training. Independent evaluation requires separating related sequences and keeping test labels out of model selection."
       },
       "es": {
         "name": "Fuga de información",
@@ -1595,7 +1595,7 @@
           "entrenamiento/prueba"
         ],
         "definition": "Ocurre cuando información de los datos reservados para evaluar un modelo influye en su entrenamiento o selección. El modelo puede parecer más preciso de lo que sería ante ejemplos nuevos.",
-        "context": "Los 100 ejemplos fuertes de la prueba histórica inspeccionada también aparecen en entrenamiento. Separar secuencias relacionadas y excluir las etiquetas de prueba de la selección del modelo."
+        "context": "Los 100 ejemplos fuertes de la prueba histórica inspeccionada también aparecen en entrenamiento. La evaluación independiente requiere separar secuencias relacionadas y excluir las etiquetas de prueba de la selección del modelo."
       },
       "sources": [
         "leakage"

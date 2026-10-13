@@ -35,7 +35,7 @@
   "visual_pause": "Pausar animación",
   "visual_play": "Reproducir animación",
   "report_kicker": "Informe de investigación 01 · 10 de octubre de 2026",
-  "report_notice": "<strong>Informe histórico · 10 de octubre de 2026.</strong> Conservamos la estrategia inicial como registro fechado. El objetivo actual es reproducir iEnhancer-2L y después relacionar sus predicciones con las mediciones de lentiMPRA. Consulta el <a href=\"research.html#project-goal\">plan actualizado</a>, los <a href=\"publications.html#L01\">cuatro artículos originales</a> y la <a href=\"notes.html#replication-review\">revisión del 12 de octubre</a>. Las prioridades y los recuentos de este informe corresponden a su fecha, no al estado actual.",
+  "report_notice": "<strong>Informe histórico · 10 de octubre de 2026.</strong> Conservamos la estrategia inicial como registro fechado. El objetivo actual es reproducir iEnhancer-2L y después relacionar sus predicciones con las mediciones de lentiMPRA. Referencias actuales: el <a href=\"research.html#project-goal\">plan actualizado</a>, los <a href=\"publications.html#L01\">cuatro artículos originales</a> y la <a href=\"notes.html#replication-review\">revisión del 12 de octubre</a>. Las prioridades y los recuentos de este informe corresponden a su fecha, no al estado actual.",
   "report_contents": "Contenido del informe",
   "in_report": "En este informe",
   "back_top": "Volver al inicio",
