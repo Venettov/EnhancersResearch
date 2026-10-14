@@ -8,7 +8,9 @@ Our goal is to **reproduce published enhancer prediction methods, starting with 
 
 This is a curated research workspace with completed local file/QC audits and an initial reconciliation of the published data. **Numerical specificity-score reproduction remains unresolved.** There is no executed end-to-end research pipeline, new biological discovery, or validated new predictor. The datasets have not been combined into one training set.
 
-Start with the **[step-by-step reproduction guide](https://venettov.github.io/EnhancersResearch/reproduce.html)** ([español](https://venettov.github.io/EnhancersResearch/es/reproduce.html)): VS Code/Python setup, original files, a runnable data-preparation check, the method specification, and evaluation milestones. Model training remains planned.
+Start with the **[step-by-step reproduction guide](https://venettov.github.io/EnhancersResearch/reproduce.html)** ([español](https://venettov.github.io/EnhancersResearch/es/reproduce.html)): VS Code/Python setup, original files, runnable preparation and feature code, and evaluation milestones. Model training remains planned.
+
+**13 October reproduction checkpoint:** all 2,968 benchmark sequences match their hg19 intervals. A predeclared grouping policy yields **2,451 groups**, saved as 5 outer / 3 inner folds with no recorded related pair crossing a boundary. PseKNC matrices have **4,105 features** per sequence for both classification layers. Five explicitly documented counting/normalization variants are saved locally; sample standard deviation matches the supplement's normalized table within its rounding. These are validated reconstruction choices, not proof of exact author-code equivalence or reproduced accuracy. The [implementation and rerun instructions](replication/ienhancer_2l/README.md) and [checkpoint evidence](replication/ienhancer_2l/checkpoints/2026-10-13-groups-features/) preserve the details. No model has been trained.
 
 ## Original papers and the current replication plan
 
@@ -70,6 +72,7 @@ Treat each source as a distinct experiment. An ENCODE candidate regulatory eleme
 | `legacy_references.tsv` | Citation and source links for the original papers in this folder. |
 | Original article PDFs, `bioinformatics_32_3_362_s1.zip`, and `bioinformatics_32_3_362_s1/` | Four original papers, the iEnhancer-2L supplement archive, and its two extracted PDFs, tracked directly in Git. |
 | `reports/` | Dated strategy, completed QC audit, evidence JSON, audit script, and decision log. |
+| `replication/ienhancer_2l/` | Audited data preparation, frozen grouped folds, PseKNC reconstruction, tests and checkpoint evidence; model training is next. |
 | `website/` and `docs/` | Bilingual website source and generated GitHub Pages output. See [website instructions](website/README.md). |
 
 Each numbered new-study folder has a `STUDY_GUIDE.md` with the study's purpose, data description, and interpretation notes. Begin with [`NEW_2026_DATA/00_START_HERE.md`](NEW_2026_DATA/00_START_HERE.md), then use the guides and manifests below.

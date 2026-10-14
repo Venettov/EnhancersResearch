@@ -1,0 +1,380 @@
+{
+  "status": "Data preparation, grouping and explicitly specified feature reconstruction complete; no model trained.",
+  "not_author_implementation": true,
+  "published_accuracy_reproduced": false,
+  "parameters": {
+    "k": 6,
+    "lambda": 9,
+    "layer1_weight": 0.1,
+    "layer2_weight": 0.4,
+    "dinucleotide_pairs": "overlapping; L-j-1 pairs at lag j",
+    "feature_order": "4096 lexicographic A,C,G,T k-mers then theta_1..theta_9"
+  },
+  "s2_max_difference_from_published_rounded": {
+    "sample": 0.004723760902437757,
+    "population": 0.08521666872852895
+  },
+  "evaluation": {
+    "records": 2968,
+    "groups": 2451,
+    "group_size_distribution": {
+      "1": 2257,
+      "2": 93,
+      "3": 30,
+      "4": 25,
+      "5": 13,
+      "6": 10,
+      "7": 9,
+      "8": 2,
+      "9": 4,
+      "10": 4,
+      "11": 1,
+      "12": 2,
+      "20": 1
+    },
+    "largest_group": 20,
+    "mixed_class_groups": 0,
+    "edges_by_reason": {
+      "genomic_proximity": 1321,
+      "sequence_similarity": 12
+    },
+    "zero_distance_sequence_edges": 0,
+    "reference_matches": {
+      "forward": 2968
+    },
+    "outer_folds": [
+      {
+        "fold": 0,
+        "records": 594,
+        "groups": 490,
+        "classes": {
+          "strong": 148,
+          "weak": 149,
+          "non-enhancer": 297
+        }
+      },
+      {
+        "fold": 1,
+        "records": 593,
+        "groups": 490,
+        "classes": {
+          "strong": 149,
+          "weak": 148,
+          "non-enhancer": 296
+        }
+      },
+      {
+        "fold": 2,
+        "records": 593,
+        "groups": 489,
+        "classes": {
+          "strong": 148,
+          "weak": 148,
+          "non-enhancer": 297
+        }
+      },
+      {
+        "fold": 3,
+        "records": 594,
+        "groups": 490,
+        "classes": {
+          "strong": 148,
+          "weak": 149,
+          "non-enhancer": 297
+        }
+      },
+      {
+        "fold": 4,
+        "records": 594,
+        "groups": 492,
+        "classes": {
+          "strong": 149,
+          "weak": 148,
+          "non-enhancer": 297
+        }
+      }
+    ],
+    "inner_folds": {
+      "0": [
+        {
+          "strong": 198,
+          "weak": 197,
+          "non-enhancer": 395
+        },
+        {
+          "strong": 198,
+          "weak": 198,
+          "non-enhancer": 396
+        },
+        {
+          "strong": 198,
+          "weak": 198,
+          "non-enhancer": 396
+        }
+      ],
+      "1": [
+        {
+          "strong": 198,
+          "weak": 198,
+          "non-enhancer": 396
+        },
+        {
+          "strong": 197,
+          "weak": 198,
+          "non-enhancer": 396
+        },
+        {
+          "strong": 198,
+          "weak": 198,
+          "non-enhancer": 396
+        }
+      ],
+      "2": [
+        {
+          "strong": 198,
+          "weak": 198,
+          "non-enhancer": 396
+        },
+        {
+          "strong": 198,
+          "weak": 198,
+          "non-enhancer": 395
+        },
+        {
+          "strong": 198,
+          "weak": 198,
+          "non-enhancer": 396
+        }
+      ],
+      "3": [
+        {
+          "strong": 198,
+          "weak": 197,
+          "non-enhancer": 396
+        },
+        {
+          "strong": 198,
+          "weak": 198,
+          "non-enhancer": 396
+        },
+        {
+          "strong": 198,
+          "weak": 198,
+          "non-enhancer": 395
+        }
+      ],
+      "4": [
+        {
+          "strong": 198,
+          "weak": 198,
+          "non-enhancer": 396
+        },
+        {
+          "strong": 198,
+          "weak": 198,
+          "non-enhancer": 396
+        },
+        {
+          "strong": 197,
+          "weak": 198,
+          "non-enhancer": 395
+        }
+      ]
+    },
+    "edges_crossing_any_outer_or_inner_boundary": 0
+  },
+  "features": {
+    "primary": {
+      "counting": "overlapping",
+      "normalization": "sample",
+      "file": "features_primary.npz",
+      "file_sha256": "702335bd7e3a7cfe1d50142bea6e755cd94e46e0bf80cdcd7a6b6476fa51332b",
+      "layer1": {
+        "shape": [
+          2968,
+          4105
+        ],
+        "dtype": "float64",
+        "max_row_sum_error": 4.440892098500626e-16,
+        "array_sha256_le_float64": "710c1abfaf1a492fd4ff4f2faef536509c2e287f1958b830292299498070ceea",
+        "max_absolute_difference_from_primary": 0.0,
+        "rows_differing_from_primary_at_1e-12": 0
+      },
+      "layer2": {
+        "shape": [
+          1484,
+          4105
+        ],
+        "dtype": "float64",
+        "max_row_sum_error": 4.440892098500626e-16,
+        "array_sha256_le_float64": "6c88f7e84aff315f87c93f9bf6c932d5908f12d8573baa9848751ef1e299d9e4",
+        "max_absolute_difference_from_primary": 0.0,
+        "rows_differing_from_primary_at_1e-12": 0
+      }
+    },
+    "disjoint": {
+      "counting": "disjoint",
+      "normalization": "sample",
+      "file": "features_disjoint.npz",
+      "file_sha256": "af0a3cfaed9d29fbc6c77ffe548d92a7c6aa2a177f84471904949c9140e1e2af",
+      "layer1": {
+        "shape": [
+          2968,
+          4105
+        ],
+        "dtype": "float64",
+        "max_row_sum_error": 4.440892098500626e-16,
+        "array_sha256_le_float64": "a22eacaf08804fdb25e5d8166bc907a31a17bdfbc4d4c7fa738401a06d401d5a",
+        "max_absolute_difference_from_primary": 0.06064409651860734,
+        "rows_differing_from_primary_at_1e-12": 2968
+      },
+      "layer2": {
+        "shape": [
+          1484,
+          4105
+        ],
+        "dtype": "float64",
+        "max_row_sum_error": 4.440892098500626e-16,
+        "array_sha256_le_float64": "55a2c0548940c0858effc1a571f94838943b4c1980ce1c7aa336b3c6142c1fc4",
+        "max_absolute_difference_from_primary": 0.015199378305858246,
+        "rows_differing_from_primary_at_1e-12": 1484
+      }
+    },
+    "per_word_nonoverlap": {
+      "counting": "per_word_nonoverlap",
+      "normalization": "sample",
+      "file": "features_per_word_nonoverlap.npz",
+      "file_sha256": "0fa6ec1f82295685921930f6a32573ef9a074969ba9f091d53e3283d7e8bc5b3",
+      "layer1": {
+        "shape": [
+          2968,
+          4105
+        ],
+        "dtype": "float64",
+        "max_row_sum_error": 4.440892098500626e-16,
+        "array_sha256_le_float64": "e6bc14e904f22871f8f094b8436b8a7fd3892346703f906b841792445d631c84",
+        "max_absolute_difference_from_primary": 0.03789764638589029,
+        "rows_differing_from_primary_at_1e-12": 1238
+      },
+      "layer2": {
+        "shape": [
+          1484,
+          4105
+        ],
+        "dtype": "float64",
+        "max_row_sum_error": 4.440892098500626e-16,
+        "array_sha256_le_float64": "ef384ee92cdaa9dd6be961772885ab42c719ed0c451510dfe65be88336cf470b",
+        "max_absolute_difference_from_primary": 0.011622561901007477,
+        "rows_differing_from_primary_at_1e-12": 579
+      }
+    },
+    "published_rounded": {
+      "counting": "overlapping",
+      "normalization": "published_rounded",
+      "file": "features_published_rounded.npz",
+      "file_sha256": "a9624a44f229457a9c6327f8a907ab2630dfe0c5004522bf42e13ea1bcb0af62",
+      "layer1": {
+        "shape": [
+          2968,
+          4105
+        ],
+        "dtype": "float64",
+        "max_row_sum_error": 4.440892098500626e-16,
+        "array_sha256_le_float64": "cc32b4f0083f8bcdef51134f4b012888400ed6bde13fedb65f0e5af3986d7f8e",
+        "max_absolute_difference_from_primary": 9.47397146225798e-05,
+        "rows_differing_from_primary_at_1e-12": 2968
+      },
+      "layer2": {
+        "shape": [
+          1484,
+          4105
+        ],
+        "dtype": "float64",
+        "max_row_sum_error": 4.440892098500626e-16,
+        "array_sha256_le_float64": "0dc4caea7ecd3dbbfcfbfcade519d44f1f538a9c87ca10a7035c806db3c2e210",
+        "max_absolute_difference_from_primary": 7.342080999384049e-05,
+        "rows_differing_from_primary_at_1e-12": 1484
+      }
+    },
+    "population": {
+      "counting": "overlapping",
+      "normalization": "population",
+      "file": "features_population.npz",
+      "file_sha256": "75e4cfb2ae77f3d3ae8a2f34a6ad1f358d78c03a215628e24e33b706b2698b0e",
+      "layer1": {
+        "shape": [
+          2968,
+          4105
+        ],
+        "dtype": "float64",
+        "max_row_sum_error": 4.440892098500626e-16,
+        "array_sha256_le_float64": "b37740c44aa589783e19897376245b7c86731a90c73a9a62df1ec60beb9c0378",
+        "max_absolute_difference_from_primary": 0.0024260430524053883,
+        "rows_differing_from_primary_at_1e-12": 2968
+      },
+      "layer2": {
+        "shape": [
+          1484,
+          4105
+        ],
+        "dtype": "float64",
+        "max_row_sum_error": 4.440892098500626e-16,
+        "array_sha256_le_float64": "6aacb07335c8e31b504c042826d3c3a6d8c1c0f51492d0269a900f6fd976ca35",
+        "max_absolute_difference_from_primary": 0.0013487924747771218,
+        "rows_differing_from_primary_at_1e-12": 1484
+      }
+    }
+  },
+  "policy": {
+    "version": 1,
+    "frozen_before_training": true,
+    "scope": "2968-record benchmark only; historical 400-record test excluded from splitting and tuning",
+    "assembly": "hg19",
+    "coordinate_convention": "zero-based, end-exclusive; every record requires a matching UCSC reference receipt",
+    "max_locus_gap_bp": 1000,
+    "sequence_rule": "unit-cost global Levenshtein distance on 200-base sequences, minimum of forward and reverse-complement distance",
+    "max_edit_distance": 40,
+    "components": "Transitive closure of all genomic-proximity and sequence-similarity edges; groups cannot be split",
+    "outer_folds": 5,
+    "inner_folds": 3,
+    "seed": 42,
+    "stratification": "Greedy group assignment balancing strong, weak, and non-enhancer counts; SHA-256 seeded tie breaks",
+    "limitations": [
+      "Project evaluation policy, not the paper's leave-one-out design or its CD-HIT filtering procedure.",
+      "The 1000-base gap and 40-edit cutoff are predeclared safeguards, not proven biological independence thresholds.",
+      "Global edit similarity does not detect every short shared motif or distant homologous segment.",
+      "Nearby groups may remain correlated beyond 1000 bases. Chromosome-held-out evaluation can be a later sensitivity check."
+    ]
+  },
+  "evaluation_policy_sha256": "a7e30dec2310669c4293c9175ecfac0599278c24787eeb9eec9edc5c606b669b",
+  "source_sha256": {
+    "build_features.py": "814c5097f93935df49193ab72db404c2d03e99ce7c248b4c555909da2fdd6357",
+    "common.py": "d43f01c23d5e07fa0dc9513b492600054608f2156c9146ea1e2da7e3de095ab9",
+    "evaluation.py": "1a6c1508cb2473c0b4a4007db259a2eb83e08d7d0d1629db960cbf0a299c0cd6",
+    "features.py": "4fff321da2c7badc9f28cd17620ff4f0cb9c6476ad62759c67ad091c988759d1",
+    "prepare_data.py": "ce09803f6654d5c3cc7575daf958f9f2241dbb903d0da8f9b9526762250e000d",
+    "test_evaluation.py": "c8c95853462a33ca5a591e2f04f4cf20c365dc8eb09578f24742ceac1cf07621",
+    "test_features.py": "12122787e1bea7d12144e3e882256b6aea875baa7d313c21ccdfd5a2956cc338",
+    "test_prepare_data.py": "8ada3f3eeb5912155d3042e6c8a3fa24868711225fe90bb3f55f56d3329d5950",
+    "test_saved_checkpoint.py": "bc86529c68be03f79a109e5e96a7c601ed551f94b734092de052271bd3e33bda",
+    "verify_reference.py": "efc94063065600cbd555cf65ce1c8ea665136f24a26c369344f30366754c9de5"
+  },
+  "properties_s2_sha256": "3e3335eaf7750cc6ab791ec4a0ed057ff4ab0c0d548b12ad71e7ff4a66f8b667",
+  "environment": {
+    "python": "3.14.3",
+    "numpy": "2.5.4",
+    "rapidfuzz": "3.14.6"
+  },
+  "limitations": [
+    "No author-produced feature vectors are available for an external numerical parity check.",
+    "Overlapping k-mer counts are the project primary reconstruction, not a resolved claim about author code.",
+    "Disjoint and per-word non-overlapping counts are preserved as sensitivity variants; none selected by accuracy.",
+    "All variants follow equation 7 position-based dinucleotide pairing despite Figure 2 caption ambiguity.",
+    "Two layers share the same evaluation groups; layer II includes only known benchmark enhancers.",
+    "No SVM fitting, tuning, feature scaling, training on historical test data, or lentiMPRA transfer has occurred."
+  ],
+  "benchmark_sha256": "2619e419cf2467a5695254a28346e253efdea1edb821862d4a9625bd2d35b075",
+  "reference_receipts_sha256": "1d3cd296bc76612ce657ee5eabf30af3f09f8cf5d70cae62d442de9ee113443e",
+  "git_head_at_run": "398e57abf4384cb90173444a6ca357d5e0d13b0d",
+  "note_about_git_head": "Implementation was uncommitted during run; source_sha256 identifies the executed source bytes."
+}

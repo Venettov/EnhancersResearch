@@ -1,0 +1,35 @@
+{
+  "unit_tests": 17,
+  "unit_tests_passed": 17,
+  "full_benchmark_groups_rebuilt_offline": true,
+  "all_variants_all_record_ids_and_labels_aligned": true,
+  "primary_rows_checked_with_independent_scalar_oracle": [
+    {
+      "layer": "layer1",
+      "record_id": "enhancer.cv.txt:1"
+    },
+    {
+      "layer": "layer1",
+      "record_id": "non.cv.txt:1"
+    },
+    {
+      "layer": "layer1",
+      "record_id": "non.cv.txt:1484"
+    },
+    {
+      "layer": "layer2",
+      "record_id": "enhancer.cv.txt:1"
+    },
+    {
+      "layer": "layer2",
+      "record_id": "enhancer.cv.txt:743"
+    },
+    {
+      "layer": "layer2",
+      "record_id": "enhancer.cv.txt:1484"
+    }
+  ],
+  "website_check": "16 localized pages pass",
+  "pip_check": "No broken requirements found",
+  "feature_rerun_retained_exact_fold_and_edge_files": true
+}

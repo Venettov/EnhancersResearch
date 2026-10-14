@@ -1,0 +1,169 @@
+{
+  "records": 2968,
+  "groups": 2451,
+  "group_size_distribution": {
+    "1": 2257,
+    "2": 93,
+    "3": 30,
+    "4": 25,
+    "5": 13,
+    "6": 10,
+    "7": 9,
+    "8": 2,
+    "9": 4,
+    "10": 4,
+    "11": 1,
+    "12": 2,
+    "20": 1
+  },
+  "largest_group": 20,
+  "mixed_class_groups": 0,
+  "edges_by_reason": {
+    "genomic_proximity": 1321,
+    "sequence_similarity": 12
+  },
+  "zero_distance_sequence_edges": 0,
+  "reference_matches": {
+    "forward": 2968
+  },
+  "outer_folds": [
+    {
+      "fold": 0,
+      "records": 594,
+      "groups": 490,
+      "classes": {
+        "strong": 148,
+        "weak": 149,
+        "non-enhancer": 297
+      }
+    },
+    {
+      "fold": 1,
+      "records": 593,
+      "groups": 490,
+      "classes": {
+        "strong": 149,
+        "weak": 148,
+        "non-enhancer": 296
+      }
+    },
+    {
+      "fold": 2,
+      "records": 593,
+      "groups": 489,
+      "classes": {
+        "strong": 148,
+        "weak": 148,
+        "non-enhancer": 297
+      }
+    },
+    {
+      "fold": 3,
+      "records": 594,
+      "groups": 490,
+      "classes": {
+        "strong": 148,
+        "weak": 149,
+        "non-enhancer": 297
+      }
+    },
+    {
+      "fold": 4,
+      "records": 594,
+      "groups": 492,
+      "classes": {
+        "strong": 149,
+        "weak": 148,
+        "non-enhancer": 297
+      }
+    }
+  ],
+  "inner_folds": {
+    "0": [
+      {
+        "strong": 198,
+        "weak": 197,
+        "non-enhancer": 395
+      },
+      {
+        "strong": 198,
+        "weak": 198,
+        "non-enhancer": 396
+      },
+      {
+        "strong": 198,
+        "weak": 198,
+        "non-enhancer": 396
+      }
+    ],
+    "1": [
+      {
+        "strong": 198,
+        "weak": 198,
+        "non-enhancer": 396
+      },
+      {
+        "strong": 197,
+        "weak": 198,
+        "non-enhancer": 396
+      },
+      {
+        "strong": 198,
+        "weak": 198,
+        "non-enhancer": 396
+      }
+    ],
+    "2": [
+      {
+        "strong": 198,
+        "weak": 198,
+        "non-enhancer": 396
+      },
+      {
+        "strong": 198,
+        "weak": 198,
+        "non-enhancer": 395
+      },
+      {
+        "strong": 198,
+        "weak": 198,
+        "non-enhancer": 396
+      }
+    ],
+    "3": [
+      {
+        "strong": 198,
+        "weak": 197,
+        "non-enhancer": 396
+      },
+      {
+        "strong": 198,
+        "weak": 198,
+        "non-enhancer": 396
+      },
+      {
+        "strong": 198,
+        "weak": 198,
+        "non-enhancer": 395
+      }
+    ],
+    "4": [
+      {
+        "strong": 198,
+        "weak": 198,
+        "non-enhancer": 396
+      },
+      {
+        "strong": 198,
+        "weak": 198,
+        "non-enhancer": 396
+      },
+      {
+        "strong": 197,
+        "weak": 198,
+        "non-enhancer": 395
+      }
+    ]
+  },
+  "edges_crossing_any_outer_or_inner_boundary": 0
+}

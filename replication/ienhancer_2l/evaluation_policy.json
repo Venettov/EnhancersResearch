@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "frozen_before_training": true,
+  "scope": "2968-record benchmark only; historical 400-record test excluded from splitting and tuning",
+  "assembly": "hg19",
+  "coordinate_convention": "zero-based, end-exclusive; every record requires a matching UCSC reference receipt",
+  "max_locus_gap_bp": 1000,
+  "sequence_rule": "unit-cost global Levenshtein distance on 200-base sequences, minimum of forward and reverse-complement distance",
+  "max_edit_distance": 40,
+  "components": "Transitive closure of all genomic-proximity and sequence-similarity edges; groups cannot be split",
+  "outer_folds": 5,
+  "inner_folds": 3,
+  "seed": 42,
+  "stratification": "Greedy group assignment balancing strong, weak, and non-enhancer counts; SHA-256 seeded tie breaks",
+  "limitations": [
+    "Project evaluation policy, not the paper's leave-one-out design or its CD-HIT filtering procedure.",
+    "The 1000-base gap and 40-edit cutoff are predeclared safeguards, not proven biological independence thresholds.",
+    "Global edit similarity does not detect every short shared motif or distant homologous segment.",
+    "Nearby groups may remain correlated beyond 1000 bases. Chromosome-held-out evaluation can be a later sensitivity check."
+  ]
+}

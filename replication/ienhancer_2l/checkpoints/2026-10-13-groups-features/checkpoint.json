@@ -1,0 +1,45 @@
+{
+  "date": "2026-10-13",
+  "stage": "evaluation groups and sequence features",
+  "completed": true,
+  "model_trained": false,
+  "published_performance_reproduced": false,
+  "input_checkpoint": "../2026-10-13-data-preparation.json",
+  "commands": [
+    "python -m pip install -r replication/ienhancer_2l/requirements.txt",
+    "python replication/ienhancer_2l/verify_reference.py --output replication/ienhancer_2l/output/2026-10-13-groups-features",
+    "python -m unittest discover -s replication/ienhancer_2l -p \"test_*.py\" -v",
+    "python replication/ienhancer_2l/build_features.py --receipts replication/ienhancer_2l/checkpoints/2026-10-13-groups-features/reference_receipts.json --output replication/ienhancer_2l/output/2026-10-13-groups-features",
+    "python website/build.py",
+    "python website/tests/check_site.py"
+  ],
+  "files_sha256": {
+    "environment-lock.txt": "5597cde3cdd372b514053171bbe9797cc860cba8b920cf0a1f85a368a5607ba0",
+    "evaluation_assignments.csv": "1693a4d761e02b1d1145b76d0f962504ffa0dfb0bb459cfa3a86cbb4b37bd8e6",
+    "evaluation_audit.json": "7bea850d9a608914454b737db59c258aae0d3c92782b94d559d82dfe151c2e6c",
+    "features_audit.json": "ba3d04d33a362999655b25755b180c85676d33bbd184d00554fafb84e143dfae",
+    "group_edges.csv": "cebe9a7cc5045d4c41d2e797dd0646306cf4777a164ca0ff1863fba8604aa32d",
+    "reference_receipts.json": "1d3cd296bc76612ce657ee5eabf30af3f09f8cf5d70cae62d442de9ee113443e",
+    "validation.json": "1bdad4e7eb34710b6e0ff9c75a1b632fddd9c797ce6336ef1c610f696bebd308"
+  },
+  "implementation_source_sha256": {
+    "build_features.py": "814c5097f93935df49193ab72db404c2d03e99ce7c248b4c555909da2fdd6357",
+    "common.py": "d43f01c23d5e07fa0dc9513b492600054608f2156c9146ea1e2da7e3de095ab9",
+    "evaluation.py": "1a6c1508cb2473c0b4a4007db259a2eb83e08d7d0d1629db960cbf0a299c0cd6",
+    "features.py": "4fff321da2c7badc9f28cd17620ff4f0cb9c6476ad62759c67ad091c988759d1",
+    "prepare_data.py": "ce09803f6654d5c3cc7575daf958f9f2241dbb903d0da8f9b9526762250e000d",
+    "test_evaluation.py": "c8c95853462a33ca5a591e2f04f4cf20c365dc8eb09578f24742ceac1cf07621",
+    "test_features.py": "12122787e1bea7d12144e3e882256b6aea875baa7d313c21ccdfd5a2956cc338",
+    "test_prepare_data.py": "8ada3f3eeb5912155d3042e6c8a3fa24868711225fe90bb3f55f56d3329d5950",
+    "test_saved_checkpoint.py": "bc86529c68be03f79a109e5e96a7c601ed551f94b734092de052271bd3e33bda",
+    "verify_reference.py": "efc94063065600cbd555cf65ce1c8ea665136f24a26c369344f30366754c9de5"
+  },
+  "local_outputs": "replication/ienhancer_2l/output/2026-10-13-groups-features",
+  "notes": [
+    "All original input files are unchanged.",
+    "Large feature matrices and raw reference API caches are local derived outputs, ignored by Git.",
+    "Reference receipts, assignments, graph edges and audits are tracked; all matrix variants can be regenerated offline.",
+    "Five explicit feature variants do not resolve the original author counting implementation.",
+    "The grouping policy reduces specified leakage paths; it does not establish complete biological independence."
+  ]
+}
