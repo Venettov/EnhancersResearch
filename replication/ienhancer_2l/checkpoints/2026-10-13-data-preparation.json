@@ -1,0 +1,112 @@
+{
+  "checkpoint_date": "2026-10-13",
+  "recorded_at": "2026-10-13T21:10:35.721745-04:00",
+  "scope": "iEnhancer-2L original data preparation, corresponding to guide Steps 01\u201304. No feature extraction or model training.",
+  "source_commit": "eb559bc178f8fdc188b55fb3f6484c438b01ec6b",
+  "source_working_tree_clean": true,
+  "code_sha256": {
+    "replication/ienhancer_2l/prepare_data.py": "ce09803f6654d5c3cc7575daf958f9f2241dbb903d0da8f9b9526762250e000d",
+    "replication/ienhancer_2l/test_prepare_data.py": "8ada3f3eeb5912155d3042e6c8a3fa24868711225fe90bb3f55f56d3329d5950"
+  },
+  "environment": {
+    "python": "3.14.3",
+    "implementation": "CPython",
+    "os": "Darwin",
+    "os_release": "27.0.0",
+    "architecture": "arm64",
+    "virtual_environment": ".venv",
+    "installed_distributions": [
+      {
+        "name": "pip",
+        "version": "26.0"
+      }
+    ],
+    "pip_freeze": [],
+    "additional_packages_required": [],
+    "guide_deviation": "Used installed Python 3.14.3 instead of the suggested Python 3.13. Preparation supports Python 3.10+ and uses only the standard library. This does not select the future model-training environment."
+  },
+  "commands_executed": [
+    "python3 -m venv .venv",
+    ".venv/bin/python --version",
+    ".venv/bin/python -m pip check",
+    ".venv/bin/python replication/ienhancer_2l/prepare_data.py --output replication/ienhancer_2l/output/2026-10-13-preparation",
+    ".venv/bin/python -m unittest discover -s replication/ienhancer_2l -p 'test_*.py' -v"
+  ],
+  "verification": {
+    "pip_check": "No broken requirements found.",
+    "preparation_tests": {
+      "passed": 4,
+      "failed": 0,
+      "names": [
+        "test_changed_original_stops_before_writing",
+        "test_labels_overlap_and_repeatability",
+        "test_mismatched_crosswalk_stops_before_writing",
+        "test_multiline_fasta_keeps_sequence_identity"
+      ]
+    },
+    "export_checks": {
+      "sequence_length_bases": 200,
+      "alphabet": "ACGT",
+      "benchmark_unique_sequences": 2968,
+      "all_source_pages_present": true,
+      "all_binary_labels_consistent": true,
+      "all_overlap_flags_match_sequence_comparison": true,
+      "all_recorded_input_and_output_hashes_match": true
+    }
+  },
+  "data_audit": {
+    "status": "Data preparation only; no model trained or published accuracy reproduced.",
+    "benchmark_rows": 2968,
+    "benchmark_classes": {
+      "strong": 742,
+      "weak": 742,
+      "non-enhancer": 1484
+    },
+    "legacy_test_rows": 400,
+    "exact_training_overlaps": 100,
+    "overlap_classes": {
+      "strong": 100
+    },
+    "input_sha256": {
+      "enhancer.cv.txt": "0709765619d348ee6a7c5459058df1abe01591ef360b2123092336159b2d7918",
+      "non.cv.txt": "1fa9a8f720a6be5d9562db8083e856a3e49b45fb433bf876a2211f7efa4ddd55",
+      "enhancer.ind.txt": "f4763d5b3b9f2306e0ce295f074376adfb1980bd818c255ac781aaa533a8de37",
+      "non.ind.txt": "105381e8906c977d41b39df2dfecc4bdb7e0683fd81b5c51aaf397968ff719d1",
+      "bioinformatics_32_3_362.pdf": "f3dbd8de78fba62a68c2557f7c7cf39018b46374e1de0d63deeda9e7238ce4e5",
+      "bioinformatics_32_3_362_s1/Supp-S1.pdf": "3d08c8f3c13228bb29b21d56e2801181e4d144564ab34c62af55cbb7a6c89684",
+      "bioinformatics_32_3_362_s1/Supp-S2.pdf": "db35bbfba8a3d0a376a2b86cd2c13babfe6bf042ef0776726e11705dd112131f",
+      "reports/assets/2026-10-12_original_publications_review.json": "05692d2e825bf1cd554658add1c20917796d106a9686db18cbf43fb9f556badd",
+      "reports/assets/2026-10-12_original_publications_review_sequence_labels.tsv": "514e67b46133f26c157339ee89a0b7066ff1a093ab2ea6c4cc41fbcc1c69e554"
+    },
+    "output_sha256": {
+      "benchmark.csv": "2619e419cf2467a5695254a28346e253efdea1edb821862d4a9625bd2d35b075",
+      "legacy_test_diagnostic_only.csv": "65f0c770c40772afc14d03b18c6eed654eea3306f35796efee2da893b2332558"
+    },
+    "limits": [
+      "The historical 400-record test is not independent.",
+      "Exact hash comparisons do not rule out near-duplicates, reverse complements, or overlapping loci.",
+      "Strong/weak labels are chromatin annotations, not reporter-activity measurements."
+    ]
+  },
+  "run_output_directory": "replication/ienhancer_2l/output/2026-10-13-preparation",
+  "run_file_sha256": {
+    "benchmark.csv": "2619e419cf2467a5695254a28346e253efdea1edb821862d4a9625bd2d35b075",
+    "data_audit.json": "ea380930d264d0ac4dc6232de2bd32a26c5f72545839ba5f45265fac51000811",
+    "environment-lock.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "environment.json": "ededa8b2d8b2f4350b8e656a6d9368072d712e1dab23d935464fd5310051f064",
+    "legacy_test_diagnostic_only.csv": "65f0c770c40772afc14d03b18c6eed654eea3306f35796efee2da893b2332558",
+    "python-version.txt": "25c3049ed7f825e0565baa3279c7e5218335801d85737ffddce1b39e394d8793",
+    "repository-commit.txt": "ac28537d0d4cc61ea1ff9c9415834979c3fb74864475e720a01910436bc63e76"
+  },
+  "interpretation": {
+    "ready": "Original labeled benchmark exported and checked for feature implementation.",
+    "historical_test": "Diagnostic only. Its 100 strong enhancers exactly match benchmark sequences; removing them leaves no strong examples for a strength test.",
+    "label_provenance": "Benchmark labels use the previously reviewed S1 crosswalk. Historical test labels use current iEnhancer-EL S4 through that crosswalk. PDF labels were not newly re-extracted in this run.",
+    "not_established": [
+      "Sequence independence from near-duplicates, reverse complements, or overlapping genomic loci.",
+      "Correctness of a PseKNC implementation, a trained classifier, or reproduction of published performance.",
+      "Readiness of the lentiMPRA normalization or experimental transfer analysis."
+    ],
+    "next": "Define evaluation tracks and grouping policy, then implement and validate PseKNC features, resolving the documented counting and normalization choices."
+  }
+}
