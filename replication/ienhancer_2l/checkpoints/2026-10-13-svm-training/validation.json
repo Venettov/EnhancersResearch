@@ -1,0 +1,12 @@
+{
+  "prior_attempt": "The initial attempt stopped at layer-I final numeric model export, before accepting any final model. Its 1.17132e-7 score discrepancy changed no predictions. The verified run uses a 1e-6 export score tolerance with exact class agreement; solver tolerance remains 1e-3 and the committed scientific protocol is unchanged.",
+  "layer1_held_out_predictions_identical_to_initial_attempt": true,
+  "pre_run_tests_passed": 23,
+  "fit_count_in_verified_protocol": 1932,
+  "model_artifact_format": "Compressed numeric NumPy arrays, allow_pickle=False; 10 outer-fold models and 2 full-data final models.",
+  "final_model_prediction_disagreements": 0,
+  "final_tests_passed": 26,
+  "website_checks": "16 localized pages pass",
+  "pip_check": "No broken requirements found",
+  "saved_fold_replay_tests": "40 original sequences regenerated across both layers; no support-record/held-out intersections; stored scores and classes reproduced"
+}

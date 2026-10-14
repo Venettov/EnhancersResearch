@@ -2,7 +2,51 @@
 
 Start with the website guide: [English](https://venettov.github.io/EnhancersResearch/reproduce.html) · [Español](https://venettov.github.io/EnhancersResearch/es/reproduce.html).
 
-Data preparation, evaluation grouping, and an explicitly specified PseKNC feature reconstruction are implemented. There is no trained model or reproduced accuracy yet. Counting ambiguities and missing SVM settings still prevent a claim of exact author-code reproduction.
+Data preparation, grouped evaluation, PseKNC features and **both trained RBF SVM classifiers** are implemented. The first nested evaluation is complete. Counting ambiguities, missing original SVM settings and a different evaluation design still prevent a claim of exact author-code or published-performance reproduction.
+
+## SVM training checkpoint · 13 October 2026
+
+The [training protocol](training_protocol.json) was committed as `9275f63` **before model fitting**. It fixes the primary feature interpretation, no additional scaling, 48 C/gamma combinations, balanced-accuracy selection, tie breaking and the reporting rules. The [checkpoint folder](checkpoints/2026-10-13-svm-training/) contains the complete searches, held-out predictions, ten outer-fold models, two final models, metrics and provenance. Original sequence files and the earlier checkpoints are unchanged.
+
+| Task | Held-out sequences | Mean accuracy | Conditional 95% interval | Mean MCC | Mean ROC AUC | Mean average precision |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Layer I: enhancer / non-enhancer | 2,968 | **76.21%** | 74.64–77.90% | 0.527 | 0.841 | 0.838 |
+| Layer II: strong / weak, known enhancers only | 1,484 | **60.98%** | 58.38–63.73% | 0.220 | 0.668 | 0.654 |
+
+These are equal-weight means of the five outer-fold metrics. ROC AUC and average precision rank scores **within each fold**, then average, because raw scores from different fitted models need not be comparable. Average precision is the non-interpolated summary, not trapezoidal PR area. The intervals resample whole groups within each outer fold 1,000 times with seed 42. They are conditional on the fitted models and folds; they do not include retraining or uncertainty from choosing the research protocol. The saved summaries also contain pooled confusion counts and threshold metrics.
+
+The paper's reported leave-one-out accuracies are 76.89% and 61.93%. Their numerical proximity to this run **does not establish reproduction**: our evaluation is grouped and nested, our C/gamma choices are reconstructed, and the original feature-counting convention remains unresolved. The strength result measures a separate task on known enhancers, not overall cascade accuracy. It also indicates substantially weaker discrimination than layer I. No lentiMPRA data or contaminated historical-test records entered fitting or tuning.
+
+### What was trained
+
+- For each layer and outer fold, search 6 values of `C = 2**[-5,-1,3,7,11,15]` and 8 values of `gamma = 2**[-15,-11,-7,-3,1,5,9,13]` using only the three saved inner folds. Select the greatest mean balanced accuracy; exact ties favor smaller C, then smaller gamma. Fit on that outer training set and predict its held-out fold exactly once.
+- Features are the primary, unscaled equation-6 vectors. Cached pairwise RBF kernels depend only on the two fixed vectors; they fit no population statistic. SVM inputs are sliced to training/training and validation/training rows. Tests confirm the cached kernel agrees with direct RBF SVC and outer-test label changes cannot alter inner selection.
+- Use scikit-learn 1.9.1's LIBSVM-based SVC, tolerance `0.001`, shrinking enabled, no class weighting, no iteration cap, no probability calibration and no threshold tuning. Positive scores favor enhancer in layer I and strong in layer II. Decision values are **not probabilities or measured biological activity**.
+- After nested evaluation, perform a separate five-fold search over the saved outer assignments to select settings for a full-benchmark model. That selection score is not a new held-out performance estimate. Layer I's final settings are **C=32768, gamma=0.0078125**, with 1,916 support vectors; layer II uses **C=2048, gamma=2**, with 1,278 support vectors. Each final model is fitted on all eligible benchmark rows.
+- Layer I's final C and one outer-fold C hit the maximum of the predeclared search grid. This limitation is reported; the grid was not expanded after reviewing outer performance. GC-only/k-mer baselines and counting-sensitivity comparisons remain next analyses.
+
+The completed run contains **1,932 fits**, separate from small implementation tests. Every held-out record has an ID, group, true label, predicted label, raw decision score and outer-fold assignment. All fitted models converged. The 26-test suite includes saved-artifact hashes, split isolation and replay of held-out scores directly from original sequences. Final model exports reproduce every benchmark class prediction exactly. Largest score differences on reloading are approximately 1.17e-7 and 3.37e-9; the 1e-6 final-export tolerance accounts for different floating-point summation and remains much smaller than the solver tolerance. The initial run stopped on an overly strict 1e-7 export check; the numerical diagnosis and unchanged held-out predictions are recorded in `validation.json`.
+
+### Run training or apply the saved models
+
+From the repository root, using Python 3.12+ and an activated virtual environment:
+
+```sh
+python -m pip install -r replication/ienhancer_2l/requirements-training.txt
+python -m unittest discover -s replication/ienhancer_2l -p "test_*.py" -v
+# Prepare inputs and feature matrices with the commands below if absent.
+python replication/ienhancer_2l/train_svm.py --output replication/ienhancer_2l/output/new-svm-run --workers 4
+```
+
+Training requires the primary feature archive from the feature-stage commands below. The output directory must be new or empty. Defaults use `output/2026-10-13-preparation/benchmark.csv` and `output/2026-10-13-groups-features/features_primary.npz`; `--prepared` and `--features` accept other locations. Inputs are checked against the frozen benchmark and primary matrix hashes. A changed matrix requires a separately documented checkpoint, not silently bypassing validation. Runtime depends on hardware; the recorded two-layer run took about 54 seconds after input loading, with four search workers and cached kernels.
+
+Saved final models can be used without retraining or loading the large new-study data:
+
+```sh
+python replication/ienhancer_2l/predict_svm.py --fasta path/to/queries.fasta --output replication/ienhancer_2l/output/query_predictions.csv
+```
+
+Queries must be exactly 200 A/C/G/T bases. The command uses the checked-in final models, reports non-enhancer/weak/strong, and leaves the strength score blank when layer I is negative. This is an inference interface, not a validated experimental-transfer analysis. Test sequences that overlap the training benchmark cannot provide independent performance evidence. Models are compressed numeric `.npz` arrays loaded with `allow_pickle=False`, with feature metadata, support-record IDs and the protocol hash; no pickled estimator is required.
 
 ## Evaluation and features · 13 October 2026
 
@@ -26,7 +70,7 @@ These safeguards reduce specific kinds of leakage; they do not prove complete bi
 Use Python **3.12 or newer** for this stage (the recorded local run uses 3.14.3). Data preparation alone still needs only Python 3.10+ and the standard library. From the repository root in an activated virtual environment:
 
 ```sh
-python -m pip install -r replication/ienhancer_2l/requirements.txt
+python -m pip install -r replication/ienhancer_2l/requirements-training.txt
 python -m pip check
 python replication/ienhancer_2l/prepare_data.py --output replication/ienhancer_2l/output/2026-10-13-preparation
 python -m unittest discover -s replication/ienhancer_2l -p 'test_*.py' -v
@@ -60,7 +104,7 @@ The compressed `.npz` files contain `X_layer1` (2,968 × 4,105), `y_layer1`, `re
 
 Tests cover the printed normalized table, a hand-calculated short sequence, a separate scalar implementation of equations 6–9, constant-base sequences, both layer weights, reverse-complement symmetry, counting alternatives, malformed inputs, edit-distance boundaries, transitive groups, genomic proximity, invalid reference receipts, deterministic fold assignments, and outer/inner isolation. The full run additionally checks finite/nonnegative values, row sums, matrix serialization and every recorded grouping edge against all evaluation boundaries.
 
-The next stage is to specify and implement RBF SVM fitting, training-only scaling if used, and a predeclared `C`/`gamma` search. No trained model, held-out predictions or new performance numbers exist at this checkpoint. Original labels are chromatin-based annotations, not lentiMPRA measurements. The later experimental comparison remains separate.
+At the feature checkpoint, no model had been trained. The SVM stage above now follows it. Original labels are chromatin-based annotations, not lentiMPRA measurements. The later experimental comparison remains separate.
 
 Sources: [iEnhancer-2L paper](https://doi.org/10.1093/bioinformatics/btv604), [Supplement S2](../../bioinformatics_32_3_362_s1/Supp-S2.pdf), [author benchmark page](https://bliulab.net/iEnhancer-2L/data/), [UCSC sequence API](https://www.genome.ucsc.edu/goldenPath/help/api.html), [RapidFuzz edit distance](https://rapidfuzz.github.io/RapidFuzz/Usage/distance/Levenshtein.html).
 
@@ -85,7 +129,7 @@ The local run is archived under `output/2026-10-13-preparation/`, including both
 python replication/ienhancer_2l/prepare_data.py --output replication/ienhancer_2l/output/2026-10-13-preparation
 ```
 
-At this earlier checkpoint, only data preparation was complete. The grouping and feature work recorded above follows it; exact uniqueness alone does not establish independence from related sequences or overlapping loci. No model has been trained and no published performance has been reproduced.
+At this earlier checkpoint, only data preparation was complete and no model had been trained. The grouping, feature and SVM stages above follow it. Exact uniqueness alone does not establish independence from related sequences or overlapping loci; published performance has not been reproduced.
 
 ## Preparation workflow
 

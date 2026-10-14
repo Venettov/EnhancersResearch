@@ -10,7 +10,7 @@
       "journal": "Bioinformatics",
       "url": "https://doi.org/10.1093/bioinformatics/btv604",
       "summary": "Two SVM classifiers use DNA sequence counts and structural descriptors to identify enhancers and classify strong versus weak annotations. Its 2,968-sequence benchmark is the foundation reused by the other original methods.",
-      "note": "First replication target. Training labels and property tables are available; exact published accuracy remains to be reproduced.",
+      "note": "Both SVMs are trained with a frozen grouped evaluation; mean accuracies are 76.21% and 60.98%. Exact historical performance remains unreproduced.",
       "materials": [
         {
           "label": "Supplied article PDF ↗",

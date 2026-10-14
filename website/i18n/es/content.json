@@ -5,7 +5,7 @@
       "label": "Materiales originales · Prof. Dehzangi",
       "title": "iEnhancer-2L: predictor en dos etapas de potenciadores y su fuerza mediante composición pseudo k-tuple de nucleótidos",
       "summary": "Dos clasificadores SVM utilizan conteos de secuencia y descriptores estructurales del ADN para identificar potenciadores y clasificar anotaciones fuertes o débiles. Su conjunto de referencia de 2,968 secuencias es la base reutilizada por los otros métodos originales.",
-      "note": "Primer objetivo de reproducción. Disponemos de las etiquetas de entrenamiento y tablas de propiedades; aún no reproducimos la exactitud publicada.",
+      "note": "Ambas SVM están entrenadas con evaluación por grupos fijada previamente; las exactitudes medias son 76.21% y 60.98%. El rendimiento histórico exacto sigue sin reproducirse.",
       "materials": [
         {
           "label": "PDF del artículo recibido ↗",

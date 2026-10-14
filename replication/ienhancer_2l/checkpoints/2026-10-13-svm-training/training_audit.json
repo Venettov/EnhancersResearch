@@ -1,0 +1,937 @@
+{
+  "started_utc": "2026-10-14T01:47:12.415750+00:00",
+  "protocol": {
+    "version": 1,
+    "declared_before_model_fitting": true,
+    "scope": "First grouped SVM reconstruction on the frozen original benchmark; not historical leave-one-out reproduction",
+    "feature_variant": "primary",
+    "feature_scaling": "none; equation-6 feature vectors used directly, without fitted normalization",
+    "layers": {
+      "layer1": "enhancer versus non-enhancer, w=0.1",
+      "layer2": "strong versus weak among known enhancers, w=0.4"
+    },
+    "C_exponents_base2": [
+      -5,
+      -1,
+      3,
+      7,
+      11,
+      15
+    ],
+    "gamma_exponents_base2": [
+      -15,
+      -11,
+      -7,
+      -3,
+      1,
+      5,
+      9,
+      13
+    ],
+    "selection_metric": "mean inner-fold balanced accuracy",
+    "tie_break": "highest exact mean score, then smaller C, then smaller gamma",
+    "outer_folds": 5,
+    "inner_folds": 3,
+    "svm": {
+      "kernel": "RBF",
+      "tol": 0.001,
+      "shrinking": true,
+      "class_weight": null,
+      "probability": false,
+      "max_iter": -1,
+      "cache_size_mb": 256
+    },
+    "decision_rule": "LIBSVM prediction at its zero decision boundary; positive decision score favors label 1; no threshold tuning or calibration",
+    "distance_cache": "Label-independent squared Euclidean distances only; no statistics fitted on held-out rows. Kernels are sliced to explicit train/train and validation/train indices.",
+    "final_model_selection": "After nested evaluation, independently select C/gamma by mean balanced accuracy over the five saved outer folds, then fit all benchmark records for that layer. This full-data selection is not a new performance estimate.",
+    "bootstrap": {
+      "resamples": 1000,
+      "seed": 42,
+      "unit": "whole evaluation group within each outer fold",
+      "interval": "2.5th and 97.5th percentile of record-weighted metrics; conditional on saved fitted models and folds"
+    },
+    "report_metrics": [
+      "sensitivity",
+      "specificity",
+      "accuracy",
+      "balanced_accuracy",
+      "mcc",
+      "roc_auc",
+      "average_precision"
+    ],
+    "reporting": "Per-fold metrics, macro mean across outer folds, pooled threshold metrics and conditional group-bootstrap intervals. AUC/AP are macro averages of within-fold rankings, avoiding cross-model score comparisons.",
+    "boundary_rule": "Report search-boundary selections; do not expand the grid after seeing outer performance.",
+    "exclusions": [
+      "contaminated historical test",
+      "alternate feature variants",
+      "lentiMPRA data",
+      "automatic feature selection",
+      "probability calibration"
+    ],
+    "remaining_work": [
+      "GC-only and ordinary k-mer baselines",
+      "feature-counting sensitivity",
+      "historical leave-one-out reconstruction",
+      "experimental transfer"
+    ]
+  },
+  "protocol_sha256": "7a2cdf1a91d407b5c11f2334ea89df73f4962fbcbe3c0d9d506ead95503dc4b2",
+  "feature_archive_sha256": "702335bd7e3a7cfe1d50142bea6e755cd94e46e0bf80cdcd7a6b6476fa51332b",
+  "assignments_sha256": "1693a4d761e02b1d1145b76d0f962504ffa0dfb0bb459cfa3a86cbb4b37bd8e6",
+  "source_sha256": {
+    "build_features.py": "814c5097f93935df49193ab72db404c2d03e99ce7c248b4c555909da2fdd6357",
+    "common.py": "d43f01c23d5e07fa0dc9513b492600054608f2156c9146ea1e2da7e3de095ab9",
+    "evaluation.py": "1a6c1508cb2473c0b4a4007db259a2eb83e08d7d0d1629db960cbf0a299c0cd6",
+    "features.py": "4fff321da2c7badc9f28cd17620ff4f0cb9c6476ad62759c67ad091c988759d1",
+    "predict_svm.py": "40bd025bcc6ca21ea0021bd092c571c2bf5a70cbbdc811175929456a84dd0ed6",
+    "prepare_data.py": "ce09803f6654d5c3cc7575daf958f9f2241dbb903d0da8f9b9526762250e000d",
+    "test_evaluation.py": "c8c95853462a33ca5a591e2f04f4cf20c365dc8eb09578f24742ceac1cf07621",
+    "test_features.py": "12122787e1bea7d12144e3e882256b6aea875baa7d313c21ccdfd5a2956cc338",
+    "test_prepare_data.py": "8ada3f3eeb5912155d3042e6c8a3fa24868711225fe90bb3f55f56d3329d5950",
+    "test_saved_checkpoint.py": "bc86529c68be03f79a109e5e96a7c601ed551f94b734092de052271bd3e33bda",
+    "test_training.py": "9c393b8050502ae868d5dc5cf2361325d0263280bde03c2211a06cb637b9421b",
+    "train_svm.py": "147424c0a57703034cafed8e6f87844f0c515d57046d18d438202e8ababc4248",
+    "verify_reference.py": "efc94063065600cbd555cf65ce1c8ea665136f24a26c369344f30366754c9de5"
+  },
+  "git_head_at_start": "9275f63389bbfe4479eb58ca2fc8fef0ada96b34",
+  "source_note": "Source hashes identify the executed implementation if uncommitted at run start.",
+  "environment": {
+    "python": "3.14.3",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "threadpoolctl": "3.7.0"
+  },
+  "workers": 4,
+  "status": "complete",
+  "layers": {
+    "layer1": {
+      "per_fold": [
+        {
+          "n": 594,
+          "tn": 251,
+          "fp": 46,
+          "fn": 88,
+          "tp": 209,
+          "sensitivity": 0.7037037037037037,
+          "specificity": 0.8451178451178452,
+          "accuracy": 0.7744107744107744,
+          "balanced_accuracy": 0.7744107744107744,
+          "mcc": 0.5543929068542811,
+          "roc_auc": 0.8525774013989501,
+          "average_precision": 0.8664159542302259
+        },
+        {
+          "n": 593,
+          "tn": 240,
+          "fp": 56,
+          "fn": 75,
+          "tp": 222,
+          "sensitivity": 0.7474747474747475,
+          "specificity": 0.8108108108108109,
+          "accuracy": 0.7790893760539629,
+          "balanced_accuracy": 0.7791427791427792,
+          "mcc": 0.5593746733006786,
+          "roc_auc": 0.8574824824824826,
+          "average_precision": 0.8318087587441585
+        },
+        {
+          "n": 593,
+          "tn": 220,
+          "fp": 77,
+          "fn": 81,
+          "tp": 215,
+          "sensitivity": 0.7263513513513513,
+          "specificity": 0.7407407407407407,
+          "accuracy": 0.7335581787521079,
+          "balanced_accuracy": 0.733546046046046,
+          "mcc": 0.46714523293803717,
+          "roc_auc": 0.8237555737555737,
+          "average_precision": 0.8210834200771453
+        },
+        {
+          "n": 594,
+          "tn": 251,
+          "fp": 46,
+          "fn": 97,
+          "tp": 200,
+          "sensitivity": 0.6734006734006734,
+          "specificity": 0.8451178451178452,
+          "accuracy": 0.7592592592592593,
+          "balanced_accuracy": 0.7592592592592593,
+          "mcc": 0.5263365692168315,
+          "roc_auc": 0.8464215669602875,
+          "average_precision": 0.8635934801582855
+        },
+        {
+          "n": 594,
+          "tn": 236,
+          "fp": 61,
+          "fn": 79,
+          "tp": 218,
+          "sensitivity": 0.734006734006734,
+          "specificity": 0.7946127946127947,
+          "accuracy": 0.7643097643097643,
+          "balanced_accuracy": 0.7643097643097643,
+          "mcc": 0.5295930460714993,
+          "roc_auc": 0.8255846909045561,
+          "average_precision": 0.8091672538241756
+        }
+      ],
+      "macro_mean": {
+        "sensitivity": 0.716987441987442,
+        "specificity": 0.8072800072800075,
+        "accuracy": 0.7621254705571737,
+        "balanced_accuracy": 0.7621337246337248,
+        "mcc": 0.5273684856762656,
+        "roc_auc": 0.84116434310037,
+        "average_precision": 0.838413773406798
+      },
+      "pooled_threshold_metrics": {
+        "n": 2968,
+        "tn": 1198,
+        "fp": 286,
+        "fn": 420,
+        "tp": 1064,
+        "sensitivity": 0.7169811320754716,
+        "specificity": 0.807277628032345,
+        "accuracy": 0.7621293800539084,
+        "balanced_accuracy": 0.7621293800539084,
+        "mcc": 0.5264091797716963
+      },
+      "bootstrap": {
+        "method": {
+          "resamples": 1000,
+          "seed": 42,
+          "unit": "whole evaluation group within each outer fold",
+          "interval": "2.5th and 97.5th percentile of record-weighted metrics; conditional on saved fitted models and folds"
+        },
+        "accepted": 1000,
+        "rejected": 0,
+        "macro_mean_intervals": {
+          "sensitivity": [
+            0.6904092718985129,
+            0.7432141286615163
+          ],
+          "specificity": [
+            0.7884964215881193,
+            0.8267554946655353
+          ],
+          "accuracy": [
+            0.7464027748160508,
+            0.77897612206721
+          ],
+          "balanced_accuracy": [
+            0.7457405903533293,
+            0.7791378886795798
+          ],
+          "mcc": [
+            0.4942608229776191,
+            0.5610773596426727
+          ],
+          "roc_auc": [
+            0.8256370471818211,
+            0.8558299277030114
+          ],
+          "average_precision": [
+            0.8141135050595721,
+            0.8611482709872261
+          ]
+        },
+        "limitation": "Conditional on these fitted models, fixed feature choices and folds; does not include retraining or protocol-selection uncertainty."
+      },
+      "outer_folds": [
+        {
+          "outer_fold": 0,
+          "train_n": 2374,
+          "test_n": 594,
+          "train_groups": 1961,
+          "test_groups": 490,
+          "best": {
+            "C": 32768.0,
+            "gamma": 0.0078125,
+            "mean_balanced_accuracy": 0.7662244810978988,
+            "fold_balanced_accuracy": [
+              0.7746835443037974,
+              0.7638888888888888,
+              0.7601010101010102
+            ],
+            "iterations": [
+              1387,
+              1204,
+              1195
+            ]
+          },
+          "grid_boundary": {
+            "C": true,
+            "gamma": false
+          },
+          "metrics": {
+            "n": 594,
+            "tn": 251,
+            "fp": 46,
+            "fn": 88,
+            "tp": 209,
+            "sensitivity": 0.7037037037037037,
+            "specificity": 0.8451178451178452,
+            "accuracy": 0.7744107744107744,
+            "balanced_accuracy": 0.7744107744107744,
+            "mcc": 0.5543929068542811,
+            "roc_auc": 0.8525774013989501,
+            "average_precision": 0.8664159542302259
+          },
+          "support_vectors": 1565,
+          "iterations": 2089,
+          "export_max_score_error": 9.745053830556571e-08,
+          "seconds": 1.2162390829907963
+        },
+        {
+          "outer_fold": 1,
+          "train_n": 2375,
+          "test_n": 593,
+          "train_groups": 1961,
+          "test_groups": 490,
+          "best": {
+            "C": 128.0,
+            "gamma": 2.0,
+            "mean_balanced_accuracy": 0.7527990879256702,
+            "fold_balanced_accuracy": [
+              0.7601010101010102,
+              0.7344073647871117,
+              0.7638888888888888
+            ],
+            "iterations": [
+              1229,
+              1155,
+              1257
+            ]
+          },
+          "grid_boundary": {
+            "C": false,
+            "gamma": false
+          },
+          "metrics": {
+            "n": 593,
+            "tn": 240,
+            "fp": 56,
+            "fn": 75,
+            "tp": 222,
+            "sensitivity": 0.7474747474747475,
+            "specificity": 0.8108108108108109,
+            "accuracy": 0.7790893760539629,
+            "balanced_accuracy": 0.7791427791427792,
+            "mcc": 0.5593746733006786,
+            "roc_auc": 0.8574824824824826,
+            "average_precision": 0.8318087587441585
+          },
+          "support_vectors": 1560,
+          "iterations": 1906,
+          "export_max_score_error": 3.114593027930823e-10,
+          "seconds": 1.198857625000528
+        },
+        {
+          "outer_fold": 2,
+          "train_n": 2375,
+          "test_n": 593,
+          "train_groups": 1962,
+          "test_groups": 489,
+          "best": {
+            "C": 8.0,
+            "gamma": 32.0,
+            "mean_balanced_accuracy": 0.7671727826791118,
+            "fold_balanced_accuracy": [
+              0.7638888888888888,
+              0.7560638025827899,
+              0.7815656565656566
+            ],
+            "iterations": [
+              1176,
+              1123,
+              1182
+            ]
+          },
+          "grid_boundary": {
+            "C": false,
+            "gamma": false
+          },
+          "metrics": {
+            "n": 593,
+            "tn": 220,
+            "fp": 77,
+            "fn": 81,
+            "tp": 215,
+            "sensitivity": 0.7263513513513513,
+            "specificity": 0.7407407407407407,
+            "accuracy": 0.7335581787521079,
+            "balanced_accuracy": 0.733546046046046,
+            "mcc": 0.46714523293803717,
+            "roc_auc": 0.8237555737555737,
+            "average_precision": 0.8210834200771453
+          },
+          "support_vectors": 1553,
+          "iterations": 1807,
+          "export_max_score_error": 2.1111112857852277e-11,
+          "seconds": 1.1886709169921232
+        },
+        {
+          "outer_fold": 3,
+          "train_n": 2374,
+          "test_n": 594,
+          "train_groups": 1961,
+          "test_groups": 490,
+          "best": {
+            "C": 8.0,
+            "gamma": 32.0,
+            "mean_balanced_accuracy": 0.7653731406895964,
+            "fold_balanced_accuracy": [
+              0.7698504027617952,
+              0.7765151515151516,
+              0.7497538677918425
+            ],
+            "iterations": [
+              1124,
+              1148,
+              1169
+            ]
+          },
+          "grid_boundary": {
+            "C": false,
+            "gamma": false
+          },
+          "metrics": {
+            "n": 594,
+            "tn": 251,
+            "fp": 46,
+            "fn": 97,
+            "tp": 200,
+            "sensitivity": 0.6734006734006734,
+            "specificity": 0.8451178451178452,
+            "accuracy": 0.7592592592592593,
+            "balanced_accuracy": 0.7592592592592593,
+            "mcc": 0.5263365692168315,
+            "roc_auc": 0.8464215669602875,
+            "average_precision": 0.8635934801582855
+          },
+          "support_vectors": 1555,
+          "iterations": 1674,
+          "export_max_score_error": 2.4858337610567105e-11,
+          "seconds": 1.1634222499997122
+        },
+        {
+          "outer_fold": 4,
+          "train_n": 2374,
+          "test_n": 594,
+          "train_groups": 1959,
+          "test_groups": 492,
+          "best": {
+            "C": 8.0,
+            "gamma": 32.0,
+            "mean_balanced_accuracy": 0.7527340919745983,
+            "fold_balanced_accuracy": [
+              0.7525252525252526,
+              0.7575757575757576,
+              0.7481012658227848
+            ],
+            "iterations": [
+              1086,
+              1168,
+              1041
+            ]
+          },
+          "grid_boundary": {
+            "C": false,
+            "gamma": false
+          },
+          "metrics": {
+            "n": 594,
+            "tn": 236,
+            "fp": 61,
+            "fn": 79,
+            "tp": 218,
+            "sensitivity": 0.734006734006734,
+            "specificity": 0.7946127946127947,
+            "accuracy": 0.7643097643097643,
+            "balanced_accuracy": 0.7643097643097643,
+            "mcc": 0.5295930460714993,
+            "roc_auc": 0.8255846909045561,
+            "average_precision": 0.8091672538241756
+          },
+          "support_vectors": 1544,
+          "iterations": 1689,
+          "export_max_score_error": 1.6570744776345236e-11,
+          "seconds": 1.1753086249955231
+        }
+      ],
+      "final_model": {
+        "best": {
+          "C": 32768.0,
+          "gamma": 0.0078125,
+          "mean_balanced_accuracy": 0.7634771134771136,
+          "fold_balanced_accuracy": [
+            0.7744107744107744,
+            0.7808262808262809,
+            0.7318454818454818,
+            0.7626262626262627,
+            0.7676767676767677
+          ],
+          "iterations": [
+            2089,
+            1942,
+            2326,
+            1989,
+            1894
+          ]
+        },
+        "grid_boundary": {
+          "C": true,
+          "gamma": false
+        },
+        "fit_n": 2968,
+        "support_vectors": 1916,
+        "iterations": 2761,
+        "export_max_score_error": 1.1713200365193188e-07,
+        "export_score_tolerance": 1e-06,
+        "export_prediction_disagreements": 0,
+        "minimum_absolute_direct_score": 0.0009047305453026011,
+        "note": "Full-data fit for future inference; its selection score is not a held-out performance estimate."
+      },
+      "seconds": 36.16529129201081
+    },
+    "layer2": {
+      "per_fold": [
+        {
+          "n": 297,
+          "tn": 102,
+          "fp": 47,
+          "fn": 61,
+          "tp": 87,
+          "sensitivity": 0.5878378378378378,
+          "specificity": 0.6845637583892618,
+          "accuracy": 0.6363636363636364,
+          "balanced_accuracy": 0.6362007981135498,
+          "mcc": 0.2737079668529409,
+          "roc_auc": 0.7015690186831126,
+          "average_precision": 0.7127312184181116
+        },
+        {
+          "n": 297,
+          "tn": 93,
+          "fp": 55,
+          "fn": 57,
+          "tp": 92,
+          "sensitivity": 0.6174496644295302,
+          "specificity": 0.6283783783783784,
+          "accuracy": 0.622895622895623,
+          "balanced_accuracy": 0.6229140214039544,
+          "mcc": 0.24583919121918876,
+          "roc_auc": 0.6842463268637765,
+          "average_precision": 0.669452792153097
+        },
+        {
+          "n": 296,
+          "tn": 92,
+          "fp": 56,
+          "fn": 59,
+          "tp": 89,
+          "sensitivity": 0.6013513513513513,
+          "specificity": 0.6216216216216216,
+          "accuracy": 0.6114864864864865,
+          "balanced_accuracy": 0.6114864864864864,
+          "mcc": 0.2230187950916852,
+          "roc_auc": 0.6547662527392257,
+          "average_precision": 0.619879664855924
+        },
+        {
+          "n": 297,
+          "tn": 90,
+          "fp": 59,
+          "fn": 64,
+          "tp": 84,
+          "sensitivity": 0.5675675675675675,
+          "specificity": 0.6040268456375839,
+          "accuracy": 0.5858585858585859,
+          "balanced_accuracy": 0.5857972066025757,
+          "mcc": 0.1717112527383371,
+          "roc_auc": 0.6622528568837294,
+          "average_precision": 0.6641786068259293
+        },
+        {
+          "n": 297,
+          "tn": 94,
+          "fp": 54,
+          "fn": 67,
+          "tp": 82,
+          "sensitivity": 0.5503355704697986,
+          "specificity": 0.6351351351351351,
+          "accuracy": 0.5925925925925926,
+          "balanced_accuracy": 0.5927353528024668,
+          "mcc": 0.18613023424357944,
+          "roc_auc": 0.6354525666606203,
+          "average_precision": 0.6058144437366034
+        }
+      ],
+      "macro_mean": {
+        "sensitivity": 0.5849083983312171,
+        "specificity": 0.6347451478323961,
+        "accuracy": 0.6098393848393849,
+        "balanced_accuracy": 0.6098267730818066,
+        "mcc": 0.22008148802914632,
+        "roc_auc": 0.667657404366093,
+        "average_precision": 0.6544113451979331
+      },
+      "pooled_threshold_metrics": {
+        "n": 1484,
+        "tn": 471,
+        "fp": 271,
+        "fn": 308,
+        "tp": 434,
+        "sensitivity": 0.5849056603773585,
+        "specificity": 0.6347708894878706,
+        "accuracy": 0.6098382749326146,
+        "balanced_accuracy": 0.6098382749326146,
+        "mcc": 0.2199501776432748
+      },
+      "bootstrap": {
+        "method": {
+          "resamples": 1000,
+          "seed": 42,
+          "unit": "whole evaluation group within each outer fold",
+          "interval": "2.5th and 97.5th percentile of record-weighted metrics; conditional on saved fitted models and folds"
+        },
+        "accepted": 1000,
+        "rejected": 0,
+        "macro_mean_intervals": {
+          "sensitivity": [
+            0.5424877538612827,
+            0.6247880078774027
+          ],
+          "specificity": [
+            0.5999654684685417,
+            0.668901328558873
+          ],
+          "accuracy": [
+            0.5837952339945826,
+            0.6372761465687979
+          ],
+          "balanced_accuracy": [
+            0.5821995935819656,
+            0.6381443507926863
+          ],
+          "mcc": [
+            0.1639885838704752,
+            0.2746081521333331
+          ],
+          "roc_auc": [
+            0.6375595771664151,
+            0.6974948498900194
+          ],
+          "average_precision": [
+            0.6022157455609572,
+            0.7006440104635224
+          ]
+        },
+        "limitation": "Conditional on these fitted models, fixed feature choices and folds; does not include retraining or protocol-selection uncertainty."
+      },
+      "outer_folds": [
+        {
+          "outer_fold": 0,
+          "train_n": 1187,
+          "test_n": 297,
+          "train_groups": 785,
+          "test_groups": 196,
+          "best": {
+            "C": 128.0,
+            "gamma": 32.0,
+            "mean_balanced_accuracy": 0.6158753354184826,
+            "fold_balanced_accuracy": [
+              0.6304542890837307,
+              0.5883838383838383,
+              0.6287878787878788
+            ],
+            "iterations": [
+              2357,
+              2390,
+              2453
+            ]
+          },
+          "grid_boundary": {
+            "C": false,
+            "gamma": false
+          },
+          "metrics": {
+            "n": 297,
+            "tn": 102,
+            "fp": 47,
+            "fn": 61,
+            "tp": 87,
+            "sensitivity": 0.5878378378378378,
+            "specificity": 0.6845637583892618,
+            "accuracy": 0.6363636363636364,
+            "balanced_accuracy": 0.6362007981135498,
+            "mcc": 0.2737079668529409,
+            "roc_auc": 0.7015690186831126,
+            "average_precision": 0.7127312184181116
+          },
+          "support_vectors": 1050,
+          "iterations": 3446,
+          "export_max_score_error": 1.4169643236527918e-10,
+          "seconds": 0.4302583329990739
+        },
+        {
+          "outer_fold": 1,
+          "train_n": 1187,
+          "test_n": 297,
+          "train_groups": 784,
+          "test_groups": 197,
+          "best": {
+            "C": 2048.0,
+            "gamma": 2.0,
+            "mean_balanced_accuracy": 0.6149353090977457,
+            "fold_balanced_accuracy": [
+              0.6363636363636364,
+              0.5897554222427319,
+              0.6186868686868687
+            ],
+            "iterations": [
+              3301,
+              3120,
+              2751
+            ]
+          },
+          "grid_boundary": {
+            "C": false,
+            "gamma": false
+          },
+          "metrics": {
+            "n": 297,
+            "tn": 93,
+            "fp": 55,
+            "fn": 57,
+            "tp": 92,
+            "sensitivity": 0.6174496644295302,
+            "specificity": 0.6283783783783784,
+            "accuracy": 0.622895622895623,
+            "balanced_accuracy": 0.6229140214039544,
+            "mcc": 0.24583919121918876,
+            "roc_auc": 0.6842463268637765,
+            "average_precision": 0.669452792153097
+          },
+          "support_vectors": 1039,
+          "iterations": 4537,
+          "export_max_score_error": 2.435545987111709e-09,
+          "seconds": 0.4253202499967301
+        },
+        {
+          "outer_fold": 2,
+          "train_n": 1188,
+          "test_n": 296,
+          "train_groups": 786,
+          "test_groups": 195,
+          "best": {
+            "C": 8.0,
+            "gamma": 32.0,
+            "mean_balanced_accuracy": 0.6153198653198654,
+            "fold_balanced_accuracy": [
+              0.6111111111111112,
+              0.6186868686868687,
+              0.6161616161616161
+            ],
+            "iterations": [
+              504,
+              476,
+              469
+            ]
+          },
+          "grid_boundary": {
+            "C": false,
+            "gamma": false
+          },
+          "metrics": {
+            "n": 296,
+            "tn": 92,
+            "fp": 56,
+            "fn": 59,
+            "tp": 89,
+            "sensitivity": 0.6013513513513513,
+            "specificity": 0.6216216216216216,
+            "accuracy": 0.6114864864864865,
+            "balanced_accuracy": 0.6114864864864864,
+            "mcc": 0.2230187950916852,
+            "roc_auc": 0.6547662527392257,
+            "average_precision": 0.619879664855924
+          },
+          "support_vectors": 1052,
+          "iterations": 669,
+          "export_max_score_error": 1.0730083488397213e-11,
+          "seconds": 0.42270812501374166
+        },
+        {
+          "outer_fold": 3,
+          "train_n": 1187,
+          "test_n": 297,
+          "train_groups": 785,
+          "test_groups": 196,
+          "best": {
+            "C": 8.0,
+            "gamma": 512.0,
+            "mean_balanced_accuracy": 0.6158368797962707,
+            "fold_balanced_accuracy": [
+              0.6227631646413372,
+              0.6338383838383839,
+              0.5909090909090908
+            ],
+            "iterations": [
+              1929,
+              1842,
+              1912
+            ]
+          },
+          "grid_boundary": {
+            "C": false,
+            "gamma": false
+          },
+          "metrics": {
+            "n": 297,
+            "tn": 90,
+            "fp": 59,
+            "fn": 64,
+            "tp": 84,
+            "sensitivity": 0.5675675675675675,
+            "specificity": 0.6040268456375839,
+            "accuracy": 0.5858585858585859,
+            "balanced_accuracy": 0.5857972066025757,
+            "mcc": 0.1717112527383371,
+            "roc_auc": 0.6622528568837294,
+            "average_precision": 0.6641786068259293
+          },
+          "support_vectors": 1070,
+          "iterations": 2666,
+          "export_max_score_error": 5.9747762293227424e-12,
+          "seconds": 0.4377110839996021
+        },
+        {
+          "outer_fold": 4,
+          "train_n": 1187,
+          "test_n": 297,
+          "train_groups": 784,
+          "test_groups": 197,
+          "best": {
+            "C": 8.0,
+            "gamma": 512.0,
+            "mean_balanced_accuracy": 0.6335136474730383,
+            "fold_balanced_accuracy": [
+              0.7121212121212122,
+              0.5833333333333333,
+              0.6050863969645695
+            ],
+            "iterations": [
+              1805,
+              1846,
+              1790
+            ]
+          },
+          "grid_boundary": {
+            "C": false,
+            "gamma": false
+          },
+          "metrics": {
+            "n": 297,
+            "tn": 94,
+            "fp": 54,
+            "fn": 67,
+            "tp": 82,
+            "sensitivity": 0.5503355704697986,
+            "specificity": 0.6351351351351351,
+            "accuracy": 0.5925925925925926,
+            "balanced_accuracy": 0.5927353528024668,
+            "mcc": 0.18613023424357944,
+            "roc_auc": 0.6354525666606203,
+            "average_precision": 0.6058144437366034
+          },
+          "support_vectors": 1067,
+          "iterations": 2714,
+          "export_max_score_error": 6.606604152636919e-12,
+          "seconds": 0.42301462500472553
+        }
+      ],
+      "final_model": {
+        "best": {
+          "C": 2048.0,
+          "gamma": 2.0,
+          "mean_balanced_accuracy": 0.6239298022855071,
+          "fold_balanced_accuracy": [
+            0.6530473426446581,
+            0.6229140214039544,
+            0.6081081081081081,
+            0.60926446580809,
+            0.6263150734627245
+          ],
+          "iterations": [
+            6863,
+            4537,
+            4437,
+            5357,
+            3970
+          ]
+        },
+        "grid_boundary": {
+          "C": false,
+          "gamma": false
+        },
+        "fit_n": 1484,
+        "support_vectors": 1278,
+        "iterations": 7268,
+        "export_max_score_error": 3.3668179355572647e-09,
+        "export_score_tolerance": 1e-06,
+        "export_prediction_disagreements": 0,
+        "minimum_absolute_direct_score": 0.002395779982704127,
+        "note": "Full-data fit for future inference; its selection score is not a held-out performance estimate."
+      },
+      "seconds": 17.401733833990875
+    }
+  },
+  "completed_utc": "2026-10-14T01:48:06.118959+00:00",
+  "historical_accuracy_reproduced": false,
+  "lentiMPRA_evaluated": false,
+  "fit_count": 1932,
+  "artifact_sha256": {
+    "layer1_final_search.json": "bda7565dfeb3f172f1861f6d2f59f765735d90d6c123ac8416a58a438ceb94d8",
+    "layer1_held_out_predictions.csv": "9cb40a6034ff588c97dcce6a83dc4f3b2990a9128bd3b9c0c44e50212597d6b7",
+    "layer1_outer_0_result.json": "82c906b8f31ff2caa45a06212fc3761debd3cf2515fa29b16a5930549ab19517",
+    "layer1_outer_0_search.json": "75fdc0b42bd000bfb19cc70ad036f01f274d0f3bc76063b8926560c7deed1c62",
+    "layer1_outer_1_result.json": "b1801616b5deca8fba9fdb98b159f2b32a98c0cefb0e15b0f0bbaeb83b0aef19",
+    "layer1_outer_1_search.json": "3331e0c3224426d99edad82c450664c19823342f3b7994955ef2bf56b8c46ebe",
+    "layer1_outer_2_result.json": "aa05dc653ff3436ec7a5980d3d44aab408f8678f2b5f13e67e6470327a73a00a",
+    "layer1_outer_2_search.json": "8ec45e55f0fb964723eaabf9561cd09c018a1cf86eae4ff968cf1c9e44e813e7",
+    "layer1_outer_3_result.json": "19189909d09a7e728c35c7d48764ef98c2f37886c28386971fce8654e394a12d",
+    "layer1_outer_3_search.json": "f452a84d7485709f5c14f27adcd7b60d7d2433f841e40ed51e291eb1a4c538c3",
+    "layer1_outer_4_result.json": "7f20b4fd0ada50683c3508a82800958448dc1a05beab073389424e2dd4c31b42",
+    "layer1_outer_4_search.json": "c9a9fcb5905ef0155bbba7284e068af3a7b537f0abf836e44e3de4002c0f25c2",
+    "layer1_summary.json": "4ef94fd0a8072600957c17153461876af84a816348a41f654bffbdd8d018ef68",
+    "layer2_final_search.json": "e4959118d4218b0c20e0daa2aa7be8c6e6a5352163d0160b1f80b2a316cc2e5e",
+    "layer2_held_out_predictions.csv": "7ba7a6f523525df469a7f5c302b3b3944f94473f6a4be8a095b1fd14c01baa45",
+    "layer2_outer_0_result.json": "04a80829cf7c24575f58a8ac225c8eb587b5cf2eb7f8401eca393a7fa00095f6",
+    "layer2_outer_0_search.json": "b8ff7d52d319f0812ddfe38aa6422a0eb97b59e98bb48d93865c205a2aeba370",
+    "layer2_outer_1_result.json": "5e09a47648448c9809c8c15c362f21ecfa8c097d189e5ffa414d13ea4018547b",
+    "layer2_outer_1_search.json": "9bda650b0cf0a48711b69d771167ad7172ab5c62198774d6fd1a7df14d9c13a8",
+    "layer2_outer_2_result.json": "b0b1b619dc6d14dc876964978a556c16bab911b6688188231140199d7dc900be",
+    "layer2_outer_2_search.json": "285bda40f37d01d54e289c4c6e6350989624f9c2ef3c7008b4a5b94fda57d83b",
+    "layer2_outer_3_result.json": "c61a5c46668191e968dce7e9d93309c924acacf0a2996e890252b97e6c6f00dc",
+    "layer2_outer_3_search.json": "9277529d9e9e7ef7224251ef185a2589588f0f58d4b7722251c245dd41285efe",
+    "layer2_outer_4_result.json": "cd00e73fc1b7a68280c8bdf4e12883385fb7efe33df03c3cc54a837b4e1199da",
+    "layer2_outer_4_search.json": "b385a50702749f744c55e23ea82165800ea8add676ad210dd7d8a87d468abe98",
+    "layer2_summary.json": "06a1732376c5a1755639948627a6f08bd56a40dcccc32d2c4fd87ae340066389",
+    "models/layer1_final.npz": "7003d7be989dfffabfd56d4fec7f35f1c3b21e781ea33711598d54e96937efab",
+    "models/layer1_outer_0.npz": "a3e8553d633011115b6cd8ac476deb31fe7c81c14f14f0d4cbc4432234719014",
+    "models/layer1_outer_1.npz": "45e517e586a2059824261011e6ca1d32864f1a34ca2389d177bfb2ba9232feee",
+    "models/layer1_outer_2.npz": "e08e3b1abb096f1a098867a1ee936a6c49afeac87c8460449e181cc2ece67e2a",
+    "models/layer1_outer_3.npz": "27d1d672daff8f5fd3568517673564c74c603cc1ca5be762669addc39cbe51cb",
+    "models/layer1_outer_4.npz": "1bce38e5f4a06275497ff53e4eea1f00db8a370327d84cbf126c8e135890053b",
+    "models/layer2_final.npz": "1995c7716e094c4780228e86f0ac3d2f503d1803e6e5dbc3b8a69ae68597b365",
+    "models/layer2_outer_0.npz": "ccfeb013e0d9a98fe4e9b10ad4a679c6c3361b9e26b897c929ca516b1394ae76",
+    "models/layer2_outer_1.npz": "6db3e42705da4fe608e267110409eac24ef55e9f4ecf4a81d1f7816d45e70eb2",
+    "models/layer2_outer_2.npz": "d33d9104de0667a5830da72664e760b97ce222ad0b721bcd93e24d472d07e5b7",
+    "models/layer2_outer_3.npz": "c433add07bbff5875c985347865e15ba43a6743720786a1709815afd38a41767",
+    "models/layer2_outer_4.npz": "c26298c15982798887a4e6c500530b6723af0dba29e069bdf95de9f075abb2f0"
+  }
+}

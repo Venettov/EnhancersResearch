@@ -1,0 +1,392 @@
+{
+  "per_fold": [
+    {
+      "n": 297,
+      "tn": 102,
+      "fp": 47,
+      "fn": 61,
+      "tp": 87,
+      "sensitivity": 0.5878378378378378,
+      "specificity": 0.6845637583892618,
+      "accuracy": 0.6363636363636364,
+      "balanced_accuracy": 0.6362007981135498,
+      "mcc": 0.2737079668529409,
+      "roc_auc": 0.7015690186831126,
+      "average_precision": 0.7127312184181116
+    },
+    {
+      "n": 297,
+      "tn": 93,
+      "fp": 55,
+      "fn": 57,
+      "tp": 92,
+      "sensitivity": 0.6174496644295302,
+      "specificity": 0.6283783783783784,
+      "accuracy": 0.622895622895623,
+      "balanced_accuracy": 0.6229140214039544,
+      "mcc": 0.24583919121918876,
+      "roc_auc": 0.6842463268637765,
+      "average_precision": 0.669452792153097
+    },
+    {
+      "n": 296,
+      "tn": 92,
+      "fp": 56,
+      "fn": 59,
+      "tp": 89,
+      "sensitivity": 0.6013513513513513,
+      "specificity": 0.6216216216216216,
+      "accuracy": 0.6114864864864865,
+      "balanced_accuracy": 0.6114864864864864,
+      "mcc": 0.2230187950916852,
+      "roc_auc": 0.6547662527392257,
+      "average_precision": 0.619879664855924
+    },
+    {
+      "n": 297,
+      "tn": 90,
+      "fp": 59,
+      "fn": 64,
+      "tp": 84,
+      "sensitivity": 0.5675675675675675,
+      "specificity": 0.6040268456375839,
+      "accuracy": 0.5858585858585859,
+      "balanced_accuracy": 0.5857972066025757,
+      "mcc": 0.1717112527383371,
+      "roc_auc": 0.6622528568837294,
+      "average_precision": 0.6641786068259293
+    },
+    {
+      "n": 297,
+      "tn": 94,
+      "fp": 54,
+      "fn": 67,
+      "tp": 82,
+      "sensitivity": 0.5503355704697986,
+      "specificity": 0.6351351351351351,
+      "accuracy": 0.5925925925925926,
+      "balanced_accuracy": 0.5927353528024668,
+      "mcc": 0.18613023424357944,
+      "roc_auc": 0.6354525666606203,
+      "average_precision": 0.6058144437366034
+    }
+  ],
+  "macro_mean": {
+    "sensitivity": 0.5849083983312171,
+    "specificity": 0.6347451478323961,
+    "accuracy": 0.6098393848393849,
+    "balanced_accuracy": 0.6098267730818066,
+    "mcc": 0.22008148802914632,
+    "roc_auc": 0.667657404366093,
+    "average_precision": 0.6544113451979331
+  },
+  "pooled_threshold_metrics": {
+    "n": 1484,
+    "tn": 471,
+    "fp": 271,
+    "fn": 308,
+    "tp": 434,
+    "sensitivity": 0.5849056603773585,
+    "specificity": 0.6347708894878706,
+    "accuracy": 0.6098382749326146,
+    "balanced_accuracy": 0.6098382749326146,
+    "mcc": 0.2199501776432748
+  },
+  "bootstrap": {
+    "method": {
+      "resamples": 1000,
+      "seed": 42,
+      "unit": "whole evaluation group within each outer fold",
+      "interval": "2.5th and 97.5th percentile of record-weighted metrics; conditional on saved fitted models and folds"
+    },
+    "accepted": 1000,
+    "rejected": 0,
+    "macro_mean_intervals": {
+      "sensitivity": [
+        0.5424877538612827,
+        0.6247880078774027
+      ],
+      "specificity": [
+        0.5999654684685417,
+        0.668901328558873
+      ],
+      "accuracy": [
+        0.5837952339945826,
+        0.6372761465687979
+      ],
+      "balanced_accuracy": [
+        0.5821995935819656,
+        0.6381443507926863
+      ],
+      "mcc": [
+        0.1639885838704752,
+        0.2746081521333331
+      ],
+      "roc_auc": [
+        0.6375595771664151,
+        0.6974948498900194
+      ],
+      "average_precision": [
+        0.6022157455609572,
+        0.7006440104635224
+      ]
+    },
+    "limitation": "Conditional on these fitted models, fixed feature choices and folds; does not include retraining or protocol-selection uncertainty."
+  },
+  "outer_folds": [
+    {
+      "outer_fold": 0,
+      "train_n": 1187,
+      "test_n": 297,
+      "train_groups": 785,
+      "test_groups": 196,
+      "best": {
+        "C": 128.0,
+        "gamma": 32.0,
+        "mean_balanced_accuracy": 0.6158753354184826,
+        "fold_balanced_accuracy": [
+          0.6304542890837307,
+          0.5883838383838383,
+          0.6287878787878788
+        ],
+        "iterations": [
+          2357,
+          2390,
+          2453
+        ]
+      },
+      "grid_boundary": {
+        "C": false,
+        "gamma": false
+      },
+      "metrics": {
+        "n": 297,
+        "tn": 102,
+        "fp": 47,
+        "fn": 61,
+        "tp": 87,
+        "sensitivity": 0.5878378378378378,
+        "specificity": 0.6845637583892618,
+        "accuracy": 0.6363636363636364,
+        "balanced_accuracy": 0.6362007981135498,
+        "mcc": 0.2737079668529409,
+        "roc_auc": 0.7015690186831126,
+        "average_precision": 0.7127312184181116
+      },
+      "support_vectors": 1050,
+      "iterations": 3446,
+      "export_max_score_error": 1.4169643236527918e-10,
+      "seconds": 0.4302583329990739
+    },
+    {
+      "outer_fold": 1,
+      "train_n": 1187,
+      "test_n": 297,
+      "train_groups": 784,
+      "test_groups": 197,
+      "best": {
+        "C": 2048.0,
+        "gamma": 2.0,
+        "mean_balanced_accuracy": 0.6149353090977457,
+        "fold_balanced_accuracy": [
+          0.6363636363636364,
+          0.5897554222427319,
+          0.6186868686868687
+        ],
+        "iterations": [
+          3301,
+          3120,
+          2751
+        ]
+      },
+      "grid_boundary": {
+        "C": false,
+        "gamma": false
+      },
+      "metrics": {
+        "n": 297,
+        "tn": 93,
+        "fp": 55,
+        "fn": 57,
+        "tp": 92,
+        "sensitivity": 0.6174496644295302,
+        "specificity": 0.6283783783783784,
+        "accuracy": 0.622895622895623,
+        "balanced_accuracy": 0.6229140214039544,
+        "mcc": 0.24583919121918876,
+        "roc_auc": 0.6842463268637765,
+        "average_precision": 0.669452792153097
+      },
+      "support_vectors": 1039,
+      "iterations": 4537,
+      "export_max_score_error": 2.435545987111709e-09,
+      "seconds": 0.4253202499967301
+    },
+    {
+      "outer_fold": 2,
+      "train_n": 1188,
+      "test_n": 296,
+      "train_groups": 786,
+      "test_groups": 195,
+      "best": {
+        "C": 8.0,
+        "gamma": 32.0,
+        "mean_balanced_accuracy": 0.6153198653198654,
+        "fold_balanced_accuracy": [
+          0.6111111111111112,
+          0.6186868686868687,
+          0.6161616161616161
+        ],
+        "iterations": [
+          504,
+          476,
+          469
+        ]
+      },
+      "grid_boundary": {
+        "C": false,
+        "gamma": false
+      },
+      "metrics": {
+        "n": 296,
+        "tn": 92,
+        "fp": 56,
+        "fn": 59,
+        "tp": 89,
+        "sensitivity": 0.6013513513513513,
+        "specificity": 0.6216216216216216,
+        "accuracy": 0.6114864864864865,
+        "balanced_accuracy": 0.6114864864864864,
+        "mcc": 0.2230187950916852,
+        "roc_auc": 0.6547662527392257,
+        "average_precision": 0.619879664855924
+      },
+      "support_vectors": 1052,
+      "iterations": 669,
+      "export_max_score_error": 1.0730083488397213e-11,
+      "seconds": 0.42270812501374166
+    },
+    {
+      "outer_fold": 3,
+      "train_n": 1187,
+      "test_n": 297,
+      "train_groups": 785,
+      "test_groups": 196,
+      "best": {
+        "C": 8.0,
+        "gamma": 512.0,
+        "mean_balanced_accuracy": 0.6158368797962707,
+        "fold_balanced_accuracy": [
+          0.6227631646413372,
+          0.6338383838383839,
+          0.5909090909090908
+        ],
+        "iterations": [
+          1929,
+          1842,
+          1912
+        ]
+      },
+      "grid_boundary": {
+        "C": false,
+        "gamma": false
+      },
+      "metrics": {
+        "n": 297,
+        "tn": 90,
+        "fp": 59,
+        "fn": 64,
+        "tp": 84,
+        "sensitivity": 0.5675675675675675,
+        "specificity": 0.6040268456375839,
+        "accuracy": 0.5858585858585859,
+        "balanced_accuracy": 0.5857972066025757,
+        "mcc": 0.1717112527383371,
+        "roc_auc": 0.6622528568837294,
+        "average_precision": 0.6641786068259293
+      },
+      "support_vectors": 1070,
+      "iterations": 2666,
+      "export_max_score_error": 5.9747762293227424e-12,
+      "seconds": 0.4377110839996021
+    },
+    {
+      "outer_fold": 4,
+      "train_n": 1187,
+      "test_n": 297,
+      "train_groups": 784,
+      "test_groups": 197,
+      "best": {
+        "C": 8.0,
+        "gamma": 512.0,
+        "mean_balanced_accuracy": 0.6335136474730383,
+        "fold_balanced_accuracy": [
+          0.7121212121212122,
+          0.5833333333333333,
+          0.6050863969645695
+        ],
+        "iterations": [
+          1805,
+          1846,
+          1790
+        ]
+      },
+      "grid_boundary": {
+        "C": false,
+        "gamma": false
+      },
+      "metrics": {
+        "n": 297,
+        "tn": 94,
+        "fp": 54,
+        "fn": 67,
+        "tp": 82,
+        "sensitivity": 0.5503355704697986,
+        "specificity": 0.6351351351351351,
+        "accuracy": 0.5925925925925926,
+        "balanced_accuracy": 0.5927353528024668,
+        "mcc": 0.18613023424357944,
+        "roc_auc": 0.6354525666606203,
+        "average_precision": 0.6058144437366034
+      },
+      "support_vectors": 1067,
+      "iterations": 2714,
+      "export_max_score_error": 6.606604152636919e-12,
+      "seconds": 0.42301462500472553
+    }
+  ],
+  "final_model": {
+    "best": {
+      "C": 2048.0,
+      "gamma": 2.0,
+      "mean_balanced_accuracy": 0.6239298022855071,
+      "fold_balanced_accuracy": [
+        0.6530473426446581,
+        0.6229140214039544,
+        0.6081081081081081,
+        0.60926446580809,
+        0.6263150734627245
+      ],
+      "iterations": [
+        6863,
+        4537,
+        4437,
+        5357,
+        3970
+      ]
+    },
+    "grid_boundary": {
+      "C": false,
+      "gamma": false
+    },
+    "fit_n": 1484,
+    "support_vectors": 1278,
+    "iterations": 7268,
+    "export_max_score_error": 3.3668179355572647e-09,
+    "export_score_tolerance": 1e-06,
+    "export_prediction_disagreements": 0,
+    "minimum_absolute_direct_score": 0.002395779982704127,
+    "note": "Full-data fit for future inference; its selection score is not a held-out performance estimate."
+  },
+  "seconds": 17.401733833990875
+}

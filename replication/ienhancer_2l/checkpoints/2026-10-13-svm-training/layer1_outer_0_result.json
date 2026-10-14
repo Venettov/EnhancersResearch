@@ -1,0 +1,44 @@
+{
+  "outer_fold": 0,
+  "train_n": 2374,
+  "test_n": 594,
+  "train_groups": 1961,
+  "test_groups": 490,
+  "best": {
+    "C": 32768.0,
+    "gamma": 0.0078125,
+    "mean_balanced_accuracy": 0.7662244810978988,
+    "fold_balanced_accuracy": [
+      0.7746835443037974,
+      0.7638888888888888,
+      0.7601010101010102
+    ],
+    "iterations": [
+      1387,
+      1204,
+      1195
+    ]
+  },
+  "grid_boundary": {
+    "C": true,
+    "gamma": false
+  },
+  "metrics": {
+    "n": 594,
+    "tn": 251,
+    "fp": 46,
+    "fn": 88,
+    "tp": 209,
+    "sensitivity": 0.7037037037037037,
+    "specificity": 0.8451178451178452,
+    "accuracy": 0.7744107744107744,
+    "balanced_accuracy": 0.7744107744107744,
+    "mcc": 0.5543929068542811,
+    "roc_auc": 0.8525774013989501,
+    "average_precision": 0.8664159542302259
+  },
+  "support_vectors": 1565,
+  "iterations": 2089,
+  "export_max_score_error": 9.745053830556571e-08,
+  "seconds": 1.2162390829907963
+}
