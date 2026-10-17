@@ -49,8 +49,8 @@
       "The replication roadmap, original methods, benchmark limitations, and the bridge to three-cell lentiMPRA."
     ],
     "reproduce": [
-      "Reproduce",
-      "A step-by-step iEnhancer-2L guide and results from a repaired MCSE-Enhancer reconstruction, with original data, validation, limitations and downloadable evidence."
+      "Results",
+      "What the iEnhancer-2L and repaired MCSE-Enhancer reconstructions show, what remains uncertain, and how the research connects to new experimental data."
     ],
     "publications": [
       "Publications",
@@ -67,10 +67,15 @@
     "strategy": [
       "Evidence & Strategy",
       "Research report 01: enhancer biology, the collected literature, and an analysis-first research strategy."
+    ],
+    "methods": [
+      "Technical guide",
+      "Software, original data, setup commands, feature definitions and implementation links for the enhancer-method reconstructions."
     ]
   },
   "affiliation_name": "Center for Computational and Integrative Biology (CCIB)",
   "affiliation_campus": "Rutgers University–Camden",
   "student_research": "Student research at",
-  "reproduction_guide": "Reproduction guide"
+  "reproduction_guide": "Research results",
+  "technical_guide": "Technical guide"
 }

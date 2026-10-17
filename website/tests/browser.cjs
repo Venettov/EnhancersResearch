@@ -5,7 +5,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const base = (process.env.SITE_URL || 'http://127.0.0.1:8766/').replace(/\/?$/, '/');
 const screenshotDir = process.env.SCREENSHOT_DIR;
-const pages = ['index', 'research', 'reproduce', 'publications', 'resources', 'notes', 'strategy', 'glossary'];
+const pages = ['index', 'research', 'reproduce', 'methods', 'publications', 'resources', 'notes', 'strategy', 'glossary'];
 const language = base.endsWith('/es/') ? 'es' : 'en';
 const root = language === 'es' ? base.slice(0, -3) : base;
 

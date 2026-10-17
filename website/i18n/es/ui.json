@@ -49,8 +49,8 @@
       "Plan de reproducción, métodos originales, límites del conjunto de referencia y conexión con lentiMPRA en tres tipos celulares."
     ],
     "reproduce": [
-      "Reproducir",
-      "Guía paso a paso de iEnhancer-2L y resultados de una reconstrucción reparada de MCSE-Enhancer, con datos originales, validación, límites y evidencia descargable."
+      "Resultados",
+      "Qué muestran las reconstrucciones de iEnhancer-2L y MCSE-Enhancer reparado, qué sigue sin resolverse y cómo se relaciona la investigación con datos experimentales nuevos."
     ],
     "publications": [
       "Publicaciones",
@@ -67,10 +67,15 @@
     "strategy": [
       "Evidencia y estrategia",
       "Informe de investigación 01: biología de los potenciadores, bibliografía recopilada y una estrategia que comienza por el análisis."
+    ],
+    "methods": [
+      "Guía técnica",
+      "Software, datos originales, comandos de preparación, definiciones de características y enlaces a las implementaciones de los métodos de potenciadores."
     ]
   },
   "affiliation_name": "Center for Computational and Integrative Biology (CCIB)",
   "affiliation_campus": "Rutgers University–Camden",
   "student_research": "Investigación estudiantil en",
-  "reproduction_guide": "Guía de reproducción"
+  "reproduction_guide": "Resultados de investigación",
+  "technical_guide": "Guía técnica"
 }

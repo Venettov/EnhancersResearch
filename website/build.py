@@ -148,7 +148,8 @@ def build():
                 content = content.replace('href="data/', 'href="../data/')
             if slug != "glossary":
                 content = reader_help(language) + annotate(content, terms, language)
-            nav = ''.join(f'<a href="{name}.html"' + (' aria-current="page"' if name == slug else '') + f'>{escape(label)}</a>' for name, (label, _) in pages.items() if name != "strategy")
+            nav_slug = "reproduce" if slug == "methods" else slug
+            nav = ''.join(f'<a href="{name}.html"' + (' aria-current="page"' if name == nav_slug else '') + f'>{escape(label)}</a>' for name, (label, _) in pages.items() if name not in {"strategy", "methods"})
             english_url = f"{asset_base}{slug}.html"
             spanish_url = f"es/{slug}.html" if language == "en" else f"{slug}.html"
             intro = annotate(intro_html(slug, title, description, ui, language, asset_base), terms, language)

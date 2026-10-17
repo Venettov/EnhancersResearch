@@ -57,7 +57,7 @@ class Document(HTMLParser):
 
 
 documents = {path.resolve(): Document(path) for path in ROOT.rglob("*.html")}
-assert len(documents) == 16, "Expected eight pages in both languages"
+assert len(documents) == 18, "Expected nine pages in both languages"
 for path, document in documents.items():
     if len(document.headings) != 1 or document.main != 1 or document.current != 1:
         errors.append(f"{path.name}: expected one h1, main, and current navigation item")
@@ -155,4 +155,4 @@ numbers = lambda doc: Counter(re.findall(r"\d+(?:[.,]\d+)*", " ".join(doc.text))
 assert numbers(english_report) == numbers(spanish_report), "Report numerical facts differ between languages"
 if errors:
     raise SystemExit("\n".join(errors))
-print("PASS: 16 localized pages; 12 publications; 64 sourced bilingual explanations; safe annotation; links, fragments, language switches, collections, and report structure/numerical parity")
+print("PASS: 18 localized pages; 12 publications; 64 sourced bilingual explanations; safe annotation; links, fragments, language switches, collections, and report structure/numerical parity")

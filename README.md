@@ -8,7 +8,7 @@ Our goal is to **reproduce published enhancer prediction methods, starting with 
 
 This is a curated research workspace with completed file/QC audits, initial reconciliation of the experimental data, a trained two-layer iEnhancer-2L reconstruction and a **repaired MCSE-Enhancer reconstruction**. **Numerical lentiMPRA specificity-score reproduction remains unresolved.** Experimental transfer and biological hypothesis testing have not been completed. The datasets have not been combined into one training set.
 
-Start with the **[step-by-step reproduction guide](https://venettov.github.io/EnhancersResearch/reproduce.html)** ([español](https://venettov.github.io/EnhancersResearch/es/reproduce.html)): workspace setup, original files, preparation, features, training commands, grouped evaluations and plain-language explanations of the comparison results.
+Start with the **[research results](https://venettov.github.io/EnhancersResearch/reproduce.html)** ([español](https://venettov.github.io/EnhancersResearch/es/reproduce.html)) for findings, comparisons, limitations and the experimental evaluation plan. The separate **[technical guide](https://venettov.github.io/EnhancersResearch/methods.html)** ([español](https://venettov.github.io/EnhancersResearch/es/methods.html)) covers workspace setup, original files, preparation, features, training commands and implementation links.
 
 **17 October review release:** the repository and bilingual website collect the completed iEnhancer feature comparisons, repaired MCSE benchmark, 2-mer/3-mer comparison, normalization comparison and the planned VISTA evaluation. These analyses reuse the historical grouped benchmark and do not establish exact reproduction or independent confirmation.
 
