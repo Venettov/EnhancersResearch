@@ -1,0 +1,73 @@
+{
+  "repository": "https://github.com/Superzchen/iLearn",
+  "commit": "507aae17d9fea3d74a7c77984f1f1750eb734f53",
+  "commit_date": "2021-03-17",
+  "files": {
+    "README.md": {
+      "bytes": 9970,
+      "sha256": "326b71b9331d68649f82de1e9ea5f152899c520a971f87e4d188b9671ac095ad"
+    },
+    "iLearn-nucleotide-acc.py": {
+      "bytes": 2415,
+      "sha256": "63fb43ac81c888dc19ab7f4a4d21b6f31a25c85a8db8acebe1b3f893026e96e9"
+    },
+    "iLearn-nucleotide-Pse.py": {
+      "bytes": 3213,
+      "sha256": "c3366796ffa875c42e597bacebd163db581c63ec9db3d77048cf8e2d63d22b34"
+    },
+    "iLearn-nucleotide-basic.py": {
+      "bytes": 1334,
+      "sha256": "6c3c02897bb3e2e58e4eedcb4212023bbe52b16951262fee33a2b7f17d750054"
+    },
+    "descnucleotide/ACC.py": {
+      "bytes": 7578,
+      "sha256": "4444f58dc577d7663a887adea5e6423321bafdd61fdcdf2380ed083978838772"
+    },
+    "descnucleotide/Pse.py": {
+      "bytes": 8422,
+      "sha256": "87898e66b0b4ca16fff548e07fda6091c32a11df35aa0a87ae844be719c9dda5"
+    },
+    "descnucleotide/Kmer.py": {
+      "bytes": 3924,
+      "sha256": "868b129e406c26f2b75951bb1712665351d72f0f1a4c419b9f264e03f4b9542d"
+    },
+    "descnucleotide/check_parameters.py": {
+      "bytes": 16098,
+      "sha256": "651c6137250265480e6c41e9f3434f0ca7e8fd8d247bef584997b6267a49f44f"
+    },
+    "pubscripts/read_fasta_sequences.py": {
+      "bytes": 2540,
+      "sha256": "fbd4289bad91f62522fcbfd43784e7ece68a19f9850e071b29a05d47f0c3c31d"
+    },
+    "pubscripts/save_file.py": {
+      "bytes": 8198,
+      "sha256": "8e0f5650dc4bdd120bb3e4d3d2bc454e55a5f7a2a0fc6c710a20b3423aad92ea"
+    },
+    "data/didnaPhyche.data": {
+      "bytes": 38681,
+      "sha256": "ee2341d2de5b6b98ae009251780c27f8be76af8010de33dc1455f025de2b6d2e"
+    },
+    "data/didnaPhyche.txt": {
+      "bytes": 15660,
+      "sha256": "f4dff027d51d06a88d8308d5ecdbafdb93e684d3601a1fd35eb6ef8986a6f452"
+    }
+  },
+  "property_pickle_opcodes": [
+    "APPENDS",
+    "BINPUT",
+    "BINUNICODE",
+    "EMPTY_DICT",
+    "EMPTY_LIST",
+    "LONG_BINPUT",
+    "MARK",
+    "PROTO",
+    "SETITEMS",
+    "STOP"
+  ],
+  "notes": [
+    "Pinned available iLearn code predates MCSE publication; authors did not pin a version.",
+    "Only relevant source/data files retained; no upstream notebook or shell command executed.",
+    "Property pickle decoded with class/global loading forbidden and converted to numeric JSON."
+  ],
+  "derived_properties_sha256": "7b4797d78704b2e86bc1d3d9c58280eb737a1def8566c581402c00e7cae998b2"
+}

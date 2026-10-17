@@ -1,0 +1,51 @@
+{
+  "mode": "run",
+  "created_utc": "2026-10-15T11:19:49.382756+00:00",
+  "interpretation": "Reported-parameter diagnostic; not independent retuning or an exact published reproduction",
+  "feature_variant": "k3_paperL_full",
+  "feature_shape": [
+    2968,
+    15217
+  ],
+  "historical_test_loaded": false,
+  "benchmark_protocol_sha256": "49a65ddd96625c074e488b918ad94044b78753c331eb58840ffcdca8a28a7a2f",
+  "protocol_sha256": "8a316519a5bfcc61391ce0e433fbdd5d18581f48c30ef547b4265589e52992e7",
+  "settings_sha256": "a9643b47be73e20db42a8296dffbd0805b1d78f46d76865f5d768a5e48b6e472",
+  "folds": [
+    {
+      "fold": 0,
+      "train": 2374,
+      "test": 594,
+      "train_groups": 1961,
+      "test_groups": 490
+    },
+    {
+      "fold": 1,
+      "train": 2375,
+      "test": 593,
+      "train_groups": 1961,
+      "test_groups": 490
+    },
+    {
+      "fold": 2,
+      "train": 2375,
+      "test": 593,
+      "train_groups": 1962,
+      "test_groups": 489
+    },
+    {
+      "fold": 3,
+      "train": 2374,
+      "test": 594,
+      "train_groups": 1961,
+      "test_groups": 490
+    },
+    {
+      "fold": 4,
+      "train": 2374,
+      "test": 594,
+      "train_groups": 1959,
+      "test_groups": 492
+    }
+  ]
+}

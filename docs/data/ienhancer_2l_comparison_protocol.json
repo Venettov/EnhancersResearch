@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "scope": "Local exploratory baseline and feature-sensitivity comparisons after inspecting the first primary SVM evaluation",
+  "declared_before_comparison_fits": true,
+  "not_a_preregistration": "Recorded and hashed locally before these comparison fits; the primary results were already known. No external registration or Git commit is claimed.",
+  "reference": "checkpoints/2026-10-13-svm-training; reuse its verified held-out primary predictions and per-outer-fold parameters",
+  "population": "Frozen original 2968-record benchmark; layer II uses its 1484 known enhancers only",
+  "folds": "Reuse the frozen five outer and three inner grouped folds exactly, joining by record_id",
+  "svm_protocol": "training_protocol.json; same C/gamma grid, solver, balanced-accuracy selection, exact tie rule and unscaled features",
+  "baselines": {
+    "majority": "Predict the most frequent training label in each outer fold; ties choose 0. Use the training positive fraction as a constant ranking score. No sequence features or tuning.",
+    "gc_only": "One feature: (count(G)+count(C))/sequence length. RBF SVM with inner-fold C/gamma tuning.",
+    "sixmer_only": "4096 ordinary overlapping 6-mer frequencies, divided by 195 windows in each 200-base sequence, lexical A,C,G,T order. No theta terms, PseKNC denominator, fitted scaling, reverse-complement pooling or k selection. RBF SVM with inner-fold C/gamma tuning."
+  },
+  "sensitivity_variants": ["disjoint", "per_word_nonoverlap", "published_rounded", "population"],
+  "sensitivity_modes": {
+    "retuned": "Refit each variant with C/gamma selected using only its three inner folds, on the unchanged grid. Tests the whole variant-plus-tuning procedure.",
+    "fixed_primary_parameters": "Refit each variant using the primary model's saved C/gamma for that same outer fold, without retuning. Tests replacement of the feature representation at fixed parameters. These parameters were selected for primary features, so this is a sensitivity check, not a fair optimized-baseline contest."
+  },
+  "feature_inputs": "Verify every alternate matrix against the existing feature checkpoint's shape, array hash, feature order, IDs and labels; compute baseline features from the audited sequences",
+  "model_export": "Save all comparison outer-fold SVMs as numeric NPZ with explicit feature identity. Require exact held-out class agreement and absolute decision-score replay error <=1e-6, fixed before these fits.",
+  "summary": "Per-fold and equal-weight macro accuracy, balanced accuracy, sensitivity, specificity, MCC, ROC AUC and average precision. Rank scores only within folds. Report pooled confusion counts and prediction disagreements with primary. No pooled AUC/AP.",
+  "paired_bootstrap": {
+    "resamples": 1000,
+    "seed": 42,
+    "unit": "Whole groups sampled with replacement within each outer fold; identical resampled rows for every method in that layer",
+    "metrics": ["accuracy", "balanced_accuracy", "roc_auc"],
+    "interval": "Pointwise 2.5th/97.5th percentiles for macro metrics and comparator-minus-primary paired differences",
+    "limitation": "Conditional on saved fits and folds, without refitting. Exploratory and not multiplicity-adjusted; no confirmatory significance, population equivalence or best-model selection claim."
+  },
+  "grid_boundaries": "Report selected C/gamma endpoints. Do not expand the grid after inspecting comparisons. The same numeric grid does not imply identical effective regularization across feature scales.",
+  "exclusions": ["contaminated historical test", "NEW_2026_DATA or lentiMPRA transfer", "historical leave-one-out reproduction", "selecting a winning feature variant from outer scores", "new full-data deployment models", "publishing or pushing without user agreement"],
+  "source": "https://scikit-learn.org/stable/auto_examples/model_selection/plot_nested_cross_validation_iris.html"
+}

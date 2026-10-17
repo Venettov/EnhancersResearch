@@ -1,0 +1,16 @@
+{
+  "analysis_source_snapshot/compare_kmers.py": "86b26172cb7c59aca121c704d74991fde417c6cbb3240bc1ab9c5bbc489185ea",
+  "analysis_source_snapshot/summarize_benchmark.py": "56de3ff619b49147efd9d3050ead66cfd19b70603e626b2229b40ce614c0ee44",
+  "analysis_source_snapshot/test_benchmark_summary.py": "102bc074982f9de5a8f72066619d8126d4e9dfdd4c921a3057e4c8367eac4e91",
+  "analysis_source_snapshot/test_kmer_comparison.py": "77c0f4222ba611c13ddc8468528a64b14be60f176d64a8c198a053d30e849905",
+  "benchmark_k3_protocol.json": "2b7df9aa176111e52456af949df561da6742b9313c34d14a699b9c0f56da0e46",
+  "comparison_protocol.json": "97f50efa05930a0413bdfa37b07ca83fd2676acb56ff7f1f7e800709e587460d",
+  "comparison_summary.json": "374d498cb2bc8945bd7129e9d40fa3cada46ff447254136bcb60418dee6eca2d",
+  "feature_preflight.json": "082de7f326d1479e2ec397276189e36fbf7d9c347e3bbf42358eafcc9462316b",
+  "fold_metrics.csv": "ba016ada1816836303b226b5a4335547d0643d14c54d68a91d92853acc73e5d9",
+  "model_metrics.csv": "5392267910cb30862bdeb5e4006659709d6a8bab148229c2d8df03d8163320dc",
+  "paired_predictions.csv": "79b59a37ddc56a185f8514d06de04cdec81f3ed9922c63c5cd98f5dbac17f5e7",
+  "preflight.json": "bbe789d792a6f487f39007b71796675197fc43d3e66c273b17b2f30269f65378",
+  "preflight_tests.log": "46816451e2ad24788a3a347aa8757a17f61e11bd5d65ec9971dd3232363c615d",
+  "report.html": "2d5cfb0a9146c0ae90cc54a30877984ec37a5057b4146eb1bf08eb6d7a8f08a5"
+}

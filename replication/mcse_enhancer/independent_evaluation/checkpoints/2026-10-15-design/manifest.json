@@ -1,0 +1,10 @@
+{
+  "protocol_sha256": "1af7faaea99ecac09bdfad67b2f77b2754231a637967d641c1d8538f2cea291d",
+  "audit_source_sha256": "1c77a444e919a6b870e9c212f6f58332736d874df977feb35e5419a7a082ceeb",
+  "files": {
+    "excluded_records.csv": "c1a6162225e15a84fad06f3e362b28d7bdf50493e042b7ffd1f66b25450b3079",
+    "preliminary_candidates.csv": "95816bfb657eea5e662acb5bd3dcfc85a7c1fe93be523248400ee18e4b65c6ff",
+    "readiness.json": "7ebd01615f1ac359edea7c07026d56111f07a109ebc87229aed3cf58ab8da007",
+    "protocol.json": "1af7faaea99ecac09bdfad67b2f77b2754231a637967d641c1d8538f2cea291d"
+  }
+}

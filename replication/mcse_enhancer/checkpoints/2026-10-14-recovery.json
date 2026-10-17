@@ -1,0 +1,272 @@
+{
+  "date": "2026-10-14",
+  "stage": "MCSE source/data audit and partial feature recovery",
+  "complete_for_this_stage": true,
+  "complete_published_pipeline_reproduced": false,
+  "model_trained": false,
+  "published_performance_reproduced": false,
+  "upstream_commit": "d76c48946de9c46e0845df12c119a27b7e455444",
+  "repo_head": "e9c8300c40dae1e351f5b9d40c7d07bdf6682779",
+  "source_snapshot_manifest": "../source_manifest.json",
+  "data_audit": {
+    "stage": "data recovery and static code audit; no model trained",
+    "source_commit": "d76c48946de9c46e0845df12c119a27b7e455444",
+    "source_files_verified": 9,
+    "train_rows": 2968,
+    "train_unique_sequences": 2968,
+    "train_labels": {
+      "1": 1484,
+      "0": 1484
+    },
+    "historical_test_rows": 400,
+    "historical_test_labels": {
+      "1": 200,
+      "0": 200
+    },
+    "exact_test_train_overlaps": 100,
+    "overlap_legacy_classes": {
+      "strong": 100
+    },
+    "mcse_legacy_sequence_order_and_binary_labels_identical": true,
+    "evaluation_groups": 2451,
+    "outer_folds": 5,
+    "inner_folds_per_outer_training_set": 3,
+    "outer_and_inner_group_isolation_verified": true,
+    "grouping_limit": "Reduces specified similarity/locus leakage; not complete biological independence. Prior exploration of these folds makes future comparisons exploratory.",
+    "notebooks": {
+      "Create_Feature_Descriptors.ipynb": {
+        "syntax_errors": [],
+        "omitted_magic_lines": [],
+        "saved_output_cells": 0
+      },
+      "Models _Testing.ipynb": {
+        "syntax_errors": [
+          {
+            "cell": 3,
+            "line": 4,
+            "message": "invalid syntax"
+          },
+          {
+            "cell": 4,
+            "line": 1,
+            "message": "invalid syntax"
+          },
+          {
+            "cell": 6,
+            "line": 4,
+            "message": "invalid syntax"
+          },
+          {
+            "cell": 7,
+            "line": 2,
+            "message": "invalid syntax"
+          }
+        ],
+        "omitted_magic_lines": [
+          {
+            "cell": 14,
+            "line": 1
+          },
+          {
+            "cell": 19,
+            "line": 1
+          },
+          {
+            "cell": 25,
+            "line": 1
+          },
+          {
+            "cell": 41,
+            "line": 1
+          },
+          {
+            "cell": 63,
+            "line": 1
+          },
+          {
+            "cell": 72,
+            "line": 5
+          }
+        ],
+        "saved_output_cells": 0
+      },
+      "Models_Training.ipynb": {
+        "syntax_errors": [
+          {
+            "cell": 4,
+            "line": 4,
+            "message": "invalid syntax"
+          },
+          {
+            "cell": 5,
+            "line": 1,
+            "message": "invalid syntax"
+          },
+          {
+            "cell": 9,
+            "line": 4,
+            "message": "invalid syntax"
+          },
+          {
+            "cell": 10,
+            "line": 2,
+            "message": "invalid syntax"
+          }
+        ],
+        "omitted_magic_lines": [
+          {
+            "cell": 44,
+            "line": 1
+          },
+          {
+            "cell": 50,
+            "line": 1
+          }
+        ],
+        "saved_output_cells": 0
+      }
+    },
+    "input_sha256": {
+      "enhancer.cv.txt": "0709765619d348ee6a7c5459058df1abe01591ef360b2123092336159b2d7918",
+      "non.cv.txt": "1fa9a8f720a6be5d9562db8083e856a3e49b45fb433bf876a2211f7efa4ddd55",
+      "enhancer.ind.txt": "f4763d5b3b9f2306e0ce295f074376adfb1980bd818c255ac781aaa533a8de37",
+      "non.ind.txt": "105381e8906c977d41b39df2dfecc4bdb7e0683fd81b5c51aaf397968ff719d1",
+      "replication/ienhancer_2l/output/2026-10-13-preparation/benchmark.csv": "2619e419cf2467a5695254a28346e253efdea1edb821862d4a9625bd2d35b075",
+      "replication/ienhancer_2l/output/2026-10-13-preparation/legacy_test_diagnostic_only.csv": "65f0c770c40772afc14d03b18c6eed654eea3306f35796efee2da893b2332558",
+      "replication/ienhancer_2l/checkpoints/2026-10-13-groups-features/evaluation_assignments.csv": "1693a4d761e02b1d1145b76d0f962504ffa0dfb0bb459cfa3a86cbb4b37bd8e6"
+    },
+    "output_sha256": {
+      "historical_test_diagnostic_only.csv": "56a01812c078f394cc34ed3ddf9ec241da437f11ff3fb47dcc18e445267860a6",
+      "train.csv": "6a47f1c3644f70d623660953f7c92030773bc238623a97cbf1105c3dc5198480"
+    }
+  },
+  "features_audit": {
+    "status": "Partial feature recovery; complete MCSE feature matrix and model not reproduced",
+    "rows": 2968,
+    "columns": 14891,
+    "dtype": "float64",
+    "component_widths": {
+      "basic_summaries": 7,
+      "nonoverlapping_1_to_3mer_counts": 84,
+      "gapped_counts": 14800
+    },
+    "labels_in_feature_matrix": false,
+    "test_features_generated": false,
+    "models_trained": 0,
+    "standardization_or_selection_fitted": false,
+    "author_cell_zero_based": 15,
+    "author_parameters": {
+      "kGap": 5,
+      "kTuple": 3
+    },
+    "author_reference_rows_zero_based": [
+      0,
+      1,
+      507,
+      741,
+      742,
+      1483,
+      1484,
+      1912,
+      2967
+    ],
+    "author_reference_exact_equality": true,
+    "all_values_finite": true,
+    "python": "3.14.3",
+    "numpy": "2.5.4",
+    "elapsed_seconds": 10.236468624992995,
+    "inputs_sha256": {
+      "train.csv": "6a47f1c3644f70d623660953f7c92030773bc238623a97cbf1105c3dc5198480",
+      "data_audit.json": "f52aca539ffca59fcd02890eb29d6e5767a00c4fdad11fdb07f5b0c7be9f1ee6"
+    },
+    "implementation_sha256": {
+      "common.py": "04d980b51492c07d0b0421541c742fc9a4938fc39e43ef7667192652c9187c80",
+      "features.py": "1db774374a14c581fb4e57ff8b2fc5fb3b2aa4dc5b43afc79884dd5d24be8ead",
+      "build_features.py": "27a78289732b6f40103f13f9fda80034e693a399078c90a283e3b7f1c1c02b66"
+    },
+    "outputs_sha256": {
+      "basic_summaries_train.npz": "62f40e1573b2e54d0c92b1f98bc4d4f4b22f3327f6bc9c7d18588386a2e6b7eb",
+      "notebook_block_train.npz": "7b7c1ec57376c5c914b4e1e2506ffe80afbbd5ef5a771ec70ce7f43fef4b4d8d"
+    },
+    "unrecovered_descriptors": [
+      "DCC",
+      "PseKNC",
+      "SCPseDNC",
+      "PCPseDNC",
+      "iLearn Kmer"
+    ],
+    "interpretation": "Agreement with this notebook function does not establish the actual features used for the publication. The paper describes a much smaller NPCP concatenation, and the notebook merge cells are incomplete."
+  },
+  "saved_artifact_validation": {
+    "passed": true,
+    "rows_checked": 2968,
+    "feature_columns": 14891,
+    "all_basic_summaries_recomputed": true,
+    "gapped_count_blocks_checked_per_row": 40,
+    "saved_feature_row_ids_and_names_verified": true,
+    "input_output_hashes_verified": true,
+    "saved_matrices_contain_no_labels": true,
+    "audit_sha256": {
+      "data_audit.json": "f52aca539ffca59fcd02890eb29d6e5767a00c4fdad11fdb07f5b0c7be9f1ee6",
+      "features_audit.json": "3dedcd173946c866267580b637c72dbea7e2bdf3d576676c17e5c63c9956dd04"
+    }
+  },
+  "tests": {
+    "command": ".venv/bin/python -m unittest discover -s replication/mcse_enhancer -p 'test_*.py' -v",
+    "passed": 10,
+    "failed": 0
+  },
+  "environment": {
+    "python": "3.14.3",
+    "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+    "numpy": "2.5.4",
+    "packages_installed_or_changed": false,
+    "training_environment_frozen": false
+  },
+  "commands": [
+    ".venv/bin/python replication/mcse_enhancer/prepare.py --source /private/tmp/enhancer-originals-review/mcse --output replication/mcse_enhancer/output/2026-10-14-recovery",
+    ".venv/bin/python -m unittest discover -s replication/mcse_enhancer -p 'test_*.py' -v",
+    ".venv/bin/python replication/mcse_enhancer/build_features.py --prepared replication/mcse_enhancer/output/2026-10-14-recovery --output replication/mcse_enhancer/output/2026-10-14-notebook-features",
+    ".venv/bin/python replication/mcse_enhancer/validate.py --prepared replication/mcse_enhancer/output/2026-10-14-recovery --features replication/mcse_enhancer/output/2026-10-14-notebook-features --report replication/mcse_enhancer/output/2026-10-14-notebook-features/validation.json"
+  ],
+  "implementation_and_documentation_sha256": {
+    ".gitignore": "dc04643f1b6225d31c37465328b916c1656dd48cc16b70df4e9cfdb7f9a59a38",
+    "README.md": "a3a55160ce33cf1a43099dc5c5b9f8837581344411b07d1ac432dd33473ac687",
+    "build_features.py": "27a78289732b6f40103f13f9fda80034e693a399078c90a283e3b7f1c1c02b66",
+    "common.py": "04d980b51492c07d0b0421541c742fc9a4938fc39e43ef7667192652c9187c80",
+    "features.py": "1db774374a14c581fb4e57ff8b2fc5fb3b2aa4dc5b43afc79884dd5d24be8ead",
+    "prepare.py": "5706a13e842e923e5cdcf7bce36a5859d2a9aaf4852ce6174084b0d48c07e5be",
+    "source_manifest.json": "09692206586098568644be7812b05fa825bb592791ced746d5312b64893b41e5",
+    "test_recovery.py": "c9475caa518c0a29fcf554c9dc0e84a731130430a7cf2d7f4a459cf34a2903d2",
+    "validate.py": "30dd611f6b6dd56c00aaa5af6b222bbfcf43a6b2e1d9b1e75cf9b4e229425a09"
+  },
+  "saved_outputs_sha256": {
+    "output/2026-10-14-recovery/data_audit.json": "f52aca539ffca59fcd02890eb29d6e5767a00c4fdad11fdb07f5b0c7be9f1ee6",
+    "output/2026-10-14-recovery/historical_test_diagnostic_only.csv": "56a01812c078f394cc34ed3ddf9ec241da437f11ff3fb47dcc18e445267860a6",
+    "output/2026-10-14-recovery/train.csv": "6a47f1c3644f70d623660953f7c92030773bc238623a97cbf1105c3dc5198480",
+    "output/2026-10-14-notebook-features/basic_summaries_train.npz": "62f40e1573b2e54d0c92b1f98bc4d4f4b22f3327f6bc9c7d18588386a2e6b7eb",
+    "output/2026-10-14-notebook-features/features_audit.json": "3dedcd173946c866267580b637c72dbea7e2bdf3d576676c17e5c63c9956dd04",
+    "output/2026-10-14-notebook-features/notebook_block_train.npz": "7b7c1ec57376c5c914b4e1e2506ffe80afbbd5ef5a771ec70ce7f43fef4b4d8d",
+    "output/2026-10-14-notebook-features/validation.json": "3c1e037be3f298970b7bc3b96589d409d2b872de26f45957f888761f5d0710b6"
+  },
+  "preservation": {
+    "existing_nonignored_files_checked": 281,
+    "changed_existing_files": [],
+    "website_edited": false,
+    "commit_created": false,
+    "pushed": false
+  },
+  "open_items": [
+    "Recover iLearn version, property tables and five remaining descriptors.",
+    "Retrieve supplementary Table S1 and reconcile final classifier settings.",
+    "Resolve NPCP dimensionality, feature merge and ensemble configuration.",
+    "Freeze and implement the corrected group-aware training and out-of-fold stacking protocol."
+  ],
+  "publisher_supplement_retrieval": {
+    "status": "not retrieved",
+    "publisher_page": "https://www.sciencedirect.com/science/article/pii/S0022283623004254",
+    "observed_http_status": 403,
+    "local_supplement_found": false,
+    "absence_from_local_files_does_not_prove_unavailability": true
+  }
+}

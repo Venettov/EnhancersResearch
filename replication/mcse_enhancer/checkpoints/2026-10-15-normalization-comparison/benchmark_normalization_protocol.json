@@ -1,0 +1,53 @@
+{
+  "stage": "Local MCSE 3-mer normalization diagnostic",
+  "frozen_before_fitting": true,
+  "feature_variant": "k3_paperL_full",
+  "selection_reason": "User-requested normalization comparison: retain k=3 and replace only the standalone word denominator by literal paper Equation 7 sequence length. Reuse saved iLearn-normalized k3_full control.",
+  "model_protocol": "repair_protocol.json",
+  "settings": "model_settings.json",
+  "tuning": "None: one fixed reported S1 candidate per base, fixed CatBoost meta-model, no variant selection",
+  "target": "Legacy enhancer versus non-enhancer",
+  "outer_folds": 5,
+  "inner_crossfit_folds": 3,
+  "expected_fits": 125,
+  "primary_summary": "Pooled held-out accuracy at threshold 0.5; all 2968 training records held out exactly once",
+  "secondary_summaries": [
+    "Per-fold accuracy and AUROC",
+    "Mean fold AUROC",
+    "Pooled AUROC (scores from separately fitted models; no pooled calibration implied)",
+    "Pooled MCC, sensitivity, specificity and confusion matrix",
+    "Individual base predictions as descriptive diagnostics; no model selection"
+  ],
+  "reference": {
+    "path": "../ienhancer_2l/checkpoints/2026-10-13-svm-training/layer1_held_out_predictions.csv",
+    "purpose": "Matched descriptive comparison with the earlier reconstructed iEnhancer-2L binary SVM",
+    "required_alignment": [
+      "record ID",
+      "group ID",
+      "outer fold",
+      "binary label"
+    ],
+    "not_a_controlled_algorithm_comparison": "The feature sets and parameter-selection procedures differ; these folds have already informed exploratory analyses."
+  },
+  "uncertainty": {
+    "method": "Paired cluster bootstrap: resample sequence/locus groups with replacement within each outer fold, retaining all rows of each selected group; use the same draws for both models",
+    "replicates": 2000,
+    "seed": 20261014,
+    "interval": "2.5th and 97.5th percentiles for pooled MCSE accuracy and MCSE-minus-reference accuracy",
+    "scope": "Conditional on these fitted predictions; does not include model refitting, source-parameter selection or prior exploratory choices"
+  },
+  "historical_test": "Excluded from fitting and scoring",
+  "failure_policy": "Stop on nonconvergence or invalid probabilities; retain failure evidence and do not publish partial aggregate metrics",
+  "limits": [
+    "Exploratory follow-up after viewing prior benchmark results; not fresh independent confirmation.",
+    "This tests only the standalone 3-mer frequency denominator, not every normalization in the paper or other descriptor blocks.",
+    "All sequences have length 200: count/L is 0.99 times count/(L-2), with unchanged information and dimensionality.",
+    "Feature-family mapping, final ensemble choices and historical software remain unresolved; this is a repaired reconstruction, not exact reproduction.",
+    "Reported S1 settings may already have been selected using these labels.",
+    "Intervals condition on fitted predictions; no refitting, seed variation or parameter-selection uncertainty.",
+    "No historical contaminated test records or NEW_2026_DATA outcomes are used; no winning model is selected."
+  ],
+  "publication": "Local only; no commit or push",
+  "comparison_protocol": "normalization_comparison_protocol.json",
+  "frozen_utc": "2026-10-15T11:15:26.356183+00:00"
+}

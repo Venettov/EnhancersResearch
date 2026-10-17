@@ -1,0 +1,462 @@
+{
+  "notebook_sha256": "cbf7590afafb45705e1564295f257ed3db8901dbbab4785f99462be1d16b8080",
+  "indexing": "zero-based notebook cells",
+  "status": "Search specifications, not recovered best-trial outputs",
+  "models": {
+    "RF": {
+      "cell": 14,
+      "search_calls": [
+        {
+          "method": "suggest_int",
+          "args": [
+            "n_estimators",
+            2,
+            1000
+          ],
+          "kwargs": {}
+        },
+        {
+          "method": "suggest_categorical",
+          "args": [
+            "criterion",
+            [
+              "entropy",
+              "gini"
+            ]
+          ],
+          "kwargs": {}
+        },
+        {
+          "method": "suggest_int",
+          "args": [
+            "max_depth",
+            2,
+            80
+          ],
+          "kwargs": {}
+        },
+        {
+          "method": "suggest_int",
+          "args": [
+            "max_leaf_nodes",
+            2,
+            40
+          ],
+          "kwargs": {}
+        },
+        {
+          "method": "suggest_int",
+          "args": [
+            "min_samples_split",
+            2,
+            40
+          ],
+          "kwargs": {}
+        },
+        {
+          "method": "suggest_int",
+          "args": [
+            "min_samples_leaf",
+            2,
+            40
+          ],
+          "kwargs": {}
+        },
+        {
+          "method": "suggest_categorical",
+          "args": [
+            "max_features",
+            [
+              "auto",
+              "sqrt",
+              "log2"
+            ]
+          ],
+          "kwargs": {}
+        }
+      ]
+    },
+    "ET": {
+      "cell": 21,
+      "search_calls": [
+        {
+          "method": "suggest_int",
+          "args": [
+            "n_estimators",
+            100,
+            1000
+          ],
+          "kwargs": {
+            "step": 5
+          }
+        },
+        {
+          "method": "suggest_int",
+          "args": [
+            "max_depth",
+            5,
+            80
+          ],
+          "kwargs": {
+            "step": 1
+          }
+        },
+        {
+          "method": "suggest_int",
+          "args": [
+            "max_leaf_nodes",
+            6,
+            30
+          ],
+          "kwargs": {}
+        },
+        {
+          "method": "suggest_categorical",
+          "args": [
+            "criterion",
+            [
+              "log_loss",
+              "gini",
+              "entropy"
+            ]
+          ],
+          "kwargs": {}
+        },
+        {
+          "method": "suggest_categorical",
+          "args": [
+            "max_features",
+            [
+              "auto",
+              "sqrt",
+              "log2"
+            ]
+          ],
+          "kwargs": {}
+        },
+        {
+          "method": "suggest_int",
+          "args": [
+            " min_samples_split",
+            2,
+            30
+          ],
+          "kwargs": {
+            "step": 1
+          }
+        },
+        {
+          "method": "suggest_int",
+          "args": [
+            "min_samples_leaf",
+            1,
+            20
+          ],
+          "kwargs": {
+            "step": 1
+          }
+        }
+      ]
+    },
+    "CB": {
+      "cell": 26,
+      "search_calls": [
+        {
+          "method": "suggest_int",
+          "args": [
+            "iterations",
+            1,
+            100
+          ],
+          "kwargs": {}
+        },
+        {
+          "method": "suggest_float",
+          "args": [
+            "learning_rate",
+            0.001,
+            0.1
+          ],
+          "kwargs": {
+            "log": true
+          }
+        },
+        {
+          "method": "suggest_int",
+          "args": [
+            "depth",
+            4,
+            16
+          ],
+          "kwargs": {}
+        },
+        {
+          "method": "suggest_float",
+          "args": [
+            "l2_leaf_reg",
+            1e-08,
+            100.0
+          ],
+          "kwargs": {
+            "log": true
+          }
+        },
+        {
+          "method": "suggest_categorical",
+          "args": [
+            "bootstrap_type",
+            [
+              "Bayesian"
+            ]
+          ],
+          "kwargs": {}
+        },
+        {
+          "method": "suggest_float",
+          "args": [
+            "random_strength",
+            1e-08,
+            10.0
+          ],
+          "kwargs": {
+            "log": true
+          }
+        },
+        {
+          "method": "suggest_float",
+          "args": [
+            "bagging_temperature",
+            0.0,
+            10.0
+          ],
+          "kwargs": {}
+        },
+        {
+          "method": "suggest_categorical",
+          "args": [
+            "od_type",
+            [
+              "IncToDec",
+              "Iter"
+            ]
+          ],
+          "kwargs": {}
+        },
+        {
+          "method": "suggest_int",
+          "args": [
+            "od_wait",
+            10,
+            80
+          ],
+          "kwargs": {}
+        }
+      ]
+    },
+    "XGB": {
+      "cell": 34,
+      "search_calls": [
+        {
+          "method": "suggest_int",
+          "args": [
+            "max_depth",
+            1,
+            80
+          ],
+          "kwargs": {}
+        },
+        {
+          "method": "suggest_float",
+          "args": [
+            "learning_rate",
+            0.01,
+            10.0
+          ],
+          "kwargs": {}
+        },
+        {
+          "method": "suggest_int",
+          "args": [
+            "n_estimators",
+            10,
+            1000
+          ],
+          "kwargs": {}
+        },
+        {
+          "method": "suggest_int",
+          "args": [
+            "min_child_weight",
+            1,
+            40
+          ],
+          "kwargs": {}
+        },
+        {
+          "method": "suggest_float",
+          "args": [
+            "gamma",
+            1e-08,
+            10.0
+          ],
+          "kwargs": {}
+        },
+        {
+          "method": "suggest_float",
+          "args": [
+            "subsample",
+            0.01,
+            1.0
+          ],
+          "kwargs": {}
+        },
+        {
+          "method": "suggest_float",
+          "args": [
+            "colsample_bytree",
+            0.01,
+            1.0
+          ],
+          "kwargs": {}
+        },
+        {
+          "method": "suggest_float",
+          "args": [
+            "reg_alpha",
+            1e-08,
+            1.0
+          ],
+          "kwargs": {}
+        },
+        {
+          "method": "suggest_float",
+          "args": [
+            "reg_lambda",
+            1e-08,
+            1.0
+          ],
+          "kwargs": {}
+        }
+      ]
+    },
+    "LGBM": {
+      "cell": 40,
+      "search_calls": [
+        {
+          "method": "suggest_int",
+          "args": [
+            "num_leaves",
+            2,
+            40
+          ],
+          "kwargs": {
+            "step": 1,
+            "log": false
+          }
+        },
+        {
+          "method": "suggest_int",
+          "args": [
+            "max_depth",
+            1,
+            80
+          ],
+          "kwargs": {
+            "step": 1,
+            "log": false
+          }
+        },
+        {
+          "method": "suggest_float",
+          "args": [
+            "learning_rate",
+            0.0001,
+            1
+          ],
+          "kwargs": {
+            "log": true
+          }
+        },
+        {
+          "method": "suggest_int",
+          "args": [
+            "n_estimators",
+            100,
+            1000
+          ],
+          "kwargs": {
+            "step": 10
+          }
+        },
+        {
+          "method": "suggest_int",
+          "args": [
+            "min_child_samples",
+            10,
+            40
+          ],
+          "kwargs": {
+            "log": false
+          }
+        },
+        {
+          "method": "suggest_uniform",
+          "args": [
+            "subsample",
+            0.2,
+            1.0
+          ],
+          "kwargs": {}
+        },
+        {
+          "method": "suggest_uniform",
+          "args": [
+            "colsample_bytree",
+            0.2,
+            1.0
+          ],
+          "kwargs": {}
+        },
+        {
+          "method": "suggest_uniform",
+          "args": [
+            "reg_alpha",
+            0.0,
+            1.0
+          ],
+          "kwargs": {}
+        },
+        {
+          "method": "suggest_uniform",
+          "args": [
+            "reg_lambda",
+            0.0,
+            10.0
+          ],
+          "kwargs": {}
+        }
+      ]
+    },
+    "MLP": {
+      "cell": 49,
+      "search_calls": [],
+      "fixed_notebook_parameters": {
+        "solver": "adam",
+        "activation": "logistic",
+        "alpha": 0.01,
+        "hidden_layer_sizes": [
+          20
+        ],
+        "random_state": 1
+      }
+    }
+  },
+  "repairs_needed_for_retuning": [
+    "Trim leading whitespace in the ET min_samples_split key.",
+    "Map obsolete RF/ET max_features=auto to sqrt for classifier compatibility; deduplicate the resulting choices.",
+    "Fit all suggested RF parameters, including criterion and max_leaf_nodes.",
+    "Replace deprecated suggest_uniform with suggest_float preserving bounds.",
+    "RF, ET, XGB and LGBM fold loops require proper aggregation; do not reuse the last split only.",
+    "Choose and freeze notebook versus supplement search specifications; they differ. No retuned search has been run."
+  ]
+}

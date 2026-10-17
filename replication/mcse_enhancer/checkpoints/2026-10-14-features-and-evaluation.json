@@ -1,0 +1,297 @@
+{
+  "date": "2026-10-14",
+  "stage": "Feature/model-settings recovery and evaluation repair",
+  "stage_complete": true,
+  "published_pipeline_exactly_identified": false,
+  "benchmark_models_fitted": false,
+  "benchmark_accuracy_calculated": false,
+  "feature_audit": {
+    "stage": "all five external descriptor families recovered plus explicit 3-mer alternative",
+    "rows": 2968,
+    "widths": {
+      "DCC": 150,
+      "PseKNC": 66,
+      "SCPseDNC": 28,
+      "PCPseDNC": 18,
+      "Kmer2": 16,
+      "Kmer3": 64
+    },
+    "inputs_sha256": {
+      "train.csv": "6a47f1c3644f70d623660953f7c92030773bc238623a97cbf1105c3dc5198480"
+    },
+    "sources_sha256": {
+      "ilearn_source_manifest.json": "4d87710f62b9f12efdc935d8221f41615c72e9a6d79aa3d72054ba151ec16984",
+      "ilearn_properties.json": "7b4797d78704b2e86bc1d3d9c58280eb737a1def8566c581402c00e7cae998b2",
+      "ilearn_features.py": "3697717146fb4978807617da49a717efc6acb743bc0520f4b148236a0296da0f",
+      "build_ilearn.py": "4fdc44bf29875bf1f5cc7707d317646e84597f9bc778f65188a9eb427e4eec0e"
+    },
+    "outputs_sha256": {
+      "ilearn_train.npz": "584dded77b2badb6b06bbb0e99b3cfc6c91485a208de2b47b978d9d1523a5f18"
+    },
+    "independent_formula_validation_rows": [
+      0,
+      1,
+      741,
+      742,
+      1483,
+      1484,
+      2967
+    ],
+    "max_absolute_formula_errors": {
+      "DCC": 8.326672684688674e-16,
+      "PseKNC": 1.3877787807814457e-16,
+      "SCPseDNC": 1.3877787807814457e-17,
+      "PCPseDNC": 1.1102230246251565e-16,
+      "Kmer2": 0.0,
+      "Kmer3": 0.0
+    },
+    "numeric_features_only": true,
+    "actual_labels_passed_to_ilearn": false,
+    "test_rows_processed": 0,
+    "kmer2_default_confirmed": true,
+    "kmer3_is_explicit_alternative": true,
+    "frequency_denominator": "L-k+1 overlapping windows (not L)",
+    "property_values": "Pinned upstream pre-tabulated values; no across-sample normalization",
+    "elapsed_seconds": 17.436347374983598
+  },
+  "reported_model_settings": {
+    "source": {
+      "doi": "10.1016/j.jmb.2023.168314",
+      "file": "vendor/publication/supplement_mmc1.pdf",
+      "sha256": "58fa4336c2a91566f7cf7316bd46c9f24bf049853349960a631d330ca356e8cc",
+      "table": "S1",
+      "page_1_based": 2,
+      "transcription": "Manually transcribed and visually checked against the rendered table; numerical precision as printed."
+    },
+    "reported_parameters": {
+      "RF": {
+        "n_estimators": 34,
+        "criterion": "gini",
+        "max_depth": 31,
+        "max_leaf_nodes": 38,
+        "min_samples_split": 18,
+        "min_samples_leaf": 3,
+        "max_features": "sqrt"
+      },
+      "LGBM": {
+        "num_leaves": 10,
+        "max_depth": 25,
+        "learning_rate": 0.0117,
+        "n_estimators": 1000,
+        "min_child_samples": 26,
+        "subsample": 0.7062,
+        "colsample_bytree": 0.9679,
+        "reg_alpha": 0.8742,
+        "reg_lambda": 0.0368
+      },
+      "XGB": {
+        "max_depth": 2,
+        "learning_rate": 0.2105,
+        "n_estimators": 662,
+        "min_child_weight": 4,
+        "gamma": 0.6564,
+        "subsample": 0.574,
+        "colsample_bytree": 0.5784,
+        "reg_alpha": 0.00515,
+        "reg_lambda": 0.0348
+      },
+      "ET": {
+        "n_estimators": 214,
+        "max_depth": 61,
+        "max_leaf_nodes": 60,
+        "criterion": "entropy",
+        "max_features": "sqrt",
+        "min_samples_split": 8,
+        "min_samples_leaf": 1
+      },
+      "MLP": {
+        "solver": "adam",
+        "activation": "logistic",
+        "alpha": 0.01,
+        "hidden_layer_sizes": [
+          20
+        ]
+      },
+      "CB": {
+        "iterations": 60,
+        "learning_rate": 0.0146,
+        "depth": 10,
+        "l2_leaf_reg": 1.3831,
+        "bootstrap_type": "Bayesian",
+        "random_strength": 3.47e-05,
+        "bagging_temperature": 1.1333,
+        "od_type": "IncToDec",
+        "od_wait": 73
+      }
+    },
+    "interpretation_notes": [
+      "Table S1's singular CatBoost 'iteration' is interpreted as the API parameter iterations, consistent with the notebook constructor. MLP size 20 is one hidden layer of 20 units.",
+      "ExtraTrees max_leaf_nodes=60 is retained despite lying outside both the printed 6..29 range and notebook 6..30 range. Its n_estimators=214 is also outside the notebook step-5 grid starting at 100.",
+      "LGBM n_estimators=1000 is retained although the printed Python range excludes 1000; the notebook includes it.",
+      "These are reported base-classifier settings. S1 does not establish final ensemble membership, meta-classifier settings, random seeds, package versions or unreported estimator defaults.",
+      "Reported settings may have been selected using this benchmark. Reusing them in grouped CV is a published-parameter diagnostic, not a new unbiased parameter-selection experiment.",
+      "Do not use the invalid search-space labels 'Nadam' or 'linear' as sklearn MLP settings; the reported optimum adam/logistic is valid."
+    ],
+    "supplement_feature_ambiguities": [
+      "Figure S5 is captioned kmer but shows indices up to Feature 14798, incompatible with either 16 two-mer or 64 three-mer columns alone.",
+      "Figure S6 is captioned NPCP but includes Feature 83, incompatible with a seven-column block alone.",
+      "Figure S4 is captioned PCPseDNC but includes Feature 27; the recovered lambda-2 parallel descriptor has 18 columns. Figure S3's displayed indices run 0..16. These observations do not establish a corrected caption or column mapping."
+    ]
+  },
+  "protocol": {
+    "status": "Executable repaired protocol; no MCSE benchmark run performed in this stage",
+    "classification_target": "legacy enhancer versus non-enhancer",
+    "feature_variant": "must be explicitly selected; no published matrix identified",
+    "parameter_policy": "reported-fixed: published S1 base settings; diagnostic because their original selection used this benchmark",
+    "architecture": {
+      "base_order": [
+        "RF",
+        "XGB",
+        "LGBM",
+        "CB",
+        "ET",
+        "MLP"
+      ],
+      "meta_model": "CB",
+      "meta_parameters": "S1 CatBoost base parameters reused as an explicit repair choice; actual published meta settings unknown",
+      "meta_features": "out-of-fold positive-class probabilities",
+      "passthrough": false,
+      "basis": "six-base CatBoost-meta arrangement in testing notebook cell 73; not established as the published final ensemble"
+    },
+    "evaluation": {
+      "outer_folds": 5,
+      "crossfit_folds": 3,
+      "source": "frozen iEnhancer-2L sequence/locus group assignments",
+      "candidate_tuning_inside_each_crossfit_training_partition": true,
+      "candidate_tuning_score": "mean accuracy across all internal folds; deterministic first-candidate tie break",
+      "meta_search": "not performed; tuning meta settings requires nesting the entire stack",
+      "probability_threshold": 0.5,
+      "historical_test": "not read by the training/evaluation driver",
+      "strict_convergence": true
+    },
+    "runtime_choices": {
+      "seed": 20261014,
+      "cpu_threads": 1,
+      "mlp_scaling": "StandardScaler fit separately inside every training fold, including tuning and cross-fitting; explicit repair, not established publication preprocessing",
+      "mlp_iteration_budget": "2000, an explicit runtime cap absent from S1; the default 200 failed to converge in the first synthetic smoke test. Benchmark execution still rejects ConvergenceWarning.",
+      "early_stopping": "no validation/test labels passed for early stopping",
+      "lightgbm_subsample_freq": "retain library default 0; reported subsample alone does not activate bagging",
+      "remaining_defaults": "recorded from installed estimators; historical package versions not recovered"
+    },
+    "limits": [
+      "Grouped folds have already informed exploratory analyses and are not a fresh confirmatory test.",
+      "The paper, supplement and notebook do not identify one unambiguous feature/ensemble pipeline.",
+      "Published S1 parameter selection is not made independent by correcting the execution code.",
+      "For a freshly tuned comparison, prerecord candidate spaces and call the nested selection path; do not choose candidates after viewing outer-fold scores."
+    ]
+  },
+  "validation": {
+    "unit_tests_passed": 23,
+    "failed": 0,
+    "synthetic_fits": 31,
+    "synthetic_warning_counts": {},
+    "all_six_classifiers_and_complete_stack_exercised": true,
+    "all_synthetic_fit_prediction_groups_disjoint": true,
+    "five_fold_plan_covers_all_2968_rows": true,
+    "pip_check": "No broken requirements found",
+    "guarded_feature_rebuild_byte_identical": true
+  },
+  "environment": {
+    "python": "3.12.14",
+    "platform": "macOS-27.0.1-arm64-arm-64bit",
+    "dependencies": {
+      "narwhals": "2.27.1",
+      "scikit-learn": "1.9.1",
+      "cloudpickle": "3.1.2",
+      "kiwisolver": "1.5.1",
+      "packaging": "26.3",
+      "joblib": "1.6.0",
+      "plotly": "7.1.0",
+      "numpy": "2.5.4",
+      "contourpy": "1.4.0",
+      "pip": "25.0.1",
+      "python-dateutil": "2.9.0.post0",
+      "matplotlib": "3.11.2",
+      "cycler": "0.12.1",
+      "lightgbm": "4.7.0",
+      "threadpoolctl": "3.7.0",
+      "graphviz": "0.21",
+      "pandas": "3.0.6",
+      "fonttools": "4.67.0",
+      "pillow": "12.3.0",
+      "catboost": "1.2.10",
+      "pyparsing": "3.3.3",
+      "six": "1.17.0",
+      "scipy": "1.18.1",
+      "xgboost": "3.4.1"
+    },
+    "openmp_library": ".venv/lib/python3.12/site-packages/sklearn/.dylibs/libomp.dylib",
+    "openmp_sha256": "7fe04d06d824817d39e4c99ec44e837fd6b5f0f75f2cc3e77a384c298f3f1709",
+    "requirements_sha256": "efb2cc78c66d599eec7effcda6509f86635cc51350b6985a90f896a4f5c130a8",
+    "root_environment_changed": false
+  },
+  "preservation": {
+    "existing_files_checked": 298,
+    "intentional_existing_change": [
+      "replication/mcse_enhancer/README.md"
+    ],
+    "previous_stage_outputs_unchanged": true,
+    "previous_README_archived": true,
+    "website_changed": false,
+    "original_author_snapshot_changed": false,
+    "commit_created": false,
+    "pushed": false
+  },
+  "implementation_sha256": {
+    ".gitignore": "dc04643f1b6225d31c37465328b916c1656dd48cc16b70df4e9cfdb7f9a59a38",
+    "README.md": "0878a282f02fab493172589a25e26f890caa9d3e97f708ab746f00519293832d",
+    "build_features.py": "27a78289732b6f40103f13f9fda80034e693a399078c90a283e3b7f1c1c02b66",
+    "build_ilearn.py": "4fdc44bf29875bf1f5cc7707d317646e84597f9bc778f65188a9eb427e4eec0e",
+    "common.py": "04d980b51492c07d0b0421541c742fc9a4938fc39e43ef7667192652c9187c80",
+    "evaluate_repaired.py": "ef19f0b0db994adf97e822b6209414ae6da8c1f0957f0533ea3d91988322cccf",
+    "evaluation.py": "501c13f94e296127be819acb54b900c9998f8f85e65abab4dee0e267ad16dcbf",
+    "feature_matrix.py": "0c60829710e1e4be6a10f5f2fba62b9c85daebdc956485c991a81f6a3ce55ed0",
+    "features.py": "1db774374a14c581fb4e57ff8b2fc5fb3b2aa4dc5b43afc79884dd5d24be8ead",
+    "ilearn_features.py": "3697717146fb4978807617da49a717efc6acb743bc0520f4b148236a0296da0f",
+    "ilearn_properties.json": "7b4797d78704b2e86bc1d3d9c58280eb737a1def8566c581402c00e7cae998b2",
+    "ilearn_source_manifest.json": "4d87710f62b9f12efdc935d8221f41615c72e9a6d79aa3d72054ba151ec16984",
+    "model_settings.json": "a9643b47be73e20db42a8296dffbd0805b1d78f46d76865f5d768a5e48b6e472",
+    "models.py": "5d09208ba9ead10175653b01092bcd863fcc3af3514a6ff7df9a6a9a8e02daae",
+    "notebook_search_spaces.json": "e0b6860091e1c6bbe73748cc7ade49807f692f2194a97cd776db82ca2e045d9a",
+    "prepare.py": "5706a13e842e923e5cdcf7bce36a5859d2a9aaf4852ce6174084b0d48c07e5be",
+    "recover_search_spaces.py": "dc5e210c93eb3231c9e8fe7584eb47df994e6001400cc572bc2d2a85c237b655",
+    "repair_protocol.json": "8a316519a5bfcc61391ce0e433fbdd5d18581f48c30ef547b4265589e52992e7",
+    "requirements-repaired.txt": "efb2cc78c66d599eec7effcda6509f86635cc51350b6985a90f896a4f5c130a8",
+    "run.py": "99f066b1953a62cdd7071a424d4b777ae70fc725de31c923acd01475d4712e65",
+    "smoke_repaired.py": "ded79b5930742a325cc62eb824e033cb11a4cf44d61ba5dada69294d1c2378b7",
+    "source_manifest.json": "09692206586098568644be7812b05fa825bb592791ced746d5312b64893b41e5",
+    "supplement_receipt.json": "e9c03f4a7eac75573838a203fcd6a6ac68cb19af27a1ae58e2040897705c338a",
+    "test_recovery.py": "c9475caa518c0a29fcf554c9dc0e84a731130430a7cf2d7f4a459cf34a2903d2",
+    "test_repaired.py": "6206a7769564a7298b79b6a9dbb21d6fb42920f71465cd4cfcf9c24e9ef86b24",
+    "user_download_receipt.json": "ec5d90e1fccfa09be096f4c79b1bf020ba2b040a9faeb4e64155a14b3c3d77bb",
+    "validate.py": "30dd611f6b6dd56c00aaa5af6b222bbfcf43a6b2e1d9b1e75cf9b4e229425a09"
+  },
+  "output_sha256": {
+    "output/2026-10-14-ilearn/ilearn_audit.json": "f4bff4b65d57f3243bb17f0343492e714c0cdbaf266fdca8ead7af6deab6c002",
+    "output/2026-10-14-ilearn/ilearn_train.npz": "584dded77b2badb6b06bbb0e99b3cfc6c91485a208de2b47b978d9d1523a5f18",
+    "output/2026-10-14-ilearn-validated/ilearn_audit.json": "1147104c1df96388eea93446f6cc3b78cee8c0b95ebf84f169bd4a9821d8f263",
+    "output/2026-10-14-ilearn-validated/ilearn_train.npz": "584dded77b2badb6b06bbb0e99b3cfc6c91485a208de2b47b978d9d1523a5f18",
+    "output/2026-10-14-repaired-smoke/smoke.json": "e83dd05241cbcfa6d631a319978bb087dcc09bcb69729445a39a4aaa9591e981",
+    "output/2026-10-14-repaired-smoke-validated/smoke.json": "f790252c1aca04c097b41cd0e9e92f9a467ac05cec0bc315bbc2ca6905a35b2c",
+    "output/2026-10-14-repaired-plan/plan.json": "fdc992cc5b608d785f40686defa07228a76f295dce9530ba326df668e83f7d95"
+  },
+  "checks_performed": [
+    "Independent descriptor-formula parity",
+    "All four assembled feature variants retain identical training row IDs",
+    "Group-overlap rejection",
+    "Every candidate fold scored",
+    "OOF memorization trap",
+    "OOF-label perturbation invariance",
+    "Nested tuning excludes OOF prediction groups",
+    "Probability class-order validation",
+    "Strict convergence failure test",
+    "Six S1 classifier and full-stack synthetic fits",
+    "Saved-output checksums and prior-work preservation"
+  ],
+  "next_step": "Prespecify a diagnostic feature/ensemble configuration, then run a benchmark; or freeze repaired candidate spaces for nested retuning. Do not label either as an exact published rerun while the matrix/ensemble remain ambiguous."
+}

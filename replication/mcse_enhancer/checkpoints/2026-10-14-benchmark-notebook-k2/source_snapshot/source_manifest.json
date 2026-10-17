@@ -1,0 +1,57 @@
+{
+  "repository": "https://github.com/MirBilalAhmad/DNA-Enhancers",
+  "commit": "d76c48946de9c46e0845df12c119a27b7e455444",
+  "files": {
+    ".gitignore": {
+      "bytes": 3078,
+      "sha256": "5e2c671ddc9e301dafc241ad1a7c07aa85a91fef560a17721b41977b9eddba17"
+    },
+    "README.md": {
+      "bytes": 1889,
+      "sha256": "05e83a7961b6e165966e1a14f863ca1126655fd6ca8d438961d1ce450a9ae9e6"
+    },
+    "Dataset/train.txt": {
+      "bytes": 632183,
+      "sha256": "3e5f8edc98d9f8fcdf698e57fe75038d9eaf78c87c0ba4d9ec02f5d67634652a"
+    },
+    "Dataset/ind.txt": {
+      "bytes": 85199,
+      "sha256": "0d177b62ddea3db364501592d6030ff7b79d55685da0877de7816445a7147a0d"
+    },
+    "Dataset/train_label.txt": {
+      "bytes": 5936,
+      "sha256": "f04b9e7bf197bb4debc5161e67a92a767131595c5327be2c5ae974898567468f"
+    },
+    "Dataset/ind_label.txt": {
+      "bytes": 800,
+      "sha256": "d80cdb6574ed4efbb00a124fc054c96d4b5e1ce55210b92fa0419350b7a92b3c"
+    },
+    "Create_Feature_Descriptors.ipynb": {
+      "bytes": 17446,
+      "sha256": "df26e183de73d7655dea1d36bd3aeeae73d3c6e6be9c81bb8c7cc85f00f2479c"
+    },
+    "Models_Training.ipynb": {
+      "bytes": 34412,
+      "sha256": "cbf7590afafb45705e1564295f257ed3db8901dbbab4785f99462be1d16b8080"
+    },
+    "Models _Testing.ipynb": {
+      "bytes": 41235,
+      "sha256": "526285fac8d487c2856f52610d13dc71209d0bcfe940f3cff7995aaed9bd78a8"
+    }
+  },
+  "snapshot_note": "Previously inspected upstream bytes verified again on 2026-10-14. No claim that this is the latest upstream commit or the exact publication-time environment.",
+  "paper": {
+    "doi": "10.1016/j.jmb.2023.168314",
+    "local_file": "1-s2.0-S0022283623004254-main.pdf",
+    "sha256": "14ea5e6e460cdaf293df1b8b8dd541b86503ddf2a15caf56e5d0cf4168e58dff"
+  },
+  "local_inputs_sha256": {
+    "enhancer.cv.txt": "0709765619d348ee6a7c5459058df1abe01591ef360b2123092336159b2d7918",
+    "non.cv.txt": "1fa9a8f720a6be5d9562db8083e856a3e49b45fb433bf876a2211f7efa4ddd55",
+    "enhancer.ind.txt": "f4763d5b3b9f2306e0ce295f074376adfb1980bd818c255ac781aaa533a8de37",
+    "non.ind.txt": "105381e8906c977d41b39df2dfecc4bdb7e0683fd81b5c51aaf397968ff719d1",
+    "replication/ienhancer_2l/output/2026-10-13-preparation/benchmark.csv": "2619e419cf2467a5695254a28346e253efdea1edb821862d4a9625bd2d35b075",
+    "replication/ienhancer_2l/output/2026-10-13-preparation/legacy_test_diagnostic_only.csv": "65f0c770c40772afc14d03b18c6eed654eea3306f35796efee2da893b2332558",
+    "replication/ienhancer_2l/checkpoints/2026-10-13-groups-features/evaluation_assignments.csv": "1693a4d761e02b1d1145b76d0f962504ffa0dfb0bb459cfa3a86cbb4b37bd8e6"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "fits_checked": 125,
+  "fixed_candidate_selections_checked": 120,
+  "outer_folds_checked": 5,
+  "oof_base_partitions_checked": 90,
+  "held_out_records": 2968,
+  "group_disjointness_checked_at_every_fit": true,
+  "reference_ids_groups_labels_folds_match": true,
+  "source_snapshots_checked": 32,
+  "feature_input_hashes_checked": 4,
+  "warnings": {},
+  "historical_test_used": false,
+  "limits": "Audits and saved predictions verified; fitted estimators were not serialized, so predictions were not replayed from model files."
+}

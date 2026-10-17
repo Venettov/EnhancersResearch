@@ -1,0 +1,40 @@
+{
+  "status": "Executable repaired protocol; no MCSE benchmark run performed in this stage",
+  "classification_target": "legacy enhancer versus non-enhancer",
+  "feature_variant": "must be explicitly selected; no published matrix identified",
+  "parameter_policy": "reported-fixed: published S1 base settings; diagnostic because their original selection used this benchmark",
+  "architecture": {
+    "base_order": ["RF", "XGB", "LGBM", "CB", "ET", "MLP"],
+    "meta_model": "CB",
+    "meta_parameters": "S1 CatBoost base parameters reused as an explicit repair choice; actual published meta settings unknown",
+    "meta_features": "out-of-fold positive-class probabilities",
+    "passthrough": false,
+    "basis": "six-base CatBoost-meta arrangement in testing notebook cell 73; not established as the published final ensemble"
+  },
+  "evaluation": {
+    "outer_folds": 5,
+    "crossfit_folds": 3,
+    "source": "frozen iEnhancer-2L sequence/locus group assignments",
+    "candidate_tuning_inside_each_crossfit_training_partition": true,
+    "candidate_tuning_score": "mean accuracy across all internal folds; deterministic first-candidate tie break",
+    "meta_search": "not performed; tuning meta settings requires nesting the entire stack",
+    "probability_threshold": 0.5,
+    "historical_test": "not read by the training/evaluation driver",
+    "strict_convergence": true
+  },
+  "runtime_choices": {
+    "seed": 20261014,
+    "cpu_threads": 1,
+    "mlp_scaling": "StandardScaler fit separately inside every training fold, including tuning and cross-fitting; explicit repair, not established publication preprocessing",
+    "mlp_iteration_budget": "2000, an explicit runtime cap absent from S1; the default 200 failed to converge in the first synthetic smoke test. Benchmark execution still rejects ConvergenceWarning.",
+    "early_stopping": "no validation/test labels passed for early stopping",
+    "lightgbm_subsample_freq": "retain library default 0; reported subsample alone does not activate bagging",
+    "remaining_defaults": "recorded from installed estimators; historical package versions not recovered"
+  },
+  "limits": [
+    "Grouped folds have already informed exploratory analyses and are not a fresh confirmatory test.",
+    "The paper, supplement and notebook do not identify one unambiguous feature/ensemble pipeline.",
+    "Published S1 parameter selection is not made independent by correcting the execution code.",
+    "For a freshly tuned comparison, prerecord candidate spaces and call the nested selection path; do not choose candidates after viewing outer-fold scores."
+  ]
+}

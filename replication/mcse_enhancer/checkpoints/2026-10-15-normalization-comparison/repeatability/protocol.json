@@ -1,0 +1,19 @@
+{
+  "created_before_diagnostic_fits_utc": "2026-10-15T11:59:59.436994+00:00",
+  "stage": "Post-result diagnostic; not prespecified primary inference",
+  "reason": "Five tree bases gave identical predictions but MLP changed despite nearly identical standardized features.",
+  "fold": 0,
+  "fold_selection": "First outer fold by fixed rule, not largest difference",
+  "runs": [
+    "ilearn_1",
+    "ilearn_2",
+    "paper_1",
+    "paper_2"
+  ],
+  "expected_fits": 4,
+  "fixed": "Same S1 MLP, seed, train-only StandardScaler, records, groups, software and threads; no tuning",
+  "comparisons": "Repeat versus repeat, and each repeat versus its saved benchmark full-fit MLP predictions",
+  "limits": "One fold and process; this can detect repeatability problems but cannot establish their complete cause or general stability.",
+  "primary_results_unchanged": true,
+  "source_sha256": "95c92f0f9549933a1563f18b8f490990390f6dd2dec1bc089de0e464704c9054"
+}

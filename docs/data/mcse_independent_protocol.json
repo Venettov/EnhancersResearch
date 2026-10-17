@@ -1,0 +1,161 @@
+{
+  "protocol_id": "mcse-independent-vista-v1",
+  "created_utc": "2026-10-15T15:10:56.968961+00:00",
+  "status": "design_fixed_before_candidate_scoring; cohort_not_certified; execution_not_started",
+  "scope": "Define a prospective external generalization evaluation of the repaired reconstruction before the separate lentiMPRA study. This is not exact published reproduction or a new same-label legacy benchmark.",
+  "authorization": "Local protocol and readiness audit only. No training, prediction, website edits, commits, pushes or deployment in this stage.",
+  "prior_information": "All legacy benchmark results, word-length/normalization comparisons, source documentation and aggregate VISTA metadata were available before this design. No VISTA model scores or score/label associations were inspected. Labels are public and accessible: procedural outcome separation, not technical or independent third-party blinding.",
+  "question": "Does a model trained only on historical 200-base chromatin-state labels rank held-out human reference fragments by curated reporter activity at embryonic day 11.5 in the VISTA hZR assay?",
+  "claim_if_gates_pass": "External sequence/locus-screened generalization to this specific developmental reporter assay; not universal enhancer detection, tissue-specific prediction, lentiMPRA transfer, or reproduction of the MCSE paper.",
+  "primary_model": {
+    "variant": "notebook_k2_full",
+    "feature_count": 15169,
+    "reason": "Retain the first pre-benchmark choice documented in benchmark_protocol.json, not the higher-accuracy variant observed later. The follow-up k3 variants do not replace it.",
+    "training_records": 2968,
+    "training_source": "replication/ienhancer_2l/output/2026-10-13-preparation/benchmark.csv",
+    "training_groups": 2451,
+    "base_order": [
+      "RF",
+      "XGB",
+      "LGBM",
+      "CB",
+      "ET",
+      "MLP"
+    ],
+    "meta_model": "CB",
+    "settings": "Pinned model_settings.json, repair_protocol.json and recorded effective parameters; no tuning or feature selection.",
+    "seed": 20261014,
+    "threads": 1,
+    "mlp": "Training-only StandardScaler, max_iter=2000; stop on nonconvergence.",
+    "final_fit": "Fresh full-legacy-training stack, with three group-disjoint OOF folds from make_splits(y, groups, 3, 20261014). Six base models each fit on three OOF training subsets plus all legacy training rows; one meta fit on OOF probabilities only. 25 fits total. No VISTA sequences or labels in fitting, preprocessing, early stopping or calibration.",
+    "model_artifact_status": "No serialized final MCSE estimator currently exists. Implement and validate a fit/save/load path before execution; freeze artifacts, OOF assignments, effective parameters, source hashes, package versions and a replay fixture before evaluation labels are joined.",
+    "secondary_variants": "None in this evaluation. Any later model change makes this cohort exploratory and needs a new untouched cohort for confirmation."
+  },
+  "candidate_source": {
+    "name": "Frozen local VISTA export",
+    "file": "NEW_2026_DATA/04_VISTA/experiments.tsv.gz",
+    "source_url": "https://gitlab.com/egsb-mfgl/vista-data",
+    "paper_url": "https://doi.org/10.1093/nar/gkae940",
+    "filters": {
+      "organism": "Human",
+      "assembly": "hg38",
+      "description": "reference",
+      "allele_id": "0",
+      "stage": "e11.5",
+      "backbone": "hZR",
+      "curation_status": [
+        "positive",
+        "negative"
+      ]
+    },
+    "assay": "hZR: Hsp68 promoter, lacZ reporter, random transgenesis; human test DNA in mouse embryos. Do not mix sZH/enSERT, other stages, alleles or species.",
+    "label": "Use curator positive=1 and negative=0 for the entire tested fragment; negative means no reproducible positive call under this assay, not inactive everywhere. Never infer labels from absent annotations or model scores.",
+    "sequence_qc": "Unambiguous ACGT, length >=200, same sequence as seq_hg38 in forward or reverse-complement orientation, matching inclusive hg38 coordinates and pinned BED interval. Future features use genomic-forward seq_hg38; preserve assay strand as metadata.",
+    "collapse": "One reference fragment per vista_id; all eligible duplicate rows must agree in sequence, coordinates and label, otherwise exclude that locus as conflicting. Select lexicographically smallest exp_hier for agreeing repeats and retain all source IDs.",
+    "sampling": "Use all eligible fragments, with no class balancing, score-dependent inclusion, or negative subsampling. Report retained/excluded records and reasons. Cohort membership is not frozen until all independence gates pass.",
+    "public_label_handling": "The metadata audit may report label counts for feasibility. Keep final label table separate from feature/scoring input. No score inspection by class before predictions and model hashes are sealed."
+  },
+  "independence": {
+    "legacy_exclusion_universe": "All 3368 legacy records (2968 development plus all 400 historical test records), regardless of whether they are exact duplicates. Exclude candidate families, not just tiles.",
+    "exact_sequence": "Scan every 200-base substring of each full candidate fragment for an exact forward/reverse-complement match to any legacy sequence. Exact matching alone is insufficient.",
+    "genomic_locus": "Validate historical headers against hg19, including the 400 historical test records. Use hash-pinned hg38-to-hg19 and reciprocal chains to map complete VISTA intervals uniquely with complete coverage and an exact reciprocal interval. Exclude unmappable, partial or ambiguous candidate intervals. In hg19, exclude any candidate whose interval overlaps or is separated by <=1000 bp from any legacy interval. Preserve coordinate/sequence reconciliation records; never compare hg19 and hg38 numbers directly.",
+    "sequence_similarity": "Before scoring, screen legacy 200-base sequences against every contiguous 200-base candidate substring in either orientation, with unit-cost global Levenshtein distance <=40 as an exclusion. This inherits the conservative legacy grouping criterion and is NOT a claimed percent-identity or CD-HIT threshold. Also form connected components among candidate loci using any qualifying 200-base substring pair or genomic gap <=1000 bp. Entire components touching a legacy exclusion are removed. An accelerated search must prove no misses at this threshold against an exhaustive oracle on validation fixtures; an approximate search cannot certify the gate.",
+    "repeats": "Include exact/reverse-complement links, overlapping fragments, alleles and all shared source-locus IDs in candidate family grouping; independent sampling unit is a connected component. Windows are never separate observations.",
+    "future_lentiMPRA": "Before freezing this cohort, screen against the full 60000 S10 design inserts after validated adapter removal, using the same exact/similarity and verified-coordinate rules. Reserve designs and linked families exclusively for the later lentiMPRA analysis by excluding linked VISTA families here. This screen uses designs/coordinates, not assay outcomes. If provenance or coordinates cannot certify separation, keep the gate pending; do not call the two studies independent.",
+    "label_lineage": "Document that candidate experimental calls were not used in the legacy labels or S1 selection as far as verifiable. Historical author selection is not fully recoverable; disclose residual uncertainty. A later publication date alone is not independence."
+  },
+  "fragment_scoring": {
+    "window_length": 200,
+    "stride": 50,
+    "terminal_window": "Always include the window starting at L-200; deduplicate starts; never pad shorter sequences.",
+    "orientation": "Genomic forward seq_hg38, fixed before scores; do not choose orientation by activity or prediction.",
+    "primary_aggregation": "Maximum MCSE positive-class score over the fixed windows, one score per tested fragment. This is a prespecified transfer heuristic, not a calibrated fragment probability or a claim that each window has the fragment label.",
+    "length_caution": "Long fragments generate more windows and may have higher maxima. Report length and window-count distributions by class, length-only and GC-only score baselines, and AUROC within prespecified length strata: 200-499, 500-999, 1000-1999, >=2000 bp. Do not choose window size, stride, aggregator, length filters or orientation from these results.",
+    "secondary_aggregation": "Arithmetic mean of the same window scores, descriptive robustness check only; never promoted to primary based on outcome."
+  },
+  "endpoints": {
+    "primary": "Fragment-level AUROC of the fixed primary maximum score against curator status, with a 95% interval. Equal weight per retained fragment; report the number of connected components and largest component.",
+    "secondary": [
+      "Average precision (step-function AP, not trapezoidal PR area), alongside positive prevalence",
+      "MCC, balanced accuracy, sensitivity, specificity, ordinary accuracy and confusion matrix using max score >=0.5; uncalibrated descriptive threshold only",
+      "Mean-window-score AUROC and AP",
+      "Length-stratified primary AUROC (report undefined strata, do not merge adaptively)",
+      "Length-only score and genomic-forward GC fraction baselines, larger value prespecified as positive; no sign reversal or fitted calibration"
+    ],
+    "uncertainty": "2000 whole-component bootstrap resamples with replacement, seed 20261015; include all fragments in a sampled component with its multiplicity. Use common draws for any descriptive paired differences. Skip single-class resamples, report valid count; require >=1900 valid draws, otherwise report the interval not estimable without changing the procedure.",
+    "interpretation": "An AUROC interval wholly above 0.5 supports discrimination in this selected assay cohort, not broad biological validity or an improvement over published MCSE accuracy. No p-value-driven winner selection. Flat/poor results are reported.",
+    "precision_gate": "Before scoring, require >=100 distinct connected components containing positives and >=100 containing negatives (mixed-label components counted in both but reported); otherwise retain the plan and report insufficient independent support. This is a pragmatic minimum, not a power guarantee. Report realized interval width; do not grow/filter the cohort after inspecting performance.",
+    "limits": "Intervals condition on this fitted model and this selected cohort; they exclude training stochasticity, original S1 selection, source curation and cohort-design uncertainty."
+  },
+  "execution_order": [
+    "Validate source hashes and metadata; save preliminary eligibility/exclusion audit without predicting.",
+    "Complete sequence, reciprocal-coordinate, near-sequence, family and future-lentiMPRA reserve gates; freeze final manifest and separate labels.",
+    "Validate external feature extraction, roundtrip model serialization and group-aware full-training fitting using synthetic fixtures only. Freeze code/environment and checksums.",
+    "Train the fixed 25-fit stack using legacy data only; save and verify model artifacts.",
+    "Score fixed external windows with no labels available to the scoring API; seal window/fragment predictions and their hashes.",
+    "Join sealed fragment predictions to labels once; report all prespecified outcomes and exclusions. Amendments after unsealing are exploratory and versioned, never overwrite this run."
+  ],
+  "candidate_alternatives": [
+    {
+      "source": "Historical 400 / deduplicated 300",
+      "decision": "Diagnostic only; duplicates, unverified broader independence, published parameter exposure and changed positive composition. Not a fresh test."
+    },
+    {
+      "source": "Existing grouped folds",
+      "decision": "Exploratory only after repeated model comparisons; a new split of the same exposed records cannot erase that exposure."
+    },
+    {
+      "source": "ENCODE4 ELS BED",
+      "decision": "Candidate annotation positives only in the local BED. Absence is not a functional negative. A separately curated annotation benchmark would require its own negative sampling and source-overlap protocol."
+    },
+    {
+      "source": "DNABERT-Enhancer data",
+      "decision": "The local article describes 201/350-base ENCODE-based labels and sampled negatives, not independent assay truth. Archive presence does not certify a compatible, untouched test cohort."
+    },
+    {
+      "source": "MPRA/STARR cross-assay collection",
+      "decision": "Some lentiMPRA data share lineage with the intended later study; provenance and assay-specific endpoints must be resolved before treating it as independent."
+    }
+  ],
+  "input_sha256": {
+    "NEW_2026_DATA/04_VISTA/experiments.tsv.gz": "3df42f64a87cce73cff0e1e91818839cc7f82bdc68ea5f96b991189ae461db70",
+    "NEW_2026_DATA/04_VISTA/locus_ucsc_hg38.bed": "1ebbfc5451684ff7a27ade13a87dba9f7458274f0d86476b7a3fac64121b925f",
+    "NEW_2026_DATA/04_VISTA/field_descriptions.tsv": "bcb3c747ef90427784449db49201282eca9a4d2d429df4b69bf83c6c126c634a",
+    "NEW_2026_DATA/04_VISTA/backbone.dictionary.tsv": "1157ff106608b65657a59d1a75ea664c2a0114ab30bd0e4237164d647aac72f7",
+    "NEW_2026_DATA/04_VISTA/PAPERS/VISTA_Enhancer_Browser_updated_database_NAR_2024.html": "68856d104d81ca66f5fb07eaed8db456acc2316d19ecc4d633b0bdc53120164b",
+    "NEW_2026_DATA/06_DNABERT_ENHANCER_2026/PAPERS/DNABERT_Enhancer_Bioinformatics_2026_full_text.html": "a4ed8c55174f227c701b3810067e0d378f9a6471adada388eef250825caa66ec",
+    "replication/ienhancer_2l/output/2026-10-13-preparation/benchmark.csv": "2619e419cf2467a5695254a28346e253efdea1edb821862d4a9625bd2d35b075",
+    "replication/ienhancer_2l/output/2026-10-13-preparation/legacy_test_diagnostic_only.csv": "65f0c770c40772afc14d03b18c6eed654eea3306f35796efee2da893b2332558",
+    "replication/ienhancer_2l/checkpoints/2026-10-13-data-preparation.json": "30a8f5e8d61eb43798c8326dd005c976d35d5044f6049b6b1ce28a587a8018e5",
+    "replication/ienhancer_2l/checkpoints/2026-10-13-groups-features/evaluation_assignments.csv": "1693a4d761e02b1d1145b76d0f962504ffa0dfb0bb459cfa3a86cbb4b37bd8e6",
+    "replication/ienhancer_2l/checkpoints/2026-10-13-groups-features/reference_receipts.json": "1d3cd296bc76612ce657ee5eabf30af3f09f8cf5d70cae62d442de9ee113443e",
+    "replication/mcse_enhancer/benchmark_protocol.json": "7ccf3d06244e09466cdeee98c1c8a1ef20ce533fe97199ea59d196d64e704dcd",
+    "replication/mcse_enhancer/repair_protocol.json": "8a316519a5bfcc61391ce0e433fbdd5d18581f48c30ef547b4265589e52992e7",
+    "replication/mcse_enhancer/model_settings.json": "a9643b47be73e20db42a8296dffbd0805b1d78f46d76865f5d768a5e48b6e472",
+    "replication/mcse_enhancer/requirements-repaired.txt": "efb2cc78c66d599eec7effcda6509f86635cc51350b6985a90f896a4f5c130a8",
+    "replication/mcse_enhancer/ilearn_source_manifest.json": "4d87710f62b9f12efdc935d8221f41615c72e9a6d79aa3d72054ba151ec16984",
+    "replication/mcse_enhancer/ilearn_properties.json": "7b4797d78704b2e86bc1d3d9c58280eb737a1def8566c581402c00e7cae998b2",
+    "replication/mcse_enhancer/checkpoints/2026-10-14-benchmark-notebook-k2/provenance.json": "bb24c00a3a9e3a17c456c6d21a52e8eec9a1f815840fac6b4334bcaa5f818479",
+    "replication/mcse_enhancer/checkpoints/2026-10-14-benchmark-notebook-k2/effective_parameters.json": "13bb467123c0e5e1c755c84b9e3e833a00e5857a86ab4ba87d450ea7cb33613e",
+    "replication/mcse_enhancer/features.py": "1db774374a14c581fb4e57ff8b2fc5fb3b2aa4dc5b43afc79884dd5d24be8ead",
+    "replication/mcse_enhancer/ilearn_features.py": "3697717146fb4978807617da49a717efc6acb743bc0520f4b148236a0296da0f",
+    "replication/mcse_enhancer/feature_matrix.py": "0c60829710e1e4be6a10f5f2fba62b9c85daebdc956485c991a81f6a3ce55ed0",
+    "replication/mcse_enhancer/models.py": "5d09208ba9ead10175653b01092bcd863fcc3af3514a6ff7df9a6a9a8e02daae",
+    "replication/mcse_enhancer/evaluation.py": "501c13f94e296127be819acb54b900c9998f8f85e65abab4dee0e267ad16dcbf",
+    "replication/mcse_enhancer/run.py": "99f066b1953a62cdd7071a424d4b777ae70fc725de31c923acd01475d4712e65",
+    "replication/mcse_enhancer/common.py": "04d980b51492c07d0b0421541c742fc9a4938fc39e43ef7667192652c9187c80"
+  },
+  "git_head_at_design": "e9c8300c40dae1e351f5b9d40c7d07bdf6682779",
+  "gates_required_before_scoring": [
+    "source_integrity",
+    "metadata_and_reference_sequence_qc",
+    "legacy_hg19_verification_and_reciprocal_locus_screen",
+    "exact_and_near_sequence_screen",
+    "candidate_family_components",
+    "future_lentiMPRA_design_reservation",
+    "label_lineage_review",
+    "final_cohort_manifest_and_precision_gate",
+    "external_feature_and_serialization_validation",
+    "frozen_full_training_model"
+  ]
+}

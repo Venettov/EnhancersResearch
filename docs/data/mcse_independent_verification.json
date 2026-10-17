@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "candidate_count": 1847,
+  "positive": 953,
+  "negative": 894,
+  "independent_exact_substring_oracle": "same 14 excluded fragments across all 1861 reference-matching eligible fragments",
+  "official_vista_md5_checks": 2,
+  "source_inputs_sha256_verified": 26,
+  "scientific_unit_tests_passed": 10,
+  "research_and_website_preservation_files_checked": 548,
+  "changed_prior_files": [
+    "replication/mcse_enhancer/README.md"
+  ],
+  "head_unchanged": "e9c8300c40dae1e351f5b9d40c7d07bdf6682779",
+  "trained_or_scored": false,
+  "commit_push_deploy": false,
+  "independence_certified": false,
+  "protocol_sha256": "1af7faaea99ecac09bdfad67b2f77b2754231a637967d641c1d8538f2cea291d",
+  "audit_source_sha256": "1c77a444e919a6b870e9c212f6f58332736d874df977feb35e5419a7a082ceeb",
+  "test_source_sha256": "3da2256ff8465f4bbc72fe5b799bf13fe74e9b054e344627685e8d4121795faf"
+}

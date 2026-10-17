@@ -50,7 +50,7 @@
     ],
     "reproduce": [
       "Reproduce",
-      "A step-by-step guide to reconstructing iEnhancer-2L: software, original data, checks, model implementation, and experimental transfer."
+      "A step-by-step iEnhancer-2L guide and results from a repaired MCSE-Enhancer reconstruction, with original data, validation, limitations and downloadable evidence."
     ],
     "publications": [
       "Publications",

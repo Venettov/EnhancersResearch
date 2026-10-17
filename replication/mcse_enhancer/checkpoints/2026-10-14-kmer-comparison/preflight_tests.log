@@ -1,0 +1,36 @@
+test_bootstrap_keeps_unequal_groups_whole_and_paired (test_benchmark_summary.SummaryTests.test_bootstrap_keeps_unequal_groups_whole_and_paired) ... ok
+test_constant_scores_and_confusion_counts (test_benchmark_summary.SummaryTests.test_constant_scores_and_confusion_counts) ... ok
+test_paired_bootstrap_identical_and_opposite_predictions (test_benchmark_summary.SummaryTests.test_paired_bootstrap_identical_and_opposite_predictions) ... ok
+test_rank_auc_matches_library_with_probability_ties (test_benchmark_summary.SummaryTests.test_rank_auc_matches_library_with_probability_ties) ... ok
+test_changed_common_feature_rejected (test_kmer_comparison.ControlledFeaturesTests.test_changed_common_feature_rejected) ... ok
+test_common_features_and_independent_windows (test_kmer_comparison.ControlledFeaturesTests.test_common_features_and_independent_windows) ... ok
+test_variant_mismatch_fails_before_writing_output (test_kmer_comparison.ControlledFeaturesTests.test_variant_mismatch_fails_before_writing_output) ... ok
+test_wrong_denominator_and_permuted_identity_rejected (test_kmer_comparison.ControlledFeaturesTests.test_wrong_denominator_and_permuted_identity_rejected) ... ok
+test_full_preparation_and_group_leakage_guard (test_recovery.DataTests.test_full_preparation_and_group_leakage_guard) ... ok
+test_multiline_fasta_and_labels (test_recovery.DataTests.test_multiline_fasta_and_labels) ... ok
+test_snapshot_tampering_rejected (test_recovery.DataTests.test_snapshot_tampering_rejected) ... ok
+test_author_equivalence_adversarial_and_random (test_recovery.FeatureTests.test_author_equivalence_adversarial_and_random) ... ok
+test_gap_counts_hand_example (test_recovery.FeatureTests.test_gap_counts_hand_example) ... ok
+test_gap_windows_conserved_all_families (test_recovery.FeatureTests.test_gap_windows_conserved_all_families) ... ok
+test_hand_calculated_summaries (test_recovery.FeatureTests.test_hand_calculated_summaries) ... ok
+test_nonoverlapping_semantics_preserved (test_recovery.FeatureTests.test_nonoverlapping_semantics_preserved) ... ok
+test_undefined_and_invalid_inputs_fail (test_recovery.FeatureTests.test_undefined_and_invalid_inputs_fail) ... ok
+test_width_names_and_label_separation (test_recovery.FeatureTests.test_width_names_and_label_separation) ... ok
+test_all_candidate_folds_scored_and_tie_stable (test_repaired.EvaluationTests.test_all_candidate_folds_scored_and_tie_stable) ... ok
+test_deterministic_repeated_predictions (test_repaired.EvaluationTests.test_deterministic_repeated_predictions) ... ok
+test_nested_tuning_excludes_oof_groups (test_repaired.EvaluationTests.test_nested_tuning_excludes_oof_groups) ... ok
+test_nonconverged_models_stop_strict_evaluation (test_repaired.EvaluationTests.test_nonconverged_models_stop_strict_evaluation) ... ok
+test_oof_features_are_never_in_sample (test_repaired.EvaluationTests.test_oof_features_are_never_in_sample) ... ok
+test_oof_predictions_unchanged_when_its_labels_change (test_repaired.EvaluationTests.test_oof_predictions_unchanged_when_its_labels_change) ... ok
+test_positive_probability_uses_class_order (test_repaired.EvaluationTests.test_positive_probability_uses_class_order) ... ok
+test_rejects_group_overlap_and_invalid_crossfit (test_repaired.EvaluationTests.test_rejects_group_overlap_and_invalid_crossfit) ... ok
+test_independent_formulas_and_dummy_label_invariance (test_repaired.IlearnTests.test_independent_formulas_and_dummy_label_invariance) ... ok
+test_invalid_descriptor_input_rejected (test_repaired.IlearnTests.test_invalid_descriptor_input_rejected) ... ok
+test_kmer_overlaps_and_denominator (test_repaired.IlearnTests.test_kmer_overlaps_and_denominator) ... ok
+test_properties_match_original_safe_data (test_repaired.IlearnTests.test_properties_match_original_safe_data) ... ok
+test_saved_variants_align_all_rows (test_repaired.IlearnTests.test_saved_variants_align_all_rows) ... ok
+
+----------------------------------------------------------------------
+Ran 31 tests in 0.862s
+
+OK

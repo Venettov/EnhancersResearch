@@ -1,0 +1,26 @@
+{
+  "status": "complete",
+  "created_utc": "2026-10-15T12:03:23.315603+00:00",
+  "head_unchanged": "e9c8300c40dae1e351f5b9d40c7d07bdf6682779",
+  "preservation_inventory_files_checked": 586,
+  "changed_existing_files": [
+    "replication/mcse_enhancer/README.md",
+    "replication/mcse_enhancer/evaluate_repaired.py",
+    "replication/mcse_enhancer/summarize_benchmark.py"
+  ],
+  "website_and_prior_research_preserved": true,
+  "committed": false,
+  "pushed": false,
+  "deployed": false,
+  "control_fits_revalidated": 125,
+  "new_fits_checked": 125,
+  "post_result_repeatability_fits": 4,
+  "tests_passed_before_fitting": 37,
+  "source_output_manifests_sha256": {
+    "replication/mcse_enhancer/output/2026-10-15-benchmark-k3-paperL/artifact_manifest.json": "b1c18080022691683ed859c83c2e85c8c0248e51f80e2eb2cd4302aa4e9beb59",
+    "replication/mcse_enhancer/output/2026-10-15-normalization-comparison/artifact_manifest.json": "06d62b861e627f5beabb6d3778ca2483c8d943b4187248f656134cd3d83a7b8d"
+  },
+  "compact_benchmark_scope": "Inputs/settings/source snapshots, metrics, primary predictions and validation; full fit logs and OOF arrays remain in the unchanged output folder.",
+  "models_saved": false,
+  "interpretation": "Exploratory repaired reconstruction; standalone 3-mer normalization sensitivity, not exact paper reproduction"
+}

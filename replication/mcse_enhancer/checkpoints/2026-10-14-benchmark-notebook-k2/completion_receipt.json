@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "preexisting_files_checked": 4447,
+  "unchanged_preexisting_files": 4445,
+  "intentional_changes": [
+    "replication/mcse_enhancer/README.md",
+    "replication/mcse_enhancer/evaluate_repaired.py"
+  ],
+  "git_head_unchanged": "e9c8300c40dae1e351f5b9d40c7d07bdf6682779",
+  "original_data_prior_results_and_website_preserved": true,
+  "run_artifact_hashes_checked": 56,
+  "local_report_links_checked": 7,
+  "external_report_links_open_in_new_tab": true,
+  "report_browser_visual_check": "Passed at default desktop viewport",
+  "tests": {
+    "preflight_regression_tests": 23,
+    "additional_summary_statistics_tests": 4,
+    "total_passed": 27
+  },
+  "commit_created": false,
+  "pushed": false,
+  "website_modified_this_stage": false,
+  "fitted_models_serialized": false,
+  "source_and_prediction_artifacts_preserved": true
+}

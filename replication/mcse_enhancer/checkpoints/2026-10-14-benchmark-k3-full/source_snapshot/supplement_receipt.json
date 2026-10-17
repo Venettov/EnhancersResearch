@@ -1,0 +1,18 @@
+{
+  "source": "User-provided publisher supplement",
+  "provided_path": "/Users/andreruiz/Downloads/1-s2.0-S0022283623004254-mmc1.pdf",
+  "retained_path": "replication/mcse_enhancer/vendor/publication/supplement_mmc1.pdf",
+  "doi": "10.1016/j.jmb.2023.168314",
+  "pages": 6,
+  "sha256": "58fa4336c2a91566f7cf7316bd46c9f24bf049853349960a631d330ca356e8cc",
+  "visually_checked_pages_1_based": [
+    2,
+    6
+  ],
+  "recovered": "Table S1 printed optima for six base classifiers; supplementary feature-figure labels inspected",
+  "remaining_unknowns": [
+    "Actual published merged feature matrix",
+    "Final ensemble and meta-model configuration",
+    "Historical environment and random seeds"
+  ]
+}

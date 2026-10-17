@@ -1,0 +1,60 @@
+"""Plan or run all five grouped folds using reported S1 parameters.
+
+Reported-parameter diagnostics only; this does not recover the unique published
+pipeline or independently reselect parameters. Default mode writes a plan.
+"""
+import argparse
+import json
+from pathlib import Path
+import numpy as np
+from sklearn.metrics import accuracy_score, roc_auc_score, matthews_corrcoef
+from common import HERE, sha256, write_json, write_csv
+from evaluation import predict_stack
+from feature_matrix import VARIANTS, load_matrix
+from models import make_model, reported_parameters
+
+
+def run(variant,mode,output):
+    output=Path(output)
+    if output.exists():raise ValueError('Output must be new')
+    x,y,groups,ids,names,rows=load_matrix(variant)
+    protocol=json.loads((HERE/'repair_protocol.json').read_text())
+    outer=np.array([int(r['outer_fold']) for r in rows])
+    plan={'mode':mode,'interpretation':'Reported-parameter diagnostic; not independent retuning or an exact published reproduction',
+          'feature_variant':variant,'feature_shape':list(x.shape),'historical_test_loaded':False,
+          'protocol_sha256':sha256(HERE/'repair_protocol.json'),'settings_sha256':sha256(HERE/'model_settings.json'),
+          'folds':[{'fold':i,'train':int(sum(outer!=i)),'test':int(sum(outer==i)),
+                    'train_groups':len(set(groups[outer!=i])),'test_groups':len(set(groups[outer==i]))} for i in range(5)]}
+    output.mkdir(parents=True);write_json(output/'plan.json',plan)
+    if mode=='plan':
+        print(json.dumps(plan,indent=2));return
+    params=reported_parameters();order=protocol['architecture']['base_order']
+    models={n:[make_model(n,params[n],seed=protocol['runtime_choices']['seed'],scale_mlp=True)] for n in order}
+    meta=make_model('CB',params['CB'],seed=protocol['runtime_choices']['seed'],scale_mlp=True)
+    predictions=np.full(len(y),np.nan)
+    for fold in range(5):
+        train=np.flatnonzero(outer!=fold);test=np.flatnonzero(outer==fold)
+        inner=np.array([int(rows[i][f'inner_fold_outer_{fold}']) for i in train])
+        splits=[(np.flatnonzero(inner!=j),np.flatnonzero(inner==j)) for j in range(3)]
+        audit=[]
+        try:
+            r=predict_stack(x[train],y[train],groups[train],ids[train],x[test],groups[test],ids[test],
+                            models,meta,crossfit_splits=splits,seed=protocol['runtime_choices']['seed'],audit=audit)
+        except Exception as e:
+            write_json(output/f'fold_{fold}_failure.json',{'error':str(e),'audit':audit})
+            raise
+        predictions[test]=r['probability'];write_json(output/f'fold_{fold}_audit.json',audit)
+        np.savez_compressed(output/f'fold_{fold}_predictions.npz',record_ids=ids[test],probability=r['probability'])
+    if not np.isfinite(predictions).all():raise ValueError('Incomplete outer-fold coverage')
+    write_csv(output/'predictions.csv',[{'record_id':str(ids[i]),'outer_fold':int(outer[i]),'label':int(y[i]),'probability':float(predictions[i])} for i in range(len(y))])
+    metrics={'interpretation':plan['interpretation'],'accuracy':float(accuracy_score(y,predictions>=.5)),
+             'auroc':float(roc_auc_score(y,predictions)),'mcc':float(matthews_corrcoef(y,predictions>=.5))}
+    write_json(output/'metrics.json',metrics);print(json.dumps(metrics,indent=2))
+
+
+if __name__=='__main__':
+    p=argparse.ArgumentParser(description=__doc__)
+    p.add_argument('--variant',required=True,choices=VARIANTS)
+    p.add_argument('--mode',choices=['plan','run'],default='plan')
+    p.add_argument('--output',required=True,type=Path)
+    a=p.parse_args();run(a.variant,a.mode,a.output)

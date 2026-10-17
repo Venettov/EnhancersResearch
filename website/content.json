@@ -10,7 +10,7 @@
       "journal": "Bioinformatics",
       "url": "https://doi.org/10.1093/bioinformatics/btv604",
       "summary": "Two SVM classifiers use DNA sequence counts and structural descriptors to identify enhancers and classify strong versus weak annotations. Its 2,968-sequence benchmark is the foundation reused by the other original methods.",
-      "note": "Both SVMs are trained with a frozen grouped evaluation; mean accuracies are 76.21% and 60.98%. Exact historical performance remains unreproduced.",
+      "note": "Data available; complete author training code not located. The first grouped reconstruction reached 76.21% / 60.98% accuracy. Later training-only block balancing gives words plus summaries 63.14% strength accuracy versus 62.80% for words alone, with an uncertain difference. Exact historical performance remains unreproduced.",
       "materials": [
         {
           "label": "Supplied article PDF ↗",
@@ -21,12 +21,32 @@
           "url": "resources.html#legacy-data"
         },
         {
+          "label": "Our baseline results explained →",
+          "url": "reproduce.html#baseline-results"
+        },
+        {
+          "label": "Structural summaries and rescaling explained →",
+          "url": "reproduce.html#component-results"
+        },
+        {
+          "label": "Scale-aware results explained →",
+          "url": "reproduce.html#scale-results"
+        },
+        {
+          "label": "Training-only block balance explained →",
+          "url": "reproduce.html#block-results"
+        },
+        {
           "label": "Supplement S1 · labeled sequences ↗",
           "url": "https://github.com/Venettov/EnhancersResearch/blob/main/bioinformatics_32_3_362_s1/Supp-S1.pdf"
         },
         {
           "label": "Supplement S2 · property tables ↗",
           "url": "https://github.com/Venettov/EnhancersResearch/blob/main/bioinformatics_32_3_362_s1/Supp-S2.pdf"
+        },
+        {
+          "label": "Compare data and author-code availability →",
+          "url": "research.html#code-and-data"
         }
       ]
     },
@@ -40,7 +60,7 @@
       "journal": "Scientific Reports",
       "url": "https://doi.org/10.1038/srep38741",
       "summary": "Combines position-specific class profiles, nucleotide composition, and three-base sequence counts on the same historical benchmark. It predicts enhancer identity and strong/weak labels.",
-      "note": "Second baseline. Fit label-dependent profiles and feature selection only within training folds; its own feature-selection supplements are distinct from the supplied iEnhancer-2L supplements.",
+      "note": "Shared benchmark available; runnable author training code not located. Its own feature-selection supplements are distinct from the supplied iEnhancer-2L supplements. Fit label-dependent profiles and feature selection only within training folds.",
       "materials": [
         {
           "label": "Supplied article PDF ↗",
@@ -49,6 +69,10 @@
         {
           "label": "Corresponding benchmark and supplements →",
           "url": "resources.html#legacy-data"
+        },
+        {
+          "label": "Compare data and author-code availability →",
+          "url": "research.html#code-and-data"
         }
       ]
     },
@@ -62,7 +86,7 @@
       "journal": "Bioinformatics",
       "url": "https://doi.org/10.1093/bioinformatics/bty458",
       "summary": "Combines selected SVM predictors from 171 candidates. Uses the shared 2,968-sequence benchmark and a 400-sequence independent-test supplement.",
-      "note": "Later reconstruction. All 100 strong test sequences in the current publisher S4 match training sequences; removing them leaves no strong test class.",
+      "note": "Data and method documentation available; complete author training code not located. All 100 strong test sequences in the current publisher S4 match training; removing them leaves no strong test class.",
       "materials": [
         {
           "label": "Supplied article PDF ↗",
@@ -71,6 +95,10 @@
         {
           "label": "Corresponding benchmark and supplements →",
           "url": "resources.html#legacy-data"
+        },
+        {
+          "label": "Compare data and author-code availability →",
+          "url": "research.html#code-and-data"
         }
       ]
     },
@@ -84,7 +112,7 @@
       "journal": "Journal of Molecular Biology",
       "url": "https://doi.org/10.1016/j.jmb.2023.168314",
       "summary": "MCSE-Enhancer combines six sequence-descriptor families and multiple classifiers for enhancer identification. Its inspected public code uses the same 2,968 training and 400 test sequences as our files.",
-      "note": "Repair before use. The current notebooks contain incomplete cells, test-label optimization, and the same 100 overlaps. This does not establish the exact code used for the 2023 results.",
+      "note": "Public author notebooks and data are available. The inspected original has incomplete cells, test-label optimization and 100 train/test overlaps; its identity with the code behind the 2023 results is unverified. Our repaired reconstruction excludes the historical test. After the 2-mer versus 3-mer comparison, changing only the 3-mer denominator gave 76.82% accuracy with iLearn and 76.48% with literal Equation 7: −0.34 points, with a paired conditional 95% interval of −0.85 to +0.17. This establishes no clear advantage or equivalence. Original-method ambiguities remain; this is an exploratory repaired reconstruction, not exact published reproduction. The next external plan retains the original 2-mer reconstruction; VISTA cohort independence is not yet verified and no external metrics exist.",
       "materials": [
         {
           "label": "Supplied article PDF ↗",
@@ -97,6 +125,26 @@
         {
           "label": "Inspected author code and datasets ↗",
           "url": "https://github.com/MirBilalAhmad/DNA-Enhancers/tree/d76c48946de9c46e0845df12c119a27b7e455444"
+        },
+        {
+          "label": "Compare data and author-code availability →",
+          "url": "research.html#code-and-data"
+        },
+        {
+          "label": "Repaired reconstruction: results and evidence →",
+          "url": "reproduce.html#mcse-results"
+        },
+        {
+          "label": "Follow-up: 2-mers versus 3-mers →",
+          "url": "reproduce.html#mcse-kmer-results"
+        },
+        {
+          "label": "Follow-up: normalization and repeatability →",
+          "url": "reproduce.html#mcse-normalization-results"
+        },
+        {
+          "label": "External plan and provisional screening →",
+          "url": "reproduce.html#mcse-independent-plan"
         }
       ]
     },
@@ -146,7 +194,13 @@
       "journal": "Nucleic Acids Research · online 2024",
       "url": "https://doi.org/10.1093/nar/gkae940",
       "summary": "A database of developmental reporter experiments with tissue, embryo-stage, sequence, and allelic information.",
-      "note": "A sequence’s source species and the reporter’s experimental context are distinct."
+      "note": "A sequence’s source species and the reporter’s experimental context are distinct. Our stage-e11.5, hZR plan leaves 1,847 candidate fragments after preliminary screening. Independence is not yet verified; there are no external predictions or performance results. Evaluation rules are our design, not a finding of the paper.",
+      "materials": [
+        {
+          "label": "External plan and provisional screening →",
+          "url": "reproduce.html#mcse-independent-plan"
+        }
+      ]
     },
     {
       "id": "P05",
@@ -250,8 +304,8 @@
       "size": "0.008 GB",
       "count": 12,
       "description": "Eleven official data and dictionary files, together with the database publication.",
-      "use": "Later test transfer from the historical benchmark to developmental reporter experiments.",
-      "limit": "Preserve source organism, genome assembly, stage, backbone, and allelic relationships.",
+      "use": "Planned external evaluation of the repaired reconstruction before the lentiMPRA study. Preliminary screening leaves 1,847 candidates.",
+      "limit": "Independence not yet verified. Genomic, similarity, family and lentiMPRA-design checks remain; no external predictions or metrics.",
       "url": "https://enhancer.lbl.gov/"
     },
     {

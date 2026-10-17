@@ -1,0 +1,27 @@
+{
+  "source_directory": "replication/mcse_enhancer/independent_evaluation",
+  "protocol_id": "mcse-independent-vista-v1",
+  "independence_verified": false,
+  "evaluation_run": false,
+  "source_files_sha256": {
+    "replication/mcse_enhancer/independent_evaluation/protocol.json": "1af7faaea99ecac09bdfad67b2f77b2754231a637967d641c1d8538f2cea291d",
+    "replication/mcse_enhancer/independent_evaluation/checkpoints/2026-10-15-design/readiness.json": "7ebd01615f1ac359edea7c07026d56111f07a109ebc87229aed3cf58ab8da007",
+    "replication/mcse_enhancer/independent_evaluation/checkpoints/2026-10-15-design/preliminary_candidates.csv": "95816bfb657eea5e662acb5bd3dcfc85a7c1fe93be523248400ee18e4b65c6ff",
+    "replication/mcse_enhancer/independent_evaluation/checkpoints/2026-10-15-design/excluded_records.csv": "c1a6162225e15a84fad06f3e362b28d7bdf50493e042b7ffd1f66b25450b3079",
+    "replication/mcse_enhancer/independent_evaluation/checkpoints/2026-10-15-design/verification.json": "a210edd5b8a67dcae654d58db90d432bf0fe3b5684a12ebd9ce63015c889b95f",
+    "replication/mcse_enhancer/independent_evaluation/checkpoints/2026-10-15-design/manifest.json": "4c3a3c0dc17d9bd281aea91b343bf109cfd824fc130a06c83edfb238fae3fadd",
+    "replication/mcse_enhancer/independent_evaluation/audit_readiness.py": "1c77a444e919a6b870e9c212f6f58332736d874df977feb35e5419a7a082ceeb",
+    "replication/mcse_enhancer/independent_evaluation/test_readiness.py": "3da2256ff8465f4bbc72fe5b799bf13fe74e9b054e344627685e8d4121795faf"
+  },
+  "source_manifest": {
+    "protocol_sha256": "1af7faaea99ecac09bdfad67b2f77b2754231a637967d641c1d8538f2cea291d",
+    "audit_source_sha256": "1c77a444e919a6b870e9c212f6f58332736d874df977feb35e5419a7a082ceeb",
+    "files": {
+      "excluded_records.csv": "c1a6162225e15a84fad06f3e362b28d7bdf50493e042b7ffd1f66b25450b3079",
+      "preliminary_candidates.csv": "95816bfb657eea5e662acb5bd3dcfc85a7c1fe93be523248400ee18e4b65c6ff",
+      "readiness.json": "7ebd01615f1ac359edea7c07026d56111f07a109ebc87229aed3cf58ab8da007",
+      "protocol.json": "1af7faaea99ecac09bdfad67b2f77b2754231a637967d641c1d8538f2cea291d"
+    }
+  },
+  "website_scope": "Local English/Spanish presentation of the saved evaluation design and preliminary screening. No new screening, fitting or predictions were performed. Frozen protocol restrictions describe the original planning stage. Candidate labels are public source curation, not model predictions; the candidate manifest is not a certified independent test set. No raw DNA or model weights are included."
+}

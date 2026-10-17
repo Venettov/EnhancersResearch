@@ -1,0 +1,59 @@
+{
+  "stage": "MCSE standalone 2-mer versus 3-mer feature-length sensitivity",
+  "frozen_before_k3_fitting": true,
+  "frozen_utc": "2026-10-15T01:55:19.931780+00:00",
+  "control": "notebook_k2_full",
+  "alternative": "k3_full",
+  "target": "Historical enhancer versus non-enhancer labels",
+  "control_output": "output/2026-10-14-benchmark-notebook-k2",
+  "control_manifest_sha256": "ee18204d2652f46ef71c48b70177aad13573b55ab8ed9e89def54e072cca1367",
+  "control_summary_sha256": "4fd0d3124b05a9ce7445a83f23c9e09cf6022cf90b39ad8852a5717be51f481a",
+  "change": "Replace only standalone iLearn Kmer2 block (16 columns) with Kmer3 (64 columns); all 15153 common feature columns must be exactly equal in value and order.",
+  "word_normalization": "Overlapping counts/(L-k+1), as in inspected iLearn implementation, for both k values; paper denominator L remains unresolved.",
+  "feature_counts": {
+    "notebook_k2_full": 15169,
+    "k3_full": 15217
+  },
+  "fixed": [
+    "2968 records, labels and order",
+    "2451 sequence/locus groups",
+    "5 outer and 3 inner crossfit assignments",
+    "six bases and CatBoost meta architecture",
+    "reported S1 base/meta parameters",
+    "train-only MLP scaling",
+    "random seed 20261014",
+    "one CPU thread per fit",
+    "runtime package versions",
+    "probability threshold 0.5",
+    "no tuning, threshold optimization or winner selection"
+  ],
+  "control_reuse": "Revalidate all saved control hashes, fit audits, predictions and settings; do not rerun or overwrite the original control.",
+  "primary": "Pooled held-out MCSE accuracy difference: k3_full minus notebook_k2_full, on matched IDs/groups/labels/outer folds.",
+  "secondary": [
+    "Per-model and per-fold accuracy, mean fold AUROC, MCC, sensitivity and specificity; descriptive only",
+    "Paired prediction disagreements and changed-correctness counts"
+  ],
+  "uncertainty": {
+    "method": "2000 paired whole-group bootstrap resamples within each fixed outer fold",
+    "seed": 20261014,
+    "interval": "2.5th and 97.5th percentiles of pooled accuracy difference; also both accuracy intervals",
+    "scope": "Conditional on saved fitted predictions; no model refitting, seed variation or parameter-selection uncertainty"
+  },
+  "audit": {
+    "expected_new_fits": 125,
+    "historical_test_used": false,
+    "lentiMPRA_used": false,
+    "common_columns": 15153,
+    "kmer_row_sums": 1.0,
+    "independent_word_count_check": "Recount all 2968 training sequences with Python overlapping windows for both k values"
+  },
+  "limits": [
+    "Exploratory follow-up after inspecting the 2-mer benchmark; not a fresh confirmatory test.",
+    "The 3-mer variant follows the paper's stated k, not a proven exact published feature matrix; normalization, feature mapping, ensemble and historical software remain unresolved.",
+    "Other feature blocks already include some 3-mer information; this isolates the standalone Kmer block, not the presence of all 3-mer information.",
+    "Published S1 settings may themselves have been selected using these labels.",
+    "Changing dimensionality can change seeded model trajectories and feature sampling; the result is the effect of this representation change under the fixed pipeline, not proof of biological causation.",
+    "No independent experimental/lentiMPRA transfer result is produced."
+  ],
+  "publication": "Local only; no website edits, commits or pushes during this comparison."
+}

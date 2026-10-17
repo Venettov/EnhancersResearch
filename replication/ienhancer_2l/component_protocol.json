@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "scope": "Exploratory four-arm ablation specified after the baseline results, before any new component fits. Local only; not a preregistration or independent validation.",
+  "components": {
+    "F": "4096 overlapping 6-mer frequencies, counts divided by 195 for each 200-base sequence",
+    "theta": "Nine lagged mean squared differences of six dinucleotide properties, primary sample-SD table normalization",
+    "T": "w * theta; w=0.1 for layer1 and 0.4 for layer2",
+    "Z": "sum(F) + w * sum(theta), calculated per sequence; the SAME Z is used in both rescaled arms",
+    "words": "F",
+    "rescaled_words": "F / Z (structural information still enters through Z)",
+    "words_structure": "concatenate(F, T)",
+    "full": "concatenate(F, T) / Z (original primary PseKNC)"
+  },
+  "weights": {"layer1": 0.1, "layer2": 0.4},
+  "modes": {
+    "retuned": "Each representation uses the unchanged training_protocol.json grid and inner folds. Reuse and verify the saved full and ordinary-word evaluations; fit only the two missing arms.",
+    "fixed": "All four arms use the same saved primary C/gamma for each outer fold. Reuse full; fit the other three arms. These settings were selected inside training data but favor the primary representation; this is a tuning-sensitivity diagnostic, not an optimized competition."
+  },
+  "evaluation": "Identical benchmark records, reviewed labels, groups, five outer and three inner folds. Equal-weight outer-fold means. No scaler, weight search, threshold tuning or full-data final model. Inherit only grid, solver and selection rules from training_protocol.json, NOT its full-data model step.",
+  "contrasts": {
+    "rescaling_without_terms": {"rescaled_words": 1, "words": -1},
+    "adding_terms_without_rescaling": {"words_structure": 1, "words": -1},
+    "adding_terms_with_rescaling": {"full": 1, "rescaled_words": -1},
+    "rescaling_with_terms": {"full": 1, "words_structure": -1},
+    "combined_change": {"full": 1, "words": -1},
+    "interaction": {"full": 1, "rescaled_words": -1, "words_structure": -1, "words": 1}
+  },
+  "paired_bootstrap": {"resamples": 1000, "seed": 42, "metrics": ["accuracy", "balanced_accuracy", "roc_auc"], "unit": "whole group within outer fold, identical draws across all arms and modes", "interval": "pointwise conditional 95% percentile; no retraining, protocol-selection uncertainty or multiple-comparison correction"},
+  "geometry": {"pairs": 20000, "seed": 42, "description": "Label-free descriptive Z quantiles and feature-block shares of squared Euclidean distance over deterministic sampled distinct sequence pairs, before and after rescaling. No inference of physical DNA structure or biological causation."},
+  "existing_baselines": "output/2026-10-13-baselines-sensitivity-verified",
+  "verification": "Check reference artifact hashes; recompute all four matrices from raw sequences; match F and full to saved matrices; replay every reused held-out score; preserve all original files. Independent post-run audit of all predictions, saved models and parameter choices.",
+  "expected_new_svm_fits": 2930,
+  "expected_new_outer_models": 50,
+  "exclusions": ["contaminated historical test", "NEW_2026_DATA", "changing groups or grids after observing results", "replacement of primary model", "push or deployment"],
+  "limitations": ["Adaptive reuse of the same benchmark", "Original feature parameters were selected using the historical benchmark", "Structural features are sequence-derived property summaries, not measured 3D structures", "Fixed numeric grids differ in effective regularization across feature scales", "Grouped evaluation does not establish complete biological independence"]
+}

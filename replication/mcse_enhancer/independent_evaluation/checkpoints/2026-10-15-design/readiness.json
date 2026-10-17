@@ -1,0 +1,106 @@
+{
+  "protocol_id": "mcse-independent-vista-v1",
+  "protocol_sha256": "1af7faaea99ecac09bdfad67b2f77b2754231a637967d641c1d8538f2cea291d",
+  "created_utc": "2026-10-15T15:14:58.349834+00:00",
+  "status": "design_and_preliminary_metadata_audit_complete; independent_cohort_not_ready",
+  "audit_scope": "Metadata, curated-label counts, source sequences and exact legacy overlaps only. No model scores or score/label associations. Labels were accessible; this is not blinded third-party validation.",
+  "pinned_inputs_verified": 26,
+  "source_rows": 5090,
+  "filters": [
+    {
+      "filter": "organism",
+      "allowed": [
+        "Human"
+      ],
+      "before": 5090,
+      "after": 3298
+    },
+    {
+      "filter": "assembly",
+      "allowed": [
+        "hg38"
+      ],
+      "before": 3298,
+      "after": 3298
+    },
+    {
+      "filter": "description",
+      "allowed": [
+        "reference"
+      ],
+      "before": 3298,
+      "after": 2625
+    },
+    {
+      "filter": "allele_id",
+      "allowed": [
+        "0"
+      ],
+      "before": 2625,
+      "after": 2625
+    },
+    {
+      "filter": "stage",
+      "allowed": [
+        "e11.5"
+      ],
+      "before": 2625,
+      "after": 2363
+    },
+    {
+      "filter": "backbone",
+      "allowed": [
+        "hZR"
+      ],
+      "before": 2363,
+      "after": 1888
+    },
+    {
+      "filter": "curation_status",
+      "allowed": [
+        "positive",
+        "negative"
+      ],
+      "before": 1888,
+      "after": 1888
+    }
+  ],
+  "metadata_eligible_rows": 1888,
+  "excluded_rows": 41,
+  "excluded_by_reason": {
+    "tested_reference_sequence_mismatch": 27,
+    "exact_legacy_substring_either_strand": 14
+  },
+  "agreeing_repeats_collapsed": 0,
+  "preliminary_fragments": 1847,
+  "preliminary_positive_fragments": 953,
+  "preliminary_negative_fragments": 894,
+  "preliminary_window_count": 66555,
+  "fragment_length_range": [
+    304,
+    7786
+  ],
+  "legacy_records_screened": 3368,
+  "exact_screen": "Every contiguous 200-base candidate substring against all legacy sequences and reverse complements; no near-sequence or cross-assembly claims.",
+  "gates": {
+    "source_integrity": "passed_source_hashes",
+    "metadata_and_reference_sequence_qc": "preliminary_pass_for_listed_fragments",
+    "legacy_hg19_verification_and_reciprocal_locus_screen": "pending",
+    "exact_and_near_sequence_screen": "partial_exact_only_near_screen_pending",
+    "candidate_family_components": "pending",
+    "future_lentiMPRA_design_reservation": "pending",
+    "label_lineage_review": "pending",
+    "final_cohort_manifest_and_precision_gate": "pending",
+    "external_feature_and_serialization_validation": "pending",
+    "frozen_full_training_model": "pending"
+  },
+  "independent_group_count": null,
+  "precision_gate_passed": false,
+  "final_model_available": false,
+  "model_fits": 0,
+  "predictions": 0,
+  "external_metrics": null,
+  "lentiMPRA_outcomes_read": false,
+  "next_action": "Complete cross-assembly and near-sequence/family screening, plus the lentiMPRA design reserve, before freezing the external cohort. Do not train or score from this preliminary manifest.",
+  "provenance_note": "Only current source-byte hashes and the already saved preparation receipts are rechecked here; this is not a full 109-resource re-audit."
+}

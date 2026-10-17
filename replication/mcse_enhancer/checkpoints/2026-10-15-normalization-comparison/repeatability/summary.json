@@ -1,0 +1,66 @@
+{
+  "status": "complete",
+  "fits": 4,
+  "warnings": 0,
+  "held_out_rows": 594,
+  "comparisons": [
+    {
+      "comparison": "ilearn_repeat_1_vs_2",
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "unequal_probabilities": 0,
+      "probabilities_differing_over_1e_12": 0,
+      "changed_labels_at_0_5": 0
+    },
+    {
+      "comparison": "ilearn_saved_vs_repeat_1",
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "unequal_probabilities": 0,
+      "probabilities_differing_over_1e_12": 0,
+      "changed_labels_at_0_5": 0
+    },
+    {
+      "comparison": "ilearn_saved_vs_repeat_2",
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "unequal_probabilities": 0,
+      "probabilities_differing_over_1e_12": 0,
+      "changed_labels_at_0_5": 0
+    },
+    {
+      "comparison": "paper_repeat_1_vs_2",
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "unequal_probabilities": 0,
+      "probabilities_differing_over_1e_12": 0,
+      "changed_labels_at_0_5": 0
+    },
+    {
+      "comparison": "paper_saved_vs_repeat_1",
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "unequal_probabilities": 0,
+      "probabilities_differing_over_1e_12": 0,
+      "changed_labels_at_0_5": 0
+    },
+    {
+      "comparison": "paper_saved_vs_repeat_2",
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "unequal_probabilities": 0,
+      "probabilities_differing_over_1e_12": 0,
+      "changed_labels_at_0_5": 0
+    },
+    {
+      "comparison": "ilearn_1_vs_paper_1",
+      "max_abs_difference": 0.3378031494050015,
+      "mean_abs_difference": 0.01549793175969644,
+      "unequal_probabilities": 594,
+      "probabilities_differing_over_1e_12": 594,
+      "changed_labels_at_0_5": 11
+    }
+  ],
+  "limits": "One fold and process; this can detect repeatability problems but cannot establish their complete cause or general stability.",
+  "primary_results_unchanged": true
+}

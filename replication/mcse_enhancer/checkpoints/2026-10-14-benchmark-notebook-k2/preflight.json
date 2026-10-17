@@ -1,0 +1,9 @@
+{
+  "git_head": "e9c8300c40dae1e351f5b9d40c7d07bdf6682779",
+  "reference_path": "replication/ienhancer_2l/checkpoints/2026-10-13-svm-training/layer1_held_out_predictions.csv",
+  "reference_sha256": "9cb40a6034ff588c97dcce6a83dc4f3b2990a9128bd3b9c0c44e50212597d6b7",
+  "reference_unchanged_from_pre_fit_inventory": true,
+  "pre_fit_preservation_inventory_sha256": "2945bb1ffd2b481bf5998c7ca018a2501b6f1e87a761791f31f778df14634cc0",
+  "tests_passed_before_fitting": 23,
+  "variant_selected_before_fitting": "notebook_k2_full"
+}

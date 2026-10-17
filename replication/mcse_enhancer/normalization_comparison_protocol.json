@@ -1,0 +1,75 @@
+{
+  "stage": "MCSE standalone 3-mer normalization sensitivity",
+  "frozen_before_fitting": true,
+  "frozen_utc": "2026-10-15T11:15:26.356183+00:00",
+  "control": "k3_full",
+  "alternative": "k3_paperL_full",
+  "control_output": "output/2026-10-14-benchmark-k3-full",
+  "alternative_output": "output/2026-10-15-benchmark-k3-paperL",
+  "control_manifest_sha256": "2f64e5808059dc8eea872c458a3938d6d7a008cd68cb6972993b286427815be3",
+  "control_summary_sha256": "0243872d94335e585bba0970a1185570af98e057254cac566f3c32b517acff8d",
+  "change": "Only the 64 standalone Kmer3 frequencies: overlapping count/(L-3+1) versus overlapping count/L. All 15153 other columns, all 15217 names/order, and dimensions must be identical.",
+  "sources": {
+    "paper": {
+      "path": "1-s2.0-S0022283623004254-main.pdf",
+      "sha256": "14ea5e6e460cdaf293df1b8b8dd541b86503ddf2a15caf56e5d0cf4168e58dff",
+      "page": 4,
+      "equation": 7,
+      "definition": "f(t)=N(t)/N; N is sequence length; paper calls this a 3-mer descriptor",
+      "doi": "https://doi.org/10.1016/j.jmb.2023.168314"
+    },
+    "ilearn": {
+      "path": "replication/mcse_enhancer/vendor/iLearn/descnucleotide/Kmer.py",
+      "sha256": "868b129e406c26f2b75951bb1712665351d72f0f1a4c419b9f264e03f4b9542d",
+      "commit": "507aae17d9fea3d74a7c77984f1f1750eb734f53",
+      "definition": "overlapping windows; count[key]/len(kmers) = count/(L-k+1)"
+    }
+  },
+  "fixed": [
+    "2968 records, labels, order, and sequence lengths",
+    "2451 sequence/locus groups and five outer/three inner folds",
+    "k=3, overlapping counting, all other feature values and all column names/order",
+    "six base models and CatBoost meta-model with no raw-feature passthrough",
+    "reported S1 effective settings, seed 20261014 and one CPU thread",
+    "software environment, training-only MLP StandardScaler and max_iter=2000",
+    "threshold 0.5, no tuning, no model selection"
+  ],
+  "control_reuse": "Verify original control artifact hashes and all 125 fit audits; reuse predictions without overwriting or rerunning.",
+  "primary": "Pooled held-out combined-model accuracy difference: k3_paperL_full minus k3_full",
+  "secondary": [
+    "Descriptive per-model and per-fold accuracy, mean fold AUROC, MCC, sensitivity, specificity",
+    "Paired label changes and corrected/introduced errors",
+    "Maximum absolute probability differences, changed probabilities and labels per base/meta model",
+    "OOF and outer-test probability differences by model to locate numerical sensitivity"
+  ],
+  "uncertainty": {
+    "replicates": 2000,
+    "seed": 20261014,
+    "method": "Paired whole-group bootstrap within each fixed outer fold",
+    "interval": "Percentile 95% for difference and each accuracy",
+    "scope": "Conditional on saved fitted predictions"
+  },
+  "audit": {
+    "expected_new_fits": 125,
+    "common_columns": 15153,
+    "word_columns": 64,
+    "total_columns": 15217,
+    "expected_word_row_sums": {
+      "ilearn": 1.0,
+      "paper": 0.99
+    },
+    "independent_counting": "Python overlapping substring Counter checks independent integer base-4 implementation on all rows",
+    "train_only_scaling_diagnostic": "Compare standardized word blocks for every outer training and inner crossfit training split"
+  },
+  "expected_behavior": "Because the changed block is a constant positive rescaling on fixed-length sequences, no new information is added. Exact-arithmetic order-based splits and per-feature standardization can be invariant, but finite-precision implementation effects must be measured rather than assumed.",
+  "limits": [
+    "Exploratory follow-up after viewing prior benchmark results; not fresh independent confirmation.",
+    "This tests only the standalone 3-mer frequency denominator, not every normalization in the paper or other descriptor blocks.",
+    "All sequences have length 200: count/L is 0.99 times count/(L-2), with unchanged information and dimensionality.",
+    "Feature-family mapping, final ensemble choices and historical software remain unresolved; this is a repaired reconstruction, not exact reproduction.",
+    "Reported S1 settings may already have been selected using these labels.",
+    "Intervals condition on fitted predictions; no refitting, seed variation or parameter-selection uncertainty.",
+    "No historical contaminated test records or NEW_2026_DATA outcomes are used; no winning model is selected."
+  ],
+  "publication": "Local only; no website edits, commits, pushes or deployment."
+}

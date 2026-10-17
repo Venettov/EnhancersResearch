@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "scope": "Exploratory scale-aware follow-up specified after the component results, before new fits. No claim of preregistration or independent confirmation. Local only.",
+  "arms": ["words", "rescaled_words", "words_structure", "full"],
+  "feature_definition": "Unchanged component_protocol.json definitions: F, F/Z, [F,T], [F,T]/Z; sample-SD property table, overlapping 6-mers, nine lags, weights 0.1/0.4. No per-coordinate or block standardization and no weight selection.",
+  "weights": {"layer1": 0.1, "layer2": 0.4},
+  "scale": {
+    "statistic": "Exact median squared Euclidean distance over all unordered pairs of distinct training records; diagonal omitted, zero off-diagonal distances retained. Record-weighted, not group-weighted.",
+    "inner": "Compute a separate median using ONLY the inner-training rows for each inner split, representation and layer. Validation rows and all their features/labels are excluded from this statistic.",
+    "outer": "After selecting C and alpha inside training, recompute the median using ONLY the outer-training rows; use that value for the final outer fit and held-out prediction.",
+    "kernel": "exp(-alpha * squared_distance / training_median_squared_distance); effective raw-feature gamma = alpha / training_median_squared_distance",
+    "degenerate_policy": "Abort if median is nonpositive or nonfinite. No outcome-dependent fallback or sampling.",
+    "invariance": "A uniform positive multiplication of every feature changes the median by its square, cancelling in the kernel. Per-sequence rescaling and relative block weights still change geometry."
+  },
+  "C_exponents_base2": [-5, -1, 3, 7, 11, 15],
+  "alpha_exponents_base2": [-19, -17, -15, -13, -11, -9, -7, -5, -3, -1, 1, 3, 5, 7, 9],
+  "search_rationale": "Identical 90-setting C/alpha grid for every arm: broad-to-local kernels relative to a typical training pair, with factor-four alpha spacing. C unchanged from prior search. This is a changed search procedure and a denser grid (90 vs 48 settings), so changes from the old results cannot be attributed solely to median normalization.",
+  "selection": "Mean inner-fold balanced accuracy; exact ties favor smaller C, then smaller alpha. Same five outer and three inner grouped folds, solver and threshold rules as training_protocol.json. No full-data final model step.",
+  "boundary_rule": "Report C and alpha endpoint selections; do not extend the grid or choose features using outer performance.",
+  "contrasts": {
+    "words_minus_full": {"words": 1, "full": -1},
+    "words_minus_rescaled_words": {"words": 1, "rescaled_words": -1},
+    "words_minus_words_structure": {"words": 1, "words_structure": -1},
+    "search_change_words": {"words": 1, "previous_words": -1},
+    "search_change_rescaled_words": {"rescaled_words": 1, "previous_rescaled_words": -1},
+    "search_change_words_structure": {"words_structure": 1, "previous_words_structure": -1},
+    "search_change_full": {"full": 1, "previous_full": -1}
+  },
+  "paired_bootstrap": {"resamples": 1000, "seed": 42, "metrics": ["accuracy", "balanced_accuracy", "roc_auc"], "unit": "whole group within outer fold; same resamples for all current and saved comparisons", "interpretation": "Conditional pointwise 95% percentile intervals; no retraining, no protocol-selection uncertainty, no multiplicity correction"},
+  "previous_run": "output/2026-10-14-component-ablation",
+  "expected_new_svm_fits": 10840,
+  "expected_new_outer_models": 40,
+  "verification": "Raw-sequence feature replay, exact earlier feature hashes, reference delivery-manifest verification, training-only scale identities for every inner and outer fold, direct-kernel and uniform-scale-invariance tests, support-vector training membership, all held-out numeric model replay, metrics and bootstrap recomputation.",
+  "exclusions": ["contaminated historical test", "NEW_2026_DATA", "changing folds", "test-dependent normalization or parameter selection", "automatic replacement model", "new full-data final models", "push or deployment"],
+  "limitations": ["Adaptive reuse of this benchmark", "Historical feature selection used the benchmark", "Groups do not prove complete biological independence", "Finite grids still limit optimization", "Uniform distance scaling does not balance individual features or feature blocks", "Original author training implementation and historical accuracy remain unreproduced"]
+}

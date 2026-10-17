@@ -1,0 +1,40 @@
+{
+  "common_columns_exactly_equal": 15153,
+  "recounted_rows": 2968,
+  "k2_columns": 16,
+  "k3_columns": 64,
+  "independent_count_max_error": {
+    "k2": 0.0,
+    "k3": 0.0
+  },
+  "normalization": "Overlapping counts/(L-k+1) in both variants",
+  "status": "passed",
+  "created_utc": "2026-10-15T01:57:47.603164+00:00",
+  "control_validation": {
+    "status": "passed",
+    "fits_checked": 125,
+    "fixed_candidate_selections_checked": 120,
+    "outer_folds_checked": 5,
+    "oof_base_partitions_checked": 90,
+    "held_out_records": 2968,
+    "group_disjointness_checked_at_every_fit": true,
+    "reference_ids_groups_labels_folds_match": true,
+    "source_snapshots_checked": 26,
+    "feature_input_hashes_checked": 4,
+    "warnings": {},
+    "historical_test_used": false,
+    "limits": "Audits and saved predictions verified; fitted estimators were not serialized, so predictions were not replayed from model files."
+  },
+  "rows_labels_groups_folds_identical": true,
+  "control_artifacts_checked": 56,
+  "unchanged_core_sources": {
+    "evaluation.py": "501c13f94e296127be819acb54b900c9998f8f85e65abab4dee0e267ad16dcbf",
+    "models.py": "5d09208ba9ead10175653b01092bcd863fcc3af3514a6ff7df9a6a9a8e02daae",
+    "feature_matrix.py": "0c60829710e1e4be6a10f5f2fba62b9c85daebdc956485c991a81f6a3ce55ed0",
+    "run.py": "99f066b1953a62cdd7071a424d4b777ae70fc725de31c923acd01475d4712e65",
+    "model_settings.json": "a9643b47be73e20db42a8296dffbd0805b1d78f46d76865f5d768a5e48b6e472",
+    "repair_protocol.json": "8a316519a5bfcc61391ce0e433fbdd5d18581f48c30ef547b4265589e52992e7"
+  },
+  "common_source_files_unchanged": true,
+  "historical_test_used": false
+}

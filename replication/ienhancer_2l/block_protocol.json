@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "scope": "Exploratory training-only block-balance follow-up specified after the scale-aware results and before new fits. Local only; not preregistration or independent confirmation.",
+  "new_arms": {"balanced_words_structure": "words_structure", "balanced_full": "full"},
+  "reference_arms": ["words", "rescaled_words", "words_structure", "full"],
+  "feature_definition": "Unchanged F (4096 overlapping 6-mer frequencies), T=w*theta (nine fixed-table summaries), Z=sum(F)+sum(T). Balance [F,T] and [F/Z,T/Z] separately; preserve the same Z in both rescaled arms. Sample-SD property table; w=0.1/0.4. No per-coordinate standardization or selected block weights.",
+  "weights": {"layer1": 0.1, "layer2": 0.4},
+  "block_boundary": 4096,
+  "block_scaling": {
+    "statistic": "For each block b, q_b is the exact mean squared Euclidean distance over all unordered pairs of distinct training records. Diagonal excluded; off-diagonal zeros retained; record-weighted. Equivalently q_b=2*sum(column sample variances).",
+    "transform": "Divide every coordinate in block b by sqrt(q_b). No centering is needed for the RBF distance. Each block then has mean training-pair squared distance 1, so the two blocks contribute equally (50% each) to the aggregate training-pair distance. Not equal for every pair or for held-out records; not equal predictive information.",
+    "inner": "Fit both q values AND the overall median using ONLY that inner-training subset. Never include validation or outer-test features/labels in fitted scales.",
+    "outer": "After inner selection of C/alpha, refit both q values and the overall median using only outer-training records, then predict the held-out outer fold.",
+    "overall_distance_scale": "m is the exact median of D_F/q_F + D_T/q_T over unordered training-record pairs. Kernel exp(-alpha*(D_F/q_F+D_T/q_T)/m). This retains the prior scale-aware search convention after balancing the blocks.",
+    "degenerate_policy": "Abort if either q or m is nonpositive or nonfinite; no data-dependent fallback, block dropping, or sampling.",
+    "invariance": "Independent positive uniform unit changes within either block cancel. For unrescaled [F,T], the constant positive w cancels from the balanced T block. For [F,T]/Z, the sequence-specific Z still depends on w and is retained.",
+    "word_only_controls": "A single block divided by a positive scalar gives the same median-normalized kernel algebraically. Reuse verified prior word-only and rescaled-word models instead of refitting duplicate controls. Prior combined models are unchanged unbalanced references."
+  },
+  "C_exponents_base2": [-5, -1, 3, 7, 11, 15],
+  "alpha_exponents_base2": [-19, -17, -15, -13, -11, -9, -7, -5, -3, -1, 1, 3, 5, 7, 9],
+  "selection": "Same 90-setting C/alpha grid, five outer and three inner grouped folds, mean inner balanced accuracy, exact ties smaller C then alpha, original solver/threshold rules. No weight tuning or new full-data final models.",
+  "boundary_rule": "Report C/alpha endpoints without expanding after results. Do not choose a winning representation or deploy a replacement using outer scores.",
+  "contrasts": {
+    "balanced_terms_minus_words": {"balanced_words_structure": 1, "words": -1},
+    "balanced_full_minus_rescaled_words": {"balanced_full": 1, "rescaled_words": -1},
+    "balanced_full_minus_words": {"balanced_full": 1, "words": -1},
+    "balance_effect_without_Z": {"balanced_words_structure": 1, "words_structure": -1},
+    "balance_effect_with_Z": {"balanced_full": 1, "full": -1},
+    "Z_effect_after_balance": {"balanced_full": 1, "balanced_words_structure": -1}
+  },
+  "paired_bootstrap": {"resamples": 1000, "seed": 42, "metrics": ["accuracy", "balanced_accuracy", "roc_auc"], "unit": "whole group within outer fold; identical paired draws across all six methods", "interpretation": "Conditional pointwise 95% intervals, no retraining/protocol-selection uncertainty or multiplicity correction"},
+  "previous_run": "output/2026-10-14-scale-aware",
+  "previous_checkpoint": "checkpoints/2026-10-14-scale-aware.json",
+  "expected_new_svm_fits": 5420,
+  "expected_new_outer_models": 20,
+  "verification": "Independent variance and direct-distance checks of block statistics; 50/50 aggregate training-distance contribution; inner and outer feature/label isolation; direct-RBF equivalence; block-unit invariance; single-block equivalence to prior kernel; raw-sequence feature replay; all 60 model files and 26712 prediction rows; all 80 train-only scaler fits; all 20 searches; bootstrap and metrics recomputation; previous archive remains unchanged.",
+  "exclusions": ["contaminated historical test", "NEW_2026_DATA", "changing folds", "per-coordinate scaling", "weight selection", "replacement/full-data final models", "commit, push or deployment"],
+  "limitations": ["Adaptive benchmark reuse and historical feature selection", "Grouping does not establish complete biological independence", "One fixed equal-average-distance balance is not guaranteed optimal", "Finite C/alpha search", "Balancing a block may also amplify noise", "Sequence-derived summaries are not measured DNA shape or biological causes", "Original author implementation and numerical reproduction unresolved"]
+}

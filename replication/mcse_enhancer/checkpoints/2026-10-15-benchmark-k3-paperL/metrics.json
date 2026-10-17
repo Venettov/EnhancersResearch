@@ -1,0 +1,7 @@
+{
+  "interpretation": "Reported-parameter diagnostic; not independent retuning or an exact published reproduction",
+  "accuracy": 0.7648247978436657,
+  "auroc": 0.8460896462536599,
+  "mcc": 0.5316936195053554,
+  "elapsed_seconds": 2255.414432708989
+}

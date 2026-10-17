@@ -1,0 +1,31 @@
+{
+  "source": {
+    "doi": "10.1016/j.jmb.2023.168314",
+    "file": "vendor/publication/supplement_mmc1.pdf",
+    "sha256": "58fa4336c2a91566f7cf7316bd46c9f24bf049853349960a631d330ca356e8cc",
+    "table": "S1",
+    "page_1_based": 2,
+    "transcription": "Manually transcribed and visually checked against the rendered table; numerical precision as printed."
+  },
+  "reported_parameters": {
+    "RF": {"n_estimators": 34, "criterion": "gini", "max_depth": 31, "max_leaf_nodes": 38, "min_samples_split": 18, "min_samples_leaf": 3, "max_features": "sqrt"},
+    "LGBM": {"num_leaves": 10, "max_depth": 25, "learning_rate": 0.0117, "n_estimators": 1000, "min_child_samples": 26, "subsample": 0.7062, "colsample_bytree": 0.9679, "reg_alpha": 0.8742, "reg_lambda": 0.0368},
+    "XGB": {"max_depth": 2, "learning_rate": 0.2105, "n_estimators": 662, "min_child_weight": 4, "gamma": 0.6564, "subsample": 0.5740, "colsample_bytree": 0.5784, "reg_alpha": 0.00515, "reg_lambda": 0.0348},
+    "ET": {"n_estimators": 214, "max_depth": 61, "max_leaf_nodes": 60, "criterion": "entropy", "max_features": "sqrt", "min_samples_split": 8, "min_samples_leaf": 1},
+    "MLP": {"solver": "adam", "activation": "logistic", "alpha": 0.01, "hidden_layer_sizes": [20]},
+    "CB": {"iterations": 60, "learning_rate": 0.0146, "depth": 10, "l2_leaf_reg": 1.3831, "bootstrap_type": "Bayesian", "random_strength": 0.0000347, "bagging_temperature": 1.1333, "od_type": "IncToDec", "od_wait": 73}
+  },
+  "interpretation_notes": [
+    "Table S1's singular CatBoost 'iteration' is interpreted as the API parameter iterations, consistent with the notebook constructor. MLP size 20 is one hidden layer of 20 units.",
+    "ExtraTrees max_leaf_nodes=60 is retained despite lying outside both the printed 6..29 range and notebook 6..30 range. Its n_estimators=214 is also outside the notebook step-5 grid starting at 100.",
+    "LGBM n_estimators=1000 is retained although the printed Python range excludes 1000; the notebook includes it.",
+    "These are reported base-classifier settings. S1 does not establish final ensemble membership, meta-classifier settings, random seeds, package versions or unreported estimator defaults.",
+    "Reported settings may have been selected using this benchmark. Reusing them in grouped CV is a published-parameter diagnostic, not a new unbiased parameter-selection experiment.",
+    "Do not use the invalid search-space labels 'Nadam' or 'linear' as sklearn MLP settings; the reported optimum adam/logistic is valid."
+  ],
+  "supplement_feature_ambiguities": [
+    "Figure S5 is captioned kmer but shows indices up to Feature 14798, incompatible with either 16 two-mer or 64 three-mer columns alone.",
+    "Figure S6 is captioned NPCP but includes Feature 83, incompatible with a seven-column block alone.",
+    "Figure S4 is captioned PCPseDNC but includes Feature 27; the recovered lambda-2 parallel descriptor has 18 columns. Figure S3's displayed indices run 0..16. These observations do not establish a corrected caption or column mapping."
+  ]
+}

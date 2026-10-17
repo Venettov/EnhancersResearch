@@ -1,0 +1,5 @@
+{
+  "primary_comparison_summary_sha256_unchanged": "fbaa6b30449a5132b6c2e0cebb85b3912420a14a92b0ba8fdd49eb3ae90fdad0",
+  "addition": "Separate post-result first-fold MLP repeatability probe, four fits; primary benchmark and paired inference unchanged.",
+  "probe_summary_sha256": "65349b2b1cca81ce78300b09b37c1874d925e14bb90389c88cee17ad9c9dd607"
+}
