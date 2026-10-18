@@ -165,12 +165,26 @@
       "year": "2025",
       "type": "experimental",
       "label": "Experimental bridge",
-      "authors": "Agarwal, Inoue et al.",
+      "authors": "Agarwal, V., Inoue, F. et al.",
       "title": "Massively parallel characterization of transcriptional regulatory elements",
-      "journal": "Nature",
+      "journal": "Nature 639, 411–420 (2025) · DOI: 10.1038/s41586-024-08430-9",
       "url": "https://doi.org/10.1038/s41586-024-08430-9",
-      "summary": "Large-scale lentiMPRA measurements in HepG2, K562, and WTC11, including a matched library designed with 60,000 constructs.",
-      "note": "After reproducing the original method, compare its predictions with measured activity. Reproduce normalization first; old strong/weak annotations are not activity labels."
+      "summary": "The study tested a shared library of 60,000 DNA constructs in HepG2, K562, and WTC11 using lentiMPRA. We chose these three because it provides comparable activity measurements for the same DNA in each cell line.",
+      "note": "Planned use: compare reconstructed model scores with measured activity across cells. Normalization and sequence-independence checks remain required; this comparison has not been run.",
+      "materials": [
+        {
+          "label": "Read the free full text (PubMed Central)",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11903340/"
+        },
+        {
+          "label": "Supplementary Tables 1–13 (ZIP, approximately 342 MB)",
+          "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41586-024-08430-9/MediaObjects/41586_2024_8430_MOESM5_ESM.zip"
+        },
+        {
+          "label": "Joint-library design and three matching ENCODE experiments",
+          "url": "research.html#starting-evidence"
+        }
+      ]
     },
     {
       "id": "P03",
@@ -279,8 +293,8 @@
       "kind": "Functional measurements",
       "size": "0.804 GB",
       "count": 54,
-      "description": "Processed files for eight experiments, plus design and activity tables for the three-cell study.",
-      "use": "Link reproduced legacy predictions to measured activity of 200-base inserts in HepG2, K562, and WTC11.",
+      "description": "Processed files for eight experiments, including the three joint-library experiments from Agarwal, Inoue et al. (Nature, 2025), plus design and activity tables.",
+      "use": "Use the shared DNA library in HepG2, K562, and WTC11 to test whether reconstructed predictions agree with activity in each cell. These three were chosen because the study tested the same sequences in all three.",
       "limit": "Use the combined TSV or the three replicate TSVs per experiment, not both. Barcode coverage recovers 55,977 specificity-table names; the numerical scores remain unreproduced and two control aliases need original FASTA confirmation.",
       "url": "https://doi.org/10.1038/s41586-024-08430-9"
     },

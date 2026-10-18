@@ -2,7 +2,7 @@
 
 Student research at the [Center for Computational and Integrative Biology (CCIB)](https://ccib.camden.rutgers.edu/), Rutgers University–Camden.
 
-Our goal is to **reproduce published enhancer prediction methods, starting with iEnhancer-2L, then connect their predictions to measured activity in HepG2, K562, and WTC11**. We begin with the four original papers and sequence files supplied by Prof. Dehzangi. The matched lentiMPRA study provides the main experimental comparison after reconstruction and data preparation; its shared design and traceable measurements make it useful, not file size alone.
+Our goal is to **reproduce published enhancer prediction methods, starting with iEnhancer-2L, then connect their predictions to measured activity in HepG2, K562, and WTC11**. We begin with the four original papers and sequence files supplied by Prof. Dehzangi. We chose these three cell lines because [Agarwal, Inoue et al. (Nature, 2025)](https://doi.org/10.1038/s41586-024-08430-9) tested the same DNA library in all three using lentiMPRA. Those matched measurements let us check whether the reconstructed models’ predictions agree with activity in different cells. This experimental comparison remains planned. The paper is *Massively parallel characterization of transcriptional regulatory elements*, **639**, 411–420 (2025): [free full text](https://pmc.ncbi.nlm.nih.gov/articles/PMC11903340/) · [supplementary tables and matching ENCODE experiments](https://venettov.github.io/EnhancersResearch/research.html#starting-evidence).
 
 [Website in English](https://venettov.github.io/EnhancersResearch/) · [Sitio en español](https://venettov.github.io/EnhancersResearch/es/) · [Current research notes](https://venettov.github.io/EnhancersResearch/notes.html#qc)
 

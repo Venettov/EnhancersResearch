@@ -139,8 +139,22 @@
       "id": "P02",
       "label": "Conexión experimental",
       "title": "Caracterización masivamente paralela de elementos reguladores de la transcripción",
-      "summary": "Mediciones de lentiMPRA a gran escala en HepG2, K562 y WTC11, incluida una biblioteca compartida diseñada con 60,000 constructos.",
-      "note": "Tras reproducir el método original, comparar sus predicciones con la actividad medida. Primero reproducir la normalización; las anotaciones fuertes o débiles antiguas no son etiquetas de actividad."
+      "summary": "El estudio probó una biblioteca compartida de 60,000 constructos de ADN en HepG2, K562 y WTC11 mediante lentiMPRA. Elegimos estas tres porque ofrece mediciones comparables de actividad del mismo ADN en cada línea celular.",
+      "note": "Uso planificado: comparar puntuaciones de modelos reconstruidos con actividad medida entre células. Aún se requieren comprobaciones de normalización e independencia de secuencias; esta comparación no se ha realizado.",
+      "materials": [
+        {
+          "label": "Leer el texto completo gratuito (PubMed Central)",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11903340/"
+        },
+        {
+          "label": "Tablas suplementarias 1–13 (ZIP, aproximadamente 342 MB)",
+          "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41586-024-08430-9/MediaObjects/41586_2024_8430_MOESM5_ESM.zip"
+        },
+        {
+          "label": "Diseño de la biblioteca compartida y tres experimentos correspondientes de ENCODE",
+          "url": "research.html#starting-evidence"
+        }
+      ]
     },
     {
       "id": "P03",
@@ -210,8 +224,8 @@
       "number": "02",
       "title": "lentiMPRA de ENCODE",
       "kind": "Mediciones funcionales",
-      "description": "Archivos procesados de ocho experimentos, más tablas de diseño y actividad del estudio de tres tipos celulares.",
-      "use": "Relacionar predicciones históricas reproducidas con actividad medida de insertos de 200 bases en HepG2, K562 y WTC11.",
+      "description": "Archivos procesados de ocho experimentos, incluidos los tres de la biblioteca conjunta de Agarwal, Inoue y colaboradores (Nature, 2025), más tablas de diseño y actividad.",
+      "use": "Usar la biblioteca de ADN compartida en HepG2, K562 y WTC11 para evaluar si las predicciones reconstruidas concuerdan con la actividad en cada célula. Elegimos estas tres porque el estudio probó las mismas secuencias en todas.",
       "limit": "Usar el TSV combinado o los tres TSV de réplicas por experimento, no ambos. La cobertura recupera 55,977 nombres de la tabla de especificidad; las puntuaciones siguen sin reproducirse y dos alias de controles requieren confirmación con el FASTA original."
     },
     {

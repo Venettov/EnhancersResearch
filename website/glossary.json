@@ -129,6 +129,11 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/6409418/",
       "en": "Banerji et al. · enhancer position, orientation, and cell specificity (1983)",
       "es": "Banerji y colaboradores · posición, orientación y especificidad celular (1983, en inglés)"
+    },
+    "agarwal-inoue-2025": {
+      "url": "https://doi.org/10.1038/s41586-024-08430-9",
+      "en": "Agarwal, Inoue et al. (2025) · Massively parallel characterization of transcriptional regulatory elements · Nature 639, 411–420",
+      "es": "Agarwal, Inoue y colaboradores (2025) · Massively parallel characterization of transcriptional regulatory elements · Nature 639, 411–420"
     }
   },
   "terms": [
@@ -142,7 +147,7 @@
           "Hep G2"
         ],
         "definition": "A human cell line grown in the laboratory that originally came from a liver tumor. It retains some liver-related features, but it is not a normal liver or a whole organ.",
-        "context": "The same DNA pieces are tested in HepG2 and two other cell lines to see how their measured activity changes with the cellular setting."
+        "context": "Agarwal, Inoue et al. (Nature, 2025) tested the same DNA library in HepG2, K562, and WTC11. That shared design is why HepG2 is part of our planned comparison of predictions with measured activity."
       },
       "es": {
         "name": "HepG2",
@@ -151,10 +156,11 @@
           "Hep G2"
         ],
         "definition": "Una línea de células humanas cultivadas en el laboratorio que procede de un tumor de hígado. Conserva algunas características del hígado, pero no equivale a un hígado normal ni a un órgano completo.",
-        "context": "Se prueban los mismos fragmentos de ADN en HepG2 y otras dos líneas para observar cómo cambia su actividad según el entorno celular."
+        "context": "Agarwal, Inoue y colaboradores (Nature, 2025) probaron la misma biblioteca de ADN en HepG2, K562 y WTC11. Ese diseño compartido es la razón para incluir HepG2 en nuestra comparación planificada de predicciones y actividad medida."
       },
       "sources": [
-        "hepg2"
+        "hepg2",
+        "agarwal-inoue-2025"
       ],
       "papers": [
         "P02"
@@ -170,7 +176,7 @@
           "K-562"
         ],
         "definition": "A human cell line originally obtained from a person with chronic myeloid leukemia, a cancer affecting blood-forming cells. Researchers grow it in the laboratory to study blood-related biology.",
-        "context": "It is one of the three settings in our first comparison and the shared cell line in several assay-comparison datasets. It does not represent every kind of blood cell."
+        "context": "K562 belongs to the shared DNA-library experiment in Agarwal, Inoue et al. (Nature, 2025), which is why we include it in the planned prediction–activity comparison. It also appears in assay-comparison datasets and does not represent every blood cell."
       },
       "es": {
         "name": "K562",
@@ -179,10 +185,11 @@
           "K-562"
         ],
         "definition": "Una línea de células humanas obtenida originalmente de una persona con leucemia mieloide crónica, un cáncer que afecta a las células que forman la sangre. Se cultiva en el laboratorio para estudiar procesos relacionados con la sangre.",
-        "context": "Es uno de los tres entornos de nuestra primera comparación y aparece en varios conjuntos de datos. No representa todos los tipos de células sanguíneas."
+        "context": "K562 forma parte del experimento con una biblioteca compartida de ADN de Agarwal, Inoue y colaboradores (Nature, 2025); por eso la incluimos en la comparación planificada de predicciones y actividad. También aparece en comparaciones de ensayos y no representa todas las células sanguíneas."
       },
       "sources": [
-        "k562"
+        "k562",
+        "agarwal-inoue-2025"
       ],
       "papers": [
         "P02",
@@ -199,7 +206,7 @@
           "WTC-11"
         ],
         "definition": "A human induced pluripotent stem-cell line. Adult skin cells were reprogrammed into a state from which they can develop into many cell types under suitable conditions. These are not embryonic stem cells.",
-        "context": "The study tests DNA in WTC11 cells in their stem-cell state, providing a different setting from the two tumor-derived lines."
+        "context": "Agarwal, Inoue et al. (Nature, 2025) tested the same DNA in WTC11, HepG2, and K562. This is why WTC11 is part of our planned comparison: it supplies measurements in a stem-cell setting alongside the two tumor-derived lines."
       },
       "es": {
         "name": "WTC11",
@@ -208,10 +215,11 @@
           "WTC-11"
         ],
         "definition": "Una línea humana de células madre pluripotentes inducidas. Se reprogramaron células adultas de la piel para que pudieran convertirse en muchos tipos celulares bajo condiciones adecuadas. No son células madre embrionarias.",
-        "context": "El estudio prueba ADN en WTC11 en su estado de célula madre, un entorno diferente al de las dos líneas procedentes de tumores."
+        "context": "Agarwal, Inoue y colaboradores (Nature, 2025) probaron el mismo ADN en WTC11, HepG2 y K562. Por eso WTC11 forma parte de nuestra comparación planificada: aporta mediciones en un entorno de células madre junto a las dos líneas procedentes de tumores."
       },
       "sources": [
-        "wtc11"
+        "wtc11",
+        "agarwal-inoue-2025"
       ],
       "papers": [
         "P02"
@@ -949,7 +957,7 @@
           "lentiviral MPRA"
         ],
         "definition": "A version of MPRA that uses a lentiviral delivery system to place reporter constructs into cells’ DNA. Many candidate sequences can then be tested together.",
-        "context": "Our starting study uses it to compare matched DNA fragments across HepG2, K562, and WTC11. Integration still does not recreate each fragment’s original genomic location."
+        "context": "Agarwal, Inoue et al. (Nature, 2025) used lentiMPRA to test the same DNA library in HepG2, K562, and WTC11. That is why we chose these three for the planned comparison with model scores. Integration does not recreate each fragment’s original genomic location."
       },
       "es": {
         "name": "lentiMPRA",
@@ -958,9 +966,11 @@
           "lentiMPRAs"
         ],
         "definition": "Una versión de MPRA que usa un sistema de entrega lentiviral para integrar construcciones reporteras en el ADN de las células. Así se pueden probar muchas secuencias candidatas juntas.",
-        "context": "El estudio inicial compara fragmentos equivalentes en HepG2, K562 y WTC11. La integración no reproduce la posición genómica original de cada fragmento."
+        "context": "Agarwal, Inoue y colaboradores (Nature, 2025) utilizaron lentiMPRA para probar la misma biblioteca de ADN en HepG2, K562 y WTC11. Por eso elegimos estas tres para la comparación planificada con las puntuaciones de los modelos. La integración no recrea la ubicación genómica original de cada fragmento."
       },
-      "sources": [],
+      "sources": [
+        "agarwal-inoue-2025"
+      ],
       "papers": [
         "P02"
       ]
@@ -1035,7 +1045,7 @@
           "library"
         ],
         "definition": "A collection of DNA constructs prepared to be tested together. A matched or joint library uses the same designed collection across experimental settings.",
-        "context": "Our main comparison begins with a selected library shared across three cell lines. Its composition does not represent all DNA in the genome."
+        "context": "Our planned experimental comparison uses the shared library tested in three cell lines by Agarwal, Inoue et al. (Nature, 2025). This keeps DNA identity fixed across cells; the selected library does not represent all genomic DNA."
       },
       "es": {
         "name": "Biblioteca experimental",
@@ -1046,9 +1056,11 @@
           "biblioteca"
         ],
         "definition": "Una colección de construcciones de ADN preparada para probarse en conjunto. Una biblioteca conjunta utiliza la misma colección diseñada en distintos entornos experimentales.",
-        "context": "La comparación principal comienza con una biblioteca seleccionada que comparten tres líneas celulares. Su composición no representa todo el ADN del genoma."
+        "context": "Nuestra comparación experimental planificada utiliza la biblioteca compartida que Agarwal, Inoue y colaboradores (Nature, 2025) probaron en tres líneas celulares. Así se mantiene fija la identidad del ADN entre células; la biblioteca seleccionada no representa todo el ADN genómico."
       },
-      "sources": [],
+      "sources": [
+        "agarwal-inoue-2025"
+      ],
       "papers": [
         "P02"
       ]
