@@ -132,19 +132,19 @@
         },
         {
           "label": "Repaired reconstruction: results and evidence →",
-          "url": "reproduce.html#mcse-results"
+          "url": "mcse.html#mcse-results"
         },
         {
           "label": "Follow-up: 2-mers versus 3-mers →",
-          "url": "reproduce.html#mcse-kmer-results"
+          "url": "mcse.html#mcse-kmer-results"
         },
         {
           "label": "Follow-up: normalization and repeatability →",
-          "url": "reproduce.html#mcse-normalization-results"
+          "url": "mcse.html#mcse-normalization-results"
         },
         {
           "label": "External plan and provisional screening →",
-          "url": "reproduce.html#mcse-independent-plan"
+          "url": "mcse.html#mcse-independent-plan"
         }
       ]
     },
@@ -212,7 +212,7 @@
       "materials": [
         {
           "label": "External plan and provisional screening →",
-          "url": "reproduce.html#mcse-independent-plan"
+          "url": "mcse.html#mcse-independent-plan"
         }
       ]
     },

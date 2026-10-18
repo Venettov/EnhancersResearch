@@ -1,4 +1,15 @@
 (() => {
+  // Keep bookmarks to relocated study sections useful, with ordinary links as
+  // the no-JavaScript fallback in the original document.
+  const followMovedSection = () => {
+    const destination = document.getElementById(location.hash.slice(1))?.dataset.movedTo;
+    if (!destination) return false;
+    location.replace(destination);
+    return true;
+  };
+  if (followMovedSection()) return;
+  window.addEventListener('hashchange', followMovedSection);
+
   // Real translated documents also work without JavaScript. Preserve a reader's
   // current section when following the switch, including in a new browser tab.
   const languageLinks = [...document.querySelectorAll('[data-language]')];

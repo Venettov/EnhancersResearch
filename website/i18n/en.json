@@ -50,7 +50,7 @@
     ],
     "reproduce": [
       "Results",
-      "What the iEnhancer-2L and repaired MCSE-Enhancer reconstructions show, what remains uncertain, and how the research connects to new experimental data."
+      "Findings from our iEnhancer-2L reconstruction: the two SVM classifiers, feature comparisons, limitations, and the proposed connection to measured enhancer activity."
     ],
     "publications": [
       "Publications",
@@ -71,6 +71,10 @@
     "methods": [
       "Technical guide",
       "Software, original data, setup commands, feature definitions and implementation links for the enhancer-method reconstructions."
+    ],
+    "mcse": [
+      "MCSE-Enhancer archive",
+      "The repaired MCSE-Enhancer benchmark, feature comparisons, and VISTA evaluation plan, preserved as a separate study record."
     ]
   },
   "affiliation_name": "Center for Computational and Integrative Biology (CCIB)",

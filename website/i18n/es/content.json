@@ -112,19 +112,19 @@
         },
         {
           "label": "Reconstrucción reparada: resultados y evidencia →",
-          "url": "reproduce.html#mcse-results"
+          "url": "mcse.html#mcse-results"
         },
         {
           "label": "Comparación posterior: 2-mers y 3-mers →",
-          "url": "reproduce.html#mcse-kmer-results"
+          "url": "mcse.html#mcse-kmer-results"
         },
         {
           "label": "Comparación posterior: normalización y repetibilidad →",
-          "url": "reproduce.html#mcse-normalization-results"
+          "url": "mcse.html#mcse-normalization-results"
         },
         {
           "label": "Plan externo y selección provisional →",
-          "url": "reproduce.html#mcse-independent-plan"
+          "url": "mcse.html#mcse-independent-plan"
         }
       ]
     },
@@ -173,7 +173,7 @@
       "materials": [
         {
           "label": "Plan externo y selección provisional →",
-          "url": "reproduce.html#mcse-independent-plan"
+          "url": "mcse.html#mcse-independent-plan"
         }
       ]
     },
