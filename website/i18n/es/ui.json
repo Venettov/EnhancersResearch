@@ -27,7 +27,7 @@
   "study_guide": "Guía del estudio en GitHub",
   "hero_eyebrow": "Nuestro objetivo de investigación",
   "hero_title": "Potenciadores: Explorando las señales que regulan los genes",
-  "hero_description": "Reproducir métodos publicados de predicción de potenciadores, comenzando con iEnhancer-2L, y relacionar después sus predicciones con la actividad medida en tres tipos celulares.",
+  "hero_description": "Reproducir métodos publicados de predicción de potenciadores, comenzando con iEnhancer-2L, y comparar sus predicciones con la actividad medida en tres tipos celulares. Así podremos evaluar si los modelos siguen siendo útiles en distintos entornos celulares, donde una misma secuencia de ADN puede comportarse de forma diferente.",
   "hero_link": "Ver el plan de reproducción",
   "hero_alt": "Una doble hélice vertical de ADN, formada por dígitos binarios luminosos, gira sobre un fondo oscuro. Una animación conceptual que se repite de forma continua.",
   "visual_caption": "Seguir la secuencia. Evaluar la evidencia.",
