@@ -1629,7 +1629,7 @@
           "reproducibility"
         ],
         "definition": "Here, repeating a published analysis with the specified data and methods to see whether its results can be recovered. This is different from making a new biological discovery.",
-        "context": "First reconstruct iEnhancer-2L and document whether its published results can be recovered. Testing it on new lentiMPRA data is a separate transfer evaluation."
+        "context": "iEnhancer-2L is our active method. Its reconstruction and grouped evaluation are complete, but exact reproduction of the published results remains unresolved. Comparing its scores with new lentiMPRA activity is a separate, planned evaluation."
       },
       "es": {
         "name": "Reproducción de un análisis",
@@ -1641,7 +1641,7 @@
           "reproducibilidad"
         ],
         "definition": "Aquí significa repetir un análisis publicado con los datos y métodos indicados para comprobar si se recuperan sus resultados. No equivale a hacer un descubrimiento biológico nuevo.",
-        "context": "Primero reconstruir iEnhancer-2L y documentar si se recuperan sus resultados publicados. Probarlo con nuevos datos de lentiMPRA es una evaluación de transferencia distinta."
+        "context": "iEnhancer-2L es nuestro método activo. Su reconstrucción y evaluación agrupada están completas, pero la reproducción exacta de los resultados publicados sigue pendiente. Comparar sus puntuaciones con actividad nueva de lentiMPRA es una evaluación separada y planificada."
       },
       "sources": [],
       "papers": [

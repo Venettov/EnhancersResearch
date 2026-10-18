@@ -2,7 +2,7 @@
   "publications": [
     {
       "id": "L01",
-      "label": "Materiales originales · Prof. Dehzangi",
+      "label": "Método activo · materiales del Prof. Dehzangi",
       "title": "iEnhancer-2L: predictor en dos etapas de potenciadores y su fuerza mediante composición pseudo k-tuple de nucleótidos",
       "summary": "Dos clasificadores SVM utilizan conteos de secuencia y descriptores estructurales del ADN para identificar potenciadores y clasificar anotaciones fuertes o débiles. Su conjunto de referencia de 2,968 secuencias es la base reutilizada por los otros métodos originales.",
       "note": "Datos disponibles; código completo de entrenamiento de los autores no localizado. La primera reconstrucción por grupos alcanzó 76.21% / 60.98% de exactitud. El posterior equilibrio de bloques solo con entrenamiento da a palabras con resúmenes 63.14% de exactitud de fuerza frente a 62.80% con palabras solas, con una diferencia incierta. El rendimiento histórico exacto sigue sin reproducirse.",
@@ -47,10 +47,10 @@
     },
     {
       "id": "L02",
-      "label": "Materiales originales · Prof. Dehzangi",
+      "label": "Método de referencia · colección original",
       "title": "EnhancerPred: predictor de potenciadores basado en la combinación y selección de múltiples características",
       "summary": "Combina perfiles de posición por clase, composición de nucleótidos y conteos de secuencias de tres bases sobre el mismo conjunto histórico. Predice la identidad de potenciadores y etiquetas fuertes o débiles.",
-      "note": "Conjunto compartido disponible; código ejecutable de entrenamiento de los autores no localizado. Sus suplementos de selección son distintos de los suplementos de iEnhancer-2L recibidos. Ajustar perfiles dependientes de etiquetas y seleccionar características solo dentro del entrenamiento.",
+      "note": "Referencia de contexto, no un objetivo actual de reconstrucción. Conjunto compartido disponible; código ejecutable de entrenamiento de los autores no localizado. Sus suplementos de selección son distintos de los suplementos de iEnhancer-2L recibidos. Ajustar perfiles dependientes de etiquetas y seleccionar características solo dentro del entrenamiento.",
       "materials": [
         {
           "label": "PDF del artículo recibido ↗",
@@ -68,10 +68,10 @@
     },
     {
       "id": "L03",
-      "label": "Materiales originales · Prof. Dehzangi",
+      "label": "Método de referencia · colección original",
       "title": "iEnhancer-EL: identificación de potenciadores y su fuerza mediante aprendizaje en conjunto",
       "summary": "Combina predictores SVM seleccionados de 171 candidatos. Utiliza el conjunto compartido de 2,968 secuencias y un suplemento de prueba independiente de 400 secuencias.",
-      "note": "Datos y documentación metodológica disponibles; código completo de entrenamiento de los autores no localizado. Las 100 secuencias fuertes de prueba del S4 actual de la editorial coinciden con entrenamiento; al quitarlas no queda una clase fuerte de prueba.",
+      "note": "Referencia de contexto, no un objetivo actual de reconstrucción. Datos y documentación metodológica disponibles; código completo de entrenamiento de los autores no localizado. Las 100 secuencias fuertes de prueba del S4 actual de la editorial coinciden con entrenamiento; al quitarlas no queda una clase fuerte de prueba.",
       "materials": [
         {
           "label": "PDF del artículo recibido ↗",
@@ -89,10 +89,10 @@
     },
     {
       "id": "L04",
-      "label": "Materiales originales · Prof. Dehzangi",
+      "label": "Comparación archivada · colección original",
       "title": "Mejora de la identificación de potenciadores con un conjunto apilado de múltiples clasificadores",
       "summary": "MCSE-Enhancer combina seis familias de descriptores de secuencia y varios clasificadores para identificar potenciadores. El código público inspeccionado utiliza las mismas 2,968 secuencias de entrenamiento y 400 de prueba que nuestros archivos.",
-      "note": "Hay cuadernos y datos públicos de los autores. El original inspeccionado contiene celdas incompletas, optimización con etiquetas de prueba y 100 solapamientos; no se ha verificado que sea el código de los resultados de 2023. Nuestra reconstrucción reparada excluye la prueba histórica. Tras la comparación de 2-mers y 3-mers, cambiar solo el denominador de los 3-mers dio 76.82% de exactitud con iLearn y 76.48% con la Ecuación 7 literal: −0.34 puntos, con intervalo pareado condicional del 95% de −0.85 a +0.17. No establece una ventaja clara ni equivalencia. Persisten ambigüedades del método original; es una reconstrucción reparada exploratoria, no una reproducción exacta de lo publicado. El siguiente plan externo conserva la reconstrucción original de 2-mers; la independencia del conjunto VISTA aún no está verificada y no existen métricas externas.",
+      "note": "Reconstrucción reparada archivada. Hay cuadernos y datos públicos, pero la versión inspeccionada contiene celdas incompletas, optimización con etiquetas de prueba y 100 solapamientos; no se ha verificado que sea el código utilizado para los resultados de 2023. Las comparaciones completadas y sus incertidumbres se conservan en el archivo. El protocolo VISTA anterior especifica MCSE, sigue sin ejecutarse y no define la evaluación activa de iEnhancer-2L.",
       "materials": [
         {
           "label": "PDF del artículo recibido ↗",
@@ -111,19 +111,19 @@
           "url": "research.html#code-and-data"
         },
         {
-          "label": "Reconstrucción reparada: resultados y evidencia →",
+          "label": "Archivo: reconstrucción reparada: resultados y evidencia →",
           "url": "mcse.html#mcse-results"
         },
         {
-          "label": "Comparación posterior: 2-mers y 3-mers →",
+          "label": "Archivo: comparación posterior: 2-mers y 3-mers →",
           "url": "mcse.html#mcse-kmer-results"
         },
         {
-          "label": "Comparación posterior: normalización y repetibilidad →",
+          "label": "Archivo: comparación posterior: normalización y repetibilidad →",
           "url": "mcse.html#mcse-normalization-results"
         },
         {
-          "label": "Plan externo y selección provisional →",
+          "label": "Archivo: plan externo y selección provisional →",
           "url": "mcse.html#mcse-independent-plan"
         }
       ]
@@ -140,7 +140,7 @@
       "label": "Conexión experimental",
       "title": "Caracterización masivamente paralela de elementos reguladores de la transcripción",
       "summary": "El estudio probó una biblioteca compartida de 60,000 constructos de ADN en HepG2, K562 y WTC11 mediante lentiMPRA. Elegimos estas tres porque ofrece mediciones comparables de actividad del mismo ADN en cada línea celular.",
-      "note": "Uso planificado: comparar puntuaciones de modelos reconstruidos con actividad medida entre células. Aún se requieren comprobaciones de normalización e independencia de secuencias; esta comparación no se ha realizado.",
+      "note": "Conexión experimental planificada para iEnhancer-2L: comparar sus puntuaciones fijas con actividad entre células. Aún se requieren comprobaciones de normalización e independencia de secuencias; esta comparación no se ha realizado.",
       "materials": [
         {
           "label": "Leer el texto completo gratuito (PubMed Central)",
@@ -169,10 +169,10 @@
       "title": "VISTA Enhancer Browser: una base de datos actualizada de potenciadores del desarrollo específicos de tejido",
       "journal": "Nucleic Acids Research · en línea en 2024",
       "summary": "Una base de datos de experimentos de reportero del desarrollo con información sobre tejidos, etapas embrionarias, secuencias y alelos.",
-      "note": "La especie de origen de una secuencia y el contexto experimental del reportero son distintos. Nuestro plan con etapa e11.5 y vector hZR deja 1,847 fragmentos candidatos tras la selección preliminar. La independencia aún no está verificada; no hay predicciones ni rendimiento externo. Las reglas de evaluación son nuestro diseño, no un resultado del artículo.",
+      "note": "Evidencia del desarrollo conservada en la colección. El plan MCSE archivado utilizó la etapa e11.5 y hZR, conservando 1,847 candidatos preliminares. La independencia sigue sin verificarse y no existen predicciones externas. No se ha establecido que ese conjunto sea una evaluación independiente de iEnhancer-2L; ese uso requeriría otro protocolo.",
       "materials": [
         {
-          "label": "Plan externo y selección provisional →",
+          "label": "Archivo: plan externo y selección provisional →",
           "url": "mcse.html#mcse-independent-plan"
         }
       ]
@@ -225,7 +225,7 @@
       "title": "lentiMPRA de ENCODE",
       "kind": "Mediciones funcionales",
       "description": "Archivos procesados de ocho experimentos, incluidos los tres de la biblioteca conjunta de Agarwal, Inoue y colaboradores (Nature, 2025), más tablas de diseño y actividad.",
-      "use": "Usar la biblioteca de ADN compartida en HepG2, K562 y WTC11 para evaluar si las predicciones reconstruidas concuerdan con la actividad en cada célula. Elegimos estas tres porque el estudio probó las mismas secuencias en todas.",
+      "use": "Comparación planificada de puntuaciones fijas de iEnhancer-2L con actividad medida en HepG2, K562 y WTC11. Se eligieron estas células porque el estudio probó la misma biblioteca de ADN en las tres.",
       "limit": "Usar el TSV combinado o los tres TSV de réplicas por experimento, no ambos. La cobertura recupera 55,977 nombres de la tabla de especificidad; las puntuaciones siguen sin reproducirse y dos alias de controles requieren confirmación con el FASTA original."
     },
     {
@@ -241,7 +241,7 @@
       "title": "VISTA Enhancer Browser",
       "kind": "Reporteros del desarrollo",
       "description": "Once archivos oficiales de datos y diccionarios, junto con la publicación de la base de datos.",
-      "use": "Evaluación externa planificada de la reconstrucción reparada antes del estudio lentiMPRA. La selección preliminar deja 1,847 candidatos.",
+      "use": "La selección archivada de MCSE conservó 1,847 fragmentos candidatos. Estos registros preservan ese plan anterior; no son la evaluación activa de iEnhancer-2L.",
       "limit": "Independencia aún no verificada. Faltan revisiones de regiones, similitud, grupos y diseños lentiMPRA; sin predicciones ni métricas externas."
     },
     {
@@ -257,7 +257,7 @@
       "title": "DNABERT-Enhancer",
       "kind": "Predicción por secuencia",
       "description": "Versiones de la publicación, material suplementario, una copia del código fuente y un archivo de modelos entrenados.",
-      "use": "Comparar un predictor moderno con características clásicas reproducidas tras validar la inferencia y la independencia de los datos de entrenamiento.",
+      "use": "Recurso de contexto para una posible comparación futura de modelos. La reconstrucción activa es iEnhancer-2L; DNABERT no es un objetivo actual de reproducción.",
       "limit": "El archivo de modelos está disponible localmente, pero el lanzador archivado llama a un Python ausente. Reparar y validar el entorno y el modelo guardado, y definir una prueba independiente; los positivos históricos locales de prueba se solapan con desarrollo."
     },
     {

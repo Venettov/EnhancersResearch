@@ -8,7 +8,7 @@
   "navigation_label": "Main navigation",
   "language_label": "Language",
   "read_report": "Foundational report",
-  "footer_description": "Understanding regulatory DNA through<br>experimental evidence and reproducible analysis.",
+  "footer_description": "Reconstructing iEnhancer-2L and connecting<br>sequence predictions with experimental evidence.",
   "explore": "Explore",
   "questions": "Research questions",
   "literature": "Collected literature",
@@ -27,26 +27,26 @@
   "study_guide": "Study guide on GitHub",
   "hero_eyebrow": "Our research goal",
   "hero_title": "Enhancers: Exploring the signals that control genes",
-  "hero_description": "Reproduce published enhancer prediction methods, starting with iEnhancer-2L, then compare their predictions with new experiments. We chose HepG2, K562, and WTC11 because the lentiMPRA study by <a href=\"https://doi.org/10.1038/s41586-024-08430-9\">Agarwal, Inoue et al. (Nature, 2025)</a> tested the same DNA sequences in all three. This lets us ask whether the predictions agree with measured activity in different cells.",
-  "hero_link": "Explore the replication plan",
+  "hero_description": "Reconstruct and evaluate iEnhancer-2L, then compare its predictions with experimental activity. We chose HepG2, K562, and WTC11 because <a href=\"https://doi.org/10.1038/s41586-024-08430-9\">Agarwal, Inoue et al. (Nature, 2025)</a> tested the same DNA sequences in all three using lentiMPRA. Those matched measurements can reveal where the method’s predictions are useful and where they fall short.",
+  "hero_link": "Explore the iEnhancer-2L plan",
   "hero_alt": "A glowing vertical DNA double helix made of binary digits rotates against a dark background. A continuously looping conceptual animation.",
   "visual_caption": "Follow the sequence. Evaluate the evidence.",
   "visual_note": "Conceptual illustration · not measured data",
   "visual_pause": "Pause animation",
   "visual_play": "Play animation",
   "report_kicker": "Research report 01 · 10 October 2026",
-  "report_notice": "<strong>Historical report · 10 October 2026.</strong> We preserve the initial strategy as a dated record. The current plan reconstructs enhancer predictors, then compares their scores with measurements from <a href=\"https://doi.org/10.1038/s41586-024-08430-9\">Agarwal, Inoue et al. (Nature, 2025)</a>. We chose HepG2, K562, and WTC11 because that study tested the same DNA sequences in all three, allowing a matched comparison of predictions and activity. Current references: the <a href=\"research.html#project-goal\">updated plan</a>, the <a href=\"publications.html#L01\">four original papers</a>, and the <a href=\"notes.html#replication-review\">12 October review</a>. This report’s priorities and counts describe its date, not the current project state.",
+  "report_notice": "<strong>Historical report · 10 October 2026.</strong> This report preserves the original strategy. The active project now focuses on iEnhancer-2L and a planned comparison with matched activity measurements from <a href=\"https://doi.org/10.1038/s41586-024-08430-9\">Agarwal, Inoue et al. (Nature, 2025)</a>. HepG2, K562, and WTC11 were chosen because that study tested the same DNA in all three. Earlier multi-method plans and the MCSE/VISTA work are historical context. Follow the <a href=\"research.html#roadmap\">current roadmap</a>, <a href=\"reproduce.html\">iEnhancer-2L results</a>, and <a href=\"mcse.html\">MCSE archive</a> for their present status. The report below retains its original priorities, dates, and counts.",
   "report_contents": "Report contents",
   "in_report": "In this report",
   "back_top": "Back to the beginning",
   "pages": {
     "index": [
       "Home",
-      "Reproducing original enhancer prediction methods and linking their predictions to new experimental activity data."
+      "Reconstructing and evaluating iEnhancer-2L, with a planned comparison to matched experimental enhancer activity."
     ],
     "research": [
       "Research",
-      "The replication roadmap, original methods, benchmark limitations, and the bridge to three-cell lentiMPRA."
+      "The iEnhancer-2L research plan, original reference papers, benchmark limitations, and proposed connection to three-cell lentiMPRA."
     ],
     "reproduce": [
       "Results",
@@ -54,15 +54,15 @@
     ],
     "publications": [
       "Publications",
-      "Twelve works: four original papers supplied by Prof. Dehzangi and eight newer works, with data links and research roles."
+      "iEnhancer-2L and its experimental connection within twelve collected works: four original papers and eight newer studies."
     ],
     "resources": [
       "Resources",
-      "The original benchmark and supplements, plus seven new resource collections; their availability and analysis limits."
+      "Inputs for the active iEnhancer-2L reconstruction and planned lentiMPRA comparison, alongside the wider research collection."
     ],
     "notes": [
       "Research Notes",
-      "Observations, decisions, and open questions as the enhancer research project develops."
+      "Current iEnhancer-2L progress and dated records of earlier analyses, decisions, and unresolved questions."
     ],
     "strategy": [
       "Evidence & Strategy",
@@ -70,11 +70,11 @@
     ],
     "methods": [
       "Technical guide",
-      "Software, original data, setup commands, feature definitions and implementation links for the enhancer-method reconstructions."
+      "Software, original data, setup commands, feature definitions, and implementation links for the iEnhancer-2L reconstruction."
     ],
     "mcse": [
       "MCSE-Enhancer archive",
-      "The repaired MCSE-Enhancer benchmark, feature comparisons, and VISTA evaluation plan, preserved as a separate study record."
+      "Archived MCSE-Enhancer results, technical documentation, and the unrun VISTA evaluation plan; the active project focuses on iEnhancer-2L."
     ]
   },
   "affiliation_name": "Center for Computational and Integrative Biology (CCIB)",

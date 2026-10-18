@@ -4,7 +4,7 @@
       "id": "L01",
       "year": "2016",
       "type": "model",
-      "label": "Original materials · Prof. Dehzangi",
+      "label": "Active method · Prof. Dehzangi materials",
       "authors": "Liu et al.",
       "title": "iEnhancer-2L: a two-layer predictor for identifying enhancers and their strength by pseudo k-tuple nucleotide composition",
       "journal": "Bioinformatics",
@@ -54,13 +54,13 @@
       "id": "L02",
       "year": "2016",
       "type": "model",
-      "label": "Original materials · Prof. Dehzangi",
+      "label": "Background method · original collection",
       "authors": "Jia & He",
       "title": "EnhancerPred: a predictor for discovering enhancers based on the combination and selection of multiple features",
       "journal": "Scientific Reports",
       "url": "https://doi.org/10.1038/srep38741",
       "summary": "Combines position-specific class profiles, nucleotide composition, and three-base sequence counts on the same historical benchmark. It predicts enhancer identity and strong/weak labels.",
-      "note": "Shared benchmark available; runnable author training code not located. Its own feature-selection supplements are distinct from the supplied iEnhancer-2L supplements. Fit label-dependent profiles and feature selection only within training folds.",
+      "note": "Background reference, not a current reconstruction target. Shared benchmark available; runnable author training code not located. Its own feature-selection supplements are distinct from the supplied iEnhancer-2L supplements. Fit label-dependent profiles and feature selection only within training folds.",
       "materials": [
         {
           "label": "Supplied article PDF ↗",
@@ -80,13 +80,13 @@
       "id": "L03",
       "year": "2018",
       "type": "model",
-      "label": "Original materials · Prof. Dehzangi",
+      "label": "Background method · original collection",
       "authors": "Liu et al.",
       "title": "iEnhancer-EL: identifying enhancers and their strength with ensemble learning approach",
       "journal": "Bioinformatics",
       "url": "https://doi.org/10.1093/bioinformatics/bty458",
       "summary": "Combines selected SVM predictors from 171 candidates. Uses the shared 2,968-sequence benchmark and a 400-sequence independent-test supplement.",
-      "note": "Data and method documentation available; complete author training code not located. All 100 strong test sequences in the current publisher S4 match training; removing them leaves no strong test class.",
+      "note": "Background reference, not a current reconstruction target. Data and method documentation available; complete author training code not located. All 100 strong test sequences in the current publisher S4 match training; removing them leaves no strong test class.",
       "materials": [
         {
           "label": "Supplied article PDF ↗",
@@ -106,13 +106,13 @@
       "id": "L04",
       "year": "2023",
       "type": "model",
-      "label": "Original materials · Prof. Dehzangi",
+      "label": "Archived comparison · original collection",
       "authors": "Mir, Rehman, Tayara & Chong",
       "title": "Improving Enhancer Identification with a Multi-Classifier Stacked Ensemble Model",
       "journal": "Journal of Molecular Biology",
       "url": "https://doi.org/10.1016/j.jmb.2023.168314",
       "summary": "MCSE-Enhancer combines six sequence-descriptor families and multiple classifiers for enhancer identification. Its inspected public code uses the same 2,968 training and 400 test sequences as our files.",
-      "note": "Public author notebooks and data are available. The inspected original has incomplete cells, test-label optimization and 100 train/test overlaps; its identity with the code behind the 2023 results is unverified. Our repaired reconstruction excludes the historical test. After the 2-mer versus 3-mer comparison, changing only the 3-mer denominator gave 76.82% accuracy with iLearn and 76.48% with literal Equation 7: −0.34 points, with a paired conditional 95% interval of −0.85 to +0.17. This establishes no clear advantage or equivalence. Original-method ambiguities remain; this is an exploratory repaired reconstruction, not exact published reproduction. The next external plan retains the original 2-mer reconstruction; VISTA cohort independence is not yet verified and no external metrics exist.",
+      "note": "Archived repaired reconstruction. Public notebooks and data are available, but the inspected version has incomplete cells, test-label optimization, and 100 train/test overlaps; its identity with the code used for the 2023 results is unverified. The completed comparisons and their uncertainties are preserved in the archive. The earlier VISTA protocol specifies MCSE, remains unrun, and does not define the active iEnhancer-2L evaluation.",
       "materials": [
         {
           "label": "Supplied article PDF ↗",
@@ -131,19 +131,19 @@
           "url": "research.html#code-and-data"
         },
         {
-          "label": "Repaired reconstruction: results and evidence →",
+          "label": "Archived repaired reconstruction: results and evidence →",
           "url": "mcse.html#mcse-results"
         },
         {
-          "label": "Follow-up: 2-mers versus 3-mers →",
+          "label": "Archived follow-up: 2-mers versus 3-mers →",
           "url": "mcse.html#mcse-kmer-results"
         },
         {
-          "label": "Follow-up: normalization and repeatability →",
+          "label": "Archived follow-up: normalization and repeatability →",
           "url": "mcse.html#mcse-normalization-results"
         },
         {
-          "label": "External plan and provisional screening →",
+          "label": "Archived external plan and provisional screening →",
           "url": "mcse.html#mcse-independent-plan"
         }
       ]
@@ -170,7 +170,7 @@
       "journal": "Nature 639, 411–420 (2025) · DOI: 10.1038/s41586-024-08430-9",
       "url": "https://doi.org/10.1038/s41586-024-08430-9",
       "summary": "The study tested a shared library of 60,000 DNA constructs in HepG2, K562, and WTC11 using lentiMPRA. We chose these three because it provides comparable activity measurements for the same DNA in each cell line.",
-      "note": "Planned use: compare reconstructed model scores with measured activity across cells. Normalization and sequence-independence checks remain required; this comparison has not been run.",
+      "note": "Planned experimental connection for iEnhancer-2L: compare its fixed scores with activity across cells. Normalization and sequence-independence checks remain required; this comparison has not been run.",
       "materials": [
         {
           "label": "Read the free full text (PubMed Central)",
@@ -208,10 +208,10 @@
       "journal": "Nucleic Acids Research · online 2024",
       "url": "https://doi.org/10.1093/nar/gkae940",
       "summary": "A database of developmental reporter experiments with tissue, embryo-stage, sequence, and allelic information.",
-      "note": "A sequence’s source species and the reporter’s experimental context are distinct. Our stage-e11.5, hZR plan leaves 1,847 candidate fragments after preliminary screening. Independence is not yet verified; there are no external predictions or performance results. Evaluation rules are our design, not a finding of the paper.",
+      "note": "Developmental evidence retained in the collection. The archived MCSE plan used stage e11.5 and hZR, retaining 1,847 preliminary candidates. Independence remains unverified and no external predictions exist. That cohort has not been established as an independent evaluation set for iEnhancer-2L; any such use requires a separate protocol.",
       "materials": [
         {
-          "label": "External plan and provisional screening →",
+          "label": "Archived external plan and provisional screening →",
           "url": "mcse.html#mcse-independent-plan"
         }
       ]
@@ -294,7 +294,7 @@
       "size": "0.804 GB",
       "count": 54,
       "description": "Processed files for eight experiments, including the three joint-library experiments from Agarwal, Inoue et al. (Nature, 2025), plus design and activity tables.",
-      "use": "Use the shared DNA library in HepG2, K562, and WTC11 to test whether reconstructed predictions agree with activity in each cell. These three were chosen because the study tested the same sequences in all three.",
+      "use": "Planned comparison of fixed iEnhancer-2L scores with measured activity in HepG2, K562, and WTC11. These cells were chosen because the study tested the same DNA library in all three.",
       "limit": "Use the combined TSV or the three replicate TSVs per experiment, not both. Barcode coverage recovers 55,977 specificity-table names; the numerical scores remain unreproduced and two control aliases need original FASTA confirmation.",
       "url": "https://doi.org/10.1038/s41586-024-08430-9"
     },
@@ -318,7 +318,7 @@
       "size": "0.008 GB",
       "count": 12,
       "description": "Eleven official data and dictionary files, together with the database publication.",
-      "use": "Planned external evaluation of the repaired reconstruction before the lentiMPRA study. Preliminary screening leaves 1,847 candidates.",
+      "use": "Archived MCSE screening retained 1,847 candidate fragments. These records preserve that earlier plan; they are not the active iEnhancer-2L evaluation.",
       "limit": "Independence not yet verified. Genomic, similarity, family and lentiMPRA-design checks remain; no external predictions or metrics.",
       "url": "https://enhancer.lbl.gov/"
     },
@@ -342,7 +342,7 @@
       "size": "10.703 GB",
       "count": 5,
       "description": "Publication versions, supplementary material, source snapshot, and trained-model archive.",
-      "use": "Compare a modern predictor with reproduced classical features after validating inference and training-data independence.",
+      "use": "Background resource for a possible future model comparison. The active reconstruction is iEnhancer-2L; DNABERT is not a current reproduction target.",
       "limit": "The model archive is local, but the archived prediction launcher calls a missing Python file. Repair and validate the runtime and checkpoint, and define an independent evaluation set; the local legacy test positives overlap development data.",
       "url": "https://github.com/DavuluriLab/DNABERT-Enhancer"
     },
