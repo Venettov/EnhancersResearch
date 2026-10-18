@@ -27,7 +27,7 @@
   "study_guide": "Study guide on GitHub",
   "hero_eyebrow": "Our research goal",
   "hero_title": "Enhancers: Exploring the signals that control genes",
-  "hero_description": "Reproduce published enhancer prediction methods, starting with iEnhancer-2L, then compare their predictions with activity measured in three cell types. This tests whether the models remain useful across cellular settings, where the same DNA sequence can behave differently.",
+  "hero_description": "Reproduce published enhancer prediction methods, starting with iEnhancer-2L, then compare their predictions with new experiments. We chose HepG2, K562, and WTC11 because the Nature (2025) lentiMPRA study tested the same DNA sequences in all three. This lets us ask whether the predictions agree with measured activity in different cells.",
   "hero_link": "Explore the replication plan",
   "hero_alt": "A glowing vertical DNA double helix made of binary digits rotates against a dark background. A continuously looping conceptual animation.",
   "visual_caption": "Follow the sequence. Evaluate the evidence.",
