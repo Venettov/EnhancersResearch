@@ -27,7 +27,7 @@
   "study_guide": "Study guide on GitHub",
   "hero_eyebrow": "Our research goal",
   "hero_title": "Enhancers: Exploring the signals that control genes",
-  "hero_description": "Reconstruct and evaluate iEnhancer-2L, then compare its predictions with experimental activity. We chose HepG2, K562, and WTC11 because <a href=\"https://doi.org/10.1038/s41586-024-08430-9\">Agarwal, Inoue et al. (Nature, 2025)</a> tested the same DNA sequences in all three using lentiMPRA. Those matched measurements can reveal where the method’s predictions are useful and where they fall short.",
+  "hero_description": "Reconstruct and evaluate <a href=\"#what-is-ienhancer-2l\">iEnhancer-2L</a>, then compare its predictions with experimental activity. We chose HepG2, K562, and WTC11 because <a href=\"https://doi.org/10.1038/s41586-024-08430-9\">Agarwal, Inoue et al. (Nature, 2025)</a> tested the same DNA sequences in all three using lentiMPRA. Those matched measurements can reveal where the method’s predictions are useful and where they fall short.",
   "hero_link": "Explore the iEnhancer-2L plan",
   "hero_alt": "A glowing vertical DNA double helix made of binary digits rotates against a dark background. A continuously looping conceptual animation.",
   "visual_caption": "Follow the sequence. Evaluate the evidence.",

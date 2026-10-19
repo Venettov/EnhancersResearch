@@ -27,7 +27,7 @@
   "study_guide": "Guía del estudio en GitHub",
   "hero_eyebrow": "Nuestro objetivo de investigación",
   "hero_title": "Potenciadores: Explorando las señales que regulan los genes",
-  "hero_description": "Reconstruir y evaluar iEnhancer-2L y después comparar sus predicciones con actividad experimental. Elegimos HepG2, K562 y WTC11 porque <a href=\"https://doi.org/10.1038/s41586-024-08430-9\">Agarwal, Inoue y colaboradores (Nature, 2025)</a> probaron las mismas secuencias de ADN en las tres mediante lentiMPRA. Esas mediciones comparables pueden mostrar dónde son útiles las predicciones del método y cuáles son sus límites.",
+  "hero_description": "Reconstruir y evaluar <a href=\"#what-is-ienhancer-2l\">iEnhancer-2L</a> y después comparar sus predicciones con actividad experimental. Elegimos HepG2, K562 y WTC11 porque <a href=\"https://doi.org/10.1038/s41586-024-08430-9\">Agarwal, Inoue y colaboradores (Nature, 2025)</a> probaron las mismas secuencias de ADN en las tres mediante lentiMPRA. Esas mediciones comparables pueden mostrar dónde son útiles las predicciones del método y cuáles son sus límites.",
   "hero_link": "Explorar el plan de iEnhancer-2L",
   "hero_alt": "Una doble hélice vertical de ADN, formada por dígitos binarios luminosos, gira sobre un fondo oscuro. Una animación conceptual que se repite de forma continua.",
   "visual_caption": "Seguir la secuencia. Evaluar la evidencia.",
