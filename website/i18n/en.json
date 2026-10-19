@@ -70,7 +70,7 @@
     ],
     "methods": [
       "Technical guide",
-      "Software, original data, setup commands, feature definitions, and implementation links for the iEnhancer-2L reconstruction."
+      "Step-by-step iEnhancer-2L reconstruction guide: software setup, repository and code-folder map, data-flow diagram, runnable commands, saved evidence, and comparison prerequisites."
     ],
     "mcse": [
       "MCSE-Enhancer archive",

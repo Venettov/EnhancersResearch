@@ -1,6 +1,6 @@
 # iEnhancer-2L reproduction workspace
 
-Start with the website guide: [English](https://venettov.github.io/EnhancersResearch/reproduce.html) · [Español](https://venettov.github.io/EnhancersResearch/es/reproduce.html).
+Step-by-step technical guide, software/data-flow diagram, and code-folder map: [English](https://venettov.github.io/EnhancersResearch/methods.html) · [Español](https://venettov.github.io/EnhancersResearch/es/methods.html). Research findings: [English](https://venettov.github.io/EnhancersResearch/reproduce.html) · [Español](https://venettov.github.io/EnhancersResearch/es/reproduce.html).
 
 Data preparation, grouped evaluation, PseKNC features and **both trained RBF SVM classifiers** are implemented. The first nested evaluation is complete. Counting ambiguities, missing original SVM settings and a different evaluation design still prevent a claim of exact author-code or published-performance reproduction.
 

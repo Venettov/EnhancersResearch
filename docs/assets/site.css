@@ -152,3 +152,17 @@ a.term-link:hover{background:#dceee8;color:#153c45!important;text-decoration-sty
 .availability-table th,.availability-table td{min-width:0;overflow-wrap:anywhere;padding:12px 8px}
 .availability-table th:first-child{width:34%}
 .availability-table th:nth-child(2){width:28%}
+
+/* Linked software and data flow for the iEnhancer-2L technical guide. */
+.methods-workflow{margin-bottom:48px;padding-bottom:38px;border-bottom:1px solid var(--line)}
+.methods-workflow>h2{font-size:36px;max-width:850px}.methods-workflow>.lead{max-width:900px}
+.workflow-workspace{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:26px 0;padding:20px;background:var(--mint);border-radius:8px}
+.workflow-workspace strong,.workflow-workspace span{display:block}.workflow-workspace strong{font-size:15px}.workflow-workspace span{font-size:13px;margin-top:6px;color:var(--muted)}
+.methods-workflow figure{margin:0}.method-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:26px;list-style:none;padding:0;margin:26px 0}
+.method-flow>li{position:relative;min-width:0;border:1px solid var(--line);border-top:3px solid var(--teal);border-radius:6px;background:var(--canvas);padding:20px;display:flex;flex-direction:column}
+.method-flow>li:not(:last-child)::after{content:'→';position:absolute;right:-23px;top:48%;font-size:22px;color:var(--teal)}
+.workflow-number{font-size:12px;letter-spacing:1px;color:var(--teal);font-weight:650;margin-bottom:12px}.method-flow h3{font-size:22px;line-height:1.3;margin:0 0 14px}.method-flow h3 a{color:inherit;text-decoration:none}.method-flow h3 a:hover{text-decoration:underline}
+.method-flow p{font-size:13px;line-height:1.7}.method-flow .workflow-software{font-size:12px;font-weight:650;color:var(--teal);margin-bottom:10px}.method-flow>li>a{margin-top:auto;font-size:12px;overflow-wrap:anywhere}
+.methods-workflow figcaption{font-size:13px;line-height:1.8;color:var(--muted);max-width:1000px}.replication-guide h2 code{font-size:.65em;overflow-wrap:anywhere}.replication-guide td code{overflow-wrap:anywhere}.folder-tree{font-size:12px}
+@media(max-width:1000px){.method-flow{grid-template-columns:repeat(2,minmax(0,1fr))}.method-flow>li::after{display:none}}
+@media(max-width:760px){.methods-workflow>h2{font-size:29px}.workflow-workspace,.method-flow{grid-template-columns:1fr}.workflow-workspace{gap:18px}.method-flow{gap:30px}.method-flow>li:not(:last-child)::after{display:block;content:'↓';top:auto;bottom:-29px;right:50%;transform:translateX(50%)}.method-flow h3{font-size:23px}}
