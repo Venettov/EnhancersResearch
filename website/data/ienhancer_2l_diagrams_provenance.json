@@ -1,0 +1,62 @@
+{
+  "source_paper": {
+    "title": "iEnhancer-2L: a two-layer predictor for identifying enhancers and their strength by pseudo k-tuple nucleotide composition",
+    "authors": "Bin Liu, Longyun Fang, Ren Long, Xun Lan, Kuo-Chen Chou",
+    "publication_year": 2016,
+    "doi": "10.1093/bioinformatics/btv604",
+    "pdf": "bioinformatics_32_3_362.pdf",
+    "pdf_sha256": "f3dbd8de78fba62a68c2557f7c7cf39018b46374e1de0d63deeda9e7238ce4e5",
+    "figure": "Figure 3",
+    "pdf_page_1_based": 4,
+    "printed_page": 365,
+    "extraction": "Original embedded JPEG Im3.jpg, copied byte-for-byte; no redrawing, translation, enhancement, or image modification.",
+    "copyright_notice": "The Author 2015. Published by Oxford University Press. All rights reserved.",
+    "asset": "assets/ienhancer-2l-paper-figure3.jpg",
+    "asset_sha256": "e8c71604cf9ee7f2daa05e21c98ab5b5514d7c364f8883d336218210a3591a6d",
+    "original_image_pixels": [
+      489,
+      346
+    ]
+  },
+  "project_diagram": {
+    "scope": "Original illustration of this project’s reconstruction, not an author-code flowchart or claim of exact published-result reproduction.",
+    "source_commit_before_diagram_changes": "03e7d091a7bb6ff0b97c85f7e872663c94490737",
+    "generator": "website/diagrams/ienhancer_2l.py",
+    "generator_sha256": "81427a74483a2e8594eb42eebe57ceea14e5335d3d0432ac8e8dedecbe8b0083",
+    "assets_sha256": {
+      "assets/ienhancer-2l-software-flow-en.svg": "78470f4d561c3c2b74769319b4a7329f1f7741e28a27852b46388f8d2eb89c41",
+      "assets/ienhancer-2l-software-flow-es.svg": "5b652b039734f889e345eda2bc17fe98422adc0b4ec86e99c07a20b55cba2e16"
+    },
+    "code_sha256": {
+      "replication/ienhancer_2l/prepare_data.py": "ce09803f6654d5c3cc7575daf958f9f2241dbb903d0da8f9b9526762250e000d",
+      "replication/ienhancer_2l/build_features.py": "814c5097f93935df49193ab72db404c2d03e99ce7c248b4c555909da2fdd6357",
+      "replication/ienhancer_2l/evaluation.py": "1a6c1508cb2473c0b4a4007db259a2eb83e08d7d0d1629db960cbf0a299c0cd6",
+      "replication/ienhancer_2l/features.py": "4fff321da2c7badc9f28cd17620ff4f0cb9c6476ad62759c67ad091c988759d1",
+      "replication/ienhancer_2l/train_svm.py": "147424c0a57703034cafed8e6f87844f0c515d57046d18d438202e8ababc4248",
+      "replication/ienhancer_2l/predict_svm.py": "40bd025bcc6ca21ea0021bd092c571c2bf5a70cbbdc811175929456a84dd0ed6",
+      "replication/ienhancer_2l/evaluation_policy.json": "a7e30dec2310669c4293c9175ecfac0599278c24787eeb9eec9edc5c606b669b",
+      "replication/ienhancer_2l/training_protocol.json": "7a2cdf1a91d407b5c11f2334ea89df73f4962fbcbe3c0d9d506ead95503dc4b2"
+    },
+    "benchmarks": {
+      "layer1_training_records": 2968,
+      "layer2_training_known_enhancers": 1484,
+      "groups": 2451,
+      "feature_count": 4105,
+      "outer_folds": 5,
+      "inner_folds": 3,
+      "final_selection_folds": 5
+    },
+    "inference": {
+      "input": "Exactly 200 uppercase A/C/G/T bases per FASTA record",
+      "layer1_weight": 0.1,
+      "layer1_positive": "score > 0",
+      "layer1_non_enhancer": "score <= 0; skip layer II",
+      "layer2_weight": 0.4,
+      "strong": "score > 0",
+      "weak": "score <= 0",
+      "scores": "Uncalibrated decision values, not probabilities or experimental activity"
+    },
+    "activity_measurements_used_for_fitting": false,
+    "experimental_activity_comparison": "Planned; not performed by this workflow"
+  }
+}

@@ -173,3 +173,18 @@ a.term-link:hover{background:#dceee8;color:#153c45!important;text-decoration-sty
 .server-capture figcaption{padding:16px 18px;font-size:12px;line-height:1.8;color:var(--muted)}
 #server-comparison caption,#server-examples caption{text-align:left;color:var(--muted);padding-bottom:12px}
 #server-comparison table{table-layout:fixed}#server-comparison th,#server-comparison td{min-width:0;overflow-wrap:anywhere}
+
+/* Keep the original publication figure distinct from the project workflow. */
+.workflow-panel{margin-top:34px;padding-top:30px;border-top:1px solid var(--line);scroll-margin-top:24px}
+.workflow-panel h3{font-size:28px;line-height:1.3;margin:12px 0 20px}.workflow-panel>p{max-width:1020px}
+.paper-flow-figure,.code-flow-figure{border:1px solid var(--line);border-radius:8px;background:#fff;overflow:hidden;margin:24px 0!important}
+.paper-flow-visual{display:block;padding:28px}.paper-flow-visual img{width:min(100%,640px);height:auto;margin:auto}
+.paper-flow-figure figcaption,.code-flow-figure figcaption{padding:18px 22px;max-width:none;background:var(--canvas);border-top:1px solid var(--line)}
+.code-flow-figure>a{display:block}.code-flow-figure img{width:100%;height:auto}
+@media(max-width:760px){.workflow-panel h3{font-size:24px}.paper-flow-visual{padding:16px}.paper-flow-figure figcaption,.code-flow-figure figcaption{padding:16px}.workflow-panel{margin-top:26px;padding-top:24px}}
+
+.diagram-scroll{max-width:100%;overflow-x:auto;overscroll-behavior-x:contain}.diagram-scroll>a{display:block}
+.paper-flow-visual{min-width:545px}.code-flow-figure .diagram-scroll>a{min-width:900px}
+.diagram-scroll-hint{display:none;margin:0!important;padding:12px 18px;background:var(--mint);font-size:12px!important}
+@media(max-width:1000px){.diagram-scroll-hint{display:block}}
+@media(max-width:760px){.paper-flow-visual{min-width:521px}}

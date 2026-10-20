@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 1600" width="1440" height="1600" role="img" aria-labelledby="sf-title sf-desc" class="software-flowchart">
+<defs><marker id="sf-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#215761"/></marker><marker id="sf-no-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#64777c"/></marker></defs>
+<style>.software-flowchart text{font-family:Arial,Helvetica,sans-serif;fill:#183d46}.software-flowchart .sf-title{font-size:29px;font-weight:700}.software-flowchart .sf-node-title{font-size:25px;font-weight:700}.software-flowchart .sf-code{font-family:monospace;font-size:24px;font-weight:700}.software-flowchart .sf-line{font-size:23px}.software-flowchart .sf-small{font-size:18px;fill:#526b70}.software-flowchart .sf-label{font-size:21px;font-weight:700}.software-flowchart a:hover text{text-decoration:underline}</style>
+<title id="sf-title">Nuestro software iEnhancer-2L: preparación, evaluación por grupos, ajuste final y predicción en dos etapas</title>
+<desc id="sf-desc">Se comprueban las secuencias originales y etiquetas S1. Las propiedades S2 y comprobaciones hg19 generan 4105 características y 2451 grupos de secuencias relacionadas. La evaluación anidada mantiene juntos los grupos. Una búsqueda separada solo con entrenamiento ajusta dos modelos finales. Para una nueva secuencia de 200 bases, la etapa I predice potenciador o no potenciador. Solo los potenciadores predichos pasan a la etapa II, que predice fuerte o débil. Todas las rutas generan un registro CSV.</desc>
+<rect x="0" y="0" width="1440" height="1600" rx="0" fill="#f7f7f1" stroke="#f7f7f1" stroke-width="2"/>
+<rect x="28" y="24" width="1384" height="82" rx="16" fill="#e5f0eb" stroke="#cedcd8" stroke-width="2"/>
+<text x="52" y="58" class="sf-line" text-anchor="start">Python + .venv ejecutan el código · Git/GitHub conservan entradas, versiones y evidencia</text>
+<text x="52" y="87" class="sf-small" text-anchor="start">VS Code es un editor y terminal opcional; no proporciona el método de predicción.</text>
+<rect x="28" y="128" width="1384" height="586" rx="16" fill="#fff" stroke="#cedcd8" stroke-width="2"/>
+<text x="52" y="172" class="sf-title" text-anchor="start">1. Preparar, entrenar y evaluar la reconstrucción</text>
+<rect x="28" y="744" width="1384" height="790" rx="16" fill="#fff" stroke="#cedcd8" stroke-width="2"/>
+<text x="52" y="788" class="sf-title" text-anchor="start">2. Aplicar los modelos guardados a nuevo ADN</text>
+<path d="M390 263H430" fill="none" stroke="#215761" stroke-width="3" stroke-linejoin="round" marker-end="url(#sf-arrow)"/>
+<path d="M720 263H760" fill="none" stroke="#215761" stroke-width="3" stroke-linejoin="round" marker-end="url(#sf-arrow)"/>
+<path d="M1070 352V366H365V392" fill="none" stroke="#215761" stroke-width="3" stroke-linejoin="round" marker-end="url(#sf-arrow)"/>
+<path d="M1070 352V366H1055V392" fill="none" stroke="#215761" stroke-width="3" stroke-linejoin="round" marker-end="url(#sf-arrow)"/>
+<path d="M365 544V566" fill="none" stroke="#215761" stroke-width="3" stroke-linejoin="round" marker-end="url(#sf-arrow)"/>
+<path d="M1055 544V566" fill="none" stroke="#215761" stroke-width="3" stroke-linejoin="round" marker-end="url(#sf-arrow)"/>
+<path d="M1055 638V826" fill="none" stroke="#215761" stroke-width="3" stroke-linejoin="round" marker-end="url(#sf-arrow)"/>
+<path d="M390 891H430" fill="none" stroke="#215761" stroke-width="3" stroke-linejoin="round" marker-end="url(#sf-arrow)"/>
+<path d="M780 891H850" fill="none" stroke="#215761" stroke-width="3" stroke-linejoin="round" marker-end="url(#sf-arrow)"/>
+<path d="M960 956V1000H670V1038" fill="none" stroke="#215761" stroke-width="3" stroke-linejoin="round" marker-end="url(#sf-arrow)"/>
+<path d="M1230 956V1038" fill="none" stroke="#64777c" stroke-width="3" stroke-linejoin="round" marker-end="url(#sf-no-arrow)"/>
+<path d="M670 1176V1198H425V1244" fill="none" stroke="#215761" stroke-width="3" stroke-linejoin="round" marker-end="url(#sf-arrow)"/>
+<path d="M670 1176V1198H915V1244" fill="none" stroke="#215761" stroke-width="3" stroke-linejoin="round" marker-end="url(#sf-arrow)"/>
+<path d="M425 1334V1370H800V1400" fill="none" stroke="#215761" stroke-width="3" stroke-linejoin="round" marker-end="url(#sf-arrow)"/>
+<path d="M915 1334V1370H800V1400" fill="none" stroke="#215761" stroke-width="3" stroke-linejoin="round" marker-end="url(#sf-arrow)"/>
+<path d="M1210 1150V1370H800V1400" fill="none" stroke="#64777c" stroke-width="3" stroke-linejoin="round" marker-end="url(#sf-no-arrow)"/>
+<g data-sf-node="inputs">
+<rect x="60" y="198" width="330" height="130" rx="16" fill="#edf5f1" stroke="#cedcd8" stroke-width="2"/>
+<text x="82" y="234" class="sf-node-title" text-anchor="start">Entradas originales</text>
+<text x="82" y="268" class="sf-line" text-anchor="start">FASTA · 200 bases</text>
+<text x="82" y="297" class="sf-line" text-anchor="start">Etiquetas de clase S1</text>
+</g>
+<g data-sf-node="prepare">
+<rect x="430" y="198" width="290" height="130" rx="16" fill="#edf5f1" stroke="#cedcd8" stroke-width="2"/>
+<a href="https://github.com/Venettov/EnhancersResearch/blob/main/replication/ienhancer_2l/prepare_data.py" target="_blank" rel="noopener noreferrer">
+<text x="452" y="234" class="sf-code" text-anchor="start">prepare_data.py</text>
+</a>
+<text x="452" y="268" class="sf-line" text-anchor="start">Hashes + etiquetas</text>
+<text x="452" y="297" class="sf-line" text-anchor="start">2,968 secuencias</text>
+</g>
+<g data-sf-node="features">
+<rect x="760" y="198" width="620" height="154" rx="16" fill="#edf5f1" stroke="#cedcd8" stroke-width="2"/>
+<a href="https://github.com/Venettov/EnhancersResearch/blob/main/replication/ienhancer_2l/build_features.py" target="_blank" rel="noopener noreferrer">
+<text x="782" y="234" class="sf-code" text-anchor="start">build_features.py</text>
+</a>
+<text x="782" y="268" class="sf-line" text-anchor="start">Propiedades S2 + registros hg19 verificados</text>
+<text x="782" y="297" class="sf-line" text-anchor="start">NumPy + RapidFuzz: 2,451 grupos de secuencias</text>
+<text x="782" y="326" class="sf-line" text-anchor="start">Particiones fijas + 4,105 características PseKNC</text>
+</g>
+<g data-sf-node="evaluation">
+<rect x="60" y="392" width="610" height="152" rx="16" fill="#edf5f1" stroke="#cedcd8" stroke-width="2"/>
+<a href="https://github.com/Venettov/EnhancersResearch/blob/main/replication/ienhancer_2l/train_svm.py" target="_blank" rel="noopener noreferrer">
+<text x="82" y="428" class="sf-code" text-anchor="start">train_svm.py</text>
+</a>
+<text x="82" y="462" class="sf-line" text-anchor="start">Evaluación por grupos · scikit-learn/LIBSVM + SciPy</text>
+<text x="82" y="491" class="sf-line" text-anchor="start">5 particiones externas; 3 internas eligen parámetros</text>
+<text x="82" y="520" class="sf-line" text-anchor="start">Las secuencias relacionadas permanecen juntas</text>
+</g>
+<g data-sf-node="final-fit">
+<rect x="730" y="392" width="650" height="152" rx="16" fill="#edf5f1" stroke="#cedcd8" stroke-width="2"/>
+<a href="https://github.com/Venettov/EnhancersResearch/blob/main/replication/ienhancer_2l/train_svm.py" target="_blank" rel="noopener noreferrer">
+<text x="752" y="428" class="sf-code" text-anchor="start">train_svm.py</text>
+</a>
+<text x="752" y="462" class="sf-line" text-anchor="start">Búsqueda solo con entrenamiento: 5 particiones</text>
+<text x="752" y="491" class="sf-line" text-anchor="start">I: 2,968; II: 1,484 potenciadores conocidos</text>
+<text x="752" y="520" class="sf-line" text-anchor="start">Ajustar cada modelo final con todo su entrenamiento</text>
+</g>
+<g data-sf-node="evaluation-output">
+<rect x="60" y="566" width="610" height="72" rx="16" fill="#f1f5f7" stroke="#cedcd8" stroke-width="2"/>
+<text x="82" y="602" class="sf-node-title" text-anchor="start">Predicciones reservadas → métricas + auditoría</text>
+</g>
+<g data-sf-node="models">
+<rect x="730" y="566" width="650" height="72" rx="16" fill="#dceee5" stroke="#cedcd8" stroke-width="2"/>
+<text x="752" y="602" class="sf-node-title" text-anchor="start">Dos modelos finales guardados (.npz)</text>
+</g>
+<text x="60" y="674" class="sf-small" text-anchor="start">Prueba histórica de 400 registros: solo diagnóstico; 100 duplicados. Excluida de la evaluación.</text>
+<text x="60" y="701" class="sf-small" text-anchor="start">El ajuste no utiliza mediciones de actividad de NEW_2026_DATA.</text>
+<text x="1078" y="734" class="sf-small" text-anchor="start">Modelos guardados</text>
+<g data-sf-node="query">
+<rect x="60" y="826" width="330" height="130" rx="16" fill="#edf5f1" stroke="#cedcd8" stroke-width="2"/>
+<text x="82" y="862" class="sf-node-title" text-anchor="start">Nueva consulta FASTA</text>
+<text x="82" y="896" class="sf-line" text-anchor="start">200 bases A/C/G/T</text>
+<text x="82" y="925" class="sf-line" text-anchor="start">Un registro por secuencia</text>
+</g>
+<g data-sf-node="predict">
+<rect x="430" y="826" width="350" height="130" rx="16" fill="#edf5f1" stroke="#cedcd8" stroke-width="2"/>
+<a href="https://github.com/Venettov/EnhancersResearch/blob/main/replication/ienhancer_2l/predict_svm.py" target="_blank" rel="noopener noreferrer">
+<text x="452" y="862" class="sf-code" text-anchor="start">predict_svm.py</text>
+</a>
+<text x="452" y="896" class="sf-line" text-anchor="start">Mismas características</text>
+<text x="452" y="925" class="sf-line" text-anchor="start">Un vector para cada etapa</text>
+</g>
+<g data-sf-node="layer1">
+<rect x="850" y="826" width="530" height="130" rx="16" fill="#e3f0eb" stroke="#cedcd8" stroke-width="2"/>
+<text x="872" y="862" class="sf-node-title" text-anchor="start">Etapa I · ¿potenciador?</text>
+<text x="872" y="896" class="sf-line" text-anchor="start">SVM RBF guardada · peso w = 0.1</text>
+<text x="872" y="925" class="sf-line" text-anchor="start">Puntuación &gt; 0 continúa a la etapa II</text>
+</g>
+<text x="846" y="991" class="sf-label" text-anchor="start">Sí (&gt; 0)</text>
+<text x="1250" y="999" class="sf-label" text-anchor="start">No (≤ 0)</text>
+<g data-sf-node="layer2">
+<rect x="440" y="1038" width="460" height="138" rx="16" fill="#e3f0eb" stroke="#cedcd8" stroke-width="2"/>
+<text x="462" y="1074" class="sf-node-title" text-anchor="start">Etapa II · fuerza</text>
+<text x="462" y="1108" class="sf-line" text-anchor="start">SVM RBF guardada · peso w = 0.4</text>
+<text x="462" y="1137" class="sf-line" text-anchor="start">Solo tras una etapa I positiva</text>
+</g>
+<g data-sf-node="non-enhancer">
+<rect x="1060" y="1038" width="300" height="112" rx="16" fill="#edf0f1" stroke="#cedcd8" stroke-width="2"/>
+<text x="1082" y="1074" class="sf-node-title" text-anchor="start">No potenciador</text>
+<text x="1082" y="1108" class="sf-line" text-anchor="start">Omitir la etapa II</text>
+</g>
+<text x="447" y="1228" class="sf-label" text-anchor="start">Puntuación &gt; 0</text>
+<text x="937" y="1228" class="sf-label" text-anchor="start">Puntuación ≤ 0</text>
+<g data-sf-node="strong">
+<rect x="260" y="1244" width="330" height="90" rx="16" fill="#dceee5" stroke="#cedcd8" stroke-width="2"/>
+<text x="282" y="1280" class="sf-node-title" text-anchor="start">Potenciador fuerte</text>
+</g>
+<g data-sf-node="weak">
+<rect x="750" y="1244" width="330" height="90" rx="16" fill="#faf0dc" stroke="#cedcd8" stroke-width="2"/>
+<text x="772" y="1280" class="sf-node-title" text-anchor="start">Potenciador débil</text>
+</g>
+<g data-sf-node="csv">
+<rect x="60" y="1400" width="1320" height="86" rx="16" fill="#f1f5f7" stroke="#cedcd8" stroke-width="2"/>
+<text x="82" y="1436" class="sf-node-title" text-anchor="start">CSV de predicción: clase final + puntuaciones de decisión locales</text>
+</g>
+<text x="60" y="1514" class="sf-small" text-anchor="start">Las etiquetas fijas se comparan con el servidor de los autores, sin usarlas para reajustar modelos.</text>
+<text x="48" y="1571" class="sf-small" text-anchor="start">Las puntuaciones no son actividad medida. La comparación de actividad HepG2/K562/WTC11 sigue planificada.</text>
+</svg>

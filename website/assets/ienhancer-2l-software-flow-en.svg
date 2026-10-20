@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 1600" width="1440" height="1600" role="img" aria-labelledby="sf-title sf-desc" class="software-flowchart">
+<defs><marker id="sf-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#215761"/></marker><marker id="sf-no-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#64777c"/></marker></defs>
+<style>.software-flowchart text{font-family:Arial,Helvetica,sans-serif;fill:#183d46}.software-flowchart .sf-title{font-size:29px;font-weight:700}.software-flowchart .sf-node-title{font-size:25px;font-weight:700}.software-flowchart .sf-code{font-family:monospace;font-size:24px;font-weight:700}.software-flowchart .sf-line{font-size:23px}.software-flowchart .sf-small{font-size:18px;fill:#526b70}.software-flowchart .sf-label{font-size:21px;font-weight:700}.software-flowchart a:hover text{text-decoration:underline}</style>
+<title id="sf-title">Our iEnhancer-2L software: data preparation, grouped evaluation, final fitting, and two-stage prediction</title>
+<desc id="sf-desc">Original sequences and S1 labels are checked. S2 properties and verified hg19 receipts yield 4105 features and 2451 related-sequence groups. Nested evaluation keeps groups together. A separate training-only search fits two final models. For a new 200-base sequence, layer I predicts enhancer or non-enhancer. Only predicted enhancers reach layer II, which predicts strong or weak. All routes produce a CSV record.</desc>
+<rect x="0" y="0" width="1440" height="1600" rx="0" fill="#f7f7f1" stroke="#f7f7f1" stroke-width="2"/>
+<rect x="28" y="24" width="1384" height="82" rx="16" fill="#e5f0eb" stroke="#cedcd8" stroke-width="2"/>
+<text x="52" y="58" class="sf-line" text-anchor="start">Python + .venv run the code · Git/GitHub preserve inputs, code versions, and evidence</text>
+<text x="52" y="87" class="sf-small" text-anchor="start">VS Code is an optional editor and terminal; it does not supply the prediction method.</text>
+<rect x="28" y="128" width="1384" height="586" rx="16" fill="#fff" stroke="#cedcd8" stroke-width="2"/>
+<text x="52" y="172" class="sf-title" text-anchor="start">1. Prepare, train, and evaluate the reconstruction</text>
+<rect x="28" y="744" width="1384" height="790" rx="16" fill="#fff" stroke="#cedcd8" stroke-width="2"/>
+<text x="52" y="788" class="sf-title" text-anchor="start">2. Apply the saved models to new DNA</text>
+<path d="M390 263H430" fill="none" stroke="#215761" stroke-width="3" stroke-linejoin="round" marker-end="url(#sf-arrow)"/>
+<path d="M720 263H760" fill="none" stroke="#215761" stroke-width="3" stroke-linejoin="round" marker-end="url(#sf-arrow)"/>
+<path d="M1070 352V366H365V392" fill="none" stroke="#215761" stroke-width="3" stroke-linejoin="round" marker-end="url(#sf-arrow)"/>
+<path d="M1070 352V366H1055V392" fill="none" stroke="#215761" stroke-width="3" stroke-linejoin="round" marker-end="url(#sf-arrow)"/>
+<path d="M365 544V566" fill="none" stroke="#215761" stroke-width="3" stroke-linejoin="round" marker-end="url(#sf-arrow)"/>
+<path d="M1055 544V566" fill="none" stroke="#215761" stroke-width="3" stroke-linejoin="round" marker-end="url(#sf-arrow)"/>
+<path d="M1055 638V826" fill="none" stroke="#215761" stroke-width="3" stroke-linejoin="round" marker-end="url(#sf-arrow)"/>
+<path d="M390 891H430" fill="none" stroke="#215761" stroke-width="3" stroke-linejoin="round" marker-end="url(#sf-arrow)"/>
+<path d="M780 891H850" fill="none" stroke="#215761" stroke-width="3" stroke-linejoin="round" marker-end="url(#sf-arrow)"/>
+<path d="M960 956V1000H670V1038" fill="none" stroke="#215761" stroke-width="3" stroke-linejoin="round" marker-end="url(#sf-arrow)"/>
+<path d="M1230 956V1038" fill="none" stroke="#64777c" stroke-width="3" stroke-linejoin="round" marker-end="url(#sf-no-arrow)"/>
+<path d="M670 1176V1198H425V1244" fill="none" stroke="#215761" stroke-width="3" stroke-linejoin="round" marker-end="url(#sf-arrow)"/>
+<path d="M670 1176V1198H915V1244" fill="none" stroke="#215761" stroke-width="3" stroke-linejoin="round" marker-end="url(#sf-arrow)"/>
+<path d="M425 1334V1370H800V1400" fill="none" stroke="#215761" stroke-width="3" stroke-linejoin="round" marker-end="url(#sf-arrow)"/>
+<path d="M915 1334V1370H800V1400" fill="none" stroke="#215761" stroke-width="3" stroke-linejoin="round" marker-end="url(#sf-arrow)"/>
+<path d="M1210 1150V1370H800V1400" fill="none" stroke="#64777c" stroke-width="3" stroke-linejoin="round" marker-end="url(#sf-no-arrow)"/>
+<g data-sf-node="inputs">
+<rect x="60" y="198" width="330" height="130" rx="16" fill="#edf5f1" stroke="#cedcd8" stroke-width="2"/>
+<text x="82" y="234" class="sf-node-title" text-anchor="start">Original inputs</text>
+<text x="82" y="268" class="sf-line" text-anchor="start">FASTA · 200 bases</text>
+<text x="82" y="297" class="sf-line" text-anchor="start">S1 class labels</text>
+</g>
+<g data-sf-node="prepare">
+<rect x="430" y="198" width="290" height="130" rx="16" fill="#edf5f1" stroke="#cedcd8" stroke-width="2"/>
+<a href="https://github.com/Venettov/EnhancersResearch/blob/main/replication/ienhancer_2l/prepare_data.py" target="_blank" rel="noopener noreferrer">
+<text x="452" y="234" class="sf-code" text-anchor="start">prepare_data.py</text>
+</a>
+<text x="452" y="268" class="sf-line" text-anchor="start">Check hashes + labels</text>
+<text x="452" y="297" class="sf-line" text-anchor="start">2,968 sequences</text>
+</g>
+<g data-sf-node="features">
+<rect x="760" y="198" width="620" height="154" rx="16" fill="#edf5f1" stroke="#cedcd8" stroke-width="2"/>
+<a href="https://github.com/Venettov/EnhancersResearch/blob/main/replication/ienhancer_2l/build_features.py" target="_blank" rel="noopener noreferrer">
+<text x="782" y="234" class="sf-code" text-anchor="start">build_features.py</text>
+</a>
+<text x="782" y="268" class="sf-line" text-anchor="start">S2 properties + verified hg19 receipts</text>
+<text x="782" y="297" class="sf-line" text-anchor="start">NumPy + RapidFuzz: 2,451 sequence groups</text>
+<text x="782" y="326" class="sf-line" text-anchor="start">Fixed folds + 4,105 PseKNC features per sequence</text>
+</g>
+<g data-sf-node="evaluation">
+<rect x="60" y="392" width="610" height="152" rx="16" fill="#edf5f1" stroke="#cedcd8" stroke-width="2"/>
+<a href="https://github.com/Venettov/EnhancersResearch/blob/main/replication/ienhancer_2l/train_svm.py" target="_blank" rel="noopener noreferrer">
+<text x="82" y="428" class="sf-code" text-anchor="start">train_svm.py</text>
+</a>
+<text x="82" y="462" class="sf-line" text-anchor="start">Grouped evaluation · scikit-learn/LIBSVM + SciPy</text>
+<text x="82" y="491" class="sf-line" text-anchor="start">5 outer folds test; 3 inner folds select settings</text>
+<text x="82" y="520" class="sf-line" text-anchor="start">Related sequences stay together</text>
+</g>
+<g data-sf-node="final-fit">
+<rect x="730" y="392" width="650" height="152" rx="16" fill="#edf5f1" stroke="#cedcd8" stroke-width="2"/>
+<a href="https://github.com/Venettov/EnhancersResearch/blob/main/replication/ienhancer_2l/train_svm.py" target="_blank" rel="noopener noreferrer">
+<text x="752" y="428" class="sf-code" text-anchor="start">train_svm.py</text>
+</a>
+<text x="752" y="462" class="sf-line" text-anchor="start">Final fit after a training-only five-fold search</text>
+<text x="752" y="491" class="sf-line" text-anchor="start">Layer I: 2,968; layer II: 1,484 known enhancers</text>
+<text x="752" y="520" class="sf-line" text-anchor="start">Fit each final model on all its training records</text>
+</g>
+<g data-sf-node="evaluation-output">
+<rect x="60" y="566" width="610" height="72" rx="16" fill="#f1f5f7" stroke="#cedcd8" stroke-width="2"/>
+<text x="82" y="602" class="sf-node-title" text-anchor="start">Held-out predictions → metrics + audit files</text>
+</g>
+<g data-sf-node="models">
+<rect x="730" y="566" width="650" height="72" rx="16" fill="#dceee5" stroke="#cedcd8" stroke-width="2"/>
+<text x="752" y="602" class="sf-node-title" text-anchor="start">Two saved final models (.npz)</text>
+</g>
+<text x="60" y="674" class="sf-small" text-anchor="start">Historical 400-record test: diagnostic only; 100 training duplicates. Excluded from evaluation.</text>
+<text x="60" y="701" class="sf-small" text-anchor="start">No NEW_2026_DATA activity measurements are used in fitting.</text>
+<text x="1078" y="734" class="sf-small" text-anchor="start">Saved models</text>
+<g data-sf-node="query">
+<rect x="60" y="826" width="330" height="130" rx="16" fill="#edf5f1" stroke="#cedcd8" stroke-width="2"/>
+<text x="82" y="862" class="sf-node-title" text-anchor="start">New query FASTA</text>
+<text x="82" y="896" class="sf-line" text-anchor="start">200 A/C/G/T bases</text>
+<text x="82" y="925" class="sf-line" text-anchor="start">One record per sequence</text>
+</g>
+<g data-sf-node="predict">
+<rect x="430" y="826" width="350" height="130" rx="16" fill="#edf5f1" stroke="#cedcd8" stroke-width="2"/>
+<a href="https://github.com/Venettov/EnhancersResearch/blob/main/replication/ienhancer_2l/predict_svm.py" target="_blank" rel="noopener noreferrer">
+<text x="452" y="862" class="sf-code" text-anchor="start">predict_svm.py</text>
+</a>
+<text x="452" y="896" class="sf-line" text-anchor="start">Same feature calculations</text>
+<text x="452" y="925" class="sf-line" text-anchor="start">A feature vector for each layer</text>
+</g>
+<g data-sf-node="layer1">
+<rect x="850" y="826" width="530" height="130" rx="16" fill="#e3f0eb" stroke="#cedcd8" stroke-width="2"/>
+<text x="872" y="862" class="sf-node-title" text-anchor="start">Layer I · enhancer?</text>
+<text x="872" y="896" class="sf-line" text-anchor="start">Saved RBF SVM · weight w = 0.1</text>
+<text x="872" y="925" class="sf-line" text-anchor="start">Score &gt; 0 continues to layer II</text>
+</g>
+<text x="846" y="991" class="sf-label" text-anchor="start">Yes (&gt; 0)</text>
+<text x="1250" y="999" class="sf-label" text-anchor="start">No (≤ 0)</text>
+<g data-sf-node="layer2">
+<rect x="440" y="1038" width="460" height="138" rx="16" fill="#e3f0eb" stroke="#cedcd8" stroke-width="2"/>
+<text x="462" y="1074" class="sf-node-title" text-anchor="start">Layer II · strength</text>
+<text x="462" y="1108" class="sf-line" text-anchor="start">Saved RBF SVM · weight w = 0.4</text>
+<text x="462" y="1137" class="sf-line" text-anchor="start">Only after a positive layer-I call</text>
+</g>
+<g data-sf-node="non-enhancer">
+<rect x="1060" y="1038" width="300" height="112" rx="16" fill="#edf0f1" stroke="#cedcd8" stroke-width="2"/>
+<text x="1082" y="1074" class="sf-node-title" text-anchor="start">Non-enhancer</text>
+<text x="1082" y="1108" class="sf-line" text-anchor="start">Skip layer II</text>
+</g>
+<text x="447" y="1228" class="sf-label" text-anchor="start">Score &gt; 0</text>
+<text x="937" y="1228" class="sf-label" text-anchor="start">Score ≤ 0</text>
+<g data-sf-node="strong">
+<rect x="260" y="1244" width="330" height="90" rx="16" fill="#dceee5" stroke="#cedcd8" stroke-width="2"/>
+<text x="282" y="1280" class="sf-node-title" text-anchor="start">Strong enhancer</text>
+</g>
+<g data-sf-node="weak">
+<rect x="750" y="1244" width="330" height="90" rx="16" fill="#faf0dc" stroke="#cedcd8" stroke-width="2"/>
+<text x="772" y="1280" class="sf-node-title" text-anchor="start">Weak enhancer</text>
+</g>
+<g data-sf-node="csv">
+<rect x="60" y="1400" width="1320" height="86" rx="16" fill="#f1f5f7" stroke="#cedcd8" stroke-width="2"/>
+<text x="82" y="1436" class="sf-node-title" text-anchor="start">Prediction CSV: final class + local decision scores</text>
+</g>
+<text x="60" y="1514" class="sf-small" text-anchor="start">Frozen labels can be compared with the authors’ server; no feedback into model tuning.</text>
+<text x="48" y="1571" class="sf-small" text-anchor="start">Scores are not measured activity. The HepG2/K562/WTC11 activity comparison remains planned.</text>
+</svg>
