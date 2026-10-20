@@ -106,6 +106,7 @@ assert len(term_ids) == len(glossary["terms"])
 technical_terms = {"libsvm", "rbf-svm", "scikit-learn", "numpy", "scipy", "rapidfuzz", "fasta", "kmer", "feature-vector", "cross-validation", "nested-validation", "leave-one-out", "hyperparameters", "feature-scaling", "bootstrap", "confidence-interval", "balanced-accuracy", "decision-score"}
 technical_terms.add("software-library")
 assert technical_terms <= term_ids
+assert {"auroc", "accuracy", "classification-sensitivity", "classification-specificity", "percentage-point", "baseline", "gc-content", "decision-threshold", "positive-class"} <= term_ids
 for term in glossary["terms"]:
     assert re.fullmatch(r"[a-z0-9-]+", term["id"])
     assert term["sources"] or term["papers"], f"No sources for {term['id']}"
@@ -133,6 +134,10 @@ for language in ("en", "es"):
     technical_annotated = annotate(technical_sample, localized, language)
     assert re.findall(r'data-term="([^"]+)"', technical_annotated) == ['libsvm', 'rbf-svm', 'rbf-svm', 'scikit-learn', 'numpy', 'scipy', 'rapidfuzz', 'fasta', 'kmer', 'nested-validation', 'balanced-accuracy', 'decision-score']
     assert re.sub(r'<a class="term-link"[^>]+>(.*?)</a>', r'\1', technical_annotated) == technical_sample
+    metric_sample = '<table><tr><th>ROC AUC</th><td>AUROC; ROC-AUC; AUC; PR-AUC; AUPRC</td></tr></table>'
+    metric_annotated = annotate(metric_sample, localized, language)
+    assert re.findall(r'data-term="([^"]+)"', metric_annotated) == ['auroc', 'auroc', 'auroc', 'auroc', 'auprc', 'auprc']
+    assert re.sub(r'<a class="term-link"[^>]+>(.*?)</a>', r'\1', metric_annotated) == metric_sample
 for document in documents.values():
     for link in document.term_links:
         assert link["data-term"] in term_ids
