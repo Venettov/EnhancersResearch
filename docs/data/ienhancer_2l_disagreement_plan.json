@@ -1,0 +1,46 @@
+{
+  "analysis": "Post hoc diagnostic analysis of the eight observed server/local disagreements",
+  "created_utc": "2026-10-20T01:32:37.316008+00:00",
+  "date_local": "2026-10-19",
+  "timezone": "America/New_York",
+  "source_commit": "25bf1f23c051d3734d579cfe30313dc3aa356067",
+  "prior_run": "replication/ienhancer_2l/output/2026-10-19-author-server-200",
+  "population": "All 200 frozen queries; eight disagreements are the focus, 192 agreements supply descriptive context.",
+  "questions": [
+    "Can all original inputs, server labels, model hashes, and local predictions be replayed?",
+    "At which stage does each disagreement occur, and how near is its local score to zero relative to scores at the same stage?",
+    "Do independent scalar feature calculations, direct RBF evaluation, or input feature float32 quantization change local signs?",
+    "How sensitive are final labels to the four already documented feature conventions, using the same frozen primary models?",
+    "Are the eight unusual in elementary composition or training-sequence similarity relative to the other queries?"
+  ],
+  "fixed_model_input_variants": {
+    "published_rounded": {
+      "counting": "overlapping",
+      "normalization": "published_rounded"
+    },
+    "population": {
+      "counting": "overlapping",
+      "normalization": "population"
+    },
+    "disjoint": {
+      "counting": "disjoint",
+      "normalization": "sample"
+    },
+    "per_word_nonoverlap": {
+      "counting": "per_word_nonoverlap",
+      "normalization": "sample"
+    }
+  },
+  "model_fitting": false,
+  "threshold_changes": false,
+  "new_author_server_requests": false,
+  "activity_values_used": false,
+  "limitations": [
+    "Exploratory post hoc diagnostics, not an independent validation or causal explanation.",
+    "Uncalibrated decision values are not probabilities and are compared only within the same local classifier.",
+    "Feature variants perturb inference inputs to primary-trained support vectors; these are not complete retrained alternative pipelines.",
+    "No variant or threshold will be adopted by matching server labels.",
+    "The author server supplies labels but not feature vectors, model coefficients, numerical scores, or a complete training history.",
+    "Composition descriptions do not identify functional motifs or biological activity."
+  ]
+}
