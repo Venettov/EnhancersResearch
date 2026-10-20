@@ -134,6 +134,76 @@
       "url": "https://doi.org/10.1038/s41586-024-08430-9",
       "en": "Agarwal, Inoue et al. (2025) · Massively parallel characterization of transcriptional regulatory elements · Nature 639, 411–420",
       "es": "Agarwal, Inoue y colaboradores (2025) · Massively parallel characterization of transcriptional regulatory elements · Nature 639, 411–420"
+    },
+    "libsvm": {
+      "url": "https://www.csie.ntu.edu.tw/~cjlin/libsvm/",
+      "en": "LIBSVM · official project and documentation",
+      "es": "LIBSVM · proyecto y documentación oficiales"
+    },
+    "svm": {
+      "url": "https://scikit-learn.org/stable/modules/svm.html",
+      "en": "scikit-learn · support vector machines",
+      "es": "scikit-learn · máquinas de vectores de soporte"
+    },
+    "rbf": {
+      "url": "https://scikit-learn.org/stable/auto_examples/svm/plot_rbf_parameters.html",
+      "en": "scikit-learn · RBF SVM parameters",
+      "es": "scikit-learn · parámetros de una SVM con RBF"
+    },
+    "sklearn": {
+      "url": "https://scikit-learn.org/stable/",
+      "en": "scikit-learn · machine learning in Python",
+      "es": "scikit-learn · aprendizaje automático en Python"
+    },
+    "numpy": {
+      "url": "https://numpy.org/doc/stable/user/absolute_beginners.html",
+      "en": "NumPy · beginner’s guide",
+      "es": "NumPy · guía inicial"
+    },
+    "scipy": {
+      "url": "https://docs.scipy.org/doc/scipy/tutorial/index.html",
+      "en": "SciPy · scientific computing user guide",
+      "es": "SciPy · guía de cálculo científico"
+    },
+    "rapidfuzz": {
+      "url": "https://rapidfuzz.github.io/RapidFuzz/Usage/distance/Levenshtein.html",
+      "en": "RapidFuzz · Levenshtein edit distance",
+      "es": "RapidFuzz · distancia de edición de Levenshtein"
+    },
+    "fasta": {
+      "url": "https://www.ncbi.nlm.nih.gov/genbank/fastaformat/",
+      "en": "NCBI · FASTA nucleotide sequence format",
+      "es": "NCBI · formato FASTA para secuencias de nucleótidos"
+    },
+    "cross-validation": {
+      "url": "https://scikit-learn.org/stable/modules/cross_validation.html",
+      "en": "scikit-learn · cross-validation and grouped splits",
+      "es": "scikit-learn · validación cruzada y divisiones por grupos"
+    },
+    "nested-validation": {
+      "url": "https://scikit-learn.org/stable/auto_examples/model_selection/plot_nested_cross_validation_iris.html",
+      "en": "scikit-learn · nested versus non-nested validation",
+      "es": "scikit-learn · validación anidada y no anidada"
+    },
+    "hyperparameters": {
+      "url": "https://scikit-learn.org/stable/modules/grid_search.html",
+      "en": "scikit-learn · choosing model settings",
+      "es": "scikit-learn · selección de parámetros del modelo"
+    },
+    "scaling": {
+      "url": "https://scikit-learn.org/stable/modules/preprocessing.html",
+      "en": "scikit-learn · feature scaling and preprocessing",
+      "es": "scikit-learn · escalado y preparación de características"
+    },
+    "bootstrap": {
+      "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.bootstrap.html",
+      "en": "SciPy · bootstrap resampling and confidence intervals",
+      "es": "SciPy · remuestreo bootstrap e intervalos de confianza"
+    },
+    "balanced-accuracy": {
+      "url": "https://scikit-learn.org/stable/modules/generated/sklearn.metrics.balanced_accuracy_score.html",
+      "en": "scikit-learn · balanced accuracy",
+      "es": "scikit-learn · exactitud equilibrada"
     }
   },
   "terms": [
@@ -2004,13 +2074,20 @@
         "L02",
         "L03"
       ],
-      "sources": [],
+      "sources": [
+        "svm"
+      ],
       "en": {
         "name": "Support vector machine",
         "aliases": [
           "SVM",
           "SVMs",
-          "support vector machine"
+          "support vector machine",
+          "support vector machines",
+          "SVM classifiers",
+          "SVM classifier",
+          "SVC classifier",
+          "SVC"
         ],
         "definition": "A statistical model that learns a boundary between labeled examples using numerical features. Different settings change the shape of that boundary.",
         "context": "iEnhancer-2L uses one SVM for enhancer identification and another for the historical strong/weak labels."
@@ -2020,7 +2097,12 @@
         "aliases": [
           "SVM",
           "SVMs",
-          "máquina de vectores de soporte"
+          "máquina de vectores de soporte",
+          "máquinas de vectores de soporte",
+          "clasificadores SVM",
+          "clasificador SVM",
+          "clasificador SVC",
+          "SVC"
         ],
         "definition": "Un modelo estadístico que aprende una frontera entre ejemplos etiquetados mediante características numéricas. Sus parámetros cambian la forma de esa frontera.",
         "context": "iEnhancer-2L utiliza un SVM para identificar potenciadores y otro para las etiquetas históricas de fuerte o débil."
@@ -2076,6 +2158,616 @@
         ],
         "definition": "Categorías asignadas al conjunto original mediante anotaciones del estado de la cromatina. No son medidas numéricas de actividad de reportero.",
         "context": "Una etiqueta histórica fuerte no equivale automáticamente a actividad alta en lentiMPRA, ni una débil a inactividad."
+      }
+    },
+    {
+      "id": "libsvm",
+      "category": "models",
+      "sources": [
+        "libsvm",
+        "svm"
+      ],
+      "papers": [
+        "L01"
+      ],
+      "en": {
+        "name": "LIBSVM",
+        "aliases": [
+          "LIBSVM"
+        ],
+        "definition": "A software toolkit that trains models called support vector machines (SVMs). They learn to separate labeled groups using numerical descriptions of examples, then classify new examples.",
+        "context": "The paper used LIBSVM. Our Python code uses the LIBSVM-based SVC classifier supplied by scikit-learn. Using the same underlying tool does not guarantee identical features, settings, trained models, or results."
+      },
+      "es": {
+        "name": "LIBSVM",
+        "aliases": [
+          "LIBSVM"
+        ],
+        "definition": "Un conjunto de herramientas que entrena modelos llamados máquinas de vectores de soporte (SVM). Aprenden a separar grupos etiquetados mediante descripciones numéricas de ejemplos y después clasifican ejemplos nuevos.",
+        "context": "El artículo utilizó LIBSVM. Nuestro código Python usa el clasificador SVC de scikit-learn, basado en LIBSVM. Compartir la herramienta de cálculo no garantiza características, parámetros, modelos entrenados o resultados idénticos."
+      }
+    },
+    {
+      "id": "rbf-svm",
+      "category": "models",
+      "sources": [
+        "rbf"
+      ],
+      "papers": [
+        "L01"
+      ],
+      "en": {
+        "name": "RBF SVM / RBF kernel",
+        "aliases": [
+          "RBF SVMs",
+          "RBF SVM",
+          "RBF kernels",
+          "RBF kernel",
+          "radial basis function",
+          "RBF"
+        ],
+        "definition": "A support vector machine (SVM) with a similarity rule called a radial basis function (RBF). Examples with nearby numerical features count as more similar. This lets the classifier learn a curved boundary between groups.",
+        "context": "Our two classifiers use this rule to compare DNA feature vectors. Gamma controls how quickly similarity falls with distance; C controls the penalty for training errors. Feature scaling and these settings can change predictions."
+      },
+      "es": {
+        "name": "SVM con RBF / núcleo RBF",
+        "aliases": [
+          "SVM con núcleo RBF",
+          "SVM con RBF",
+          "SVM RBF",
+          "RBF SVMs",
+          "RBF SVM",
+          "núcleos RBF",
+          "núcleo RBF",
+          "kernel RBF",
+          "función de base radial",
+          "RBF"
+        ],
+        "definition": "Una máquina de vectores de soporte (SVM) con una regla de similitud llamada función de base radial (RBF). Los ejemplos con características numéricas próximas se consideran más similares. Esto permite al clasificador aprender una frontera curva entre grupos.",
+        "context": "Nuestros dos clasificadores comparan así los vectores de características del ADN. Gamma controla cuánto disminuye la similitud con la distancia; C controla la penalización de errores de entrenamiento. El escalado y estos parámetros pueden cambiar las predicciones."
+      }
+    },
+    {
+      "id": "scikit-learn",
+      "category": "models",
+      "sources": [
+        "sklearn",
+        "svm"
+      ],
+      "papers": [],
+      "en": {
+        "name": "scikit-learn",
+        "aliases": [
+          "scikit-learn",
+          "sklearn"
+        ],
+        "definition": "A Python package containing tools for training, applying, and evaluating machine-learning models.",
+        "context": "Our scripts use its SVC classifier to train SVMs and its evaluation functions to calculate performance measures. It supplies general tools; our scripts specify the DNA features and evaluation procedure."
+      },
+      "es": {
+        "name": "scikit-learn",
+        "aliases": [
+          "scikit-learn",
+          "sklearn"
+        ],
+        "definition": "Un paquete de Python con herramientas para entrenar, aplicar y evaluar modelos de aprendizaje automático.",
+        "context": "Nuestros scripts utilizan su clasificador SVC para entrenar las SVM y sus funciones de evaluación para calcular medidas de rendimiento. Aporta herramientas generales; nuestros scripts definen las características del ADN y el procedimiento de evaluación."
+      }
+    },
+    {
+      "id": "numpy",
+      "category": "models",
+      "sources": [
+        "numpy"
+      ],
+      "papers": [],
+      "en": {
+        "name": "NumPy",
+        "aliases": [
+          "NumPy"
+        ],
+        "definition": "A Python package for storing tables of numbers and calculating with them efficiently. These numerical collections are called arrays.",
+        "context": "Our code stores sequence features and model values in NumPy arrays and saves numerical model files in NPZ format. NumPy performs calculations; it does not supply enhancer labels."
+      },
+      "es": {
+        "name": "NumPy",
+        "aliases": [
+          "NumPy"
+        ],
+        "definition": "Un paquete de Python para guardar tablas de números y calcular con ellas de forma eficiente. Estas colecciones numéricas se llaman arreglos o arrays.",
+        "context": "Nuestro código guarda características de secuencias y valores de los modelos en arrays de NumPy y conserva modelos numéricos en formato NPZ. NumPy realiza cálculos; no proporciona las etiquetas de potenciador."
+      }
+    },
+    {
+      "id": "scipy",
+      "category": "models",
+      "sources": [
+        "scipy"
+      ],
+      "papers": [],
+      "en": {
+        "name": "SciPy",
+        "aliases": [
+          "SciPy"
+        ],
+        "definition": "A Python package of scientific and mathematical tools that works with NumPy arrays. It includes methods for statistics, distances, and numerical calculations.",
+        "context": "SciPy supports calculations in the analysis workflow. The research choices, training rules, and interpretation still come from the recorded project protocol."
+      },
+      "es": {
+        "name": "SciPy",
+        "aliases": [
+          "SciPy"
+        ],
+        "definition": "Un paquete de Python con herramientas científicas y matemáticas que trabaja con arrays de NumPy. Incluye métodos de estadística, distancias y cálculo numérico.",
+        "context": "SciPy apoya los cálculos del análisis. Las decisiones de investigación, las reglas de entrenamiento y la interpretación siguen definidas por el protocolo registrado del proyecto."
+      }
+    },
+    {
+      "id": "rapidfuzz",
+      "category": "models",
+      "sources": [
+        "rapidfuzz"
+      ],
+      "papers": [],
+      "en": {
+        "name": "RapidFuzz / edit distance",
+        "aliases": [
+          "RapidFuzz",
+          "Levenshtein distance",
+          "edit distances",
+          "edit distance",
+          "global edits"
+        ],
+        "definition": "RapidFuzz is software for comparing text strings. Our use counts the minimum letter insertions, deletions, and substitutions needed to turn one DNA sequence into another: its edit distance.",
+        "context": "We compare both DNA orientations and use these distances, together with genomic proximity, to group related sequences before evaluation. A small edit distance alone does not establish shared biological function."
+      },
+      "es": {
+        "name": "RapidFuzz / distancia de edición",
+        "aliases": [
+          "RapidFuzz",
+          "distancia de Levenshtein",
+          "distancias de edición",
+          "distancia de edición",
+          "ediciones globales"
+        ],
+        "definition": "RapidFuzz es software para comparar cadenas de texto. Aquí cuenta el mínimo de inserciones, eliminaciones y sustituciones de letras necesarias para convertir una secuencia de ADN en otra: su distancia de edición.",
+        "context": "Comparamos ambas orientaciones del ADN y utilizamos estas distancias, junto con la proximidad genómica, para agrupar secuencias relacionadas antes de evaluar. Una distancia pequeña por sí sola no demuestra una función biológica compartida."
+      }
+    },
+    {
+      "id": "fasta",
+      "category": "experiments",
+      "sources": [
+        "fasta"
+      ],
+      "papers": [],
+      "en": {
+        "name": "FASTA",
+        "aliases": [
+          "FASTA-formatted",
+          "FASTA"
+        ],
+        "definition": "A plain-text format for DNA or protein sequences. Each record starts with a name line beginning with >, followed by the sequence letters.",
+        "context": "Our prediction command accepts DNA records of exactly 200 A/C/G/T bases. FASTA stores sequences and names; a record’s presence in a FASTA file does not establish its enhancer activity."
+      },
+      "es": {
+        "name": "FASTA",
+        "aliases": [
+          "FASTA"
+        ],
+        "definition": "Un formato de texto para secuencias de ADN o proteínas. Cada registro comienza con una línea de nombre que empieza por >, seguida de las letras de la secuencia.",
+        "context": "Nuestro comando de predicción acepta registros de ADN de exactamente 200 bases A/C/G/T. FASTA guarda secuencias y nombres; aparecer en un archivo FASTA no demuestra actividad potenciadora."
+      }
+    },
+    {
+      "id": "kmer",
+      "category": "models",
+      "sources": [],
+      "papers": [
+        "L01"
+      ],
+      "en": {
+        "name": "k-mer / DNA word",
+        "aliases": [
+          "k-mers",
+          "k-mer",
+          "6-mers",
+          "6-mer",
+          "6mers",
+          "6mer",
+          "3-mers",
+          "3-mer",
+          "2-mers",
+          "2-mer"
+        ],
+        "definition": "A short sequence of k DNA letters. A 6-mer has six letters, such as ACGTAA. Counting how often each word appears gives a numerical description of a longer sequence.",
+        "context": "There are 4,096 possible six-letter words using A/C/G/T. Our ordinary-word baseline uses their frequencies; full PseKNC also includes summaries derived from a DNA-property table."
+      },
+      "es": {
+        "name": "k-mer / palabra de ADN",
+        "aliases": [
+          "k-mers",
+          "k-mer",
+          "6-mers",
+          "6-mer",
+          "6mers",
+          "6mer",
+          "3-mers",
+          "3-mer",
+          "2-mers",
+          "2-mer"
+        ],
+        "definition": "Una secuencia corta de k letras de ADN. Un 6-mer tiene seis letras, como ACGTAA. Contar la frecuencia de cada palabra permite describir numéricamente una secuencia más larga.",
+        "context": "Hay 4,096 palabras posibles de seis letras usando A/C/G/T. Nuestra referencia de palabras ordinarias utiliza sus frecuencias; PseKNC completo incorpora también resúmenes derivados de una tabla de propiedades del ADN."
+      }
+    },
+    {
+      "id": "feature-vector",
+      "category": "models",
+      "sources": [
+        "svm"
+      ],
+      "papers": [
+        "L01"
+      ],
+      "en": {
+        "name": "Feature vector / feature matrix",
+        "aliases": [
+          "feature vectors",
+          "feature vector",
+          "feature matrices",
+          "feature matrix"
+        ],
+        "definition": "A feature vector is a list of numbers describing one example. A feature matrix stacks those lists into a table: examples are rows and features are columns.",
+        "context": "Our primary representation assigns 4,105 numbers to each DNA sequence: 4,096 word frequencies and nine structural summaries, combined using the recorded PseKNC formula. The SVM receives these numbers rather than the raw DNA letters."
+      },
+      "es": {
+        "name": "Vector / matriz de características",
+        "aliases": [
+          "vectores de características",
+          "vector de características",
+          "matrices de características",
+          "matriz de características"
+        ],
+        "definition": "Un vector de características es una lista de números que describe un ejemplo. Una matriz reúne esas listas en una tabla: los ejemplos son filas y las características son columnas.",
+        "context": "Nuestra representación principal asigna 4,105 números a cada secuencia: 4,096 frecuencias de palabras y nueve resúmenes estructurales, combinados mediante la fórmula PseKNC registrada. La SVM recibe estos números en lugar de las letras de ADN directamente."
+      }
+    },
+    {
+      "id": "cross-validation",
+      "category": "analysis",
+      "sources": [
+        "cross-validation"
+      ],
+      "papers": [],
+      "en": {
+        "name": "Cross-validation / fold",
+        "aliases": [
+          "cross-validation",
+          "cross validation",
+          "outer folds",
+          "outer fold",
+          "inner folds",
+          "inner fold",
+          "folds",
+          "fold"
+        ],
+        "definition": "Testing a model by dividing data into parts called folds. Each turn reserves one part and trains on the others, so examples can be assessed without being used to fit that turn’s model.",
+        "context": "Our evaluation keeps related sequences in the same fold. Five outer folds provide held-out predictions; the inner folds are used separately to choose settings."
+      },
+      "es": {
+        "name": "Validación cruzada / partición",
+        "aliases": [
+          "validación cruzada",
+          "particiones externas",
+          "partición externa",
+          "particiones internas",
+          "partición interna",
+          "particiones",
+          "partición",
+          "folds",
+          "fold"
+        ],
+        "definition": "Evaluar un modelo dividiendo los datos en partes llamadas particiones. En cada turno se reserva una parte y se entrena con las demás, para evaluar ejemplos sin usarlos en el ajuste de ese turno.",
+        "context": "Nuestra evaluación mantiene las secuencias relacionadas en una misma partición. Cinco particiones externas producen predicciones reservadas; las internas se utilizan por separado para elegir parámetros."
+      }
+    },
+    {
+      "id": "nested-validation",
+      "category": "analysis",
+      "sources": [
+        "nested-validation"
+      ],
+      "papers": [],
+      "en": {
+        "name": "Nested validation",
+        "aliases": [
+          "nested cross-validation",
+          "nested cross validation",
+          "nested validation",
+          "nested evaluation"
+        ],
+        "definition": "An evaluation with two levels of splitting. Inner splits choose model settings; outer splits assess those choices on examples kept out of that selection.",
+        "context": "Our grouped evaluation uses five outer folds and three inner folds. This separates tuning from the outer test, but repeated exploratory studies on the same benchmark still need independent confirmation."
+      },
+      "es": {
+        "name": "Validación anidada",
+        "aliases": [
+          "validación cruzada anidada",
+          "validación anidada",
+          "evaluación anidada"
+        ],
+        "definition": "Una evaluación con dos niveles de división. Las particiones internas eligen los parámetros del modelo; las externas evalúan esas decisiones con ejemplos excluidos de la selección.",
+        "context": "Nuestra evaluación por grupos usa cinco particiones externas y tres internas. Así separa el ajuste de parámetros de la prueba externa, aunque los estudios exploratorios repetidos sobre el mismo conjunto siguen necesitando confirmación independiente."
+      }
+    },
+    {
+      "id": "leave-one-out",
+      "category": "analysis",
+      "sources": [
+        "cross-validation"
+      ],
+      "papers": [
+        "L01"
+      ],
+      "en": {
+        "name": "Leave-one-out evaluation",
+        "aliases": [
+          "leave-one-out evaluation",
+          "leave-one-out",
+          "LOOCV",
+          "jackknife"
+        ],
+        "definition": "An evaluation that holds out one example at a time, trains on all the remaining examples, and repeats until every example has been tested. The paper calls this a jackknife test.",
+        "context": "This is how the paper reported its benchmark results. Our completed grouped evaluation uses different splits, so its accuracy is not an exact repeat of that experiment."
+      },
+      "es": {
+        "name": "Evaluación dejando uno fuera",
+        "aliases": [
+          "evaluación dejando un ejemplo fuera",
+          "evaluación dejando uno fuera",
+          "dejando un ejemplo fuera",
+          "dejando uno fuera",
+          "leave-one-out",
+          "LOOCV",
+          "jackknife"
+        ],
+        "definition": "Una evaluación que reserva un ejemplo cada vez, entrena con todos los demás y repite hasta evaluar cada ejemplo. El artículo la llama prueba jackknife.",
+        "context": "El artículo presentó así sus resultados de referencia. Nuestra evaluación por grupos utiliza divisiones diferentes; por eso su exactitud no es una repetición exacta de aquel experimento."
+      }
+    },
+    {
+      "id": "hyperparameters",
+      "category": "models",
+      "sources": [
+        "hyperparameters",
+        "rbf"
+      ],
+      "papers": [],
+      "en": {
+        "name": "Hyperparameters / parameter search",
+        "aliases": [
+          "hyperparameters",
+          "hyperparameter",
+          "grid search",
+          "parameter search",
+          "search grid",
+          "tuning",
+          "retuning",
+          "gamma"
+        ],
+        "definition": "Settings chosen before fitting a model, often by trying a recorded list of candidates. This search is different from the model learning its own values from training examples.",
+        "context": "For an RBF SVM, C controls the penalty for training errors and gamma controls the reach of similarity. Our searches compare candidates within training folds only; the outer test does not choose the settings."
+      },
+      "es": {
+        "name": "Hiperparámetros / búsqueda de parámetros",
+        "aliases": [
+          "hiperparámetros",
+          "hiperparámetro",
+          "búsqueda de parámetros",
+          "búsquedas de parámetros",
+          "selección de parámetros",
+          "rejilla de búsqueda",
+          "grid search",
+          "gamma"
+        ],
+        "definition": "Parámetros elegidos antes de ajustar un modelo, a menudo probando una lista registrada de candidatos. Esta búsqueda es distinta de los valores que el propio modelo aprende de los ejemplos de entrenamiento.",
+        "context": "En una SVM con RBF, C controla la penalización de errores de entrenamiento y gamma el alcance de la similitud. Comparamos candidatos solo en particiones de entrenamiento; la prueba externa no elige los parámetros."
+      }
+    },
+    {
+      "id": "feature-scaling",
+      "category": "models",
+      "sources": [
+        "scaling"
+      ],
+      "papers": [],
+      "en": {
+        "name": "Feature scaling / block scaling",
+        "aliases": [
+          "feature scaling",
+          "block scaling",
+          "block balance",
+          "block balancing",
+          "block-balance",
+          "block-balance scaling",
+          "scaling",
+          "rescaling",
+          "standardization"
+        ],
+        "definition": "Changing the numerical scale of model inputs. When features are compared by distance, large numerical values can have more influence even if they carry no more useful information.",
+        "context": "Our follow-ups test rescaling and balancing the word and structural blocks. Learned scaling values use training data only. Equal distance contribution does not mean equal biological importance or guaranteed improvement."
+      },
+      "es": {
+        "name": "Escalado de características / bloques",
+        "aliases": [
+          "escalado de características",
+          "escalado por bloques",
+          "escalado de bloques",
+          "equilibrio de bloques",
+          "equilibrado de bloques",
+          "escalado",
+          "reescalado",
+          "estandarización"
+        ],
+        "definition": "Cambiar la escala numérica de las entradas del modelo. Al comparar características por distancia, los números grandes pueden influir más aunque no aporten más información útil.",
+        "context": "Nuestros análisis prueban el reescalado y el equilibrio entre palabras y resúmenes estructurales. Los valores de escalado aprendidos usan solo entrenamiento. Igualar su contribución a las distancias no implica igual importancia biológica ni una mejora garantizada."
+      }
+    },
+    {
+      "id": "bootstrap",
+      "category": "analysis",
+      "sources": [
+        "bootstrap"
+      ],
+      "papers": [],
+      "en": {
+        "name": "Bootstrap resampling",
+        "aliases": [
+          "group bootstrap",
+          "group-bootstrap",
+          "bootstrap",
+          "resamples",
+          "resampling"
+        ],
+        "definition": "Repeatedly drawing samples with replacement from the observed data and recalculating a result to explore its variability. With replacement means an example may be drawn more than once.",
+        "context": "Our paired comparisons resample whole sequence groups together while retaining fitted models and folds. These intervals omit uncertainty from retraining and from choosing analyses after earlier results."
+      },
+      "es": {
+        "name": "Remuestreo bootstrap",
+        "aliases": [
+          "bootstrap por grupos",
+          "bootstrap",
+          "remuestras",
+          "remuestreos",
+          "remuestreo"
+        ],
+        "definition": "Extraer repetidamente muestras con reemplazo de los datos observados y recalcular un resultado para explorar su variabilidad. Con reemplazo significa que un ejemplo puede elegirse varias veces.",
+        "context": "Nuestras comparaciones emparejadas remuestrean grupos completos de secuencias y conservan los modelos ajustados y las particiones. Sus intervalos omiten la incertidumbre del reentrenamiento y de elegir análisis tras observar resultados anteriores."
+      }
+    },
+    {
+      "id": "confidence-interval",
+      "category": "analysis",
+      "sources": [
+        "bootstrap"
+      ],
+      "papers": [],
+      "en": {
+        "name": "Confidence interval",
+        "aliases": [
+          "confidence intervals",
+          "confidence interval",
+          "conditional intervals",
+          "conditional interval"
+        ],
+        "definition": "A range calculated to express uncertainty under a specified statistical procedure. Its meaning depends on the data, assumptions, and sources of variability included in that procedure.",
+        "context": "Our conditional intervals keep models and folds fixed. They do not capture every source of uncertainty, and an interval spanning zero does not prove that two methods are equivalent."
+      },
+      "es": {
+        "name": "Intervalo de confianza",
+        "aliases": [
+          "intervalos de confianza",
+          "intervalo de confianza",
+          "intervalos condicionales",
+          "intervalo condicional"
+        ],
+        "definition": "Un rango calculado para expresar incertidumbre bajo un procedimiento estadístico definido. Su significado depende de los datos, los supuestos y las fuentes de variabilidad incluidas.",
+        "context": "Nuestros intervalos condicionales mantienen fijos los modelos y las particiones. No recogen todas las fuentes de incertidumbre; que un intervalo incluya cero no demuestra que dos métodos sean equivalentes."
+      }
+    },
+    {
+      "id": "balanced-accuracy",
+      "category": "analysis",
+      "sources": [
+        "balanced-accuracy"
+      ],
+      "papers": [],
+      "en": {
+        "name": "Balanced accuracy",
+        "aliases": [
+          "balanced accuracy"
+        ],
+        "definition": "The average of the correctly detected proportion within each true class. Each class has equal weight, even when one class has many more examples.",
+        "context": "We use it to choose model settings within training folds. It is different from ordinary accuracy, which counts the proportion correct across all examples together."
+      },
+      "es": {
+        "name": "Exactitud equilibrada",
+        "aliases": [
+          "exactitud equilibrada",
+          "exactitud balanceada",
+          "balanced accuracy"
+        ],
+        "definition": "El promedio de la proporción de ejemplos correctamente detectados dentro de cada clase real. Todas las clases pesan igual, aunque una tenga muchos más ejemplos.",
+        "context": "La usamos para elegir parámetros en las particiones de entrenamiento. Difiere de la exactitud ordinaria, que cuenta la proporción de aciertos entre todos los ejemplos juntos."
+      }
+    },
+    {
+      "id": "decision-score",
+      "category": "models",
+      "sources": [
+        "svm"
+      ],
+      "papers": [],
+      "en": {
+        "name": "Decision score",
+        "aliases": [
+          "decision scores",
+          "decision score",
+          "decision values",
+          "decision value",
+          "uncalibrated scores"
+        ],
+        "definition": "A model’s numerical output used to place an example on one side of its decision boundary. It is not automatically a probability or a measurement of biological activity.",
+        "context": "Our saved models use zero as the boundary: positive means enhancer in layer I and strong in layer II. Magnitudes should not be compared as a common biological scale across different models."
+      },
+      "es": {
+        "name": "Puntuación de decisión",
+        "aliases": [
+          "puntuaciones de decisión",
+          "puntuación de decisión",
+          "valores de decisión",
+          "valor de decisión",
+          "puntuaciones no calibradas"
+        ],
+        "definition": "Una salida numérica del modelo que sitúa un ejemplo a un lado de su frontera de decisión. No es automáticamente una probabilidad ni una medida de actividad biológica.",
+        "context": "Nuestros modelos guardados usan cero como frontera: positivo indica potenciador en la capa I y fuerte en la capa II. Las magnitudes no deben compararse como una escala biológica común entre modelos diferentes."
+      }
+    },
+    {
+      "id": "software-library",
+      "category": "models",
+      "sources": [
+        "numpy",
+        "sklearn"
+      ],
+      "papers": [],
+      "en": {
+        "name": "Software library / Python package",
+        "aliases": [
+          "software libraries",
+          "software library",
+          "Python packages",
+          "Python package",
+          "Python libraries",
+          "Python library"
+        ],
+        "definition": "Reusable code that a program imports to perform particular tasks, such as calculations or model training. A Python package is a way of organizing and distributing such code.",
+        "context": "NumPy, SciPy, scikit-learn, and RapidFuzz provide tools used by our scripts. Here, a software library means code; an experimental DNA library means a collection of DNA sequences."
+      },
+      "es": {
+        "name": "Biblioteca de software / paquete de Python",
+        "aliases": [
+          "bibliotecas de software",
+          "biblioteca de software",
+          "biblioteca informática",
+          "paquetes de Python",
+          "paquete de Python",
+          "bibliotecas de Python",
+          "biblioteca de Python"
+        ],
+        "definition": "Código reutilizable que un programa importa para realizar tareas concretas, como cálculos o entrenamiento de modelos. Un paquete de Python organiza y distribuye este código.",
+        "context": "NumPy, SciPy, scikit-learn y RapidFuzz proporcionan herramientas a nuestros scripts. Aquí, una biblioteca de software es código; una biblioteca experimental de ADN es una colección de secuencias."
       }
     }
   ]

@@ -102,7 +102,10 @@ assert len(source["resources"]) == 7
 assert sum(record["count"] for record in source["resources"]) == 109
 glossary = json.loads((ROOT.parent / "website/glossary.json").read_text())
 term_ids = {term["id"] for term in glossary["terms"]}
-assert len(term_ids) == len(glossary["terms"]) == 64
+assert len(term_ids) == len(glossary["terms"])
+technical_terms = {"libsvm", "rbf-svm", "scikit-learn", "numpy", "scipy", "rapidfuzz", "fasta", "kmer", "feature-vector", "cross-validation", "nested-validation", "leave-one-out", "hyperparameters", "feature-scaling", "bootstrap", "confidence-interval", "balanced-accuracy", "decision-score"}
+technical_terms.add("software-library")
+assert technical_terms <= term_ids
 for term in glossary["terms"]:
     assert re.fullmatch(r"[a-z0-9-]+", term["id"])
     assert term["sources"] or term["papers"], f"No sources for {term['id']}"
@@ -126,6 +129,10 @@ for language in ("en", "es"):
     assert annotated.count('data-term=') == 6
     assert 'data-term="lentimpra"' in annotated and 'data-term="dnabert"' in annotated
     assert re.sub(r'<a class="term-link"[^>]+>(.*?)</a>', r'\1', annotated) == sample
+    technical_sample = ('<p>LIBSVM; RBF SVM; RBF kernel; scikit-learn; NumPy; SciPy; RapidFuzz; FASTA; 6-mers; nested validation; balanced accuracy; decision scores.</p>' if language == 'en' else '<p>LIBSVM; SVM con núcleo RBF; núcleo RBF; scikit-learn; NumPy; SciPy; RapidFuzz; FASTA; 6-mers; validación anidada; exactitud equilibrada; puntuaciones de decisión.</p>')
+    technical_annotated = annotate(technical_sample, localized, language)
+    assert re.findall(r'data-term="([^"]+)"', technical_annotated) == ['libsvm', 'rbf-svm', 'rbf-svm', 'scikit-learn', 'numpy', 'scipy', 'rapidfuzz', 'fasta', 'kmer', 'nested-validation', 'balanced-accuracy', 'decision-score']
+    assert re.sub(r'<a class="term-link"[^>]+>(.*?)</a>', r'\1', technical_annotated) == technical_sample
 for document in documents.values():
     for link in document.term_links:
         assert link["data-term"] in term_ids
@@ -155,4 +162,4 @@ numbers = lambda doc: Counter(re.findall(r"\d+(?:[.,]\d+)*", " ".join(doc.text))
 assert numbers(english_report) == numbers(spanish_report), "Report numerical facts differ between languages"
 if errors:
     raise SystemExit("\n".join(errors))
-print("PASS: 20 localized pages; 12 publications; 64 sourced bilingual explanations; safe annotation; links, fragments, language switches, collections, and report structure/numerical parity")
+print(f"PASS: 20 localized pages; 12 publications; {len(term_ids)} sourced bilingual explanations; safe annotation; links, fragments, language switches, collections, and report structure/numerical parity")
