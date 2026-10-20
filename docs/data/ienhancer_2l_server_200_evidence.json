@@ -1,0 +1,244 @@
+{
+  "analysis": "Frozen 200-sequence agreement check against the live author server",
+  "analysis_utc": "2026-10-20T01:11:20.270060+00:00",
+  "sample_size": 200,
+  "matching_classes": 192,
+  "mismatching_classes": 8,
+  "agreement_fraction": 0.96,
+  "server_class_counts": {
+    "strong": 83,
+    "weak": 73,
+    "non-enhancer": 44
+  },
+  "local_class_counts": {
+    "strong": 78,
+    "weak": 73,
+    "non-enhancer": 49
+  },
+  "confusion_server_rows_local_columns": {
+    "strong": {
+      "strong": 78,
+      "weak": 3,
+      "non-enhancer": 2
+    },
+    "weak": {
+      "strong": 0,
+      "weak": 70,
+      "non-enhancer": 3
+    },
+    "non-enhancer": {
+      "strong": 0,
+      "weak": 0,
+      "non-enhancer": 44
+    }
+  },
+  "enhancer_identification_agreement": {
+    "matching": 195,
+    "total": 200
+  },
+  "strength_among_both_predicted_enhancers": {
+    "matching": 148,
+    "total": 151
+  },
+  "screening": {
+    "training_records": 2968,
+    "exact_or_reverse_complement_training_matches": 0,
+    "training_distance_at_most_40": 0,
+    "minimum_training_edit_distance": 55,
+    "minimum_selected_pair_edit_distance": 66,
+    "minimum_annotated_hg19_training_locus_gap_bp": 10823,
+    "minimum_annotated_hg19_selected_pair_locus_gap_bp": 4460
+  },
+  "selected_categories": {
+    "potential enhancer, HepG2": 185,
+    "promoter": 15
+  },
+  "models_retrained": false,
+  "parameters_tuned": false,
+  "thresholds_changed": false,
+  "model_hashes": {
+    "models/layer1_final.npz": "7003d7be989dfffabfd56d4fec7f35f1c3b21e781ea33711598d54e96937efab",
+    "models/layer2_final.npz": "1995c7716e094c4780228e86f0ac3d2f503d1803e6e5dbc3b8a69ae68597b365"
+  },
+  "policy_sha256": "d2eea26d76ef2b90778b4ab9ebb3e02cf50706abbfb48131e3c51dbfa91bfcdf",
+  "sample_fasta_sha256": "ab0715009bcd3db02adbca134810773cb9a798d36b51ff9098b43b7e7232f6f4",
+  "source_receipt": {
+    "archive": "NEW_2026_DATA/02_LENTIMPRA_ENCODE_2025/SUPPLEMENTARY/lentiMPRA_supplementary_tables_1-13.zip",
+    "archive_sha256": "aefb1974e9ebe5c196a89a00f4e868c0abaf69e3d3952e79c74bfb42f217f6a4",
+    "member": "2023-03-03628-s5/2023-03-03628C-Table S10 - joint lib design.xlsx",
+    "xlsx_sha256": "f9ec4c6c2d230b0ef507a39e5d5c73b3b36f90ccc5758c33b442c7561e20e7e5",
+    "sheet": "joint library",
+    "columns": [
+      "name",
+      "category",
+      "chr.hg19",
+      "start.hg19",
+      "stop.hg19",
+      "str.hg19",
+      "chr.hg38",
+      "start.hg38",
+      "stop.hg38",
+      "str.hg38",
+      "230nt sequence (15nt 5' adaptor - 200nt element - 15nt 3' adaptor)"
+    ],
+    "rows": 60000,
+    "extracted_utc": "2026-10-20T01:06:34.079447+00:00",
+    "read_with": {
+      "python": "3.12.14",
+      "openpyxl": "3.1.5"
+    },
+    "sequence_column": "230nt sequence (15nt 5' adaptor - 200nt element - 15nt 3' adaptor)",
+    "prefix_counts": {
+      "AGGACCGGATCAACT": 60000
+    },
+    "suffix_counts": {
+      "CATTGCGTGAACCGA": 60000
+    }
+  },
+  "environment": {
+    "python": "3.14.3",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "rapidfuzz": "3.14.6"
+  },
+  "scope_limits": [
+    "Agreement is not ground-truth predictive accuracy or full reproduction.",
+    "hg19 coordinates are used as annotated in the publication; no new assembly lookup or liftover is performed.",
+    "The available original benchmark can be screened, but the deployed server's complete training history is not exposed.",
+    "No lentiMPRA activity labels are used or evaluated.",
+    "The finite similarity and proximity rules do not prove complete biological independence.",
+    "This subset contains 185 HepG2 candidate enhancers and 15 promoters with usable annotated hg19 intervals; it does not represent all library categories.",
+    "The server supplies class labels rather than comparable feature vectors or decision scores.",
+    "Source category is not an independently measured activity label; no experimental measurement was evaluated."
+  ],
+  "validation": {
+    "server_records": 200,
+    "server_sequences_match_sent_inputs": true,
+    "sample_screened_independently": true,
+    "local_predictions_replayed": true,
+    "model_hashes_unchanged": true,
+    "all_four_batches_successful": true
+  },
+  "source_sha256": {
+    "replication/ienhancer_2l/output/2026-10-19-author-server-200/select_sample.py": "1274c995dc8757e2a442b039b403559b7556bf370cb788f5a43123845f141933",
+    "replication/ienhancer_2l/output/2026-10-19-author-server-200/compare_and_validate.py": "9a1eac59ae2cad29b07352ea89b5517e7e53c1a8a682b185648e93e75a3734ab",
+    "replication/ienhancer_2l/features.py": "4fff321da2c7badc9f28cd17620ff4f0cb9c6476ad62759c67ad091c988759d1",
+    "replication/ienhancer_2l/predict_svm.py": "40bd025bcc6ca21ea0021bd092c571c2bf5a70cbbdc811175929456a84dd0ed6",
+    "replication/ienhancer_2l/train_svm.py": "147424c0a57703034cafed8e6f87844f0c515d57046d18d438202e8ababc4248"
+  },
+  "artifact_sha256": {
+    "batch_01.fasta": "cfd8f6c3cc5e07ae58c4f47dc0ec9f40af323d3033b863f50c93808833a116f7",
+    "batch_02.fasta": "af762dc36fa655e10786002c1620e705bb9c65d98f0d2eca88c43d157bb1d1c6",
+    "batch_03.fasta": "a27f733daefd095efe6a3e23713a3ae042b6f4f129584ef11a69210a28f6ff90",
+    "batch_04.fasta": "3b1e3c887d0058756cc46bc66019c8a35536f0948b3eed021344a5a10063ee53",
+    "compare_and_validate.py": "9a1eac59ae2cad29b07352ea89b5517e7e53c1a8a682b185648e93e75a3734ab",
+    "comparison.csv": "b3d33cf2b7a3cbdaec016036661e1148702442aebbaa5f100379ff7b3a257fcb",
+    "design_records.json": "0bd8ad5f49c4bfac8df71f0a58c15d71456df5d68b3fafaf109d14c0187d4f15",
+    "frozen_policy.json": "d2eea26d76ef2b90778b4ab9ebb3e02cf50706abbfb48131e3c51dbfa91bfcdf",
+    "local_predictions.csv": "922ba5ce6aefdc254ad5dcbd361a32d91ce976a1109e9454ce9e3078f6c948a5",
+    "mismatches.csv": "2565c4cd436a183fe7ac3308a697ca282affe4f144a38bd4ae8238ef825de451",
+    "s10_design.xlsx": "f9ec4c6c2d230b0ef507a39e5d5c73b3b36f90ccc5758c33b442c7561e20e7e5",
+    "screening_validation.csv": "84463f9df80d58ed6c6aa94a6dd372b4e58a063e49c91654937ef7fb1bc3ef15",
+    "select_sample.py": "1274c995dc8757e2a442b039b403559b7556bf370cb788f5a43123845f141933",
+    "selected_200.fasta": "ab0715009bcd3db02adbca134810773cb9a798d36b51ff9098b43b7e7232f6f4",
+    "selected_sequences.csv": "7f9781f10adbfe91394c247237607e0777cde7cac9e964a3f89079fcbf2359c4",
+    "selection_audit.json": "5191d696e0b1032cbe08259a08861014b02a98686c923530235a225db61c096a",
+    "selection_exclusions.csv": "187511ef7a646649a09f50ae475459d8276a3d3caf150e322201477e137a8bba",
+    "server_batch_01.txt": "af1526d260c3db82221e7032d93d43f3b7d16939c5394bdfcc37031c5dd0eb62",
+    "server_batch_01_accessibility.txt": "11592fa925bd2ff06587c4ef8decf2847fe27af2eeda075cc2c2f268167497d1",
+    "server_batch_02.txt": "326cfc60a9ad644de652c0ed6bd57c7f1b53a601bd64b47b4e33b576e74b25fd",
+    "server_batch_02_accessibility.txt": "c2cfc5dccd8fc7c4acea5e34c2654774abafaea06fcfc029acfe319ec6a0d6f4",
+    "server_batch_03.txt": "dcbb17d2d9b376ba96989528f895913fff5958a97486da2b4ae539d14216746e",
+    "server_batch_03_accessibility.txt": "199b06ede19f6493a6008992cf3d9ac6316b2aa46e04b4512f321575e19cf743",
+    "server_batch_04.txt": "1d5d252534b1744f72e53266c66365a487ea6e5c78b132a55f7039dfe9133210",
+    "server_batch_04_accessibility.txt": "0c6d884268289c12303d61d8c326db9b5bc2a6882bce5184563b0a800c53e6e9",
+    "server_last_batch.png": "d08c203ae826716a686f52d63f158605777b6142e7a3920c5498d8a140e5a53e",
+    "server_retrieval_receipts.json": "fb1ad097f5143d8a36b65182bed510b174e765157817081cbce13bde9fbb9b1b",
+    "source_receipt.json": "4229235bfec8529dd5d3e6701e7f053b535327e9f2d26739467511decc5d8069"
+  },
+  "date_local": "2026-10-19",
+  "timezone": "America/New_York",
+  "source_commit": "77970440ef3021dc168b502d673ca422b5e49e7f",
+  "author_server": "https://bliulab.net/iEnhancer-2L/",
+  "source_article": "https://doi.org/10.1038/s41586-024-08430-9",
+  "retrieval_receipts": [
+    {
+      "batch": 1,
+      "status": 200,
+      "retrieved_utc": "2026-10-20T01:09:54.839836+00:00",
+      "bytes": 29362,
+      "sha256": "af1526d260c3db82221e7032d93d43f3b7d16939c5394bdfcc37031c5dd0eb62",
+      "url": "https://bliulab.net/iEnhancer-2L/static/result/[generated-client-filename-redacted]"
+    },
+    {
+      "batch": 2,
+      "status": 200,
+      "retrieved_utc": "2026-10-20T01:09:54.826515+00:00",
+      "bytes": 29377,
+      "sha256": "326cfc60a9ad644de652c0ed6bd57c7f1b53a601bd64b47b4e33b576e74b25fd",
+      "url": "https://bliulab.net/iEnhancer-2L/static/result/[generated-client-filename-redacted]"
+    },
+    {
+      "batch": 3,
+      "status": 200,
+      "retrieved_utc": "2026-10-20T01:09:55.882144+00:00",
+      "bytes": 29378,
+      "sha256": "dcbb17d2d9b376ba96989528f895913fff5958a97486da2b4ae539d14216746e",
+      "url": "https://bliulab.net/iEnhancer-2L/static/result/[generated-client-filename-redacted]"
+    },
+    {
+      "batch": 4,
+      "status": 200,
+      "retrieved_utc": "2026-10-20T01:09:55.846914+00:00",
+      "bytes": 29365,
+      "sha256": "1d5d252534b1744f72e53266c66365a487ea6e5c78b132a55f7039dfe9133210",
+      "url": "https://bliulab.net/iEnhancer-2L/static/result/[generated-client-filename-redacted]"
+    }
+  ],
+  "screenshot_replay": {
+    "purpose": "Illustration only: three pre-existing disagreements selected from the frozen 200-sequence comparison; not an additional validation sample.",
+    "captured_utc": "2026-10-20T01:17:11.157921+00:00",
+    "date_local": "2026-10-19",
+    "timezone": "America/New_York",
+    "author_server": "https://bliulab.net/iEnhancer-2L/",
+    "returned_file_url": "https://bliulab.net/iEnhancer-2L/static/result/[generated-client-filename-redacted]",
+    "status": 200,
+    "selected_ids": [
+      "probe_0040",
+      "probe_0089",
+      "probe_0110"
+    ],
+    "server_classes": [
+      "strong",
+      "weak",
+      "strong"
+    ],
+    "local_classes": [
+      "weak",
+      "non-enhancer",
+      "non-enhancer"
+    ],
+    "files_sha256": {
+      "selected_queries.fasta": "3f8daa37a8c2862f7a28b46204c6f9cfab8d98a2d8b2dae84b4d43c846328795",
+      "author_selected_result.txt": "5a9db416196c6bc8d0bd6892044ccc1e098b555b2a19c474f55a1779140f485e",
+      "author_disagreements.jpg": "c32e25586b0f4c1b4db6394004c15042f54b293f9caf444c2e9fff48c2da7c38",
+      "accessibility.txt": "43d595066003fffc4429a559a88f4a017dedf5049e3480a27ccd6cc7979ea2ec"
+    }
+  },
+  "published_file_sha256": {
+    "data/ienhancer_2l_server_200_comparison.csv": "b3d33cf2b7a3cbdaec016036661e1148702442aebbaa5f100379ff7b3a257fcb",
+    "data/ienhancer_2l_server_200_mismatches.csv": "2565c4cd436a183fe7ac3308a697ca282affe4f144a38bd4ae8238ef825de451",
+    "data/ienhancer_2l_server_200_queries.fasta": "ab0715009bcd3db02adbca134810773cb9a798d36b51ff9098b43b7e7232f6f4",
+    "data/ienhancer_2l_server_200_policy.json": "d2eea26d76ef2b90778b4ab9ebb3e02cf50706abbfb48131e3c51dbfa91bfcdf",
+    "data/ienhancer_2l_server_200_screening.csv": "84463f9df80d58ed6c6aa94a6dd372b4e58a063e49c91654937ef7fb1bc3ef15",
+    "data/ienhancer_2l_server_200_author_batch_01.txt": "af1526d260c3db82221e7032d93d43f3b7d16939c5394bdfcc37031c5dd0eb62",
+    "data/ienhancer_2l_server_200_author_batch_02.txt": "326cfc60a9ad644de652c0ed6bd57c7f1b53a601bd64b47b4e33b576e74b25fd",
+    "data/ienhancer_2l_server_200_author_batch_03.txt": "dcbb17d2d9b376ba96989528f895913fff5958a97486da2b4ae539d14216746e",
+    "data/ienhancer_2l_server_200_author_batch_04.txt": "1d5d252534b1744f72e53266c66365a487ea6e5c78b132a55f7039dfe9133210",
+    "data/ienhancer_2l_server_200_screenshot_queries.fasta": "3f8daa37a8c2862f7a28b46204c6f9cfab8d98a2d8b2dae84b4d43c846328795",
+    "data/ienhancer_2l_server_200_screenshot_author_result.txt": "5a9db416196c6bc8d0bd6892044ccc1e098b555b2a19c474f55a1779140f485e",
+    "assets/ienhancer-author-examples-20261019.jpg": "e6c94763f9f83e784f2db32da40e1235bfe4abfb52f1f0e39192b71ef3a68519",
+    "assets/ienhancer-author-disagreements-20261019.jpg": "c32e25586b0f4c1b4db6394004c15042f54b293f9caf444c2e9fff48c2da7c38"
+  }
+}

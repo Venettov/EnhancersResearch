@@ -1,0 +1,16 @@
+Results
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+The length of the query sequence 1( >probe_0040 ) is 200 bp. It has 1 subsequence ( length of 200 bp with 1bp step ).
+The #1 subsequence ( 1-200 ) of the qurey sequencer 1 is strong enhancer sequence.
+The subsequence is:TTGAGTTTCTGCCTGTGCGGCAGTTCCCTAAACCCTGATTTCCTGCCAAGTTCTTTGTGTGACCCTGGCCCCCTGGGTGGAGTGGTGAATATCTGGATTGTCCAGCAGGTGGAGGCAGATACCCCTTGAACAGAAGAAAGACGACACCAGACTGGGAGCAGCCTACCAGCTAAGCCCAGAAGGAACAGGATGGGGACGGG
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+The length of the query sequence 2( >probe_0089 ) is 200 bp. It has 1 subsequence ( length of 200 bp with 1bp step ).
+The #1 subsequence ( 1-200 ) of the qurey sequencer 2 is weak enhancer sequence.
+The subsequence is:AAATGCAAATTCGATTGCATTTATAACTGGTAACCCTGCCAAGTTAAAGCTTCAATACATCTGATGTGTGAGCTGTACGAACTTTTCAGGGACACTAGGTGGCGCCCGTGTACTTTTCTTGAGAAAGCCAGGCTGCTTTAACCATTTAAAATTTCAATCAGTGGAAAGAAACGAGTTAGCCCAGTGGTTCTCAAAGACAT
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+The length of the query sequence 3( >probe_0110 ) is 200 bp. It has 1 subsequence ( length of 200 bp with 1bp step ).
+The #1 subsequence ( 1-200 ) of the qurey sequencer 3 is strong enhancer sequence.
+The subsequence is:GGATAAATGGGTATATCCAAGTGGGAGCTTGGATGTTGTCTTCTGATTGCTTTGTTTTCTCCATGAACTGAGAACCAAGGTCAACAGTGGAAGATAAGGATAGAGAGGGAGACACTAGAGGGCGTGATATAGTTATCCAAGAGAGTGAGTGAACCAGGGGGATGAATGTCATGTGATTGACAAGCGGCACTGAGGGTACC
+

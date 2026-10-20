@@ -1,0 +1,39 @@
+{
+  "created_utc": "2026-10-20T01:07:28.832607+00:00",
+  "purpose": "Agreement of fixed local models with the deployed author server on 200 new DNA inputs; no experimental activity analysis or performance estimation.",
+  "sample_size": 200,
+  "batch_size": 50,
+  "seed": "ienhancer-author-server-agreement-2026-10-19-v1",
+  "source": "Agarwal, Inoue et al. Nature 2025, Table S10 joint library design",
+  "source_doi": "10.1038/s41586-024-08430-9",
+  "insert_rule": "Require the observed fixed 15-base adapters and 230 A/C/G/T bases; retain positions 16 through 215 (1-based).",
+  "prefix": "AGGACCGGATCAACT",
+  "suffix": "CATTGCGTGAACCGA",
+  "coordinate_eligibility": "Require an annotated hg19 interval of 200 bases, chr1-22/X/Y, and a defined +/- strand in S10. This excludes records with only hg38 coordinates and synthetic/shuffled controls without hg19 positions.",
+  "selection": "Sort by SHA256(seed + newline + canonical insert), breaking ties by construct name. Select eligible, distinct canonical inserts until 200 pass all declared screens.",
+  "training_set": "All 2968 original benchmark sequences; both orientations; verified file hashes.",
+  "exclusions": [
+    "Exact or reverse-complement training match",
+    "Global unit-cost Levenshtein distance <=40 to any training sequence in either orientation",
+    "Source hg19 interval overlaps or lies within 1000 bases of any training interval",
+    "Exact/reverse-complement duplicate, <=40 edits, or within 1000 bases of an already selected record"
+  ],
+  "max_edit_distance": 40,
+  "max_locus_gap_bp": 1000,
+  "selection_uses_predictions": false,
+  "selection_uses_activity_values": false,
+  "model_changes": false,
+  "score_threshold_changes": false,
+  "primary_endpoint": "Exact final class-label agreement per 200-base query.",
+  "secondary_endpoints": [
+    "Enhancer/non-enhancer agreement",
+    "Strong/weak agreement among records where both predict enhancer"
+  ],
+  "limitations": [
+    "Agreement is not ground-truth predictive accuracy or full reproduction.",
+    "hg19 coordinates are used as annotated in the publication; no new assembly lookup or liftover is performed.",
+    "The available original benchmark can be screened, but the deployed server's complete training history is not exposed.",
+    "No lentiMPRA activity labels are used or evaluated.",
+    "The finite similarity and proximity rules do not prove complete biological independence."
+  ]
+}

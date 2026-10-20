@@ -166,3 +166,10 @@ a.term-link:hover{background:#dceee8;color:#153c45!important;text-decoration-sty
 .methods-workflow figcaption{font-size:13px;line-height:1.8;color:var(--muted);max-width:1000px}.replication-guide h2 code{font-size:.65em;overflow-wrap:anywhere}.replication-guide td code{overflow-wrap:anywhere}.folder-tree{font-size:12px}
 @media(max-width:1000px){.method-flow{grid-template-columns:repeat(2,minmax(0,1fr))}.method-flow>li::after{display:none}}
 @media(max-width:760px){.methods-workflow>h2{font-size:29px}.workflow-workspace,.method-flow{grid-template-columns:1fr}.workflow-workspace{gap:18px}.method-flow{gap:30px}.method-flow>li:not(:last-child)::after{display:block;content:'↓';top:auto;bottom:-29px;right:50%;transform:translateX(50%)}.method-flow h3{font-size:23px}}
+
+/* Original author-server screenshots retain their full frame and aspect ratio. */
+.server-capture{margin:26px 0;background:var(--canvas);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.server-capture img{width:100%;height:auto}.server-capture>a{display:block}
+.server-capture figcaption{padding:16px 18px;font-size:12px;line-height:1.8;color:var(--muted)}
+#server-comparison caption,#server-examples caption{text-align:left;color:var(--muted);padding-bottom:12px}
+#server-comparison table{table-layout:fixed}#server-comparison th,#server-comparison td{min-width:0;overflow-wrap:anywhere}
