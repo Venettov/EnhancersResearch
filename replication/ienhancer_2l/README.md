@@ -6,6 +6,12 @@ Data preparation, grouped evaluation, PseKNC features and **both trained RBF SVM
 
 The 17 October 2026 review release includes the comparison source code, compact checkpoints, and [bilingual website explanations and evidence downloads](https://venettov.github.io/EnhancersResearch/reproduce.html#block-results). Links into `output/` refer to full local run artifacts, which remain excluded from Git; the website and checkpoint links are the public reading copies. Frozen protocols retain their original local-only instructions as historical records.
 
+## Author-server example agreement · 19 October 2026
+
+The deployed author server and our existing final models matched on all **13** 200-base windows from its five public example queries: nine strong, two weak, and two non-enhancer predictions. No retraining or tuning was performed. Nine overlapping windows come from the first query; four windows exactly match training sequences. This is a functional agreement check, **not proof of complete reproduction or independent accuracy**. The server returned class labels without numeric decision scores.
+
+[Results and downloadable sequences/predictions](https://venettov.github.io/EnhancersResearch/reproduce.html#server-examples) · [Compact evidence record](checkpoints/2026-10-19-author-server-examples.json) · [Replay instructions](https://venettov.github.io/EnhancersResearch/methods.html#server-example-replay).
+
 ## Local training-only block balance · 14 October 2026
 
 This follow-up is **complete**. The [block protocol](block_protocol.json) was frozen before fitting, after the scale-aware results were known. It tests whether the nine structural summaries help when their aggregate distance contribution is balanced with the 4,096 ordinary word frequencies. The four previous scale-aware models are verified, unchanged controls; two balanced representations are newly fitted.

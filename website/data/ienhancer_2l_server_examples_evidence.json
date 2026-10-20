@@ -1,0 +1,128 @@
+{
+  "analysis": "Author-server example agreement check; not a new performance benchmark",
+  "analysis_utc": "2026-10-20T00:30:26.556193+00:00",
+  "server_url": "https://bliulab.net/iEnhancer-2L/",
+  "submission": "Own Example button, followed by Submit; no email or private sequences supplied",
+  "source_commit": "8c936b15d4c94c583674f201a74efcb31d1f9275",
+  "query_count": 5,
+  "query_lengths": [
+    208,
+    200,
+    200,
+    200,
+    200
+  ],
+  "window_length": 200,
+  "window_step": 1,
+  "window_count": 13,
+  "exact_sequence_alignment_verified": true,
+  "matching_classes": 13,
+  "server_class_counts": {
+    "strong": 9,
+    "weak": 2,
+    "non-enhancer": 2
+  },
+  "layer1_agreement": 13,
+  "layer2_agreement_among_server_enhancers": 11,
+  "server_enhancer_windows": 11,
+  "windows_with_exact_training_match": 4,
+  "windows_with_reverse_complement_training_match": 0,
+  "model_hashes_verified_against_training_audit": {
+    "models/layer1_final.npz": "7003d7be989dfffabfd56d4fec7f35f1c3b21e781ea33711598d54e96937efab",
+    "models/layer2_final.npz": "1995c7716e094c4780228e86f0ac3d2f503d1803e6e5dbc3b8a69ae68597b365"
+  },
+  "model_training_performed": false,
+  "parameter_tuning_performed": false,
+  "server_numeric_scores_provided": false,
+  "environment": {
+    "python": "3.14.3",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "rapidfuzz": "3.14.6"
+  },
+  "limitations": [
+    "Five author-selected examples; the first produces nine heavily overlapping windows. These are not 13 independent biological observations.",
+    "Agreement covers final class labels. The server does not provide decision values or feature vectors in this returned file.",
+    "No proof that the deployed server is identical to the original published evaluation implementation.",
+    "This check does not establish exact author-code equivalence, independent performance, or reproduction of the paper's leave-one-out accuracy.",
+    "Only exact and reverse-complement training overlaps were screened here; absence of these would not establish independence from related sequences or loci."
+  ],
+  "source_sha256": {
+    "replication/ienhancer_2l/predict_svm.py": "40bd025bcc6ca21ea0021bd092c571c2bf5a70cbbdc811175929456a84dd0ed6",
+    "replication/ienhancer_2l/features.py": "4fff321da2c7badc9f28cd17620ff4f0cb9c6476ad62759c67ad091c988759d1",
+    "replication/ienhancer_2l/train_svm.py": "147424c0a57703034cafed8e6f87844f0c515d57046d18d438202e8ababc4248",
+    "replication/ienhancer_2l/common.py": "d43f01c23d5e07fa0dc9513b492600054608f2156c9146ea1e2da7e3de095ab9",
+    "replication/ienhancer_2l/output/2026-10-19-author-server-examples/compare_examples.py": "62e50d0254f53d281f4746d0507baae81ea8ec7991673b07cd8ed8da4fbe012c"
+  },
+  "analysis_local": "2026-10-19T20:30:26.556193-04:00",
+  "timezone": "America/New_York",
+  "recorded_run_summary_sha256": "acf367cef066b272c7c064294c0319c295f493a2c3fe258efc98c973f55caccb",
+  "source_receipts": [
+    {
+      "file": "server_result.txt",
+      "http_status": 200,
+      "retrieved_utc": "2026-10-20T00:29:30.503500+00:00",
+      "bytes": 5514,
+      "sha256": "4ddb606fede079344722b65e5be42da179bf9a80880166570abdba5b1592e33b",
+      "url": "https://bliulab.net/iEnhancer-2L/static/result/[generated-result-filename-redacted]"
+    },
+    {
+      "file": "author_example_script.js",
+      "http_status": 200,
+      "retrieved_utc": "2026-10-20T00:29:31.379504+00:00",
+      "bytes": 5200,
+      "sha256": "e05edfbe889f88627f0c8f0d330d2303a702886a43da83146d1d0d8e5cebf670",
+      "url": "https://bliulab.net/iEnhancer-2L/static/js/my.js"
+    },
+    {
+      "file": "author_readme.html",
+      "http_status": 200,
+      "retrieved_utc": "2026-10-20T00:29:32.208261+00:00",
+      "bytes": 6001,
+      "sha256": "306edc34decd4e9ea40b0a4eaf59ae9e6e2ee64364778bd53db0a92f13204449",
+      "url": "https://bliulab.net/iEnhancer-2L/readme/"
+    }
+  ],
+  "public_artifacts": {
+    "ienhancer_2l_server_examples_comparison.csv": {
+      "bytes": 2108,
+      "sha256": "aa386773dd5a275e445964042c290c135f80b88fae259368e0d653e58636b3d5"
+    },
+    "ienhancer_2l_server_examples_author_result.txt": {
+      "bytes": 5514,
+      "sha256": "4ddb606fede079344722b65e5be42da179bf9a80880166570abdba5b1592e33b"
+    },
+    "ienhancer_2l_server_examples_queries.fasta": {
+      "bytes": 1230,
+      "sha256": "3ffad804f816affe5783f671f356a2b19b12f4dfe691a2fce3d8acda1bed0770"
+    },
+    "ienhancer_2l_server_examples_windows.fasta": {
+      "bytes": 2899,
+      "sha256": "8f3655eaa7cfbefc04cd4d55f12035d37f7159666fecf503ca4df2e3545f48fc"
+    }
+  },
+  "interpretation": "All 13 final class labels match on five author examples. This is a functional agreement check, not proof of full reproduction or independent predictive accuracy.",
+  "overlap_detail": [
+    {
+      "query": 1,
+      "window_start": 1,
+      "window_end": 200
+    },
+    {
+      "query": 3,
+      "window_start": 1,
+      "window_end": 200
+    },
+    {
+      "query": 4,
+      "window_start": 1,
+      "window_end": 200
+    },
+    {
+      "query": 5,
+      "window_start": 1,
+      "window_end": 200
+    }
+  ]
+}
