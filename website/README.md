@@ -26,6 +26,8 @@ Open `http://127.0.0.1:8766`. Stop the server with Ctrl-C. All page and asset li
 
 ## Edit content
 
+The first SVM results include a bilingual paired-bar accuracy chart comparing the published leave-one-out values (76.89% / 61.93%) with our grouped outer-fold means (76.21% / 60.98%). The caption preserves the distinction between evaluation designs and limits layer II to known enhancers. Mobile layouts stack the two tasks while retaining a 0–100% axis for each. Regenerate the four standalone SVG assets with `python website/tools/make_accuracy_chart.py` in an environment with Matplotlib 3.10.7; local values are read from the frozen training audit. Matplotlib is not needed for the ordinary website build. The charts also provide accessible descriptions and a full-size SVG download.
+
 - `template.html`: shared page shell, navigation, and footer.
 - `pages/`: page copy. `strategy.html` is a reading edition adapted from `reports/01_enhancers_evidence_and_strategy.html` (10 October 2026); its source text is preserved except for portable source links and the web-edition footer. Edit this self-contained copy when updating the site.
 - `content.json`: twelve publication records (four original papers plus eight newer works) and seven new resource collections. Journal versions and earlier preprints are grouped as one work.

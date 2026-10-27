@@ -140,6 +140,13 @@ a.term-link:hover{background:#dceee8;color:#153c45!important;text-decoration-sty
 @media(max-width:760px){.guide-layout{display:flex;flex-direction:column;gap:26px}.guide-sidebar{order:-1}.guide-toc{position:static;padding:16px;border:1px solid var(--line);border-radius:6px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 12px}.guide-toc .eyebrow{grid-column:1/-1}.guide-toc>a{font-size:11px;padding:7px 0}.guide-start h2{font-size:29px}.guide-step h2{font-size:27px}.guide-status{padding:18px}.guide-flow{grid-template-columns:repeat(2,minmax(0,1fr))}.guide-step{margin-top:32px;padding-top:24px}.guide-command{padding:14px;font-size:11px}.guide-details{padding:0 12px}.guide-check{padding:16px}.replication-guide{width:100%}}
 @media print{.guide-sidebar{display:none}.guide-layout{display:block}.guide-command{white-space:pre-wrap;overflow-wrap:anywhere;background:#fff;color:#000}.guide-details:not([open])>*{display:block}.guide-flow{break-inside:avoid}}
 
+/* Accuracy charts retain paired bars and readable labels on small screens. */
+.accuracy-comparison{margin:26px 0;border:1px solid var(--line);border-radius:8px;background:var(--canvas);overflow:hidden;scroll-margin-top:24px}
+.accuracy-comparison picture,.accuracy-comparison img{display:block;width:100%}.accuracy-comparison img{height:auto;aspect-ratio:1140/640}
+.accuracy-comparison figcaption{padding:18px 22px;border-top:1px solid var(--line);font-size:13px;line-height:1.75;color:var(--muted)}.accuracy-comparison figcaption p{margin:0 0 10px}.accuracy-comparison figcaption p:last-child{margin:0}
+@media(max-width:540px){.accuracy-comparison img{aspect-ratio:520/820}.accuracy-comparison figcaption{padding:16px}}
+@media print{.accuracy-comparison{break-inside:avoid}}
+
 /* Plain-language comparison results use compact tables on narrow screens. */
 #baseline-results h3,#component-results h3,#scale-results h3,#block-results h3{margin-top:28px}
 #baseline-results table,#component-results table,#scale-results table,#block-results table{table-layout:fixed}
