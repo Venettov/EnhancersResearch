@@ -1,0 +1,26 @@
+{
+  "version": "ienhancer-primary-2026-10-13-browser-v1",
+  "file": "ienhancer-primary-2026-10-13-browser-v1.json.gz",
+  "sha256": "5a2eb16170d97ade3c08fe33aa77aa8fe5cd26b7120c00f8c78bb8f0cfa5dcec",
+  "bytes": 4269889,
+  "source_models": {
+    "replication/ienhancer_2l/checkpoints/2026-10-13-svm-training/models/layer1_final.npz": "7003d7be989dfffabfd56d4fec7f35f1c3b21e781ea33711598d54e96937efab",
+    "replication/ienhancer_2l/checkpoints/2026-10-13-svm-training/models/layer2_final.npz": "1995c7716e094c4780228e86f0ac3d2f503d1803e6e5dbc3b8a69ae68597b365"
+  },
+  "feature_settings": {
+    "bases": 200,
+    "k": 6,
+    "lag": 9,
+    "counting": "overlapping",
+    "property_normalization": "sample standard deviation (ddof=1)",
+    "weights": [
+      0.1,
+      0.4
+    ],
+    "features": 4105
+  },
+  "decision_rule": "score > 0; evaluate strength only for a positive layer-I score",
+  "score_kind": "Uncalibrated SVM decision value, not probability or measured activity",
+  "model_training_date": "2026-10-13",
+  "exporter": "website/tools/export_predictor.py"
+}

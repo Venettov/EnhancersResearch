@@ -1,0 +1,34 @@
+<link rel="stylesheet" href="assets/predictor.css">
+<section class="predictor-intro">
+<div><p class="eyebrow">Our iEnhancer-2L reconstruction</p><h2>From a DNA sequence to a prediction</h2><p class="lead">Paste your sequences or choose a FASTA file. The saved model predicts <strong>non-enhancer</strong>, <strong>weak enhancer</strong>, or <strong>strong enhancer</strong> for each 200-base fragment.</p></div>
+<aside class="predictor-privacy"><span aria-hidden="true">↳</span><strong>Runs on your device</strong><p>Your input stays in your browser. The model downloads when you run your first prediction; sequences are not uploaded or stored by this tool.</p></aside>
+</section>
+<div class="predictor-app" data-predictor>
+<form class="predictor-input-panel">
+<fieldset disabled><legend><span class="predictor-step">01</span> Add your sequences</legend>
+<p id="prediction-help">FASTA format: a <code>&gt;identifier</code> line followed by DNA. Each sequence must have exactly <strong>200 A/C/G/T bases</strong>. Lowercase letters and wrapped lines are accepted. Up to 1,000 sequences and 1 MiB per run.</p>
+<div class="predictor-example-actions"><button type="button" data-example="3">Load 3 examples</button><button type="button" data-example="200">Load the 200-sequence comparison</button></div>
+<label for="prediction-input">FASTA sequences</label>
+<textarea id="prediction-input" rows="10" spellcheck="false" autocomplete="off" autocapitalize="off" aria-describedby="prediction-help" placeholder="&gt;sequence_1&#10;Paste the 200-base DNA sequence here"></textarea>
+<div class="predictor-file-row"><div><label for="prediction-file">Or choose a FASTA file</label><input id="prediction-file" type="file" accept=".fasta,.fa,.fna,.txt,text/plain"></div><button type="button" data-clear>Clear input</button></div>
+<div class="predictor-run-row"><button type="submit" class="predictor-run">Run predictions <span aria-hidden="true">→</span></button><span>The original saved models · no retraining</span></div>
+</fieldset>
+<button type="button" class="predictor-cancel" data-cancel hidden>Cancel</button>
+<p data-status role="status" aria-live="polite">JavaScript is required to run predictions. If the controls stay unavailable, reload the page in a current browser.</p>
+<progress aria-label="Prediction progress" max="100" value="0" hidden></progress>
+<p class="predictor-error" data-error role="alert" hidden></p>
+<noscript><p>You can download the <a href="data/ienhancer_2l_server_200_comparison.csv">saved comparison results</a> or use the <a href="methods.html#server-200-replay">Python prediction instructions</a>.</p></noscript>
+</form>
+<section class="predictor-results" data-results hidden aria-labelledby="prediction-results-title">
+<div class="predictor-results-heading"><h2 id="prediction-results-title" tabindex="-1"><span class="predictor-step">02</span> Your predictions</h2><a class="predictor-download" data-download download="ienhancer-predictions.csv">Download results (CSV) ↓</a></div>
+<div class="predictor-counts"><div><strong data-total>0</strong><span>Sequences</span></div><div><strong data-count="strong">0</strong><span>Strong enhancers</span></div><div><strong data-count="weak">0</strong><span>Weak enhancers</span></div><div><strong data-count="non-enhancer">0</strong><span>Non-enhancers</span></div></div>
+<div class="predictor-comparison" data-comparison hidden><h3>The original 200-sequence comparison</h3><p>These inputs match the saved comparison set, sequence for sequence.</p><dl><div><dt>Browser / saved Python labels</dt><dd data-python-agreement></dd></div><div><dt>Browser / authors’ saved labels</dt><dd data-author-agreement></dd></div></dl><p>Uses the authors’ responses saved on 19 October 2026. No new requests are sent to their server. Agreement measures matching predictions, not accuracy against experimental activity.</p><label class="predictor-filter"><input type="checkbox" data-differences> Show only differences from the authors’ saved results</label></div>
+<p class="predictor-score-note">Decision scores are signed SVM values: above zero favors enhancer in layer I and strong in layer II. A dash means layer II was not applied. Scores are not probabilities or measured activity; near-zero calls can be sensitive to numerical differences.</p>
+<p data-row-count class="small-note"></p>
+<div class="table-scroll predictor-table" tabindex="0" role="region" aria-label="Sequence prediction results"><table><caption>Predictions from the input above</caption><thead><tr><th scope="col">#</th><th scope="col">Sequence ID</th><th scope="col">Our prediction</th><th scope="col">Layer I score</th><th scope="col">Layer II score</th><th scope="col" data-reference-heading hidden>Authors’ saved prediction</th><th scope="col" data-reference-heading hidden>Agreement</th></tr></thead><tbody></tbody></table></div>
+<p class="small-note">Model version: <code data-model-version></code>. CSV scores retain full numerical precision; table scores are rounded to eight decimal places. Sequence hashes identify the exact inputs.</p>
+</section>
+</div>
+<section class="predictor-context"><h2>What this tool tells you</h2><p>This is our implementation of iEnhancer-2L, using the primary models trained on 13 October 2026. Its labels describe the historical enhancer benchmark. Predictions do not establish activity in HepG2, K562, WTC11, or another cell type. The original authors’ server can return different labels.</p><p>The browser computes each prediction from the saved model weights. The example results are used only for comparison after prediction. Sequences longer or shorter than 200 bases are rejected; choose and document any genomic windows before submitting them.</p><p><a href="reproduce.html#server-comparison">Read the original 200-sequence comparison →</a> · <a href="reproduce.html#training-results">Training and evaluation results →</a> · <a href="data/predictor_validation.json">Software validation</a> · <a href="data/predictor_manifest.json">Model provenance</a> · <a href="https://github.com/Venettov/EnhancersResearch/blob/main/website/tools/export_predictor.py">Browser model export</a></p></section>
+<script src="assets/predictor-engine.js" defer></script>
+<script src="assets/predictor.js" defer></script>

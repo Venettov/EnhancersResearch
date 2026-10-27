@@ -141,6 +141,7 @@ a.term-link:hover{background:#dceee8;color:#153c45!important;text-decoration-sty
 @media print{.guide-sidebar{display:none}.guide-layout{display:block}.guide-command{white-space:pre-wrap;overflow-wrap:anywhere;background:#fff;color:#000}.guide-details:not([open])>*{display:block}.guide-flow{break-inside:avoid}}
 
 /* Accuracy charts retain paired bars and readable labels on small screens. */
+.methods-callout+.methods-callout{margin-top:16px}
 .accuracy-comparison{margin:26px 0;border:1px solid var(--line);border-radius:8px;background:var(--canvas);overflow:hidden;scroll-margin-top:24px}
 .accuracy-comparison picture,.accuracy-comparison img{display:block;width:100%}.accuracy-comparison img{height:auto;aspect-ratio:1140/640}
 .accuracy-comparison figcaption{padding:18px 22px;border-top:1px solid var(--line);font-size:13px;line-height:1.75;color:var(--muted)}.accuracy-comparison figcaption p{margin:0 0 10px}.accuracy-comparison figcaption p:last-child{margin:0}

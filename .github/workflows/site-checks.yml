@@ -19,5 +19,7 @@ jobs:
       - run: python website/tests/check_site.py
       - run: python -m pip install -r replication/ienhancer_2l/requirements-training.txt
       - run: python -m unittest discover -s replication/ienhancer_2l -p 'test_*.py'
+      - name: Verify browser predictor against frozen Python models
+        run: python website/tests/predictor_parity.py
       - name: Check generated site is current
         run: git diff --exit-code -- docs

@@ -1,0 +1,24 @@
+{
+  "model_version": "ienhancer-primary-2026-10-13-browser-v1",
+  "model_sha256": "5a2eb16170d97ade3c08fe33aa77aa8fe5cd26b7120c00f8c78bb8f0cfa5dcec",
+  "browser_engine_sha256": "77a7d77362f01064a77e0c74acc618a615d9905ffc67063ba827d7b82bc00511",
+  "input_fasta_sha256": "ab0715009bcd3db02adbca134810773cb9a798d36b51ff9098b43b7e7232f6f4",
+  "comparison_records": 200,
+  "additional_edge_sequences": 16,
+  "browser_engine_python_class_matches": 216,
+  "maximum_absolute_score_error": 2.863089321181178e-09,
+  "score_tolerance": 1e-06,
+  "saved_author_class_matches": 192,
+  "exported_weights_identical": true,
+  "feature_vectors_checked": 16,
+  "scope": "Software parity and saved-server agreement; no model fitting or biological accuracy evaluation.",
+  "checks": [
+    "all exported weights and fixed properties",
+    "FASTA validation and limits",
+    "CSV formula protection",
+    "feature parity",
+    "cascade and blank strength scores",
+    "216 Python class/score comparisons",
+    "200 frozen result rows"
+  ]
+}

@@ -52,6 +52,10 @@
       "Results",
       "Findings from our iEnhancer-2L reconstruction: the two SVM classifiers, feature comparisons, limitations, and the proposed connection to measured enhancer activity."
     ],
+    "predictor": [
+      "Predictor",
+      "Paste or upload 200-base DNA sequences and run our saved iEnhancer-2L reconstruction directly in your browser."
+    ],
     "publications": [
       "Publications",
       "iEnhancer-2L and its experimental connection within twelve collected works: four original papers and eight newer studies."

@@ -12,6 +12,26 @@ Both pages are available in English and Spanish. Internal links point to the rel
 
 The English and Spanish site includes all completed iEnhancer comparisons, the repaired MCSE benchmark, the 2-mer/3-mer and normalization comparisons, and the VISTA evaluation plan with preliminary screening. Independence remains unverified and no external model predictions exist. Research protocols and evidence downloads retain their original analysis-stage dates and local-only instructions; this later publication changes their availability, not the analyses.
 
+## Browser sequence predictor · 27 October 2026
+
+`predictor.html` and `es/predictor.html` run the frozen primary two-layer SVMs on the user's device. Paste or choose a plain-text FASTA file containing up to 1,000 records, each exactly 200 A/C/G/T bases (1 MiB input limit). A worker keeps the page responsive and supports cancellation. Inputs are never uploaded, persisted, or sent to the authors' server. The first run downloads the compressed model; subsequent runs in the same page reuse it. No server, account, training, or new prediction threshold is involved.
+
+The original 200-record sample can be loaded from the input panel. Predictions are calculated before saved labels are consulted. Comparison labels appear only when all 200 ordered sequence hashes match the frozen set. CSV downloads include input identifiers, sequence hashes, both decision scores (strength blank when layer I is negative), and model version. User identifiers are rendered as text and protected against spreadsheet-formula interpretation in CSV.
+
+`assets/predictor-engine.js` reconstructs overlapping 6-mer frequencies and nine dinucleotide-property correlations in Float64 arithmetic. Fixed sample-normalized properties and all original model weights are exported by `tools/export_predictor.py`; no model is refitted. Sparse column storage accelerates the same RBF calculation. The worker verifies the downloaded model SHA-256 before use. `data/predictor_manifest.json` records original NPZ hashes, feature settings, export version, and package hash; `data/predictor_validation.json` records software-parity checks. Modern Web Workers, Web Crypto, and gzip DecompressionStream support are required. Without JavaScript, the page provides links to saved results and Python instructions.
+
+Regenerate and verify with the existing scientific environment (supply a Node executable available on your machine):
+
+```sh
+.venv/bin/python website/tools/export_predictor.py
+.venv/bin/python website/tests/predictor_parity.py --node node --output website/data/predictor_validation.json
+python3 website/build.py
+python3 website/tests/check_site.py
+node website/tests/predictor.cjs
+```
+
+The parity check compares every exported weight and fixed property, feature vectors on 16 synthetic/edge inputs, and Python class/score outputs for those inputs plus the 200 frozen queries. It checks the preserved 192/200 author-server agreement, FASTA limits, and CSV safety. Browser checks cover both languages, five viewport widths, actual worker inference and downloads, invalid/duplicate/hostile identifiers, cancellation, load/integrity failures, and unavailable JavaScript/browser APIs. These verify software behavior and agreement, not biological accuracy. The site now builds 22 pages.
+
 ## Build and preview
 
 Requires Python 3.9 or later; no production dependencies, API keys, external fonts, analytics, or remote scripts.
@@ -44,7 +64,7 @@ The first SVM results include a bilingual paired-bar accuracy chart comparing th
 
 The current research plan focuses on reconstructing and evaluating iEnhancer-2L and then connects its predictions to lentiMPRA measurements. The bilingual site explains that HepG2, K562, and WTC11 were chosen because Agarwal, Inoue et al. (Nature, 2025; DOI 10.1038/s41586-024-08430-9) tested the same DNA library in all three. Home, Research, Results, Methods, Publications, Resources, the current notice above the historical strategy, and glossary explanations distinguish this planned comparison from completed reconstruction results. The paper is linked directly, with its full citation, a free full-text alternative, and routes to the joint-library supplementary tables and three ENCODE experiments. A dated Research Notes entry records this clarification. The original papers L01–L04 include repository PDF links and shared benchmark links. Resources includes the supplied FASTA/representation files, S1/S2, and a derived sequence-label crosswalk. `data/original_publications_review.json` preserves review hashes and findings; `data/legacy_sequence_labels.tsv` is a lookup, not an independent split. The original materials are separate from the 109-resource new-data manifest.
 
-The foundational report retains its original date and scope, with a notice linking to the current goal. Later QC observations live in Research Notes. Local findings are not presented as new biological results. Dataset counts include publications, supplements, code, and model archives. Large datasets, downloaded PDFs, and model weights are excluded from the website; links lead to source publications and study guides.
+The foundational report retains its original date and scope, with a notice linking to the current goal. Later QC observations live in Research Notes. Local findings are not presented as new biological results. Dataset counts include publications, supplements, code, and model archives. Large datasets and downloaded PDFs are excluded from the website; links lead to source publications and study guides. The browser predictor includes a compressed export of the two frozen primary SVM models.
 
 The English/Spanish switch occupies the top-left utility bar and links to the same page in the other language. Spanish pages live under `docs/es/`; navigation stays in the chosen language. JavaScript preserves section anchors when switching, without redirecting shared URLs or requiring cookies. Both languages remain fully readable and switchable without JavaScript; JavaScript also adds the compact mobile menu and localized publication search/filtering. Resource sections use native HTML disclosure controls. The layout includes keyboard focus styles, a skip link, reduced-motion support, and print styles.
 
@@ -54,7 +74,7 @@ External source links open in a new tab, including references generated inside g
 
 ## Checks
 
-`site-checks.yml` rebuilds and validates all eighteen pages, every local link/fragment, language-switch destinations, language metadata, portable asset paths, JSON, and inventory counts. It verifies that the report translation retains the original section anchors, citations, tables, paragraphs, and numerical facts. It also checks glossary translation completeness, reference IDs, term destinations, and safe annotation of prose, and verifies that committed generated pages match the source.
+`site-checks.yml` rebuilds and validates all 22 pages, every local link/fragment, language-switch destinations, language metadata, portable asset paths, JSON, and inventory counts. It verifies that the report translation retains the original section anchors, citations, tables, paragraphs, and numerical facts. It also checks glossary translation completeness, reference IDs, term destinations, and safe annotation of prose, verifies that committed generated pages match the source, and checks browser predictor parity against the frozen Python models.
 
 For browser smoke tests, install Playwright in a development environment, start the preview server, and run `node website/tests/browser.cjs`. Repeat with `SITE_URL=http://127.0.0.1:8766/es/` for Spanish. The test accepts `SITE_URL` (default `http://127.0.0.1:8766/`), `CHROME_PATH` (optional installed Chromium executable), and `SCREENSHOT_DIR` (optional screenshot directory). Browser tests cover desktop/mobile overflow, scripts, navigation, localized search/filtering, resource disclosures, report anchors, keyboard behavior, and switching languages with and without JavaScript.
 

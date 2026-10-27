@@ -1,0 +1,34 @@
+<link rel="stylesheet" href="../assets/predictor.css">
+<section class="predictor-intro">
+<div><p class="eyebrow">Nuestra reconstrucción de iEnhancer-2L</p><h2>De una secuencia de ADN a una predicción</h2><p class="lead">Pega tus secuencias o elige un archivo FASTA. El modelo guardado predice <strong>no potenciador</strong>, <strong>potenciador débil</strong> o <strong>potenciador fuerte</strong> para cada fragmento de 200 bases.</p></div>
+<aside class="predictor-privacy"><span aria-hidden="true">↳</span><strong>Se ejecuta en tu dispositivo</strong><p>Tu entrada permanece en el navegador. El modelo se descarga al ejecutar la primera predicción; esta herramienta no envía ni almacena tus secuencias.</p></aside>
+</section>
+<div class="predictor-app" data-predictor>
+<form class="predictor-input-panel">
+<fieldset disabled><legend><span class="predictor-step">01</span> Añade tus secuencias</legend>
+<p id="prediction-help">Formato FASTA: una línea <code>&gt;identificador</code> seguida de ADN. Cada secuencia debe tener exactamente <strong>200 bases A/C/G/T</strong>. Se aceptan minúsculas y secuencias divididas en varias líneas. Hasta 1,000 secuencias y 1 MiB por ejecución.</p>
+<div class="predictor-example-actions"><button type="button" data-example="3">Cargar 3 ejemplos</button><button type="button" data-example="200">Cargar la comparación de 200 secuencias</button></div>
+<label for="prediction-input">Secuencias FASTA</label>
+<textarea id="prediction-input" rows="10" spellcheck="false" autocomplete="off" autocapitalize="off" aria-describedby="prediction-help" placeholder="&gt;secuencia_1&#10;Pega aquí la secuencia de ADN de 200 bases"></textarea>
+<div class="predictor-file-row"><div><label for="prediction-file">O elige un archivo FASTA</label><input id="prediction-file" type="file" accept=".fasta,.fa,.fna,.txt,text/plain"></div><button type="button" data-clear>Borrar entrada</button></div>
+<div class="predictor-run-row"><button type="submit" class="predictor-run">Ejecutar predicciones <span aria-hidden="true">→</span></button><span>Los modelos originales guardados · sin reentrenamiento</span></div>
+</fieldset>
+<button type="button" class="predictor-cancel" data-cancel hidden>Cancelar</button>
+<p data-status role="status" aria-live="polite">Se necesita JavaScript para ejecutar predicciones. Si los controles siguen desactivados, recarga la página en un navegador actual.</p>
+<progress aria-label="Progreso de las predicciones" max="100" value="0" hidden></progress>
+<p class="predictor-error" data-error role="alert" hidden></p>
+<noscript><p>Puedes descargar los <a href="data/ienhancer_2l_server_200_comparison.csv">resultados guardados de la comparación</a> o usar las <a href="methods.html#server-200-replay">instrucciones de predicción con Python</a>.</p></noscript>
+</form>
+<section class="predictor-results" data-results hidden aria-labelledby="prediction-results-title">
+<div class="predictor-results-heading"><h2 id="prediction-results-title" tabindex="-1"><span class="predictor-step">02</span> Tus predicciones</h2><a class="predictor-download" data-download download="ienhancer-predictions.csv">Descargar resultados (CSV) ↓</a></div>
+<div class="predictor-counts"><div><strong data-total>0</strong><span>Secuencias</span></div><div><strong data-count="strong">0</strong><span>Potenciadores fuertes</span></div><div><strong data-count="weak">0</strong><span>Potenciadores débiles</span></div><div><strong data-count="non-enhancer">0</strong><span>No potenciadores</span></div></div>
+<div class="predictor-comparison" data-comparison hidden><h3>La comparación original de 200 secuencias</h3><p>Estas entradas coinciden con el conjunto guardado, secuencia por secuencia.</p><dl><div><dt>Navegador / etiquetas guardadas de Python</dt><dd data-python-agreement></dd></div><div><dt>Navegador / etiquetas guardadas de los autores</dt><dd data-author-agreement></dd></div></dl><p>Se utilizan las respuestas de los autores guardadas el 19 de octubre de 2026. No se envían nuevas solicitudes a su servidor. La coincidencia mide predicciones iguales, no exactitud respecto a actividad experimental.</p><label class="predictor-filter"><input type="checkbox" data-differences> Mostrar solo diferencias con los resultados guardados de los autores</label></div>
+<p class="predictor-score-note">Las puntuaciones son valores de decisión SVM con signo: por encima de cero favorecen potenciador en la etapa I y fuerte en la etapa II. Un guion indica que no se aplicó la etapa II. No son probabilidades ni actividad medida; las decisiones cercanas a cero pueden ser sensibles a diferencias numéricas.</p>
+<p data-row-count class="small-note"></p>
+<div class="table-scroll predictor-table" tabindex="0" role="region" aria-label="Resultados de predicción de secuencias"><table><caption>Predicciones de la entrada anterior</caption><thead><tr><th scope="col">#</th><th scope="col">ID de secuencia</th><th scope="col">Nuestra predicción</th><th scope="col">Puntuación I</th><th scope="col">Puntuación II</th><th scope="col" data-reference-heading hidden>Predicción guardada de los autores</th><th scope="col" data-reference-heading hidden>Coincidencia</th></tr></thead><tbody></tbody></table></div>
+<p class="small-note">Versión del modelo: <code data-model-version></code>. El CSV conserva la precisión numérica completa; la tabla redondea a ocho decimales. Los hashes de secuencia identifican las entradas exactas.</p>
+</section>
+</div>
+<section class="predictor-context"><h2>Qué te indica esta herramienta</h2><p>Esta es nuestra implementación de iEnhancer-2L, con los modelos principales entrenados el 13 de octubre de 2026. Sus etiquetas describen el conjunto histórico de potenciadores. Las predicciones no establecen actividad en HepG2, K562, WTC11 u otro tipo celular. El servidor de los autores originales puede devolver etiquetas diferentes.</p><p>El navegador calcula cada predicción a partir de los pesos guardados. Los resultados de ejemplo se usan solo para comparar después de la predicción. Se rechazan secuencias de más o menos de 200 bases; elige y documenta cualquier ventana genómica antes de enviarla al predictor.</p><p><a href="reproduce.html#server-comparison">Leer la comparación original de 200 secuencias →</a> · <a href="reproduce.html#training-results">Resultados de entrenamiento y evaluación →</a> · <a href="data/predictor_validation.json">Validación del software</a> · <a href="data/predictor_manifest.json">Procedencia del modelo</a> · <a href="https://github.com/Venettov/EnhancersResearch/blob/main/website/tools/export_predictor.py">Exportación del modelo para el navegador</a></p></section>
+<script src="../assets/predictor-engine.js" defer></script>
+<script src="../assets/predictor.js" defer></script>

@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Validate the deployable site, including project-subpath links and report anchors."""
 import json
+import gzip
+import hashlib
 import re
 import sys
 from collections import Counter
@@ -57,7 +59,7 @@ class Document(HTMLParser):
 
 
 documents = {path.resolve(): Document(path) for path in ROOT.rglob("*.html")}
-assert len(documents) == 20, "Expected ten pages in both languages"
+assert len(documents) == 22, "Expected eleven pages in both languages"
 for path, document in documents.items():
     if len(document.headings) != 1 or document.main != 1 or document.current != 1:
         errors.append(f"{path.name}: expected one h1, main, and current navigation item")
@@ -87,7 +89,7 @@ for path, document in documents.items():
 for path in ROOT.rglob("*"):
     if path.is_file() and path.name != ".DS_Store":
         # Media assets do not contain website text or portable links.
-        if path.suffix.lower() in {".gif", ".jpg", ".mp4"}:
+        if path.suffix.lower() in {".gif", ".jpg", ".mp4", ".gz"}:
             continue
         content = path.read_text()
         if re.search(r"file://|/Users/|/home/|localhost:|127\.0\.0\.1:", content):
@@ -96,6 +98,17 @@ for path in ROOT.rglob("*"):
             json.loads(content)
 
 source = json.loads((ROOT.parent / "website/content.json").read_text())
+predictor_manifest = json.loads((ROOT / "data/predictor_manifest.json").read_text())
+model_bytes = (ROOT / "data" / predictor_manifest["file"]).read_bytes()
+assert hashlib.sha256(model_bytes).hexdigest() == predictor_manifest["sha256"], "Predictor package hash"
+predictor_model = json.loads(gzip.decompress(model_bytes))
+assert predictor_model["version"] == predictor_manifest["version"]
+assert len(predictor_model["layers"]) == 2 and len(predictor_model["properties"]) == 16
+predictor_validation = json.loads((ROOT / "data/predictor_validation.json").read_text())
+assert predictor_validation["model_sha256"] == predictor_manifest["sha256"], "Validation belongs to another model"
+assert hashlib.sha256((ROOT / "assets/predictor-engine.js").read_bytes()).hexdigest() == predictor_validation["browser_engine_sha256"]
+for filename, expected in predictor_manifest["source_models"].items():
+    assert hashlib.sha256((ROOT.parent / filename).read_bytes()).hexdigest() == expected
 assert len(source["publications"]) == 12
 assert {item["id"] for item in source["publications"] if item["id"].startswith("L")} == {"L01", "L02", "L03", "L04"}
 assert len(source["resources"]) == 7
@@ -167,4 +180,4 @@ numbers = lambda doc: Counter(re.findall(r"\d+(?:[.,]\d+)*", " ".join(doc.text))
 assert numbers(english_report) == numbers(spanish_report), "Report numerical facts differ between languages"
 if errors:
     raise SystemExit("\n".join(errors))
-print(f"PASS: 20 localized pages; 12 publications; {len(term_ids)} sourced bilingual explanations; safe annotation; links, fragments, language switches, collections, and report structure/numerical parity")
+print(f"PASS: {len(documents)} localized pages; 12 publications; {len(term_ids)} sourced bilingual explanations; safe annotation; links, fragments, language switches, collections, and report structure/numerical parity")

@@ -52,6 +52,10 @@
       "Resultados",
       "Hallazgos de nuestra reconstrucción de iEnhancer-2L: los dos clasificadores SVM, comparaciones de características, limitaciones y la conexión propuesta con actividad medida de potenciadores."
     ],
+    "predictor": [
+      "Predictor",
+      "Pega o carga secuencias de ADN de 200 bases y ejecuta nuestra reconstrucción guardada de iEnhancer-2L en tu navegador."
+    ],
     "publications": [
       "Publicaciones",
       "iEnhancer-2L y su conexión experimental entre doce trabajos recopilados: cuatro artículos originales y ocho estudios más recientes."
