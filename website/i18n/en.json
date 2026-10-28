@@ -85,5 +85,9 @@
   "affiliation_campus": "Rutgers University–Camden",
   "student_research": "Student research at",
   "reproduction_guide": "Research results",
-  "technical_guide": "Technical guide"
+  "technical_guide": "Technical guide",
+  "footer_researcher_label": "Student researcher",
+  "footer_researcher_name": "Jose Andres Riveraruiz",
+  "footer_advisor_label": "Advisor",
+  "footer_advisor_name": "Dr. Iman Dehzangi"
 }

@@ -196,3 +196,4 @@ a.term-link:hover{background:#dceee8;color:#153c45!important;text-decoration-sty
 .diagram-scroll-hint{display:none;margin:0!important;padding:12px 18px;background:var(--mint);font-size:12px!important}
 @media(max-width:1000px){.diagram-scroll-hint{display:block}}
 @media(max-width:760px){.paper-flow-visual{min-width:521px}}
+.footer-credits{margin:20px 0 0;font-size:12px;line-height:1.7}.footer-credits>div{display:flex;flex-wrap:wrap;gap:0 6px}.footer-credits>div+div{margin-top:5px}.footer-credits dt{color:#b2ccca}.footer-credits dd{margin:0;color:#fff;font-weight:600}
