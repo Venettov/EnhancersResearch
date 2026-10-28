@@ -1,5 +1,7 @@
 # iEnhancer-2L reproduction workspace
 
+**Independent evaluation design · 20 October 2026:** [readable report](../../reports/04_ienhancer_2l_independent_evaluation.md) · [protocol and local readiness audit](independent_evaluation/README.md). The existing primary layer-I model is fixed for a proposed external VISTA assay test before the separate lentiMPRA comparison. Cohort independence remains unverified; this planning stage generates no external predictions and changes no models or historical results.
+
 Step-by-step technical guide, software/data-flow diagram, and code-folder map: [English](https://venettov.github.io/EnhancersResearch/methods.html) · [Español](https://venettov.github.io/EnhancersResearch/es/methods.html). Research findings: [English](https://venettov.github.io/EnhancersResearch/reproduce.html) · [Español](https://venettov.github.io/EnhancersResearch/es/reproduce.html).
 
 Data preparation, grouped evaluation, PseKNC features and **both trained RBF SVM classifiers** are implemented. The first nested evaluation is complete. Counting ambiguities, missing original SVM settings and a different evaluation design still prevent a claim of exact author-code or published-performance reproduction.

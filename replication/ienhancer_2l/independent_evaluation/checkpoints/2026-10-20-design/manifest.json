@@ -1,0 +1,7 @@
+{
+  "protocol_id": "ienhancer-2l-independent-vista-v1",
+  "files_sha256": {
+    "protocol.json": "2cb3d82c22aec9ec1a28c4fd6188b9dd7622d9d56062a7ced5acf4521053ef4b",
+    "readiness.json": "853da26546d1cfc905b90dacd15af631d2d2f8d9789b76bfe66bef5f9d95931f"
+  }
+}

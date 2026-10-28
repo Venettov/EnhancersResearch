@@ -36,6 +36,18 @@
 
 **Evaluation boundary:** do not certify performance with the contaminated test or equate historical strong/weak annotations with reporter activity. Define independent sequence/locus groups and keep tuning separate from final testing. No new model architecture or biological discovery is assumed.
 
+## 2026-10-20 · Define independent evaluation of iEnhancer-2L
+
+**User direction:** define an independent evaluation before comparing predictions with HepG2, K562 and WTC11 activity; keep all work local without pushing.
+
+**Design:** [report 04](04_ienhancer_2l_independent_evaluation.md) and its [protocol](../replication/ienhancer_2l/independent_evaluation/protocol.json) fix the original saved primary layer-I SVM for an external VISTA e11.5 hZR assay evaluation. Layer II stays preserved but is not evaluated against active/inactive labels. The candidate source was previously inspected for the archived MCSE plan; this is disclosed, and its preliminary manifest is not certified or silently adopted for iEnhancer-2L.
+
+**Separation:** exclude all legacy data, prior author-example/server probes and their related families. Verify reference assemblies, exact/near similarity, connected components and label lineage. Reserve the full later S10 design library from the earlier assay cohort. The 1,000-base and 40-edit rules reduce specified leakage risks without proving complete biological independence.
+
+**Reporting:** one maximum layer-I score per experimental fragment from fixed 200-base windows at stride 50, ROC AUC as primary, family bootstrap uncertainty, unchanged zero cutoff, and descriptive length/GC controls. Freeze membership and predictions before joining experimental answers. No result-driven model or aggregation changes.
+
+**Current state:** source/model integrity checked in a separate readiness audit; cohort screening and external-runner validation remain pending. No fitting, external predictions, website edits or pushes in this planning step. The later lentiMPRA processing and exact association protocol remain separate prerequisites.
+
 ## Template for the next entry
 
 - Date and question:

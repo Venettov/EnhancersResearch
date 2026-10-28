@@ -4,6 +4,8 @@ This folder holds readable summaries, research strategies, analysis results, and
 
 ## Start here
 
+- [Independent evaluation of the iEnhancer-2L reconstruction](04_ienhancer_2l_independent_evaluation.md) — 20 October 2026: fixed saved model, proposed VISTA assay cohort, prior-exposure exclusions, family and reference checks, metrics, and the separate three-cell handoff. [HTML reading copy](04_ienhancer_2l_independent_evaluation.html). The design is defined; cohort independence is not verified and no external evaluation has run.
+
 - [Original enhancer publications and replication plan](03_original_publications_replication_plan.md) — 12 October 2026: feasibility for all four original methods, recovered strong/weak labels, publisher and public-code test overlap, and connections to all seven new resource groups. [HTML reading copy](03_original_publications_replication_plan.html) · [Computed evidence](assets/2026-10-12_original_publications_review.json) · [Sequence-label crosswalk](assets/2026-10-12_original_publications_review_sequence_labels.tsv).
 
 - [Workspace audit and data quality](02_workspace_audit_and_qc.md) — completed 11 October 2026: legacy test-set overlap, duplicated ENCODE measurements, joint-library membership, unresolved specificity scores, and file/code readiness. [HTML reading copy](02_workspace_audit_and_qc.html) · [Computed evidence](assets/2026-10-11_workspace_audit.json) · [Audit script](assets/audit_workspace.py).
@@ -28,7 +30,7 @@ A fresh full execution reproduced every non-metadata section of the 11 October a
 
 ## Current stage and next deliverable
 
-Reports 02 and 03 are complete; model training, numerical specificity-score reproduction, and an end-to-end research pipeline are not. The current goal is to reconstruct iEnhancer-2L first and then link its predictions to new lentiMPRA measurements. A documented import, reviewed control-name mapping, and reproduced normalization/aggregation are prerequisites for that experimental comparison and can proceed alongside reconstruction. The contaminated legacy test cannot certify independent performance. See the [decision log](decisions.md) and [live review](https://venettov.github.io/EnhancersResearch/notes.html#replication-review).
+As of 20 October 2026, the iEnhancer-2L reconstruction, both saved SVMs, grouped evaluations, feature comparisons, and author-server checks are complete. Report 04 defines a separate external evaluation using the fixed layer-I model; its cohort and execution checks remain pending. Numerical specificity-score reproduction and an end-to-end experimental-transfer pipeline remain unresolved. A documented import, reviewed control-name mapping, and reproduced normalization/aggregation are prerequisites for the later lentiMPRA comparison. The contaminated legacy test cannot certify independent performance. Reports 02 and 03 retain their historical findings and dates; see the [decision log](decisions.md).
 
 The reports preserve the status at their stated dates. Original paper links replace machine-specific download paths in report 01; the bilingual [website reading edition](https://venettov.github.io/EnhancersResearch/strategy.html) is also available.
 

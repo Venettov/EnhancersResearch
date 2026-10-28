@@ -1,0 +1,141 @@
+{
+  "organized_on": "2026-10-19",
+  "timezone": "America/New_York",
+  "recorded_utc": "2026-10-20T01:00:12.758784+00:00",
+  "purpose": "Reading copies and drop folders for original publications. Existing analysis input paths are retained.",
+  "folders": {
+    "iEnhancer-2L": {
+      "paper": "iEnhancer-2L: a two-layer predictor for identifying enhancers and their strength by pseudo k-tuple nucleotide composition",
+      "doi": "10.1093/bioinformatics/btv604",
+      "code": "replication/ienhancer_2l/",
+      "note": "PAPERS contains the original paper; SUPPLEMENTARY contains S1 sequences, S2 property tables, and the original supplement ZIP."
+    },
+    "MCSE-Enhancer": {
+      "paper": "Improving Enhancer Identification with a Multi-Classifier Stacked Ensemble Model",
+      "doi": "10.1016/j.jmb.2023.168314",
+      "code": "replication/mcse_enhancer/",
+      "note": "The newly attached mmc1 PDF is a supplement to this paper, rather than iEnhancer-2L."
+    },
+    "ScienceDirect_batch": {
+      "note": "Mixed Journal of Molecular Biology download containing 12 PDFs, including the MCSE paper, other articles, a cover, and editorial material. It is not an iEnhancer-2L supplement archive."
+    }
+  },
+  "file_count": 19,
+  "files": [
+    {
+      "path": "PUBLICATION_FILES/iEnhancer-2L/PAPERS/bioinformatics_32_3_362.pdf",
+      "origin": "repository/bioinformatics_32_3_362.pdf",
+      "bytes": 499594,
+      "sha256": "f3dbd8de78fba62a68c2557f7c7cf39018b46374e1de0d63deeda9e7238ce4e5"
+    },
+    {
+      "path": "PUBLICATION_FILES/iEnhancer-2L/SUPPLEMENTARY/Supp-S1.pdf",
+      "origin": "repository/bioinformatics_32_3_362_s1/Supp-S1.pdf",
+      "bytes": 912261,
+      "sha256": "3d08c8f3c13228bb29b21d56e2801181e4d144564ab34c62af55cbb7a6c89684"
+    },
+    {
+      "path": "PUBLICATION_FILES/iEnhancer-2L/SUPPLEMENTARY/Supp-S2.pdf",
+      "origin": "repository/bioinformatics_32_3_362_s1/Supp-S2.pdf",
+      "bytes": 238637,
+      "sha256": "db35bbfba8a3d0a376a2b86cd2c13babfe6bf042ef0776726e11705dd112131f"
+    },
+    {
+      "path": "PUBLICATION_FILES/iEnhancer-2L/SUPPLEMENTARY/bioinformatics_32_3_362_s1.zip",
+      "origin": "repository/bioinformatics_32_3_362_s1.zip",
+      "bytes": 1151116,
+      "sha256": "094191185ddb90aaab2b74e72b2991fa0ff22d5819b2d68783d0dca27ade9b63"
+    },
+    {
+      "path": "PUBLICATION_FILES/MCSE-Enhancer/PAPERS/1-s2.0-S0022283623004254-main.pdf",
+      "origin": "repository/1-s2.0-S0022283623004254-main.pdf",
+      "bytes": 1377316,
+      "sha256": "14ea5e6e460cdaf293df1b8b8dd541b86503ddf2a15caf56e5d0cf4168e58dff"
+    },
+    {
+      "path": "PUBLICATION_FILES/MCSE-Enhancer/SUPPLEMENTARY/1-s2.0-S0022283623004254-mmc1.pdf",
+      "origin": "Downloads/1-s2.0-S0022283623004254-mmc1.pdf",
+      "bytes": 415280,
+      "sha256": "58fa4336c2a91566f7cf7316bd46c9f24bf049853349960a631d330ca356e8cc"
+    },
+    {
+      "path": "PUBLICATION_FILES/ScienceDirect_batch/ARCHIVES/ScienceDirect_articles_15Oct2026_00-06-05.960.zip",
+      "origin": "Downloads/ScienceDirect_articles_15Oct2026_00-06-05.960.zip",
+      "bytes": 34568677,
+      "sha256": "2d04d3630d32e62e2631014cd6628c98cce548717ac641851d38524e885df8b8"
+    },
+    {
+      "path": "PUBLICATION_FILES/ScienceDirect_batch/EXTRACTED/Activation-Loop-Plasticity-and-Active-Site-Coupling_2023_Journal-of-Molecula.pdf",
+      "origin": "ScienceDirect_batch/ARCHIVES/ScienceDirect_articles_15Oct2026_00-06-05.960.zip::Activation-Loop-Plasticity-and-Active-Site-Coupling_2023_Journal-of-Molecula.pdf",
+      "bytes": 21355989,
+      "sha256": "4495be6762d251a7cb6f099f3aa613b6f6eed552f5154c0e0ba1c5423b88a050"
+    },
+    {
+      "path": "PUBLICATION_FILES/ScienceDirect_batch/EXTRACTED/Functional-GPCR-Expression-in-Eukaryotic-LEXSY_2023_Journal-of-Molecular-Bio.pdf",
+      "origin": "ScienceDirect_batch/ARCHIVES/ScienceDirect_articles_15Oct2026_00-06-05.960.zip::Functional-GPCR-Expression-in-Eukaryotic-LEXSY_2023_Journal-of-Molecular-Bio.pdf",
+      "bytes": 2204764,
+      "sha256": "d4b161a6fd30f84ff20b89091cb80fc7fd3188f8de3a45a446a2fc2274478d50"
+    },
+    {
+      "path": "PUBLICATION_FILES/ScienceDirect_batch/EXTRACTED/Corrigendum-to--PARP-Activity-Fine-tunes-the-DNA-Replicati_2023_Journal-of-M.pdf",
+      "origin": "ScienceDirect_batch/ARCHIVES/ScienceDirect_articles_15Oct2026_00-06-05.960.zip::Corrigendum-to--PARP-Activity-Fine-tunes-the-DNA-Replicati_2023_Journal-of-M.pdf",
+      "bytes": 731212,
+      "sha256": "780ada9f6d0c24d4a065415baf9b54363a77adfb0e76a614f6d62ed5a47702d6"
+    },
+    {
+      "path": "PUBLICATION_FILES/ScienceDirect_batch/EXTRACTED/DNA-Vaccines--History--Molecular-Mechanisms-and-Fu_2023_Journal-of-Molecular.pdf",
+      "origin": "ScienceDirect_batch/ARCHIVES/ScienceDirect_articles_15Oct2026_00-06-05.960.zip::DNA-Vaccines--History--Molecular-Mechanisms-and-Fu_2023_Journal-of-Molecular.pdf",
+      "bytes": 1136264,
+      "sha256": "1a5734b6cbcf611021712f4bc2fec02b6d9b50f6d5f86ef5d0f2681cccdbbdeb"
+    },
+    {
+      "path": "PUBLICATION_FILES/ScienceDirect_batch/EXTRACTED/FDX1-Is-Required-for-the-Biogenesis-of-Mitochondrial-C_2023_Journal-of-Molec.pdf",
+      "origin": "ScienceDirect_batch/ARCHIVES/ScienceDirect_articles_15Oct2026_00-06-05.960.zip::FDX1-Is-Required-for-the-Biogenesis-of-Mitochondrial-C_2023_Journal-of-Molec.pdf",
+      "bytes": 1815267,
+      "sha256": "8018e0c2bc3075fcfcc14defb2fc647aae78e81c1108ed0e2339d8598fdc961b"
+    },
+    {
+      "path": "PUBLICATION_FILES/ScienceDirect_batch/EXTRACTED/Structural-and-Dynamic-Changes-of-Nucleosome-upon_2023_Journal-of-Molecular-.pdf",
+      "origin": "ScienceDirect_batch/ARCHIVES/ScienceDirect_articles_15Oct2026_00-06-05.960.zip::Structural-and-Dynamic-Changes-of-Nucleosome-upon_2023_Journal-of-Molecular-.pdf",
+      "bytes": 1230772,
+      "sha256": "df9d117a2e6561a4cfd359d686d5d865b13f6974b9111f7a0e60eb49d79a8fe7"
+    },
+    {
+      "path": "PUBLICATION_FILES/ScienceDirect_batch/EXTRACTED/YY1-Binding-to-Regulatory-Elements-That-Lack-Enhancer-Ac_2023_Journal-of-Mol.pdf",
+      "origin": "ScienceDirect_batch/ARCHIVES/ScienceDirect_articles_15Oct2026_00-06-05.960.zip::YY1-Binding-to-Regulatory-Elements-That-Lack-Enhancer-Ac_2023_Journal-of-Mol.pdf",
+      "bytes": 2080187,
+      "sha256": "5676fc5533a856fe8f37a346f4a6b5dbb4f5b66ea1084da296019e2ae7ecd9bf"
+    },
+    {
+      "path": "PUBLICATION_FILES/ScienceDirect_batch/EXTRACTED/Improving-Enhancer-Identification-with-a-Multi-Class_2023_Journal-of-Molecul.pdf",
+      "origin": "ScienceDirect_batch/ARCHIVES/ScienceDirect_articles_15Oct2026_00-06-05.960.zip::Improving-Enhancer-Identification-with-a-Multi-Class_2023_Journal-of-Molecul.pdf",
+      "bytes": 1421416,
+      "sha256": "a25330353a7533cde54f3cc0ce6e3b1ad6f9d313cbdd788d2750851249e2c5d1"
+    },
+    {
+      "path": "PUBLICATION_FILES/ScienceDirect_batch/EXTRACTED/Editorial-Board_2023_Journal-of-Molecular-Biology.pdf",
+      "origin": "ScienceDirect_batch/ARCHIVES/ScienceDirect_articles_15Oct2026_00-06-05.960.zip::Editorial-Board_2023_Journal-of-Molecular-Biology.pdf",
+      "bytes": 407860,
+      "sha256": "3f38f90dcdfc47007659f2d53d9f2593b608d025b5747db0f46dd8bb02b4f27a"
+    },
+    {
+      "path": "PUBLICATION_FILES/ScienceDirect_batch/EXTRACTED/Assembly-dependent-Structure-Formation-Shapes-Human-Int_2023_Journal-of-Mole.pdf",
+      "origin": "ScienceDirect_batch/ARCHIVES/ScienceDirect_articles_15Oct2026_00-06-05.960.zip::Assembly-dependent-Structure-Formation-Shapes-Human-Int_2023_Journal-of-Mole.pdf",
+      "bytes": 3286927,
+      "sha256": "224bd0a78bc464cf5de3033bd1243998585ba33bb94e5f894832aea282f5ad6d"
+    },
+    {
+      "path": "PUBLICATION_FILES/ScienceDirect_batch/EXTRACTED/Outside-Front-Cover_2023_Journal-of-Molecular-Biology.pdf",
+      "origin": "ScienceDirect_batch/ARCHIVES/ScienceDirect_articles_15Oct2026_00-06-05.960.zip::Outside-Front-Cover_2023_Journal-of-Molecular-Biology.pdf",
+      "bytes": 902114,
+      "sha256": "b82136311e38e2da9506a9346cfc55243b61a1ccc1f8b345d8beddb6942d2413"
+    },
+    {
+      "path": "PUBLICATION_FILES/ScienceDirect_batch/EXTRACTED/Cellular-Assays-for-Dynamic-Quantification-of-Deubiqu_2023_Journal-of-Molecu.pdf",
+      "origin": "ScienceDirect_batch/ARCHIVES/ScienceDirect_articles_15Oct2026_00-06-05.960.zip::Cellular-Assays-for-Dynamic-Quantification-of-Deubiqu_2023_Journal-of-Molecu.pdf",
+      "bytes": 3679234,
+      "sha256": "2031fc800aa184e1ca9e11430ec2d85e0a26ec86f8e2fed744d28e5c5e553c1f"
+    }
+  ],
+  "git_status": "PDF and ZIP copies follow the existing .gitignore rules; they are local reading copies."
+}
