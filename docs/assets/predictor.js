@@ -18,7 +18,10 @@
   const body = app.querySelector('tbody');
   const comparison = app.querySelector('[data-comparison]');
   const differenceFilter = app.querySelector('[data-differences]');
-  let worker = null, aborter = null, epoch = 0, lastRows = [], version = '', references = null, downloadUrl;
+  const search = app.querySelector('[data-result-search]');
+  const classFilter = app.querySelector('[data-class-filter]');
+  const sort = app.querySelector('[data-score-sort]');
+  let worker = null, aborter = null, epoch = 0, lastRows = [], version = '', references = null, downloadUrl, reportUrl;
   const className = value => ({strong: tr('Strong enhancer', 'Potenciador fuerte'),
     weak: tr('Weak enhancer', 'Potenciador débil'), 'non-enhancer': tr('Non-enhancer', 'No potenciador')})[value];
   const messages = {
@@ -44,7 +47,11 @@
   function discardResults() {
     results.hidden = true; comparison.hidden = true; lastRows = []; references = null;
     differenceFilter.checked = false;
+    search.value = ''; classFilter.value = 'all'; sort.value = 'input';
     if (downloadUrl) { URL.revokeObjectURL(downloadUrl); downloadUrl = null; }
+    if (reportUrl) { URL.revokeObjectURL(reportUrl); reportUrl = null; }
+    app.querySelector('[data-download]').removeAttribute('href');
+    app.querySelector('[data-report]').removeAttribute('href');
   }
   function fail(code, detail = {}) {
     busy(false); discardResults();
@@ -99,7 +106,20 @@
   });
   function renderRows() {
     body.replaceChildren();
-    const rows = lastRows.filter((row, i) => !differenceFilter.checked || row.predicted_class !== references[i].server_class);
+    const query = search.value.trim().toLocaleLowerCase();
+    const rows = lastRows.filter((row, i) =>
+      (!differenceFilter.checked || !references || row.predicted_class !== references[i].server_class) &&
+      (classFilter.value === 'all' || row.predicted_class === classFilter.value) &&
+      row.header.toLocaleLowerCase().includes(query));
+    if (sort.value !== 'input') {
+      const [layer,direction] = sort.value.split('-');
+      const field = layer === 'layer1' ? 'enhancer_decision_score' : 'strength_decision_score';
+      rows.sort((a,b) => {
+        // Missing strength scores remain last in either direction; ties keep input order.
+        if (a[field] === null || b[field] === null) return a[field] === b[field] ? a.row_1_based-b.row_1_based : a[field] === null ? 1 : -1;
+        return (direction === 'asc' ? a[field]-b[field] : b[field]-a[field]) || a.row_1_based-b.row_1_based;
+      });
+    }
     const fragment = document.createDocumentFragment();
     for (const row of rows) {
       const index = row.row_1_based - 1;
@@ -122,10 +142,17 @@
       fragment.append(trElement);
     }
     body.append(fragment);
+    app.querySelector('[data-no-matches]').hidden = rows.length > 0;
     app.querySelector('[data-row-count]').textContent = tr(`Showing ${rows.length} of ${lastRows.length} predictions.`, `Se muestran ${rows.length} de ${lastRows.length} predicciones.`);
     app.querySelectorAll('[data-reference-heading]').forEach(el => { el.hidden = !references; });
   }
   differenceFilter.addEventListener('change', renderRows);
+  search.addEventListener('input', renderRows);
+  classFilter.addEventListener('change', renderRows);
+  sort.addEventListener('change', renderRows);
+  app.querySelector('[data-reset-filters]').addEventListener('click', () => {
+    search.value = ''; classFilter.value = 'all'; sort.value = 'input'; differenceFilter.checked = false; renderRows();
+  });
   async function finish(message, current) {
     let reference = null, referenceUnavailable = false;
     if (message.rows.length === 200) {
@@ -141,6 +168,11 @@
     const counts = { strong: 0, weak: 0, 'non-enhancer': 0 };
     lastRows.forEach(row => counts[row.predicted_class]++);
     for (const key of Object.keys(counts)) app.querySelector(`[data-count="${key}"]`).textContent = counts[key];
+    for (const key of Object.keys(counts)) {
+      const percent = 100 * counts[key] / lastRows.length;
+      app.querySelector(`[data-bar="${key}"]`).style.width = `${percent}%`;
+      app.querySelector(`[data-bar-value="${key}"]`).textContent = `${counts[key]} (${percent.toFixed(1)}%)`;
+    }
     app.querySelector('[data-total]').textContent = lastRows.length;
     if (references) {
       const pythonMatches = lastRows.filter((row, i) => row.predicted_class === references[i].local_class).length;
@@ -153,6 +185,9 @@
     app.querySelector('[data-model-version]').textContent = version;
     downloadUrl = URL.createObjectURL(new Blob([EnhancerPredictor.toCsv(lastRows, version)], {type:'text/csv;charset=utf-8'}));
     app.querySelector('[data-download]').href = downloadUrl;
+    reportUrl = URL.createObjectURL(new Blob([EnhancerReport.create({rows:lastRows,version,references,
+      completedAt:new Date(),language:document.documentElement.lang})], {type:'text/html;charset=utf-8'}));
+    app.querySelector('[data-report]').href = reportUrl;
     results.hidden = false;
     status.textContent = tr(`Completed ${lastRows.length} predictions.`, `Se completaron ${lastRows.length} predicciones.`) +
       (referenceUnavailable ? tr(' Saved comparison data could not load; your predictions are available.', ' No se pudo cargar la comparación guardada; tus predicciones están disponibles.') : '');
@@ -185,6 +220,6 @@
   } else { controls.disabled = false; status.textContent = tr('Ready. Add sequences or load an example.', 'Listo. Añade secuencias o carga un ejemplo.'); }
   window.addEventListener('pagehide', event => {
     // A page in the back/forward cache keeps its worker and result download.
-    if (!event.persisted) { worker?.terminate(); if (downloadUrl) URL.revokeObjectURL(downloadUrl); }
+    if (!event.persisted) { worker?.terminate(); if (downloadUrl) URL.revokeObjectURL(downloadUrl); if (reportUrl) URL.revokeObjectURL(reportUrl); }
   });
 })();

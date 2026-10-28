@@ -32,6 +32,20 @@ node website/tests/predictor.cjs
 
 The parity check compares every exported weight and fixed property, feature vectors on 16 synthetic/edge inputs, and Python class/score outputs for those inputs plus the 200 frozen queries. It checks the preserved 192/200 author-server agreement, FASTA limits, and CSV safety. Browser checks cover both languages, five viewport widths, actual worker inference and downloads, invalid/duplicate/hostile identifiers, cancellation, load/integrity failures, and unavailable JavaScript/browser APIs. These verify software behavior and agreement, not biological accuracy. The site now builds 22 pages.
 
+## Research tools and current roadmap · 27 October 2026
+
+The bilingual Research page now links to the independent iEnhancer-2L protocol defined on 20 October and distinguishes its completed design from pending cohort checks and an unrun external evaluation. Home, Results, Methods, and a new dated Research Note reflect this status; the earlier MCSE protocol and historical notes remain archived records.
+
+Results includes a visual guide separating 200 bases per sequence, 2,968 benchmark records, and the 200 server-comparison queries. Five outer rounds illustrate approximately 80% training / 20% testing, with exact counts for both classifiers checked against the frozen summaries. The guide also separates inner tuning and final full-data model fitting.
+
+`assets/comparison.js` progressively enhances the saved three-class agreement table: select a cell, show all 200 records, or inspect the eight disagreements and saved scores. It reads the existing reference JSON, checks matrix counts before adding controls, and makes no requests to the authors' service. Static evidence and downloads remain available without JavaScript or when the reference file cannot load.
+
+The predictor supports case-insensitive identifier search, class filtering, both score-sort directions, reset, and a full-batch class chart. Missing layer-II values sort last; filters compose with the existing disagreement filter. Counts, CSV, and report downloads always describe the full input batch, not the visible subset. New input revokes old download URLs and resets the filters.
+
+`assets/prediction-report.js` creates a UTF-8, script-free HTML download with the completion time, model version, class counts, interpretation, all predictions, and sequence hashes. A saved-server comparison appears only for the verified original inputs. User text is inserted with DOM text nodes; a restrictive content policy blocks scripts and network resources. DNA sequences are not embedded. Open the report in a browser and print or save as PDF. The report works offline and uses print styles with repeating table headings.
+
+After the build and local preview, run `node website/tests/predictor.cjs` and `node website/tests/research-tools.cjs` with Playwright and Chromium available. Both accept `SITE_URL`, `CHROME_PATH`, and `SCREENSHOT_DIR`; they cover both languages, five screen widths, real model inference, filter/sort/export behavior, hostile identifiers, report encoding, exact fold counts, comparison cells, and failure/no-JavaScript fallbacks. These additions do not change model weights, features, thresholds, historical predictions, or scientific evaluation rules.
+
 ## Build and preview
 
 Requires Python 3.9 or later; no production dependencies, API keys, external fonts, analytics, or remote scripts.

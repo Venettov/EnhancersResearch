@@ -56,6 +56,46 @@ const waitDone = page => page.locator('[data-results]').waitFor({state:'visible'
     else assert.equal(cells[5],'');
    });assert(maxError<1e-6);
    await page.locator('[data-differences]').check();assert.equal(await page.locator('tbody tr').count(),8);
+   // Search, class filters, and sorting compose without changing the underlying batch.
+   await page.locator('[data-class-filter]').selectOption('weak');
+   assert.equal(await page.locator('tbody tr').count(),3);
+   await page.locator('[data-result-search]').fill('PROBE_0040');
+   assert.equal(await page.locator('tbody tr').count(),1);
+   assert.equal(await page.locator('tbody th').textContent(),'probe_0040');
+   await page.locator('[data-result-search]').fill('no-such-sequence');
+   assert.equal(await page.locator('tbody tr').count(),0);assert(await page.locator('[data-no-matches]').isVisible());
+   assert.equal(await page.locator('[data-bar-value="strong"]').textContent(),'78 (39.0%)');
+   assert.equal(await page.locator('[data-bar-value="weak"]').textContent(),'73 (36.5%)');
+   assert.equal(await page.locator('[data-bar-value="non-enhancer"]').textContent(),'49 (24.5%)');
+   // Export always contains every input, even when filters hide every row.
+   const reportWait=page.waitForEvent('download');await page.locator('[data-report]').click();
+   const reportDownload=await reportWait, reportHtml=fs.readFileSync(await reportDownload.path(),'utf8');
+   assert.equal(reportDownload.suggestedFilename(),'ienhancer-report.html');
+   const reportPage=await context.newPage();
+   await reportPage.route('**/report-preview.html',route=>route.fulfill({contentType:'text/html',body:reportHtml}));
+   await reportPage.goto(base+'report-preview.html');
+   assert.equal(await reportPage.evaluate(()=>document.characterSet),'UTF-8');
+   assert((await reportPage.locator('body').textContent()).includes(language==='es'?'Predicción guardada de los autores':'Authors’ saved prediction'));
+   assert.equal(await reportPage.locator('tbody tr').count(),200);
+   assert.equal(await reportPage.locator('tbody .hash').first().textContent(),reference[0].sequence_sha256);
+   assert((await reportPage.locator('body').textContent()).includes('192/200 (96.0%)'));
+   assert((await reportPage.locator('code').textContent()).includes('ienhancer-primary'));
+   assert.equal(await reportPage.locator('script,img,iframe').count(),0);
+   assert(!reportHtml.includes(sequence));
+   assert.equal(await reportPage.locator('html').getAttribute('lang'),language);
+   if(screenshots){await reportPage.emulateMedia({media:'print'});await reportPage.screenshot({path:path.join(screenshots,`prediction-report-${language}.png`)});}
+   await reportPage.close();
+   await page.locator('[data-reset-filters]').click();assert.equal(await page.locator('tbody tr').count(),200);
+   for(const value of ['layer1-desc','layer1-asc','layer2-desc','layer2-asc']){
+    await page.locator('[data-score-sort]').selectOption(value);
+    const column=value.startsWith('layer1')?4:5;
+    const values=await page.locator(`tbody td:nth-child(${column})`).allTextContents();
+    const numbers=values.filter(v=>v!=='—').map(Number), descending=value.endsWith('desc');
+    assert.equal(values.length,200);
+    numbers.slice(1).forEach((n,i)=>assert(descending?n<=numbers[i]:n>=numbers[i]));
+    if(column===5)assert(values.slice(numbers.length).every(v=>v==='—'));
+   }
+   await page.locator('[data-reset-filters]').click();await page.locator('[data-differences]').check();
    if(screenshots) for(const width of [1440,390]){
     await page.setViewportSize({width,height:1000});
     await page.locator('[data-results]').screenshot({path:path.join(screenshots,`predictor-${language}-results-${width}.png`)});
@@ -64,6 +104,7 @@ const waitDone = page => page.locator('[data-results]').waitFor({state:'visible'
    reports.push({language,sample:200,pythonMatches:200,savedAuthorMatches:192,maxScoreError:maxError,elapsedMs:Date.now()-started});
    await page.locator('textarea').fill('>invalid\nACGT');
    assert(await page.locator('[data-results]').isHidden());
+   assert.equal(await page.locator('[data-report]').getAttribute('href'),null);
    await page.locator('[type="submit"]').click();assert(await page.locator('[data-error]').isVisible());
    assert((await page.locator('[data-error]').textContent()).includes('200'));
    await page.locator('[data-example="3"]').click();
@@ -79,6 +120,16 @@ const waitDone = page => page.locator('[data-results]').waitFor({state:'visible'
    assert.equal(await page.locator('tbody tr').count(),2);assert.equal(await page.locator('tbody img').count(),0);
    assert.equal(await page.locator('tbody th').first().textContent(),header);
    assert(await page.locator('[data-comparison]').isHidden());
+   const unsafeWait=page.waitForEvent('download');await page.locator('[data-report]').click();
+   const unsafeHtml=fs.readFileSync(await (await unsafeWait).path(),'utf8');
+   const unsafeReport=await context.newPage();
+   await unsafeReport.route('**/report-preview.html',route=>route.fulfill({contentType:'text/html',body:unsafeHtml}));
+   await unsafeReport.goto(base+'report-preview.html');
+   assert.equal(await unsafeReport.locator('tbody tr').count(),2);
+   assert.equal(await unsafeReport.locator('img,script,iframe').count(),0);
+   assert((await unsafeReport.locator('tbody th').first().textContent()).startsWith(header));
+   assert(!(await unsafeReport.locator('body').textContent()).includes('192/200'));
+   await unsafeReport.close();
    // New arbitrary DNA must produce a genuine prediction, independently of saved example labels.
    await page.locator('textarea').fill('>novel_test\n'+'ACGT'.repeat(50));
    await page.locator('[type="submit"]').click();await waitDone(page);
@@ -114,6 +165,6 @@ const waitDone = page => page.locator('[data-results]').waitFor({state:'visible'
   const unsupported=await browser.newContext();await unsupported.addInitScript(()=>{window.DecompressionStream=undefined;delete window.DecompressionStream;});
   const oldBrowser=await unsupported.newPage();await oldBrowser.goto(address);assert(await oldBrowser.locator('fieldset').evaluate(el=>el.disabled));
   assert((await oldBrowser.locator('[data-status]').textContent()).includes('current browser'));await unsupported.close();
-  console.log(JSON.stringify({status:'passed',runs:reports,checks:'200 real worker predictions per language, CSV scores/hashes, responsive layouts, uploads, duplicates, escaping, novel DNA, cancellation, integrity/load failures, no network uploads, JavaScript/API fallback'},null,2));
+  console.log(JSON.stringify({status:'passed',runs:reports,checks:'200 real worker predictions per language; CSV scores/hashes; composable search, class and disagreement filters; score sorting with missing values last; full-batch charts and UTF-8 HTML reports; hostile-identifier escaping; responsive layouts; uploads; novel DNA; cancellation; integrity/load failures; no network uploads; JavaScript/API fallback'},null,2));
  } finally { await browser.close(); }
 })().catch(error=>{console.error(error);process.exit(1)});
