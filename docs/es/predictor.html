@@ -60,10 +60,25 @@
 <section class="predictor-context predictor-author-tool" id="authors-tool" aria-labelledby="authors-tool-title">
 <div class="predictor-author-heading"><div><p class="eyebrow">Autores originales · Liu Lab</p><h2 id="authors-tool-title">Prueba iEnhancer-2L de los autores</h2></div><a class="button button-dark" href="https://bliulab.net/iEnhancer-2L/" target="_blank" rel="noopener noreferrer" aria-describedby="external-link-note">Abrir la herramienta de los autores <span aria-hidden="true">↗</span></a></div>
 <p>El servidor web que acompaña al <a href="publications.html#L01">artículo original</a> utiliza dos etapas de predicción: primero, <a class="term-link" href="glossary.html#term-enhancer" data-term="enhancer" aria-label="Explicar: potenciador">potenciador</a> frente a no <a class="term-link" href="glossary.html#term-enhancer" data-term="enhancer" aria-label="Explicar: potenciador">potenciador</a>; después, fuerte frente a débil para las secuencias clasificadas como <a class="term-link" href="glossary.html#term-enhancer" data-term="enhancer" aria-label="Explicar: potenciadores">potenciadores</a>.</p>
-<ol><li>Pega secuencias en <strong>formato <a class="term-link" href="glossary.html#term-fasta" data-term="fasta" aria-label="Explicar: FASTA">FASTA</a></strong> o sube un archivo <a class="term-link" href="glossary.html#term-fasta" data-term="fasta" aria-label="Explicar: FASTA">FASTA</a>. El enlace <strong>Example</strong> muestra una entrada de ejemplo; el correo electrónico es opcional.</li><li>Haz clic en <strong>Submit</strong> para ejecutar la predicción y ver los resultados.</li><li>Usa <strong>Download</strong> en la página de resultados para guardar la salida.</li></ol>
+<ol><li>Pega secuencias en <strong>formato <a class="term-link" href="glossary.html#term-fasta" data-term="fasta" aria-label="Explicar: FASTA">FASTA</a></strong> o sube un archivo <a class="term-link" href="glossary.html#term-fasta" data-term="fasta" aria-label="Explicar: FASTA">FASTA</a>. El enlace <strong>Example</strong> muestra una entrada de ejemplo; el correo electrónico es opcional. <span class="fasta-example-links"><a href="../data/ienhancer_example.fasta" data-fasta-example>Ver un ejemplo FASTA</a> · <a href="../data/ienhancer_example.fasta" download>Descargar ejemplo (.fasta)</a></span></li><li>Haz clic en <strong>Submit</strong> para ejecutar la predicción y ver los resultados.</li><li>Usa <strong>Download</strong> en la página de resultados para guardar la salida.</li></ol>
 <p>Su <a href="https://bliulab.net/iEnhancer-2L/readme/" target="_blank" rel="noopener noreferrer" aria-describedby="external-link-note">guía ReadMe</a> ilustra ventanas superpuestas de 200 bases para una entrada más larga. Para comparar con nuestro predictor, utiliza las mismas secuencias de 200 bases en ambas herramientas. Puedes <a href="../data/ienhancer_2l_server_200_queries.fasta" download>descargar nuestro conjunto original de comparación de 200 secuencias</a>.</p>
 <p class="small-note">La herramienta de los autores se abre en otra pestaña. Al enviar allí una consulta, tus secuencias se transmiten a su servidor. Nuestra comparación anterior utiliza sus respuestas guardadas del 19 de octubre de 2026.</p>
 </section>
+<dialog class="fasta-example-dialog" id="fasta-example-dialog" aria-labelledby="fasta-example-title" aria-describedby="fasta-example-intro">
+<div class="fasta-example-heading"><h2 id="fasta-example-title" tabindex="-1">Ejemplo de entrada FASTA</h2><button type="button" data-fasta-close aria-label="Cerrar ejemplo">×</button></div>
+<p id="fasta-example-intro">Copia todo el bloque, incluida la línea que empieza por &gt;, o descarga el archivo para subirlo a cualquiera de los dos predictores.</p>
+<pre><code data-fasta-content>&gt;probe_0001
+CCTTCTGAGATAGATACTGTTATTCTCATTCACAGATGTGGACCCTGAGA
+CCAGGGAGGTTGCGTGGCATCATTACATCAGAAGGGGAGTGGTCTGAATC
+CACTCCTCCCCTTCCAGGGCAGGAAGTCAACAGAGAAGGGCTCTGTGGTA
+ACGTTGACAATCACAAATCAGTGGCATAAACATCTCCTTAAGACATGCAG
+</code></pre>
+<ul><li>La primera línea es el identificador. El símbolo <code>&gt;</code> inicia cada secuencia; puedes cambiar <code>probe_0001</code> por tu propio nombre.</li><li>La secuencia debajo del identificador contiene <strong>200 bases A/C/G/T en total</strong>. Los saltos de línea no cambian la secuencia.</li><li>Para añadir otra secuencia, empieza una nueva línea <code>&gt;identificador</code> y añade sus bases debajo.</li></ul>
+<p class="small-note">Este es <code>probe_0001</code> de nuestro conjunto de comparación de 200 secuencias.</p>
+<div class="fasta-example-actions"><button class="button fasta-example-copy" type="button" data-fasta-copy>Copiar ejemplo</button><a class="button button-dark" href="../data/ienhancer_example.fasta" download>Descargar ejemplo (.fasta) <span aria-hidden="true">↓</span></a></div>
+<p class="fasta-example-status" data-fasta-status role="status" aria-live="polite"></p>
+</dialog>
+<script src="../assets/fasta-example.js" defer></script>
 <script src="../assets/predictor-engine.js" defer></script>
 <script src="../assets/predictor.js" defer></script>
 </main>
