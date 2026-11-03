@@ -1026,7 +1026,7 @@
           "massively parallel reporter assays",
           "massively parallel reporter assay"
         ],
-        "definition": "Short for massively parallel reporter assay: an experiment that tests many DNA sequences together using a measurable reporter. It is like evaluating many candidate control switches in one organized batch.",
+        "definition": "MPRA stands for massively parallel reporter assay. It is a laboratory experiment that tests thousands of DNA sequences at once by measuring how each affects expression of a reporter gene, a gene with a measurable output. Researchers use it to identify candidate enhancers and compare their regulatory activity in the tested cells.",
         "context": "These measurements provide experimental evidence about the tested sequences, under the assay’s particular conditions."
       },
       "es": {
@@ -1037,7 +1037,7 @@
           "ensayos reporteros masivamente paralelos",
           "ensayo reportero masivamente paralelo"
         ],
-        "definition": "Siglas de un ensayo reportero masivamente paralelo: prueba muchas secuencias de ADN a la vez mediante una señal medible. Es como evaluar numerosos posibles interruptores reguladores en un lote organizado.",
+        "definition": "MPRA significa massively parallel reporter assay (ensayo reportero masivamente paralelo). Es un experimento de laboratorio que prueba miles de secuencias de ADN a la vez y mide cómo afecta cada una a la expresión de un gen reportero, un gen cuya señal se puede medir. Se utiliza para identificar posibles potenciadores y comparar su actividad reguladora en las células estudiadas.",
         "context": "Estas medidas aportan evidencia experimental sobre las secuencias probadas, bajo las condiciones concretas del ensayo."
       },
       "sources": [],
@@ -1056,7 +1056,7 @@
           "lentiMPRAs",
           "lentiviral MPRA"
         ],
-        "definition": "A version of MPRA that uses a lentiviral delivery system to place reporter constructs into cells’ DNA. Many candidate sequences can then be tested together.",
+        "definition": "MPRA stands for massively parallel reporter assay: a laboratory experiment that tests thousands of DNA sequences at once by measuring how each affects expression of a reporter gene, a gene with a measurable output. It is used to identify candidate enhancers and compare their regulatory activity in the tested cells. lentiMPRA is a version that uses a lentiviral delivery system to integrate the reporter constructs into cells’ DNA.",
         "context": "Agarwal, Inoue et al. (Nature, 2025) used lentiMPRA to test the same DNA library in HepG2, K562, and WTC11. That is why we chose these three for the planned comparison with model scores. Integration does not recreate each fragment’s original genomic location."
       },
       "es": {
@@ -1065,7 +1065,7 @@
           "lentiMPRA",
           "lentiMPRAs"
         ],
-        "definition": "Una versión de MPRA que usa un sistema de entrega lentiviral para integrar construcciones reporteras en el ADN de las células. Así se pueden probar muchas secuencias candidatas juntas.",
+        "definition": "MPRA significa massively parallel reporter assay (ensayo reportero masivamente paralelo): un experimento de laboratorio que prueba miles de secuencias de ADN a la vez y mide cómo afecta cada una a la expresión de un gen reportero, un gen cuya señal se puede medir. Se utiliza para identificar posibles potenciadores y comparar su actividad reguladora en las células estudiadas. lentiMPRA es una versión que usa un sistema de entrega lentiviral para integrar las construcciones reporteras en el ADN de las células.",
         "context": "Agarwal, Inoue y colaboradores (Nature, 2025) utilizaron lentiMPRA para probar la misma biblioteca de ADN en HepG2, K562 y WTC11. Por eso elegimos estas tres para la comparación planificada con las puntuaciones de los modelos. La integración no recrea la ubicación genómica original de cada fragmento."
       },
       "sources": [
