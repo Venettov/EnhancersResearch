@@ -7,7 +7,8 @@
 <form class="predictor-input-panel">
 <fieldset disabled><legend><span class="predictor-step">01</span> Add your sequences</legend>
 <p id="prediction-help">FASTA format: a <code>&gt;identifier</code> line followed by DNA. Each sequence must have exactly <strong>200 A/C/G/T bases</strong>. Lowercase letters and wrapped lines are accepted. Up to 1,000 sequences and 1 MiB per run. <a href="reproduce.html#data-guide">How do sequence length, dataset size, and training differ?</a></p>
-<div class="predictor-example-actions"><button type="button" data-example="3">Load 3 examples</button><button type="button" data-example="200">Load the 200-sequence comparison</button></div>
+<div class="predictor-example-actions"><button type="button" data-example="3">Load 3 examples</button><button type="button" data-example="200">Load 200 lentiMPRA examples</button></div>
+<p class="predictor-study-note"><strong>Connect predictions with experiment.</strong> The 200 examples come from the joint library in Agarwal, Inoue et al. (Nature, 2025). Rerun their predictions here, then <a href="experiment.html">explore their published activity in HepG2, K562, and WTC11 →</a>. The comparison page uses saved scores and clearly marks missing measurements and coverage exclusions. These previously examined examples are not an independent test.</p>
 <label for="prediction-input">FASTA sequences</label>
 <textarea id="prediction-input" rows="10" spellcheck="false" autocomplete="off" autocapitalize="off" aria-describedby="prediction-help" placeholder="&gt;sequence_1&#10;Paste the 200-base DNA sequence here"></textarea>
 <div class="predictor-file-row"><div><label for="prediction-file">Or choose a FASTA file</label><input id="prediction-file" type="file" accept=".fasta,.fa,.fna,.txt,text/plain"></div><button type="button" data-clear>Clear input</button></div>

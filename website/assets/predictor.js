@@ -91,19 +91,25 @@
     if (chosen.size > EnhancerPredictor.MAX_BYTES) { fail('tooLarge'); return; }
     replaceInput(() => chosen.text(), tr('Reading file…', 'Leyendo archivo…'));
   });
-  for (const button of app.querySelectorAll('[data-example]')) button.addEventListener('click', () => {
+  function loadExample(mode, probeId = null) {
     aborter = new AbortController();
     replaceInput(async () => {
       const response = await fetch(dataUrl('ienhancer_2l_server_200_queries.fasta'), { signal: aborter.signal });
       if (!response.ok) throw new EnhancerPredictor.InputError('exampleLoad');
       const text = await response.text();
-      if (button.dataset.example === '200') return text;
+      if (mode === '200' && probeId === null) return text;
       const records = EnhancerPredictor.parseFasta(text);
+      if (probeId !== null) {
+        const record = records.find(row => row.header === probeId);
+        if (!record) throw new EnhancerPredictor.InputError('exampleLoad');
+        return '>' + record.header + '\n' + record.sequence;
+      }
       // One example from each saved local class; these are demonstrations, not test accuracy.
       return [records[0], records[1], records.find(row => row.header === 'probe_0089')]
         .map(row => '>' + row.header + '\n' + row.sequence).join('\n');
     }, tr('Loading example…', 'Cargando ejemplo…'));
-  });
+  }
+  for (const button of app.querySelectorAll('[data-example]')) button.addEventListener('click', () => loadExample(button.dataset.example));
   function renderRows() {
     body.replaceChildren();
     const query = search.value.trim().toLocaleLowerCase();
@@ -217,7 +223,12 @@
   });
   if (!('Worker' in window) || !('DecompressionStream' in window) || !window.crypto?.subtle) {
     status.textContent = tr('This tool needs a current browser with Web Workers, gzip decompression, and HTTPS. Try a recent Chrome, Edge, Firefox, or Safari.', 'Esta herramienta necesita un navegador actual con Web Workers, descompresión gzip y HTTPS. Prueba Chrome, Edge, Firefox o Safari recientes.');
-  } else { controls.disabled = false; status.textContent = tr('Ready. Add sequences or load an example.', 'Listo. Añade secuencias o carga un ejemplo.'); }
+  } else {
+    controls.disabled = false; status.textContent = tr('Ready. Add sequences or load an example.', 'Listo. Añade secuencias o carga un ejemplo.');
+    const query = new URLSearchParams(window.location.search);
+    // Only select from the existing public FASTA; URL parameters never supply DNA or trigger prediction.
+    if (query.get('example') === 'lentimpra') loadExample('200', query.get('probe'));
+  }
   window.addEventListener('pagehide', event => {
     // A page in the back/forward cache keeps its worker and result download.
     if (!event.persisted) { worker?.terminate(); if (downloadUrl) URL.revokeObjectURL(downloadUrl); if (reportUrl) URL.revokeObjectURL(reportUrl); }

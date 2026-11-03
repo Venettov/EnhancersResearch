@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
 """Validate the deployable site, including project-subpath links and report anchors."""
 import json
+import csv
 import gzip
 import hashlib
+import math
 import re
+import statistics
 import sys
 from collections import Counter
 from html.parser import HTMLParser
@@ -59,7 +62,7 @@ class Document(HTMLParser):
 
 
 documents = {path.resolve(): Document(path) for path in ROOT.rglob("*.html")}
-assert len(documents) == 22, "Expected eleven pages in both languages"
+assert len(documents) == 24, "Expected twelve pages in both languages"
 for path, document in documents.items():
     if len(document.headings) != 1 or document.main != 1 or document.current != 1:
         errors.append(f"{path.name}: expected one h1, main, and current navigation item")
@@ -109,6 +112,49 @@ assert predictor_validation["model_sha256"] == predictor_manifest["sha256"], "Va
 assert hashlib.sha256((ROOT / "assets/predictor-engine.js").read_bytes()).hexdigest() == predictor_validation["browser_engine_sha256"]
 for filename, expected in predictor_manifest["source_models"].items():
     assert hashlib.sha256((ROOT.parent / filename).read_bytes()).hexdigest() == expected
+
+# Cross-check the new experimental artifacts against the earlier frozen inputs
+# and scores. A scientific join must not quietly change model identity, impute
+# absent activity, or drop excluded examples from the downloadable evidence.
+demo = json.loads((ROOT / "data/lentimpra_demo_200.json").read_text())
+references = json.loads((ROOT / "data/predictor_reference_200.json").read_text())
+screening = list(csv.DictReader((ROOT / "data/ienhancer_2l_server_200_screening.csv").open()))
+download = list(csv.DictReader((ROOT / "data/lentimpra_demo_200.csv").open()))
+assert demo["model_sha256"] == predictor_manifest["sha256"]
+assert demo["model_version"] == predictor_manifest["version"]
+assert demo["status"] == "exploratory_previously_exposed_200"
+assert len(demo["records"]) == len(references) == len(screening) == len(download) == 200
+assert len({r["construct"] for r in demo["records"]}) == 200
+assert sum(r["s11_summary_row"] is not None for r in demo["records"]) == 189
+assert sum(r["eligible"] for r in demo["records"]) == 185
+for row, ref, original, flat in zip(demo["records"], references, screening, download):
+    assert row["probe_id"] == ref["probe_id"] == original["probe_id"] == flat["probe_id"]
+    assert row["sequence_sha256"] == ref["sequence_sha256"] == original["sequence_sha256"] == flat["sequence_sha256"]
+    assert hashlib.sha256(original["sequence"].encode()).hexdigest() == row["sequence_sha256"]
+    assert row["construct"] == original["construct"] == flat["construct"]
+    assert row["category"] == original["category"] == flat["category"]
+    assert row["layer1_score"] == float(ref["local_enhancer_score"]) == float(flat["layer1_score"])
+    assert row["predicted_class"] == ref["local_class"]
+    assert row["eligible"] == (flat["eligible"] == "True")
+    for cell in demo["cells"]:
+        activity = row["activity"][cell]
+        value, reps = activity["mean_log2_rna_dna"], activity["replicates"]
+        assert len({r["replicate"] for r in reps}) == len(reps)
+        assert all(r["replicate"] in (1, 2, 3) and math.isfinite(r["log2_rna_dna"]) and r["barcodes"] >= 0 for r in reps)
+        assert activity["coverage_pass"] == any(r["barcodes"] >= 10 for r in reps)
+        if value is None:
+            assert flat[f"{cell}_mean_log2_rna_dna"] == "" and not row["eligible"]
+        else:
+            assert value == float(flat[f"{cell}_mean_log2_rna_dna"])
+            assert reps and abs(value - statistics.mean(r["log2_rna_dna"] for r in reps)) <= 0.000500001
+    assert row["eligible"] == all(a["mean_log2_rna_dna"] is not None and a["coverage_pass"] for a in row["activity"].values())
+for cell in demo["cells"]:
+    assert demo["summary"][cell]["n"] == 185
+    assert -1 <= demo["summary"][cell]["spearman_rho"] <= 1
+    expected_reps = sum(len(r["activity"][cell]["replicates"]) for r in demo["records"])
+    assert demo["replicate_crosscheck"]["matched_rows"][cell] == expected_reps == 567
+    for prefix in (ROOT, ROOT / "es"):
+        assert f'ρ = {demo["summary"][cell]["spearman_rho"]:.3f}' in (prefix / "experiment.html").read_text()
 assert len(source["publications"]) == 12
 assert {item["id"] for item in source["publications"] if item["id"].startswith("L")} == {"L01", "L02", "L03", "L04"}
 assert len(source["resources"]) == 7

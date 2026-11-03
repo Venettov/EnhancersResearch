@@ -17,7 +17,7 @@
   "notes": "Research notes",
   "evidence_report": "Evidence & strategy report",
   "github_repository": "GitHub repository",
-  "snapshot": "Project snapshot · October 2026",
+  "snapshot": "Project snapshot · November 2026",
   "evidence_labels": "Published findings, local observations, and proposed analyses are identified separately.",
   "read_source": "Read the source",
   "resources_label": "resources",
@@ -55,6 +55,10 @@
     "predictor": [
       "Predictor",
       "Paste or upload 200-base DNA sequences and run our saved iEnhancer-2L reconstruction directly in your browser."
+    ],
+    "experiment": [
+      "Experimental comparison",
+      "Explore saved model scores beside published lentiMPRA activity in HepG2, K562, and WTC11 using 200 previously examined sequences."
     ],
     "publications": [
       "Publications",

@@ -17,7 +17,7 @@
   "notes": "Notas de investigación",
   "evidence_report": "Informe de evidencia y estrategia",
   "github_repository": "Repositorio en GitHub",
-  "snapshot": "Estado del proyecto · Octubre de 2026",
+  "snapshot": "Estado del proyecto · noviembre de 2026",
   "evidence_labels": "Se distinguen los hallazgos publicados, las observaciones locales y los análisis propuestos.",
   "read_source": "Leer la fuente",
   "resources_label": "recursos",
@@ -55,6 +55,10 @@
     "predictor": [
       "Predictor",
       "Pega o carga secuencias de ADN de 200 bases y ejecuta nuestra reconstrucción guardada de iEnhancer-2L en tu navegador."
+    ],
+    "experiment": [
+      "Comparación experimental",
+      "Explora puntuaciones guardadas junto a actividad publicada de lentiMPRA en HepG2, K562 y WTC11 con 200 secuencias ya examinadas."
     ],
     "publications": [
       "Publicaciones",

@@ -48,6 +48,20 @@
 
 **Current state:** source/model integrity checked in a separate readiness audit; cohort screening and external-runner validation remain pending. No fitting, external predictions, website edits or pushes in this planning step. The later lentiMPRA processing and exact association protocol remain separate prerequisites.
 
+## 2026-11-02 · Exploratory lentiMPRA demo using previously exposed probes
+
+**User direction:** build an exploratory website comparison using the existing 200 sequences, preserve fresh sequences for the independent study, and connect the demo to the browser predictor. This is a new retrospective analysis of the prior server-comparison inputs, not a replacement for the October 20 independent-evaluation protocol.
+
+**Scope fixed for this demo:** retain all 200 probes and their original frozen Layer-I scores. Match exact S10 names and 200-base inserts to the original FASTA and saved sequence hashes. Display the published S11 shared mean log2(RNA/DNA), without fitting, activity binarization, or element-specificity-score (ESS) reconstruction. Use finite means in all three cells and at least one replicate with ≥10 observed barcodes in each cell for the descriptive plots and Spearman correlations. The correlations use average ranks for ties and the same eligible records in each cell; no p-values, uncertainty claim, comparative cell-performance claim, or tuning follows from them.
+
+**Observed join:** 200 exact S10 matches; 189 S11 shared-summary matches; 185 coverage-eligible records (170 HepG2 candidate enhancers and 15 promoters). Eleven have no shared-summary entry and four more fail coverage. Every record remains downloadable; absent measurements remain null. All 567 selected replicate rows per cell agree with one combined ENCODE representation (log2 tolerance 1e-12; barcode counts exact), avoiding duplicate replicate-file ingestion. The published means match per-cell summaries and available-replicate averages within their rounding precision.
+
+**Exploratory observations:** Spearman rho is 0.2199365829 (HepG2), 0.3169002239 (K562), and 0.2924044773 (WTC11), each n=185. These are descriptive associations in a selected, previously examined sample, not independent accuracy estimates. Historical strong/weak classes are not experimental high/low labels. The predictor remains sequence-only and assigns the same score across cell environments.
+
+**Reproduction:** `python3 website/tools/export_lentimpra_demo.py` uses the local supplementary archive and three combined ENCODE files. The committed `website/data/lentimpra_demo_200.json` records hashes, source rows, replicates, exclusions, and analysis rules; the companion CSV contains all 200 records. The ordinary website build uses these frozen artifacts and does not need the large local source files.
+
+**Still pending:** independent cohort verification and evaluation; a separate confirmatory lentiMPRA protocol; normalization/ESS reconciliation and appropriate uncertainty analysis. The original full S10 reservation and prior-probe exclusions remain in force for independent evaluation.
+
 ## Template for the next entry
 
 - Date and question:
