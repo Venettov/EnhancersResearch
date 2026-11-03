@@ -247,7 +247,7 @@
           "Hep G2"
         ],
         "definition": "A human cell line grown in the laboratory that originally came from a liver tumor. It retains some liver-related features, but it is not a normal liver or a whole organ.",
-        "context": "Agarwal, Inoue et al. (Nature, 2025) tested the same DNA library in HepG2, K562, and WTC11. That shared design is why HepG2 is part of our planned comparison of predictions with measured activity."
+        "context": "Agarwal, Inoue et al. (Nature, 2025) tested the same DNA library in HepG2, K562, and WTC11. Our completed exploratory comparison links saved model scores to their published means for the earlier 200 inputs; 185 pass coverage in all three cells. Independent evaluation remains pending."
       },
       "es": {
         "name": "HepG2",
@@ -256,7 +256,7 @@
           "Hep G2"
         ],
         "definition": "Una línea de células humanas cultivadas en el laboratorio que procede de un tumor de hígado. Conserva algunas características del hígado, pero no equivale a un hígado normal ni a un órgano completo.",
-        "context": "Agarwal, Inoue y colaboradores (Nature, 2025) probaron la misma biblioteca de ADN en HepG2, K562 y WTC11. Ese diseño compartido es la razón para incluir HepG2 en nuestra comparación planificada de predicciones y actividad medida."
+        "context": "Agarwal, Inoue y colaboradores (Nature, 2025) probaron la misma biblioteca de ADN en HepG2, K562 y WTC11. Nuestra comparación exploratoria completada conecta puntuaciones guardadas con sus medias publicadas para las 200 entradas previas; 185 cumplen la cobertura en las tres células. La evaluación independiente sigue pendiente."
       },
       "sources": [
         "hepg2",
@@ -276,7 +276,7 @@
           "K-562"
         ],
         "definition": "A human cell line originally obtained from a person with chronic myeloid leukemia, a cancer affecting blood-forming cells. Researchers grow it in the laboratory to study blood-related biology.",
-        "context": "K562 belongs to the shared DNA-library experiment in Agarwal, Inoue et al. (Nature, 2025), which is why we include it in the planned prediction–activity comparison. It also appears in assay-comparison datasets and does not represent every blood cell."
+        "context": "K562 is one of the three cells in our completed exploratory comparison of saved scores and published lentiMPRA activity. The same sequence receives one fixed model score across cells. Independent evaluation remains pending. K562 also appears in assay-comparison datasets and does not represent every blood cell."
       },
       "es": {
         "name": "K562",
@@ -285,7 +285,7 @@
           "K-562"
         ],
         "definition": "Una línea de células humanas obtenida originalmente de una persona con leucemia mieloide crónica, un cáncer que afecta a las células que forman la sangre. Se cultiva en el laboratorio para estudiar procesos relacionados con la sangre.",
-        "context": "K562 forma parte del experimento con una biblioteca compartida de ADN de Agarwal, Inoue y colaboradores (Nature, 2025); por eso la incluimos en la comparación planificada de predicciones y actividad. También aparece en comparaciones de ensayos y no representa todas las células sanguíneas."
+        "context": "K562 es una de las tres células de nuestra comparación exploratoria completada entre puntuaciones guardadas y actividad publicada de lentiMPRA. La misma secuencia recibe una puntuación fija entre células. La evaluación independiente sigue pendiente. K562 también aparece en comparaciones de ensayos y no representa todas las células sanguíneas."
       },
       "sources": [
         "k562",
@@ -306,7 +306,7 @@
           "WTC-11"
         ],
         "definition": "A human induced pluripotent stem-cell line. Adult skin cells were reprogrammed into a state from which they can develop into many cell types under suitable conditions. These are not embryonic stem cells.",
-        "context": "Agarwal, Inoue et al. (Nature, 2025) tested the same DNA in WTC11, HepG2, and K562. This is why WTC11 is part of our planned comparison: it supplies measurements in a stem-cell setting alongside the two tumor-derived lines."
+        "context": "Agarwal, Inoue et al. (Nature, 2025) tested the same DNA in WTC11, HepG2, and K562. WTC11 supplies a stem-cell setting alongside the two tumor-derived lines in our completed exploratory comparison. The demo uses previously examined sequences; independent evaluation remains pending."
       },
       "es": {
         "name": "WTC11",
@@ -315,7 +315,7 @@
           "WTC-11"
         ],
         "definition": "Una línea humana de células madre pluripotentes inducidas. Se reprogramaron células adultas de la piel para que pudieran convertirse en muchos tipos celulares bajo condiciones adecuadas. No son células madre embrionarias.",
-        "context": "Agarwal, Inoue y colaboradores (Nature, 2025) probaron el mismo ADN en WTC11, HepG2 y K562. Por eso WTC11 forma parte de nuestra comparación planificada: aporta mediciones en un entorno de células madre junto a las dos líneas procedentes de tumores."
+        "context": "Agarwal, Inoue y colaboradores (Nature, 2025) probaron el mismo ADN en WTC11, HepG2 y K562. WTC11 aporta un entorno de células madre junto a las dos líneas procedentes de tumores en nuestra comparación exploratoria completada. La demostración usa secuencias ya examinadas; la evaluación independiente sigue pendiente."
       },
       "sources": [
         "wtc11",
@@ -1057,7 +1057,7 @@
           "lentiviral MPRA"
         ],
         "definition": "MPRA stands for massively parallel reporter assay: a laboratory experiment that tests thousands of DNA sequences at once by measuring how each affects expression of a reporter gene, a gene with a measurable output. It is used to identify candidate enhancers and compare their regulatory activity in the tested cells. lentiMPRA is a version that uses a lentiviral delivery system to integrate the reporter constructs into cells’ DNA.",
-        "context": "Agarwal, Inoue et al. (Nature, 2025) used lentiMPRA to test the same DNA library in HepG2, K562, and WTC11. That is why we chose these three for the planned comparison with model scores. Integration does not recreate each fragment’s original genomic location."
+        "context": "Agarwal, Inoue et al. (Nature, 2025) tested a shared DNA library in HepG2, K562, and WTC11. We have connected 200 prior model inputs to these published measurements; 189 have shared-summary entries and 185 pass coverage in all three cells. This is an exploratory comparison; independent validation remains pending. Integration does not recreate each fragment’s original genomic location."
       },
       "es": {
         "name": "lentiMPRA",
@@ -1066,7 +1066,7 @@
           "lentiMPRAs"
         ],
         "definition": "MPRA significa massively parallel reporter assay (ensayo reportero masivamente paralelo): un experimento de laboratorio que prueba miles de secuencias de ADN a la vez y mide cómo afecta cada una a la expresión de un gen reportero, un gen cuya señal se puede medir. Se utiliza para identificar posibles potenciadores y comparar su actividad reguladora en las células estudiadas. lentiMPRA es una versión que usa un sistema de entrega lentiviral para integrar las construcciones reporteras en el ADN de las células.",
-        "context": "Agarwal, Inoue y colaboradores (Nature, 2025) utilizaron lentiMPRA para probar la misma biblioteca de ADN en HepG2, K562 y WTC11. Por eso elegimos estas tres para la comparación planificada con las puntuaciones de los modelos. La integración no recrea la ubicación genómica original de cada fragmento."
+        "context": "Agarwal, Inoue y colaboradores (Nature, 2025) probaron una biblioteca compartida de ADN en HepG2, K562 y WTC11. Ya conectamos 200 entradas previas del modelo con esas mediciones publicadas; 189 tienen entradas en el resumen compartido y 185 cumplen la cobertura en las tres células. Es una comparación exploratoria; la validación independiente sigue pendiente. La integración no recrea la ubicación genómica original de cada fragmento."
       },
       "sources": [
         "agarwal-inoue-2025"
@@ -1145,7 +1145,7 @@
           "library"
         ],
         "definition": "A collection of DNA constructs prepared to be tested together. A matched or joint library uses the same designed collection across experimental settings.",
-        "context": "Our planned experimental comparison uses the shared library tested in three cell lines by Agarwal, Inoue et al. (Nature, 2025). This keeps DNA identity fixed across cells; the selected library does not represent all genomic DNA."
+        "context": "Our completed exploratory comparison uses 200 previously examined inputs from the shared library tested by Agarwal, Inoue et al. (Nature, 2025). DNA identity stays fixed across cells. This selected subset does not represent all genomic DNA or establish that the full library is ready for independent evaluation."
       },
       "es": {
         "name": "Biblioteca experimental",
@@ -1156,7 +1156,7 @@
           "biblioteca"
         ],
         "definition": "Una colección de construcciones de ADN preparada para probarse en conjunto. Una biblioteca conjunta utiliza la misma colección diseñada en distintos entornos experimentales.",
-        "context": "Nuestra comparación experimental planificada utiliza la biblioteca compartida que Agarwal, Inoue y colaboradores (Nature, 2025) probaron en tres líneas celulares. Así se mantiene fija la identidad del ADN entre células; la biblioteca seleccionada no representa todo el ADN genómico."
+        "context": "Nuestra comparación exploratoria completada usa 200 entradas ya examinadas de la biblioteca compartida probada por Agarwal, Inoue y colaboradores (Nature, 2025). La identidad del ADN se mantiene fija entre células. Este subconjunto seleccionado no representa todo el ADN genómico ni demuestra que la biblioteca completa esté lista para evaluación independiente."
       },
       "sources": [
         "agarwal-inoue-2025"
@@ -1729,7 +1729,7 @@
           "reproducibility"
         ],
         "definition": "Here, repeating a published analysis with the specified data and methods to see whether its results can be recovered. This is different from making a new biological discovery.",
-        "context": "iEnhancer-2L is our active method. Its reconstruction and grouped evaluation are complete, but exact reproduction of the published results remains unresolved. Comparing its scores with new lentiMPRA activity is a separate, planned evaluation."
+        "context": "The iEnhancer-2L reconstruction and grouped evaluation are complete; exact reproduction of the published results remains unresolved. The exploratory comparison with published lentiMPRA means is also complete for the prior 200 inputs. Independent experimental evaluation is a separate, pending milestone."
       },
       "es": {
         "name": "Reproducción de un análisis",
@@ -1741,7 +1741,7 @@
           "reproducibilidad"
         ],
         "definition": "Aquí significa repetir un análisis publicado con los datos y métodos indicados para comprobar si se recuperan sus resultados. No equivale a hacer un descubrimiento biológico nuevo.",
-        "context": "iEnhancer-2L es nuestro método activo. Su reconstrucción y evaluación agrupada están completas, pero la reproducción exacta de los resultados publicados sigue pendiente. Comparar sus puntuaciones con actividad nueva de lentiMPRA es una evaluación separada y planificada."
+        "context": "La reconstrucción de iEnhancer-2L y la evaluación agrupada están completas; la reproducción exacta de los resultados publicados sigue pendiente. La comparación exploratoria con medias publicadas de lentiMPRA también está completa para las 200 entradas previas. La evaluación experimental independiente es una etapa separada y pendiente."
       },
       "sources": [],
       "papers": [

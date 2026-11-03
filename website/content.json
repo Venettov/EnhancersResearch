@@ -170,7 +170,7 @@
       "journal": "Nature 639, 411–420 (2025) · DOI: 10.1038/s41586-024-08430-9",
       "url": "https://doi.org/10.1038/s41586-024-08430-9",
       "summary": "The study tested a shared library of 60,000 DNA constructs in HepG2, K562, and WTC11 using lentiMPRA. We chose these three because it provides comparable activity measurements for the same DNA in each cell line.",
-      "note": "Planned experimental connection for iEnhancer-2L: compare its fixed scores with activity across cells. Normalization and sequence-independence checks remain required; this comparison has not been run.",
+      "note": "Completed exploratory connection: 200 previously examined inputs, 189 published activity matches, and 185 sequences meeting coverage in all three cells. Independent evaluation and numerical specificity-score reproduction remain pending.",
       "materials": [
         {
           "label": "Read the free full text (PubMed Central)",
@@ -183,6 +183,10 @@
         {
           "label": "Joint-library design and three matching ENCODE experiments",
           "url": "research.html#starting-evidence"
+        },
+        {
+          "label": "Our exploratory comparison and joined data",
+          "url": "experiment.html"
         }
       ]
     },
@@ -294,7 +298,7 @@
       "size": "0.804 GB",
       "count": 54,
       "description": "Processed files for eight experiments, including the three joint-library experiments from Agarwal, Inoue et al. (Nature, 2025), plus design and activity tables.",
-      "use": "Planned comparison of fixed iEnhancer-2L scores with measured activity in HepG2, K562, and WTC11. These cells were chosen because the study tested the same DNA library in all three.",
+      "use": "Used in the completed exploratory comparison of saved iEnhancer-2L scores with published means in HepG2, K562, and WTC11: 200 prior inputs, 189 measurement matches, 185 coverage-eligible sequences. Fresh independent analysis remains pending.",
       "limit": "Use the combined TSV or the three replicate TSVs per experiment, not both. Barcode coverage recovers 55,977 specificity-table names; the numerical scores remain unreproduced and two control aliases need original FASTA confirmation.",
       "url": "https://doi.org/10.1038/s41586-024-08430-9"
     },

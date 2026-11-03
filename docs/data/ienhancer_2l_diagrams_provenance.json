@@ -22,10 +22,10 @@
     "scope": "Original illustration of this project’s reconstruction, not an author-code flowchart or claim of exact published-result reproduction.",
     "source_commit_before_diagram_changes": "03e7d091a7bb6ff0b97c85f7e872663c94490737",
     "generator": "website/diagrams/ienhancer_2l.py",
-    "generator_sha256": "81427a74483a2e8594eb42eebe57ceea14e5335d3d0432ac8e8dedecbe8b0083",
+    "generator_sha256": "eb2953d799c9f66d6b4b80e291c77d4da5e730e1e7843eef9a3f0f0b2e8ebfb0",
     "assets_sha256": {
-      "assets/ienhancer-2l-software-flow-en.svg": "78470f4d561c3c2b74769319b4a7329f1f7741e28a27852b46388f8d2eb89c41",
-      "assets/ienhancer-2l-software-flow-es.svg": "5b652b039734f889e345eda2bc17fe98422adc0b4ec86e99c07a20b55cba2e16"
+      "assets/ienhancer-2l-software-flow-en.svg": "e97c6aa82cd5e7978283ce52bbda589b2307064a061688f25166c8438ce21d61",
+      "assets/ienhancer-2l-software-flow-es.svg": "30edb46c49ee5a8a901354001473f6868a94cd3df7e4457ba7938cbccd0e5426"
     },
     "code_sha256": {
       "replication/ienhancer_2l/prepare_data.py": "ce09803f6654d5c3cc7575daf958f9f2241dbb903d0da8f9b9526762250e000d",
@@ -57,6 +57,7 @@
       "scores": "Uncalibrated decision values, not probabilities or experimental activity"
     },
     "activity_measurements_used_for_fitting": false,
-    "experimental_activity_comparison": "Planned; not performed by this workflow"
+    "experimental_activity_comparison": "Exploratory comparison completed for 200 prior inputs in a separate saved-score/S10/S11 join; independent evaluation remains pending. This reconstruction diagram does not depict the separate join workflow.",
+    "status_caption_updated": "2026-11-02"
   }
 }

@@ -8,7 +8,7 @@
   "navigation_label": "Navegación principal",
   "language_label": "Idioma",
   "read_report": "Informe fundacional",
-  "footer_description": "Reconstruir iEnhancer-2L y conectar<br>predicciones de secuencia con evidencia experimental.",
+  "footer_description": "Explorar predicciones de iEnhancer-2L<br>y mediciones publicadas de actividad de potenciadores.",
   "explore": "Explorar",
   "questions": "Preguntas de investigación",
   "literature": "Bibliografía recopilada",
@@ -27,30 +27,30 @@
   "study_guide": "Guía del estudio en GitHub",
   "hero_eyebrow": "Nuestro objetivo de investigación",
   "hero_title": "Potenciadores: Explorando las señales que regulan los genes",
-  "hero_description": "Reconstruir y evaluar <a href=\"#what-is-ienhancer-2l\">iEnhancer-2L</a> y después comparar sus predicciones con actividad experimental. Elegimos HepG2, K562 y WTC11 porque <a href=\"https://doi.org/10.1038/s41586-024-08430-9\">Agarwal, Inoue y colaboradores (Nature, 2025)</a> probaron las mismas secuencias de ADN en las tres mediante lentiMPRA. Esas mediciones comparables pueden mostrar dónde son útiles las predicciones del método y cuáles son sus límites.",
-  "hero_link": "Explorar el plan de iEnhancer-2L",
+  "hero_description": "Explora nuestra reconstrucción de <a href=\"#what-is-ienhancer-2l\">iEnhancer-2L</a> y su primera <a href=\"experiment.html\">comparación exploratoria con actividad medida</a>. Agarwal, Inoue y colaboradores (<a href=\"https://doi.org/10.1038/s41586-024-08430-9\">Nature, 2025</a>) probaron la misma biblioteca de ADN en HepG2, K562 y WTC11. Ya conectamos 200 secuencias examinadas anteriormente con esas mediciones; la evaluación independiente sigue pendiente.",
+  "hero_link": "Avances y próximos pasos",
   "hero_alt": "Una doble hélice vertical de ADN, formada por dígitos binarios luminosos, gira sobre un fondo oscuro. Una animación conceptual que se repite de forma continua.",
   "visual_caption": "Seguir la secuencia. Evaluar la evidencia.",
   "visual_note": "Ilustración conceptual · no son datos medidos",
   "visual_pause": "Pausar animación",
   "visual_play": "Reproducir animación",
   "report_kicker": "Informe de investigación 01 · 10 de octubre de 2026",
-  "report_notice": "<strong>Informe histórico · 10 de octubre de 2026.</strong> Este informe conserva la estrategia original. El proyecto activo se centra ahora en iEnhancer-2L y en una comparación planificada con mediciones de actividad comparables de <a href=\"https://doi.org/10.1038/s41586-024-08430-9\">Agarwal, Inoue y colaboradores (Nature, 2025)</a>. Elegimos HepG2, K562 y WTC11 porque ese estudio probó el mismo ADN en las tres. Los planes anteriores con varios métodos y el trabajo MCSE/VISTA son contexto histórico. El <a href=\"research.html#roadmap\">plan actual</a>, los <a href=\"reproduce.html\">resultados de iEnhancer-2L</a> y el <a href=\"mcse.html\">archivo de MCSE</a> indican su estado presente. El informe siguiente conserva sus prioridades, fechas y recuentos originales.",
+  "report_notice": "<strong>Informe histórico · 10 de octubre de 2026.</strong> Este informe conserva la estrategia original. Desde entonces reconstruimos iEnhancer-2L y completamos una <a href=\"experiment.html\">comparación exploratoria de 200 secuencias ya examinadas</a> con mediciones correspondientes de actividad de <a href=\"https://doi.org/10.1038/s41586-024-08430-9\">Agarwal, Inoue y colaboradores (Nature, 2025)</a>. La evaluación independiente sigue pendiente. El <a href=\"research.html#roadmap\">plan actual</a>, los <a href=\"reproduce.html\">resultados de reconstrucción</a> y el <a href=\"mcse.html\">archivo de MCSE</a> indican el estado presente. El informe siguiente conserva sus prioridades, fechas y recuentos originales.",
   "report_contents": "Contenido del informe",
   "in_report": "En este informe",
   "back_top": "Volver al inicio",
   "pages": {
     "index": [
       "Inicio",
-      "Reconstrucción y evaluación de iEnhancer-2L, con una comparación planificada con actividad experimental comparable de potenciadores."
+      "La reconstrucción de iEnhancer-2L, la comparación exploratoria completada con actividad lentiMPRA en tres células y la evaluación independiente pendiente."
     ],
     "research": [
       "Investigación",
-      "El plan de iEnhancer-2L, los artículos originales de referencia, los límites del conjunto de datos y la conexión propuesta con lentiMPRA en tres células."
+      "Reconstrucción de iEnhancer-2L y comparación exploratoria con lentiMPRA completadas, con el plan de evaluación independiente y las comprobaciones pendientes."
     ],
     "reproduce": [
       "Resultados",
-      "Hallazgos de nuestra reconstrucción de iEnhancer-2L: los dos clasificadores SVM, comparaciones de características, limitaciones y la conexión propuesta con actividad medida de potenciadores."
+      "Resultados de la reconstrucción de iEnhancer-2L y comparaciones con el servidor, con un resumen de la conexión exploratoria completada con actividad del reportero."
     ],
     "predictor": [
       "Predictor",
@@ -66,7 +66,7 @@
     ],
     "resources": [
       "Recursos",
-      "Datos para la reconstrucción activa de iEnhancer-2L y la comparación planificada con lentiMPRA, junto con la colección de investigación más amplia."
+      "Entradas originales, la unión completada de 200 secuencias con datos lentiMPRA y colecciones de fuentes para la evaluación independiente futura."
     ],
     "notes": [
       "Notas de investigación",
@@ -78,7 +78,7 @@
     ],
     "methods": [
       "Guía técnica",
-      "Guía paso a paso de iEnhancer-2L: software, repositorio y mapa del código, diagrama del flujo de datos, comandos, evidencia guardada y requisitos de las comparaciones."
+      "Reproducir el flujo guardado de iEnhancer-2L y la unión exploratoria de datos lentiMPRA: código, comandos, procedencia y límites del análisis."
     ],
     "mcse": [
       "Archivo de MCSE-Enhancer",
@@ -93,5 +93,6 @@
   "footer_researcher_label": "Investigador estudiantil",
   "footer_researcher_name": "Jose Andres Riveraruiz",
   "footer_advisor_label": "Asesor",
-  "footer_advisor_name": "Dr. Iman Dehzangi"
+  "footer_advisor_name": "Dr. Iman Dehzangi",
+  "experimental_comparison": "Comparación experimental"
 }

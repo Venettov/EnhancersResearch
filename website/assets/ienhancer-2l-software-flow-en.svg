@@ -127,5 +127,5 @@
 <text x="82" y="1436" class="sf-node-title" text-anchor="start">Prediction CSV: final class + local decision scores</text>
 </g>
 <text x="60" y="1514" class="sf-small" text-anchor="start">Frozen labels can be compared with the authors’ server; no feedback into model tuning.</text>
-<text x="48" y="1571" class="sf-small" text-anchor="start">Scores are not measured activity. The HepG2/K562/WTC11 activity comparison remains planned.</text>
+<text x="48" y="1571" class="sf-small" text-anchor="start">Exploratory activity comparison: complete for prior examples. Independent evaluation: pending.</text>
 </svg>

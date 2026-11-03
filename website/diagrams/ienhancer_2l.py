@@ -73,7 +73,7 @@ def render(language):
     node('weak',750,1244,330,90,tr('Weak enhancer','Potenciador débil'),[],fill='#faf0dc')
     node('csv',60,1400,1320,86,tr('Prediction CSV: final class + local decision scores','CSV de predicción: clase final + puntuaciones de decisión locales'),[],fill='#f1f5f7')
     text(60,1514,tr('Frozen labels can be compared with the authors’ server; no feedback into model tuning.','Las etiquetas fijas se comparan con el servidor de los autores, sin usarlas para reajustar modelos.'),'sf-small')
-    text(48,1571,tr('Scores are not measured activity. The HepG2/K562/WTC11 activity comparison remains planned.','Las puntuaciones no son actividad medida. La comparación de actividad HepG2/K562/WTC11 sigue planificada.'),'sf-small')
+    text(48,1571,tr('Exploratory activity comparison: complete for prior examples. Independent evaluation: pending.','Comparación exploratoria de actividad: completada con ejemplos previos. Evaluación independiente: pendiente.'),'sf-small')
     add('</svg>')
     return '\n'.join(pieces)+'\n'
 

@@ -140,7 +140,7 @@
       "label": "Conexión experimental",
       "title": "Caracterización masivamente paralela de elementos reguladores de la transcripción",
       "summary": "El estudio probó una biblioteca compartida de 60,000 constructos de ADN en HepG2, K562 y WTC11 mediante lentiMPRA. Elegimos estas tres porque ofrece mediciones comparables de actividad del mismo ADN en cada línea celular.",
-      "note": "Conexión experimental planificada para iEnhancer-2L: comparar sus puntuaciones fijas con actividad entre células. Aún se requieren comprobaciones de normalización e independencia de secuencias; esta comparación no se ha realizado.",
+      "note": "Conexión exploratoria completada: 200 entradas ya examinadas, 189 con actividad publicada correspondiente y 185 con cobertura suficiente en las tres células. La evaluación independiente y la reproducción numérica de especificidad siguen pendientes.",
       "materials": [
         {
           "label": "Leer el texto completo gratuito (PubMed Central)",
@@ -153,6 +153,10 @@
         {
           "label": "Diseño de la biblioteca compartida y tres experimentos correspondientes de ENCODE",
           "url": "research.html#starting-evidence"
+        },
+        {
+          "label": "Nuestra comparación exploratoria y los datos unidos",
+          "url": "experiment.html"
         }
       ]
     },
@@ -225,7 +229,7 @@
       "title": "lentiMPRA de ENCODE",
       "kind": "Mediciones funcionales",
       "description": "Archivos procesados de ocho experimentos, incluidos los tres de la biblioteca conjunta de Agarwal, Inoue y colaboradores (Nature, 2025), más tablas de diseño y actividad.",
-      "use": "Comparación planificada de puntuaciones fijas de iEnhancer-2L con actividad medida en HepG2, K562 y WTC11. Se eligieron estas células porque el estudio probó la misma biblioteca de ADN en las tres.",
+      "use": "Utilizados en la comparación exploratoria completada de puntuaciones guardadas de iEnhancer-2L con medias publicadas en HepG2, K562 y WTC11: 200 entradas previas, 189 con mediciones y 185 con cobertura suficiente. El análisis independiente con datos nuevos sigue pendiente.",
       "limit": "Usar el TSV combinado o los tres TSV de réplicas por experimento, no ambos. La cobertura recupera 55,977 nombres de la tabla de especificidad; las puntuaciones siguen sin reproducirse y dos alias de controles requieren confirmación con el FASTA original."
     },
     {

@@ -127,5 +127,5 @@
 <text x="82" y="1436" class="sf-node-title" text-anchor="start">CSV de predicción: clase final + puntuaciones de decisión locales</text>
 </g>
 <text x="60" y="1514" class="sf-small" text-anchor="start">Las etiquetas fijas se comparan con el servidor de los autores, sin usarlas para reajustar modelos.</text>
-<text x="48" y="1571" class="sf-small" text-anchor="start">Las puntuaciones no son actividad medida. La comparación de actividad HepG2/K562/WTC11 sigue planificada.</text>
+<text x="48" y="1571" class="sf-small" text-anchor="start">Comparación exploratoria de actividad: completada con ejemplos previos. Evaluación independiente: pendiente.</text>
 </svg>
